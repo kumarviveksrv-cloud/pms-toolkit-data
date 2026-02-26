@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 5.0 - 8 Scenarios
+// Version 6.0 - 9 Scenarios
 // Last updated: Feb 26, 2026
-// Total employees: 400 (8 scenarios × 50)
-// Latest: Consulting Firm (Up-or-Out)
+// Total employees: 450 (9 scenarios × 50)
+// Latest: Family Business (Mumbai)
 
 window.PMS_MASTER_DATA = {
-  "version": "5.0",
+  "version": "6.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 8,
-  "totalEmployees": 400,
+  "totalScenarios": 9,
+  "totalEmployees": 450,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -4087,6 +4087,516 @@ window.PMS_MASTER_DATA = {
           "salary": 381500,
           "incrementPct": 9.0,
           "placement": "Question Mark"
+        }
+      ]
+    },
+    "Family Business": {
+      "name": "Family Business",
+      "currency": "INR",
+      "currencySymbol": "₹",
+      "budgetPercent": 6,
+      "recordId": "recneEByYS8PJfl9r",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "Nitin Patel",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 246000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kunal Chopra",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 281000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Vinay Mishra",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 249000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Anil Verma",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 243000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Madhuri Iyer",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 272000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Vikram Mehta",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 401800,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Vikram Kapoor",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 397600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Amit Kulkarni",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 355600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Radha Agarwal",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 393400,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Nitin Pandey",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 338800,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Kunal Pandey",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 418600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Varun Iyer",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 338800,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Vikram Mehta",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 364000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Sunita Reddy",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 410200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ajay Desai",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 376600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Nitin Kumar",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 638000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Vinay Mehta",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 624000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Pradeep Reddy",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 598000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Anita Rao",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 604000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Anand Gupta",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 526000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Nitin Saxena",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 865200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sita Mehta",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 935200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akash Saxena",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 761600,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Sanjay Pandey",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 935200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kiran Mehta",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 761600,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Seema Shah",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 330400,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Rohan Joshi",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 393400,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Manoj Iyer",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 568000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Madhuri Jain",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 538000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kiran Mishra",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 803600,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Anita Reddy",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 338800,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Arjun Mehta",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 355600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akash Shah",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 432600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Divya Pandey",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 538000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Rekha Mishra",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 770000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Vinay Agarwal",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 355600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Vinay Mehta",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 422800,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Meera Shah",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 432600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Deepa Agarwal",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 418600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sanjay Saxena",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 530000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Suresh Bansal",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 753200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ravi Mehta",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 828800,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sanjay Singh",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 1468800,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kavita Shah",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 397600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Vikram Patel",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 397600,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Seema Agarwal",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 638000,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Nitin Shah",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 845600,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Preeti Pandey",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 865200,
+          "incrementPct": 3.6,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ajay Verma",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 2040000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Suresh Verma",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 3400000,
+          "incrementPct": 7.8,
+          "placement": "High Performer"
         }
       ]
     }
