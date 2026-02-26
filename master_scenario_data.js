@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 8.0 - 11 Scenarios
+// Version 9.0 - 12 Scenarios
 // Last updated: Feb 26, 2026
-// Total employees: 550 (11 scenarios × 50)
-// Latest: Hospitality (Dubai - Customer Satisfaction)
+// Total employees: 600 (12 scenarios × 50)
+// Latest: Corporate America (Forced Ranking 20/70/10)
 
 window.PMS_MASTER_DATA = {
-  "version": "8.0",
+  "version": "9.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 11,
-  "totalEmployees": 550,
+  "totalScenarios": 12,
+  "totalEmployees": 600,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -5616,6 +5616,516 @@ window.PMS_MASTER_DATA = {
           "potScore": 0.9,
           "salary": 216000,
           "incrementPct": 3.0,
+          "placement": "Question Mark"
+        }
+      ]
+    },
+    "Corporate America": {
+      "name": "Corporate America",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "budgetPercent": 8,
+      "recordId": "recblkFWDrq6txqMC",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "Dorothy Garcia",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 50400,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Barbara Moore",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 43920,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Richard Lee",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 47880,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Mark Wilson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 50400,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Robert Hernandez",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 50400,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kenneth Hernandez",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 49320,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Steven Moore",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 60280,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Michael Moore",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 62920,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Lisa Rodriguez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 61160,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dorothy Miller",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 58520,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Joshua Jones",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 61160,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "David Hernandez",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 91280,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Mark Hernandez",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 87920,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Mark Jackson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 78960,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kenneth Rodriguez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 75600,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ashley Rodriguez",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 116640,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "George Martinez",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 120960,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Betty Thomas",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 113760,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Betty Jones",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 123200,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Barbara Jackson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 180000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Amanda Davis",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 40680,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Steven Davis",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 48600,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Joshua Thomas",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 55000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Karen Jackson",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 64680,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Robert Davis",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 80080,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Daniel Lee",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 81200,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Anthony Harris",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 99360,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Donna Anderson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 150800,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Susan Martin",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 69600,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Christopher Johnson",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 68640,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Richard Brown",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 81000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Barbara White",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 81000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Betty Miller",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 91800,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Joseph Miller",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 87720,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Anthony Davis",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 110400,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Brian Miller",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 165760,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Robert Miller",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 54432,
+          "incrementPct": 10.4,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Ashley Garcia",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 47040,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Susan Wilson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 61712,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Emily Martinez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 64496,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Andrew Williams",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 77760,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kenneth Clark",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 106400,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Brian Lopez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 162000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Barbara Lee",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 57824,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Joshua Williams",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 67680,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Christopher Williams",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 74528,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Donna Davis",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 87000,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kimberly Taylor",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 102240,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Joseph Jones",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 112480,
+          "incrementPct": 4.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "James Thomas",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 194560,
+          "incrementPct": 4.8,
           "placement": "Question Mark"
         }
       ]
