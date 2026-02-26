@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 10.0 - 13 Scenarios
+// Version 11.0 - 14 Scenarios
 // Last updated: Feb 26, 2026
-// Total employees: 650 (13 scenarios × 50)
-// Latest: Government Agency (Grade Inflation)
+// Total employees: 700 (14 scenarios × 50)
+// Latest: Higher Education (Tenure System)
 
 window.PMS_MASTER_DATA = {
-  "version": "10.0",
+  "version": "11.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 13,
-  "totalEmployees": 650,
+  "totalScenarios": 14,
+  "totalEmployees": 700,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -6636,6 +6636,516 @@ window.PMS_MASTER_DATA = {
           "potScore": 0.6,
           "salary": 184320,
           "incrementPct": 1.2,
+          "placement": "Question Mark"
+        }
+      ]
+    },
+    "Higher Education": {
+      "name": "Higher Education",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "budgetPercent": 3,
+      "recordId": "recmZif8JPY77ykgH",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "Dr. Karen Jackson",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 95156,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Robert Wilson",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 79593,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Richard Thomas",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 87093,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. James Davis",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 94769,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. John Thompson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 90869,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Steven Brown",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 95062,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. John Smith",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 97500,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Brian Jackson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 92299,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Steven Rodriguez",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 85800,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Matthew Jones",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 87210,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Emily Moore",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 87210,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Michael Brown",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 77525,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Lisa Taylor",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 82074,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Charles Williams",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 96144,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Helen Lee",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 94915,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Brian Lewis",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 120056,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. William Thompson",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 109131,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Kevin Johnson",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 118631,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Amanda Sanchez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 118947,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Edward Brown",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 116742,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Steven Brown",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 115272,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. David Sanchez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 124125,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. John Johnson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 117625,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Carol Moore",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 119875,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Daniel Williams",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 116265,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Edward Martin",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 108904,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Christopher Thompson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 109594,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Margaret Sanchez",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 104830,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Edward Thompson",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 111870,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Karen Harris",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 101090,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Amanda Davis",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 123802,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Robert Miller",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 133237,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Edward Lee",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 118237,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Lisa Sanchez",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 108562,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. James Garcia",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 117382,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Edward Taylor",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 150312,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Christopher Anderson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 160225,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Margaret Brown",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 169593,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Christopher Jackson",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 177862,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Emily Sanchez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 183750,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Daniel Garcia",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 154062,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Kenneth Taylor",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 138750,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Robert Taylor",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 190312,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. William Martinez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 162240,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. James Smith",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 175890,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Ronald Martinez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 236250,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Michelle Moore",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 230093,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Andrew Jackson",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 238750,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Dr. Linda Brown",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 252937,
+          "incrementPct": 3.9,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Dr. Mary Thompson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 226187,
+          "incrementPct": 1.8,
           "placement": "Question Mark"
         }
       ]
