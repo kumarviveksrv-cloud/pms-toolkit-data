@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 6.0 - 9 Scenarios
+// Version 7.0 - 10 Scenarios
 // Last updated: Feb 26, 2026
-// Total employees: 450 (9 scenarios × 50)
-// Latest: Family Business (Mumbai)
+// Total employees: 500 (10 scenarios × 50)
+// Latest: MNC in Asia (Tokyo - Seniority System)
 
 window.PMS_MASTER_DATA = {
-  "version": "6.0",
+  "version": "7.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 9,
-  "totalEmployees": 450,
+  "totalScenarios": 10,
+  "totalEmployees": 500,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -4597,6 +4597,516 @@ window.PMS_MASTER_DATA = {
           "salary": 3400000,
           "incrementPct": 7.8,
           "placement": "High Performer"
+        }
+      ]
+    },
+    "MNC in Asia": {
+      "name": "MNC in Asia",
+      "currency": "JPY",
+      "currencySymbol": "¥",
+      "budgetPercent": 3,
+      "recordId": "recO9J3gdVa0gMNY7",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "Ryo Kobayashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 3691428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Masato Tanaka",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 3765714,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hiroshi Kimura",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 3748571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Haruka Kimura",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3691428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Takeshi Sasaki",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3748571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Haruto Inoue",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5390000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Masato Maeda",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 5830000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Satoshi Hasegawa",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 5413571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ryota Fujita",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5940000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Takeshi Shimizu",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 5335000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hiroshi Suzuki",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 9211428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Koji Suzuki",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 9440000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Shun Yamamoto",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 8982857,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hiroshi Fujita",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 13812857,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kaito Watanabe",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 14551428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akira Kimura",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 3708571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Tsubasa Kimura",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3634285,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Yuto Yoshida",
+          "perfRating": 1.0,
+          "potRating": 3.0,
+          "perfScore": 0.7,
+          "potScore": 0.9,
+          "salary": 3725714,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Miho Kato",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 3634285,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akira Kobayashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 3577142,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hiroshi Matsumoto",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 5413571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Makoto Yamada",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5547142,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ryota Matsumoto",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 5413571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Satoshi Inoue",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 5390000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ryo Matsumoto",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5940000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hayato Fujita",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 9211428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ren Maeda",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 9360000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Asuka Hasegawa",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 9017142,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Satoshi Yamaguchi",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 13970000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Tsubasa Yoshida",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 15070000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Saki Goto",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3691428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hiroshi Kimura",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3691428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Makoto Sato",
+          "perfRating": 2.0,
+          "potRating": 3.0,
+          "perfScore": 1.4,
+          "potScore": 0.9,
+          "salary": 3651428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ren Suzuki",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 5806428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Shun Yoshida",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5782857,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kaito Ito",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 5256428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ren Nakamura",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 9051428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kaito Matsumoto",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 8868571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Tsubasa Murakami",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 15180000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Shinji Takahashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 14708571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akira Kato",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3577142,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Shinji Yamamoto",
+          "perfRating": 1.0,
+          "potRating": 3.0,
+          "perfScore": 0.7,
+          "potScore": 0.9,
+          "salary": 5358571,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Akira Hayashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 5704285,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Kaito Takahashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 9897142,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Haruka Takahashi",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 13812857,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Tsubasa Suzuki",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 3691428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Takeshi Sasaki",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 5311428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Yuki Okada",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 5727857,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Airi Takahashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 14551428,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Haruka Takahashi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 15180000,
+          "incrementPct": 1.8,
+          "placement": "Question Mark"
         }
       ]
     }
