@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 11.0 - 14 Scenarios
+// Version 12.0 - COMPLETE - ALL 15 SCENARIOS!
 // Last updated: Feb 26, 2026
-// Total employees: 700 (14 scenarios × 50)
-// Latest: Higher Education (Tenure System)
+// Total employees: 750 (15 scenarios × 50)
+// Complete set: Tech to Government to Social Enterprise
 
 window.PMS_MASTER_DATA = {
-  "version": "11.0",
+  "version": "12.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 14,
-  "totalEmployees": 700,
+  "totalScenarios": 15,
+  "totalEmployees": 750,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -7146,6 +7146,516 @@ window.PMS_MASTER_DATA = {
           "potScore": 0.9,
           "salary": 226187,
           "incrementPct": 1.8,
+          "placement": "Question Mark"
+        }
+      ]
+    },
+    "Social Enterprise": {
+      "name": "Social Enterprise",
+      "currency": "EUR",
+      "currencySymbol": "€",
+      "budgetPercent": 4,
+      "recordId": "recOkRYPvkkHMEW4Y",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "Liam Silva",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 49560,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Priya Meijer",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 50820,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Liam Bos",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 47880,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "David Martin",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 44940,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Charlotte Mulder",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 47880,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Lucas de Groot",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 53100,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Fatima de Groot",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 52200,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Mason de Vries",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 49500,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Carlos Martin",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 52200,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Isabella Martin",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 51300,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ahmed Hendriks",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 63440,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Raj Cohen",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 62400,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Sophia Bakker",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 58240,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Michael Cohen",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 63440,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Jan Jansen",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 61880,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Jacob Meijer",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 66960,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Anna Martin",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 71300,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Thomas de Groot",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 73160,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Noah Bos",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 78000,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Mark Bakker",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 91500,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Julia Mulder",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 48590,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Jacob Silva",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 50310,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Zoe Vos",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 48590,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Ethan Vermeulen",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 60500,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Grace Garcia",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 60500,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Maria van Dijk",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 60950,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Eva Vos",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 61480,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Simon Visser",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 74400,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Mila de Boer",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 75600,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Priya Vermeulen",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 94500,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Amelia van der Berg",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 47460,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Fatima Anderson",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 51240,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Anna Johnson",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 47520,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Emma Silva",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 51920,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Isabella Bakker",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 61880,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Simon Vos",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 62400,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Carlos Kumar",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 77500,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Harper Mulder",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 83950,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ethan Mulder",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 51170,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Lucas Bos",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 51600,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Sophia Cohen",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 54900,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Eva Johnson",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 63750,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Isabella Cohen",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 73200,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Laura Kumar",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 76880,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Emma Bos",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 93600,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Daniel Bakker",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 50400,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "David Smit",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 49140,
+          "incrementPct": 5.2,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Alex Vos",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 57500,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sophie Bakker",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 68400,
+          "incrementPct": 2.4,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Grace Garcia",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 89790,
+          "incrementPct": 2.4,
           "placement": "Question Mark"
         }
       ]
