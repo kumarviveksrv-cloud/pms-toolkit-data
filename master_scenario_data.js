@@ -1,14 +1,14 @@
 // PMS Toolkit - Master Scenario Data
-// Version 4.1 - 7 Scenarios (Sales Org Normalized)
+// Version 5.0 - 8 Scenarios
 // Last updated: Feb 26, 2026
-// Total employees: 350 (7 scenarios × 50)
-// Sales Organization: Quota-normalized to 1-5 ratings
+// Total employees: 400 (8 scenarios × 50)
+// Latest: Consulting Firm (Up-or-Out)
 
 window.PMS_MASTER_DATA = {
-  "version": "4.1",
+  "version": "5.0",
   "lastUpdated": "2026-02-26",
-  "totalScenarios": 7,
-  "totalEmployees": 350,
+  "totalScenarios": 8,
+  "totalEmployees": 400,
   "scenarios": {
     "High-Growth Tech Startup": {
       "name": "High-Growth Tech Startup",
@@ -3576,6 +3576,516 @@ window.PMS_MASTER_DATA = {
           "potScore": 0.9,
           "salary": 300000,
           "incrementPct": 4.8,
+          "placement": "Question Mark"
+        }
+      ]
+    },
+    "Consulting Firm": {
+      "name": "Consulting Firm",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "budgetPercent": 15,
+      "recordId": "recVh26HxKOLwBb04",
+      "employeeCount": 50,
+      "employees": [
+        {
+          "name": "David Al-Zaabi",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 67200,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Steven Williams",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 70000,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Jessica Martinez",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 76300,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Rashid Miller",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 71400,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Amira Patel",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 74200,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Mariam Singh",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 71400,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hamza Al-Zaabi",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 70000,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Zara Davis",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 73500,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Karim Al-Mansoori",
+          "perfRating": 5.0,
+          "potRating": 2.0,
+          "perfScore": 3.5,
+          "potScore": 0.6,
+          "salary": 75600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Hamza Anderson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 70000,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Aisha Williams",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 72100,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Karim Anderson",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 71400,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sarah Taylor",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 72100,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ayesha Khan",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 73500,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Matthew Garcia",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 74900,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Susan Martinez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 102600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Ali Rahman",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 98800,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Yasmin Miller",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 102600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Rania Garcia",
+          "perfRating": 4.0,
+          "potRating": 2.0,
+          "perfScore": 2.8,
+          "potScore": 0.6,
+          "salary": 100700,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Matthew Al-Mansoori",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 98800,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Maria Khan",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 95950,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Ahmed Al-Rashid",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 102600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Maria Rahman",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 102600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Michelle Ahmed",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 100700,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Amira Said",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 93100,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Mohammed Al-Mansoori",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 96900,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Susan Al-Hashimi",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 102600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Emily Smith",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 96900,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Aisha Khan",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 95950,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Andrew Williams",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 94050,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Tariq Johnson",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 132600,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Michael Davis",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 139100,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sandra Al-Zaabi",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 136500,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Noor Anderson",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 137800,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Noor Abdullah",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 135200,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Karen Davis",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 144300,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Sarah Patel",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 144300,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Layla Garcia",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 132600,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hamza Al-Mansoori",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 139100,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Karen Al-Hashimi",
+          "perfRating": 2.0,
+          "potRating": 2.0,
+          "perfScore": 1.4,
+          "potScore": 0.6,
+          "salary": 133900,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Matthew Abdullah",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 178500,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Hassan Jones",
+          "perfRating": 5.0,
+          "potRating": 3.0,
+          "perfScore": 3.5,
+          "potScore": 0.9,
+          "salary": 193800,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Nadia Mehta",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 185300,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Yasmin Rodriguez",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 190400,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "John Sharma",
+          "perfRating": 1.0,
+          "potRating": 2.0,
+          "perfScore": 0.7,
+          "potScore": 0.6,
+          "salary": 166600,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Priya Garcia",
+          "perfRating": 4.0,
+          "potRating": 3.0,
+          "perfScore": 2.8,
+          "potScore": 0.9,
+          "salary": 257600,
+          "incrementPct": 19.5,
+          "placement": "High Performer"
+        },
+        {
+          "name": "Thomas Al-Mansoori",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 250700,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Karim Singh",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 250700,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Sandra Jones",
+          "perfRating": 3.0,
+          "potRating": 2.0,
+          "perfScore": 2.1,
+          "potScore": 0.6,
+          "salary": 381500,
+          "incrementPct": 9.0,
+          "placement": "Question Mark"
+        },
+        {
+          "name": "Amir Taylor",
+          "perfRating": 3.0,
+          "potRating": 3.0,
+          "perfScore": 2.1,
+          "potScore": 0.9,
+          "salary": 381500,
+          "incrementPct": 9.0,
           "placement": "Question Mark"
         }
       ]
