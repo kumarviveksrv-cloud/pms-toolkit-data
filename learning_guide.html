@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF8F4;
+    --warm-white: #FFFFFF;
+    --charcoal: #1C1C1E;
+    --slate: #3A3A3C;
+    --muted: #8A8A8E;
+    --border: #E5E0D8;
+    --accent-gold: #C9A84C;
+    --accent-gold-light: #F5EDD6;
+    --accent-teal: #2D7A7A;
+    --accent-teal-light: #E8F4F4;
+    --accent-rose: #8B3A52;
+    --accent-rose-light: #F5E8ED;
+    --accent-navy: #1E3A5F;
+    --accent-navy-light: #E8EEF5;
+    --accent-sage: #4A6741;
+    --accent-sage-light: #EAF0E9;
+    --shadow-soft: 0 2px 20px rgba(0,0,0,0.06);
+    --shadow-card: 0 4px 32px rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    min-height: 100vh;
+  }
+
+  /* HERO HEADER */
+  .hero {
+    background: var(--charcoal);
+    padding: 48px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.08);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(45,122,122,0.08);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+  }
+
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    flex-shrink: 0;
+  }
+
+  /* LOADING STATE */
+  .loading-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--muted);
+  }
+
+  .loading-spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ERROR STATE */
+  .error-state {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--muted);
+  }
+
+  /* CONTENT WRAPPER */
+  .content-wrapper {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* SECTION CARDS */
+  .section-card {
+    background: var(--warm-white);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .section-card:hover {
+    box-shadow: var(--shadow-card);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease;
+  }
+
+  .section-header:hover {
+    background: rgba(0,0,0,0.01);
+  }
+
+  .section-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .section-icon.gold { background: var(--accent-gold-light); }
+  .section-icon.teal { background: var(--accent-teal-light); }
+  .section-icon.rose { background: var(--accent-rose-light); }
+  .section-icon.navy { background: var(--accent-navy-light); }
+  .section-icon.sage { background: var(--accent-sage-light); }
+
+  .section-meta {}
+  .section-number {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+
+  .section-chevron {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--muted);
+    transition: transform 0.25s ease, background 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .section-card.open .section-chevron {
+    transform: rotate(180deg);
+    background: var(--charcoal);
+    color: white;
+  }
+
+  /* SECTION BODY */
+  .section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .section-card.open .section-body {
+    max-height: 4000px;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 28px;
+  }
+
+  .section-content {
+    padding: 28px 28px 32px;
+  }
+
+  /* TEXT RENDERING */
+  .content-block {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--slate);
+    white-space: pre-wrap;
+    font-weight: 400;
+  }
+
+  /* Highlight first line of each paragraph as a sub-heading */
+  .content-block .sub-heading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.2px;
+    margin-top: 22px;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .content-block .sub-heading:first-child {
+    margin-top: 0;
+  }
+
+  .content-block .bullet-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }
+
+  .content-block .bullet-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .content-block .bullet-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--slate);
+  }
+
+  .content-block .numbered-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .content-block .numbered-badge {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: var(--accent-gold-light);
+    color: var(--accent-gold);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .content-block .numbered-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--slate);
+    flex: 1;
+  }
+
+  /* DISCUSSION QUESTIONS - special treatment */
+  .question-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+
+  .question-card:last-child { margin-bottom: 0; }
+
+  .question-number {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+  }
+
+  .question-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--slate);
+    font-weight: 400;
+  }
+
+  /* FOOTER */
+  .guide-footer {
+    text-align: center;
+    padding: 32px 40px 48px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 32px 20px 28px; }
+    .content-wrapper { padding: 24px 16px; }
+    .section-header { padding: 18px 20px; }
+    .section-content { padding: 20px 20px 24px; }
+    .section-divider { margin: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">PMS Learning Toolkit · Scenario Guide</div>
+  <div class="hero-title" id="hero-title">Loading scenario...</div>
+  <div class="hero-subtitle" id="hero-subtitle">Deep dive into the performance management philosophy, cultural dynamics, and strategic decisions behind this scenario.</div>
+  <div class="hero-meta">
+    <div class="hero-badge"><div class="hero-badge-dot"></div><span id="badge-sections">5 Learning Sections</span></div>
+    <div class="hero-badge"><div class="hero-badge-dot"></div><span>Discussion Questions Included</span></div>
+    <div class="hero-badge"><div class="hero-badge-dot"></div><span>World-Class HR Insights</span></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrapper">
+  <div id="content-area">
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <div style="font-size:14px; font-weight:500; color: #1C1C1E; margin-bottom:6px;">Preparing your learning guide...</div>
+      <div style="font-size:13px;">Fetching scenario data</div>
+    </div>
+  </div>
+</div>
+
+<div class="guide-footer">
+  PMS Learning Toolkit · World-Class Performance Management Education
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────
+// CONFIGURATION — Replace with your actual values
+// ─────────────────────────────────────────────────────────
+const AIRTABLE_TOKEN = 'YOUR_AIRTABLE_TOKEN_HERE';
+const BASE_ID = 'appske9dqtgzRHbYe';
+const TABLE_NAME = 'Scenario_Learning_Content';
+
+// ─────────────────────────────────────────────────────────
+// GET SCENARIO NAME FROM URL PARAMETER
+// URL format: learning_guide.html?scenario=High-Growth Tech Startup
+// ─────────────────────────────────────────────────────────
+function getScenarioFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('scenario') || params.get('Scenario_Name') || null;
+}
+
+// ─────────────────────────────────────────────────────────
+// FETCH DATA FROM AIRTABLE
+// ─────────────────────────────────────────────────────────
+async function fetchScenarioData(scenarioName) {
+  const filterFormula = encodeURIComponent(`{Scenarios_Name}="${scenarioName}"`);
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula=${filterFormula}&maxRecords=1`;
+
+  const response = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${AIRTABLE_TOKEN}` }
+  });
+
+  if (!response.ok) throw new Error(`Airtable error: ${response.status}`);
+  const data = await response.json();
+  if (!data.records || data.records.length === 0) throw new Error('Scenario not found');
+  return data.records[0].fields;
+}
+
+// ─────────────────────────────────────────────────────────
+// RENDER HELPERS
+// ─────────────────────────────────────────────────────────
+function parseAndRenderText(rawText, type) {
+  if (!rawText) return '<p style="color:#8A8A8E; font-size:13px; font-style:italic;">Content coming soon.</p>';
+
+  const lines = rawText.split('\n').filter(l => l.trim() !== '');
+
+  if (type === 'discussion') {
+    // Render as individual question cards
+    const questionLines = lines.filter(l => /^\d+\)/.test(l.trim()));
+    if (questionLines.length === 0) {
+      // Fallback: split by numbers embedded in text
+      return `<div class="content-block" style="white-space:pre-wrap; font-size:14px; line-height:1.85; color:#3A3A3C;">${rawText}</div>`;
+    }
+    return questionLines.map((q, i) => {
+      const cleanQ = q.replace(/^\d+\)\s*/, '').trim();
+      const [bold, ...rest] = cleanQ.split(':');
+      const hasColon = cleanQ.includes(':') && rest.length > 0 && rest.join(':').trim().length > 10;
+      return `
+        <div class="question-card">
+          <div class="question-number">Question ${i + 1}</div>
+          <div class="question-text">${hasColon ? `<strong>${bold}:</strong>${rest.join(':')}` : cleanQ}</div>
+        </div>`;
+    }).join('');
+  }
+
+  if (type === 'objectives') {
+    // Render numbered items as styled badges
+    const numbered = lines.filter(l => /^\d+\)/.test(l.trim()));
+    if (numbered.length > 0) {
+      return numbered.map((item, i) => {
+        const clean = item.replace(/^\d+\)\s*/, '').trim();
+        const colonIdx = clean.indexOf(':');
+        const hasBold = colonIdx > 0 && colonIdx < 60;
+        const display = hasBold
+          ? `<strong>${clean.slice(0, colonIdx)}</strong>${clean.slice(colonIdx)}`
+          : clean;
+        return `<div class="content-block"><div class="numbered-item"><div class="numbered-badge">${i + 1}</div><div class="numbered-text">${display}</div></div></div>`;
+      }).join('');
+    }
+  }
+
+  // Default: parse sub-headings (lines ending with :) and bullets (lines starting with -)
+  let html = '';
+  lines.forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed.endsWith(':') && trimmed.length < 80 && !trimmed.startsWith('-')) {
+      html += `<div class="content-block"><span class="sub-heading">${trimmed}</span></div>`;
+    } else if (trimmed.startsWith('- ') || trimmed.startsWith('• ')) {
+      const text = trimmed.replace(/^[-•]\s*/, '');
+      html += `<div class="content-block"><div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text">${text}</div></div></div>`;
+    } else if (/^\d+\)/.test(trimmed)) {
+      const num = trimmed.match(/^(\d+)\)/)[1];
+      const text = trimmed.replace(/^\d+\)\s*/, '');
+      html += `<div class="content-block"><div class="numbered-item"><div class="numbered-badge">${num}</div><div class="numbered-text">${text}</div></div></div>`;
+    } else if (trimmed.length > 0) {
+      html += `<div class="content-block" style="margin-bottom:10px; font-size:14px; line-height:1.85; color:#3A3A3C;">${trimmed}</div>`;
+    }
+  });
+  return html || `<div class="content-block">${rawText}</div>`;
+}
+
+// ─────────────────────────────────────────────────────────
+// BUILD SECTIONS
+// ─────────────────────────────────────────────────────────
+function buildSections(fields) {
+  return [
+    {
+      icon: '🎯', iconClass: 'gold',
+      number: 'Section 01',
+      title: 'What Makes This Scenario Unique',
+      field: 'What_Makes_Unique',
+      type: 'default',
+      open: true
+    },
+    {
+      icon: '⚙️', iconClass: 'teal',
+      number: 'Section 02',
+      title: 'Performance System Deep Dive',
+      field: 'Performance_System',
+      type: 'default',
+      open: false
+    },
+    {
+      icon: '🌍', iconClass: 'rose',
+      number: 'Section 03',
+      title: 'Cultural Context & Dynamics',
+      field: 'Cultural_Context',
+      type: 'default',
+      open: false
+    },
+    {
+      icon: '📚', iconClass: 'navy',
+      number: 'Section 04',
+      title: 'Learning Objectives',
+      field: 'Learning_Objectives',
+      type: 'objectives',
+      open: false
+    },
+    {
+      icon: '💬', iconClass: 'sage',
+      number: 'Section 05',
+      title: 'Critical Thinking & Discussion Questions',
+      field: 'Discussion_Questions',
+      type: 'discussion',
+      open: false
+    }
+  ].map((s, i) => ({
+    ...s,
+    content: parseAndRenderText(fields[s.field] || '', s.type)
+  }));
+}
+
+// ─────────────────────────────────────────────────────────
+// RENDER PAGE
+// ─────────────────────────────────────────────────────────
+function renderPage(scenarioName, fields) {
+  // Update hero
+  document.getElementById('hero-title').textContent = scenarioName;
+  document.getElementById('hero-subtitle').textContent =
+    `Explore the performance management philosophy, cultural context, and strategic decisions that define the ${scenarioName} approach to people management.`;
+
+  const sections = buildSections(fields);
+
+  const html = sections.map((s, i) => `
+    <div class="section-card ${s.open ? 'open' : ''}" id="section-${i}">
+      <div class="section-header" onclick="toggleSection(${i})">
+        <div class="section-header-left">
+          <div class="section-icon ${s.iconClass}">${s.icon}</div>
+          <div class="section-meta">
+            <div class="section-number">${s.number}</div>
+            <div class="section-title">${s.title}</div>
+          </div>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="section-divider"></div>
+        <div class="section-content">
+          ${s.content}
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('content-area').innerHTML = html;
+}
+
+function toggleSection(index) {
+  const card = document.getElementById(`section-${index}`);
+  card.classList.toggle('open');
+}
+
+// ─────────────────────────────────────────────────────────
+// SHOW ERROR
+// ─────────────────────────────────────────────────────────
+function showError(msg) {
+  document.getElementById('hero-title').textContent = 'Learning Guide';
+  document.getElementById('content-area').innerHTML = `
+    <div class="error-state">
+      <div style="font-size:32px; margin-bottom:16px;">⚠️</div>
+      <div style="font-size:15px; font-weight:600; color:#1C1C1E; margin-bottom:8px;">Unable to load scenario</div>
+      <div style="font-size:13px; color:#8A8A8E;">${msg}</div>
+    </div>`;
+}
+
+// ─────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────
+async function init() {
+  const scenarioName = getScenarioFromURL();
+  if (!scenarioName) {
+    showError('No scenario specified. Please navigate here from a scenario page.');
+    return;
+  }
+  try {
+    const fields = await fetchScenarioData(scenarioName);
+    renderPage(scenarioName, fields);
+  } catch (err) {
+    showError(err.message || 'Something went wrong. Please try again.');
+  }
+}
+
+init();
+</script>
+</body>
+</html>
