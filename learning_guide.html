@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Learning Guide</title>
+<title>PMS Learning Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -15,565 +15,518 @@
     --border: #E5E0D8;
     --accent-gold: #C9A84C;
     --accent-gold-light: #F5EDD6;
-    --accent-teal: #2D7A7A;
     --accent-teal-light: #E8F4F4;
-    --accent-rose: #8B3A52;
     --accent-rose-light: #F5E8ED;
-    --accent-navy: #1E3A5F;
     --accent-navy-light: #E8EEF5;
-    --accent-sage: #4A6741;
     --accent-sage-light: #EAF0E9;
     --shadow-soft: 0 2px 20px rgba(0,0,0,0.06);
     --shadow-card: 0 4px 32px rgba(0,0,0,0.08);
   }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--charcoal); min-height:100vh; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .hero { background:var(--charcoal); padding:48px 40px 40px; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-60px; right:-60px; width:300px; height:300px; border-radius:50%; background:rgba(201,168,76,0.08); pointer-events:none; }
+  .hero::after  { content:''; position:absolute; bottom:-80px; left:-40px; width:200px; height:200px; border-radius:50%; background:rgba(45,122,122,0.08); pointer-events:none; }
+  .hero-label { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent-gold); margin-bottom:14px; }
+  .hero-title { font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,38px); font-weight:700; color:#fff; line-height:1.2; margin-bottom:16px; max-width:700px; }
+  .hero-subtitle { font-size:14px; color:rgba(255,255,255,0.55); font-weight:300; max-width:600px; line-height:1.6; }
+  .hero-meta { display:flex; gap:24px; margin-top:28px; flex-wrap:wrap; }
+  .hero-badge { display:flex; align-items:center; gap:7px; font-size:12px; color:rgba(255,255,255,0.5); }
+  .hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--accent-gold); flex-shrink:0; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--charcoal);
-    min-height: 100vh;
-  }
+  .content-wrapper { padding:40px; max-width:900px; margin:0 auto; }
 
-  /* HERO HEADER */
-  .hero {
-    background: var(--charcoal);
-    padding: 48px 40px 40px;
-    position: relative;
-    overflow: hidden;
-  }
+  .section-card { background:var(--warm-white); border-radius:16px; border:1px solid var(--border); margin-bottom:20px; overflow:hidden; box-shadow:var(--shadow-soft); transition:box-shadow 0.2s; }
+  .section-card:hover { box-shadow:var(--shadow-card); }
+  .section-header { display:flex; align-items:center; justify-content:space-between; padding:22px 28px; cursor:pointer; user-select:none; }
+  .section-header-left { display:flex; align-items:center; gap:16px; flex:1; }
+  .section-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .section-icon.gold { background:var(--accent-gold-light); }
+  .section-icon.teal { background:var(--accent-teal-light); }
+  .section-icon.rose { background:var(--accent-rose-light); }
+  .section-icon.navy { background:var(--accent-navy-light); }
+  .section-icon.sage { background:var(--accent-sage-light); }
+  .section-number { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:3px; }
+  .section-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--charcoal); }
+  .section-chevron { width:28px; height:28px; border-radius:50%; background:var(--cream); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); transition:transform 0.25s, background 0.15s; flex-shrink:0; }
+  .section-card.open .section-chevron { transform:rotate(180deg); background:var(--charcoal); color:#fff; }
+  .section-body { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .section-card.open .section-body { max-height:6000px; }
+  .section-divider { height:1px; background:var(--border); margin:0 28px; }
+  .section-content { padding:28px 28px 32px; }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: rgba(201,168,76,0.08);
-    pointer-events: none;
-  }
+  .sub-heading { font-size:13px; font-weight:600; color:var(--charcoal); margin-top:22px; margin-bottom:8px; display:block; letter-spacing:0.2px; }
+  .sub-heading:first-child { margin-top:0; }
+  .body-text { font-size:14px; line-height:1.85; color:var(--slate); margin-bottom:8px; }
+  .bullet-item { display:flex; gap:10px; margin-bottom:9px; padding-left:4px; }
+  .bullet-dot { width:5px; height:5px; border-radius:50%; background:var(--accent-gold); flex-shrink:0; margin-top:9px; }
+  .bullet-text { font-size:14px; line-height:1.75; color:var(--slate); }
+  .numbered-item { display:flex; gap:12px; margin-bottom:16px; align-items:flex-start; }
+  .numbered-badge { width:26px; height:26px; border-radius:7px; background:var(--accent-gold-light); color:var(--accent-gold); font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+  .numbered-text { font-size:14px; line-height:1.75; color:var(--slate); flex:1; }
+  .question-card { background:var(--cream); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:14px; }
+  .question-card:last-child { margin-bottom:0; }
+  .question-number { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-gold); margin-bottom:8px; }
+  .question-text { font-size:14px; line-height:1.75; color:var(--slate); }
+  .error-state { text-align:center; padding:60px 40px; color:var(--muted); }
+  .guide-footer { text-align:center; padding:32px 40px 48px; color:var(--muted); font-size:12px; letter-spacing:0.3px; }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -40px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: rgba(45,122,122,0.08);
-    pointer-events: none;
-  }
-
-  .hero-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 14px;
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 4vw, 38px);
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    max-width: 700px;
-  }
-
-  .hero-subtitle {
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    font-weight: 300;
-    letter-spacing: 0.3px;
-    max-width: 600px;
-    line-height: 1.6;
-  }
-
-  .hero-meta {
-    display: flex;
-    gap: 24px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-  }
-
-  .hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    font-weight: 400;
-  }
-
-  .hero-badge-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent-gold);
-    flex-shrink: 0;
-  }
-
-  /* LOADING STATE */
-  .loading-state {
-    text-align: center;
-    padding: 80px 40px;
-    color: var(--muted);
-  }
-
-  .loading-spinner {
-    width: 36px; height: 36px;
-    border: 3px solid var(--border);
-    border-top-color: var(--accent-gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 16px;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ERROR STATE */
-  .error-state {
-    text-align: center;
-    padding: 60px 40px;
-    color: var(--muted);
-  }
-
-  /* CONTENT WRAPPER */
-  .content-wrapper {
-    padding: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  /* SECTION CARDS */
-  .section-card {
-    background: var(--warm-white);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: box-shadow 0.2s ease;
-  }
-
-  .section-card:hover {
-    box-shadow: var(--shadow-card);
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 28px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.15s ease;
-  }
-
-  .section-header:hover {
-    background: rgba(0,0,0,0.01);
-  }
-
-  .section-header-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 1;
-  }
-
-  .section-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  .section-icon.gold { background: var(--accent-gold-light); }
-  .section-icon.teal { background: var(--accent-teal-light); }
-  .section-icon.rose { background: var(--accent-rose-light); }
-  .section-icon.navy { background: var(--accent-navy-light); }
-  .section-icon.sage { background: var(--accent-sage-light); }
-
-  .section-meta {}
-  .section-number {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 3px;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--charcoal);
-    line-height: 1.3;
-  }
-
-  .section-chevron {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: var(--muted);
-    transition: transform 0.25s ease, background 0.15s ease;
-    flex-shrink: 0;
-  }
-
-  .section-card.open .section-chevron {
-    transform: rotate(180deg);
-    background: var(--charcoal);
-    color: white;
-  }
-
-  /* SECTION BODY */
-  .section-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .section-card.open .section-body {
-    max-height: 4000px;
-  }
-
-  .section-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0 28px;
-  }
-
-  .section-content {
-    padding: 28px 28px 32px;
-  }
-
-  /* TEXT RENDERING */
-  .content-block {
-    font-size: 14px;
-    line-height: 1.85;
-    color: var(--slate);
-    white-space: pre-wrap;
-    font-weight: 400;
-  }
-
-  /* Highlight first line of each paragraph as a sub-heading */
-  .content-block .sub-heading {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--charcoal);
-    letter-spacing: 0.2px;
-    margin-top: 22px;
-    margin-bottom: 6px;
-    display: block;
-  }
-
-  .content-block .sub-heading:first-child {
-    margin-top: 0;
-  }
-
-  .content-block .bullet-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 8px;
-    padding-left: 4px;
-  }
-
-  .content-block .bullet-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--accent-gold);
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-
-  .content-block .bullet-text {
-    font-size: 14px;
-    line-height: 1.75;
-    color: var(--slate);
-  }
-
-  .content-block .numbered-item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    align-items: flex-start;
-  }
-
-  .content-block .numbered-badge {
-    width: 24px; height: 24px;
-    border-radius: 6px;
-    background: var(--accent-gold-light);
-    color: var(--accent-gold);
-    font-size: 11px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .content-block .numbered-text {
-    font-size: 14px;
-    line-height: 1.75;
-    color: var(--slate);
-    flex: 1;
-  }
-
-  /* DISCUSSION QUESTIONS - special treatment */
-  .question-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 22px;
-    margin-bottom: 14px;
-  }
-
-  .question-card:last-child { margin-bottom: 0; }
-
-  .question-number {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 8px;
-  }
-
-  .question-text {
-    font-size: 14px;
-    line-height: 1.75;
-    color: var(--slate);
-    font-weight: 400;
-  }
-
-  /* FOOTER */
-  .guide-footer {
-    text-align: center;
-    padding: 32px 40px 48px;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.3px;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 600px) {
-    .hero { padding: 32px 20px 28px; }
-    .content-wrapper { padding: 24px 16px; }
-    .section-header { padding: 18px 20px; }
-    .section-content { padding: 20px 20px 24px; }
-    .section-divider { margin: 0 20px; }
+  @media(max-width:600px){
+    .hero{padding:32px 20px 28px;}
+    .content-wrapper{padding:24px 16px;}
+    .section-header{padding:18px 20px;}
+    .section-content{padding:20px 20px 24px;}
+    .section-divider{margin:0 20px;}
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-label">PMS Learning Toolkit · Scenario Guide</div>
-  <div class="hero-title" id="hero-title">Loading scenario...</div>
-  <div class="hero-subtitle" id="hero-subtitle">Deep dive into the performance management philosophy, cultural dynamics, and strategic decisions behind this scenario.</div>
+  <div class="hero-title" id="hero-title">Loading...</div>
+  <div class="hero-subtitle" id="hero-subtitle"></div>
   <div class="hero-meta">
-    <div class="hero-badge"><div class="hero-badge-dot"></div><span id="badge-sections">5 Learning Sections</span></div>
+    <div class="hero-badge"><div class="hero-badge-dot"></div><span>5 Learning Sections</span></div>
     <div class="hero-badge"><div class="hero-badge-dot"></div><span>Discussion Questions Included</span></div>
     <div class="hero-badge"><div class="hero-badge-dot"></div><span>World-Class HR Insights</span></div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="content-wrapper">
-  <div id="content-area">
-    <div class="loading-state">
-      <div class="loading-spinner"></div>
-      <div style="font-size:14px; font-weight:500; color: #1C1C1E; margin-bottom:6px;">Preparing your learning guide...</div>
-      <div style="font-size:13px;">Fetching scenario data</div>
-    </div>
-  </div>
-</div>
-
-<div class="guide-footer">
-  PMS Learning Toolkit · World-Class Performance Management Education
-</div>
+<div class="content-wrapper"><div id="content-area"></div></div>
+<div class="guide-footer">PMS Learning Toolkit · World-Class Performance Management Education</div>
 
 <script>
-// ─────────────────────────────────────────────────────────
-// CONFIGURATION — Replace with your actual values
-// ─────────────────────────────────────────────────────────
-const AIRTABLE_TOKEN = 'YOUR_AIRTABLE_TOKEN_HERE';
-const BASE_ID = 'appske9dqtgzRHbYe';
-const TABLE_NAME = 'Scenario_Learning_Content';
+const SCENARIOS = {
 
-// ─────────────────────────────────────────────────────────
-// GET SCENARIO NAME FROM URL PARAMETER
-// URL format: learning_guide.html?scenario=High-Growth Tech Startup
-// ─────────────────────────────────────────────────────────
-function getScenarioFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('scenario') || params.get('Scenario_Name') || null;
+"High-Growth Tech Startup": {
+What_Makes_Unique: `Hyper-Growth Culture: In a Series B startup, performance management isn't HR process — it's a survival mechanism.
+
+Speed Over Stability:
+- Everything is measured in sprints, OKRs, and quarterly impact
+- A hire who takes 6 months to "find their footing" is already a liability
+- The unwritten rule: deliver fast, or make way for someone who will
+- This isn't cruel — it's the economics of a company burning cash to find product-market fit
+
+Free Distribution as a Philosophy:
+- No forced curves means managers have complete autonomy over ratings
+- But autonomy creates accountability — if your whole team is rated 4s and 5s, you better justify it
+- Grade inflation is the silent enemy here — when everyone is "exceptional," the word loses meaning
+- The best managers use free distribution to reward genuinely differentiated performance, not to keep everyone happy
+
+The 5-Point Rating Signal:
+- Rating 5 earns 12% increment — 3x more than a Rating 3 (8%)
+- This gap is intentional — it loudly signals that performance differences matter financially
+- In a startup, this spread also helps retain top performers who could easily leave for FAANG salaries
+- The message to employees: your output directly determines your financial trajectory here
+
+Quarterly Review Cycle:
+- Annual reviews don't fit sprint-based cultures — too slow, too disconnected from daily reality
+- Quarterly cycles keep feedback tight, corrections fast, and goals relevant
+- The cost: manager bandwidth. Quarterly reviews mean 4x the documentation, calibration, and conversation load per year
+- Many startup managers underinvest in review quality because of this — reviews become tick-box exercises`,
+
+Performance_System: `Rating Approach: 5-point scale with free distribution and Pay for Performance compensation philosophy.
+
+How Ratings Work:
+- Managers rate independently — no forced percentages or distribution targets
+- Rating calibration happens at leadership level to prevent department-level inflation
+- Ratings are tied directly to increment percentages (not ranges) — predictable and transparent
+- Self-assessments are encouraged but not formal — this is a doing culture, not a documenting culture
+
+Increment Structure:
+- Rating 5 (Exceptional): 12% increment
+- Rating 4 (Exceeds Expectations): 10% increment
+- Rating 3 (Meets Expectations): 8% increment
+- Rating 2 (Needs Improvement): 4-5% increment
+- Rating 1 (Underperforming): Performance Improvement Plan, no increment
+
+Why This Matters:
+- At a ₹15L base salary, the difference between a Rating 3 and Rating 5 is ₹60,000 per year
+- At ₹50L base, that same gap becomes ₹2,00,000 per year — significant enough to drive behavior
+- Over 3 years, consistently rating 5 vs. consistently rating 3 compounds into a dramatically different compensation trajectory
+
+What Gets Measured:
+- Delivery against quarterly OKRs (primary metric)
+- Quality and speed of output
+- Cross-functional impact — did your work unblock others or create bottlenecks?
+- Ownership signals — did you escalate problems or solve them?
+- Growth trajectory — are you learning faster than the company is scaling?
+
+What Doesn't Get Measured (But Should):
+- Invisible work — documentation, mentoring juniors, process improvements
+- Emotional labor — holding team morale during high-pressure sprints
+- Risk-taking that didn't pay off but was strategically sound
+- These gaps create a culture that rewards visible individual output over invisible collective contribution`,
+
+Cultural_Context: `Innovation-Driven Environment: The culture of a high-growth tech startup is equal parts exhilarating and exhausting.
+
+The Meritocracy Belief:
+- Everyone believes — genuinely — that performance determines outcomes here
+- "We don't care about your background, just your output" is the operating principle
+- This is both liberating (no politics, no seniority games) and demanding (no excuses either)
+- The meritocracy belief also creates blind spots — it can mask structural advantages and penalize people whose "output" is harder to quantify
+
+Speed as Cultural Value:
+- Moving fast is a virtue. Deliberation is often mistaken for indecision
+- Employees who ask too many questions before acting are seen as "over-thinkers"
+- This rewards confident executors and can sideline deep, careful thinkers
+- Long-term, fast cultures often accumulate technical and process debt that slows them down precisely when scale demands quality
+
+Competition as Background Hum:
+- Collaboration exists, but everyone knows who the top performers are
+- OKR visibility creates informal leaderboards — people compare their impact scores
+- This drives output but can suppress psychological safety — admitting struggle feels like career risk
+- The best managers actively counteract this by normalizing learning in public
+
+Who Thrives Here:
+- High agency individuals who self-direct without needing structure
+- People energized by ambiguity and frequent context-switching
+- Those with high tolerance for incomplete information and shifting priorities
+- Professionals early in career who want accelerated learning and are willing to trade stability for growth
+
+Who Leaves or Burns Out:
+- People who need process, predictability, or collaborative decision-making
+- Parents or caregivers whose life demands cannot flex to sprint schedules
+- Employees who need recognition beyond financial compensation
+- Those whose best work is deep, slow, and invisible — researchers, strategists, culture carriers`,
+
+Learning_Objectives: `1) Free Distribution Dynamics: How giving managers full rating autonomy drives both authenticity and grade inflation risk — and why calibration sessions exist to correct the drift
+
+2) Pay for Performance Economics: Why wide increment spreads (4% vs 12%) are deliberate signals, not accidents — and how they compound into dramatically different compensation trajectories over time
+
+3) Quarterly Review Trade-offs: The real cost of frequent review cycles in manager bandwidth, quality decay, and feedback fatigue — and why startups pay this cost anyway
+
+4) Meritocracy's Blind Spots: How output-focused cultures reward visible, measurable work and systematically undervalue invisible contribution — and what this means for diversity and retention
+
+5) Startup PMS as Retention Tool: How compensation differentiation in high-growth environments competes with FAANG offers and why flat increment structures accelerate talent flight
+
+6) Culture-PMS Fit: Why a performance system that works brilliantly in a 120-person Series B startup would break down in a 5,000-person enterprise — and what changes and why
+
+7) The Scaling Problem: How PMS systems designed for speed and agility become bureaucratic as companies grow — and the inflection points where founders must redesign their people systems`,
+
+Discussion_Questions: `1) Grade Inflation Spiral: If every manager at TechVelocity gives mostly 4s and 5s under free distribution, what happens to the compensation budget? How does leadership typically respond — and what are the second-order effects of that response?
+
+2) Quarterly Review Quality: TechVelocity reviews quarterly. A manager with 8 direct reports spends roughly 4-6 hours per person per review cycle. That's 256+ hours per year on reviews alone — about 30% of a working month. Is this sustainable? What gets cut when it isn't?
+
+3) The Rating 3 Problem: An employee rated 3 (Meets Expectations) earns 8% increment. They are doing their job well. But at TechVelocity, being "good" can feel like falling behind. How do you retain solid, dependable performers who will never be "exceptional" in a culture that celebrates exceptional?
+
+4) Invisible Work Penalty: A senior engineer spends 20% of her time mentoring juniors, writing documentation, and improving deployment processes. None of this shows up in OKR dashboards. Her OKR completion rate looks lower than peers who did zero of this work. How should her manager rate her — and what does the system currently incentivize?
+
+5) Who Gets Managed Out: What type of employee would leave TechVelocity within 12-18 months — voluntarily or otherwise? Is this a failure of the PMS, the hiring process, or both?
+
+6) The Scaling Inflection: TechVelocity grows from 120 to 800 employees over 3 years. At what point does the current PMS system start breaking down? What are the first symptoms — and what should the CHRO do about it?
+
+7) Your Design Challenge: If you were hired as CHRO of TechVelocity today, what ONE change would you make to this PMS system — and what unintended consequence would you need to watch for?`
+},
+
+"Manufacturing Firm": {
+What_Makes_Unique: `German-Style Works Council: Performance management here isn't just an HR decision — it's a negotiated agreement between management and employee representatives.
+
+The Works Council Dynamic:
+- A legally mandated employee body (Works Council) has co-determination rights over performance management processes
+- Management cannot unilaterally change rating criteria, increment structures, or performance improvement processes without Works Council approval
+- This creates a fundamentally different power dynamic — employees have institutional voice in how they are evaluated
+- For HR professionals used to top-down PMS design, this is a paradigm shift: you design WITH employees, not FOR them
+
+Consensus Before Action:
+- Any new performance initiative requires Works Council consultation — typically 4-8 weeks of negotiation
+- This slows change velocity dramatically compared to tech startups
+- But it also means changes that DO get implemented have broad employee buy-in and rarely face resistance
+- The irony: slower to implement, but far more durable and trusted once in place
+
+Tenure and Stability as Cultural Assets:
+- Average employee tenure in manufacturing firms is 12-18 years — vs 2-3 years in tech
+- Long tenure creates institutional knowledge that is genuinely irreplaceable
+- PMS systems must account for this — a 15-year machinist who "meets expectations" is enormously valuable, even if they'll never be a "star"
+- Rating systems that over-reward high-potential at the expense of reliable long-tenured contributors create resentment and union friction
+
+Collective Bargaining Layer:
+- Base salaries are often set by industry-wide collective agreements (Tarifvertrag)
+- Performance increments operate on top of the collectively bargained base — but within negotiated bands
+- This limits the spread between high and low performers compared to tech or finance
+- The philosophy: floor everyone well, then differentiate modestly at the top — rather than creating dramatic winner-takes-all outcomes`,
+
+Performance_System: `Rating Approach: 5-point scale with guided distribution, operating within collectively bargained compensation bands.
+
+How Ratings Work:
+- Ratings are jointly developed criteria — agreed between management and Works Council
+- Calibration sessions are mandatory and include Works Council observer presence in many firms
+- Managers cannot assign bottom ratings (1 or 2) without documented evidence and formal Works Council notification
+- This creates a high evidentiary bar for performance management — you cannot "feel" someone is underperforming, you must prove it
+
+Increment Structure (within collective bargaining bands):
+- Rating 5 (Exceptional): 6-7% increment (top of negotiated band)
+- Rating 4 (Exceeds Expectations): 5% increment
+- Rating 3 (Meets Expectations): 3-4% increment (majority of workforce lands here)
+- Rating 2 (Needs Improvement): 1-2% increment (requires Works Council notification)
+- Rating 1 (Underperforming): 0% increment + mandatory Performance Improvement Plan
+
+Why the Spread is Narrow:
+- Collective bargaining agreements cap maximum increments to prevent excessive differentiation
+- The philosophy is economic security for all, with modest reward for excellence
+- This is not a failure of the system — it is the system working as designed
+- Workers trade upside potential for downside protection — stable employment, predictable increments, strong severance rights
+
+Distribution Pattern:
+- Guided distribution: management targets roughly 10% top ratings, 70% meets expectations, 20% below — but these are targets, not mandates
+- Works Council pushes back hard on forced curves — they see it as manufacturing artificial losers
+- In practice, most manufacturing firms end up with 15-20% rated at top two tiers, 65-70% in middle, and under 10% at bottom
+- Managing someone out requires extensive documentation, Works Council consultation, and often a negotiated severance — a process that takes months`,
+
+Cultural_Context: `Consensus and Stability Over Competition: The culture of a manufacturing firm operating under works council governance is defined by collective identity rather than individual heroics.
+
+The Social Contract:
+- The implicit deal: give your reliable best for 20-30 years, and we will give you economic security, dignity at work, and a fair process if things go wrong
+- This is not complacency — it is a different definition of performance: showing up consistently, mastering your craft, training others, and protecting product quality
+- Employees who understand and embrace this contract are deeply loyal and highly effective
+- Those who find it stifling — particularly high-ambition individuals expecting rapid advancement — self-select out relatively quickly
+
+Quality as Performance:
+- In manufacturing, a defect rate of 0.1% is a performance failure — even if the individual worked hard
+- Performance is ultimately measured in output quality, process adherence, and safety compliance — not just effort or attitude
+- This creates a culture where doing things right matters more than doing things fast
+
+Hierarchy with Respect:
+- Clear hierarchy exists, but it is not dismissive of frontline workers
+- Foremen and line supervisors hold genuine institutional authority — their word on performance carries weight
+- Senior workers train junior workers — knowledge transfer is a cultural obligation, not an optional extra
+- "Meister" (master craftsperson) status is genuinely respected, even by management with university degrees
+
+Who Thrives Here:
+- Craftspeople who take pride in precision and mastery
+- People who value job security over income maximization
+- Those who prefer collaborative, consensus-based environments over competitive, fast-moving ones
+- Individuals with long time horizons — willing to build seniority and trust over years
+
+Who Struggles Here:
+- High-ambition individuals who want rapid promotion and dramatic compensation upside
+- People who interpret consensus-building as bureaucracy or obstruction
+- Managers used to making unilateral HR decisions without employee input`,
+
+Learning_Objectives: `1) Co-determination in PMS Design: How works councils and collective bargaining fundamentally reshape who controls performance criteria, rating processes, and increment structures — and why this is a feature, not a bug, in certain cultural contexts
+
+2) Narrow Increment Bands as Philosophy: Why collectively bargained compensation systems deliberately limit performance differentiation — and the trade-offs between economic security for all versus dramatic reward for exceptional individuals
+
+3) Evidentiary Standards in Performance Management: How legally robust performance management requires documentation, process adherence, and institutional oversight — and why "I feel this person is underperforming" is never sufficient in a regulated environment
+
+4) Tenure as Performance Indicator: Why long-tenure in manufacturing firms represents accumulated institutional knowledge and reliability that 5-point rating systems often fail to capture — and how to design PMS systems that honor this value
+
+5) Collective vs. Individual Performance Models: The fundamental difference between PMS systems designed to identify and reward individual stars versus systems designed to elevate collective output — and when each model is appropriate
+
+6) Change Management in Unionized Environments: Why implementing PMS changes in works council environments requires stakeholder negotiation rather than top-down mandate — and the skills HR professionals need to lead this process effectively
+
+7) Cultural Fit of PMS Systems: Why a performance system transplanted directly from a San Francisco startup into a Stuttgart manufacturing plant will fail — and how to diagnose cultural fit before designing any PMS intervention`,
+
+Discussion_Questions: `1) The Star Performer Problem: A brilliant 32-year-old process engineer consistently exceeds expectations and generates significant cost savings. Under the collective bargaining bands, her maximum increment is 7%. A tech company offers her a 40% salary jump. How does the manufacturing firm retain her — and should it even try, given its cultural model?
+
+2) Works Council as Obstacle or Asset: A new HR Director wants to implement quarterly performance check-ins instead of annual reviews. The Works Council demands 6 months of consultation before approving. Is the Works Council being obstructionist, or is this consultation process protecting something valuable?
+
+3) The Long-Tenured Average Performer: A 55-year-old machinist has worked at the firm for 28 years. She consistently rates at 3 (Meets Expectations). She trains every new hire, knows every machine's quirks, and prevents problems that no one else would catch. How should a PMS system value her — and does the current system do so adequately?
+
+4) Documentation as Protection: The high evidentiary bar for performance management protects employees from arbitrary decisions. But it also makes it very difficult and expensive to exit genuinely poor performers. Where is the right balance — and who should decide?
+
+5) Narrow vs. Wide Increment Spreads: Compare TechVelocity (Rating 5 earns 12%, Rating 3 earns 8%) with this manufacturing firm (Rating 5 earns 6-7%, Rating 3 earns 3-4%). Which model creates more motivation? Which creates more security? Can a PMS system deliver both simultaneously?
+
+6) The Innovation Paradox: Manufacturing firms need continuous process improvement to stay competitive. But their PMS culture rewards process adherence over risk-taking. How do you design a system that rewards both reliability AND innovation?
+
+7) Your Design Challenge: You are an external HR consultant brought in to redesign this firm's PMS. The CEO wants more differentiation. The Works Council wants to protect increment bands. What process do you follow — and what outcome are you realistically aiming for?`
+},
+
+"Consulting Firm": {
+What_Makes_Unique: `Up-or-Out Partnership Track: In consulting, performance management isn't just about evaluating current work — it is a decade-long selection process for a very small number of partnership seats.
+
+The Pyramid Economics:
+- Sterling Consulting operates on a leverage model: many junior consultants billed at lower rates, very few expensive partners at the top
+- A typical ratio: 8-10 junior consultants per partner
+- This pyramid cannot support everyone advancing — attrition is not a failure of the system, it IS the system
+- The firm hires knowing that 70-80% of people will leave before making Partner — and designs its PMS accordingly
+
+The Partnership Clock:
+- Analyst → Consultant → Senior Consultant → Manager → Senior Manager → Partner
+- Typical timeline: 8-12 years from joining to Partnership consideration
+- At Senior Manager level, the unspoken question is always: "Is this person Partner material?"
+- If the answer is no, the firm begins "counseling out" — helping the person find a well-paid industry role, gracefully
+- "Counseled out" sounds gentle but carries a clear message: your journey here is ending
+
+Billable Utilization as Primary Performance Signal:
+- Your value to the firm is partly measured by how many of your hours are billed to clients
+- Target utilization: 75-85% of working hours on billable client work
+- Falling below 70% consistently raises questions — are you adding enough value?
+- Being "on the beach" (unassigned, not billable) for extended periods is a career warning signal
+
+The 4-Point Rating System — No Middle Ground:
+- Sterling uses a 4-point scale deliberately: 1 (Below), 2 (Meets), 3 (Exceeds), 4 (Exceptional)
+- There is no "3 out of 5" comfortable middle — you either meet expectations or exceed them
+- This forces raters to make a clearer judgment call
+- The absence of a midpoint is a design choice that reduces "safe" ratings and demands real differentiation`,
+
+Performance_System: `Rating Approach: 4-point scale with guided distribution, biannual review cycle, and Pay for Retention compensation philosophy.
+
+How Ratings Work:
+- Biannual reviews: mid-year check-in (developmental focus) and year-end review (rating and compensation)
+- Each consultant is reviewed by their Engagement Manager — the Partner on their most recent project
+- 360-degree feedback collected from peers, clients, and junior team members
+- Ratings calibrated in Partner-level meetings — your manager proposes a rating, Partners collectively adjust
+- You are not in the room when your career is being discussed — this is a deliberate feature of the system
+
+The Calibration Session:
+- Partners meet twice yearly to discuss every consultant's trajectory
+- They ask: Is this person on track for the next level? Are they Partner material long-term?
+- This means your reputation across the entire partnership matters — one strong advocate can elevate you, one skeptic can hold you back
+
+Increment Structure (Pay for Retention philosophy):
+- Rating 4 (Exceptional): 12-15% increment + accelerated promotion consideration
+- Rating 3 (Exceeds Expectations): 8-10% increment + on-track promotion timeline
+- Rating 2 (Meets Expectations): 4-6% increment + developmental feedback
+- Rating 1 (Below Expectations): 0-2% increment + formal development plan
+
+Why Pay for Retention — Not Pay for Performance:
+- Sterling's biggest risk is losing a Rating 3 or 4 consultant at Manager level to a competitor
+- The investment in training a consultant from Analyst to Manager is enormous — 5-7 years of development
+- Pay for Retention means the compensation philosophy prioritizes keeping talented people in the pipeline
+- We pay you well at every stage because losing you at Year 6 wastes Years 1-5 of development
+
+What Gets Measured:
+- Client satisfaction: Would the client request you on their next project?
+- Technical quality: Accuracy, insight depth, and rigor of your work product
+- Business development: Did you identify expansion opportunities or strengthen client relationships?
+- Team leadership: How effectively did you develop and manage junior team members?
+- Thought leadership: Industry publications, internal knowledge contributions, speaking engagements`,
+
+Cultural_Context: `Meritocracy with Subjective Overlay: Consulting culture presents itself as a pure meritocracy — the best thinkers rise to the top. The reality is more complex and more human.
+
+The Apprenticeship Model:
+- Junior consultants learn by doing, on live client projects, with real stakes
+- There is no formal training period — you are expected to contribute meaningfully from Week 1
+- This sink-or-swim approach is both its greatest strength (accelerated learning) and its greatest risk (high early attrition)
+- Getting staffed on a prestigious project by a senior Partner is itself a form of recognition
+
+Client Service as Non-Negotiable:
+- The client always comes first — this is not a slogan, it is how your performance is evaluated
+- Weekend work, late nights, and travel at short notice are expected and normalized
+- Setting boundaries around availability is possible at senior levels — at junior levels, it is career-limiting
+
+Sponsorship vs. Mentorship:
+- Mentors give you advice. Sponsors advocate for you in rooms you are not in.
+- Getting a powerful Partner sponsor is the most important career move in consulting
+- Without a sponsor, even exceptional work can be overlooked — because no one is championing it in the partnership conversation
+- Relationship-building is not optional — it is a core performance skill
+
+The Exit as Feature Philosophy:
+- The firm hires bright, ambitious people knowing most will leave
+- Departing consultants go into industry roles — at clients, at regulators, at PE firms
+- They become future clients, future referral sources, and ambassadors for the firm's brand
+- Alumni networks are actively maintained — the firm stays connected with people who left 10 years ago
+
+Who Thrives Here:
+- People who handle ambiguity, deliver quality under pressure, and communicate complex ideas simply
+- Those with high social intelligence — reading room dynamics, managing client relationships, navigating partner politics
+- Individuals energized by variety — different industries, different problems, different teams every few months
+
+Who Struggles Here:
+- Deep specialists who want to build expertise in one domain over many years
+- People who need structured mentorship, psychological safety, or clear processes
+- Those whose life circumstances make constant availability and travel genuinely impossible`,
+
+Learning_Objectives: `1) Leverage Model Economics: Why consulting firms are structured as pyramids, how billing rates and salary costs generate profit, and why the business model mathematically requires that most people do not make Partner
+
+2) 4-Point Rating Design: Why removing the midpoint from a rating scale forces more decisive performance judgments, reduces grade inflation, and creates clearer differentiation between adequate and excellent performance
+
+3) Pay for Retention vs. Pay for Performance: The strategic difference between rewarding this year's output versus investing in long-term talent pipeline — and when each philosophy is appropriate
+
+4) The Sponsor Effect: How sponsorship (advocacy in rooms you are not in) operates differently from mentorship — and why the presence or absence of a senior sponsor is often the single biggest determinant of career advancement
+
+5) Calibration as Governance: How partner-level calibration sessions function as a collective talent assessment mechanism — correcting individual manager bias and building shared standards
+
+6) Exit Strategy as Business Strategy: How professional services firms deliberately design for high attrition, maintain alumni networks, and convert departing employees into future clients
+
+7) Subjective Judgment in Objective Systems: Why even the most structured rating process in consulting ultimately depends on partner subjective judgment — and what this means for equity and diversity`,
+
+Discussion_Questions: `1) The Sponsor Lottery: Two consultants join Sterling in the same cohort. Both rated 3 consistently for four years. One has a Managing Partner as her sponsor; the other has a mid-level Partner who rarely speaks in calibration. Five years later, one is on the Partner track and one is being counseled out. Is this a fair outcome — and can sponsorship inequality be systematically fixed?
+
+2) The Unanimous Vote Problem: Partnership admission requires unanimous consent from all existing partners. One dissenting partner can block an otherwise strong candidate. Does this create a culture of conformity where being different or non-traditional is a career risk?
+
+3) The Billable Hours Perverse Incentive: If utilization rate is a key performance signal, you have an implicit incentive to work slowly or create additional work to bill. A consultant who solves a problem in 30 hours and is honest looks less productive than one who bills 60. How should the firm measure efficiency versus effort?
+
+4) Up-or-Out Ethics: Sterling hires 50 Analysts each year knowing only 5-8 will make Partner. Is it ethical to build a talent system where the majority are designed to leave? Does the prestige of the firm create unrealistic expectations that the firm exploits?
+
+5) The Availability Tax: The performance system implicitly rewards availability — traveling readily, working weekends, responding to calls at 10pm. This structurally disadvantages caregivers and people for whom constant availability is not possible. How do you redesign without penalizing client service?
+
+6) Biannual vs. Quarterly Reviews: A consulting project lasts 3-6 months — meaning a consultant's entire contribution to a major engagement might be evaluated in a single conversation. Is biannual review frequency appropriate for project-based work?
+
+7) Your Design Challenge: You are the new Head of Talent at Sterling. The Managing Partner wants to improve diversity at Partner level — currently 85% male and from elite universities. The unanimous vote requirement is producing homogeneous outcomes. What specific changes would you recommend — and which Partners will push back hardest?`
 }
 
-// ─────────────────────────────────────────────────────────
-// FETCH DATA FROM AIRTABLE
-// ─────────────────────────────────────────────────────────
-async function fetchScenarioData(scenarioName) {
-  const filterFormula = encodeURIComponent(`{Scenarios_Name}="${scenarioName}"`);
-  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula=${filterFormula}&maxRecords=1`;
+// ── MORE SCENARIOS ADDED HERE AS WE COMPLETE THEM ──
 
-  const response = await fetch(url, {
-    headers: { 'Authorization': `Bearer ${AIRTABLE_TOKEN}` }
-  });
+};
 
-  if (!response.ok) throw new Error(`Airtable error: ${response.status}`);
-  const data = await response.json();
-  if (!data.records || data.records.length === 0) throw new Error('Scenario not found');
-  return data.records[0].fields;
+// ─────────────────────────────────────────────────────────
+// RENDERING ENGINE
+// ─────────────────────────────────────────────────────────
+function getScenario() {
+  return new URLSearchParams(window.location.search).get('scenario');
 }
 
-// ─────────────────────────────────────────────────────────
-// RENDER HELPERS
-// ─────────────────────────────────────────────────────────
-function parseAndRenderText(rawText, type) {
-  if (!rawText) return '<p style="color:#8A8A8E; font-size:13px; font-style:italic;">Content coming soon.</p>';
+function renderText(text, type) {
+  if (!text) return '<p style="color:#8A8A8E;font-size:13px;font-style:italic;">Content coming soon.</p>';
+  const lines = text.split('\n');
+  let html = '';
 
-  const lines = rawText.split('\n').filter(l => l.trim() !== '');
-
-  if (type === 'discussion') {
-    // Render as individual question cards
-    const questionLines = lines.filter(l => /^\d+\)/.test(l.trim()));
-    if (questionLines.length === 0) {
-      // Fallback: split by numbers embedded in text
-      return `<div class="content-block" style="white-space:pre-wrap; font-size:14px; line-height:1.85; color:#3A3A3C;">${rawText}</div>`;
-    }
-    return questionLines.map((q, i) => {
-      const cleanQ = q.replace(/^\d+\)\s*/, '').trim();
-      const [bold, ...rest] = cleanQ.split(':');
-      const hasColon = cleanQ.includes(':') && rest.length > 0 && rest.join(':').trim().length > 10;
-      return `
-        <div class="question-card">
-          <div class="question-number">Question ${i + 1}</div>
-          <div class="question-text">${hasColon ? `<strong>${bold}:</strong>${rest.join(':')}` : cleanQ}</div>
-        </div>`;
+  if (type === 'objectives') {
+    return lines.filter(l => /^\d+\)/.test(l.trim())).map((item, i) => {
+      const clean = item.replace(/^\d+\)\s*/, '').trim();
+      const ci = clean.indexOf(':');
+      const display = (ci > 0 && ci < 80) ? `<strong>${clean.slice(0,ci)}</strong>${clean.slice(ci)}` : clean;
+      return `<div class="numbered-item"><div class="numbered-badge">${i+1}</div><div class="numbered-text">${display}</div></div>`;
     }).join('');
   }
 
-  if (type === 'objectives') {
-    // Render numbered items as styled badges
-    const numbered = lines.filter(l => /^\d+\)/.test(l.trim()));
-    if (numbered.length > 0) {
-      return numbered.map((item, i) => {
-        const clean = item.replace(/^\d+\)\s*/, '').trim();
-        const colonIdx = clean.indexOf(':');
-        const hasBold = colonIdx > 0 && colonIdx < 60;
-        const display = hasBold
-          ? `<strong>${clean.slice(0, colonIdx)}</strong>${clean.slice(colonIdx)}`
-          : clean;
-        return `<div class="content-block"><div class="numbered-item"><div class="numbered-badge">${i + 1}</div><div class="numbered-text">${display}</div></div></div>`;
-      }).join('');
-    }
+  if (type === 'discussion') {
+    return lines.filter(l => /^\d+\)/.test(l.trim())).map((item, i) => {
+      const clean = item.replace(/^\d+\)\s*/, '').trim();
+      const ci = clean.indexOf(':');
+      const display = (ci > 0 && ci < 80) ? `<strong>${clean.slice(0,ci)}:</strong>${clean.slice(ci+1)}` : clean;
+      return `<div class="question-card"><div class="question-number">Question ${i+1}</div><div class="question-text">${display}</div></div>`;
+    }).join('');
   }
 
-  // Default: parse sub-headings (lines ending with :) and bullets (lines starting with -)
-  let html = '';
   lines.forEach(line => {
-    const trimmed = line.trim();
-    if (trimmed.endsWith(':') && trimmed.length < 80 && !trimmed.startsWith('-')) {
-      html += `<div class="content-block"><span class="sub-heading">${trimmed}</span></div>`;
-    } else if (trimmed.startsWith('- ') || trimmed.startsWith('• ')) {
-      const text = trimmed.replace(/^[-•]\s*/, '');
-      html += `<div class="content-block"><div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text">${text}</div></div></div>`;
-    } else if (/^\d+\)/.test(trimmed)) {
-      const num = trimmed.match(/^(\d+)\)/)[1];
-      const text = trimmed.replace(/^\d+\)\s*/, '');
-      html += `<div class="content-block"><div class="numbered-item"><div class="numbered-badge">${num}</div><div class="numbered-text">${text}</div></div></div>`;
-    } else if (trimmed.length > 0) {
-      html += `<div class="content-block" style="margin-bottom:10px; font-size:14px; line-height:1.85; color:#3A3A3C;">${trimmed}</div>`;
+    const t = line.trim();
+    if (!t) { html += '<div style="height:8px"></div>'; return; }
+    if (t.endsWith(':') && t.length < 80 && !t.startsWith('-')) {
+      html += `<span class="sub-heading">${t}</span>`;
+    } else if (t.startsWith('- ') || t.startsWith('• ')) {
+      html += `<div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text">${t.replace(/^[-•]\s*/,'')}</div></div>`;
+    } else {
+      html += `<div class="body-text">${t}</div>`;
     }
   });
-  return html || `<div class="content-block">${rawText}</div>`;
+  return html;
 }
 
-// ─────────────────────────────────────────────────────────
-// BUILD SECTIONS
-// ─────────────────────────────────────────────────────────
-function buildSections(fields) {
-  return [
-    {
-      icon: '🎯', iconClass: 'gold',
-      number: 'Section 01',
-      title: 'What Makes This Scenario Unique',
-      field: 'What_Makes_Unique',
-      type: 'default',
-      open: true
-    },
-    {
-      icon: '⚙️', iconClass: 'teal',
-      number: 'Section 02',
-      title: 'Performance System Deep Dive',
-      field: 'Performance_System',
-      type: 'default',
-      open: false
-    },
-    {
-      icon: '🌍', iconClass: 'rose',
-      number: 'Section 03',
-      title: 'Cultural Context & Dynamics',
-      field: 'Cultural_Context',
-      type: 'default',
-      open: false
-    },
-    {
-      icon: '📚', iconClass: 'navy',
-      number: 'Section 04',
-      title: 'Learning Objectives',
-      field: 'Learning_Objectives',
-      type: 'objectives',
-      open: false
-    },
-    {
-      icon: '💬', iconClass: 'sage',
-      number: 'Section 05',
-      title: 'Critical Thinking & Discussion Questions',
-      field: 'Discussion_Questions',
-      type: 'discussion',
-      open: false
-    }
-  ].map((s, i) => ({
-    ...s,
-    content: parseAndRenderText(fields[s.field] || '', s.type)
-  }));
-}
-
-// ─────────────────────────────────────────────────────────
-// RENDER PAGE
-// ─────────────────────────────────────────────────────────
-function renderPage(scenarioName, fields) {
-  // Update hero
-  document.getElementById('hero-title').textContent = scenarioName;
+function buildPage(name, data) {
+  document.getElementById('hero-title').textContent = name;
   document.getElementById('hero-subtitle').textContent =
-    `Explore the performance management philosophy, cultural context, and strategic decisions that define the ${scenarioName} approach to people management.`;
+    `Explore the performance management philosophy, cultural context, and strategic decisions that define the ${name} approach to people management.`;
 
-  const sections = buildSections(fields);
+  const sections = [
+    {icon:'🎯',cls:'gold',num:'Section 01',title:'What Makes This Scenario Unique',key:'What_Makes_Unique',type:'default'},
+    {icon:'⚙️',cls:'teal',num:'Section 02',title:'Performance System Deep Dive',key:'Performance_System',type:'default'},
+    {icon:'🌍',cls:'rose',num:'Section 03',title:'Cultural Context & Dynamics',key:'Cultural_Context',type:'default'},
+    {icon:'📚',cls:'navy',num:'Section 04',title:'Learning Objectives',key:'Learning_Objectives',type:'objectives'},
+    {icon:'💬',cls:'sage',num:'Section 05',title:'Critical Thinking & Discussion',key:'Discussion_Questions',type:'discussion'},
+  ];
 
-  const html = sections.map((s, i) => `
-    <div class="section-card ${s.open ? 'open' : ''}" id="section-${i}">
-      <div class="section-header" onclick="toggleSection(${i})">
+  document.getElementById('content-area').innerHTML = sections.map((s,i) => `
+    <div class="section-card ${i===0?'open':''}" id="sec-${i}">
+      <div class="section-header" onclick="toggle(${i})">
         <div class="section-header-left">
-          <div class="section-icon ${s.iconClass}">${s.icon}</div>
-          <div class="section-meta">
-            <div class="section-number">${s.number}</div>
+          <div class="section-icon ${s.cls}">${s.icon}</div>
+          <div>
+            <div class="section-number">${s.num}</div>
             <div class="section-title">${s.title}</div>
           </div>
         </div>
@@ -581,52 +534,27 @@ function renderPage(scenarioName, fields) {
       </div>
       <div class="section-body">
         <div class="section-divider"></div>
-        <div class="section-content">
-          ${s.content}
-        </div>
+        <div class="section-content">${renderText(data[s.key]||'',s.type)}</div>
       </div>
-    </div>
-  `).join('');
-
-  document.getElementById('content-area').innerHTML = html;
+    </div>`).join('');
 }
 
-function toggleSection(index) {
-  const card = document.getElementById(`section-${index}`);
-  card.classList.toggle('open');
-}
+function toggle(i) { document.getElementById(`sec-${i}`).classList.toggle('open'); }
 
-// ─────────────────────────────────────────────────────────
-// SHOW ERROR
-// ─────────────────────────────────────────────────────────
 function showError(msg) {
-  document.getElementById('hero-title').textContent = 'Learning Guide';
+  document.getElementById('hero-title').textContent = 'Scenario Not Found';
   document.getElementById('content-area').innerHTML = `
     <div class="error-state">
-      <div style="font-size:32px; margin-bottom:16px;">⚠️</div>
-      <div style="font-size:15px; font-weight:600; color:#1C1C1E; margin-bottom:8px;">Unable to load scenario</div>
-      <div style="font-size:13px; color:#8A8A8E;">${msg}</div>
+      <div style="font-size:40px;margin-bottom:16px;">⚠️</div>
+      <div style="font-size:15px;font-weight:600;color:#1C1C1E;margin-bottom:8px;">Unable to load scenario</div>
+      <div style="font-size:13px;color:#8A8A8E;">${msg}</div>
     </div>`;
 }
 
-// ─────────────────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────────────────
-async function init() {
-  const scenarioName = getScenarioFromURL();
-  if (!scenarioName) {
-    showError('No scenario specified. Please navigate here from a scenario page.');
-    return;
-  }
-  try {
-    const fields = await fetchScenarioData(scenarioName);
-    renderPage(scenarioName, fields);
-  } catch (err) {
-    showError(err.message || 'Something went wrong. Please try again.');
-  }
-}
-
-init();
+const name = getScenario();
+if (!name) showError('No scenario specified. Please navigate here from a scenario page.');
+else if (!SCENARIOS[name]) showError(`"${name}" not found. Available: ${Object.keys(SCENARIOS).join(', ')}`);
+else buildPage(name, SCENARIOS[name]);
 </script>
 </body>
 </html>
