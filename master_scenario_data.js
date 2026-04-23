@@ -1,5 +1,5 @@
 // PMS Toolkit - Master Scenario Data
-// Version 3.1 - 6 Scenarios (High-Growth Tech Startup enriched with full 9-Box distribution)
+// Version 3.1 - 6 Scenarios (High-Growth Tech Startup enriched)
 // Last updated: Apr 23, 2026
 // Total employees: 300 (6 scenarios × 50)
 // Manufacturing Firm RecordId: recAXwhOxEFGqJGJ6
@@ -717,8 +717,8 @@ window.PMS_MASTER_DATA = {
           "role": "Marketing Specialist"
         }
       ]
-    }    },
-    "Professional Services Firm": {
+    },
+        "Professional Services Firm": {
       "name": "Professional Services Firm",
       "currency": "GBP",
       "currencySymbol": "£",
