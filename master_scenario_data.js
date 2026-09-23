@@ -1,3 +1,4 @@
+window.PMS_MASTER_DATA=
 {
   "recFOxRBFHIT0az8u": {
     "name": "High-Growth Tech Startup",
@@ -4510,3 +4511,5 @@
     ]
   }
 }
+;
+window.getScenarioByRecordId=function(id){return window.PMS_MASTER_DATA[id]||null;};
