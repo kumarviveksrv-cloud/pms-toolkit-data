@@ -65,6 +65,16 @@
         return;
       }
 
+      /* ---- Softr compatibility shim -----------------------------------
+       * Pages migrated from Softr may call window.viorahIsPro() or
+       * window.viorahSaveKey(). This bridges the old key-based API to
+       * Clerk so pasted page code works without any modification.
+       * TODO: remove after a clean post-migration pass through all pages.
+       * ------------------------------------------------------------------ */
+      window.viorahIsPro   = function () { return window._pmsPlan === 'pro'; };
+      window.viorahIsAdmin = function () { return window._pmsPlan === 'admin'; };
+      window.viorahSaveKey = function () { /* no-op — Clerk handles auth now */ };
+
       /* Auth OK — reveal page and hydrate nav/user chip */
       bodyEl.style.visibility = '';
       _hydrateNavUserChip(user);
