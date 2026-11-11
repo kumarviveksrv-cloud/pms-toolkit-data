@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Virorah PMS</title>
+  <meta name="description" content="Sign in to Virorah Performance Management System">
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg); }
+
+    .auth-shell {
+      display: flex;
+      width: 100%;
+      max-width: 440px;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      padding: 32px 20px;
+    }
+
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .auth-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .auth-logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .auth-logo-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    /* Clerk component mounts here */
+    #clerk-sign-in {
+      width: 100%;
+    }
+
+    /* Style overrides for Clerk's embedded UI */
+    .cl-rootBox { width: 100% !important; }
+    .cl-card {
+      background: var(--bg-card) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+    }
+    .cl-headerTitle  { color: var(--text) !important; }
+    .cl-headerSubtitle { color: var(--text-muted) !important; }
+    .cl-formFieldLabel { color: var(--text-muted) !important; font-size: 12.5px !important; }
+    .cl-formFieldInput {
+      background: var(--bg-card-2) !important;
+      border-color: var(--border) !important;
+      color: var(--text) !important;
+    }
+    .cl-formButtonPrimary {
+      background: var(--accent) !important;
+      border-radius: var(--radius-sm) !important;
+    }
+    .cl-formButtonPrimary:hover { background: var(--accent-dim) !important; }
+    .cl-footerActionText { color: var(--text-muted) !important; }
+    .cl-footerActionLink { color: var(--accent) !important; }
+    .cl-identityPreviewEditButtonIcon { color: var(--accent) !important; }
+    .cl-logoBox { display: none !important; } /* hide Clerk's own logo; we show ours */
+    .cl-internal-b3fm6y { background: var(--bg-card) !important; } /* divider line */
+    .cl-dividerText { color: var(--text-dim) !important; }
+    .cl-socialButtonsBlockButton {
+      background: var(--bg-card-2) !important;
+      border-color: var(--border) !important;
+      color: var(--text) !important;
+    }
+
+    .auth-footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .auth-footer a { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<div class="auth-shell">
+  <div>
+    <div class="auth-logo">
+      <img src="/virorah_logo_navmatch.png" alt="Virorah PMS">
+      <div>
+        <div class="auth-logo-text">Virorah PMS</div>
+        <div class="auth-logo-sub">Performance Intelligence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clerk mounts its sign-in form here -->
+  <div id="clerk-sign-in"></div>
+
+  <p class="auth-footer">
+    By signing in you agree to our
+    <a href="/pages/terms.html">Terms</a> &amp;
+    <a href="/pages/privacy.html">Privacy Policy</a>.
+  </p>
+</div>
+
+<script>
+  window.PMS_CLERK_PK = 'pk_live_REPLACE_WITH_REAL_KEY';
+
+  // After sign-in, redirect to: ?redirect_url param, or /pages/home.html
+  const params = new URLSearchParams(window.location.search);
+  const afterSignIn = params.get('redirect_url') || '/pages/home.html';
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.crossOrigin = 'anonymous';
+  script.src = 'https://unpkg.com/@clerk/clerk-js@5/dist/clerk.browser.js';
+  script.onload = async function () {
+    const Clerk = new window.Clerk(window.PMS_CLERK_PK);
+    await Clerk.load();
+
+    // If already signed in, go straight to destination
+    if (Clerk.user) {
+      window.location.replace(afterSignIn);
+      return;
+    }
+
+    // Mount Clerk's sign-in component
+    Clerk.mountSignIn(document.getElementById('clerk-sign-in'), {
+      afterSignInUrl: afterSignIn,
+      afterSignUpUrl: afterSignIn,
+      signUpUrl: '/signup.html'
+    });
+  };
+  document.head.appendChild(script);
+</script>
+
+</body>
+</html>
