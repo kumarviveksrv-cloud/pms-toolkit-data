@@ -63,7 +63,7 @@
   script.crossOrigin = 'anonymous';
   script.src = 'https://unpkg.com/@clerk/clerk-js@5/dist/clerk.browser.js';
   script.onload = async function () {
-    const Clerk = new window.Clerk(window.PMS_CLERK_PK);
+    const Clerk = new window.Clerk((location.hostname === 'staging.virorah.com') ? 'pk_test_aGFuZHktZmluY2gtNDA2Ny5jbGVyay5hY2NvdW50cy5kZXYk' : window.PMS_CLERK_PK);
     await Clerk.load();
     if (Clerk.user) { window.location.replace('/pages/home.html'); return; }
     Clerk.mountSignUp(document.getElementById('clerk-sign-up'), {

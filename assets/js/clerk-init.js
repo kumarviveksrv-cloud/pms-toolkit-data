@@ -16,8 +16,11 @@
   const REQUIRE_PRO  = cfg.requirePro  === true;  // default: false
 
   /* ---- Clerk publishable key (replace with real key before deploy) ---- */
-  const CLERK_PK = window.PMS_CLERK_PK ||
-    'pk_live_Y2xlcmsudmlyb3JhaC5jb20k'; // placeholder - set in _config.js
+  /* Staging site (staging.virorah.com) uses the Clerk development instance, because the
+   * production instance only accepts pms.virorah.com. Remove this branch after cutover. */
+  const STAGING_PK = 'pk_test_aGFuZHktZmluY2gtNDA2Ny5jbGVyay5hY2NvdW50cy5kZXYk';
+  const CLERK_PK = (location.hostname === 'staging.virorah.com') ? STAGING_PK : (window.PMS_CLERK_PK ||
+    'pk_live_Y2xlcmsudmlyb3JhaC5jb20k'); // placeholder - set in _config.js
 
   /* ---- Pages ---- */
   const LOGIN_PATH  = '/login.html';
