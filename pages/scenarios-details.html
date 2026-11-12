@@ -723,7 +723,7 @@ if(!tryRender()){
   },250);
   if(!window.PMS_MASTER_DATA){
     /* FIX: use fetch+eval on github.io - raw.githubusercontent.com is blocked by browsers */
-    fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+    fetch('/scenario_data_all.js')
       .then(function(r){return r.text();})
       .then(function(code){eval(code);})
       .catch(function(){});
@@ -2063,7 +2063,7 @@ setTimeout(function(){if(!window._sch3done)tryRender();},5000);
 <!-- Shared Scenario Context Loader - runs once for all 3 tools -->
 <script>
   (function(){
-  var GITHUB_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js';
+  var GITHUB_URL='/scenario_data_all.js';
   var SCENARIO_META={
     'High-Growth Tech Startup':{size:'mid',stage:'growth'},
     'Professional Services Firm':{size:'mid',stage:'mature'},
@@ -6561,7 +6561,7 @@ function updateStats(data,scenarioName){
     '<strong>'+scenarioName+'</strong> - '+(profile.insight||'OKR health data loaded.');
 }
 
-var GITHUB_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js';
+var GITHUB_URL='/scenario_data_all.js';
 
 function buildGalaxy(sc){
   var data=generateOKRData(sc.employees,sc.name);
@@ -6667,7 +6667,7 @@ if(window.__OKR_SCENARIO__&&window.__OKR_SCENARIO__.loaded&&window.getScenarioBy
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -7171,7 +7171,7 @@ var container=document.getElementById('nb-container');
 container.innerHTML='<div class="nb-loading">Loading 9-Box Grid...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -8070,7 +8070,7 @@ function loadData(){
     try{var stored=localStorage.getItem('pms_custom_org_v1');if(stored){var co=JSON.parse(stored);if(co&&co.employees){initScene(co,co.scenarioName||'Your Organisation');return;}}}catch(e){}
     showError('No uploaded org data found - please upload your CSV first');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showError('Scenario not found');return;}initScene(sc,sc.scenarioName||sc.name||'Scenario');})
     .catch(function(){showError('Failed to load data - please refresh');});
@@ -8847,7 +8847,7 @@ function barRow(label,grad,p,count){
 
 function getRecordId(){ return new URLSearchParams(window.location.search).get('recordId'); }
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -9897,7 +9897,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){initWith(co.employees,co.scenarioName||'Your Org');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}initWith(sc.employees||[],sc.name||'Scenario');})
     .catch(function(){showErr('Failed to load data');});
@@ -11316,7 +11316,7 @@ setTimeout(render,400);
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -11979,7 +11979,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -12849,7 +12849,7 @@ function render(scenario){
         renderIncrementCalculator(scenario);
     }
 
-    fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+    fetch('/scenario_data_all.js')
         .then(function(r) { return r.text(); })
         .then(function(code) { eval(code); loadScenarioData(); })
         .catch(function() { container.innerHTML = '<div class="increment-loading">&#10060; Failed to load data. Please refresh.</div>'; });
@@ -13088,7 +13088,7 @@ window.__PMS_CUSTOM_ORG__=customOrg;
 var SCROLL_MAP={'okr':'okr-container','ninebox':'nb-container','bellcurve':'bellcurve-container','increment':'increment-container','dashboard':'mgr-container','calibration':'cal-container','dei':'dei-container','succession':'suc-container','compensation':'ceq-container','pip':'pip-container','feedback360':'f360-container','bsc':'bsc-root'};
 var _origFetch=window.fetch;
 window.fetch=function(url){
-  if(url&&url.indexOf('master_scenario_data.js')>=0){return _origFetch.apply(this,arguments).then(function(r){return r.text().then(function(code){var inj='\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';return new Response(code+inj,{status:200,headers:{'Content-Type':'application/javascript'}});});});}
+  if(url&&url.indexOf('scenario_data_all.js')>=0){return _origFetch.apply(this,arguments).then(function(r){return r.text().then(function(code){var inj='\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';return new Response(code+inj,{status:200,headers:{'Content-Type':'application/javascript'}});});});}
   if(url&&url.indexOf('master_dei_data.js')>=0){return _origFetch.apply(this,arguments).then(function(r){return r.text().then(function(code){var inj='\nwindow.getDEIByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getDEIByRecordId);';return new Response(code+inj,{status:200,headers:{'Content-Type':'application/javascript'}});});});}
   return _origFetch.apply(this,arguments);
 };
@@ -13254,7 +13254,7 @@ function buildOrientBanner(){
 var methodNote='<div class="ceq-method-note"><strong>Methodology note:</strong> All compa-ratio calculations on this page compare each employee\'s salary to the internal midpoint of their level\'s pay range (min + max salary within the same level, divided by 2) -- derived entirely from your own organisation\'s data. This measures <strong>internal pay consistency</strong>, not external market competitiveness. If your whole org underpays a level, employees will still show near 100% compa-ratio. For external benchmarking, you need market salary survey data.</div>';
 
 Promise.all([
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js').then(function(r){return r.text();}),
+  fetch('/scenario_data_all.js').then(function(r){return r.text();}),
   fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js').then(function(r){return r.text();})
 ]).then(function(codes){
   eval(codes[0]);eval(codes[1]);
@@ -14004,7 +14004,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -14286,7 +14286,7 @@ function showErr(msg){var el=document.getElementById('ceq3-load');if(el)el.inner
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -14862,7 +14862,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){ return r.text(); })
   .then(function(code){
     eval(code);
@@ -15218,7 +15218,7 @@ function render(scenario){
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -15783,7 +15783,7 @@ var container=document.getElementById('dei-container');
 container.innerHTML='<div class="dei-loading">Loading DEI Analytics...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-var MASTER_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js';
+var MASTER_URL='/scenario_data_all.js';
 var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
 
 function buildOrientBanner(){
@@ -16568,7 +16568,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -16913,7 +16913,7 @@ function showErr(msg){var el=document.getElementById('dei3-loading');if(el)el.in
   var SCROLL_MAP = {'okr':'okr-container','ninebox':'nb-container','bellcurve':'bellcurve-container','increment':'increment-container','dashboard':'mgr-container','calibration':'cal-container','dei':'dei-container','succession':'suc-container','compensation':'ceq-container','pip':'pip-container','feedback360':'f360-container','bsc':'bsc-root'};
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) { return _origFetch.apply(this, arguments).then(function(response) { return response.text().then(function(code) { var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);'; return new Response(code + injection, {status:200,headers:{'Content-Type':'application/javascript'}}); }); }); }
+    if (url && url.indexOf('scenario_data_all.js') >= 0) { return _origFetch.apply(this, arguments).then(function(response) { return response.text().then(function(code) { var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);'; return new Response(code + injection, {status:200,headers:{'Content-Type':'application/javascript'}}); }); }); }
     if (url && url.indexOf('master_okr_data.js') >= 0) { return _origFetch.apply(this, arguments).then(function(response) { return response.text().then(function(code) { var injection = '\nwindow.getOKRByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getOKRByRecordId);'; return new Response(code + injection, {status:200,headers:{'Content-Type':'application/javascript'}}); }); }); }
     if (url && url.indexOf('master_dei_data.js') >= 0) { return _origFetch.apply(this, arguments).then(function(response) { return response.text().then(function(code) { var injection = '\nwindow.getDEIByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getDEIByRecordId);'; return new Response(code + injection, {status:200,headers:{'Content-Type':'application/javascript'}}); }); }); }
     return _origFetch.apply(this, arguments);
@@ -17489,7 +17489,7 @@ var container=document.getElementById('suc-container');
 container.innerHTML='<div class="suc-loading">Loading Succession Planning...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-var MASTER_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js';
+var MASTER_URL='/scenario_data_all.js';
 var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
 
 function buildOrientBanner(){
@@ -18256,7 +18256,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -18540,7 +18540,7 @@ function showErr(msg){var el=document.getElementById('suc3-load');if(el)el.inner
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -19240,7 +19240,7 @@ function wireOrientClose(){
   }
 }
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -19491,7 +19491,7 @@ function render(scenario){
 
   var _origFetch = window.fetch;
   window.fetch = function(url) {
-    if (url && url.indexOf('master_scenario_data.js') >= 0) {
+    if (url && url.indexOf('scenario_data_all.js') >= 0) {
       return _origFetch.apply(this, arguments).then(function(response) {
         return response.text().then(function(code) {
           var injection = '\nwindow.getScenarioByRecordId=(function(_o){return function(id){if(id==="custom_org")return window.__PMS_CUSTOM_ORG__;return _o?_o(id):null;};})(window.getScenarioByRecordId);';
@@ -20167,7 +20167,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+fetch('/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -20912,7 +20912,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No uploaded org data found');return;
   }
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_scenario_data.js')
+  fetch('/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -22590,7 +22590,7 @@ setTimeout(render,400);
      PMS TOOLKIT - WHAT IF SCENARIO PLANNER v5 (banner + repositioned hero copy, jump row removed)
      Now lives below PMS Health Index in the Meta group, not at page top.
      Bottom quick-jump row removed - redundant with the persistent left sidebar.
-     SCENARIO-CONNECTED: reads live from master_scenario_data.js
+     SCENARIO-CONNECTED: reads live from scenario_data_all.js
      Gold accent hero - strategic entry point
      ============================================================ -->
 <style>
@@ -23526,7 +23526,7 @@ window.wiScrollTo=function(id){
 /* MAIN PLANNER */
 (function(){
 
-  var GITHUB_URL='https://raw.githubusercontent.com/kumarviveksrv-cloud/pms-toolkit-data/main/master_scenario_data.js';
+  var GITHUB_URL='/scenario_data_all.js';
 
   /* Mutable defaults - updated when scenario budget is known */
   var DEFAULTS={budget:8,topMult:1.5,lowInc:0,topPct:15,lowPct:10,pipThresh:2};
