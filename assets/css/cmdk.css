@@ -19,3 +19,7 @@
 .cmdk-item.active{background: rgba(102,126,234,.15);}
 .cmdk-item-cat{font-size: 10px; color: rgba(165,180,252,.4); text-transform: uppercase; letter-spacing: .5px; flex-shrink: 0; margin-left: 12px;}
 #cmdk-empty{padding: 24px; text-align: center; color: rgba(165,180,252,.4); font-size: 13px;}
+
+/* Mounted inside the topbar instead of floating */
+.pms-topbar-actions #cmdk-trigger { position: static; top: auto; right: auto; }
+/* Hidden below 768px by the rule above (keyboard shortcut is desktop only). */

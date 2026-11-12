@@ -608,3 +608,13 @@ select { cursor: pointer; appearance: none; background-image: url("data:image/sv
 
   .pms-topbar { padding: 0 16px; }
 }
+
+/* "Start" badge on the Platform Tour nav item (ported from Softr .pt-nav-badge) */
+.nav-start-badge {
+  display: inline-flex; align-items: center; margin-left: auto;
+  padding: 2px 9px; border-radius: 20px; font-size: 9px; font-weight: 800;
+  letter-spacing: .5px; text-transform: uppercase;
+  background: linear-gradient(135deg, #667eea, #764ba2); color: #fff;
+  animation: pmsStartPulse 2.2s ease-in-out infinite;
+}
+@keyframes pmsStartPulse { 0%, 100% { opacity: 1; } 50% { opacity: .65; } }

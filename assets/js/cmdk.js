@@ -13,7 +13,12 @@
       '<span style="color:rgba(165,180,252,.4);font-size:14px;">&#8981;</span>' +
       '<input id="cmdk-input" type="text" placeholder="Jump to any calculator or page..." autocomplete="off">' +
       '<span id="cmdk-hint">ESC</span></div><div id="cmdk-list"></div></div></div>';
-    while (wrap.firstChild) document.body.appendChild(wrap.firstChild);
+    var slot = document.querySelector('.pms-topbar-actions');
+    while (wrap.firstChild) {
+      var node = wrap.firstChild;
+      if (slot && node.id === 'cmdk-trigger') slot.appendChild(node);
+      else document.body.appendChild(node);
+    }
   }
   function boot() {
     mountMarkup();

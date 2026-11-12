@@ -135,9 +135,13 @@
     const proBadge = item.pro && !isPro
       ? '<span class="nav-pro-badge">PRO</span>'
       : '';
+    const startBadge = item.href === '/pages/tour.html'
+      ? '<span class="nav-start-badge">Start</span>'
+      : '';
     return '<a class="pms-nav-item" href="' + item.href + '">' +
       icon(item.icon) +
       '<span>' + item.label + '</span>' +
+      startBadge +
       proBadge +
       '</a>';
   }
