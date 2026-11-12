@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can you score 80? Most managers can't.</title>
+  <meta name="description" content="Rate 12 employees. Allocate a budget. Defend your calibration. Handle two difficult conversations. Four rounds. Scored out of 100. How good are you, really?">
+  <link rel="canonical" href="https://pms.virorah.com/pages/game.html">
+  <meta property="og:title" content="Can you score 80? Most managers can't.">
+  <meta property="og:description" content="Rate 12 employees. Allocate a budget. Defend your calibration. Handle two difficult conversations. Four rounds. Scored out of 100. How good are you, really?">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Manager Game</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── EXACT LH DESIGN SYSTEM ── */
+#mc-game {
+  font-family: 'DM Sans', sans-serif;
+  background: #080612;
+  color: rgba(255,255,255,.9);
+  padding-bottom: 60px;
+  position: relative;
+}
+#mc-game * { box-sizing: border-box; }
+.mc-screen { display: none; width: 100%; animation: mcFade .3s ease; }
+.mc-screen.active { display: block; }
+#mc-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%; }
+@keyframes mcFade { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── HEADER ── */
+.mc-header {
+  background: linear-gradient(135deg,#080612,#0f0829);
+  border-bottom: 1px solid rgba(102,126,234,.15);
+  padding: 16px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.mc-logo { font-family: 'Space Grotesk',sans-serif; font-size: 16px; font-weight: 700; color: white; letter-spacing: -.3px; }
+.mc-logo span { color: #667eea; }
+.mc-progress-strip { display: flex; gap: 8px; align-items: center; }
+.mc-pip { width: 32px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.08); transition: background .3s; }
+.mc-pip.active { background: #667eea; }
+.mc-pip.done { background: #10b981; }
+.mc-score-live {
+  font-family: 'Space Grotesk',sans-serif; font-size: 13px; font-weight: 700; color: #f59e0b;
+  background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2);
+  padding: 4px 12px; border-radius: 100px; display: none;
+}
+
+/* ── HERO - exact LH pattern ── */
+.mc-hero {
+  position: relative; overflow: hidden;
+  background: #080612;
+  border-bottom: 1px solid rgba(102,126,234,.12);
+  padding: 52px 52px 44px;
+  z-index: 1;
+}
+.mc-hero-body {
+  position: relative; z-index: 2;
+}
+.mc-hero-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 40px;
+  flex-wrap: wrap; margin-bottom: 32px;
+}
+.mc-hero-left { flex: 1; min-width: 280px; }
+
+/* Eyebrow - exact LH lhh-eyebrow */
+.mc-eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(102,126,234,.6);
+  margin-bottom: 14px;
+}
+/* Live pill - exact lhh-live */
+.mc-live-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 14px; border-radius: 100px;
+  background: rgba(102,126,234,.1); border: 1px solid rgba(102,126,234,.25);
+  margin-bottom: 16px;
+}
+.mc-live-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #667eea; flex-shrink: 0;
+}
+.mc-live-txt { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(102,126,234,.8); }
+
+/* Title - exact lhh-title-plain / lhh-title-color pattern */
+.mc-title-plain {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3.2vw, 40px); font-weight: 700;
+  letter-spacing: -1px; line-height: 1.1;
+  margin-bottom: 0; color: #f4f3ff;
+}
+.mc-title-color {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3.2vw, 40px); font-weight: 700;
+  letter-spacing: -1px; line-height: 1.1;
+  margin-bottom: 14px;
+}
+/* Shimmer - exact lhhSH1/lhhSH2 */
+.mc-shimmer-main {
+  display: inline;
+  background: linear-gradient(90deg,#f4f3ff 20%,#c4b5fd 40%,#ffffff 50%,#a5b4fc 60%,#f4f3ff 80%);
+  background-size: 900px 100%;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: mcSH1 4s ease 0.6s infinite;
+}
+.mc-shimmer-accent {
+  display: inline;
+  background: linear-gradient(90deg,rgba(245,158,11,.9) 20%,rgba(251,191,36,1) 40%,rgba(255,220,100,1) 50%,rgba(251,191,36,1) 60%,rgba(245,158,11,.9) 80%);
+  background-size: 900px 100%;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: mcSH2 4s ease 1.2s infinite;
+}
+@keyframes mcSH1 { 0%{background-position:-700px 0} 70%,100%{background-position:900px 0} }
+@keyframes mcSH2 { 0%{background-position:-700px 0} 70%,100%{background-position:900px 0} }
+
+.mc-hero-sub {
+  font-size: 13px; color: rgba(165,180,252,.6);
+  line-height: 1.75; margin-bottom: 20px; max-width: 500px;
+}
+
+/* Chips - exact lhh-chips */
+.mc-chips { display: flex; gap: 9px; flex-wrap: wrap; }
+.mc-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 600; padding: 5px 13px;
+  border-radius: 100px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.6);
+}
+
+/* Stats widget - exact lhh-stats */
+.mc-stats {
+  display: flex; gap: 1px;
+  background: rgba(102,126,234,.15);
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(102,126,234,.2);
+}
+.mc-stat {
+  padding: 18px 22px; text-align: center;
+  background: #0a0818; min-width: 88px;
+}
+.mc-stat:not(:last-child) { border-right: 1px solid rgba(102,126,234,.15); }
+.mc-stat-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px; font-weight: 700; letter-spacing: -1px;
+  line-height: 1; color: #f4f3ff; margin-bottom: 5px;
+}
+.mc-stat-lbl {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(165,180,252,.4);
+}
+
+/* Strip - exact lhh-strip */
+.mc-strip {
+  position: relative; z-index: 2;
+  border-top: 1px solid rgba(102,126,234,.15);
+  padding: 11px 52px; display: flex; gap: 5px;
+  flex-wrap: wrap; align-items: center;
+  background: rgba(0,0,0,.25);
+}
+.mc-meta { font-size: 11px; color: rgba(165,180,252,.4); }
+.mc-meta strong { color: rgba(165,180,252,.7); font-weight: 600; }
+
+/* ── CONTENT ── */
+.mc-content { padding: 0 40px; position: relative; z-index: 1; }
+.mc-section-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(165,180,252,.45); margin-bottom: 10px; text-align: center;
+}
+.mc-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px,3vw,26px); font-weight: 700;
+  color: white; text-align: center; margin-bottom: 32px; letter-spacing: -.5px;
+}
+
+/* Round cards */
+.mc-rounds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 48px; }
+@media(max-width:560px){ .mc-rounds-grid { grid-template-columns: 1fr; } }
+.mc-round-card {
+  background: #13111f; border-radius: 18px; padding: 24px;
+  border: 1px solid rgba(102,126,234,.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  position: relative; overflow: hidden;
+}
+.mc-round-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(102,126,234,.12); border-color: rgba(102,126,234,.25); }
+.mc-round-pts-badge {
+  position: absolute; top: 14px; right: 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700; color: rgba(245,158,11,.6);
+}
+.mc-round-icon { font-size: 26px; margin-bottom: 12px; }
+.mc-round-name { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: white; margin-bottom: 8px; letter-spacing: -.3px; }
+.mc-round-desc { font-size: 12px; color: rgba(165,180,252,.45); line-height: 1.7; margin-bottom: 14px; }
+.mc-round-trap {
+  font-size: 10px; font-weight: 700; color: #f87171;
+  background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.15);
+  border-radius: 6px; padding: 3px 10px; display: inline-block;
+}
+
+/* Grade scale */
+.mc-grades {
+  background: #13111f; border: 1px solid rgba(102,126,234,.15);
+  border-radius: 14px; padding: 24px; margin-bottom: 48px;
+}
+.mc-grades-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 16px; }
+@media(max-width:500px){ .mc-grades-grid { grid-template-columns: 1fr 1fr; } }
+.mc-grade-item { text-align: center; padding: 16px 8px; border-radius: 10px; }
+
+/* CTA box */
+.mc-cta-box {
+  background: linear-gradient(135deg,#12082a,#0a1220);
+  border: 1px solid rgba(102,126,234,.2);
+  border-radius: 18px; padding: 40px; margin-bottom: 32px; text-align: center;
+}
+.mc-cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 6px; letter-spacing: -.5px; }
+.mc-cta-sub { font-size: 13px; color: rgba(165,180,252,.45); margin-bottom: 28px; }
+
+/* Appraisal % input */
+.mc-budget-input-wrap { margin-bottom: 20px; }
+.mc-budget-input-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(165,180,252,.5); margin-bottom: 10px; display: block;
+}
+.mc-budget-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
+.mc-budget-field {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(102,126,234,.3);
+  border-radius: 10px; padding: 12px 20px; font-size: 22px; font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif; color: #f59e0b;
+  outline: none; width: 110px; text-align: center; transition: border-color .2s;
+}
+.mc-budget-field:focus { border-color: #667eea; }
+.mc-budget-pct-lbl { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: rgba(165,180,252,.5); }
+.mc-budget-diff-tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 4px 14px; border-radius: 100px; letter-spacing: .5px;
+  transition: all .2s; min-width: 100px;
+}
+.mc-budget-hint-txt { font-size: 12px; color: rgba(165,180,252,.4); margin-top: 6px; }
+
+.mc-hard-note {
+  font-size: 12px; color: #f87171;
+  background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2);
+  border-radius: 8px; padding: 10px 16px; margin-bottom: 16px; display: none; text-align: left;
+}
+.mc-name-wrap { margin-bottom: 24px; }
+.mc-name-label { font-size: 12px; color: rgba(255,255,255,.45); font-weight: 600; margin-bottom: 8px; }
+.mc-name-input {
+  background: rgba(255,255,255,.06); border: 2px solid rgba(255,255,255,.1);
+  border-radius: 10px; padding: 13px 20px; font-size: 14px; color: white;
+  font-family: 'DM Sans', sans-serif; outline: none; width: 300px; max-width: 100%;
+  transition: border-color .2s;
+}
+.mc-name-input:focus { border-color: #667eea; }
+.mc-name-input::placeholder { color: rgba(255,255,255,.25); }
+.mc-start-btn {
+  background: linear-gradient(135deg,#667eea,#764ba2); color: white;
+  border: none; padding: 16px 52px; border-radius: 12px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700;
+  cursor: pointer; box-shadow: 0 8px 28px rgba(102,126,234,.4); transition: all .2s;
+}
+.mc-start-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(102,126,234,.5); }
+.mc-start-btn:disabled { opacity: .4; cursor: not-allowed; }
+.mc-pb-note { font-size: 12px; color: rgba(255,255,255,.25); margin-top: 12px; }
+
+/* Leaderboard */
+.mc-lb-wrap {
+  background: #13111f; border: 1px solid rgba(102,126,234,.15);
+  border-radius: 13px; padding: 24px; margin-bottom: 22px;
+}
+.mc-lb-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: white; margin-bottom: 14px; letter-spacing: -.3px; }
+.mc-lb-table { width: 100%; border-collapse: collapse; }
+.mc-lb-table th { padding: 9px 12px; text-align: left; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.3); border-bottom: 1px solid rgba(255,255,255,.06); }
+.mc-lb-table td { padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 12px; }
+.mc-lb-empty { text-align: center; padding: 28px; font-size: 13px; color: rgba(165,180,252,.4); }
+
+/* IN-GAME SCREENS */
+.mc-screen-inner { padding: 32px 40px; position: relative; z-index: 1; }
+.mc-round-header {
+  background: #1a1a35; border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; padding: 20px 24px; margin-bottom: 22px;
+  display: flex; align-items: center; gap: 14px;
+}
+.mc-round-badge {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.mc-round-h-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: white; letter-spacing: -.3px; }
+.mc-round-h-desc { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 3px; }
+.mc-round-h-pts {
+  margin-left: auto; font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700; color: #f59e0b;
+  background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2);
+  padding: 5px 12px; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+}
+
+/* Employee cards */
+.mc-emp-card { background: #1a1a35; border: 1px solid rgba(255,255,255,.08); border-radius: 13px; padding: 20px; margin-bottom: 12px; transition: border-color .2s; }
+.mc-emp-card.rated { border-color: rgba(102,126,234,.35); }
+.mc-emp-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mc-emp-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#667eea,#764ba2); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk',sans-serif; font-size: 14px; font-weight: 700; color: white; flex-shrink: 0; }
+.mc-emp-name { font-family: 'Space Grotesk',sans-serif; font-size: 14px; font-weight: 700; color: white; }
+.mc-emp-role { font-size: 11px; color: rgba(255,255,255,.4); }
+.mc-emp-dept { margin-left: auto; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; background: rgba(102,126,234,.12); color: #a5b4fc; border: 1px solid rgba(102,126,234,.2); flex-shrink: 0; }
+.mc-emp-data { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.mc-data-item { background: rgba(255,255,255,.04); border-radius: 8px; padding: 10px 12px; }
+.mc-data-lbl { font-size: 10px; font-weight: 700; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
+.mc-data-val { font-size: 12px; color: white; line-height: 1.45; }
+.mc-data-val.good { color: #10b981; }
+.mc-data-val.warn { color: #f59e0b; }
+.mc-data-val.bad { color: #ef4444; }
+.mc-narrative { font-size: 11px; color: rgba(255,255,255,.5); line-height: 1.7; padding: 10px 14px; background: rgba(255,255,255,.03); border-radius: 8px; border-left: 3px solid #667eea; margin-bottom: 14px; font-style: italic; }
+.mc-rating-row { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; }
+.mc-rating-lbl { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.4); margin-right: 2px; }
+.mc-r-btn { width: 40px; height: 40px; border-radius: 9px; border: 2px solid rgba(255,255,255,.1); background: transparent; font-family: 'Space Grotesk',sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,.4); cursor: pointer; transition: all .2s; }
+.mc-r-btn:hover { border-color: #667eea; color: white; }
+.mc-r-btn.sel-1 { background: #fee2e2; border-color: #ef4444; color: #ef4444; }
+.mc-r-btn.sel-2 { background: #fef3c7; border-color: #f59e0b; color: #b45309; }
+.mc-r-btn.sel-3 { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); color: white; }
+.mc-r-btn.sel-4 { background: rgba(59,130,246,.2); border-color: #3b82f6; color: #93c5fd; }
+.mc-r-btn.sel-5 { background: rgba(16,185,129,.2); border-color: #10b981; color: #6ee7b7; }
+.mc-rating-chosen { font-size: 11px; color: rgba(255,255,255,.4); margin-left: 6px; }
+
+/* Budget round */
+.mc-budget-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media(max-width:480px){ .mc-budget-stats { grid-template-columns: 1fr; } }
+.mc-budget-stat { background: #1a1a35; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 16px; text-align: center; }
+.mc-budget-val { font-family: 'Space Grotesk',sans-serif; font-size: 22px; font-weight: 700; color: #f59e0b; font-variant-numeric: tabular-nums; }
+.mc-budget-val.ok { color: #10b981; }
+.mc-budget-val.over { color: #ef4444; }
+.mc-budget-lbl { font-size: 10px; color: rgba(255,255,255,.35); margin-top: 3px; }
+.mc-budget-bar-wrap { background: rgba(255,255,255,.06); border-radius: 5px; height: 7px; overflow: hidden; margin-bottom: 6px; }
+.mc-budget-bar { height: 100%; border-radius: 5px; background: linear-gradient(90deg,#667eea,#764ba2); transition: width .3s; }
+.mc-budget-bar.over { background: linear-gradient(90deg,#ef4444,#dc2626); }
+.mc-budget-note { font-size: 11px; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+.mc-budget-hint { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.15); border-radius: 8px; padding: 10px 14px; font-size: 11px; color: rgba(255,255,255,.6); margin-bottom: 18px; line-height: 1.6; }
+.mc-inc-card { background: #1a1a35; border: 1px solid rgba(255,255,255,.08); border-radius: 11px; padding: 16px; margin-bottom: 10px; }
+.mc-inc-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.mc-inc-av { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,#667eea,#764ba2); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk',sans-serif; font-size: 12px; font-weight: 700; color: white; flex-shrink: 0; }
+.mc-inc-name { font-family: 'Space Grotesk',sans-serif; font-size: 13px; font-weight: 700; color: white; }
+.mc-inc-role { font-size: 10px; color: rgba(255,255,255,.35); }
+.mc-inc-badge { margin-left: auto; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 100px; flex-shrink: 0; }
+.rb1 { background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.2); }
+.rb2 { background: rgba(245,158,11,.12); color: #fcd34d; border: 1px solid rgba(245,158,11,.2); }
+.rb3 { background: rgba(255,255,255,.07); color: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.1); }
+.rb4 { background: rgba(59,130,246,.12); color: #93c5fd; border: 1px solid rgba(59,130,246,.2); }
+.rb5 { background: rgba(16,185,129,.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,.2); }
+.mc-slider-row { display: flex; gap: 12px; align-items: center; }
+.mc-slider { flex: 1; accent-color: #667eea; cursor: pointer; }
+.mc-inc-pct { font-family: 'Space Grotesk',sans-serif; font-size: 18px; font-weight: 700; color: #667eea; min-width: 46px; text-align: right; font-variant-numeric: tabular-nums; }
+.mc-inc-band { font-size: 10px; color: rgba(255,255,255,.3); margin-top: 5px; }
+.mc-r1-warn { font-size: 10px; color: #f87171; font-weight: 700; margin-top: 4px; display: none; }
+
+/* Calibration */
+.mc-cal-case { background: #1a1a35; border: 1px solid rgba(255,255,255,.08); border-radius: 13px; padding: 24px; margin-bottom: 18px; }
+.mc-cal-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mc-cal-challenge { background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.18); border-radius: 9px; padding: 14px 16px; margin-bottom: 14px; font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.65; }
+.mc-cal-challenge strong { color: #f87171; }
+.mc-hard-cal-note { background: rgba(239,68,68,.06); border: 1px solid rgba(239,68,68,.15); border-radius: 9px; padding: 12px 15px; font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 16px; line-height: 1.55; display: none; }
+
+/* Options */
+.mc-opts { display: flex; flex-direction: column; gap: 9px; }
+.mc-opt { background: rgba(255,255,255,.04); border: 2px solid rgba(255,255,255,.08); border-radius: 9px; padding: 14px 16px; font-size: 13px; color: rgba(255,255,255,.75); cursor: pointer; transition: all .2s; text-align: left; font-family: 'DM Sans',sans-serif; width: 100%; line-height: 1.55; }
+.mc-opt:hover:not(:disabled) { border-color: #667eea; background: rgba(102,126,234,.08); }
+.mc-opt.selected { border-color: #667eea; background: rgba(102,126,234,.1); }
+.mc-opt.correct { border-color: #10b981; background: rgba(16,185,129,.08); color: #6ee7b7; }
+.mc-opt.wrong { border-color: #ef4444; background: rgba(239,68,68,.07); color: #f87171; }
+.mc-opt-lbl { font-family: 'Space Grotesk',sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; color: rgba(255,255,255,.25); }
+.mc-opt.correct .mc-opt-lbl { color: #10b981; }
+.mc-opt.wrong .mc-opt-lbl { color: #ef4444; }
+.mc-opt-feedback { font-size: 11px; color: rgba(255,255,255,.45); font-style: italic; margin-top: 7px; display: none; }
+.mc-opt.correct .mc-opt-feedback, .mc-opt.wrong .mc-opt-feedback { display: block; }
+.mc-penalty-pill { font-size: 10px; font-weight: 700; color: #f87171; background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.3); padding: 1px 7px; border-radius: 100px; margin-left: 6px; }
+
+/* Conversation */
+.mc-convo-box { background: linear-gradient(135deg,rgba(102,126,234,.08),rgba(118,75,162,.08)); border: 1px solid rgba(102,126,234,.18); border-radius: 13px; padding: 24px; margin-bottom: 18px; }
+.mc-convo-emp { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mc-convo-setup { font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 12px; line-height: 1.6; }
+.mc-convo-bubble { background: rgba(255,255,255,.05); border-radius: 11px; padding: 14px 16px; font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.82); margin-bottom: 16px; border-left: 3px solid #667eea; font-style: italic; }
+.mc-convo-q { font-family: 'Space Grotesk',sans-serif; font-size: 13px; font-weight: 700; color: #f59e0b; margin-bottom: 14px; }
+
+/* Buttons */
+.mc-next-btn { background: linear-gradient(135deg,#667eea,#764ba2); color: white; border: none; padding: 14px 36px; border-radius: 10px; font-family: 'Space Grotesk',sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all .2s; margin-top: 20px; box-shadow: 0 4px 18px rgba(102,126,234,.3); }
+.mc-next-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(102,126,234,.4); }
+.mc-next-btn:disabled { opacity: .4; cursor: not-allowed; }
+
+/* Results */
+.mc-results-hero { background: linear-gradient(135deg,#0a0a1a,#1a0a35,#0a1220); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 48px; text-align: center; margin-bottom: 22px; }
+.mc-score-big { font-family: 'Space Grotesk',sans-serif; font-size: 80px; font-weight: 800; background: linear-gradient(135deg,#f59e0b,#fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 4px; letter-spacing: -3px; font-variant-numeric: tabular-nums; }
+.mc-score-outof { font-size: 12px; color: rgba(255,255,255,.3); margin-bottom: 8px; }
+.mc-score-grade { font-family: 'Space Grotesk',sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.3px; }
+.mc-score-summary { font-size: 13px; color: rgba(255,255,255,.4); max-width: 460px; margin: 0 auto 20px; line-height: 1.7; }
+.mc-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+@media(max-width:480px){ .mc-breakdown { grid-template-columns: 1fr; } }
+.mc-bd-item { background: #1a1a35; border: 1px solid rgba(255,255,255,.08); border-radius: 11px; padding: 18px; }
+.mc-bd-title { font-size: 10px; font-weight: 700; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+.mc-bd-score { font-family: 'Space Grotesk',sans-serif; font-size: 28px; font-weight: 700; color: #f59e0b; font-variant-numeric: tabular-nums; letter-spacing: -.5px; }
+.mc-bd-max { font-size: 11px; color: rgba(255,255,255,.25); }
+.mc-bd-bar { background: rgba(255,255,255,.06); border-radius: 4px; height: 5px; margin-top: 8px; overflow: hidden; }
+.mc-bd-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg,#667eea,#764ba2); }
+.mc-bd-desc { font-size: 10px; color: rgba(255,255,255,.3); margin-top: 5px; }
+.mc-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.mc-btn-primary { background: linear-gradient(135deg,#667eea,#764ba2); color: white; border: none; padding: 13px 30px; border-radius: 9px; font-family: 'Space Grotesk',sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .2s; }
+.mc-btn-primary:hover { transform: translateY(-1px); }
+.mc-btn-secondary { background: rgba(255,255,255,.07); color: white; border: 1px solid rgba(255,255,255,.12); padding: 13px 30px; border-radius: 9px; font-family: 'Space Grotesk',sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .2s; }
+.mc-btn-secondary:hover { background: rgba(255,255,255,.11); }
+
+@media(max-width:640px){
+  .mc-hero { padding: 36px 24px 32px; }
+  .mc-strip { padding: 10px 24px; }
+  .mc-content { padding: 0 24px; }
+  .mc-screen-inner { padding: 24px; }
+  .mc-header { padding: 14px 24px; }
+  .mc-stats { flex-direction: column; }
+}
+</style>
+
+<canvas id="mc-bg"></canvas>
+
+<div id="mc-game">
+
+  <!-- HEADER -->
+  <div class="mc-header">
+    <div class="mc-progress-strip">
+      <div class="mc-pip" id="pip1"></div>
+      <div class="mc-pip" id="pip2"></div>
+      <div class="mc-pip" id="pip3"></div>
+      <div class="mc-pip" id="pip4"></div>
+      <div class="mc-pip" id="pip5"></div>
+    </div>
+    <div class="mc-score-live" id="mc-score-live">Score: 0/100</div>
+  </div>
+
+  <!-- SCREEN 1: INTRO -->
+  <div class="mc-screen active" id="screen-intro">
+
+    <!-- HERO - exact LH layout -->
+    <div class="mc-hero">
+      <div class="mc-hero-body">
+        <div class="mc-hero-top">
+          <div class="mc-hero-left">
+            <div class="mc-eyebrow">PMS MANAGER CHALLENGE</div>
+            <div class="mc-live-pill">
+              <div class="mc-live-dot"></div>
+              <span class="mc-live-txt">Free &middot; Scored Assessment</span>
+            </div>
+            <div class="mc-title-plain"><span class="mc-shimmer-main">How good a manager</span></div>
+            <div class="mc-title-color"><span class="mc-shimmer-accent">are you, really?</span></div>
+            <div class="mc-hero-sub">Four rounds. Twelve employees. Real performance dilemmas. Two legally complex conversations. One score out of 100. Most managers don't like what they find out.</div>
+            <div class="mc-chips">
+              <span class="mc-chip">&#x2B50; 4 Rounds</span>
+              <span class="mc-chip">&#x1F465; 12 Employees</span>
+              <span class="mc-chip">&#x23F1; ~15 Minutes</span>
+              <span class="mc-chip">&#x1F3C6; 100 Points</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+            <div class="mc-stats">
+              <div class="mc-stat">
+                <div class="mc-stat-val" id="sv1">0</div>
+                <div class="mc-stat-lbl">Points</div>
+              </div>
+              <div class="mc-stat">
+                <div class="mc-stat-val" id="sv2">0</div>
+                <div class="mc-stat-lbl">Rounds</div>
+              </div>
+              <div class="mc-stat">
+                <div class="mc-stat-val" id="sv3">0</div>
+                <div class="mc-stat-lbl">Minutes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mc-strip">
+        <span class="mc-meta">Rounds: <strong>Rate &middot; Increment &middot; Calibrate &middot; Converse</strong></span>
+        <span class="mc-meta">&nbsp;&middot;&nbsp; Scoring: <strong>Exact match + Partial credit + Penalty on Hard</strong></span>
+        <span class="mc-meta">&nbsp;&middot;&nbsp; Warning: <strong>Most first attempts score under 50/100</strong></span>
+      </div>
+    </div>
+
+    <div class="mc-content" style="padding-top:56px;">
+      <div class="mc-section-eyebrow">What you'll face</div>
+      <div class="mc-section-title">Four rounds. Each one harder than the last.</div>
+      <div class="mc-rounds-grid">
+        <div class="mc-round-card">
+          <div class="mc-round-pts-badge">40 pts</div>
+          <div class="mc-round-icon">&#x2B50;</div>
+          <div class="mc-round-name">Rate 12 Employees</div>
+          <div class="mc-round-desc">Review real performance data - OKRs, peer feedback, narratives. Rate each 1–5. Three are deliberately designed to trap overraters and recency-bias thinkers.</div>
+          <div class="mc-round-trap">3 trap employees</div>
+        </div>
+        <div class="mc-round-card">
+          <div class="mc-round-pts-badge">20 pts</div>
+          <div class="mc-round-icon">&#x1F4B0;</div>
+          <div class="mc-round-name">Allocate Increments</div>
+          <div class="mc-round-desc">Distribute salary budget across your team. Stay within rating bands, maintain a healthy bell curve. Enter your real org appraisal budget and defend every decision.</div>
+          <div class="mc-round-trap">Rating 1 increment = -3pts</div>
+        </div>
+        <div class="mc-round-card">
+          <div class="mc-round-pts-badge">20 pts</div>
+          <div class="mc-round-icon">&#x2696;&#xFE0F;</div>
+          <div class="mc-round-name">Defend in Calibration</div>
+          <div class="mc-round-desc">Senior leaders challenge your ratings. A CFO arguing for a 5 on revenue. A VP citing undocumented gaps. Pick the wrong response and lose points.</div>
+          <div class="mc-round-trap">Wrong answer = -3pts on Hard</div>
+        </div>
+        <div class="mc-round-card">
+          <div class="mc-round-pts-badge">20 pts</div>
+          <div class="mc-round-icon">&#x1F4AC;</div>
+          <div class="mc-round-name">Two Difficult Conversations</div>
+          <div class="mc-round-desc">An employee who rated herself a 5 asks why she got a 4. Then an employee on a PIP with no prior documentation mentions an employment lawyer.</div>
+          <div class="mc-round-trap">Wrong answer = -4pts on Hard</div>
+        </div>
+      </div>
+
+      <div class="mc-grades">
+        <div class="mc-section-eyebrow" style="text-align:left;margin-bottom:0;">Grade scale</div>
+        <div class="mc-grades-grid">
+          <div class="mc-grade-item" style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);">
+            <div style="font-size:22px;margin-bottom:6px;">&#x1F3C6;</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#f59e0b;margin-bottom:3px;">Expert</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.3);">85–100</div>
+          </div>
+          <div class="mc-grade-item" style="background:rgba(102,126,234,.06);border:1px solid rgba(102,126,234,.15);">
+            <div style="font-size:22px;margin-bottom:6px;">&#x2B50;</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#818cf8;margin-bottom:3px;">Proficient</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.3);">70–84</div>
+          </div>
+          <div class="mc-grade-item" style="background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);">
+            <div style="font-size:22px;margin-bottom:6px;">&#x1F4C8;</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#34d399;margin-bottom:3px;">Developing</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.3);">50–69</div>
+          </div>
+          <div class="mc-grade-item" style="background:rgba(107,114,128,.06);border:1px solid rgba(107,114,128,.15);">
+            <div style="font-size:22px;margin-bottom:6px;">&#x1F331;</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:3px;">Novice</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.3);">&lt;50</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-cta-box">
+        <div class="mc-cta-title">Ready to find out?</div>
+        <div class="mc-cta-sub">Enter your org's appraisal budget. Enter your name. Hit start.</div>
+
+        <!-- APPRAISAL % INPUT - replaces Easy/Standard/Hard buttons -->
+        <div class="mc-budget-input-wrap">
+          <label class="mc-budget-input-label">Your org's appraisal budget</label>
+          <div class="mc-budget-row">
+            <input class="mc-budget-field" id="mc-budget-pct" type="number" min="4" max="15" value="7" oninput="updateBudgetDiff()">
+            <span class="mc-budget-pct-lbl">%</span>
+            <span class="mc-budget-diff-tag" id="mc-diff-tag">Standard</span>
+          </div>
+          <div class="mc-budget-hint-txt" id="mc-diff-hint">Type the actual appraisal % your org uses (4–15%). The game calibrates difficulty around your real constraints.</div>
+        </div>
+        <div class="mc-hard-note" id="hard-note">&#x26A0; Tough budget - this is Hard mode. Wrong calibration answers cost -3pts. Wrong conversation answers cost -4pts. Stricter bell curve required.</div>
+
+        <div class="mc-name-wrap">
+          <div class="mc-name-label">Your name (appears on leaderboard)</div>
+          <input class="mc-name-input" id="mc-name-input" type="text" maxlength="24" placeholder="Enter your name...">
+        </div>
+        <button class="mc-start-btn" id="mc-start-btn" onclick="startGame()" disabled>Start the Challenge &#x2192;</button>
+        <div class="mc-pb-note" id="mc-pb-note"></div>
+      </div>
+
+      <div class="mc-lb-wrap">
+        <div class="mc-lb-title">&#x1F3C6; Leaderboard</div>
+        <div id="lb-intro-content"><div class="mc-lb-empty">&#x1F3C5; No scores yet - be the first on the board!</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: RATE EMPLOYEES -->
+  <div class="mc-screen" id="screen-round1">
+    <div class="mc-screen-inner">
+      <div class="mc-round-header">
+        <div class="mc-round-badge">&#x2B50;</div>
+        <div>
+          <div class="mc-round-h-title">Round 1 - Rate Your Team</div>
+          <div class="mc-round-h-desc">Review each employee's data carefully. Rate 1–5. Three profiles are designed to mislead.</div>
+        </div>
+        <div class="mc-round-h-pts" id="r1-count">0/12 rated</div>
+      </div>
+      <div id="r1-employees"></div>
+      <button class="mc-next-btn" id="r1-next" onclick="goRound2()" disabled>Rate all 12 to continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: BUDGET -->
+  <div class="mc-screen" id="screen-round2">
+    <div class="mc-screen-inner">
+      <div class="mc-round-header">
+        <div class="mc-round-badge">&#x1F4B0;</div>
+        <div>
+          <div class="mc-round-h-title">Round 2 - Allocate Increments</div>
+          <div class="mc-round-h-desc">Stay within the budget. Stay within rating bands. Rating 1 employees receiving any increment costs you points.</div>
+        </div>
+        <div class="mc-round-h-pts" id="r2-budget-badge">Budget: 7%</div>
+      </div>
+      <div class="mc-budget-stats">
+        <div class="mc-budget-stat"><div class="mc-budget-val" id="r2-spent">$0</div><div class="mc-budget-lbl">Spent</div></div>
+        <div class="mc-budget-stat"><div class="mc-budget-val" id="r2-total">$0</div><div class="mc-budget-lbl">Budget</div></div>
+        <div class="mc-budget-stat"><div class="mc-budget-val" id="r2-dist">-</div><div class="mc-budget-lbl">Distribution</div></div>
+      </div>
+      <div class="mc-budget-bar-wrap"><div class="mc-budget-bar" id="r2-bar" style="width:0%"></div></div>
+      <div class="mc-budget-note" id="r2-note"></div>
+      <div class="mc-budget-hint" id="r2-bands">Bands: Rating 5 = 13–18% · Rating 4 = 8–12% · Rating 3 = 4–7% · Rating 2 = 0–3% · Rating 1 = 0% <span style="color:#f87171;font-weight:700;">(any increment = -3pts)</span></div>
+      <div id="r2-sliders"></div>
+      <button class="mc-next-btn" onclick="goRound3()">Next: Calibration Challenge &#x2192;</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: CALIBRATION -->
+  <div class="mc-screen" id="screen-round3">
+    <div class="mc-screen-inner">
+      <div class="mc-round-header">
+        <div class="mc-round-badge">&#x2696;&#xFE0F;</div>
+        <div>
+          <div class="mc-round-h-title">Round 3 - Defend in Calibration</div>
+          <div class="mc-round-h-desc" id="r3-desc">Your ratings are being challenged. Pick the best response.</div>
+        </div>
+        <div class="mc-round-h-pts">Up to 20 pts</div>
+      </div>
+      <div class="mc-hard-cal-note" id="hard-cal-note">&#x26A0; Hard mode: These cases are significantly more complex. Wrong answers cost -3pts.</div>
+      <div id="r3-cases"></div>
+      <button class="mc-next-btn" id="r3-next" onclick="goRound4a()" disabled>Answer all cases to continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 5: CONVERSATION 1 -->
+  <div class="mc-screen" id="screen-round4a">
+    <div class="mc-screen-inner">
+      <div class="mc-round-header">
+        <div class="mc-round-badge">&#x1F4AC;</div>
+        <div>
+          <div class="mc-round-h-title">Round 4a - The Difficult Conversation</div>
+          <div class="mc-round-h-desc" id="r4a-desc">One chance to get it right. Up to 10 points.</div>
+        </div>
+        <div class="mc-round-h-pts">10 pts</div>
+      </div>
+      <div class="mc-convo-box">
+        <div class="mc-convo-emp">
+          <div class="mc-emp-av">LC</div>
+          <div><div class="mc-emp-name">Laura Chen</div><div class="mc-emp-role">Marketing Lead &middot; Your rating: <strong id="r4a-rating" style="color:white;">-</strong></div></div>
+        </div>
+        <div class="mc-convo-setup">Laura just received her Rating 4. She rated herself a 5 in her self-assessment. She's visibly disappointed.</div>
+        <div class="mc-convo-bubble">"I have to be honest - I'm really disappointed. I worked harder this year than any year before. I grew organic traffic 67%, led the rebrand solo, got great feedback from Sales. I genuinely thought I was performing at a 5 level. Can you help me understand the difference between what I did and what a 5 looks like?"</div>
+        <div class="mc-convo-q">How do you respond to Laura?</div>
+        <div class="mc-opts" id="r4a-opts">
+          <button class="mc-opt" id="r4a-opt-0" onclick="setConvo(0,0)">
+            <div class="mc-opt-lbl">Option 1</div>
+            "I hear you and your frustration is valid. Honestly, you were very close to a 5 - this was a tough call. Let me see if I can revisit it with the calibration committee."
+            <div class="mc-opt-feedback">Never imply the rating can be revisited unless it genuinely can. This creates false expectations and makes the eventual "no" significantly harder. It also damages the credibility of calibration.</div>
+          </button>
+          <button class="mc-opt" id="r4a-opt-1" onclick="setConvo(0,1)">
+            <div class="mc-opt-lbl">Option 2</div>
+            "A 4 means you exceeded expectations - which is a genuinely strong outcome. The specific gap to a 5 at your level is about proactive strategic scope: identifying opportunities before they're asked for. The pipeline attribution gap and the fact that the rebrand came from the brief rather than from you proactively are the two specific factors. What I want to do right now is map out exactly what a 5 looks like for you next cycle - so the path is completely clear."
+            <div class="mc-opt-feedback">Excellent. Acknowledges the strong performance, gives the specific gap with evidence, and immediately pivots to a clear forward path. This is the conversation that retains people.</div>
+          </button>
+          <button class="mc-opt" id="r4a-opt-2" onclick="setConvo(0,2)">
+            <div class="mc-opt-lbl">Option 3</div>
+            "The calibration process involves the full leadership team and the 4 reflects the group's view. I'm not in a position to revisit it."
+            <div class="mc-opt-feedback">Technically accurate but completely unsatisfying. Hiding behind process without engaging with Laura's specific question generates resentment, not understanding.</div>
+          </button>
+          <button class="mc-opt" id="r4a-opt-3" onclick="setConvo(0,3)">
+            <div class="mc-opt-lbl">Option 4</div>
+            "Your results were genuinely strong and you should be proud of them. The 5 is reserved for people who also demonstrate consistent impact at the next level - strategic initiative, cross-functional influence, shaping direction rather than executing it. You're on that trajectory. Let's talk about what that looks like concretely for next year."
+            <div class="mc-opt-feedback">Also strong. Validates the performance, explains the standard without being dismissive, and pivots constructively. Slightly less specific on the evidence but equally valid in approach.</div>
+          </button>
+        </div>
+      </div>
+      <button class="mc-next-btn" id="r4a-next" onclick="goRound4b()" disabled>Next: Conversation 2 &#x2192;</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 6: CONVERSATION 2 -->
+  <div class="mc-screen" id="screen-round4b">
+    <div class="mc-screen-inner">
+      <div class="mc-round-header">
+        <div class="mc-round-badge">&#x1F4AC;</div>
+        <div>
+          <div class="mc-round-h-title">Round 4b - The Difficult Conversation</div>
+          <div class="mc-round-h-desc" id="r4b-desc">One chance to get it right. Up to 10 points.</div>
+        </div>
+        <div class="mc-round-h-pts">10 pts</div>
+      </div>
+      <div class="mc-convo-box">
+        <div class="mc-convo-emp">
+          <div class="mc-emp-av">TE</div>
+          <div><div class="mc-emp-name">Tom Erikson</div><div class="mc-emp-role">Backend Engineer &middot; Your rating: <strong id="r4b-rating" style="color:white;">-</strong></div></div>
+        </div>
+        <div class="mc-convo-setup">Tom has just been placed on a PIP following his Rating 2. He's asked for an urgent meeting. He comes in visibly tense.</div>
+        <div class="mc-convo-bubble">"I've been thinking about this all weekend and I need to be direct with you. There is no documented feedback on file about my performance - nothing. Not one formal conversation. And now suddenly I'm on a PIP? I've spoken to a friend who's an employment lawyer and she says this could be constructive dismissal. I'm not signing anything until I understand what's going on."</div>
+        <div class="mc-convo-q">How do you respond to Tom?</div>
+        <div class="mc-opts" id="r4b-opts">
+          <button class="mc-opt" id="r4b-opt-0" onclick="setConvo(1,0)">
+            <div class="mc-opt-lbl">Option 1</div>
+            "Tom, I hear you - and honestly, you're right that we should have had formal conversations earlier. That's on me and I apologise. Let's rip up the PIP for now and start fresh with a proper feedback process."
+            <div class="mc-opt-feedback">Catastrophic. Withdrawing the PIP the moment legal language is mentioned signals that legal threats are an effective tool. It also abandons the legitimate performance process entirely.</div>
+          </button>
+          <button class="mc-opt" id="r4b-opt-1" onclick="setConvo(1,1)">
+            <div class="mc-opt-lbl">Option 2</div>
+            "I understand this feels sudden and I want to take your concerns seriously. You're right that formal documentation should have started earlier - I want to acknowledge that as a process gap. That said, the PIP is not a disciplinary action - it's a structured support plan. I'd like HR to join us so everything is properly documented and you have full support. I'm not going to discuss legal implications directly - that's between you and your advisors - but I want to be clear that we want you to succeed."
+            <div class="mc-opt-feedback">Correct. Acknowledges the documentation gap without withdrawing the process. Brings HR in immediately. Does not make promises or concessions under pressure. Firm but human.</div>
+          </button>
+          <button class="mc-opt" id="r4b-opt-2" onclick="setConvo(1,2)">
+            <div class="mc-opt-lbl">Option 3</div>
+            "The performance data speaks for itself - OKR scores, missed standups, production bugs. The PIP is based on evidence and is entirely appropriate. I'd recommend you review it carefully before making any decisions."
+            <div class="mc-opt-feedback">Factually defensible but tone-deaf. Not bringing HR in immediately is a serious process error. This response escalates rather than manages the situation.</div>
+          </button>
+          <button class="mc-opt" id="r4b-opt-3" onclick="setConvo(1,3)">
+            <div class="mc-opt-lbl">Option 4</div>
+            "I'm not in a position to discuss legal matters. You should direct any legal questions to HR directly. Until then, the PIP stands."
+            <div class="mc-opt-feedback">Completely abdicated. You've shut the conversation down without addressing anything. Tom leaves more hostile than when he arrived, and you've made no progress on the performance issue.</div>
+          </button>
+        </div>
+      </div>
+      <button class="mc-next-btn" id="r4b-next" onclick="showResults()" disabled>See My Results &#x2192;</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 7: RESULTS -->
+  <div class="mc-screen" id="screen-results">
+    <div class="mc-screen-inner">
+      <div class="mc-results-hero">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px;">Your Final Score</div>
+        <div class="mc-score-big" id="res-score">0</div>
+        <div class="mc-score-outof">out of 100</div>
+        <div class="mc-score-grade" id="res-grade">-</div>
+        <p class="mc-score-summary" id="res-summary">-</p>
+        <div id="res-pb" style="font-size:12px;color:rgba(255,255,255,.3);"></div>
+      </div>
+      <div class="mc-breakdown">
+        <div class="mc-bd-item"><div class="mc-bd-title">Rating Accuracy</div><div><span class="mc-bd-score" id="res-r1">0</span><span class="mc-bd-max"> / 40</span></div><div class="mc-bd-bar"><div class="mc-bd-fill" id="res-r1-bar" style="width:0%"></div></div><div class="mc-bd-desc" id="res-r1-desc">-</div></div>
+        <div class="mc-bd-item"><div class="mc-bd-title">Budget Management</div><div><span class="mc-bd-score" id="res-r2">0</span><span class="mc-bd-max"> / 20</span></div><div class="mc-bd-bar"><div class="mc-bd-fill" id="res-r2-bar" style="width:0%"></div></div><div class="mc-bd-desc">Budget compliance + distribution health</div></div>
+        <div class="mc-bd-item"><div class="mc-bd-title">Calibration Defence</div><div><span class="mc-bd-score" id="res-r3">0</span><span class="mc-bd-max"> / 20</span></div><div class="mc-bd-bar"><div class="mc-bd-fill" id="res-r3-bar" style="width:0%"></div></div><div class="mc-bd-desc" id="res-r3-desc">-</div></div>
+        <div class="mc-bd-item"><div class="mc-bd-title">Difficult Conversations</div><div><span class="mc-bd-score" id="res-r4">0</span><span class="mc-bd-max"> / 20</span></div><div class="mc-bd-bar"><div class="mc-bd-fill" id="res-r4-bar" style="width:0%"></div></div><div class="mc-bd-desc" id="res-r4-desc">-</div></div>
+      </div>
+      <div class="mc-lb-wrap">
+        <div class="mc-lb-title">&#x1F3C6; Leaderboard</div>
+        <div id="lb-results-content"><div class="mc-lb-empty">Loading...</div></div>
+      </div>
+      <div class="mc-actions">
+        <button class="mc-btn-primary" onclick="resetGame()">&#x1F504; Play Again</button>
+        <button class="mc-btn-secondary" onclick="copyScore()">&#x1F4CB; Copy Score</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* Inject LH-style animations */
+(function(){
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes mcFU{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes mcPL{0%,100%{opacity:1;box-shadow:0 0 8px #667eea;}50%{opacity:.3;box-shadow:none;}}'+
+    '.mc-hero-left{opacity:0;animation:mcFU .5s .05s ease forwards;}'+
+    '.mc-stats{opacity:0;animation:mcFU .5s .2s ease forwards;}'+
+    '.mc-strip{opacity:0;animation:mcFU .4s .4s ease forwards;}'+
+    '.mc-live-dot{animation:mcPL 2s ease-in-out infinite;}';
+  document.head.appendChild(s);
+})();
+
+/* Particle canvas */
+(function(){
+  var c=document.getElementById('mc-bg');if(!c)return;
+  var ctx=c.getContext('2d');var pts=[];
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+  function init(){pts=[];for(var i=0;i<60;i++)pts.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,o:Math.random()*.5+.1});}
+  function draw(){ctx.clearRect(0,0,c.width,c.height);for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<125){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(102,126,234,'+(0.12*(1-d/125))+')';ctx.lineWidth=.7;ctx.stroke();}}}pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>c.width)p.vx*=-1;if(p.y<0||p.y>c.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.fill();});requestAnimationFrame(draw);}
+  resize();init();draw();
+  setTimeout(function(){resize();init();},600);
+  window.addEventListener('resize',function(){resize();init();});
+})();
+
+/* Count-up for stats widget */
+(function(){
+  function cu(id,t,d){var el=document.getElementById(id);if(!el)return;var s=0,step=t/(d/16);var iv=setInterval(function(){s+=step;if(s>=t){el.textContent=t;clearInterval(iv);}else el.textContent=Math.floor(s);},16);}
+  setTimeout(function(){cu('sv1',100,900);cu('sv2',4,900);cu('sv3',15,900);},350);
+})();
+
+/* Budget % input -> difficulty mapping */
+window.updateBudgetDiff = function(){
+  var val = parseFloat(document.getElementById('mc-budget-pct').value)||7;
+  val = Math.min(15, Math.max(4, val));
+  var tag = document.getElementById('mc-diff-tag');
+  var hint = document.getElementById('mc-diff-hint');
+  var hardNote = document.getElementById('hard-note');
+  if(val <= 5){
+    G.diff = 'hard';
+    tag.textContent = 'Hard';
+    tag.style.cssText = 'background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25);';
+    hint.textContent = val+'% is a tight budget. Hard mode: stricter bell curve, wrong calibration = -3pts, wrong conversation = -4pts.';
+    hardNote.style.display = 'block';
+  } else if(val <= 7){
+    G.diff = 'standard';
+    tag.textContent = 'Standard';
+    tag.style.cssText = 'background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2);';
+    hint.textContent = val+'% - standard market range. Moderate bell curve required.';
+    hardNote.style.display = 'none';
+  } else {
+    G.diff = 'easy';
+    tag.textContent = 'Easy';
+    tag.style.cssText = 'background:rgba(16,185,129,.1);color:#6ee7b7;border:1px solid rgba(16,185,129,.25);';
+    hint.textContent = val+'% - generous budget. Easier to stay within bands.';
+    hardNote.style.display = 'none';
+  }
+  G.budgetPct = val;
+};
+
+/* Deprecated setDiff - kept for compatibility but not used */
+window.setDiff = function(d){ G.diff = d; };
+</script>
+
+<script>
+(function(){
+'use strict';
+
+var EMPLOYEES=[
+  {id:'E01',name:'Aisha Rahman',initials:'AR',role:'Senior Product Manager',dept:'Product',okr:'94%',okrC:'good',peer:'Exceptional - consistently cited as the strongest strategic thinker on the team',narrative:'Led the enterprise feature launch that drove 28% of Q3 ARR. Mentored two junior PMs. Delivered all three OKRs above target. Proactively flagged a competitive risk three months before it became visible to leadership.',correct:5,trap:false},
+  {id:'E02',name:'Marcus Webb',initials:'MW',role:'Engineering Manager',dept:'Engineering',okr:'71%',okrC:'warn',peer:'Strong technical leader but communication gaps with non-technical stakeholders',narrative:'His team shipped reliably but two major cross-functional dependencies slipped due to unclear status updates. Technical quality is high. Missed target on team growth - one IC left citing lack of career development conversations.',correct:3,trap:false},
+  {id:'E03',name:'Priya Nair',initials:'PN',role:'Sales Director',dept:'Sales',okr:'112%',okrC:'good',peer:'Driven, relentless, inspires the team - though sometimes makes commitments without internal alignment',narrative:'Closed the two largest enterprise accounts in company history. Hit 112% of ARR target. Occasionally makes commitments to clients she has not fully aligned internally - caused two operational escalations.',correct:4,trap:true},
+  {id:'E04',name:'Tom Erikson',initials:'TE',role:'Backend Engineer',dept:'Engineering',okr:'58%',okrC:'bad',peer:'Technically capable but disengaged - long to respond, misses standups regularly',narrative:'Significant delivery gaps in Q2 and Q3. Two critical bugs reached production. Has mentioned personal circumstances informally but has not formally disclosed. No prior documented feedback on file.',correct:2,trap:false},
+  {id:'E05',name:'Kezia Osei',initials:'KO',role:'UX Designer',dept:'Design',okr:'88%',okrC:'good',peer:'One of the best design collaborators - elevates everyone she works with',narrative:'Redesigned onboarding flow, improving D30 retention from 41% to 58%. Presented to the board in Q2. Slightly behind on design system OKR but all other KRs exceeded.',correct:4,trap:false},
+  {id:'E06',name:'Daniel Frost',initials:'DF',role:'Head of Finance',dept:'Finance',okr:'79%',okrC:'warn',peer:'Solid and reliable - not the most proactive but always delivers what is asked',narrative:'Closed books on time every month. Improved forecasting model. Missed the investor reporting OKR due to a systems migration delay partly outside his control. Reactive rather than strategic.',correct:3,trap:false},
+  {id:'E07',name:'Sofia Mendes',initials:'SM',role:'HR Business Partner',dept:'People',okr:'96%',okrC:'good',peer:'Trusted by everyone - unusual combination of empathy and rigour',narrative:'Designed the first structured succession planning programme. Reduced regrettable attrition by 22%. Led three complex ER cases to resolution with no legal exposure.',correct:5,trap:false},
+  {id:'E08',name:'Ryan Park',initials:'RP',role:'Junior Engineer',dept:'Engineering',okr:'81%',okrC:'good',peer:'Eager and sharp - two seniors flagged him as high potential',narrative:'First year in role. Shipped 9 of 11 planned features. Needed support on database migration but asked quickly. Two senior engineers flagged high potential for next cycle. On paper looks like a 4 - but this is his first year as a Junior. 81% and strong trajectory = Meets Expectations for level.',correct:3,trap:true},
+  {id:'E09',name:'Laura Chen',initials:'LC',role:'Marketing Lead',dept:'Marketing',okr:'83%',okrC:'good',peer:'Delivers consistently - strong executer, developing as a strategic thinker',narrative:'Grew organic traffic 67% year-over-year. Led rebrand with no agency support. Slightly missed pipeline attribution OKR - tracking was inconsistent early in the year.',correct:4,trap:false},
+  {id:'E10',name:'James Okafor',initials:'JO',role:'Customer Success Manager',dept:'CS',okr:'44%',okrC:'bad',peer:'Relationships are great but deliverables frequently late or incomplete',narrative:'NPS in his book of business is 42, well below the 65 team average. Three clients escalated formally in Q3. Received written feedback twice this year. Pattern has continued despite coaching.',correct:1,trap:false},
+  {id:'E11',name:'Nina Patel',initials:'NP',role:'Data Analyst',dept:'Analytics',okr:'91%',okrC:'good',peer:'Precise, proactive, explains complex things simply - highly valued by all teams',narrative:'Built the revenue attribution model Finance now depends on. Delivered board pack analytics for four consecutive quarters with zero errors. Started mentoring two junior analysts unprompted.',correct:4,trap:false},
+  {id:'E12',name:'Carlos Rivera',initials:'CR',role:'Account Executive',dept:'Sales',okr:'55%',okrC:'bad',peer:'Talented but inconsistent - great in some deals, disappears in others',narrative:'Hit Q1 target. Missed Q2 and Q3 significantly. Made positive changes since a direct feedback conversation in September - Q4 is tracking better but it is only 6 weeks of data. Pipeline is thin.',correct:2,trap:true},
+];
+
+var CAL_EASY=[
+  {empId:'E04',challenger:'VP Engineering',challenge:'"Tom is going through a genuinely difficult time personally. A 2 will destroy his confidence. Can we give him a 3 and use the development plan to address the gap?"',opts:[
+    {text:'You\'re right - personal circumstances should be factored in. Let\'s revise to 3 and document a supportive plan.',correct:false,feedback:'Personal circumstances can be context but cannot override documented performance gaps. A 3 without a documented gap history also creates legal exposure.'},
+    {text:'I hear the concern and we should support Tom actively. But the rating must reflect performance against the role, not personal circumstances. A 2 with a well-resourced PIP is actually more supportive than a 3 with no structure - it creates a clear, committed path forward.',correct:true,feedback:'Correct. The rating reflects performance. The support mechanism is the PIP. Separating the two is both legally defensible and genuinely caring.'},
+    {text:'Personal circumstances are not a calibration factor. The 2 stands.',correct:false,feedback:'Right conclusion, wrong approach. Shutting the conversation down entirely is poor facilitation.'},
+  ]},
+  {empId:'E12',challenger:'Sales Director',challenge:'"Carlos has shown real improvement in Q4. Rating him a 2 ignores his recent progress. I\'d like to bump him to a 3 to recognise the improvement."',opts:[
+    {text:'If he\'s genuinely improved, we should reflect that. Let\'s revise to a 3.',correct:false,feedback:'Six weeks of improvement does not override two quarters of documented underperformance. This creates a credibility problem for the rating system.'},
+    {text:'Q4 improvement is positive and should be noted in his development plan - and it is strong evidence for his next cycle rating. But the year-end rating reflects the full 12-month period. A 2 with clear recognition of Q4 improvement is the right outcome.',correct:true,feedback:'Correct. Year-end rating reflects the full cycle. Q4 recovery is evidence for the next cycle, not a basis for revising the annual rating.'},
+    {text:'Six weeks of data is not significant. The 2 stands and is non-negotiable.',correct:false,feedback:'The conclusion is right but the dismissive framing will generate resistance. Acknowledge the improvement while explaining why it doesn\'t change the annual rating.'},
+  ]},
+];
+
+var CAL_HARD=[
+  {empId:'E04',challenger:'VP Engineering',challenge:'"Tom has personal circumstances - and more importantly, you\'ve never formally documented any performance concerns with him before. How can you justify a 2 when there\'s no paper trail? He could argue this came out of nowhere."',opts:[
+    {text:'You\'re right - without documentation, we\'re exposed. Let\'s revise to a 3 this cycle and document properly going forward.',correct:false,feedback:'Dangerous. Revising the rating to avoid a legal risk you created is the wrong response. It sets a precedent and still does not fix the underlying problem.'},
+    {text:'The absence of prior documentation is a real risk we need to address - but the solution is to begin documenting now, not inflate the rating. Tom should receive a 2 with a formal PIP that constitutes the first documented record. We need to inform HR and ensure the PIP is watertight.',correct:true,feedback:'Correct. The documentation gap is a process failure - not a reason to inflate the rating. The PIP becomes the first formal record. HR involvement is essential.'},
+    {text:'The performance gap is obvious from the data. No prior documentation is needed to justify a 2 - the OKR scores and peer feedback speak for themselves.',correct:false,feedback:'This dramatically underestimates legal exposure. Peer feedback and OKR scores alone are insufficient without formal performance conversations on record.'},
+  ]},
+  {empId:'E03',challenger:'CFO',challenge:'"Priya hit 112% of target - she\'s the best performer in the business by revenue metrics. I don\'t understand why she\'s not a 5. Giving her a 4 is going to make her feel undervalued and she\'ll leave. Is that what we want?"',opts:[
+    {text:'The CFO has a point - retention risk is real. If she\'s our top revenue performer, a 5 sends the right signal. Let\'s revise.',correct:false,feedback:'Revenue performance is one dimension of a 5-level rating. Revising because of retention fear rather than on merit undermines the entire calibration process.'},
+    {text:'Priya\'s revenue performance is genuinely outstanding and should be recognised in her compensation conversation. The 4 reflects that she exceeds expectations. The specific gap to a 5 is the operational impact of her client commitments without internal alignment, which caused two formal escalations. The retention conversation and the rating conversation are separate.',correct:true,feedback:'Correct. The 5 requires excellence across all dimensions. The rating and retention/compensation conversations must be separated.'},
+    {text:'The rating is calibrated against behaviour, not just output. Priya\'s 4 is final.',correct:false,feedback:'The conclusion is defensible but the delivery is dismissive. The CFO\'s retention concern is legitimate and deserves a substantive response.'},
+  ]},
+  {empId:'E08',challenger:'CTO',challenge:'"Ryan has an 81% OKR score and two senior engineers calling him high potential. I think you\'re undervaluing him with a 3. This sends the wrong message to someone we want to retain. He should be a 4."',opts:[
+    {text:'High-potential employees should be recognised early - it\'s better for retention. Let\'s revise to a 4.',correct:false,feedback:'Inflating a rating based on potential rather than demonstrated performance at level is exactly what calibration is designed to prevent.'},
+    {text:'Ryan\'s trajectory is genuinely exciting and should be formally captured in his development plan and succession pipeline. But the 4 rating is reserved for someone who has demonstrated performance above the expectations of their role. At the Junior Engineer level, 81% OKR and strong relationships is meeting expectations at that level - not exceeding them.',correct:true,feedback:'Correct. Calibration must be level-adjusted. A strong junior performing as expected for a junior is a 3, not a 4.'},
+    {text:'Potential is not performance. Ryan is a 3. The rating is final.',correct:false,feedback:'Factually right but strategically tone-deaf. The CTO\'s retention concern is real. Dismissing it without engaging with the level-adjustment reasoning will generate ongoing resistance.'},
+  ]},
+];
+
+var CONVO_CORRECT=[[false,true,false,true],[false,true,false,false]];
+window.G={diff:'standard',budgetPct:7,name:'',ratings:{},increments:{},calAnswers:{},convoAnswers:{}};
+var LB_KEY='pms_game_lb_v3';
+var PB_KEY='pms_game_pb_v3';
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function getLB(){try{var d=localStorage.getItem(LB_KEY);return d?JSON.parse(d):[];}catch(e){return[];}}
+function saveLB(e){try{var d=getLB();d.push(e);d.sort(function(a,b){return b.score-a.score;});localStorage.setItem(LB_KEY,JSON.stringify(d.slice(0,50)));}catch(e){}}
+function getPB(){try{var d=localStorage.getItem(PB_KEY);return d?JSON.parse(d):null;}catch(e){return null;}}
+function savePB(s,g){try{var pb=getPB();if(!pb||s>pb.score)localStorage.setItem(PB_KEY,JSON.stringify({score:s,grade:g}));}catch(e){}}
+
+function showScreen(id){document.querySelectorAll('.mc-screen').forEach(function(s){s.classList.remove('active');});var el=document.getElementById(id);if(el)el.classList.add('active');window.scrollTo(0,0);}
+
+function updatePips(ar){for(var i=1;i<=5;i++){var p=document.getElementById('pip'+i);if(!p)continue;p.className='mc-pip';if(i<ar)p.classList.add('done');else if(i===ar)p.classList.add('active');}}
+
+function updateScoreLive(){var s=calcAll();var el=document.getElementById('mc-score-live');if(el){el.textContent='Score: '+(s.r1+s.r2+s.r3+s.r4)+'/100';el.style.display='block';}}
+
+function getBudgetData(){
+  var sal=1200000*EMPLOYEES.length;
+  var pct=G.budgetPct||7;
+  var budget=sal*pct/100;
+  var used=EMPLOYEES.reduce(function(t,e){return t+(1200000*(G.increments[e.id]||0)/100);},0);
+  return{pct:pct,budget:budget,used:used,over:used>budget};
+}
+
+function getIncRec(r){return{1:[0,0],2:[0,3],3:[4,7],4:[8,12],5:[13,18]}[r]||[4,7];}
+function formatK(n){return '$'+(n>=1000?Math.round(n/1000)+'K':n.toFixed(0));}
+
+function checkBell(){
+  var dist={1:0,2:0,3:0,4:0,5:0};
+  EMPLOYEES.forEach(function(e){dist[G.ratings[e.id]||3]++;});
+  var n=EMPLOYEES.length;
+  var top=(dist[4]+dist[5])/n;
+  var bot=(dist[1]+dist[2])/n;
+  return G.diff==='hard'?(top<=0.60&&bot>=0.20):(top<=0.70&&bot>=0.10);
+}
+
+function getCalCases(){return G.diff==='hard'?CAL_HARD:CAL_EASY;}
+
+function calcAll(){
+  var r1=0;
+  EMPLOYEES.forEach(function(e){
+    var r=G.ratings[e.id];if(!r)return;
+    var diff=Math.abs(r-e.correct);
+    if(G.diff==='hard'){if(diff===0)r1+=4;}
+    else{if(diff===0)r1+=4;else if(diff===1)r1+=1;}
+  });
+  r1=Math.min(r1,40);
+  var bd=getBudgetData();
+  var usedPct=bd.used/bd.budget;
+  var r2=0;
+  if(usedPct<=1.0)r2+=10;else if(usedPct<=1.03)r2+=5;
+  if(checkBell())r2+=10;
+  EMPLOYEES.forEach(function(e){if(G.ratings[e.id]===1&&(G.increments[e.id]||0)>0)r2-=3;});
+  r2=Math.max(0,r2);
+  var cases=getCalCases();var r3=0;var ptsEach=Math.floor(20/cases.length);
+  cases.forEach(function(c,i){var chosen=G.calAnswers[i];if(chosen===undefined)return;if(c.opts[chosen]&&c.opts[chosen].correct)r3+=ptsEach;else if(G.diff==='hard')r3=Math.max(0,r3-3);});
+  r3=Math.min(r3,20);
+  var r4=0;
+  [0,1].forEach(function(i){var chosen=G.convoAnswers[i];if(chosen===undefined)return;if(CONVO_CORRECT[i][chosen])r4+=10;else if(G.diff==='hard')r4=Math.max(0,r4-4);});
+  r4=Math.min(r4,20);
+  return{r1:r1,r2:r2,r3:r3,r4:r4,total:Math.max(0,r1+r2+r3+r4)};
+}
+
+function getGrade(s){
+  if(s>=85)return{label:'&#x1F3C6; Expert',color:'#f59e0b'};
+  if(s>=70)return{label:'&#x2B50; Proficient',color:'#667eea'};
+  if(s>=50)return{label:'&#x1F4C8; Developing',color:'#10b981'};
+  return{label:'&#x1F331; Novice',color:'#6b7280'};
+}
+
+function renderLB(cid,cs,cg,isYou){
+  var el=document.getElementById(cid);if(!el)return;
+  var entries=getLB().slice();
+  if(isYou&&G.name.trim())entries.push({name:G.name.trim(),score:cs,grade:cg,diff:G.budgetPct+'%',isYou:true});
+  entries.sort(function(a,b){return b.score-a.score;});
+  var top=entries.slice(0,10);
+  if(!top.length){el.innerHTML='<div class="mc-lb-empty">&#x1F3C5; No scores yet - be the first on the board!</div>';return;}
+  var icons=['&#x1F947;','&#x1F948;','&#x1F949;'];
+  var colors=['#f59e0b','#94a3b8','#cd7f32'];
+  var html='<table class="mc-lb-table"><thead><tr><th>#</th><th>Player</th><th>Score</th><th>Grade</th><th>Budget</th></tr></thead><tbody>';
+  top.forEach(function(e,i){
+    var rank=i<3?icons[i]:(i+1);
+    var rc=i<3?colors[i]:'rgba(255,255,255,.35)';
+    html+='<tr>'+
+      '<td style="font-weight:800;color:'+rc+'">'+rank+'</td>'+
+      '<td style="'+(e.isYou?'color:#a5b4fc;font-weight:700':'')+'">'+esc(e.name)+(e.isYou?' &#x1F448;':'')+'</td>'+
+      '<td style="font-family:\'Space Grotesk\',sans-serif;font-weight:700;color:#f59e0b;font-size:15px;">'+e.score+'</td>'+
+      '<td style="font-size:11px;color:rgba(255,255,255,.4);">'+esc(e.grade||'')+'</td>'+
+      '<td style="font-size:11px;color:rgba(255,255,255,.4);">'+esc(e.diff||'')+'</td>'+
+    '</tr>';
+  });
+  html+='</tbody></table>';
+  el.innerHTML=html;
+}
+
+function initIntro(){
+  var pb=getPB();
+  var pbEl=document.getElementById('mc-pb-note');
+  if(pb&&pbEl)pbEl.textContent='Personal best: '+pb.score+'/100 ('+pb.grade+')';
+  var inp=document.getElementById('mc-name-input');
+  var btn=document.getElementById('mc-start-btn');
+  if(inp&&btn){
+    inp.addEventListener('input',function(){G.name=this.value;btn.disabled=!this.value.trim();});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&this.value.trim())startGame();});
+  }
+  /* init budget diff display */
+  updateBudgetDiff();
+  renderLB('lb-intro-content',0,'',false);
+}
+
+window.startGame=function(){
+  var inp=document.getElementById('mc-name-input');
+  if(inp)G.name=inp.value.trim();
+  if(!G.name)return;
+  /* capture final budget pct */
+  var bField=document.getElementById('mc-budget-pct');
+  if(bField){G.budgetPct=Math.min(15,Math.max(4,parseFloat(bField.value)||7));}
+  EMPLOYEES.forEach(function(e){G.increments[e.id]=getIncRec(e.correct)[0];});
+  buildRound1();showScreen('screen-round1');updatePips(1);
+};
+
+function buildRound1(){
+  var container=document.getElementById('r1-employees');if(!container)return;
+  var rLabels={1:'Unsatisfactory',2:'Below Expectations',3:'Meets Expectations',4:'Exceeds Expectations',5:'Outstanding'};
+  var html='';
+  EMPLOYEES.forEach(function(e){
+    html+='<div class="mc-emp-card" id="card-'+e.id+'">'+
+      '<div class="mc-emp-top"><div class="mc-emp-av">'+esc(e.initials)+'</div>'+
+      '<div><div class="mc-emp-name">'+esc(e.name)+'</div><div class="mc-emp-role">'+esc(e.role)+'</div></div>'+
+      '<div class="mc-emp-dept">'+esc(e.dept)+'</div></div>'+
+      '<div class="mc-emp-data">'+
+        '<div class="mc-data-item"><div class="mc-data-lbl">OKR Achievement</div><div class="mc-data-val '+e.okrC+'">'+esc(e.okr)+'</div></div>'+
+        '<div class="mc-data-item"><div class="mc-data-lbl">Peer Feedback</div><div class="mc-data-val" style="font-size:11px;">'+esc(e.peer)+'</div></div>'+
+      '</div>'+
+      '<div class="mc-narrative">"'+esc(e.narrative)+'"</div>'+
+      '<div class="mc-rating-row"><span class="mc-rating-lbl">Rating:</span>'+
+      [1,2,3,4,5].map(function(n){return'<button class="mc-r-btn" id="rb-'+e.id+'-'+n+'" onclick="setRating(\''+e.id+'\','+n+')">'+n+'</button>';}).join('')+
+      '<span class="mc-rating-chosen" id="rc-'+e.id+'"></span></div>'+
+    '</div>';
+  });
+  container.innerHTML=html;
+}
+
+window.setRating=function(empId,r){
+  G.ratings[empId]=r;
+  var rLabels={1:'Unsatisfactory',2:'Below Expectations',3:'Meets Expectations',4:'Exceeds Expectations',5:'Outstanding'};
+  for(var n=1;n<=5;n++){var btn=document.getElementById('rb-'+empId+'-'+n);if(btn){btn.className='mc-r-btn';if(n===r)btn.className='mc-r-btn sel-'+r;}}
+  var lbl=document.getElementById('rc-'+empId);if(lbl)lbl.textContent=rLabels[r]||'';
+  var card=document.getElementById('card-'+empId);if(card)card.classList.add('rated');
+  var count=Object.keys(G.ratings).length;
+  var cEl=document.getElementById('r1-count');if(cEl)cEl.textContent=count+'/12 rated';
+  var nb=document.getElementById('r1-next');
+  if(nb){nb.disabled=count<12;nb.textContent=count<12?'Rate all 12 to continue ('+(12-count)+' remaining)':'Next: Allocate Increments \u2192';}
+  updateScoreLive();
+};
+
+window.goRound2=function(){
+  if(Object.keys(G.ratings).length<12)return;
+  buildRound2();showScreen('screen-round2');updatePips(2);
+};
+
+function buildRound2(){
+  var bd=getBudgetData();
+  var badge=document.getElementById('r2-budget-badge');if(badge)badge.textContent='Budget: '+G.budgetPct+'%';
+  var container=document.getElementById('r2-sliders');if(!container)return;
+  var rBadge=['','rb1','rb2','rb3','rb4','rb5'];
+  var rLabel=['','Rating 1','Rating 2','Rating 3','Rating 4','Rating 5'];
+  var html='';
+  EMPLOYEES.forEach(function(e){
+    var r=G.ratings[e.id]||3;
+    var inc=G.increments[e.id]!==undefined?G.increments[e.id]:getIncRec(r)[0];
+    var band=getIncRec(r);
+    html+='<div class="mc-inc-card" id="ic-'+e.id+'">'+
+      '<div class="mc-inc-top"><div class="mc-inc-av">'+esc(e.initials)+'</div>'+
+      '<div><div class="mc-inc-name">'+esc(e.name)+'</div><div class="mc-inc-role">'+esc(e.role)+'</div></div>'+
+      '<span class="mc-inc-badge '+rBadge[r]+'">'+rLabel[r]+'</span></div>'+
+      '<div class="mc-slider-row"><input type="range" class="mc-slider" min="0" max="20" step="0.5" value="'+inc+'" oninput="setInc(\''+e.id+'\',parseFloat(this.value),this)">'+
+      '<div class="mc-inc-pct" id="ip-'+e.id+'">'+inc+'%</div></div>'+
+      '<div class="mc-inc-band">Recommended: '+band[0]+'-'+band[1]+'%</div>'+
+      '<div class="mc-r1-warn" id="iw-'+e.id+'"'+(r===1&&inc>0?' style="display:block"':'')+'>&#x26A0; Rating 1 employee - any increment costs -3pts</div>'+
+    '</div>';
+  });
+  container.innerHTML=html;
+  updateBudgetDisplay();
+}
+
+window.setInc=function(empId,val){
+  G.increments[empId]=val;
+  var pEl=document.getElementById('ip-'+empId);if(pEl)pEl.textContent=val+'%';
+  var wEl=document.getElementById('iw-'+empId);if(wEl)wEl.style.display=(G.ratings[empId]===1&&val>0)?'block':'none';
+  updateBudgetDisplay();updateScoreLive();
+};
+
+function updateBudgetDisplay(){
+  var bd=getBudgetData();
+  var usedPct=Math.min(bd.used/bd.budget*100,100);
+  var bell=checkBell();
+  var bellTarget=G.diff==='hard'?'Top 60%, Bot 20%':'Top 70%, Bot 10%';
+  var sEl=document.getElementById('r2-spent');if(sEl){sEl.textContent=formatK(bd.used);sEl.className='mc-budget-val '+(bd.over?'over':'ok');}
+  var tEl=document.getElementById('r2-total');if(tEl)tEl.textContent=formatK(bd.budget);
+  var dEl=document.getElementById('r2-dist');if(dEl){dEl.textContent=bell?'Healthy':'Unhealthy';dEl.className='mc-budget-val '+(bell?'ok':'over');}
+  var bar=document.getElementById('r2-bar');if(bar){bar.style.width=usedPct+'%';bar.className='mc-budget-bar'+(bd.over?' over':'');}
+  var note=document.getElementById('r2-note');if(note)note.textContent=bd.over?'Over budget by '+formatK(bd.used-bd.budget):'Target: '+bellTarget;
+}
+
+window.goRound3=function(){buildRound3();showScreen('screen-round3');updatePips(3);};
+
+function buildRound3(){
+  var cases=getCalCases();
+  var hNote=document.getElementById('hard-cal-note');if(hNote)hNote.style.display=G.diff==='hard'?'block':'none';
+  var dEl=document.getElementById('r3-desc');if(dEl)dEl.textContent=cases.length+' of your ratings are being challenged. Pick the best response.'+(G.diff==='hard'?' Wrong answers cost -3pts.':'');
+  var container=document.getElementById('r3-cases');if(!container)return;
+  var html='';
+  cases.forEach(function(c,i){
+    var emp=EMPLOYEES.find(function(e){return e.id===c.empId;});
+    html+='<div class="mc-cal-case" id="cc-'+i+'">'+
+      '<div class="mc-cal-header"><div class="mc-emp-av" style="width:38px;height:38px;font-size:13px;">'+esc(emp.initials)+'</div>'+
+      '<div><div style="font-family:\'Space Grotesk\',sans-serif;font-size:13px;font-weight:700;color:white;">'+esc(emp.name)+'</div>'+
+      '<div style="font-size:11px;color:rgba(255,255,255,.4);">Your rating: <strong style="color:white;">'+G.ratings[emp.id]+'</strong> &middot; '+esc(c.challenger)+' disagrees</div></div></div>'+
+      '<div class="mc-cal-challenge"><strong>'+esc(c.challenger)+':</strong> '+esc(c.challenge)+'</div>'+
+      '<div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:9px;">Your response:</div>'+
+      '<div class="mc-opts">'+
+      c.opts.map(function(opt,j){
+        return'<button class="mc-opt" id="co-'+i+'-'+j+'" onclick="setCalAns('+i+','+j+')">'+
+          '<div class="mc-opt-lbl">Option '+(j+1)+'</div>'+esc(opt.text)+
+          '<div class="mc-opt-feedback">'+esc(opt.feedback)+'</div></button>';
+      }).join('')+'</div></div>';
+  });
+  container.innerHTML=html;
+}
+
+window.setCalAns=function(ci,oi){
+  if(G.calAnswers[ci]!==undefined)return;
+  G.calAnswers[ci]=oi;
+  var cases=getCalCases();var c=cases[ci];
+  c.opts.forEach(function(opt,j){
+    var btn=document.getElementById('co-'+ci+'-'+j);if(!btn)return;
+    btn.disabled=true;btn.className='mc-opt';
+    if(j===oi&&opt.correct)btn.classList.add('correct');
+    else if(j===oi&&!opt.correct)btn.classList.add('wrong');
+    else if(opt.correct)btn.classList.add('correct');
+    var lbl=btn.querySelector('.mc-opt-lbl');
+    if(lbl){lbl.textContent='Option '+(j+1)+(opt.correct?' - Best answer':j===oi?' - Your choice':'');
+      if(G.diff==='hard'&&j===oi&&!opt.correct)lbl.innerHTML+=('<span class="mc-penalty-pill">-3pts</span>');}
+  });
+  var allDone=Object.keys(G.calAnswers).length>=cases.length;
+  var nb=document.getElementById('r3-next');
+  if(nb){nb.disabled=!allDone;if(allDone)nb.textContent='Next: The Conversations \u2192';}
+  updateScoreLive();
+};
+
+window.goRound4a=function(){
+  if(Object.keys(G.calAnswers).length<getCalCases().length)return;
+  var rEl=document.getElementById('r4a-rating');if(rEl)rEl.textContent=G.ratings['E09']||'-';
+  var dEl=document.getElementById('r4a-desc');if(dEl)dEl.textContent='One chance to get it right.'+(G.diff==='hard'?' Wrong answers cost -4pts.':'')+' Up to 10 points.';
+  showScreen('screen-round4a');updatePips(4);
+};
+
+window.setConvo=function(si,oi){
+  if(G.convoAnswers[si]!==undefined)return;
+  G.convoAnswers[si]=oi;
+  var correct=CONVO_CORRECT[si];
+  var prefix=si===0?'r4a':'r4b';
+  for(var j=0;j<4;j++){
+    var btn=document.getElementById(prefix+'-opt-'+j);if(!btn)continue;
+    btn.disabled=true;btn.className='mc-opt';
+    if(j===oi&&correct[j])btn.classList.add('correct');
+    else if(j===oi&&!correct[j])btn.classList.add('wrong');
+    else if(correct[j])btn.classList.add('correct');
+    var lbl=btn.querySelector('.mc-opt-lbl');
+    if(lbl){lbl.textContent='Option '+(j+1)+(correct[j]?' - Strong answer':j===oi?' - Your choice':'');
+      if(G.diff==='hard'&&j===oi&&!correct[j])lbl.innerHTML+=('<span class="mc-penalty-pill">-4pts</span>');}
+  }
+  var nb=document.getElementById(prefix+'-next');
+  if(nb){nb.disabled=false;nb.textContent=si===0?'Next: Conversation 2 \u2192':'See My Results \u2192';}
+  updateScoreLive();
+};
+
+window.goRound4b=function(){
+  if(G.convoAnswers[0]===undefined)return;
+  var rEl=document.getElementById('r4b-rating');if(rEl)rEl.textContent=G.ratings['E04']||'-';
+  var dEl=document.getElementById('r4b-desc');if(dEl)dEl.textContent='One chance to get it right.'+(G.diff==='hard'?' Wrong answers cost -4pts.':'')+' Up to 10 points.';
+  showScreen('screen-round4b');updatePips(5);
+};
+
+window.showResults=function(){
+  if(G.convoAnswers[1]===undefined)return;
+  var s=calcAll();
+  var grade=getGrade(s.total);
+  var gradeText=s.total>=85?'Expert':s.total>=70?'Proficient':s.total>=50?'Developing':'Novice';
+  savePB(s.total,gradeText);
+  saveLB({name:G.name||'Anonymous',score:s.total,grade:gradeText,diff:G.budgetPct+'%'});
+  var el=function(id){return document.getElementById(id);};
+  if(el('res-score'))el('res-score').textContent=s.total;
+  if(el('res-grade')){el('res-grade').innerHTML=grade.label;el('res-grade').style.color=grade.color;}
+  var summaries={novice:'The data is telling you something important. Work through the case studies and guides, then come back.',developing:'You are building the right instincts but there are clear gaps. Focus on calibration frameworks and the legal dimensions of performance conversations.',proficient:'Solid. You understand the fundamentals and can hold your own in a calibration room. The Expert threshold requires sharper precision.',expert:'Exceptional. You are operating at a level most managers never reach - rigour, legal awareness, and human nuance all in one.'};
+  var sk=s.total>=85?'expert':s.total>=70?'proficient':s.total>=50?'developing':'novice';
+  if(el('res-summary'))el('res-summary').textContent=summaries[sk];
+  var pb=getPB();var pbEl=el('res-pb');
+  if(pbEl)pbEl.textContent=pb&&pb.score>s.total?'Personal best: '+pb.score+'/100 ('+pb.grade+')':pb&&pb.score<=s.total?'New personal best!':'';
+  ['r1','r2','r3','r4'].forEach(function(k,idx){
+    var scores=[s.r1,s.r2,s.r3,s.r4];var maxes=[40,20,20,20];
+    if(el('res-'+k))el('res-'+k).textContent=scores[idx];
+    if(el('res-'+k+'-bar'))el('res-'+k+'-bar').style.width=(scores[idx]/maxes[idx]*100)+'%';
+  });
+  if(el('res-r1-desc'))el('res-r1-desc').textContent=G.diff==='hard'?'Exact match only':'Exact = 4pts, off by 1 = 1pt';
+  if(el('res-r3-desc'))el('res-r3-desc').textContent=G.diff==='hard'?'Hard cases - wrong = -3pts':'Standard cases';
+  if(el('res-r4-desc'))el('res-r4-desc').textContent=G.diff==='hard'?'Two scenarios - wrong = -4pts':'Two scenarios';
+  renderLB('lb-results-content',s.total,gradeText,true);
+  showScreen('screen-results');
+  var sl=document.getElementById('mc-score-live');if(sl)sl.textContent='Final: '+s.total+'/100';
+};
+
+window.resetGame=function(){
+  G={diff:G.diff,budgetPct:G.budgetPct,name:G.name,ratings:{},increments:{},calAnswers:{},convoAnswers:{}};
+  ['r4a','r4b'].forEach(function(p){
+    for(var j=0;j<4;j++){var btn=document.getElementById(p+'-opt-'+j);if(btn){btn.className='mc-opt';btn.disabled=false;var lbl=btn.querySelector('.mc-opt-lbl');if(lbl)lbl.textContent='Option '+(j+1);}}
+    var nb=document.getElementById(p+'-next');if(nb){nb.disabled=true;nb.textContent=p==='r4a'?'Next: Conversation 2 \u2192':'See My Results \u2192';}
+  });
+  G.calAnswers={};G.ratings={};
+  document.querySelectorAll('.mc-r-btn').forEach(function(b){b.className='mc-r-btn';});
+  document.querySelectorAll('.mc-rating-chosen').forEach(function(b){b.textContent='';});
+  document.querySelectorAll('.mc-emp-card').forEach(function(b){b.classList.remove('rated');});
+  var sl=document.getElementById('mc-score-live');if(sl)sl.style.display='none';
+  renderLB('lb-intro-content',0,'',false);
+  showScreen('screen-intro');updatePips(0);
+};
+
+window.copyScore=function(){
+  var s=calcAll();
+  var grade=getGrade(s.total);
+  var text='Virorah Manager Challenge\n\nScore: '+s.total+'/100\nBudget used: '+G.budgetPct+'%\n\nCan you beat me? pms.virorah.com/game';
+  if(navigator.clipboard)navigator.clipboard.writeText(text).then(function(){alert('Score copied! Share it on LinkedIn');});
+  else{var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);alert('Copied!');}
+};
+
+initIntro();
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

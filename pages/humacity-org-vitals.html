@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is your org's human capital DNA?</title>
+  <meta name="description" content="20 yes/no signals. One of 8 DNA types. 20 prescriptions assigned by timeframe and owner. Takes 5 minutes. No data upload needed.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/humacity-org-vitals.html">
+  <meta property="og:title" content="What is your org's human capital DNA?">
+  <meta property="og:description" content="20 yes/no signals. One of 8 DNA types. 20 prescriptions assigned by timeframe and owner. Takes 5 minutes. No data upload needed.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Org Vitals</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+#hov-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; border-radius:16px; overflow:hidden; }
+#hov-root * { box-sizing:border-box; }
+#hov-hero { background:linear-gradient(160deg,#080612 0%,#0f0820 50%,#080612 100%); padding:44px 48px 32px; border-bottom:1px solid rgba(102,126,234,.15); position:relative; overflow:hidden; }
+#hov-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.5),rgba(167,139,250,.3),rgba(102,126,234,.5),transparent); }
+.hov-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.6); margin-bottom:14px; }
+.hov-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#a78bfa; box-shadow:0 0 10px rgba(167,139,250,.8); }
+.hov-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3vw,38px); font-weight:800; letter-spacing:-1px; line-height:1.1; color:#f0eeff; margin-bottom:10px; }
+.hov-title span { background:linear-gradient(135deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hov-sub { font-size:13px; color:rgba(196,181,253,.5); line-height:1.75; max-width:620px; }
+#hov-content { padding:32px 48px 48px; }
+@media(max-width:768px){ #hov-hero{padding:28px 24px 24px;} #hov-content{padding:24px 24px 36px;} }
+.hov-progress { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:24px; }
+.hov-prog-pill { display:flex; align-items:center; gap:7px; padding:7px 13px; border-radius:100px; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; border:1px solid; cursor:pointer; transition:all .2s; }
+.hov-prog-pill.unanswered { background:rgba(255,255,255,.02); border-color:rgba(102,126,234,.15); color:rgba(196,181,253,.4); }
+.hov-prog-pill.partial { background:rgba(251,191,36,.06); border-color:rgba(251,191,36,.2); color:#fbbf24; }
+.hov-prog-pill.healthy { background:rgba(52,211,153,.07); border-color:rgba(52,211,153,.25); color:#34d399; }
+.hov-prog-pill.warning { background:rgba(251,191,36,.07); border-color:rgba(251,191,36,.25); color:#fbbf24; }
+.hov-prog-pill.critical { background:rgba(248,113,113,.07); border-color:rgba(248,113,113,.25); color:#f87171; }
+.hov-ctx-hint { background:rgba(102,126,234,.06); border:1px solid rgba(102,126,234,.15); border-radius:8px; padding:10px 14px; margin-bottom:18px; font-size:11px; color:rgba(196,181,253,.55); line-height:1.6; }
+.hov-ctx-hint b { color:#a78bfa; }
+.hov-vital { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:14px; padding:22px; margin-bottom:16px; }
+.hov-vital-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:6px; }
+.hov-vital-name { font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:800; color:#f0eeff; }
+.hov-vital-badge { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:.5px; padding:3px 9px; border-radius:4px; flex-shrink:0; }
+.hov-vital-badge.unanswered { background:rgba(255,255,255,.04); color:rgba(196,181,253,.4); border:1px solid rgba(102,126,234,.1); }
+.hov-vital-badge.partial { background:rgba(251,191,36,.08); color:#fbbf24; border:1px solid rgba(251,191,36,.2); }
+.hov-vital-badge.healthy { background:rgba(52,211,153,.1); color:#34d399; border:1px solid rgba(52,211,153,.2); }
+.hov-vital-badge.warning { background:rgba(251,191,36,.08); color:#fbbf24; border:1px solid rgba(251,191,36,.2); }
+.hov-vital-badge.critical { background:rgba(248,113,113,.08); color:#f87171; border:1px solid rgba(248,113,113,.2); }
+.hov-vital-sub { font-size:12px; color:rgba(196,181,253,.45); line-height:1.5; margin-bottom:16px; }
+.hov-signal-list { display:flex; flex-direction:column; gap:10px; }
+.hov-signal { display:flex; align-items:flex-start; gap:12px; padding:12px 14px; background:rgba(13,11,31,.4); border-radius:10px; border:1px solid rgba(102,126,234,.08); transition:border-color .15s; }
+.hov-signal:hover { border-color:rgba(102,126,234,.18); }
+.hov-signal-num { font-family:'DM Mono',monospace; font-size:10px; color:rgba(196,181,253,.3); flex-shrink:0; padding-top:2px; min-width:18px; }
+.hov-signal-q { flex:1; font-size:12px; color:rgba(196,181,253,.75); line-height:1.6; }
+.hov-signal-btns { display:flex; gap:6px; flex-shrink:0; }
+.hov-sig-btn { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.06em; padding:5px 12px; border-radius:6px; cursor:pointer; border:1px solid rgba(102,126,234,.18); background:transparent; color:rgba(196,181,253,.4); transition:all .15s; }
+.hov-sig-btn:hover { border-color:rgba(102,126,234,.35); color:rgba(196,181,253,.7); }
+.hov-sig-btn.yes.active { background:rgba(52,211,153,.1); border-color:rgba(52,211,153,.35); color:#34d399; }
+.hov-sig-btn.no.active { background:rgba(248,113,113,.1); border-color:rgba(248,113,113,.35); color:#f87171; }
+.hov-vital-score { display:flex; gap:4px; margin-top:14px; }
+.hov-score-dot { width:20px; height:4px; border-radius:2px; background:rgba(102,126,234,.12); }
+.hov-score-dot.yes { background:linear-gradient(90deg,#667eea,#34d399); }
+.hov-score-dot.no { background:#f87171; }
+.hov-dna-card { background:linear-gradient(135deg,rgba(13,11,31,.8),rgba(5,4,22,.95)); border:1px solid rgba(102,126,234,.2); border-radius:16px; padding:32px 36px; margin-bottom:24px; position:relative; overflow:hidden; }
+.hov-dna-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.45),rgba(167,139,250,.25),rgba(102,126,234,.45),transparent); }
+.hov-dna-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+.hov-dna-type { font-family:'Space Grotesk',sans-serif; font-size:clamp(20px,2.5vw,30px); font-weight:800; letter-spacing:-.5px; background:linear-gradient(135deg,#f0eeff 0%,#c4b5fd 50%,#667eea 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:14px; line-height:1.15; }
+.hov-dna-desc { font-style:italic; font-size:13px; color:rgba(196,181,253,.6); line-height:1.7; margin-bottom:20px; }
+.hov-dna-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+@media(max-width:640px){ .hov-dna-grid{grid-template-columns:1fr 1fr;} }
+.hov-dna-cell { background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.1); border-radius:10px; padding:12px 14px; }
+.hov-dna-cell-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#a78bfa; margin-bottom:5px; }
+.hov-dna-cell-txt { font-size:11px; color:rgba(196,181,253,.6); line-height:1.55; }
+.hov-vitals-summary { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-bottom:24px; }
+@media(max-width:640px){ .hov-vitals-summary{grid-template-columns:1fr 1fr;} }
+.hov-vs-card { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:10px; padding:10px 12px; text-align:center; cursor:pointer; transition:all .2s; }
+.hov-vs-card:hover { border-color:rgba(102,126,234,.28); }
+.hov-vs-card.healthy { border-bottom:3px solid #34d399; }
+.hov-vs-card.warning { border-bottom:3px solid #fbbf24; }
+.hov-vs-card.critical { border-bottom:3px solid #f87171; }
+.hov-vs-name { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; color:rgba(196,181,253,.65); margin-bottom:4px; }
+.hov-vs-score { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; }
+.hov-vs-score.healthy { color:#34d399; }
+.hov-vs-score.warning { color:#fbbf24; }
+.hov-vs-score.critical { color:#f87171; }
+.hov-rx-section { margin-bottom:24px; }
+.hov-rx-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:6px; }
+.hov-rx-title { font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:800; color:#f0eeff; margin-bottom:6px; }
+.hov-rx-sub { font-size:12px; color:rgba(196,181,253,.45); line-height:1.6; margin-bottom:18px; }
+.hov-rx-card { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:12px; overflow:hidden; margin-bottom:10px; }
+.hov-rx-card.critical { border-color:rgba(248,113,113,.25); }
+.hov-rx-card.warning { border-color:rgba(251,191,36,.18); }
+.hov-rx-card-hdr { display:flex; align-items:flex-start; gap:12px; padding:16px 18px; cursor:pointer; transition:background .15s; }
+.hov-rx-card-hdr:hover { background:rgba(102,126,234,.04); }
+.hov-rx-sev { width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:4px; }
+.hov-rx-card.critical .hov-rx-sev { background:#f87171; }
+.hov-rx-card.warning .hov-rx-sev { background:#fbbf24; }
+.hov-rx-signal-name { font-size:11px; font-weight:700; color:rgba(196,181,253,.5); margin-bottom:3px; }
+.hov-rx-card.critical .hov-rx-signal-name { color:rgba(248,113,113,.8); }
+.hov-rx-card.warning .hov-rx-signal-name { color:#fbbf24; }
+.hov-rx-action { font-size:12px; color:#f0eeff; line-height:1.55; flex:1; }
+.hov-rx-card-body { display:none; padding:0 18px 16px; border-top:1px solid rgba(102,126,234,.06); }
+.hov-rx-card-body.open { display:block; }
+.hov-rx-detail { font-size:12px; color:rgba(196,181,253,.55); line-height:1.7; margin:12px 0; padding:10px 12px; background:rgba(102,126,234,.04); border-radius:8px; border-left:2px solid rgba(102,126,234,.2); }
+.hov-rx-meta { display:flex; gap:16px; flex-wrap:wrap; font-family:'DM Mono',monospace; font-size:10px; color:rgba(196,181,253,.4); margin-top:8px; }
+.hov-rx-meta span b { color:rgba(196,181,253,.75); }
+.hov-stmt { padding:22px 26px; background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.2); border-radius:14px; border-left:3px solid #667eea; position:relative; overflow:hidden; margin-bottom:8px; }
+.hov-stmt::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#667eea,#a78bfa); }
+.hov-stmt-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:10px; }
+.hov-stmt-txt { font-style:italic; font-size:13px; line-height:1.75; color:rgba(196,181,253,.7); }
+.hov-stmt-txt b { color:#c4b5fd; font-style:normal; }
+.hov-reset { display:inline-flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; background:transparent; border:1px solid rgba(102,126,234,.2); color:rgba(196,181,253,.4); padding:7px 14px; border-radius:7px; cursor:pointer; transition:all .15s; margin-top:16px; }
+.hov-reset:hover { border-color:rgba(102,126,234,.4); color:rgba(196,181,253,.7); }
+.hov-pending-note { text-align:center; padding:24px; background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.1); border-radius:12px; font-size:12px; color:rgba(196,181,253,.4); margin-bottom:24px; }
+.hov-back-link { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:rgba(167,139,250,.55); text-decoration:none; margin-bottom:16px; transition:color .2s; }
+.hov-back-link:hover { color:#a78bfa; }
+</style>
+
+<div id="hov-root">
+  <div id="hov-hero">
+    <a href="/pages/analyse-your-org.html" class="hov-back-link">&#8592; Back to Humacity Suite</a>
+    <div class="hov-eyebrow"><div class="hov-eyebrow-dot"></div>Humacity &middot; L3</div>
+    <div class="hov-title">Org <span>Vitals</span></div>
+    <div class="hov-sub">20 binary signals across five vital areas. Answer Yes or No. The Compass identifies your organisation's DNA type and the specific interventions that will move it.</div>
+  </div>
+  <div id="hov-content"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DATA_KEY = "pms_custom_org_v1";
+var _answers = {};
+var _csvHints = {};
+
+var VITALS = [
+  {
+    id: "leadership", name: "Leadership Pulse",
+    sub: "Is energy and direction flowing from the top, or is there a vacuum the org is navigating around?",
+    signals: [
+      "Does senior leadership communicate directly with all employees at least once a month, not just through managers?",
+      "Are leadership decisions visible and explained to the org, not just announced?",
+      "Does the CEO or founder participate in ordinary work channels, not just formal meetings?",
+      "Does leadership arrive on time to meetings they call and end them on time?"
+    ]
+  },
+  {
+    id: "fear", name: "Fear Index",
+    sub: "Is the org operating from psychological safety or from threat? The answer is in how mistakes travel.",
+    signals: [
+      "In the last 3 months, has leadership responded to mistakes with diagnosis rather than public blame?",
+      "Do people share bad news upward without significant delay?",
+      "Is knowledge shared freely across teams rather than held within silos?",
+      "In the last 6 months, has a senior leader visibly changed a decision based on input from someone more junior?"
+    ]
+  },
+  {
+    id: "middle", name: "Middle Layer Health",
+    sub: "Is the transmission belt between leadership and frontline working, or has it calcified?",
+    signals: [
+      "Do managers have regular structured 1:1s with their direct reports?",
+      "In the last 6 months, has any team member been promoted or given expanded responsibility as a direct result of their manager advocating for them?",
+      "When leadership announces a major decision, can a frontline employee accurately describe what it means for their work within one week?",
+      "In the last quarter, has any underperforming employee received a documented performance conversation from their manager?"
+    ]
+  },
+  {
+    id: "execution", name: "Execution Fidelity",
+    sub: "Is activity connected to outcome, or has busyness replaced productivity as the primary currency?",
+    signals: [
+      "Can any team member name the specific revenue or cost number their work directly impacts?",
+      "Does less than 40% of the average employee's week consist of meetings?",
+      "Does the org have a documentation culture - decisions, processes, and institutional knowledge written down?",
+      "Are projects completed on time at a rate above 60%?"
+    ]
+  },
+  {
+    id: "hr", name: "HR Mirror",
+    sub: "Is HR a proactive partner in org health, or a reactive function managing incidents?",
+    signals: [
+      "In the last 3 months, has HR initiated a proactive conversation with a business unit, not just responded to a request?",
+      "Is exit management handled with genuine care and a structured process?",
+      "Does onboarding give new joiners a clear and accurate picture within their first two weeks?",
+      "Does HR proactively surface people risks to leadership, not just report metrics?"
+    ]
+  }
+];
+
+var DNA_TYPES = {
+  quiet_compounding: {
+    name: "The Quiet Compounding Machine",
+    desc: "The benchmark. Leadership visible and consistent. Trust present across the org. The middle layer developing people, not just managing tasks. Execution connected to outcomes. HR proactive and forward-looking.",
+    good: "Attracting and keeping talent. Consistent execution. Compounding performance over time.",
+    vulnerable: "Complacency. Slow response to market shifts. Assuming the model works forever.",
+    breaks: "Key leaders leave simultaneously. The culture is strong but the specific people matter more than it appears.",
+    financial: "Above-market retention, above-market productivity, compounding talent quality premium."
+  },
+  disciplined_challenger: {
+    name: "The Disciplined Challenger",
+    desc: "Well-run, fast-moving, high accountability. Still proving itself but genuinely healthy. The difference from the Compounding Machine is trajectory - this org is climbing, not yet compounding.",
+    good: "Speed, execution, clear ownership, attracting ambitious people.",
+    vulnerable: "Burning people out. Under-investing in culture during growth phases.",
+    breaks: "Growth slows and the intensity has no release valve. The culture that drove growth starts driving exits.",
+    financial: "High revenue per employee. Strong short-term output. Moderate attrition risk in senior roles."
+  },
+  resilient_community: {
+    name: "The Resilient Community",
+    desc: "Strong mission alignment, genuine care for people, real bonds across the org. Common in social enterprises, professional services, and family businesses. Healthy DNA with a specific operational vulnerability.",
+    good: "Retention, loyalty, riding out hard times together.",
+    vulnerable: "Operational discipline, scaling, commercial ruthlessness when the mission demands it.",
+    breaks: "When mission and commercial reality diverge and leadership cannot reconcile them.",
+    financial: "Low attrition cost. High loyalty premium. Underperforming on revenue per employee."
+  },
+  fear_factory: {
+    name: "The Fear Factory",
+    desc: "High output, low trust. Blame has been normalised. Knowledge is hoarded. People execute brilliantly but never innovate. One bad quarter away from a talent exodus of anyone with options.",
+    good: "Short-term execution, compliance, hitting targets under pressure.",
+    vulnerable: "Innovation, knowledge transfer, retaining people who have choices.",
+    breaks: "The best people leave quietly, then suddenly, taking institutional knowledge with them.",
+    financial: "High short-term output. Declining innovation return over 18 months. Rising replacement cost."
+  },
+  frozen_middle: {
+    name: "The Frozen Middle",
+    desc: "Leadership is engaged, frontline is capable, but the management layer between them has calcified. Protecting positions, blocking change, avoiding tough conversations. The engine runs but the transmission is failing.",
+    good: "Stability, operational consistency, not losing many people.",
+    vulnerable: "Strategic change. Any initiative that requires the middle layer to act differently.",
+    breaks: "Strategic initiatives die between announcement and execution. Leadership announces. Nothing happens.",
+    financial: "High initiative spend, low initiative completion rate, compounding strategic lag."
+  },
+  founders_shadow: {
+    name: "The Founder's Shadow",
+    desc: "Everything flows through one or two people at the top. Fast decisions, high energy, zero institutional depth. The organisation is entirely dependent on the founder's continued presence and judgment.",
+    good: "Speed of decision, alignment to vision, agility in early stages.",
+    vulnerable: "Scaling, developing other leaders, functioning when the founder is absent or distracted.",
+    breaks: "The founder's bandwidth. Then everything simultaneously. There is no second tier.",
+    financial: "Valuation depends entirely on key person retention. Fragile growth trajectory."
+  },
+  busy_illusion: {
+    name: "The Busy Illusion",
+    desc: "High activity, low outcome. Meetings everywhere, results nowhere. People are exhausted but nothing material moves. Tasks have replaced goals as the primary unit of measurement.",
+    good: "Looking productive, avoiding conflict through activity, maintaining the appearance of progress.",
+    vulnerable: "Actual output, revenue growth, retaining people who want to do meaningful work.",
+    breaks: "People stop believing their work matters. The best ones leave first.",
+    financial: "High payroll cost. Low revenue per employee vs industry. Declining output quality."
+  },
+  legacy_trap: {
+    name: "The Legacy Trap",
+    desc: "An established org where long-tenured employees are actively blocking change to protect their position. High stability, low adaptability. A time bomb if the market shifts.",
+    good: "Institutional knowledge retention, operational stability, existing client relationships.",
+    vulnerable: "Any significant change, new technology, new competitors, new business models.",
+    breaks: "The first major market disruption the org cannot adapt to - and it cannot adapt.",
+    financial: "Declining growth rate masked by stable legacy revenue. Rising workforce obsolescence risk."
+  }
+};
+
+var PRESCRIPTIONS = {
+  leadership_0: { severity: "critical", action: "Implement a monthly All-Hands - CEO-led, 45 minutes, structured Q&A, recorded for async viewing within 24 hours.", detail: "CEO presents 3 things going well, 3 things being fixed, takes 15 minutes of unfiltered questions. No slides beyond the first. First session within 30 days.", timeframe: "30 days", owner: "CEO + HR" },
+  leadership_1: { severity: "critical", action: "Introduce a Decision Log - every major decision documented with reasoning and expected outcome, published internally within 48 hours.", detail: "What was decided, why, what was considered but rejected, what success looks like in 90 days. Lives in the company wiki.", timeframe: "14 days", owner: "CEO + Chief of Staff" },
+  leadership_2: { severity: "warning", action: "CEO joins one frontline team standup per week for 6 weeks - unannounced rotation, listening only for the first 3 sessions.", detail: "No formal agenda. CEO joins an existing standup as observer for sessions 1-3, participates from session 4 onwards. Purpose: understand what the org actually looks like from inside.", timeframe: "6 weeks", owner: "CEO" },
+  leadership_3: { severity: "warning", action: "Meeting hygiene protocol - all meetings start and end on time, agenda required 24 hours before, decisions documented within 24 hours after. CEO models first.", detail: "CEO publicly commits in the next all-hands. HR tracks compliance for 60 days. Any meeting with no agenda 24 hours before can be declined without consequence.", timeframe: "60 days", owner: "CEO + HR" },
+  fear_0: { severity: "critical", action: "Launch a structured Blameless Post-Mortem process for all significant mistakes - template-driven, findings shared org-wide within 7 days.", detail: "Template: what happened, impact, what we learned, what we are changing. The person who made the mistake leads the post-mortem. Leadership attends to listen, not judge.", timeframe: "30 days", owner: "HR + Direct Manager" },
+  fear_1: { severity: "critical", action: "Introduce a Bad News First protocol - first 5 minutes of every leadership meeting reserved for bad news only, zero consequence for the messenger.", detail: "CEO opens with: what is the worst thing I should know this week? First response is always acknowledgment, never problem-solving or blame. Track how long before people volunteer bad news unprompted.", timeframe: "45 days", owner: "CEO" },
+  fear_2: { severity: "warning", action: "Implement fortnightly cross-team Knowledge Shares - 30-minute rotating sessions where one team teaches the rest something only they know.", detail: "Structured as: here is something we figured out that no one else knows yet. Rotating host. Recorded. Creates a habit of sharing before hoarding becomes the norm.", timeframe: "60 days", owner: "HR + Team Leads" },
+  fear_3: { severity: "warning", action: "CEO publicly reverses one recent decision in response to team input - documented, shared org-wide, with explicit attribution to the person whose input changed the thinking.", detail: "Must be genuine. If no current reversal is possible, CEO identifies a decision under consideration and publicly invites structured input before finalising.", timeframe: "21 days", owner: "CEO" },
+  middle_0: { severity: "critical", action: "Mandate structured weekly 1:1s for all managers - 30 minutes, employee-led agenda, no status updates, notes owned by the employee.", detail: "HR provides the framework: what are you working on, what is in your way, what do you need from me. Manager's job is to listen and remove blockers. First round within 14 days.", timeframe: "14 days", owner: "HR + All Managers" },
+  middle_1: { severity: "warning", action: "Introduce a quarterly Talent Visibility Review - each manager presents their top performer to skip-level leadership with a specific development or promotion recommendation.", detail: "Format: here is my top person, here is why they are exceptional, here is what I am recommending. Skip-level must respond with a decision within 30 days.", timeframe: "45 days", owner: "HR + Senior Leadership" },
+  middle_2: { severity: "critical", action: "Implement a 72-Hour Cascade Protocol - any major leadership decision must reach every frontline employee within 72 hours via their direct manager, with a standard briefing template.", detail: "Template: what was decided, what it means for your team, what questions to expect, what to say if you do not know. HR tracks cascade completion.", timeframe: "30 days", owner: "HR + All Managers" },
+  middle_3: { severity: "warning", action: "Mandatory Performance Conversation training for all managers - half-day workshop, role-played scenarios, followed by a 60-day commitment to document one performance conversation per underperformer.", detail: "Covers: how to open a performance conversation, how to give specific feedback without triggering defensiveness, how to document it correctly. HR monitors compliance.", timeframe: "30 days", owner: "HR" },
+  execution_0: { severity: "critical", action: "Run a one-day OKR Rewire workshop - rewrite every team's objectives to include a specific revenue or cost number each team directly impacts.", detail: "Each team leaves with one north star metric (a financial number), three key results in financial language, and a weekly check-in habit against that number. HR facilitates.", timeframe: "30 days", owner: "HR + Team Leads + CFO" },
+  execution_1: { severity: "warning", action: "Meeting Audit - every recurring meeting reviewed, 40% eliminated or reduced to 15 minutes, no-meeting blocks of 3 hours per day established for all employees.", detail: "HR audits the meeting calendar for every team. Any recurring meeting with no clear decision or output is cancelled. Any meeting that could be an async update is replaced with a written update.", timeframe: "60 days", owner: "HR + All Managers" },
+  execution_2: { severity: "warning", action: "Documentation Sprint - 30-day intensive where every team documents their top 5 processes, key decisions from the last 12 months, and critical institutional knowledge.", detail: "HR assigns a Documentation Owner per team. Standard format: process name, how it works, who owns it, what breaks if not followed. Sprint closes with a knowledge audit.", timeframe: "30 days", owner: "HR + Team Leads" },
+  execution_3: { severity: "critical", action: "Project Accountability Reviews - every project over 2 weeks gets a weekly 15-minute status check with a traffic light (Red/Amber/Green) and a named owner accountable for each commitment.", detail: "Red projects get immediate escalation. No project stays Red for more than 2 weeks without a formal reset. The person who commits to a deadline explains publicly why it was missed.", timeframe: "14 days", owner: "HR + Project Owners" },
+  hr_0: { severity: "warning", action: "HR implements a monthly Business Partner Review - one structured proactive meeting per business unit per month, focused on people risks not yet on leadership's radar.", detail: "Agenda: what talent risks are coming in 90 days, what HR is seeing that the business unit should know, what decisions are coming that HR needs to be part of. Not a status report.", timeframe: "30 days", owner: "HR" },
+  hr_1: { severity: "warning", action: "Redesign the exit process - structured exit interview in the last week, 30-day post-exit check-in call, and an Exit Intelligence Report published to leadership quarterly.", detail: "Exit interview: what made you stay as long as you did, what was the moment you decided to leave, what would have changed your decision. Report aggregates themes without identifying individuals.", timeframe: "90 days", owner: "HR" },
+  hr_2: { severity: "critical", action: "Rebuild the onboarding programme - 90-day structured plan with clear milestones at day 14 (orientation complete), day 30 (first contribution made), day 90 (fully productive).", detail: "Day 14: can describe the company mission, their team's role, and their first project. Day 30: has completed one piece of reviewed work. Day 90: operating independently. Manager and HR both sign off.", timeframe: "30 days to launch", owner: "HR" },
+  hr_3: { severity: "warning", action: "Implement a quarterly People Risk Register - a structured document listing the top 5 people risks, their probability, financial impact if they materialise, and mitigation underway.", detail: "Format: risk name, probability, financial impact, mitigation, owner, next review date. Presented to leadership every quarter. Forces HR to think in financial risk language.", timeframe: "30 days", owner: "HR" }
+};
+
+function loadCSVHints() {
+  try {
+    var raw = localStorage.getItem(DATA_KEY);
+    if (!raw) return;
+    var parsed = JSON.parse(raw);
+    var rows = Array.isArray(parsed) ? parsed : (parsed.employees || parsed.rows || parsed.data || []);
+    if (!rows.length) return;
+    var keys = Object.keys(rows[0]);
+    function findVal(row) {
+      for (var i = 0; i < arguments.length; i++) {
+        var arg = arguments[i];
+        for (var j = 0; j < keys.length; j++) {
+          if (keys[j].toLowerCase().replace(/[\s_-]/g,"") === arg.toLowerCase().replace(/[\s_-]/g,"")) return row[keys[j]];
+        }
+      }
+      return null;
+    }
+    var emps = rows.map(function(r) {
+      return {
+        perf: parseFloat(findVal(r, "performancescore", "perfscore", "score")) || 0,
+        placement: (findVal(r, "placement", "talentsegment", "category") || "").toLowerCase(),
+        tenure: parseFloat(findVal(r, "tenureyears", "tenure", "yearsofservice")) || 0,
+        manager: (findVal(r, "managername", "manager") || "").trim(),
+        name: (findVal(r, "name", "employeename") || "").trim(),
+        salary: parseFloat(findVal(r, "salary", "annualsalary", "ctc")) || 0
+      };
+    }).filter(function(e) { return e.salary > 0; });
+    if (!emps.length) return;
+    var stars = emps.filter(function(e) { return e.placement.indexOf("star") !== -1 || e.placement.indexOf("high performer") !== -1; });
+    var inconsistent = emps.filter(function(e) { return e.placement.indexOf("inconsistent") !== -1 || e.placement.indexOf("underperf") !== -1; });
+    var starTenure = stars.length > 0 ? stars.reduce(function(a,e){return a+e.tenure;},0)/stars.length : 0;
+    var inconTenure = inconsistent.length > 0 ? inconsistent.reduce(function(a,e){return a+e.tenure;},0)/inconsistent.length : 0;
+    var managerSet = {};
+    emps.forEach(function(e) { if (e.manager) managerSet[e.manager] = true; });
+    var managers = emps.filter(function(e) { return managerSet[e.name]; });
+    if (stars.length > 0 && inconsistent.length > 0 && inconTenure > starTenure) {
+      _csvHints.fear = "Your org data shows Inconsistent Performers staying longer (" + inconTenure.toFixed(1) + "yr avg) than Stars (" + starTenure.toFixed(1) + "yr avg). This inverted retention profile is a fear-based culture signal.";
+    }
+    if (managers.length > 0) {
+      var ratio = (stars.length / managers.length).toFixed(1);
+      if (parseFloat(ratio) < 1.0) {
+        _csvHints.middle = "Your data shows " + stars.length + " Stars and " + managers.length + " managers (ratio " + ratio + "x). A low Star-to-manager ratio often signals manager advocacy gaps.";
+      }
+    }
+    if (inconsistent.length > 3) {
+      _csvHints.hr = "Your data shows " + inconsistent.length + " Inconsistent Performers in the dataset. A structured exit process and regular performance conversations may be overdue.";
+    }
+  } catch (e) {}
+}
+
+function getVitalStatus(vitalId) {
+  var v = VITALS.find(function(v) { return v.id === vitalId; });
+  var yesCount = 0, answered = 0;
+  v.signals.forEach(function(s, i) {
+    var key = vitalId + "_" + i;
+    if (_answers[key] === true) { yesCount++; answered++; }
+    else if (_answers[key] === false) { answered++; }
+  });
+  if (answered === 0) return { status: "unanswered", score: 0, answered: 0, total: 4 };
+  if (answered < 4) return { status: "partial", score: yesCount, answered: answered, total: 4 };
+  if (yesCount >= 3) return { status: "healthy", score: yesCount, answered: 4, total: 4 };
+  if (yesCount === 2) return { status: "warning", score: yesCount, answered: 4, total: 4 };
+  return { status: "critical", score: yesCount, answered: 4, total: 4 };
+}
+
+function getDNAType() {
+  var allDone = VITALS.every(function(v) { return getVitalStatus(v.id).answered === 4; });
+  if (!allDone) return null;
+  var L = getVitalStatus("leadership").status;
+  var F = getVitalStatus("fear").status;
+  var M = getVitalStatus("middle").status;
+  var E = getVitalStatus("execution").status;
+  var H = getVitalStatus("hr").status;
+  if (L==="healthy" && F==="healthy" && M==="healthy" && E==="healthy" && H==="healthy") return "quiet_compounding";
+  if (L==="healthy" && F==="healthy" && E==="healthy" && M!=="critical") return "disciplined_challenger";
+  if (L==="healthy" && F==="healthy" && (E==="warning"||E==="critical")) return "resilient_community";
+  if (F==="critical") return "fear_factory";
+  if (M==="critical" && F!=="critical") return "frozen_middle";
+  if (L==="critical") return "founders_shadow";
+  if (E==="critical" && L!=="critical" && F!=="critical") return "busy_illusion";
+  return "legacy_trap";
+}
+
+function statusLabel(s) {
+  if (s === "healthy") return "Healthy";
+  if (s === "warning") return "Watch";
+  if (s === "critical") return "Critical";
+  if (s === "partial") return "In progress";
+  return "Unanswered";
+}
+
+function render() {
+  var c = document.getElementById("hov-content");
+  var progressHtml = VITALS.map(function(v) {
+    var vs = getVitalStatus(v.id);
+    return "<div class=\"hov-prog-pill " + vs.status + "\" onclick=\"hovScrollTo('" + v.id + "')\">" +
+      (vs.status === "healthy" ? "\u2713" : vs.status === "critical" ? "\u26A0" : vs.answered + "/4") + " " + v.name +
+    "</div>";
+  }).join("");
+
+  var vitalsHtml = VITALS.map(function(v, vi) {
+    var vs = getVitalStatus(v.id);
+    var hint = _csvHints[v.id] ? "<div class=\"hov-ctx-hint\">Data signal: <b>" + _csvHints[v.id] + "</b></div>" : "";
+    var signalsHtml = v.signals.map(function(q, qi) {
+      var key = v.id + "_" + qi;
+      var ans = _answers[key];
+      return "<div class=\"hov-signal\">" +
+        "<div class=\"hov-signal-num\">" + (qi + 1) + "</div>" +
+        "<div class=\"hov-signal-q\">" + q + "</div>" +
+        "<div class=\"hov-signal-btns\">" +
+          "<button class=\"hov-sig-btn yes" + (ans === true ? " active" : "") + "\" onclick=\"hovAnswer('" + key + "',true)\">Yes</button>" +
+          "<button class=\"hov-sig-btn no" + (ans === false ? " active" : "") + "\" onclick=\"hovAnswer('" + key + "',false)\">No</button>" +
+        "</div>" +
+      "</div>";
+    }).join("");
+    var dots = [0,1,2,3].map(function(i) {
+      var key = v.id + "_" + i;
+      var cls = _answers[key] === true ? "yes" : _answers[key] === false ? "no" : "";
+      return "<div class=\"hov-score-dot " + cls + "\"></div>";
+    }).join("");
+    return "<div class=\"hov-vital\" id=\"hov-vital-" + v.id + "\">" +
+      "<div class=\"hov-vital-head\">" +
+        "<div><div class=\"hov-vital-name\">" + v.name + "</div></div>" +
+        "<div class=\"hov-vital-badge " + vs.status + "\">" + statusLabel(vs.status) + "</div>" +
+      "</div>" +
+      "<div class=\"hov-vital-sub\">" + v.sub + "</div>" +
+      hint +
+      "<div class=\"hov-signal-list\">" + signalsHtml + "</div>" +
+      "<div class=\"hov-vital-score\">" + dots + "</div>" +
+    "</div>";
+  }).join("");
+
+  var dnaKey = getDNAType();
+  var dna = dnaKey ? DNA_TYPES[dnaKey] : null;
+
+  var resultsHtml = "";
+  if (dna) {
+    var summaryHtml = VITALS.map(function(v) {
+      var vs = getVitalStatus(v.id);
+      return "<div class=\"hov-vs-card " + vs.status + "\" onclick=\"hovScrollTo('" + v.id + "')\">" +
+        "<div class=\"hov-vs-name\">" + v.name.split(" ")[0] + "</div>" +
+        "<div class=\"hov-vs-score " + vs.status + "\">" + vs.score + "/4</div>" +
+      "</div>";
+    }).join("");
+
+    var failedSignals = [];
+    VITALS.forEach(function(v) {
+      v.signals.forEach(function(s, i) {
+        var key = v.id + "_" + i;
+        if (_answers[key] === false) {
+          var rx = PRESCRIPTIONS[key];
+          if (rx) failedSignals.push({ key: key, vital: v.name, severity: rx.severity, action: rx.action, detail: rx.detail, timeframe: rx.timeframe, owner: rx.owner });
+        }
+      });
+    });
+
+    var rxHtml = "";
+    if (failedSignals.length > 0) {
+      var rxCards = failedSignals.map(function(s, i) {
+        return "<div class=\"hov-rx-card " + s.severity + "\">" +
+          "<div class=\"hov-rx-card-hdr\" onclick=\"hovRxToggle(" + i + ")\">" +
+            "<div class=\"hov-rx-sev\"></div>" +
+            "<div style=\"flex:1\">" +
+              "<div class=\"hov-rx-signal-name\">" + s.vital + " \u00B7 " + (s.severity === "critical" ? "CRITICAL" : "WARNING") + "</div>" +
+              "<div class=\"hov-rx-action\">" + s.action + "</div>" +
+            "</div>" +
+            "<div style=\"font-size:12px;color:rgba(196,181,253,.3);flex-shrink:0;\" id=\"hov-rx-chev-" + i + "\">\u25BE</div>" +
+          "</div>" +
+          "<div class=\"hov-rx-card-body\" id=\"hov-rx-body-" + i + "\">" +
+            "<div class=\"hov-rx-detail\">" + s.detail + "</div>" +
+            "<div class=\"hov-rx-meta\"><span>Timeframe: <b>" + s.timeframe + "</b></span><span>Owner: <b>" + s.owner + "</b></span></div>" +
+          "</div>" +
+        "</div>";
+      }).join("");
+      rxHtml = "<div class=\"hov-rx-section\">" +
+        "<div class=\"hov-rx-eyebrow\">The Prescription</div>" +
+        "<div class=\"hov-rx-title\">" + failedSignals.length + " intervention" + (failedSignals.length !== 1 ? "s" : "") + " recommended.</div>" +
+        "<div class=\"hov-rx-sub\">Each intervention is specific and time-bound. Click to expand the detail and implementation guide.</div>" +
+        rxCards +
+      "</div>";
+    } else {
+      rxHtml = "<div class=\"hov-pending-note\">All vital signs healthy. No interventions required. Return here if any signal changes.</div>";
+    }
+
+    var totalScore = VITALS.reduce(function(a, v) { return a + getVitalStatus(v.id).score; }, 0);
+    var healthPct = Math.round((totalScore / 20) * 100);
+    var critCount = VITALS.filter(function(v) { return getVitalStatus(v.id).status === "critical"; }).length;
+    var warnCount = VITALS.filter(function(v) { return getVitalStatus(v.id).status === "warning"; }).length;
+    var stmtTxt = dna.name === "The Quiet Compounding Machine"
+      ? "This org is reading as <b>The Quiet Compounding Machine</b> - all five vital signs healthy. The advantage this kind of org builds is not visible in any single quarter. It compounds over time. The risk is complacency - assuming the model continues to work without active maintenance."
+      : critCount > 0
+      ? "This org is currently reading as <b>" + dna.name + "</b>. With <b>" + critCount + " critical vital sign" + (critCount > 1 ? "s" : "") + "</b>" + (warnCount > 0 ? " and " + warnCount + " at Watch" : "") + ", the financial risk is material and increasing. " + failedSignals.length + " specific interventions are available above - each costed, time-bound, and owned."
+      : "This org is reading as <b>" + dna.name + "</b>. No vital signs are in critical condition, but " + (warnCount > 0 ? warnCount + " are at Watch." : "one or more signals need attention.") + " The prescription above is specific. The window to address watch signals before they become critical is typically 90-180 days.";
+
+    resultsHtml =
+      "<div style=\"margin-bottom:24px\">" +
+        "<div class=\"hov-rx-eyebrow\" style=\"margin-bottom:12px\">Vital Signs Overview</div>" +
+        "<div class=\"hov-vitals-summary\">" + summaryHtml + "</div>" +
+      "</div>" +
+      "<div class=\"hov-dna-card\">" +
+        "<div class=\"hov-dna-eyebrow\">Organisation DNA Type</div>" +
+        "<div class=\"hov-dna-type\">" + dna.name + "</div>" +
+        "<div class=\"hov-dna-desc\">" + dna.desc + "</div>" +
+        "<div class=\"hov-dna-grid\">" +
+          "<div class=\"hov-dna-cell\"><div class=\"hov-dna-cell-lbl\">What this org does well</div><div class=\"hov-dna-cell-txt\">" + dna.good + "</div></div>" +
+          "<div class=\"hov-dna-cell\"><div class=\"hov-dna-cell-lbl\">Where it is vulnerable</div><div class=\"hov-dna-cell-txt\">" + dna.vulnerable + "</div></div>" +
+          "<div class=\"hov-dna-cell\"><div class=\"hov-dna-cell-lbl\">What breaks it</div><div class=\"hov-dna-cell-txt\">" + dna.breaks + "</div></div>" +
+        "</div>" +
+      "</div>" +
+      rxHtml +
+      "<div class=\"hov-stmt\"><div class=\"hov-stmt-lbl\">Intelligence Statement</div><div class=\"hov-stmt-txt\">" + stmtTxt + "</div></div>" +
+      "<button class=\"hov-reset\" onclick=\"hovReset()\">Reset all answers</button>";
+  } else {
+    var answered = Object.keys(_answers).length;
+    if (answered > 0 && answered < 20) {
+      resultsHtml = "<div class=\"hov-pending-note\">" + answered + " of 20 signals answered. Complete all 20 to see your organisation DNA type and prescriptions.</div>";
+    }
+  }
+
+  c.innerHTML =
+    "<div class=\"hov-progress\" id=\"hov-progress\">" + progressHtml + "</div>" +
+    (resultsHtml ? "<div id=\"hov-results\">" + resultsHtml + "</div>" : "") +
+    vitalsHtml;
+}
+
+window.hovAnswer = function(key, val) {
+  _answers[key] = val;
+  render();
+};
+
+window.hovScrollTo = function(vitalId) {
+  var el = document.getElementById("hov-vital-" + vitalId);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+window.hovRxToggle = function(i) {
+  var body = document.getElementById("hov-rx-body-" + i);
+  var chev = document.getElementById("hov-rx-chev-" + i);
+  if (!body) return;
+  var open = body.classList.contains("open");
+  body.classList.toggle("open", !open);
+  if (chev) chev.textContent = open ? "\u25BE" : "\u25B4";
+};
+
+window.hovReset = function() {
+  _answers = {};
+  render();
+};
+
+loadCSVHints();
+render();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

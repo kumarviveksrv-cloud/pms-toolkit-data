@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What does your team actually cost to lose?</title>
+  <meta name="description" content="Four financial ledger entries. Star retention, development investment, engagement premium, flight risk exposure. Real cited multipliers. Full workings shown.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/humacity-ledger.html">
+  <meta property="og:title" content="What does your team actually cost to lose?">
+  <meta property="og:description" content="Four financial ledger entries. Star retention, development investment, engagement premium, flight risk exposure. Real cited multipliers. Full workings shown.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Value Ledger</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#hvl-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; border-radius:16px; padding:40px 44px 48px; }
+#hvl-root * { box-sizing:border-box; }
+@media(max-width:768px){ #hvl-root{ padding:26px 20px 34px; } }
+
+.hvl-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.6); margin-bottom:14px; }
+.hvl-dot { width:6px; height:6px; border-radius:50%; background:#667eea; box-shadow:0 0 10px rgba(102,126,234,.8); }
+.hvl-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3vw,34px); font-weight:800; letter-spacing:-1px; margin-bottom:8px; }
+.hvl-sub { font-size:13.5px; color:rgba(196,181,253,.55); line-height:1.7; max-width:620px; margin-bottom:32px; }
+
+.hvl-empty { text-align:center; padding:60px 20px; border:1px dashed rgba(139,92,246,.25); border-radius:16px; }
+.hvl-empty-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; margin-bottom:8px; }
+.hvl-empty-sub { font-size:13px; color:rgba(196,181,253,.5); max-width:400px; margin:0 auto 20px; line-height:1.6; }
+.hvl-empty-btn { display:inline-block; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#080612; background:linear-gradient(135deg,#667eea,#764ba2); padding:11px 22px; border-radius:100px; text-decoration:none; }
+
+.hvl-hero { display:grid; grid-template-columns:1fr 1px 1fr; gap:40px; align-items:center; padding:34px 8px; margin-bottom:28px; border-bottom:1px solid rgba(139,92,246,.15); }
+@media(max-width:760px){ .hvl-hero{ grid-template-columns:1fr; } .hvl-hero-divider{ display:none; } }
+.hvl-hero-divider { background:rgba(139,92,246,.15); height:100%; }
+.hvl-ratio-lbl { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#a78bfa; margin-bottom:10px; }
+.hvl-ratio-num { font-family:'Space Grotesk',sans-serif; font-size:clamp(48px,7vw,72px); font-weight:800; line-height:1; letter-spacing:-2px; background:linear-gradient(135deg,#f0eeff,#a78bfa,#667eea); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:8px; }
+.hvl-ratio-desc { font-size:13.5px; color:rgba(196,181,253,.55); }
+.hvl-ratio-desc b { color:#c4b5fd; font-weight:600; }
+.hvl-hook { font-style:italic; font-size:15px; color:#f0eeff; line-height:1.6; margin-bottom:10px; }
+.hvl-context { font-size:12.5px; color:rgba(196,181,253,.5); line-height:1.7; }
+.hvl-context b { color:#f0eeff; font-weight:600; }
+
+.hvl-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px; background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.15); border-radius:12px; overflow:hidden; margin-bottom:28px; }
+.hvl-stat { background:#0d0b1e; padding:16px 18px; }
+.hvl-stat-val { font-family:'DM Mono',monospace; font-size:16px; font-weight:500; margin-bottom:3px; }
+.hvl-stat-lbl { font-size:10px; letter-spacing:.5px; text-transform:uppercase; color:rgba(196,181,253,.4); }
+
+.hvl-hci { margin-bottom:28px; background:#0d0b1e; border:1px solid rgba(139,92,246,.2); border-radius:14px; overflow:hidden; }
+.hvl-hci-head { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; cursor:pointer; }
+.hvl-hci-head:hover { background:rgba(139,92,246,.04); }
+.hvl-hci-title { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#a78bfa; }
+.hvl-hci-sub { font-size:11.5px; color:rgba(196,181,253,.4); margin-top:2px; }
+.hvl-hci-coeff { font-family:'DM Mono',monospace; font-size:18px; font-weight:600; color:#a78bfa; }
+.hvl-hci-coeff-lbl { font-size:9px; letter-spacing:1px; text-transform:uppercase; color:rgba(196,181,253,.35); text-align:right; margin-top:2px; }
+.hvl-hci-body { display:none; padding:0 20px 20px; border-top:1px solid rgba(139,92,246,.1); }
+.hvl-hci-body.open { display:block; }
+.hvl-hci-explain { font-size:12.5px; color:rgba(196,181,253,.5); line-height:1.7; margin:16px 0; padding:12px 14px; background:rgba(102,126,234,.05); border-radius:8px; border-left:2px solid rgba(102,126,234,.3); }
+.hvl-hci-explain b { color:#f0eeff; display:block; margin-bottom:4px; }
+.hvl-hci-factors { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:16px; }
+@media(max-width:600px){ .hvl-hci-factors{ grid-template-columns:1fr; } }
+.hvl-hci-factor { background:rgba(255,255,255,.02); border:1px solid rgba(139,92,246,.15); border-radius:10px; padding:13px; cursor:pointer; transition:all .15s; }
+.hvl-hci-factor.yes { background:rgba(102,126,234,.08); border-color:rgba(102,126,234,.35); }
+.hvl-hci-factor-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:5px; }
+.hvl-hci-factor-name { font-size:13px; font-weight:600; color:#f0eeff; }
+.hvl-hci-toggle { width:34px; height:19px; border-radius:10px; background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3); position:relative; flex-shrink:0; }
+.hvl-hci-factor.yes .hvl-hci-toggle { background:rgba(102,126,234,.35); border-color:#a78bfa; }
+.hvl-hci-toggle::after { content:''; position:absolute; top:2px; left:2px; width:13px; height:13px; border-radius:50%; background:#a78bfa; transition:left .15s; }
+.hvl-hci-factor.yes .hvl-hci-toggle::after { left:17px; background:#667eea; }
+.hvl-hci-factor-desc { font-size:11.5px; color:rgba(196,181,253,.4); line-height:1.5; }
+.hvl-hci-table { width:100%; border-collapse:collapse; font-family:'DM Mono',monospace; font-size:12px; }
+.hvl-hci-table th { text-align:left; padding:7px 10px; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:rgba(196,181,253,.35); border-bottom:1px solid rgba(139,92,246,.15); }
+.hvl-hci-table td { padding:7px 10px; border-bottom:1px solid rgba(139,92,246,.06); }
+.hvl-hci-table tr.yours td { color:#a78bfa; font-weight:600; }
+
+.hvl-legend { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:12px; }
+.hvl-leg-item { display:flex; align-items:center; gap:5px; font-size:10.5px; color:rgba(196,181,253,.4); }
+.hvl-leg-dot { width:6px; height:6px; border-radius:50%; }
+
+.hvl-ledger { background:#0d0b1e; border:1px solid rgba(139,92,246,.18); border-radius:14px; overflow:hidden; margin-bottom:20px; }
+.hvl-lrow { padding:18px 22px; border-top:1px solid rgba(139,92,246,.08); }
+.hvl-lrow:first-child { border-top:none; }
+.hvl-lrow-top { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; flex-wrap:wrap; }
+.hvl-lrow-action { font-size:14px; font-weight:600; color:#f0eeff; margin-bottom:4px; }
+.hvl-lrow-note { font-size:12px; color:rgba(196,181,253,.45); font-style:italic; line-height:1.5; margin-bottom:8px; }
+.hvl-pill { display:inline-block; font-size:9px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:3px 8px; border-radius:100px; }
+.hvl-lrow-nums { text-align:right; white-space:nowrap; font-family:'DM Mono',monospace; }
+.hvl-lrow-cost { font-size:11px; color:rgba(196,181,253,.35); }
+.hvl-lrow-ret { font-size:11px; color:#c4b5fd; margin-top:2px; }
+.hvl-lrow-net { font-size:14px; font-weight:700; color:#4ade80; margin-top:2px; }
+.hvl-sw-trigger { display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; color:#a78bfa; cursor:pointer; background:none; border:none; padding:4px 0; margin-top:6px; }
+.hvl-sw-trigger:hover { color:#c4b5fd; }
+.hvl-sw-panel { display:none; margin-top:10px; background:rgba(102,126,234,.04); border:1px solid rgba(139,92,246,.15); border-radius:10px; padding:14px 16px; }
+.hvl-sw-panel.open { display:block; }
+.hvl-sw-row { display:grid; grid-template-columns:90px 1fr; gap:8px; padding:5px 0; font-size:12px; }
+.hvl-sw-key { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.5px; text-transform:uppercase; color:#a78bfa; padding-top:2px; }
+.hvl-sw-val { color:rgba(196,181,253,.6); line-height:1.6; }
+.hvl-sw-formula { display:block; margin-top:4px; font-family:'DM Mono',monospace; font-size:11px; color:#a78bfa; background:rgba(102,126,234,.06); padding:5px 9px; border-radius:5px; }
+.hvl-sw-note { font-size:11px; color:rgba(196,181,253,.35); font-style:italic; margin-top:8px; padding-top:8px; border-top:1px solid rgba(139,92,246,.08); }
+
+.hvl-total { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; background:rgba(102,126,234,.05); border-top:1px solid rgba(139,92,246,.15); }
+.hvl-total-lbl { font-size:12px; color:rgba(196,181,253,.5); font-weight:600; }
+.hvl-total-net { font-family:'DM Mono',monospace; font-size:16px; font-weight:700; color:#4ade80; }
+
+.hvl-statement { padding:22px 26px; background:rgba(102,126,234,.05); border:1px solid rgba(139,92,246,.2); border-left:3px solid #667eea; border-radius:14px; margin-top:8px; }
+.hvl-statement-lbl { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; background:linear-gradient(90deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; }
+.hvl-statement-txt { font-style:italic; font-size:14px; line-height:1.7; color:rgba(196,181,253,.7); }
+.hvl-statement-txt b { color:#c4b5fd; font-style:normal; }
+
+.hvl-note-block { margin-top:24px; font-size:11.5px; color:rgba(196,181,253,.35); line-height:1.7; padding-top:18px; border-top:1px dashed rgba(139,92,246,.15); }
+
+.hvl-back-link { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:rgba(167,139,250,.55); text-decoration:none; margin-bottom:16px; transition:color .2s; }
+.hvl-back-link:hover { color:#a78bfa; }
+</style>
+
+<div id="hvl-root"></div>
+
+<script>
+(function(){
+'use strict';
+
+var STORAGE_KEY = "pms_custom_org_v1";
+var CAT_COLOR = {
+  "Cost-Saving": "#667eea",
+  "Development": "#a78bfa",
+  "Culture & Engagement": "#c4b5fd",
+  "Risk & Compliance": "#f87171"
+};
+
+function getOrgData(){
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e){ return null; }
+}
+
+function fmt(sym, n){
+  var abs = Math.abs(n);
+  var sign = n < 0 ? "-" : "";
+  if(sym === String.fromCodePoint(8377)){
+    if(abs >= 10000000) return sign + sym + (abs/10000000).toFixed(2) + "Cr";
+    if(abs >= 100000) return sign + sym + (abs/100000).toFixed(1) + "L";
+    if(abs >= 1000) return sign + sym + Math.round(abs/1000) + "K";
+    return sign + sym + Math.round(abs);
+  }
+  if(abs >= 1000000) return sign + sym + (abs/1000000).toFixed(2) + "M";
+  if(abs >= 1000) return sign + sym + Math.round(abs/1000) + "K";
+  return sign + sym + Math.round(abs);
+}
+function fmtSigned(sym, n){
+  return (n >= 0 ? "+" : "-") + fmt(sym, Math.abs(n));
+}
+
+function buildLedgerEntries(employees, sym){
+  var entries = [];
+  var stars = employees.filter(function(e){ return e.placement === "Star"; });
+  var emerging = employees.filter(function(e){ return e.placement === "Emerging Talent"; });
+  var tenured = employees.filter(function(e){ return (e.tenure||0) >= 5; });
+  var atRisk = employees.filter(function(e){ return e.flightRisk === "High"; });
+
+  if(stars.length > 0){
+    var starSalary = stars.reduce(function(a,e){ return a + e.salary; }, 0);
+    entries.push({
+      id: "star-retention",
+      category: "Cost-Saving",
+      action: stars.length + " Star performer" + (stars.length===1?"":"s") + " retained",
+      note: "Replacement cost avoided at 1.8x annual salary per Star lost.",
+      cost: Math.round(starSalary * 0.05),
+      ret: Math.round(starSalary * 1.8),
+      formula: "Star headcount salary x 1.8x = replacement cost avoided",
+      inputs: stars.length + " Star-placed employees, combined salary base",
+      assumption: "1.8x multiplier reflects recruitment, onboarding and productivity ramp cost of replacing a top performer. Source: SHRM replacement cost research."
+    });
+  }
+
+  if(emerging.length > 0){
+    var devCost = Math.round(emerging.reduce(function(a,e){ return a + e.salary; },0) * 0.04);
+    entries.push({
+      id: "development-investment",
+      category: "Development",
+      action: "Development investment in " + emerging.length + " Emerging Talent",
+      note: "DRI: development cost recovered at 2.8x through performance uplift.",
+      cost: devCost,
+      ret: Math.round(devCost * 2.8),
+      formula: "Development spend x 2.8x DRI = performance uplift return",
+      inputs: fmt(sym, devCost) + " estimated development spend across " + emerging.length + " Emerging Talent employees",
+      assumption: "2.8x Development Return Index based on McKinsey L&D research comparing structured versus informal development programmes."
+    });
+  }
+
+  if(tenured.length > 0){
+    var tenuredSalary = tenured.reduce(function(a,e){ return a + e.salary; }, 0);
+    var avgSalary = employees.reduce(function(a,e){ return a+e.salary; },0) / employees.length;
+    entries.push({
+      id: "engagement-value",
+      category: "Culture & Engagement",
+      action: "Engagement value, " + tenured.length + " employees with 5+ years tenure",
+      note: "EEI: 8% productivity premium from sustained engagement in long-tenure staff.",
+      cost: Math.round(tenured.length * avgSalary * 0.01),
+      ret: Math.round(tenuredSalary * 0.08),
+      formula: "Tenured employee salaries x 8% EEI productivity premium",
+      inputs: tenured.length + " employees at 5+ years tenure, combined salary base",
+      assumption: "8% Engagement productivity premium sourced from Gallup State of the Global Workplace research."
+    });
+  }
+
+  if(atRisk.length > 0){
+    var riskSalary = atRisk.reduce(function(a,e){ return a + e.salary; }, 0);
+    var avgSalary2 = employees.reduce(function(a,e){ return a+e.salary; },0) / employees.length;
+    entries.push({
+      id: "risk-mitigation",
+      category: "Risk & Compliance",
+      action: "Risk mitigation, " + atRisk.length + " employees flagged High flight risk",
+      note: "Exposure contained versus unmanaged exit cost at 2x salary each.",
+      cost: Math.round(atRisk.length * avgSalary2 * 0.02),
+      ret: Math.round(riskSalary * 0.6),
+      formula: "At-risk salaries x 60% exposure contained (unmanaged exit modelled at 2x salary)",
+      inputs: atRisk.length + " employees marked High flight risk by Analyse Your Org, combined salary base",
+      assumption: "60% exposure-contained figure applies a conservative exit probability against a 2x-salary unmanaged replacement cost."
+    });
+  }
+
+  return entries;
+}
+
+function esc(s){ return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function swPanel(entry, sym){
+  return '<button class="hvl-sw-trigger" data-sw="' + entry.id + '">' +
+    '<span>Show workings</span>' +
+    '</button>' +
+    '<div class="hvl-sw-panel" id="sw-' + entry.id + '">' +
+      '<div class="hvl-sw-row"><div class="hvl-sw-key">Formula</div><div class="hvl-sw-val"><span class="hvl-sw-formula">' + esc(entry.formula) + '</span></div></div>' +
+      '<div class="hvl-sw-row"><div class="hvl-sw-key">Inputs</div><div class="hvl-sw-val">' + esc(entry.inputs) + '</div></div>' +
+      '<div class="hvl-sw-row"><div class="hvl-sw-key">Result</div><div class="hvl-sw-val">' + fmt(sym, entry.ret) + ' return ' + String.fromCodePoint(183) + ' ' + fmtSigned(sym, entry.ret-entry.cost) + ' net</div></div>' +
+      '<div class="hvl-sw-note">' + esc(entry.assumption) + '</div>' +
+    '</div>';
+}
+
+var hciFactors = [false,false,false,false];
+var hciBase = { totalRet:0 };
+
+function hciCoeff(){
+  return Math.round((0.70 + hciFactors.filter(Boolean).length * 0.15) * 100) / 100;
+}
+
+function renderHCI(sym){
+  var coeff = hciCoeff();
+  var base = hciBase.totalRet;
+  var factorDefs = [
+    { name:"Leadership Stability", desc:"Is leadership stable, present, and actively engaged right now?" },
+    { name:"Org Disruption Free", desc:"Is the org free from major disruption, restructure, or layoffs?" },
+    { name:"Culture Health", desc:"Is the culture broadly functional and not in crisis?" },
+    { name:"Execution Momentum", desc:"Is the org executing well against its current priorities?" }
+  ];
+  var factorsHtml = factorDefs.map(function(f,i){
+    var yesCls = hciFactors[i] ? " yes" : "";
+    return '<div class="hvl-hci-factor' + yesCls + '" data-hci-factor="' + i + '">' +
+      '<div class="hvl-hci-factor-top"><div class="hvl-hci-factor-name">' + esc(f.name) + '</div><div class="hvl-hci-toggle"></div></div>' +
+      '<div class="hvl-hci-factor-desc">' + esc(f.desc) + '</div>' +
+    '</div>';
+  }).join("");
+
+  var cons = base * (coeff - 0.15);
+  var your = base * coeff;
+  var opt = base * (coeff + 0.15);
+
+  return '<div class="hvl-hci">' +
+    '<div class="hvl-hci-head" id="hvl-hci-head">' +
+      '<div><div class="hvl-hci-title">Human Confidence Index</div><div class="hvl-hci-sub">How confident are you current conditions support these returns?</div></div>' +
+      '<div><div class="hvl-hci-coeff" id="hvl-hci-coeff-display">' + coeff.toFixed(2) + 'x</div><div class="hvl-hci-coeff-lbl">HCI Coefficient</div></div>' +
+    '</div>' +
+    '<div class="hvl-hci-body" id="hvl-hci-body">' +
+      '<div class="hvl-hci-explain"><b>What is the Human Confidence Index?</b>Every figure above is computed from your uploaded data. But data reflects the past, your judgement reflects what is happening right now. Answer four observable questions and the coefficient adjusts the total return shown below.</div>' +
+      '<div class="hvl-hci-factors">' + factorsHtml + '</div>' +
+      '<table class="hvl-hci-table" id="hvl-hci-table">' +
+        '<tr><th>Scenario</th><th>HCI</th><th>Adjusted Return</th></tr>' +
+        '<tr><td>Conservative</td><td>' + (coeff-0.15).toFixed(2) + 'x</td><td>' + fmt(sym,cons) + '</td></tr>' +
+        '<tr class="yours"><td>Your Assessment</td><td>' + coeff.toFixed(2) + 'x</td><td>' + fmt(sym,your) + '</td></tr>' +
+        '<tr><td>Optimistic</td><td>' + (coeff+0.15).toFixed(2) + 'x</td><td>' + fmt(sym,opt) + '</td></tr>' +
+      '</table>' +
+    '</div>' +
+  '</div>';
+}
+
+function render(){
+  var root = document.getElementById("hvl-root");
+  var data = getOrgData();
+
+  var header = '<a href="/pages/analyse-your-org.html" class="hvl-back-link">' + String.fromCodePoint(8592) + ' Back to Analyse Your Org</a>' +
+    '<div class="hvl-eyebrow"><div class="hvl-dot"></div>The Value Ledger</div>' +
+    '<div class="hvl-sub">A financial record of what HR does, written in the language your CEO and CFO already speak. Computed from your uploaded org data, not narrative.</div>';
+
+  if(!data || !data.employees || data.employees.length === 0){
+    root.innerHTML = header +
+      '<div class="hvl-empty">' +
+        '<div class="hvl-empty-title">No org data loaded yet</div>' +
+        '<div class="hvl-empty-sub">The Value Ledger runs on your uploaded employee data. Upload your CSV on Analyse Your Org first, then come back here.</div>' +
+        '<a class="hvl-empty-btn" href="/pages/analyse-your-org.html">Go to Analyse Your Org</a>' +
+      '</div>';
+    return;
+  }
+
+  var employees = data.employees;
+  var sym = data.currencySymbol || String.fromCodePoint(8377);
+  var totalComp = employees.reduce(function(a,e){ return a+e.salary; }, 0);
+  var entries = buildLedgerEntries(employees, sym);
+  var totCost = entries.reduce(function(a,e){ return a+e.cost; }, 0);
+  var totRet = entries.reduce(function(a,e){ return a+e.ret; }, 0);
+  var totNet = totRet - totCost;
+  var ratio = totalComp > 0 ? totRet/totalComp : 0;
+  hciBase.totalRet = totRet;
+
+  var html = header;
+
+  html += '<div class="hvl-hero">' +
+    '<div>' +
+      '<div class="hvl-ratio-lbl">Return on HR Investment</div>' +
+      '<div class="hvl-ratio-num">' + sym + ratio.toFixed(1) + '</div>' +
+      '<div class="hvl-ratio-desc">returned for every <b>' + sym + '1</b> invested in HR</div>' +
+    '</div>' +
+    '<div class="hvl-hero-divider"></div>' +
+    '<div>' +
+      '<div class="hvl-hook">' + entries.length + ' documented entries this cycle, computed from ' + employees.length + ' employee records.</div>' +
+      '<div class="hvl-context">This ledger records HR contributions in financial language. <b>' + fmt(sym,totRet) + '</b> in documented value against a <b>' + fmt(sym,totalComp) + '</b> comp base.</div>' +
+    '</div>' +
+  '</div>';
+
+  html += '<div class="hvl-stats">' +
+    '<div class="hvl-stat"><div class="hvl-stat-val" style="color:#4ade80">' + fmt(sym,totRet) + '</div><div class="hvl-stat-lbl">Total Return</div></div>' +
+    '<div class="hvl-stat"><div class="hvl-stat-val" style="color:rgba(196,181,253,.6)">' + fmt(sym,totCost) + '</div><div class="hvl-stat-lbl">HR Investment</div></div>' +
+    '<div class="hvl-stat"><div class="hvl-stat-val" style="color:' + (totNet>=0?'#4ade80':'#f87171') + '">' + fmtSigned(sym,totNet) + '</div><div class="hvl-stat-lbl">Net Ledger Value</div></div>' +
+    '<div class="hvl-stat"><div class="hvl-stat-val" style="color:#a78bfa">' + entries.length + '</div><div class="hvl-stat-lbl">Entries</div></div>' +
+    '<div class="hvl-stat"><div class="hvl-stat-val" style="color:#c4b5fd">' + employees.length + '</div><div class="hvl-stat-lbl">Employees</div></div>' +
+  '</div>';
+
+  html += renderHCI(sym);
+
+  html += '<div class="hvl-legend">' +
+    Object.keys(CAT_COLOR).map(function(cat){
+      return '<div class="hvl-leg-item"><div class="hvl-leg-dot" style="background:' + CAT_COLOR[cat] + '"></div>' + esc(cat) + '</div>';
+    }).join("") +
+  '</div>';
+
+  if(entries.length === 0){
+    html += '<div class="hvl-empty"><div class="hvl-empty-title">No ledger entries yet</div><div class="hvl-empty-sub">Your uploaded data does not currently include any employees matching a Star placement, Emerging Talent placement, 5+ year tenure, or High flight risk flag. Entries appear automatically as those conditions are met.</div></div>';
+  } else {
+    html += '<div class="hvl-ledger">';
+    entries.forEach(function(e){
+      var net = e.ret - e.cost;
+      var catColor = CAT_COLOR[e.category];
+      html += '<div class="hvl-lrow">' +
+        '<div class="hvl-lrow-top">' +
+          '<div style="flex:1;min-width:220px">' +
+            '<div class="hvl-lrow-action">' + esc(e.action) + '</div>' +
+            '<div class="hvl-lrow-note">' + esc(e.note) + '</div>' +
+            '<span class="hvl-pill" style="background:' + catColor + '22;color:' + catColor + ';border:1px solid ' + catColor + '44">' + esc(e.category) + '</span>' +
+            swPanel(e, sym) +
+          '</div>' +
+          '<div class="hvl-lrow-nums">' +
+            '<div class="hvl-lrow-cost">' + fmt(sym,e.cost) + ' cost</div>' +
+            '<div class="hvl-lrow-ret">' + fmt(sym,e.ret) + ' return</div>' +
+            '<div class="hvl-lrow-net">' + fmtSigned(sym,net) + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    html += '<div class="hvl-total"><div class="hvl-total-lbl">TOTAL ' + String.fromCodePoint(183) + ' ' + entries.length + ' entries</div><div class="hvl-total-net">' + fmtSigned(sym,totNet) + '</div></div>';
+    html += '</div>';
+  }
+
+  html += '<div class="hvl-statement">' +
+    '<div class="hvl-statement-lbl">Intelligence Statement</div>' +
+    '<div class="hvl-statement-txt">' + statementText(sym, ratio, totRet, totalComp) + '</div>' +
+  '</div>';
+
+  html += '<div class="hvl-note-block">This first version of the Value Ledger covers four categories: Star retention, development investment, tenured engagement value, and flight-risk mitigation. A fifth category, revenue-generating new hires, exists in the source model but is not included here because it depends on hire-date and role-type data your CSV template does not currently collect reliably. It will be added once that data exists rather than estimated with a weak proxy.</div>';
+
+  root.innerHTML = html;
+
+  root.querySelectorAll("[data-sw]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = btn.getAttribute("data-sw");
+      var panel = document.getElementById("sw-" + id);
+      if(panel) panel.classList.toggle("open");
+    });
+  });
+
+  var hciHead = document.getElementById("hvl-hci-head");
+  if(hciHead){
+    hciHead.addEventListener("click", function(){
+      var body = document.getElementById("hvl-hci-body");
+      if(body) body.classList.toggle("open");
+    });
+  }
+
+  root.querySelectorAll("[data-hci-factor]").forEach(function(el){
+    el.addEventListener("click", function(e){
+      e.stopPropagation();
+      var idx = parseInt(el.getAttribute("data-hci-factor"), 10);
+      hciFactors[idx] = !hciFactors[idx];
+      var bodyWasOpen = document.getElementById("hvl-hci-body").classList.contains("open");
+      render();
+      if(bodyWasOpen){
+        document.getElementById("hvl-hci-body").classList.add("open");
+      }
+    });
+  });
+}
+
+function statementText(sym, ratio, totRet, totalComp){
+  if(ratio < 1){
+    return "This ledger is still building out. Even so, documented HR activity has returned <b>" + fmt(sym,totRet) + "</b> against a <b>" + fmt(sym,totalComp) + "</b> comp base.";
+  }
+  if(ratio < 2){
+    return "A <b>" + ratio.toFixed(1) + "x return</b> on the comp base. <b>" + fmt(sym,totRet) + "</b> in documented HR value so far.";
+  }
+  return "For every " + sym + "1 this organisation invests in HR, it receives <b>" + sym + ratio.toFixed(1) + "</b> back. The Value Ledger proves it, with the working shown for every figure.";
+}
+
+render();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assets vs liabilities. For your workforce.</title>
+  <meta name="description" content="Five real assets. Five real liabilities. Net Human Capital. Asset Density. A Human Capital Score. The balance sheet your CFO never knew HR could produce.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/humacity-balance-sheet.html">
+  <meta property="og:title" content="Assets vs liabilities. For your workforce.">
+  <meta property="og:description" content="Five real assets. Five real liabilities. Net Human Capital. Asset Density. A Human Capital Score. The balance sheet your CFO never knew HR could produce.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Human Balance Sheet</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+#hbs-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; border-radius:16px; overflow:hidden; }
+#hbs-root * { box-sizing:border-box; }
+#hbs-hero { background:linear-gradient(160deg,#080612 0%,#0f0820 50%,#080612 100%); padding:44px 48px 32px; border-bottom:1px solid rgba(102,126,234,.15); position:relative; overflow:hidden; }
+#hbs-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.5),rgba(167,139,250,.3),rgba(102,126,234,.5),transparent); }
+.hbs-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.6); margin-bottom:14px; }
+.hbs-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#a78bfa; box-shadow:0 0 10px rgba(167,139,250,.8); }
+.hbs-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3vw,38px); font-weight:800; letter-spacing:-1px; line-height:1.1; color:#f0eeff; margin-bottom:10px; }
+.hbs-title span { background:linear-gradient(135deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hbs-sub { font-size:13px; color:rgba(196,181,253,.5); line-height:1.75; max-width:600px; }
+#hbs-content { padding:32px 48px 48px; }
+@media(max-width:768px){ #hbs-hero{padding:28px 24px 24px;} #hbs-content{padding:24px 24px 36px;} }
+.hbs-entry-card { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.15); border-radius:14px; padding:36px 32px; text-align:center; }
+.hbs-entry-icon { font-size:36px; margin-bottom:14px; }
+.hbs-entry-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; color:#f0eeff; margin-bottom:8px; }
+.hbs-entry-sub { font-size:13px; color:rgba(196,181,253,.55); line-height:1.7; max-width:400px; margin:0 auto 20px; }
+.hbs-entry-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; background:linear-gradient(135deg,#667eea,#764ba2); color:white; text-decoration:none; }
+.hbs-ctx-bar { display:flex; align-items:center; gap:16px; flex-wrap:wrap; background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:10px; padding:12px 18px; margin-bottom:24px; }
+.hbs-ctx-item { display:flex; align-items:center; gap:6px; }
+.hbs-ctx-label { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(167,139,250,.4); }
+.hbs-ctx-val { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#f0eeff; }
+.hbs-ctx-dot { width:3px; height:3px; border-radius:50%; background:rgba(102,126,234,.3); }
+.hbs-hero-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px; }
+@media(max-width:580px){ .hbs-hero-stats{grid-template-columns:1fr 1fr;} }
+.hbs-stat-card { background:linear-gradient(135deg,rgba(13,11,31,.8),rgba(5,4,22,.95)); border:1px solid rgba(102,126,234,.2); border-radius:14px; padding:20px 22px; position:relative; overflow:hidden; }
+.hbs-stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.4),transparent); }
+.hbs-stat-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+.hbs-stat-num { font-family:'Space Grotesk',sans-serif; font-size:clamp(22px,3vw,36px); font-weight:800; letter-spacing:-1px; line-height:1; margin-bottom:6px; }
+.hbs-stat-num.pos { background:linear-gradient(135deg,#f0eeff,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hbs-stat-num.neg { color:#f87171; }
+.hbs-stat-num.gold { background:linear-gradient(135deg,#f0eeff,#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hbs-stat-desc { font-size:11px; color:rgba(196,181,253,.45); line-height:1.5; }
+.hbs-hci { background:rgba(13,11,31,.6); border:1px solid rgba(102,126,234,.2); border-radius:14px; overflow:hidden; margin-bottom:24px; }
+.hbs-hci-hdr { display:flex; align-items:center; justify-content:space-between; padding:13px 18px; cursor:pointer; transition:background .15s; }
+.hbs-hci-hdr:hover { background:rgba(102,126,234,.06); }
+.hbs-hci-left { display:flex; align-items:center; gap:10px; }
+.hbs-hci-icon { width:26px; height:26px; border-radius:6px; background:rgba(102,126,234,.15); border:1px solid rgba(102,126,234,.3); display:flex; align-items:center; justify-content:center; font-size:11px; flex-shrink:0; }
+.hbs-hci-title { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#a78bfa; }
+.hbs-hci-sub { font-size:11px; color:rgba(196,181,253,.35); margin-top:1px; }
+.hbs-hci-coeff { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:800; color:#a78bfa; }
+.hbs-hci-body { display:none; padding:0 18px 18px; border-top:1px solid rgba(102,126,234,.1); }
+.hbs-hci-body.open { display:block; }
+.hbs-hci-factors { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+@media(max-width:600px){ .hbs-hci-factors{grid-template-columns:1fr;} }
+.hbs-hci-factor { background:rgba(13,11,31,.7); border:1px solid rgba(102,126,234,.12); border-radius:8px; padding:10px 12px; cursor:pointer; transition:all .2s; user-select:none; }
+.hbs-hci-factor.yes { background:rgba(102,126,234,.08); border-color:rgba(102,126,234,.3); }
+.hbs-hci-factor-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+.hbs-hci-factor-name { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#f0eeff; }
+.hbs-hci-toggle { width:32px; height:17px; border-radius:9px; background:rgba(102,126,234,.2); border:1px solid rgba(102,126,234,.3); position:relative; transition:all .2s; flex-shrink:0; }
+.hbs-hci-factor.yes .hbs-hci-toggle { background:rgba(102,126,234,.3); border-color:rgba(102,126,234,.5); }
+.hbs-hci-toggle::after { content:''; position:absolute; top:2px; left:2px; width:11px; height:11px; border-radius:50%; background:#a78bfa; transition:all .2s; }
+.hbs-hci-factor.yes .hbs-hci-toggle::after { left:17px; background:#667eea; }
+.hbs-hci-factor-desc { font-size:10px; color:rgba(196,181,253,.4); line-height:1.45; }
+.hbs-hci-calc { padding:9px 12px; background:rgba(13,11,31,.5); border-radius:7px; margin-bottom:10px; font-family:'DM Mono',monospace; font-size:11px; color:rgba(196,181,253,.35); }
+.hbs-hci-scen-table { width:100%; border-collapse:collapse; font-size:11px; }
+.hbs-hci-scen-table th { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; padding:5px 9px; background:rgba(13,11,31,.6); color:rgba(196,181,253,.3); text-align:left; border-bottom:1px solid rgba(102,126,234,.1); }
+.hbs-hci-scen-table th.yours { color:#a78bfa; }
+.hbs-hci-scen-table td { padding:6px 9px; font-family:'DM Mono',monospace; border-bottom:1px solid rgba(102,126,234,.06); }
+.hbs-hci-scen-table td.label { color:rgba(196,181,253,.3); font-size:10px; }
+.hbs-hci-scen-table td.conservative { color:rgba(196,181,253,.5); }
+.hbs-hci-scen-table td.yours { color:#a78bfa; font-weight:700; }
+.hbs-hci-scen-table td.optimistic { color:#667eea; }
+.hbs-bs-wrap { background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.18); border-radius:16px; overflow:hidden; margin-bottom:24px; position:relative; }
+.hbs-bs-wrap::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.4),rgba(167,139,250,.2),rgba(102,126,234,.4),transparent); }
+.hbs-bs-header { padding:14px 24px; background:rgba(102,126,234,.05); border-bottom:1px solid rgba(102,126,234,.15); display:flex; align-items:center; justify-content:space-between; }
+.hbs-bs-header-title { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#a78bfa; }
+.hbs-bs-header-sub { font-family:'DM Mono',monospace; font-size:10px; color:rgba(196,181,253,.35); }
+.hbs-bs-grid { display:grid; grid-template-columns:1fr 1px 1fr; }
+@media(max-width:640px){ .hbs-bs-grid{grid-template-columns:1fr;} }
+.hbs-bs-divider { background:rgba(102,126,234,.12); }
+.hbs-bs-col-head { padding:10px 20px 8px; background:rgba(102,126,234,.04); border-bottom:1px solid rgba(102,126,234,.1); }
+.hbs-bs-col-head-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; }
+.hbs-bs-col-head-lbl.assets { color:rgba(52,211,153,.6); }
+.hbs-bs-col-head-lbl.liabs { color:rgba(248,113,113,.6); }
+.hbs-bs-row { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:9px 20px; border-top:1px solid rgba(102,126,234,.06); }
+.hbs-bs-row-label { font-size:12px; color:rgba(196,181,253,.7); line-height:1.4; }
+.hbs-bs-row-val { font-family:'DM Mono',monospace; font-size:12px; font-weight:600; white-space:nowrap; }
+.hbs-bs-row-val.asset { color:#34d399; }
+.hbs-bs-row-val.liab { color:#f87171; }
+.hbs-sw-trigger { display:inline-flex; align-items:center; gap:4px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:rgba(167,139,250,.4); cursor:pointer; border:none; background:none; padding:2px 0; margin-top:3px; transition:color .15s; }
+.hbs-sw-trigger:hover { color:#a78bfa; }
+.hbs-sw-panel { display:none; margin-top:6px; font-family:'DM Mono',monospace; font-size:10px; color:rgba(196,181,253,.4); line-height:1.6; background:rgba(102,126,234,.04); border-radius:6px; padding:7px 10px; border-left:2px solid rgba(102,126,234,.15); }
+.hbs-sw-panel.open { display:block; }
+.hbs-bs-subtotal { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; border-top:1px solid rgba(102,126,234,.15); background:rgba(13,11,31,.4); }
+.hbs-bs-subtotal-label { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#f0eeff; }
+.hbs-bs-subtotal-val { font-family:'DM Mono',monospace; font-size:13px; font-weight:800; }
+.hbs-bs-subtotal-val.assets { color:#34d399; }
+.hbs-bs-subtotal-val.liabs { color:#f87171; }
+.hbs-bs-equity { display:grid; grid-template-columns:1fr 140px; padding:16px 24px; background:linear-gradient(90deg,rgba(102,126,234,.08),rgba(102,126,234,.03),transparent); border-top:2px solid rgba(102,126,234,.2); }
+.hbs-bs-equity-label { font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:800; color:#f0eeff; }
+.hbs-bs-equity-val { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; text-align:right; }
+.hbs-bs-equity-val.pos { color:#34d399; }
+.hbs-bs-equity-val.neg { color:#f87171; }
+.hbs-bs-density { display:grid; grid-template-columns:1fr 140px; padding:12px 24px; background:rgba(102,126,234,.04); border-top:1px solid rgba(102,126,234,.12); align-items:center; }
+.hbs-bs-density-label { font-style:italic; font-size:12px; color:rgba(196,181,253,.55); }
+.hbs-bs-density-val { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; color:#c4b5fd; text-align:right; }
+.hbs-humacity-section { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:14px; padding:24px; margin-bottom:24px; }
+.hbs-humacity-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+.hbs-humacity-score-row { display:flex; align-items:center; gap:20px; margin-bottom:16px; }
+.hbs-humacity-score-num { font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:800; letter-spacing:-2px; line-height:1; }
+.hbs-humacity-score-num.high { background:linear-gradient(135deg,#f0eeff,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hbs-humacity-score-num.mid { background:linear-gradient(135deg,#f0eeff,#fbbf24); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hbs-humacity-score-num.low { color:#f87171; }
+.hbs-humacity-score-right { flex:1; }
+.hbs-humacity-track { height:6px; background:rgba(102,126,234,.1); border-radius:3px; overflow:hidden; margin-bottom:6px; }
+.hbs-humacity-fill { height:100%; border-radius:3px; }
+.hbs-humacity-fill.high { background:linear-gradient(90deg,#667eea,#34d399); }
+.hbs-humacity-fill.mid { background:linear-gradient(90deg,#667eea,#fbbf24); }
+.hbs-humacity-fill.low { background:linear-gradient(90deg,rgba(102,126,234,.5),#f87171); }
+.hbs-humacity-reading { font-size:13px; color:rgba(196,181,253,.6); line-height:1.65; }
+.hbs-humacity-reading b { color:#c4b5fd; }
+.hbs-humacity-drivers { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:16px; }
+@media(max-width:600px){ .hbs-humacity-drivers{grid-template-columns:1fr 1fr;} }
+.hbs-driver { background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.1); border-radius:8px; padding:10px 12px; text-align:center; }
+.hbs-driver-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:rgba(196,181,253,.35); margin-bottom:5px; }
+.hbs-driver-val { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:800; }
+.hbs-driver-val.high { color:#34d399; }
+.hbs-driver-val.mid { color:#fbbf24; }
+.hbs-driver-val.low { color:#f87171; }
+.hbs-stmt { padding:22px 26px; background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.2); border-radius:14px; border-left:3px solid #667eea; position:relative; overflow:hidden; }
+.hbs-stmt::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#667eea,#a78bfa); }
+.hbs-stmt-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:10px; }
+.hbs-stmt-txt { font-style:italic; font-size:13px; line-height:1.75; color:rgba(196,181,253,.7); }
+.hbs-stmt-txt b { color:#c4b5fd; font-style:normal; }
+.hbs-back-link { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:rgba(167,139,250,.55); text-decoration:none; margin-bottom:16px; transition:color .2s; }
+.hbs-back-link:hover { color:#a78bfa; }
+</style>
+
+<div id="hbs-root">
+  <div id="hbs-hero">
+    <a href="/pages/analyse-your-org.html" class="hbs-back-link">&#8592; Back to Analyse Your Org</a>
+    <div class="hbs-title">The Human <span>Balance Sheet</span></div>
+    <div class="hbs-sub">Human Assets on the left. Human Liabilities on the right. Net Human Capital at the bottom. The one statement that shows what your people are actually worth to this organisation, minus what they cost it.</div>
+  </div>
+  <div id="hbs-content"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DATA_KEY = "pms_custom_org_v1";
+var SYM = "\u20B9";
+var _hciF = [false, false, false, false];
+var _computed = null;
+
+function fmt(n) {
+  var a = Math.abs(n), sg = n < 0 ? "-" : "";
+  if (a >= 1e7) return sg + SYM + (a / 1e7).toFixed(2) + "Cr";
+  if (a >= 1e5) return sg + SYM + (a / 1e5).toFixed(1) + "L";
+  if (a >= 1000) return sg + SYM + Math.round(a / 1000) + "K";
+  return sg + SYM + Math.round(a);
+}
+
+function hciCoeff() {
+  return Math.round((0.70 + _hciF.filter(Boolean).length * 0.15) * 100) / 100;
+}
+
+function loadData() {
+  try {
+    var raw = localStorage.getItem(DATA_KEY);
+    if (!raw) return null;
+    var parsed = JSON.parse(raw);
+    var rows = Array.isArray(parsed) ? parsed : (parsed.employees || parsed.rows || parsed.data || null);
+    if (!rows || !rows.length) return null;
+    return rows;
+  } catch (e) { return null; }
+}
+
+function gField(row) {
+  var keys = Object.keys(row);
+  function find() {
+    for (var i = 0; i < arguments.length; i++) {
+      var arg = arguments[i];
+      for (var j = 0; j < keys.length; j++) {
+        if (keys[j].toLowerCase().replace(/[\s_-]/g,"") === arg.toLowerCase().replace(/[\s_-]/g,"")) return row[keys[j]];
+      }
+    }
+    return null;
+  }
+  return {
+    salary: parseFloat(find("salary","annualsalary","ctc","annualctc")) || 0,
+    placement: (find("placement","talentsegment","category") || "").toLowerCase().trim(),
+    tenure: parseFloat(find("tenureyears","tenure","yearsofservice")) || 0,
+    perf: parseFloat(find("performancescore","perfscore","score")) || 0,
+    manager: (find("managername","manager","reportsto") || "").trim(),
+    name: (find("name","employeename","fullname") || "").trim(),
+    department: (find("department","dept","team","function","division","businessunit") || "").toLowerCase().trim(),
+    level: (find("level","grade","band","joblevel") || "").toLowerCase().trim()
+  };
+}
+
+var REVENUE_DEPT_KEYS = ["sales", "business development", "bd", "account management", "customer success", "growth", "revenue", "partnerships", "biz dev"];
+function isRevenueDept(dept) {
+  if (!dept) return false;
+  return REVENUE_DEPT_KEYS.some(function(k){ return dept.indexOf(k) !== -1; });
+}
+
+var SENIOR_LEVEL_KEYS = ["senior", "lead", "director", "principal", "staff", "head", "vp", "chief"];
+function isSeniorLevel(level) {
+  if (!level) return false;
+  return SENIOR_LEVEL_KEYS.some(function(k){ return level.indexOf(k) !== -1; });
+}
+
+function compute(rawRows) {
+  var emps = rawRows.map(gField).filter(function(e) { return e.salary > 0; });
+  if (!emps.length) return null;
+  var totalComp = emps.reduce(function(a,e){return a+e.salary;},0);
+  var avgSalary = totalComp / emps.length;
+  var stars = emps.filter(function(e) {
+    var p = e.placement;
+    return p.indexOf("star") !== -1 || (p.indexOf("high performer") !== -1 && p.indexOf("high potential") === -1);
+  });
+  var hipos = emps.filter(function(e) {
+    var p = e.placement;
+    return p.indexOf("high potential") !== -1 || p.indexOf("hipo") !== -1;
+  });
+  var emerging = emps.filter(function(e) {
+    return e.placement.indexOf("emerging") !== -1 || e.placement.indexOf("developing") !== -1;
+  });
+  var tenured = emps.filter(function(e) { return e.tenure >= 5; });
+  var inconsistent = emps.filter(function(e) {
+    return e.placement.indexOf("inconsistent") !== -1 || e.placement.indexOf("underperf") !== -1 || e.placement.indexOf("below") !== -1 || e.placement.indexOf("needs improvement") !== -1;
+  });
+  var managerSet = {};
+  emps.forEach(function(e) { if (e.manager) managerSet[e.manager] = true; });
+  var managers = emps.filter(function(e) { return managerSet[e.name]; });
+  var mgrBelowTeam = 0;
+  var gradePerfMap = {};
+  emps.forEach(function(e) { var g = e.perf > 0 ? "all" : "none"; if (!gradePerfMap[g]) gradePerfMap[g] = []; gradePerfMap[g].push(e.perf); });
+  var globalPerfAvg = emps.length > 0 ? emps.reduce(function(a,e){return a+e.perf;},0)/emps.length : 3;
+  managers.forEach(function(mgr) {
+    var reports = emps.filter(function(e) { return e.manager === mgr.name; });
+    if (!reports.length) return;
+    var teamAvg = reports.reduce(function(a,e){return a+e.perf;},0)/reports.length;
+    if (mgr.perf < teamAvg) mgrBelowTeam++;
+  });
+
+  var gradePerfMap = {};
+  emps.forEach(function(e) { var g = e.level || "default"; if (!gradePerfMap[g]) gradePerfMap[g] = []; gradePerfMap[g].push(e.perf); });
+  var gradeBench = {};
+  Object.keys(gradePerfMap).forEach(function(g) { var arr = gradePerfMap[g]; gradeBench[g] = arr.reduce(function(a,b){return a+b;},0) / arr.length; });
+
+  var talentEquity = Math.round(stars.concat(hipos).reduce(function(a,e){
+    var surplus = e.perf - (gradeBench[e.level || "default"] || 0);
+    return a + surplus * e.salary * 2;
+  }, 0));
+
+  var seniorEmps = emps.filter(function(e){ return isSeniorLevel(e.level); });
+  var institutionalKnowledge = Math.round(seniorEmps.reduce(function(a,e){
+    return a + e.salary * Math.min(e.tenure * 0.08, 0.60);
+  }, 0));
+
+  var orgLearningVelocity = Math.round(emerging.reduce(function(a,e){return a+e.salary*0.35;},0));
+
+  var hasDeptData = emps.some(function(e){ return !!e.department; });
+  var relationshipCapital = 0;
+  if (hasDeptData) {
+    var revenueEmps = emps.filter(function(e){ return isRevenueDept(e.department) && e.tenure >= 2; });
+    relationshipCapital = Math.round(revenueEmps.reduce(function(a,e){
+      return a + e.salary * Math.min(e.tenure * 0.12, 0.80);
+    }, 0));
+  }
+
+  var cultureAsset = Math.round(tenured.reduce(function(a,e){return a+e.salary*0.08;},0));
+
+  var totalAssets = talentEquity + institutionalKnowledge + orgLearningVelocity + relationshipCapital + cultureAsset;
+
+  var talentConcentrationRisk = Math.round(
+    inconsistent.reduce(function(a,e){return a+e.salary*0.60;},0) +
+    hipos.reduce(function(a,e){return a+e.salary*0.25;},0)
+  );
+  var skillDebtLiab = Math.round(totalComp * 0.03);
+  var growthReadinessGap = Math.round(totalComp * 0.02);
+  var cultureLiability = Math.round(
+    inconsistent.reduce(function(a,e){return a+e.salary*0.25;},0) + totalComp * 0.01
+  );
+  var obsoleteEmps = tenured.filter(function(e){
+    return e.placement.indexOf("inconsistent") !== -1 || e.placement.indexOf("underperf") !== -1 || e.placement.indexOf("below") !== -1 || e.placement.indexOf("needs improvement") !== -1;
+  });
+  var workforceObsolescence = Math.round(obsoleteEmps.reduce(function(a,e){return a+e.salary*0.30;},0));
+
+  var totalLiabs = talentConcentrationRisk + skillDebtLiab + growthReadinessGap + cultureLiability + workforceObsolescence;
+
+  var retainedEarnings = 0;
+  var retainedEarningsAvailable = false;
+  try {
+    var l4raw = localStorage.getItem("virorah_humacity_l4_result");
+    if (l4raw) {
+      var l4data = JSON.parse(l4raw);
+      if (typeof l4data.humanNetProfit === "number") {
+        retainedEarnings = l4data.humanNetProfit;
+        retainedEarningsAvailable = true;
+      }
+    }
+  } catch(e) {}
+
+  var netHumanCapital = totalAssets - totalLiabs;
+  var assetDensity = totalComp > 0 ? (totalAssets / totalComp).toFixed(2) : "0.00";
+
+  var starScore = Math.min(25, Math.round((stars.length / emps.length) * 250));
+  var mgrScore = managers.length > 0 ? Math.min(20, Math.round(((managers.length - mgrBelowTeam) / managers.length) * 20)) : 10;
+  var retScore = inconsistent.length === 0 ? 20 : Math.min(20, Math.max(5, Math.round(20 - inconsistent.length / emps.length * 100)));
+  var pipeScore = hipos.length > 0 ? Math.min(20, Math.round(hipos.length / Math.max(stars.length, 1) * 30)) : 5;
+  var knowScore = Math.min(15, Math.round(tenured.length / emps.length * 60));
+  var humacityScore = starScore + mgrScore + retScore + pipeScore + knowScore;
+
+  return {
+    emps: emps.length, totalComp: totalComp, avgSalary: avgSalary,
+    stars: stars.length, hipos: hipos.length, emerging: emerging.length,
+    tenured: tenured.length, inconsistent: inconsistent.length, managers: managers.length,
+    hasDeptData: hasDeptData,
+    talentEquity: talentEquity, institutionalKnowledge: institutionalKnowledge, seniorCount: seniorEmps.length,
+    orgLearningVelocity: orgLearningVelocity, relationshipCapital: relationshipCapital,
+    cultureAsset: cultureAsset, totalAssets: totalAssets,
+    talentConcentrationRisk: talentConcentrationRisk, skillDebtLiab: skillDebtLiab,
+    growthReadinessGap: growthReadinessGap, cultureLiability: cultureLiability,
+    workforceObsolescence: workforceObsolescence, totalLiabs: totalLiabs,
+    retainedEarnings: retainedEarnings, retainedEarningsAvailable: retainedEarningsAvailable,
+    netHumanCapital: netHumanCapital, assetDensity: assetDensity,
+    humacityScore: humacityScore,
+    starScore: starScore, mgrScore: mgrScore, retScore: retScore,
+    pipeScore: pipeScore, knowScore: knowScore
+  };
+}
+
+function renderHCI(d) {
+  var h = hciCoeff();
+  var el = document.getElementById("hbs-hci-coeff");
+  if (el) el.textContent = h.toFixed(2) + "x";
+  _hciF.forEach(function(v, i) {
+    var f = document.getElementById("hbs-hci-f" + i);
+    if (f) f.classList.toggle("yes", v);
+  });
+  var cl = document.getElementById("hbs-hci-calc");
+  if (cl) {
+    var yc = _hciF.filter(Boolean).length;
+    cl.innerHTML = "0.70 + (" + yc + " \u00D7 0.15) = <b style=\"color:#a78bfa;\">" + h.toFixed(2) + "</b>";
+  }
+  var sc = document.getElementById("hbs-hci-scen");
+  if (sc && d) {
+    var base = d.netHumanCapital;
+    var c = Math.round(base * (h - 0.15)) + d.retainedEarnings;
+    var y = Math.round(base * h) + d.retainedEarnings;
+    var o = Math.round(base * (h + 0.15)) + d.retainedEarnings;
+    sc.innerHTML =
+      "<tr><th>Scenario</th><th>HCI</th><th class=\"yours\">Adj. Net Human Capital</th></tr>" +
+      "<tr><td class=\"label\">Conservative</td><td class=\"conservative\">" + (h-0.15).toFixed(2) + "x</td><td class=\"conservative\">" + fmt(c) + "</td></tr>" +
+      "<tr><td class=\"label\" style=\"color:#a78bfa\">Your Assessment</td><td class=\"yours\">" + h.toFixed(2) + "x</td><td class=\"yours\">" + fmt(y) + "</td></tr>" +
+      "<tr><td class=\"label\">Optimistic</td><td class=\"optimistic\">" + (h+0.15).toFixed(2) + "x</td><td class=\"optimistic\">" + fmt(o) + "</td></tr>";
+  }
+  var netEl = document.getElementById("hbs-equity-val");
+  if (netEl && d) {
+    var adj = Math.round(d.netHumanCapital * h) + d.retainedEarnings;
+    netEl.textContent = fmt(adj);
+    netEl.className = "hbs-bs-equity-val " + (adj >= 0 ? "pos" : "neg");
+  }
+  var densEl = document.getElementById("hbs-density-val");
+  if (densEl && d) {
+    var adjAssets = Math.round(d.totalAssets * h);
+    densEl.textContent = d.totalComp > 0 ? (adjAssets / d.totalComp).toFixed(2) + "x" : "0.00x";
+  }
+}
+
+function bsRow(label, val, side, swText) {
+  var swId = "hbs-sw-" + label.replace(/[^a-zA-Z0-9]/g, "");
+  return "<div class=\"hbs-bs-row\">" +
+    "<div>" +
+      "<div class=\"hbs-bs-row-label\">" + label + "</div>" +
+      "<button class=\"hbs-sw-trigger\" onclick=\"hbsSwToggle('" + swId + "')\">\u25BE workings</button>" +
+      "<div class=\"hbs-sw-panel\" id=\"" + swId + "\">" + swText + "</div>" +
+    "</div>" +
+    "<div class=\"hbs-bs-row-val " + side + "\">" + fmt(val) + "</div>" +
+  "</div>";
+}
+
+function driverCls(score, max) { var pct = score / max; return pct >= 0.65 ? "high" : pct >= 0.4 ? "mid" : "low"; }
+
+function renderPage(d) {
+  var h = hciCoeff();
+  var adjNet = Math.round(d.netHumanCapital * h) + d.retainedEarnings;
+  var adjAssets = Math.round(d.totalAssets * h);
+  var adjDensity = d.totalComp > 0 ? (adjAssets / d.totalComp).toFixed(2) : "0.00";
+  var scoreCls = d.humacityScore >= 65 ? "high" : d.humacityScore >= 40 ? "mid" : "low";
+  var reading = d.humacityScore >= 75 ? "This organisation holds a <b>high-density human capital position</b>. The asset base is deep, the liabilities are contained, and the pipeline is functioning. This is the kind of organisation that compounds its talent advantage over time." :
+    d.humacityScore >= 50 ? "This organisation holds a <b>moderate human capital position</b>. The asset base is present but the liabilities are meaningful. Targeted intervention in the highest-liability areas would materially improve the net position within 12 months." :
+    "This organisation is carrying a <b>structurally weak human capital position</b>. The asset base is thin relative to the liabilities. Without deliberate intervention, the gap compounds. The highest-risk liability lines tell you exactly where to start.";
+  var stmtTxt = adjNet >= 0
+    ? "The Net Human Capital position stands at <b>" + fmt(adjNet) + "</b> (HCI-adjusted). For every " + SYM + "1 of total compensation, this org holds <b>" + adjDensity + " in human assets</b>. " + (d.humacityScore >= 65 ? "A Human Capital Score of " + d.humacityScore + "/100 places this org in the top tier - the talent advantage is both present and compounding." : "A Human Capital Score of " + d.humacityScore + "/100 signals specific gaps in the talent position that the liability lines name precisely.")
+    : "The Net Human Capital position is <b>negative at " + fmt(adjNet) + "</b>. Human liabilities exceed human assets at the current HCI setting. This is not a payroll problem - it is a talent portfolio problem. The liabilities are specific and addressable. The balance sheet shows exactly which ones to move first.";
+
+  var c = document.getElementById("hbs-content");
+  c.innerHTML =
+    "<div class=\"hbs-ctx-bar\">" +
+      "<div class=\"hbs-ctx-item\"><div class=\"hbs-ctx-label\">Headcount</div><div class=\"hbs-ctx-val\">" + d.emps + "</div></div>" +
+      "<div class=\"hbs-ctx-dot\"></div>" +
+      "<div class=\"hbs-ctx-item\"><div class=\"hbs-ctx-label\">Total comp</div><div class=\"hbs-ctx-val\">" + fmt(d.totalComp) + "</div></div>" +
+      "<div class=\"hbs-ctx-dot\"></div>" +
+      "<div class=\"hbs-ctx-item\"><div class=\"hbs-ctx-label\">Total assets</div><div class=\"hbs-ctx-val\">" + fmt(adjAssets) + "</div></div>" +
+      "<div class=\"hbs-ctx-dot\"></div>" +
+      "<div class=\"hbs-ctx-item\"><div class=\"hbs-ctx-label\">Total liabs</div><div class=\"hbs-ctx-val\">" + fmt(d.totalLiabs) + "</div></div>" +
+    "</div>" +
+    "<div class=\"hbs-hero-stats\">" +
+      "<div class=\"hbs-stat-card\"><div class=\"hbs-stat-lbl\">Net Human Capital</div><div class=\"hbs-stat-num " + (adjNet >= 0 ? "pos" : "neg") + "\">" + fmt(adjNet) + "</div><div class=\"hbs-stat-desc\">Assets minus liabilities, HCI-adjusted</div></div>" +
+      "<div class=\"hbs-stat-card\"><div class=\"hbs-stat-lbl\">Asset Density</div><div class=\"hbs-stat-num gold\">" + adjDensity + "x</div><div class=\"hbs-stat-desc\">Human assets per " + SYM + "1 of compensation</div></div>" +
+      "<div class=\"hbs-stat-card\"><div class=\"hbs-stat-lbl\">Human Capital Score</div><div class=\"hbs-stat-num " + scoreCls + "\">" + d.humacityScore + "/100</div><div class=\"hbs-stat-desc\">Composite human capital quality score</div></div>" +
+    "</div>" +
+    "<div class=\"hbs-hci\" id=\"hbs-hci-wrap\">" +
+      "<div class=\"hbs-hci-hdr\" id=\"hbs-hci-hdr\">" +
+        "<div class=\"hbs-hci-left\">" +
+          "<div class=\"hbs-hci-icon\">H</div>" +
+          "<div><div class=\"hbs-hci-title\">Human Confidence Index</div><div class=\"hbs-hci-sub\">Adjust Net Human Capital and Asset Density</div></div>" +
+        "</div>" +
+        "<div style=\"display:flex;align-items:center;gap:12px;\"><div class=\"hbs-hci-coeff\" id=\"hbs-hci-coeff\">" + h.toFixed(2) + "x</div><div id=\"hbs-hci-chev\" style=\"color:#a78bfa;font-size:11px;\">\u25BE</div></div>" +
+      "</div>" +
+      "<div class=\"hbs-hci-body\" id=\"hbs-hci-body\">" +
+        "<div class=\"hbs-hci-factors\">" +
+          ["Leadership Stability", "Org Disruption Free", "Culture Health", "Execution Momentum"].map(function(name, i) {
+            var descs = ["Leadership stable, present, and actively engaged?", "Free from major disruption, restructure, or layoffs?", "Culture broadly functional, not in crisis?", "Executing well against current strategic priorities?"];
+            return "<div class=\"hbs-hci-factor\" id=\"hbs-hci-f" + i + "\" onclick=\"hbsHciToggle(" + i + ")\">" +
+              "<div class=\"hbs-hci-factor-top\"><div class=\"hbs-hci-factor-name\">" + name + "</div><div class=\"hbs-hci-toggle\"></div></div>" +
+              "<div class=\"hbs-hci-factor-desc\">" + descs[i] + "</div>" +
+            "</div>";
+          }).join("") +
+        "</div>" +
+        "<div class=\"hbs-hci-calc\" id=\"hbs-hci-calc\">0.70 + (0 \u00D7 0.15) = <b style=\"color:#a78bfa;\">0.70</b></div>" +
+        "<table class=\"hbs-hci-scen-table\"><tbody id=\"hbs-hci-scen\"></tbody></table>" +
+      "</div>" +
+    "</div>" +
+    "<div class=\"hbs-bs-wrap\">" +
+      "<div class=\"hbs-bs-header\"><div class=\"hbs-bs-header-title\">Human Balance Sheet</div><div class=\"hbs-bs-header-sub\">Click \u25BE workings for calculation detail</div></div>" +
+      "<div class=\"hbs-bs-grid\">" +
+        "<div>" +
+          "<div class=\"hbs-bs-col-head\"><div class=\"hbs-bs-col-head-lbl assets\">Human Assets</div></div>" +
+          bsRow("Talent Equity", d.talentEquity, "asset", d.stars + " Stars + " + d.hipos + " HiPos, (performance surplus above grade average) \u00D7 salary \u00D7 2. The value of outperforming what their grade predicts.") +
+          bsRow("Institutional Knowledge", d.institutionalKnowledge, "asset", d.seniorCount + " employees at senior/lead/director/principal level, title-based seniority \u00D7 salary \u00D7 min(tenure \u00D7 8%, 60%). The cost of recreating embedded expertise if they left.") +
+          bsRow("Organisational Learning Velocity", d.orgLearningVelocity, "asset", d.emerging + " Emerging Talent \u00D7 salary \u00D7 35%. Future capability being actively built right now.") +
+          (d.hasDeptData
+            ? bsRow("Relationship Capital", d.relationshipCapital, "asset", "Revenue-department employees (tenure \u2265 2yr) \u00D7 salary \u00D7 min(tenure \u00D7 12%, 80%). Client and partner relationships that walk out the door if they leave.")
+            : "<div class=\"hbs-bs-row\"><div><div class=\"hbs-bs-row-label\">Relationship Capital</div><div style=\"font-size:11px;color:rgba(196,181,253,.35);margin-top:2px;\">No Department column mapped on your upload - add one to unlock this asset.</div></div><div class=\"hbs-bs-row-val\" style=\"color:rgba(196,181,253,.3);\"> - </div></div>"
+          ) +
+          bsRow("Culture Asset", d.cultureAsset, "asset", d.tenured + " employees with 5+ years tenure \u00D7 salary \u00D7 8%. The engagement premium of a workforce that stays.") +
+          "<div class=\"hbs-bs-subtotal\"><div class=\"hbs-bs-subtotal-label\">TOTAL HUMAN ASSETS</div><div class=\"hbs-bs-subtotal-val assets\">" + fmt(d.totalAssets) + "</div></div>" +
+        "</div>" +
+        "<div class=\"hbs-bs-divider\"></div>" +
+        "<div>" +
+          "<div class=\"hbs-bs-col-head\"><div class=\"hbs-bs-col-head-lbl liabs\">Human Liabilities</div></div>" +
+          bsRow("Talent Concentration Risk", d.talentConcentrationRisk, "liab", d.inconsistent + " Inconsistent Performers \u00D7 salary \u00D7 60%, plus " + d.hipos + " HiPos \u00D7 salary \u00D7 25%. Value at risk from people who may leave, for very different reasons.") +
+          bsRow("Skill Debt", d.skillDebtLiab, "liab", "3% of total compensation base. Estimated cost of capability gaps if not addressed within 12 months.") +
+          bsRow("Growth Readiness Gap", d.growthReadinessGap, "liab", "2% of total compensation base. Cost of unpreparedness for this organisation's next growth stage.") +
+          bsRow("Culture Liability", d.cultureLiability, "liab", "Low performers (Inconsistent) \u00D7 salary \u00D7 25%, plus 1% of total comp. The financial cost of known dysfunction and disengagement.") +
+          bsRow("Workforce Obsolescence Risk", d.workforceObsolescence, "liab", "Tenured (5+yr) AND underperforming employees \u00D7 salary \u00D7 30%. A drag, not a gap, long-tenured people whose output has fallen behind.") +
+          "<div class=\"hbs-bs-subtotal\"><div class=\"hbs-bs-subtotal-label\">TOTAL HUMAN LIABILITIES</div><div class=\"hbs-bs-subtotal-val liabs\">" + fmt(d.totalLiabs) + "</div></div>" +
+        "</div>" +
+      "</div>" +
+      "<div class=\"hbs-bs-density\" style=\"border-top:1px solid rgba(102,126,234,.12);\"><div class=\"hbs-bs-density-label\">Retained Human Earnings, from the Human P&amp;L" + (d.retainedEarningsAvailable ? "" : " - not yet run") + "</div><div class=\"hbs-bs-density-val\" style=\"font-size:14px;color:" + (d.retainedEarningsAvailable ? (d.retainedEarnings >= 0 ? "#34d399" : "#f87171") : "rgba(196,181,253,.3)") + ";\">" + (d.retainedEarningsAvailable ? fmt(d.retainedEarnings) : " - ") + "</div></div>" +
+      "<div class=\"hbs-bs-equity\"><div class=\"hbs-bs-equity-label\">NET HUMAN CAPITAL (HCI-adjusted)</div><div class=\"hbs-bs-equity-val " + (adjNet >= 0 ? "pos" : "neg") + "\" id=\"hbs-equity-val\">" + fmt(adjNet) + "</div></div>" +
+      "<div class=\"hbs-bs-density\"><div class=\"hbs-bs-density-label\">Human asset density: for every " + SYM + "1 of compensation, this org holds</div><div class=\"hbs-bs-density-val\" id=\"hbs-density-val\">" + adjDensity + "x</div></div>" +
+    "</div>" +
+    "<div class=\"hbs-humacity-section\">" +
+      "<div class=\"hbs-humacity-lbl\">Human Capital Score \u00B7 Composite Talent Quality</div>" +
+      "<div class=\"hbs-humacity-score-row\">" +
+        "<div class=\"hbs-humacity-score-num " + scoreCls + "\">" + d.humacityScore + "</div>" +
+        "<div class=\"hbs-humacity-score-right\">" +
+          "<div class=\"hbs-humacity-track\"><div class=\"hbs-humacity-fill " + scoreCls + "\" style=\"width:" + d.humacityScore + "%\"></div></div>" +
+          "<div class=\"hbs-humacity-reading\">" + reading + "</div>" +
+        "</div>" +
+      "</div>" +
+      "<div class=\"hbs-humacity-drivers\">" +
+        "<div class=\"hbs-driver\"><div class=\"hbs-driver-lbl\">Talent Density</div><div class=\"hbs-driver-val " + driverCls(d.starScore, 25) + "\">" + d.starScore + "/25</div></div>" +
+        "<div class=\"hbs-driver\"><div class=\"hbs-driver-lbl\">Mgr Quality</div><div class=\"hbs-driver-val " + driverCls(d.mgrScore, 20) + "\">" + d.mgrScore + "/20</div></div>" +
+        "<div class=\"hbs-driver\"><div class=\"hbs-driver-lbl\">Retention</div><div class=\"hbs-driver-val " + driverCls(d.retScore, 20) + "\">" + d.retScore + "/20</div></div>" +
+        "<div class=\"hbs-driver\"><div class=\"hbs-driver-lbl\">Pipeline</div><div class=\"hbs-driver-val " + driverCls(d.pipeScore, 20) + "\">" + d.pipeScore + "/20</div></div>" +
+      "</div>" +
+    "</div>" +
+    "<div class=\"hbs-stmt\"><div class=\"hbs-stmt-lbl\">Intelligence Statement</div><div class=\"hbs-stmt-txt\">" + stmtTxt + "</div></div>";
+
+  document.getElementById("hbs-hci-hdr").addEventListener("click", function() {
+    var body = document.getElementById("hbs-hci-body");
+    var chev = document.getElementById("hbs-hci-chev");
+    var open = body.classList.contains("open");
+    body.classList.toggle("open", !open);
+    if (chev) chev.textContent = open ? "\u25BE" : "\u25B4";
+  });
+
+  renderHCI(d);
+}
+
+window.hbsHciToggle = function(i) {
+  _hciF[i] = !_hciF[i];
+  if (_computed) renderHCI(_computed);
+};
+
+window.hbsSwToggle = function(id) {
+  var panel = document.getElementById(id);
+  if (!panel) return;
+  var open = panel.classList.contains("open");
+  document.querySelectorAll(".hbs-sw-panel.open").forEach(function(p) { p.classList.remove("open"); });
+  if (!open) panel.classList.add("open");
+};
+
+var rawRows = loadData();
+if (!rawRows) {
+  document.getElementById("hbs-content").innerHTML = "<div class=\"hbs-entry-card\"><div class=\"hbs-entry-icon\">L5</div><div class=\"hbs-entry-title\">Upload your org data to run the Balance Sheet</div><div class=\"hbs-entry-sub\">The Human Balance Sheet is computed from your actual employee dataset. Upload your CSV first, then return here.</div><a href=\"/pages/analyse-your-org.html\" class=\"hbs-entry-btn\">Go to Analyse Your Org</a></div>";
+} else {
+  _computed = compute(rawRows);
+  if (!_computed) {
+    document.getElementById("hbs-content").innerHTML = "<div class=\"hbs-entry-card\"><div class=\"hbs-entry-icon\">L5</div><div class=\"hbs-entry-title\">Could not read org data</div><div class=\"hbs-entry-sub\">The uploaded data could not be parsed. Re-upload your CSV from Analyse Your Org.</div><a href=\"/pages/analyse-your-org.html\" class=\"hbs-entry-btn\">Go to Analyse Your Org</a></div>";
+  } else {
+    renderPage(_computed);
+  }
+}
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

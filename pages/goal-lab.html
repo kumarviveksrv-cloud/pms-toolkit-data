@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your goals are probably weaker than you think.</title>
+  <meta name="description" content="Paste a goal. AI diagnoses it before you cascade it to 50 people. Flags what is weak, vague, or unmeasurable. Fix it here before year-end.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/goal-lab.html">
+  <meta property="og:title" content="Your goals are probably weaker than you think.">
+  <meta property="og:description" content="Paste a goal. AI diagnoses it before you cascade it to 50 people. Flags what is weak, vague, or unmeasurable. Fix it here before year-end.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Goal Lab</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH PMS - GOAL DIAGNOSTIC LAB (/goal-lab)
+     Pro-gated · Single Goal Analyzer + Batch Health Report
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #050410;
+  --card: #0d0b1e;
+  --card2: #11102a;
+  --purple: #6366f1;
+  --violet: #7c3aed;
+  --emerald: #10b981;
+  --amber: #f59e0b;
+  --rose: #f43f5e;
+  --text: #f4f3ff;
+  --muted: #a5b4fc;
+  --faint: rgba(99,102,241,.10);
+  --border: rgba(99,102,241,.18);
+}
+
+#gdl-wrap {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  padding: 0 0 80px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* background particles */
+#gdl-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+/* gate overlay - position:absolute inside #gdl-wrap so Softr nav stays visible */
+#gdl-gate {
+  position: absolute; top: 0; left: 0; width: 100%; min-height: 100%; z-index: 900;
+  background: rgba(5,4,16,.92);
+  backdrop-filter: blur(16px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.gdl-gate-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 40px;
+  max-width: 460px; width: 100%;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0,0,0,.5);
+  position: relative; overflow: hidden;
+}
+.gdl-gate-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--violet), transparent);
+}
+.gdl-gate-icon { font-size: 40px; margin-bottom: 16px; }
+.gdl-gate-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px; font-weight: 700; margin-bottom: 10px; color: var(--text);
+}
+.gdl-gate-sub { font-size: 14px; color: rgba(165,180,252,.65); margin-bottom: 28px; line-height: 1.7; }
+.gdl-gate-input {
+  width: 100%; padding: 13px 16px; border-radius: 10px; margin-bottom: 12px;
+  background: rgba(255,255,255,.06); border: 1px solid var(--border);
+  color: var(--text); font-size: 14px; font-family: 'Space Grotesk', sans-serif;
+  outline: none; transition: border-color .2s;
+}
+.gdl-gate-input:focus { border-color: var(--purple); }
+.gdl-gate-btn {
+  width: 100%; padding: 13px; border-radius: 10px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--purple), var(--violet));
+  color: #fff; font-size: 14px; font-weight: 700; font-family: 'Space Grotesk', sans-serif;
+  transition: opacity .2s, transform .15s;
+}
+.gdl-gate-btn:hover { opacity: .9; transform: translateY(-1px); }
+.gdl-gate-err { font-size: 12px; color: var(--rose); margin-top: 8px; min-height: 16px; }
+.gdl-gate-link { font-size: 12px; color: rgba(165,180,252,.45); margin-top: 16px; }
+.gdl-gate-link a { color: var(--muted); text-decoration: none; }
+
+/* main content */
+#gdl-content { position: relative; z-index: 10; max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+
+/* hero */
+.gdl-hero { padding: 80px 0 56px; }
+.gdl-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;
+  background: rgba(99,102,241,.10); border: 1px solid rgba(99,102,241,.28);
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+}
+.gdl-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); animation: gdlPulse 1.6s ease-in-out infinite; }
+@keyframes gdlPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.5)} }
+.gdl-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 64px); font-weight: 700; line-height: 1.05;
+  letter-spacing: -1.5px; margin-bottom: 16px;
+}
+.gdl-hero-title span {
+  background: linear-gradient(135deg, #c4b5fd, var(--purple), #e879f9);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.gdl-hero-sub { font-size: 17px; color: rgba(165,180,252,.6); line-height: 1.75; max-width: 600px; }
+.gdl-hero-sub strong { color: var(--text); font-weight: 600; }
+
+/* tab switcher */
+.gdl-tabs {
+  display: flex; gap: 4px; margin-bottom: 32px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 4px; width: fit-content;
+}
+.gdl-tab {
+  padding: 10px 24px; border-radius: 9px; border: none; cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600;
+  color: rgba(165,180,252,.5); background: transparent; transition: all .2s;
+}
+.gdl-tab.active { background: var(--purple); color: #fff; }
+.gdl-tab:not(.active):hover { color: var(--muted); }
+
+/* panels */
+.gdl-panel { display: none; }
+.gdl-panel.active { display: block; animation: gdlFadeIn .3s ease; }
+@keyframes gdlFadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* shared card */
+.gdl-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
+}
+.gdl-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,.4), transparent);
+}
+
+/* Single goal panel */
+.gdl-single-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media(max-width:900px){ .gdl-single-grid{ grid-template-columns:1fr; } }
+
+.gdl-input-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block;
+}
+.gdl-textarea {
+  width: 100%; min-height: 140px; padding: 16px; border-radius: 12px;
+  background: rgba(255,255,255,.05); border: 1px solid var(--border);
+  color: var(--text); font-size: 15px; font-family: 'DM Sans', sans-serif;
+  line-height: 1.7; resize: vertical; outline: none; transition: border-color .2s;
+  box-sizing: border-box;
+}
+.gdl-textarea:focus { border-color: var(--purple); }
+.gdl-textarea::placeholder { color: rgba(165,180,252,.3); }
+
+.gdl-context-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.gdl-select {
+  width: 100%; padding: 11px 14px; border-radius: 10px;
+  background: rgba(255,255,255,.05); border: 1px solid var(--border);
+  color: var(--text); font-size: 13px; font-family: 'DM Sans', sans-serif;
+  outline: none; cursor: pointer; transition: border-color .2s;
+}
+.gdl-select:focus { border-color: var(--purple); }
+.gdl-select option { background: #0d0b1e; }
+
+.gdl-run-btn {
+  margin-top: 16px; width: 100%; padding: 14px;
+  border-radius: 12px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--purple), var(--violet));
+  color: #fff; font-size: 14px; font-weight: 700; font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: .4px; transition: opacity .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 24px rgba(99,102,241,.35);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.gdl-run-btn:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); box-shadow: 0 8px 32px rgba(99,102,241,.5); }
+.gdl-run-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Score radar */
+.gdl-result-area { min-height: 320px; display: flex; flex-direction: column; justify-content: center; }
+.gdl-placeholder {
+  text-align: center; padding: 40px 20px;
+  color: rgba(165,180,252,.3); font-size: 14px; line-height: 1.8;
+}
+.gdl-placeholder-icon { font-size: 40px; margin-bottom: 12px; opacity: .4; }
+
+/* score bars */
+.gdl-scores { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+.gdl-score-row { display: flex; flex-direction: column; gap: 6px; }
+.gdl-score-meta { display: flex; justify-content: space-between; align-items: center; }
+.gdl-score-dim {
+  font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: .5px; color: var(--text);
+}
+.gdl-score-num { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; }
+.gdl-score-track {
+  height: 7px; border-radius: 4px; background: rgba(255,255,255,.07); overflow: hidden;
+}
+.gdl-score-fill { height: 100%; border-radius: 4px; transition: width 1s cubic-bezier(.4,0,.2,1); width: 0%; }
+.gdl-score-note { font-size: 11px; color: rgba(165,180,252,.5); line-height: 1.5; margin-top: 2px; }
+
+/* overall badge */
+.gdl-overall {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; border-radius: 14px; margin-bottom: 20px;
+  background: rgba(99,102,241,.08); border: 1px solid rgba(99,102,241,.2);
+}
+.gdl-overall-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700;
+  line-height: 1; letter-spacing: -2px; min-width: 72px; text-align: center;
+}
+.gdl-overall-label { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.gdl-overall-verdict { font-size: 12px; color: rgba(165,180,252,.55); line-height: 1.5; }
+
+/* rewrite box */
+.gdl-rewrite {
+  background: rgba(16,185,129,.06); border: 1px solid rgba(16,185,129,.2);
+  border-radius: 14px; padding: 20px; margin-bottom: 16px;
+}
+.gdl-rewrite-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--emerald); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.gdl-rewrite-text { font-size: 15px; color: var(--text); line-height: 1.75; font-weight: 500; }
+
+.gdl-explanation {
+  font-size: 13px; color: rgba(165,180,252,.6); line-height: 1.75;
+  border-top: 1px solid rgba(99,102,241,.12); padding-top: 16px;
+}
+
+/* loading state */
+.gdl-loading { text-align: center; padding: 48px 20px; }
+.gdl-spinner {
+  width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 16px;
+  border: 3px solid rgba(99,102,241,.2); border-top-color: var(--purple);
+  animation: gdlSpin .8s linear infinite;
+}
+@keyframes gdlSpin { to{transform:rotate(360deg)} }
+.gdl-loading-text { font-size: 14px; color: rgba(165,180,252,.5); }
+
+/* Batch panel */
+.gdl-batch-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 24px; }
+@media(max-width:900px){ .gdl-batch-grid{ grid-template-columns:1fr; } }
+
+.gdl-batch-hint {
+  font-size: 12px; color: rgba(165,180,252,.4); margin-top: 8px; line-height: 1.6;
+}
+.gdl-counter { font-size: 11px; color: rgba(165,180,252,.35); text-align: right; margin-top: 4px; }
+
+/* health report */
+.gdl-report-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+  padding-bottom: 20px; border-bottom: 1px solid rgba(99,102,241,.12);
+}
+.gdl-report-score {
+  font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700;
+  line-height: 1; letter-spacing: -2px; min-width: 90px;
+}
+.gdl-report-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.gdl-report-sub { font-size: 12px; color: rgba(165,180,252,.5); line-height: 1.5; }
+
+/* dimension summary */
+.gdl-dim-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.gdl-dim-cell {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(99,102,241,.12);
+  border-radius: 10px; padding: 12px 14px;
+}
+.gdl-dim-name { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(165,180,252,.45); margin-bottom: 4px; }
+.gdl-dim-score { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1; }
+
+/* flagged goals */
+.gdl-flagged-title {
+  font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: rgba(244,63,94,.8); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.gdl-flagged-item {
+  background: rgba(244,63,94,.05); border: 1px solid rgba(244,63,94,.15);
+  border-radius: 10px; padding: 14px 16px; margin-bottom: 8px;
+}
+.gdl-flagged-goal { font-size: 13px; color: rgba(165,180,252,.7); font-style: italic; margin-bottom: 6px; }
+.gdl-flagged-issue { font-size: 12px; color: rgba(244,63,94,.8); font-weight: 600; }
+
+/* reco box */
+.gdl-reco {
+  background: rgba(99,102,241,.07); border: 1px solid rgba(99,102,241,.18);
+  border-radius: 12px; padding: 16px 18px;
+}
+.gdl-reco-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.gdl-reco-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.gdl-reco-list li { font-size: 13px; color: rgba(165,180,252,.65); padding-left: 18px; position: relative; line-height: 1.5; }
+.gdl-reco-list li::before { content: '->'; position: absolute; left: 0; color: var(--purple); font-size: 11px; top: 1px; }
+
+/* PDF export button */
+.gdl-pdf-btn {
+  display: none; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 12px 20px; margin-top: 16px;
+  border-radius: 10px; border: 1px solid rgba(99,102,241,.3); cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+  background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(124,58,237,.08));
+  color: #c4b5fd; transition: all .2s;
+}
+.gdl-pdf-btn:hover { background: linear-gradient(135deg,rgba(99,102,241,.22),rgba(124,58,237,.16)); border-color: var(--purple); color: #fff; }
+.gdl-pdf-btn.visible { display: flex; }
+
+/* calibration cta strip */
+.gdl-cta-strip {
+  margin-top: 40px; padding: 28px 36px;
+  background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(124,58,237,.08));
+  border: 1px solid rgba(99,102,241,.25); border-radius: 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.gdl-cta-strip-text { font-size: 15px; color: rgba(165,180,252,.75); }
+.gdl-cta-strip-text strong { color: var(--text); font-size: 16px; display: block; margin-bottom: 4px; }
+.gdl-cta-strip-btn {
+  padding: 12px 28px; border-radius: 10px; text-decoration: none;
+  background: linear-gradient(135deg, var(--purple), var(--violet));
+  color: #fff; font-size: 13px; font-weight: 700; font-family: 'Space Grotesk', sans-serif;
+  white-space: nowrap; transition: opacity .2s;
+}
+.gdl-cta-strip-btn:hover { opacity: .85; }
+
+@media(max-width:600px){
+  #gdl-content { padding: 0 20px; }
+  .gdl-hero { padding: 60px 0 40px; }
+  .gdl-card { padding: 24px; }
+  .gdl-dim-grid { grid-template-columns: 1fr 1fr; }
+  .gdl-context-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<canvas id="gdl-bg"></canvas>
+
+<!-- gate is now INSIDE gdl-wrap so position:absolute doesn't cover Softr nav -->
+<div id="gdl-wrap">
+
+  <!-- PRO GATE -->
+  <div id="gdl-gate">
+    <div class="gdl-gate-box">
+      <div class="gdl-gate-icon">&#x1F9EA;</div>
+      <div class="gdl-gate-title">Goal Diagnostic Lab</div>
+      <div class="gdl-gate-sub">This is a <strong style="color:#c4b5fd">Pro-only</strong> tool. Enter your Virorah Pro key to access the Goal Analyzer and Batch Health Report.</div>
+      <input class="gdl-gate-input" id="gdl-key-input" type="text" placeholder="Enter your Virorah Pro key" autocomplete="off" spellcheck="false">
+      <button class="gdl-gate-btn" id="gdl-key-btn">Unlock Goal Diagnostic Lab &#x2192;</button>
+      <div class="gdl-gate-err" id="gdl-gate-err"></div>
+      <div class="gdl-gate-link">Don't have a key? <a href="/pages/pricing.html">Upgrade to Pro &#x2192;</a></div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="gdl-content">
+
+    <!-- hero -->
+    <div class="gdl-hero">
+      <div class="gdl-eyebrow"><div class="gdl-eyebrow-dot"></div>Pro Feature &middot; AI-Powered</div>
+      <h1 class="gdl-hero-title">Goal Diagnostic <span>Lab.</span></h1>
+      <p class="gdl-hero-sub">Paste any performance goal. The AI dissects it across 5 dimensions, <strong>scores it, rewrites it,</strong> and tells you exactly what's wrong before it reaches calibration.</p>
+    </div>
+
+    <!-- tab switcher -->
+    <div class="gdl-tabs">
+      <button class="gdl-tab active" id="gdl-tab-single" onclick="gdlSwitch('single')">&#x1F3AF; Single Goal Analyzer</button>
+      <button class="gdl-tab" id="gdl-tab-batch" onclick="gdlSwitch('batch')">&#x1F4CA; Batch Health Report</button>
+    </div>
+
+    <!-- SINGLE GOAL PANEL -->
+    <div class="gdl-panel active" id="gdl-panel-single">
+      <div class="gdl-single-grid">
+        <div class="gdl-card">
+          <label class="gdl-input-label">&#x270D; Paste the goal</label>
+          <textarea class="gdl-textarea" id="gdl-single-input" placeholder="e.g. Improve team communication and collaboration during Q3 to help the business grow and meet its targets."></textarea>
+          <div class="gdl-context-row">
+            <select class="gdl-select" id="gdl-role">
+              <option value="">Role level (optional)</option>
+              <option value="Individual Contributor">Individual Contributor</option>
+              <option value="Team Lead">Team Lead</option>
+              <option value="Manager">Manager</option>
+              <option value="Senior Manager">Senior Manager</option>
+              <option value="Director">Director</option>
+              <option value="VP / C-Suite">VP / C-Suite</option>
+            </select>
+            <select class="gdl-select" id="gdl-framework">
+              <option value="SMART">Framework: SMART</option>
+              <option value="OKR">Framework: OKR</option>
+              <option value="FAST">Framework: FAST</option>
+            </select>
+          </div>
+          <button class="gdl-run-btn" id="gdl-single-btn" onclick="gdlRunSingle()">
+            <span>&#x26A1;</span> Diagnose This Goal
+          </button>
+        </div>
+        <div class="gdl-card">
+          <div class="gdl-result-area" id="gdl-single-result">
+            <div class="gdl-placeholder">
+              <div class="gdl-placeholder-icon">&#x1F52C;</div>
+              Paste a goal on the left and hit <strong style="color:var(--muted)">Diagnose</strong>.<br>
+              The AI will score it across 5 dimensions<br>and rewrite it into a proper goal.
+            </div>
+          </div>
+          <button class="gdl-pdf-btn" id="gdl-pdf-btn" onclick="gdlExportPDF()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Goal Diagnostic Report (.pdf)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BATCH PANEL -->
+    <div class="gdl-panel" id="gdl-panel-batch">
+      <div class="gdl-batch-grid">
+        <div class="gdl-card">
+          <label class="gdl-input-label">&#x1F4CB; Paste team goals (one per line)</label>
+          <textarea class="gdl-textarea" id="gdl-batch-input" style="min-height:220px;"
+            placeholder="Improve customer satisfaction&#10;Reduce team attrition by being a better manager&#10;Drive revenue growth across all accounts&#10;Complete all assigned projects on time&#10;Support the team to achieve their OKRs"></textarea>
+          <div id="gdl-batch-counter" class="gdl-counter">0 / 20 goals</div>
+          <div class="gdl-batch-hint">
+            Enter up to 20 goals, one per line. You can prefix with a manager name e.g. <em style="color:var(--muted)">"Rahul: Improve customer satisfaction"</em> for named reports.
+          </div>
+          <div class="gdl-context-row" style="margin-top:14px;">
+            <select class="gdl-select" id="gdl-batch-framework">
+              <option value="SMART">Framework: SMART</option>
+              <option value="OKR">Framework: OKR</option>
+            </select>
+            <select class="gdl-select" id="gdl-batch-dept">
+              <option value="">Department (optional)</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
+              <option value="HR">HR / People</option>
+              <option value="Finance">Finance</option>
+              <option value="Operations">Operations</option>
+              <option value="Product">Product</option>
+              <option value="Customer Success">Customer Success</option>
+            </select>
+          </div>
+          <button class="gdl-run-btn" id="gdl-batch-btn" onclick="gdlRunBatch()">
+            <span>&#x1F4CA;</span> Generate Health Report
+          </button>
+        </div>
+        <div class="gdl-card">
+          <div class="gdl-result-area" id="gdl-batch-result">
+            <div class="gdl-placeholder">
+              <div class="gdl-placeholder-icon">&#x1F4C8;</div>
+              Paste up to 20 goals and hit <strong style="color:var(--muted)">Generate Health Report</strong>.<br>
+              You'll get an org-level Goal Health Score,<br>weakest dimension, and the top 3 worst goals flagged.
+            </div>
+          </div>
+          <button class="gdl-pdf-btn" id="gdl-batch-pdf-btn" onclick="gdlExportBatchPDF()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Goal Health Report (.pdf)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA strip -->
+    <div class="gdl-cta-strip">
+      <div class="gdl-cta-strip-text">
+        <strong>Fixed your goals? Now calibrate your ratings.</strong>
+        Run your team through the Calibration Simulator. With proper goals in hand, calibration becomes a completely different conversation.
+      </div>
+      <a href="#" class="gdl-cta-strip-btn">Go to Calibration Simulator &#x2192;</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* Pro gate */
+(function(){
+  function vrCheck(){
+    try {
+      if (localStorage.getItem('viorah_plan') !== 'pro') return false;
+      var expStr = localStorage.getItem('viorah_plan_exp');
+      if (!expStr) return true;
+      var expDate = new Date(parseInt(expStr));
+      if (isNaN(expDate.getTime())) return true;
+      if (new Date() > expDate) {
+        localStorage.removeItem('viorah_plan');
+        localStorage.removeItem('viorah_plan_exp');
+        return false;
+      }
+      return true;
+    } catch(e) { return false; }
+  }
+  if(vrCheck()) document.getElementById('gdl-gate').style.display='none';
+  document.getElementById('gdl-key-btn').addEventListener('click',function(){
+    var val=document.getElementById('gdl-key-input').value.toUpperCase().trim();
+    var errEl=document.getElementById('gdl-gate-err');
+    errEl.textContent='';
+    document.getElementById('gdl-key-btn').disabled=true;
+    document.getElementById('gdl-key-btn').textContent='Checking...';
+    fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-Action':'validate-key'},
+      body:JSON.stringify({key:val})
+    }).then(function(r){return r.json();}).then(function(result){
+      if(result.valid){
+        localStorage.setItem('viorah_plan','pro');
+        localStorage.setItem('viorah_key',val);
+        document.getElementById('gdl-gate').style.display='none';
+      } else {
+        errEl.textContent='Invalid key. Check your Pro key or upgrade at /pricing.';
+      }
+    }).catch(function(){
+      errEl.textContent='Could not verify key. Please try again.';
+    }).finally(function(){
+      document.getElementById('gdl-key-btn').disabled=false;
+      document.getElementById('gdl-key-btn').textContent='Unlock Goal Diagnostic Lab \u2192';
+    });
+  });
+  document.getElementById('gdl-key-input').addEventListener('keydown',function(e){ if(e.key==='Enter') document.getElementById('gdl-key-btn').click(); });
+})();
+
+/* Background particles */
+(function(){
+  var c=document.getElementById('gdl-bg');
+  if(!c) return;
+  var ctx=c.getContext('2d'); var pts=[];
+  c.style.position='fixed'; c.style.inset='0'; c.style.zIndex='0'; c.style.pointerEvents='none';
+  function resize(){ c.width=window.innerWidth; c.height=window.innerHeight; }
+  function init(){ pts=[]; for(var i=0;i<60;i++) pts.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*1.4+.3,o:Math.random()*.5+.15}); }
+  function draw(){ ctx.clearRect(0,0,c.width,c.height); for(var i=0;i<pts.length;i++){ for(var j=i+1;j<pts.length;j++){ var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<120){ ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.strokeStyle='rgba(99,102,241,'+(0.1*(1-d/120))+')'; ctx.lineWidth=.5; ctx.stroke(); } } } pts.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>c.width) p.vx*=-1; if(p.y<0||p.y>c.height) p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(165,180,252,'+p.o+')'; ctx.fill(); }); requestAnimationFrame(draw); }
+  resize(); init(); draw(); window.addEventListener('resize',function(){ resize(); init(); });
+})();
+
+/* Tab switch */
+function gdlSwitch(tab){
+  ['single','batch'].forEach(function(t){
+    document.getElementById('gdl-panel-'+t).classList.toggle('active', t===tab);
+    document.getElementById('gdl-tab-'+t).classList.toggle('active', t===tab);
+  });
+}
+
+/* Batch counter */
+document.getElementById('gdl-batch-input').addEventListener('input', function(){
+  var lines=this.value.split('\n').filter(function(l){ return l.trim().length>0; });
+  document.getElementById('gdl-batch-counter').textContent=Math.min(lines.length,20)+' / 20 goals';
+});
+
+/* Score colour */
+function scoreColor(n){
+  if(n>=80) return '#4ade80';
+  if(n>=60) return '#f59e0b';
+  return '#f43f5e';
+}
+
+/* Render single result */
+function renderSingle(data){
+  var dims=data.dimensions;
+  var overall=data.overall_score;
+  var col=scoreColor(overall);
+  var barsHtml=dims.map(function(d){
+    var c=scoreColor(d.score);
+    return '<div class="gdl-score-row">'+
+      '<div class="gdl-score-meta">'+
+        '<span class="gdl-score-dim">'+d.name+'</span>'+
+        '<span class="gdl-score-num" style="color:'+c+'">'+d.score+'/100</span>'+
+      '</div>'+
+      '<div class="gdl-score-track"><div class="gdl-score-fill" style="background:'+c+';width:0%" data-width="'+d.score+'%"></div></div>'+
+      '<div class="gdl-score-note">'+d.note+'</div>'+
+    '</div>';
+  }).join('');
+  var html=
+    '<div class="gdl-overall">'+
+      '<div class="gdl-overall-num" style="color:'+col+'">'+overall+'</div>'+
+      '<div><div class="gdl-overall-label">Overall Goal Score</div><div class="gdl-overall-verdict">'+data.verdict+'</div></div>'+
+    '</div>'+
+    '<div class="gdl-scores">'+barsHtml+'</div>'+
+    '<div class="gdl-rewrite">'+
+      '<div class="gdl-rewrite-label">&#x2713; AI Rewrite</div>'+
+      '<div class="gdl-rewrite-text">'+data.rewritten_goal+'</div>'+
+    '</div>'+
+    '<div class="gdl-explanation">'+data.explanation+'</div>';
+  document.getElementById('gdl-single-result').innerHTML=html;
+  document.getElementById('gdl-pdf-btn').classList.add('visible');
+  setTimeout(function(){
+    document.querySelectorAll('.gdl-score-fill').forEach(function(el){ el.style.width=el.dataset.width; });
+  },80);
+}
+
+/* Render batch result */
+function renderBatch(data){
+  var col=scoreColor(data.overall_score);
+  var dimHtml=data.dimensions.map(function(d){
+    var dc=scoreColor(d.score);
+    return '<div class="gdl-dim-cell"><div class="gdl-dim-name">'+d.name+'</div><div class="gdl-dim-score" style="color:'+dc+'">'+d.score+'</div></div>';
+  }).join('');
+  var flaggedHtml=data.flagged.map(function(f){
+    return '<div class="gdl-flagged-item"><div class="gdl-flagged-goal">"'+f.goal+'"</div><div class="gdl-flagged-issue">&#x26A0; '+f.issue+'</div></div>';
+  }).join('');
+  var recoHtml=data.recommendations.map(function(r){ return '<li>'+r+'</li>'; }).join('');
+  var html=
+    '<div class="gdl-report-header">'+
+      '<div class="gdl-report-score" style="color:'+col+'">'+data.overall_score+'</div>'+
+      '<div><div class="gdl-report-title">Team Goal Health Score</div>'+
+      '<div class="gdl-report-sub">'+data.goal_count+' goals analysed &middot; '+data.framework+' framework<br>'+data.summary+'</div></div>'+
+    '</div>'+
+    '<div class="gdl-dim-grid">'+dimHtml+'</div>'+
+    '<div class="gdl-flagged-title">&#x1F6A9; Top Issues</div>'+
+    flaggedHtml+
+    '<div class="gdl-reco" style="margin-top:16px;">'+
+      '<div class="gdl-reco-title">Pre-Calibration Recommendations</div>'+
+      '<ul class="gdl-reco-list">'+recoHtml+'</ul>'+
+    '</div>';
+  document.getElementById('gdl-batch-result').innerHTML=html;
+  document.getElementById('gdl-batch-pdf-btn').classList.add('visible');
+}
+
+/* Call Claude API */
+async function callClaude(prompt){
+  const res=await fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({requestType:'goal-lab',key:localStorage.getItem('viorah_key')||'',model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+  });
+  const data=await res.json();
+  const text=data.content.map(function(b){ return b.text||''; }).join('');
+  return JSON.parse(text.replace(/```json|```/g,'').trim());
+}
+
+/* Single goal run */
+async function gdlRunSingle(){
+  var goal=document.getElementById('gdl-single-input').value.trim();
+  if(!goal) return;
+  var role=document.getElementById('gdl-role').value||'not specified';
+  var framework=document.getElementById('gdl-framework').value;
+  var btn=document.getElementById('gdl-single-btn');
+  btn.disabled=true;
+  document.getElementById('gdl-single-result').innerHTML='<div class="gdl-loading"><div class="gdl-spinner"></div><div class="gdl-loading-text">Diagnosing goal quality...</div></div>';
+  var prompt='You are an expert performance management consultant. Diagnose this performance goal.\n\nGOAL: "'+goal+'"\nROLE LEVEL: '+role+'\nFRAMEWORK: '+framework+'\n\nReturn ONLY a valid JSON object (no markdown, no preamble):\n{\n  "overall_score": <integer 0-100>,\n  "verdict": "<one sentence verdict>",\n  "dimensions": [\n    {"name": "Specific", "score": <0-100>, "note": "<12-word max>"},\n    {"name": "Measurable", "score": <0-100>, "note": "<12-word max>"},\n    {"name": "Achievable", "score": <0-100>, "note": "<12-word max>"},\n    {"name": "Cascadable", "score": <0-100>, "note": "<12-word max>"},\n    {"name": "Time-bound", "score": <0-100>, "note": "<12-word max>"}\n  ],\n  "rewritten_goal": "<fully rewritten '+framework+'-compliant goal with number, deadline, business outcome>",\n  "explanation": "<2-3 sentences on what was wrong and what the rewrite fixes>"\n}';
+  try {
+    renderSingle(await callClaude(prompt));
+  } catch(e) {
+    document.getElementById('gdl-single-result').innerHTML='<div class="gdl-placeholder"><div class="gdl-placeholder-icon">&#x26A0;</div>Something went wrong. Please try again.</div>';
+  }
+  btn.disabled=false;
+}
+
+/* Batch run */
+async function gdlRunBatch(){
+  var raw=document.getElementById('gdl-batch-input').value.trim();
+  if(!raw) return;
+  var lines=raw.split('\n').filter(function(l){ return l.trim().length>0; }).slice(0,20);
+  if(lines.length<2){ alert('Please enter at least 2 goals.'); return; }
+  var framework=document.getElementById('gdl-batch-framework').value;
+  var dept=document.getElementById('gdl-batch-dept').value||'unspecified department';
+  var btn=document.getElementById('gdl-batch-btn');
+  btn.disabled=true;
+  document.getElementById('gdl-batch-result').innerHTML='<div class="gdl-loading"><div class="gdl-spinner"></div><div class="gdl-loading-text">Analysing '+lines.length+' goals...</div></div>';
+  var goalsBlock=lines.map(function(l,i){ return (i+1)+'. '+l; }).join('\n');
+  var prompt='You are an expert HR consultant preparing an HRBP for a calibration meeting. Analyse these performance goals in the '+dept+' department.\n\nGOALS:\n'+goalsBlock+'\n\nFRAMEWORK: '+framework+'\n\nReturn ONLY a valid JSON object (no markdown, no preamble):\n{\n  "overall_score": <integer 0-100>,\n  "goal_count": '+lines.length+',\n  "framework": "'+framework+'",\n  "summary": "<one sentence overall assessment>",\n  "dimensions": [\n    {"name": "Specific", "score": <0-100>},\n    {"name": "Measurable", "score": <0-100>},\n    {"name": "Achievable", "score": <0-100>},\n    {"name": "Cascadable", "score": <0-100>},\n    {"name": "Time-bound", "score": <0-100>}\n  ],\n  "flagged": [\n    {"goal": "<exact text of worst goal 1>", "issue": "<primary failure in 10 words max>"},\n    {"goal": "<exact text of worst goal 2>", "issue": "<primary failure in 10 words max>"},\n    {"goal": "<exact text of worst goal 3>", "issue": "<primary failure in 10 words max>"}\n  ],\n  "recommendations": [\n    "<specific action for HRBP before calibration>",\n    "<specific action>",\n    "<specific action>"\n  ]\n}';
+  try {
+    renderBatch(await callClaude(prompt));
+  } catch(e) {
+    document.getElementById('gdl-batch-result').innerHTML='<div class="gdl-placeholder"><div class="gdl-placeholder-icon">&#x26A0;</div>Something went wrong. Please try again.</div>';
+  }
+  btn.disabled=false;
+}
+
+/* PDF Export: Single Goal */
+function gdlExportPDF(){
+  var overall=document.querySelector('.gdl-overall-num');
+  var verdict=document.querySelector('.gdl-overall-verdict');
+  var rewrite=document.querySelector('.gdl-rewrite-text');
+  var explanation=document.querySelector('.gdl-explanation');
+  if(!overall){ alert('Run a diagnosis first, then download.'); return; }
+  var scoresHtml='';
+  document.querySelectorAll('.gdl-score-row').forEach(function(row){
+    var dim=row.querySelector('.gdl-score-dim');
+    var num=row.querySelector('.gdl-score-num');
+    var note=row.querySelector('.gdl-score-note');
+    var fill=row.querySelector('.gdl-score-fill');
+    if(!dim) return;
+    var col=num?num.style.color:'#6366f1';
+    var pct=fill?fill.style.width:'0%';
+    scoresHtml+='<div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;"><div style="font-family:Space Grotesk,sans-serif;font-size:12px;font-weight:600;min-width:110px;">'+dim.textContent+'</div><div style="flex:1;height:7px;background:#f0f0f0;border-radius:4px;overflow:hidden;"><div style="width:'+pct+';height:100%;background:'+col+';border-radius:4px;"></div></div><div style="font-family:Space Grotesk,sans-serif;font-size:12px;font-weight:700;color:'+col+';min-width:48px;text-align:right;">'+num.textContent+'</div></div><div style="font-size:11px;color:#888;margin-bottom:8px;padding-left:124px;">'+(note?note.textContent:'')+'</div>';
+  });
+  var body='<h1 style="font-family:Space Grotesk,sans-serif;font-size:26px;font-weight:700;color:#6366f1;margin-bottom:6px;">Goal Diagnostic Report</h1><p style="font-size:12px;color:#999;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid #eee;">Analyzed on '+new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})+' - Virorah PMS</p><div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:12px;padding:18px 22px;margin-bottom:24px;display:flex;align-items:center;gap:18px;"><div style="font-family:Space Grotesk,sans-serif;font-size:52px;font-weight:700;color:#6366f1;line-height:1;">'+overall.textContent+'</div><div><div style="font-family:Space Grotesk,sans-serif;font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Overall Goal Quality Score</div><div style="font-size:12px;color:#666;">'+(verdict?verdict.textContent:'')+'</div></div></div><div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin-bottom:14px;">Dimension Breakdown</div>'+scoresHtml+'<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:18px 20px;margin:20px 0;"><div style="font-family:Space Grotesk,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#059669;margin-bottom:10px;">AI Rewrite</div><div style="font-size:14px;color:#1a1a2e;line-height:1.75;font-weight:500;">'+(rewrite?rewrite.textContent:'')+'</div></div><div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin-bottom:10px;">What Changed</div><div style="font-size:13px;color:#444;line-height:1.75;">'+(explanation?explanation.textContent:'')+'</div>';
+  vrOpenPDF('Goal Diagnostic Report - Virorah PMS', body);
+}
+
+/* PDF Export: Batch */
+function gdlExportBatchPDF(){
+  var scoreEl=document.querySelector('.gdl-report-score');
+  if(!scoreEl){ alert('Generate a batch report first, then download.'); return; }
+  var titleEl=document.querySelector('.gdl-report-title');
+  var subEl=document.querySelector('.gdl-report-sub');
+  var dimCells=document.querySelectorAll('.gdl-dim-cell');
+  var flagged=document.querySelectorAll('.gdl-flagged-item');
+  var recos=document.querySelectorAll('.gdl-reco-list li');
+  var dimsHtml='';
+  dimCells.forEach(function(cell){
+    var name=cell.querySelector('.gdl-dim-name');
+    var score=cell.querySelector('.gdl-dim-score');
+    if(!name) return;
+    var col=score?score.style.color:'#6366f1';
+    dimsHtml+='<div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:10px 14px;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7c3aed;margin-bottom:4px;">'+(name?name.textContent:'')+'</div><div style="font-family:Space Grotesk,sans-serif;font-size:22px;font-weight:700;color:'+col+';">'+(score?score.textContent:'')+'</div></div>';
+  });
+  var flagHtml='';
+  flagged.forEach(function(f){
+    var goal=f.querySelector('.gdl-flagged-goal');
+    var issue=f.querySelector('.gdl-flagged-issue');
+    flagHtml+='<div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:8px;padding:12px 14px;margin-bottom:8px;"><div style="font-size:13px;color:#555;font-style:italic;margin-bottom:5px;">'+(goal?goal.textContent:'')+'</div><div style="font-size:12px;color:#e11d48;font-weight:600;">'+(issue?issue.textContent:'')+'</div></div>';
+  });
+  var recoHtml='';
+  recos.forEach(function(r){ recoHtml+='<li style="font-size:13px;color:#444;margin-bottom:6px;line-height:1.5;">'+r.textContent+'</li>'; });
+  var body='<h1 style="font-family:Space Grotesk,sans-serif;font-size:26px;font-weight:700;color:#6366f1;margin-bottom:6px;">Team Goal Health Report</h1><p style="font-size:12px;color:#999;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid #eee;">Generated on '+new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})+' - Virorah PMS</p><div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:12px;padding:18px 22px;margin-bottom:24px;display:flex;align-items:center;gap:18px;"><div style="font-family:Space Grotesk,sans-serif;font-size:52px;font-weight:700;color:#6366f1;line-height:1;">'+(scoreEl?scoreEl.textContent:'')+'</div><div><div style="font-family:Space Grotesk,sans-serif;font-size:13px;font-weight:700;margin-bottom:4px;">'+(titleEl?titleEl.textContent:'')+'</div><div style="font-size:12px;color:#666;">'+(subEl?subEl.textContent:'')+'</div></div></div><div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin-bottom:12px;">Dimension Scores</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;">'+dimsHtml+'</div><div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e11d48;margin-bottom:12px;">Top Issues</div>'+flagHtml+'<div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin:16px 0 10px;">Pre-Calibration Recommendations</div><ul style="padding-left:18px;">'+recoHtml+'</ul>';
+  vrOpenPDF('Team Goal Health Report - Virorah PMS', body);
+}
+
+/* Shared PDF opener */
+function vrOpenPDF(title, bodyHtml){
+  var w=window.open('','_blank','width=860,height=700');
+  var tag_open='<ht'+'ml>',tag_close='</ht'+'ml>';
+  var head_open='<he'+'ad>',head_close='</he'+'ad>';
+  var body_open='<bo'+'dy>',body_close='</bo'+'dy>';
+  var doctype='<!DOCTYPE html>';
+  w.document.write(doctype+tag_open+head_open+'<meta charset="UTF-8"><title>'+title+'</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;background:#fff;color:#1a1a2e;padding:48px;max-width:800px;margin:0 auto;}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;font-size:11px;color:#aaa;display:flex;justify-content:space-between;}@media print{body{padding:24px;}}</style>'+head_close+body_open+bodyHtml+'<div class="footer"><span>Virorah PMS - virorah.com</span><span>Pro Report - Confidential</span></div>'+body_close+tag_close);
+  w.document.close();
+  setTimeout(function(){ w.print(); },700);
+}
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

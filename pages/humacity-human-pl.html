@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If HR were on the P&amp;L, here's what it would show.</title>
+  <meta name="description" content="A full income statement for your workforce investment. Click any line to edit. Totals recalculate live. The ratio your CFO actually understands.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/humacity-human-pl.html">
+  <meta property="og:title" content="If HR were on the P&L, here's what it would show.">
+  <meta property="og:description" content="A full income statement for your workforce investment. Click any line to edit. Totals recalculate live. The ratio your CFO actually understands.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Human P&L</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+#hhpl-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; border-radius:16px; overflow:hidden; }
+#hhpl-root * { box-sizing:border-box; }
+#hhpl-hero { background:linear-gradient(160deg,#080612 0%,#0f0820 50%,#080612 100%); padding:44px 48px 32px; border-bottom:1px solid rgba(102,126,234,.15); position:relative; overflow:hidden; }
+#hhpl-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.5),rgba(167,139,250,.3),rgba(102,126,234,.5),transparent); }
+.hhpl-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.6); margin-bottom:14px; }
+.hhpl-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#a78bfa; box-shadow:0 0 10px rgba(167,139,250,.8); }
+.hhpl-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3vw,38px); font-weight:800; letter-spacing:-1px; line-height:1.1; color:#f0eeff; margin-bottom:10px; }
+.hhpl-title span { background:linear-gradient(135deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hhpl-sub { font-size:13px; color:rgba(196,181,253,.5); line-height:1.75; max-width:600px; }
+#hhpl-content { padding:32px 48px 48px; }
+@media(max-width:768px){ #hhpl-hero{padding:28px 24px 24px;} #hhpl-content{padding:24px 24px 36px;} }
+.hhpl-entry-card { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.15); border-radius:14px; padding:36px 32px; text-align:center; }
+.hhpl-entry-icon { font-size:36px; margin-bottom:14px; }
+.hhpl-entry-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; color:#f0eeff; margin-bottom:8px; }
+.hhpl-entry-sub { font-size:13px; color:rgba(196,181,253,.55); line-height:1.7; max-width:400px; margin:0 auto 20px; }
+.hhpl-entry-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; background:linear-gradient(135deg,#667eea,#764ba2); color:white; text-decoration:none; border:none; cursor:pointer; }
+.hhpl-ctx-bar { display:flex; align-items:center; gap:16px; flex-wrap:wrap; background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.12); border-radius:10px; padding:12px 18px; margin-bottom:24px; font-size:12px; color:rgba(196,181,253,.6); }
+.hhpl-ctx-item { display:flex; align-items:center; gap:6px; }
+.hhpl-ctx-label { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(167,139,250,.4); }
+.hhpl-ctx-val { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#f0eeff; }
+.hhpl-ctx-dot { width:3px; height:3px; border-radius:50%; background:rgba(102,126,234,.3); }
+.hhpl-hero-card { background:linear-gradient(135deg,rgba(13,11,31,.8),rgba(5,4,22,.95)); border:1px solid rgba(102,126,234,.2); border-radius:16px; padding:28px 32px; margin-bottom:24px; position:relative; overflow:hidden; }
+.hhpl-hero-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.45),rgba(167,139,250,.25),rgba(102,126,234,.45),transparent); }
+.hhpl-hero-grid { display:grid; grid-template-columns:1fr 1px 260px; gap:28px; align-items:center; position:relative; z-index:1; }
+.hhpl-hero-divider { background:rgba(102,126,234,.12); align-self:stretch; }
+@media(max-width:640px){ .hhpl-hero-grid{grid-template-columns:1fr;} .hhpl-hero-divider{display:none;} }
+.hhpl-ratio-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+.hhpl-ratio-num { font-family:'Space Grotesk',sans-serif; font-size:clamp(40px,6vw,72px); font-weight:800; letter-spacing:-2px; background:linear-gradient(135deg,#f0eeff 0%,#c4b5fd 50%,#667eea 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:8px; }
+.hhpl-ratio-meta { font-size:12px; color:rgba(196,181,253,.45); line-height:1.6; }
+.hhpl-ratio-meta b { color:rgba(196,181,253,.75); }
+.hhpl-hook { font-style:italic; font-size:13px; line-height:1.65; color:rgba(196,181,253,.65); }
+.hhpl-hook b { color:#c4b5fd; font-style:normal; }
+.hhpl-edit-note { font-size:11px; color:rgba(167,139,250,.4); margin-top:10px; font-style:italic; }
+.hhpl-hci { background:rgba(13,11,31,.6); border:1px solid rgba(102,126,234,.2); border-radius:14px; overflow:hidden; margin-bottom:24px; }
+.hhpl-hci-hdr { display:flex; align-items:center; justify-content:space-between; padding:13px 18px; cursor:pointer; transition:background .15s; }
+.hhpl-hci-hdr:hover { background:rgba(102,126,234,.06); }
+.hhpl-hci-left { display:flex; align-items:center; gap:10px; }
+.hhpl-hci-icon { width:26px; height:26px; border-radius:6px; background:rgba(102,126,234,.15); border:1px solid rgba(102,126,234,.3); display:flex; align-items:center; justify-content:center; font-size:11px; flex-shrink:0; }
+.hhpl-hci-title { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#a78bfa; }
+.hhpl-hci-sub { font-size:11px; color:rgba(196,181,253,.35); margin-top:1px; }
+.hhpl-hci-coeff { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:800; color:#a78bfa; }
+.hhpl-hci-body { display:none; padding:0 18px 18px; border-top:1px solid rgba(102,126,234,.1); }
+.hhpl-hci-body.open { display:block; }
+.hhpl-hci-factors { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+@media(max-width:600px){ .hhpl-hci-factors{grid-template-columns:1fr;} }
+.hhpl-hci-factor { background:rgba(13,11,31,.7); border:1px solid rgba(102,126,234,.12); border-radius:8px; padding:10px 12px; cursor:pointer; transition:all .2s; user-select:none; }
+.hhpl-hci-factor.yes { background:rgba(102,126,234,.08); border-color:rgba(102,126,234,.3); }
+.hhpl-hci-factor-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+.hhpl-hci-factor-name { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#f0eeff; }
+.hhpl-hci-toggle { width:32px; height:17px; border-radius:9px; background:rgba(102,126,234,.2); border:1px solid rgba(102,126,234,.3); position:relative; transition:all .2s; flex-shrink:0; }
+.hhpl-hci-factor.yes .hhpl-hci-toggle { background:rgba(102,126,234,.3); border-color:rgba(102,126,234,.5); }
+.hhpl-hci-toggle::after { content:''; position:absolute; top:2px; left:2px; width:11px; height:11px; border-radius:50%; background:#a78bfa; transition:all .2s; }
+.hhpl-hci-factor.yes .hhpl-hci-toggle::after { left:17px; background:#667eea; }
+.hhpl-hci-factor-desc { font-size:10px; color:rgba(196,181,253,.4); line-height:1.45; }
+.hhpl-hci-calc { display:flex; align-items:center; gap:10px; padding:9px 12px; background:rgba(13,11,31,.5); border-radius:7px; margin-bottom:10px; font-family:'DM Mono',monospace; font-size:11px; color:rgba(196,181,253,.35); }
+.hhpl-hci-scen-table { width:100%; border-collapse:collapse; font-size:11px; }
+.hhpl-hci-scen-table th { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; padding:5px 9px; background:rgba(13,11,31,.6); color:rgba(196,181,253,.3); text-align:left; border-bottom:1px solid rgba(102,126,234,.1); }
+.hhpl-hci-scen-table th.yours { color:#a78bfa; }
+.hhpl-hci-scen-table td { padding:6px 9px; font-family:'DM Mono',monospace; border-bottom:1px solid rgba(102,126,234,.06); }
+.hhpl-hci-scen-table td.label { color:rgba(196,181,253,.3); font-size:10px; }
+.hhpl-hci-scen-table td.conservative { color:rgba(196,181,253,.5); }
+.hhpl-hci-scen-table td.yours { color:#a78bfa; font-weight:700; }
+.hhpl-hci-scen-table td.optimistic { color:#667eea; }
+.hhpl-pl-wrap { background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.18); border-radius:16px; overflow:hidden; margin-bottom:24px; position:relative; }
+.hhpl-pl-wrap::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.4),rgba(167,139,250,.2),rgba(102,126,234,.4),transparent); }
+.hhpl-pl-header { padding:14px 24px; background:rgba(102,126,234,.05); border-bottom:1px solid rgba(102,126,234,.15); display:flex; align-items:center; justify-content:space-between; }
+.hhpl-pl-header-title { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#a78bfa; }
+.hhpl-pl-header-sub { font-family:'DM Mono',monospace; font-size:10px; color:rgba(196,181,253,.35); }
+.hhpl-pl-sec-head { display:grid; grid-template-columns:1fr 140px; padding:9px 24px 6px; background:rgba(102,126,234,.03); border-top:1px solid rgba(102,126,234,.08); }
+.hhpl-pl-sec-head span:first-child { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(167,139,250,.5); }
+.hhpl-pl-sec-head span:last-child { font-family:'DM Mono',monospace; font-size:9px; color:rgba(196,181,253,.3); text-align:right; }
+.hhpl-pl-row { display:grid; grid-template-columns:1fr 140px; padding:9px 24px 9px 40px; border-top:1px solid rgba(102,126,234,.04); align-items:center; }
+.hhpl-pl-row.editable:hover { background:rgba(102,126,234,.04); cursor:pointer; }
+.hhpl-pl-row-label { font-size:12px; color:rgba(196,181,253,.7); display:flex; align-items:center; gap:8px; line-height:1.5; }
+.hhpl-edit-hint { font-family:'DM Mono',monospace; font-size:9px; color:rgba(167,139,250,.3); opacity:0; transition:opacity .15s; }
+.hhpl-pl-row.editable:hover .hhpl-edit-hint { opacity:1; }
+.hhpl-pl-row-val { font-family:'DM Mono',monospace; font-size:12px; text-align:right; white-space:nowrap; }
+.hhpl-pl-row-val.pos { color:#34d399; }
+.hhpl-pl-row-val.neg { color:#f87171; }
+.hhpl-pl-row-val.neutral { color:rgba(196,181,253,.45); }
+.hhpl-pl-row-desc { padding:2px 24px 7px 40px; font-family:'DM Mono',monospace; font-size:9px; color:rgba(196,181,253,.3); border-top:none; }
+.hhpl-pl-subtotal { display:grid; grid-template-columns:1fr 140px; padding:10px 24px; border-top:1px solid rgba(102,126,234,.15); background:rgba(13,11,31,.4); }
+.hhpl-pl-subtotal-label { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#f0eeff; }
+.hhpl-pl-subtotal-val { font-family:'DM Mono',monospace; font-size:13px; font-weight:700; text-align:right; }
+.hhpl-pl-subtotal-val.pos { color:#34d399; }
+.hhpl-pl-subtotal-val.neg { color:#f87171; }
+.hhpl-pl-subtotal-val.gold { color:#c4b5fd; }
+.hhpl-pl-margin { display:grid; grid-template-columns:1fr 140px; padding:12px 24px; background:rgba(102,126,234,.06); border-top:1px solid rgba(102,126,234,.15); border-bottom:1px solid rgba(102,126,234,.15); }
+.hhpl-pl-margin-label { font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; color:#f0eeff; }
+.hhpl-pl-margin-val { font-family:'DM Mono',monospace; font-size:14px; font-weight:800; text-align:right; }
+.hhpl-pl-margin-val.pos { color:#34d399; }
+.hhpl-pl-margin-val.neg { color:#f87171; }
+.hhpl-pl-comp-row { display:grid; grid-template-columns:1fr 140px; padding:10px 24px; background:rgba(102,126,234,.03); border-top:1px solid rgba(102,126,234,.1); border-bottom:1px solid rgba(102,126,234,.1); }
+.hhpl-pl-comp-label { font-size:11px; color:#a78bfa; display:flex; align-items:center; gap:8px; }
+.hhpl-pl-comp-val { font-family:'DM Mono',monospace; font-size:12px; color:#a78bfa; text-align:right; }
+.hhpl-pl-adj-note { font-family:'DM Mono',monospace; font-size:9px; color:rgba(248,113,113,.4); padding:5px 24px 5px 40px; border-top:1px solid rgba(102,126,234,.04); }
+.hhpl-pl-net { display:grid; grid-template-columns:1fr 140px; padding:16px 24px; background:linear-gradient(90deg,rgba(102,126,234,.07),rgba(102,126,234,.03),transparent); border-top:2px solid rgba(102,126,234,.2); }
+.hhpl-pl-net-label { font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:800; color:#f0eeff; }
+.hhpl-pl-net-val { font-family:'DM Mono',monospace; font-size:16px; font-weight:800; text-align:right; }
+.hhpl-pl-net-val.pos { color:#34d399; }
+.hhpl-pl-net-val.neg { color:#f87171; }
+.hhpl-pl-ratio { display:grid; grid-template-columns:1fr 140px; padding:12px 24px; background:rgba(102,126,234,.04); border-top:1px solid rgba(102,126,234,.12); align-items:center; }
+.hhpl-pl-ratio-label { font-style:italic; font-size:12px; color:rgba(196,181,253,.6); }
+.hhpl-pl-ratio-val { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:800; color:#c4b5fd; text-align:right; }
+.hhpl-edit-input { font-family:'DM Mono',monospace; font-size:12px; background:rgba(13,11,31,.8); border:1px solid rgba(102,126,234,.4); color:#f0eeff; border-radius:5px; padding:3px 7px; text-align:right; width:100%; outline:none; }
+.hhpl-stmt { padding:22px 26px; background:rgba(13,11,31,.5); border:1px solid rgba(102,126,234,.2); border-radius:14px; border-left:3px solid #667eea; position:relative; overflow:hidden; margin-bottom:24px; }
+.hhpl-stmt::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#667eea,#a78bfa); }
+.hhpl-stmt-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:10px; }
+.hhpl-stmt-txt { font-style:italic; font-size:13px; line-height:1.75; color:rgba(196,181,253,.7); }
+.hhpl-stmt-txt b { color:#c4b5fd; font-style:normal; }
+.hhpl-p5-bridge { background:rgba(102,126,234,.05); border:1px solid rgba(102,126,234,.15); border-radius:12px; padding:18px 22px; }
+.hhpl-p5-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(167,139,250,.4); margin-bottom:7px; }
+.hhpl-p5-txt { font-size:12px; color:rgba(196,181,253,.55); line-height:1.7; }
+.hhpl-p5-txt b { color:rgba(196,181,253,.85); }
+.hhpl-back-link { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:rgba(167,139,250,.55); text-decoration:none; margin-bottom:16px; transition:color .2s; }
+.hhpl-back-link:hover { color:#a78bfa; }
+</style>
+
+<div id="hhpl-root">
+  <div id="hhpl-hero">
+    <a href="/pages/analyse-your-org.html" class="hhpl-back-link">&#8592; Back to Analyse Your Org</a>
+    <div class="hhpl-title">The Human <span>P&amp;L</span></div>
+    <div class="hhpl-sub">A literal income statement for HR - formatted exactly like the P&amp;L your CFO reads every month, but denominated in human capital terms. Revenue at the top. Net profit at the bottom. The ratio that changes the conversation permanently.</div>
+  </div>
+  <div id="hhpl-content"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DATA_KEY = "pms_custom_org_v1";
+var SYM = "\u20B9";
+var _hciF = [false, false, false, false];
+var _userInputs = {};
+var _computed = null;
+
+function fmt(n) {
+  var a = Math.abs(n), sg = n < 0 ? "-" : "";
+  if (a >= 1e7) return sg + SYM + (a / 1e7).toFixed(2) + "Cr";
+  if (a >= 1e5) return sg + SYM + (a / 1e5).toFixed(1) + "L";
+  if (a >= 1000) return sg + SYM + Math.round(a / 1000) + "K";
+  return sg + SYM + Math.round(a);
+}
+
+function hciCoeff() {
+  return Math.round((0.70 + _hciF.filter(Boolean).length * 0.15) * 100) / 100;
+}
+
+function loadData() {
+  try {
+    var raw = localStorage.getItem(DATA_KEY);
+    if (!raw) return null;
+    var parsed = JSON.parse(raw);
+    var rows = Array.isArray(parsed) ? parsed : (parsed.employees || parsed.rows || parsed.data || null);
+    if (!rows || !rows.length) return null;
+    return rows;
+  } catch (e) { return null; }
+}
+
+function gField(row) {
+  var keys = Object.keys(row);
+  function find() {
+    for (var i = 0; i < arguments.length; i++) {
+      var arg = arguments[i];
+      for (var j = 0; j < keys.length; j++) {
+        if (keys[j].toLowerCase().replace(/[\s_-]/g,"") === arg.toLowerCase().replace(/[\s_-]/g,"")) return row[keys[j]];
+      }
+    }
+    return null;
+  }
+  return {
+    salary: parseFloat(find("salary","annualsalary","ctc","annualctc")) || 0,
+    placement: (find("placement","talentsegment","category") || "").toLowerCase().trim(),
+    tenure: parseFloat(find("tenureyears","tenure","yearsofservice")) || 0,
+    department: (find("department","dept","team","function","division","businessunit") || "").toLowerCase().trim()
+  };
+}
+
+var REVENUE_DEPT_KEYS = ["sales", "business development", "bd", "account management", "customer success", "growth", "revenue", "partnerships", "biz dev"];
+function isRevenueDept(dept) {
+  if (!dept) return false;
+  return REVENUE_DEPT_KEYS.some(function(k){ return dept.indexOf(k) !== -1; });
+}
+
+function compute(rawRows) {
+  var emps = rawRows.map(gField).filter(function(e) { return e.salary > 0; });
+  if (!emps.length) return null;
+  var totalComp = emps.reduce(function(a,e){return a+e.salary;},0);
+  var stars = emps.filter(function(e) {
+    var p = e.placement;
+    return p.indexOf("star") !== -1 || p.indexOf("high performer") !== -1 || p.indexOf("hipo") !== -1 || p.indexOf("high potential") !== -1;
+  });
+  var emerging = emps.filter(function(e) {
+    var p = e.placement;
+    return p.indexOf("emerging") !== -1 || p.indexOf("developing") !== -1;
+  });
+  var tenured = emps.filter(function(e) { return e.tenure >= 5; });
+  var inconsistent = emps.filter(function(e) {
+    var p = e.placement;
+    return p.indexOf("inconsistent") !== -1 || p.indexOf("underperf") !== -1 || p.indexOf("below") !== -1 || p.indexOf("needs improvement") !== -1;
+  });
+  var recentHires = emps.filter(function(e) { return e.tenure <= 2; });
+  var hasDeptData = emps.some(function(e){ return !!e.department; });
+  var revenueHires = hasDeptData ? recentHires.filter(function(e){ return isRevenueDept(e.department); }) : recentHires;
+  var retentionSavings = Math.round(stars.reduce(function(a,e){return a+e.salary*1.5;},0)*0.3);
+  var perfUplift = Math.round(emerging.reduce(function(a,e){return a+e.salary*0.08;},0));
+  var culturePremium = Math.round(tenured.reduce(function(a,e){return a+e.salary*0.06;},0));
+  var flightRisk = Math.round(inconsistent.reduce(function(a,e){return a+e.salary*0.6;},0));
+  var skillDebt = Math.round(totalComp * 0.03);
+  var growthGap = Math.round(totalComp * 0.02);
+  var talentAcqValueDefault, acqCostDefault;
+  if (hasDeptData) {
+    talentAcqValueDefault = Math.round(revenueHires.reduce(function(a,e){return a+e.salary*1.40;},0));
+    acqCostDefault = Math.round(revenueHires.reduce(function(a,e){return a+e.salary*0.15;},0));
+  } else {
+    talentAcqValueDefault = Math.round(recentHires.reduce(function(a,e){return a+e.salary*0.2;},0));
+    acqCostDefault = Math.round(totalComp * 0.05);
+  }
+  var defaults = {
+    talentAcqValue: talentAcqValueDefault,
+    acqCost: acqCostDefault,
+    devInvest: Math.round(emerging.reduce(function(a,e){return a+e.salary*0.04;},0)),
+    hrFuncCost: Math.round(totalComp * 0.04),
+    complianceCost: Math.round(totalComp * 0.015),
+    cultureSpend: Math.round(totalComp * 0.02)
+  };
+  Object.keys(defaults).forEach(function(k) {
+    if (_userInputs[k] === undefined) _userInputs[k] = defaults[k];
+  });
+  return {
+    emps: emps.length, totalComp: totalComp,
+    stars: stars.length, emerging: emerging.length, tenured: tenured.length,
+    inconsistent: inconsistent.length, recentHires: recentHires.length,
+    hasDeptData: hasDeptData,
+    retentionSavings: retentionSavings, perfUplift: perfUplift,
+    culturePremium: culturePremium,
+    flightRisk: flightRisk, skillDebt: skillDebt, growthGap: growthGap
+  };
+}
+
+function calcPL(d) {
+  var talentAcqValue = _userInputs.talentAcqValue || 0;
+  var retentionSavings = d.retentionSavings;
+  var perfUplift = d.perfUplift;
+  var culturePremium = d.culturePremium;
+  var totalRevenue = talentAcqValue + retentionSavings + perfUplift + culturePremium;
+  var acqCost = _userInputs.acqCost || 0;
+  var devInvest = _userInputs.devInvest || 0;
+  var hrFuncCost = _userInputs.hrFuncCost || 0;
+  var totalCOGS = acqCost + devInvest + hrFuncCost;
+  var grossMargin = totalRevenue - totalCOGS;
+  var grossMarginPct = totalRevenue > 0 ? (grossMargin / totalRevenue * 100).toFixed(1) : "0.0";
+  var complianceCost = _userInputs.complianceCost || 0;
+  var cultureSpend = _userInputs.cultureSpend || 0;
+  var totalOpEx = complianceCost + cultureSpend;
+  var opProfit = grossMargin - totalOpEx;
+  var totalAdj = d.flightRisk + d.skillDebt + d.growthGap;
+  var netProfit = opProfit - totalAdj;
+  var hrInvestment = totalCOGS + totalOpEx;
+  var ratio = hrInvestment > 0 ? (netProfit / hrInvestment) : 0;
+  return {
+    talentAcqValue: talentAcqValue, retentionSavings: retentionSavings,
+    perfUplift: perfUplift, culturePremium: culturePremium, totalRevenue: totalRevenue,
+    acqCost: acqCost, devInvest: devInvest, hrFuncCost: hrFuncCost, totalCOGS: totalCOGS,
+    grossMargin: grossMargin, grossMarginPct: grossMarginPct,
+    complianceCost: complianceCost, cultureSpend: cultureSpend,
+    totalOpEx: totalOpEx, opProfit: opProfit,
+    flightRisk: d.flightRisk, skillDebt: d.skillDebt, growthGap: d.growthGap, totalAdj: totalAdj,
+    netProfit: netProfit, hrInvestment: hrInvestment, ratio: ratio
+  };
+}
+
+function renderHCI(pl, d) {
+  var h = hciCoeff();
+  if (pl) {
+    try {
+      localStorage.setItem("virorah_humacity_l4_result", JSON.stringify({
+        humanNetProfit: Math.round(pl.netProfit * h),
+        computedAt: new Date().toISOString()
+      }));
+    } catch(e){}
+  }
+  var el = document.getElementById("hhpl-hci-coeff");
+  if (el) el.textContent = h.toFixed(2) + "x";
+  _hciF.forEach(function(v, i) {
+    var f = document.getElementById("hhpl-hci-f" + i);
+    if (f) f.classList.toggle("yes", v);
+  });
+  var cl = document.getElementById("hhpl-hci-calc");
+  if (cl) {
+    var yc = _hciF.filter(Boolean).length;
+    cl.innerHTML = "0.70 + (" + yc + " \u00D7 0.15) = <b style=\"color:#a78bfa;\">" + h.toFixed(2) + "</b>";
+  }
+  var sc = document.getElementById("hhpl-hci-scen");
+  if (sc && pl) {
+    var base = pl.netProfit;
+    var c = Math.round(base * (h - 0.15));
+    var y = Math.round(base * h);
+    var o = Math.round(base * (h + 0.15));
+    sc.innerHTML =
+      "<tr><th>Scenario</th><th>HCI</th><th class=\"yours\">Adjusted Net</th></tr>" +
+      "<tr><td class=\"label\">Conservative</td><td class=\"conservative\">" + (h-0.15).toFixed(2) + "x</td><td class=\"conservative\">" + fmt(c) + "</td></tr>" +
+      "<tr><td class=\"label\" style=\"color:#a78bfa\">Your Assessment</td><td class=\"yours\">" + h.toFixed(2) + "x</td><td class=\"yours\">" + fmt(y) + "</td></tr>" +
+      "<tr><td class=\"label\">Optimistic</td><td class=\"optimistic\">" + (h+0.15).toFixed(2) + "x</td><td class=\"optimistic\">" + fmt(o) + "</td></tr>";
+  }
+  var ratioEl = document.getElementById("hhpl-ratio-num");
+  var heroRatioEl = document.getElementById("hhpl-hero-ratio");
+  if (ratioEl && pl) {
+    var adjRatio = pl.hrInvestment > 0 ? (Math.round(pl.netProfit * h) / pl.hrInvestment).toFixed(1) : "0.0";
+    ratioEl.textContent = SYM + adjRatio + "x";
+    if (heroRatioEl) heroRatioEl.textContent = SYM + adjRatio + "x";
+  }
+  var netEl = document.getElementById("hhpl-net-val");
+  if (netEl && pl) {
+    var adj = Math.round(pl.netProfit * h);
+    netEl.textContent = fmt(adj);
+    netEl.className = "hhpl-pl-net-val " + (adj >= 0 ? "pos" : "neg");
+  }
+  var ratRowEl = document.getElementById("hhpl-ratio-row-val");
+  if (ratRowEl && pl) {
+    var adjR = pl.hrInvestment > 0 ? (Math.round(pl.netProfit * h) / pl.hrInvestment).toFixed(1) : "0.0";
+    ratRowEl.textContent = SYM + adjR + "x";
+  }
+}
+
+function plRow(label, val, cls, fieldKey, desc) {
+  var isEditable = !!fieldKey;
+  var editableAttr = isEditable ? " editable\" onclick=\"hhplEdit('" + fieldKey + "', this)" : "";
+  return "<div class=\"hhpl-pl-row" + (isEditable ? " editable\" onclick=\"hhplEdit('" + fieldKey + "', this)\"" : "\"") + ">" +
+    "<div class=\"hhpl-pl-row-label\">" + label + (isEditable ? "<span class=\"hhpl-edit-hint\">\u270E edit</span>" : "") + "</div>" +
+    "<div class=\"hhpl-pl-row-val " + cls + "\" id=\"hhpl-val-" + (fieldKey || label.replace(/\s/g,"")) + "\">" + fmt(val) + "</div>" +
+    "</div>" +
+    (desc ? "<div class=\"hhpl-pl-row-desc\">" + desc + "</div>" : "");
+}
+
+function renderPL(d) {
+  var pl = calcPL(d);
+  var stmtTxt = "";
+  if (pl.netProfit < 0 && pl.ratio < -1) {
+    stmtTxt = "The Human P&L is <b>deeply negative at " + fmt(pl.netProfit) + "</b>. The below-the-line adjustments are consuming all operating profit. This is not a cost problem. It is a human capital risk problem that has been allowed to compound. The board needs to see this statement.";
+  } else if (pl.netProfit < 0) {
+    stmtTxt = "The Human P&L shows a <b>net loss of " + fmt(Math.abs(pl.netProfit)) + "</b>. Operating profit exists, but the below-the-line adjustments erase it. The adjustment lines tell you exactly where to intervene first.";
+  } else if (pl.ratio > 3) {
+    stmtTxt = "For every " + SYM + "1 invested in HR, this org returns <b>" + SYM + pl.ratio.toFixed(1) + "</b>. A Human P&L at " + pl.ratio.toFixed(1) + "x is not an HR metric. It is a <b>return on investment statement</b> that belongs in the CFO's office.";
+  } else {
+    stmtTxt = "The Human P&L returns <b>" + fmt(pl.netProfit) + "</b> on a <b>" + fmt(pl.hrInvestment) + "</b> HR investment - a " + pl.ratio.toFixed(1) + "x return. The gross margin is healthy. The adjustment lines carry risk that, if addressed, would improve the ratio significantly.";
+  }
+
+  var c = document.getElementById("hhpl-content");
+  var h = hciCoeff();
+  var adjRatio = pl.hrInvestment > 0 ? (Math.round(pl.netProfit * h) / pl.hrInvestment).toFixed(1) : "0.0";
+  c.innerHTML =
+    "<div class=\"hhpl-ctx-bar\">" +
+      "<div class=\"hhpl-ctx-item\"><div class=\"hhpl-ctx-label\">Headcount</div><div class=\"hhpl-ctx-val\">" + d.emps + "</div></div>" +
+      "<div class=\"hhpl-ctx-dot\"></div>" +
+      "<div class=\"hhpl-ctx-item\"><div class=\"hhpl-ctx-label\">Total comp</div><div class=\"hhpl-ctx-val\">" + fmt(d.totalComp) + "</div></div>" +
+      "<div class=\"hhpl-ctx-dot\"></div>" +
+      "<div class=\"hhpl-ctx-item\"><div class=\"hhpl-ctx-label\">Gross margin</div><div class=\"hhpl-ctx-val\">" + pl.grossMarginPct + "%</div></div>" +
+      "<div class=\"hhpl-ctx-dot\"></div>" +
+      "<div class=\"hhpl-ctx-item\"><div class=\"hhpl-ctx-label\">HR investment</div><div class=\"hhpl-ctx-val\">" + fmt(pl.hrInvestment) + "</div></div>" +
+    "</div>" +
+    "<div class=\"hhpl-hero-card\">" +
+      "<div class=\"hhpl-hero-grid\">" +
+        "<div>" +
+          "<div class=\"hhpl-ratio-lbl\">Human Net Return \u00B7 HCI-adjusted</div>" +
+          "<div class=\"hhpl-ratio-num\" id=\"hhpl-hero-ratio\">" + SYM + adjRatio + "x</div>" +
+          "<div class=\"hhpl-ratio-meta\">returned for every <b>" + SYM + "1</b> invested in HR this period</div>" +
+        "</div>" +
+        "<div class=\"hhpl-hero-divider\"></div>" +
+        "<div>" +
+          "<div class=\"hhpl-hook\">" + (pl.ratio > 2 ? "HR has always had a P&L. For the first time, you can read it." : pl.ratio >= 0 ? "The P&L exists. The adjustment lines show exactly where to start." : "A negative Human P&L is not a failure. It is a <b>diagnosis</b>. Now you can treat it.") + "</div>" +
+          "<div class=\"hhpl-edit-note\">Lines marked \u270E are editable - click to enter your actual figures. The more accurately you populate these, the more credible the statement becomes.</div>" +
+        "</div>" +
+      "</div>" +
+    "</div>" +
+    "<div class=\"hhpl-hci\" id=\"hhpl-hci-wrap\">" +
+      "<div class=\"hhpl-hci-hdr\" id=\"hhpl-hci-hdr\">" +
+        "<div class=\"hhpl-hci-left\">" +
+          "<div class=\"hhpl-hci-icon\">H</div>" +
+          "<div><div class=\"hhpl-hci-title\">Human Confidence Index</div><div class=\"hhpl-hci-sub\">Adjust Human Net Return for current org conditions</div></div>" +
+        "</div>" +
+        "<div style=\"display:flex;align-items:center;gap:12px;\">" +
+          "<div class=\"hhpl-hci-coeff\" id=\"hhpl-hci-coeff\">" + h.toFixed(2) + "x</div>" +
+          "<div id=\"hhpl-hci-chev\" style=\"color:#a78bfa;font-size:11px;\">\u25BE</div>" +
+        "</div>" +
+      "</div>" +
+      "<div class=\"hhpl-hci-body\" id=\"hhpl-hci-body\">" +
+        "<div class=\"hhpl-hci-factors\">" +
+          ["Leadership Stability", "Org Disruption Free", "Culture Health", "Execution Momentum"].map(function(name, i) {
+            var descs = ["Leadership stable, present, and actively engaged?", "Free from major disruption, restructure, or layoffs?", "Culture broadly functional, not in crisis?", "Executing well against current strategic priorities?"];
+            return "<div class=\"hhpl-hci-factor\" id=\"hhpl-hci-f" + i + "\" onclick=\"hhplHciToggle(" + i + ")\">" +
+              "<div class=\"hhpl-hci-factor-top\"><div class=\"hhpl-hci-factor-name\">" + name + "</div><div class=\"hhpl-hci-toggle\"></div></div>" +
+              "<div class=\"hhpl-hci-factor-desc\">" + descs[i] + "</div>" +
+            "</div>";
+          }).join("") +
+        "</div>" +
+        "<div class=\"hhpl-hci-calc\" id=\"hhpl-hci-calc\">0.70 + (0 \u00D7 0.15) = <b style=\"color:#a78bfa;\">0.70</b></div>" +
+        "<table class=\"hhpl-hci-scen-table\"><tbody id=\"hhpl-hci-scen\"></tbody></table>" +
+      "</div>" +
+    "</div>" +
+    "<div class=\"hhpl-pl-wrap\">" +
+      "<div class=\"hhpl-pl-header\"><div class=\"hhpl-pl-header-title\">Human P&amp;L Statement</div><div class=\"hhpl-pl-header-sub\">Click \u270E lines to enter your actual figures</div></div>" +
+      "<div class=\"hhpl-pl-sec-head\"><span>Human Revenue</span><span>auto-computed / editable</span></div>" +
+      plRow("Talent Acquisition Value", pl.talentAcqValue, "pos", "talentAcqValue", d.hasDeptData ? "Revenue-department hires (tenure \u2264 2yr) \u00D7 1.40x salary. Edit if this doesn't match your actual revenue-generating hire impact." : "No Department column mapped, estimated from all recent hires at a flat rate. Map a Department field on your next upload for a precise figure.") +
+      plRow("Retention Savings", pl.retentionSavings, "pos", null, "Stars and HiPos retained \u00D7 1.5x salary replacement cost \u00D7 30%. Source: McKinsey.") +
+      plRow("Performance Uplift", pl.perfUplift, "pos", null, "Emerging Talent development return at 8% of salary. Source: Gallup.") +
+      plRow("Culture Premium", pl.culturePremium, "pos", null, "Engagement premium from 5+ year tenure employees at 6% of salary. Source: SHRM.") +
+      "<div class=\"hhpl-pl-subtotal\"><div class=\"hhpl-pl-subtotal-label\">= TOTAL HUMAN REVENUE</div><div class=\"hhpl-pl-subtotal-val gold\" id=\"hhpl-val-totalRevenue\">" + fmt(pl.totalRevenue) + "</div></div>" +
+      "<div class=\"hhpl-pl-sec-head\"><span>Human COGS</span><span>HR delivery costs - edit to your actuals</span></div>" +
+      plRow("Acquisition Cost", pl.acqCost, "neg", "acqCost", d.hasDeptData ? "Revenue-department hires \u00D7 15% of salary, fees and onboarding for the roles actually bringing in revenue." : "No Department column mapped, estimated as 5% of total comp. Map a Department field on your next upload for a precise figure.") +
+      plRow("Development Investment", pl.devInvest, "neg", "devInvest", "Emerging Talent employees \u00D7 4% of their salary, training and coaching spend on the people actually being developed.") +
+      plRow("HR Function Cost", pl.hrFuncCost, "neg", "hrFuncCost", "HR team salaries + tools + systems. Typical: 3-5% of total comp.") +
+      "<div class=\"hhpl-pl-subtotal\"><div class=\"hhpl-pl-subtotal-label\">= TOTAL HUMAN COGS</div><div class=\"hhpl-pl-subtotal-val neg\">" + fmt(pl.totalCOGS) + "</div></div>" +
+      "<div class=\"hhpl-pl-margin\"><div class=\"hhpl-pl-margin-label\">HUMAN GROSS MARGIN</div><div class=\"hhpl-pl-margin-val " + (pl.grossMargin >= 0 ? "pos" : "neg") + "\">" + fmt(pl.grossMargin) + " (" + pl.grossMarginPct + "%)</div></div>" +
+      "<div class=\"hhpl-pl-comp-row\"><div class=\"hhpl-pl-comp-label\">Total Compensation Base <span style=\"font-size:9px;color:rgba(167,139,250,.4);\">(shown separately, not in COGS)</span></div><div class=\"hhpl-pl-comp-val\">" + fmt(d.totalComp) + "</div></div>" +
+      "<div class=\"hhpl-pl-sec-head\"><span>Human OpEx</span><span>edit to match your org</span></div>" +
+      plRow("Compliance &amp; Administration", pl.complianceCost, "neg", "complianceCost", "Legal, payroll ops, HR compliance costs. Typical: 1-2% of total comp.") +
+      plRow("Culture &amp; Engagement Spend", pl.cultureSpend, "neg", "cultureSpend", "Events, wellbeing, recognition programmes. Typical: 1.5-3% of total comp.") +
+      "<div class=\"hhpl-pl-subtotal\"><div class=\"hhpl-pl-subtotal-label\">= TOTAL HUMAN OPEX</div><div class=\"hhpl-pl-subtotal-val neg\">" + fmt(pl.totalOpEx) + "</div></div>" +
+      "<div class=\"hhpl-pl-margin\"><div class=\"hhpl-pl-margin-label\">HUMAN OPERATING PROFIT</div><div class=\"hhpl-pl-margin-val " + (pl.opProfit >= 0 ? "pos" : "neg") + "\">" + fmt(pl.opProfit) + "</div></div>" +
+      "<div class=\"hhpl-pl-sec-head\"><span>Human Adjustments</span><span>below the line</span></div>" +
+      plRow("Flight Risk Liability", pl.flightRisk, "neg", null, "Value at risk from Inconsistent Performers. " + d.inconsistent + " flagged \u00D7 salary \u00D7 60% exposure rate. Source: McKinsey.") +
+      plRow("Skill Debt Provision", pl.skillDebt, "neg", null, "Cost of skills gap if unaddressed. 3% of comp base.") +
+      plRow("Growth Readiness Gap", pl.growthGap, "neg", null, "Cost of unpreparedness for next growth stage. 2% of comp base.") +
+      "<div class=\"hhpl-pl-adj-note\">These adjustments are the honest reckoning. They represent human capital risk the org is carrying right now.</div>" +
+      "<div class=\"hhpl-pl-subtotal\"><div class=\"hhpl-pl-subtotal-label\">= TOTAL ADJUSTMENTS</div><div class=\"hhpl-pl-subtotal-val neg\">" + fmt(pl.totalAdj) + "</div></div>" +
+      "<div class=\"hhpl-pl-net\"><div class=\"hhpl-pl-net-label\">HUMAN NET PROFIT / LOSS (HCI-adjusted)</div><div class=\"hhpl-pl-net-val " + (Math.round(pl.netProfit * h) >= 0 ? "pos" : "neg") + "\" id=\"hhpl-net-val\">" + fmt(Math.round(pl.netProfit * h)) + "</div></div>" +
+      "<div class=\"hhpl-pl-ratio\"><div class=\"hhpl-pl-ratio-label\">For every " + SYM + "1 invested in HR, this org returns</div><div class=\"hhpl-pl-ratio-val\" id=\"hhpl-ratio-row-val\">" + SYM + adjRatio + "x</div></div>" +
+    "</div>" +
+    "<div class=\"hhpl-stmt\"><div class=\"hhpl-stmt-lbl\">Intelligence Statement</div><div class=\"hhpl-stmt-txt\">" + stmtTxt + "</div></div>" +
+    "<div class=\"hhpl-p5-bridge\"><div class=\"hhpl-p5-lbl\">Connection to the Human Balance Sheet</div><div class=\"hhpl-p5-txt\">The Human Net Profit of <b>" + fmt(Math.round(pl.netProfit * h)) + "</b> feeds directly into the Human Balance Sheet as <b>retained human earnings</b> - the accumulated value of HR's contribution to the organisation's human capital position. A positive net profit strengthens the balance sheet. A negative one erodes it.</div></div>";
+
+  document.getElementById("hhpl-hci-hdr").addEventListener("click", function() {
+    var body = document.getElementById("hhpl-hci-body");
+    var chev = document.getElementById("hhpl-hci-chev");
+    var open = body.classList.contains("open");
+    body.classList.toggle("open", !open);
+    if (chev) chev.textContent = open ? "\u25BE" : "\u25B4";
+  });
+
+  renderHCI(pl, d);
+}
+
+window.hhplHciToggle = function(i) {
+  _hciF[i] = !_hciF[i];
+  if (_computed) {
+    var pl = calcPL(_computed);
+    renderHCI(pl, _computed);
+  }
+};
+
+window.hhplEdit = function(field, rowEl) {
+  var current = _userInputs[field] || 0;
+  var valEl = rowEl.querySelector(".hhpl-pl-row-val");
+  if (!valEl) return;
+  valEl.innerHTML = "<input class=\"hhpl-edit-input\" id=\"hhpl-inp-" + field + "\" type=\"number\" value=\"" + current + "\">";
+  var inp = document.getElementById("hhpl-inp-" + field);
+  if (inp) {
+    inp.focus();
+    inp.addEventListener("blur", function() { hhplSave(field); });
+    inp.addEventListener("keydown", function(e) { if (e.key === "Enter") hhplSave(field); });
+  }
+};
+
+window.hhplSave = function(field) {
+  var inp = document.getElementById("hhpl-inp-" + field);
+  if (!inp) return;
+  var val = parseInt(inp.value);
+  if (!isNaN(val) && val >= 0) {
+    _userInputs[field] = val;
+    if (_computed) renderPL(_computed);
+  }
+};
+
+var rawRows = loadData();
+if (!rawRows) {
+  var c = document.getElementById("hhpl-content");
+  c.innerHTML = "<div class=\"hhpl-entry-card\"><div class=\"hhpl-entry-icon\">L4</div><div class=\"hhpl-entry-title\">Upload your org data to run the Human P&amp;L</div><div class=\"hhpl-entry-sub\">The Human P&amp;L computes from your actual employee dataset - salary, placement, and tenure. Upload your CSV first, then return here.</div><a href=\"/pages/analyse-your-org.html\" class=\"hhpl-entry-btn\">Go to Analyse Your Org</a></div>";
+} else {
+  _computed = compute(rawRows);
+  if (!_computed) {
+    var c = document.getElementById("hhpl-content");
+    c.innerHTML = "<div class=\"hhpl-entry-card\"><div class=\"hhpl-entry-icon\">L4</div><div class=\"hhpl-entry-title\">Could not read org data</div><div class=\"hhpl-entry-sub\">The uploaded data could not be parsed. Re-upload your CSV from Analyse Your Org.</div><a href=\"/pages/analyse-your-org.html\" class=\"hhpl-entry-btn\">Go to Analyse Your Org</a></div>";
+  } else {
+    renderPL(_computed);
+  }
+}
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

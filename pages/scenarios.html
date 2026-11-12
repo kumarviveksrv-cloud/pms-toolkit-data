@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16 live HR calculators. 15 real companies.</title>
+  <meta name="description" content="Practice performance management on real data before it costs you. 750 employees per scenario. All 16 calculators. No account needed for the free tier.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/scenarios.html">
+  <meta property="og:title" content="16 live HR calculators. 15 real companies.">
+  <meta property="og:description" content="Practice performance management on real data before it costs you. 750 employees per scenario. All 16 calculators. No account needed for the free tier.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Scenarios</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<style>
+#sc-hero{font-family:'Inter',sans-serif;position:relative;background:linear-gradient(160deg,#080612 0%,#0f0a1e 60%,#080612 100%);overflow:hidden;width:100%;border-radius:16px;margin-bottom:24px;}
+#sc-hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.sch-body{position:relative;z-index:2;padding:44px 52px 36px;}
+@media(max-width:768px){.sch-body{padding:28px 24px 24px;}}
+.sch-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px;}
+.sch-left{flex:1;min-width:280px;}
+.sch-bc{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(102,126,234,.5);margin-bottom:16px;}
+.sch-live{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:100px;background:rgba(102,126,234,.1);border:1px solid rgba(102,126,234,.2);margin-bottom:16px;}
+.sch-live-dot{width:6px;height:6px;border-radius:50%;background:#667eea;box-shadow:0 0 10px rgba(102,126,234,.9);}
+.sch-live-txt{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(102,126,234,.7);}
+.sch-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.2vw,44px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px;}
+.sch-name-inner{display:inline;}
+.sch-sub{font-size:13px;color:rgba(165,180,252,.55);line-height:1.7;margin-bottom:20px;max-width:500px;}
+.sch-chips{display:flex;gap:10px;flex-wrap:wrap;}
+.sch-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);transition:all .3s;}
+.sch-chip:hover{background:rgba(102,126,234,.15);border-color:rgba(102,126,234,.35);color:rgba(165,180,252,.9);transform:translateY(-1px);}
+.sch-right{display:flex;flex-direction:column;align-items:flex-end;gap:20px;}
+.sch-stats{display:flex;gap:1px;background:rgba(102,126,234,.12);border-radius:16px;overflow:hidden;border:1px solid rgba(102,126,234,.15);}
+.sch-stat{padding:18px 24px;text-align:center;background:#0a0818;min-width:90px;transition:background .3s;}
+.sch-stat:hover{background:rgba(102,126,234,.1);}
+.sch-stat:not(:last-child){border-right:1px solid rgba(102,126,234,.12);}
+.sch-stat-val{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;letter-spacing:-1px;line-height:1;background:linear-gradient(135deg,#ffffff,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
+.sch-stat-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(165,180,252,.3);}
+.sch-ctas{display:flex;gap:10px;}
+.sch-btn-p{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:10px;font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;box-shadow:0 4px 24px rgba(102,126,234,.4);transition:all .25s;}
+.sch-btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(102,126,234,.6);}
+.sch-btn-g{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;background:transparent;border:1px solid rgba(102,126,234,.3);color:#a5b4fc;text-decoration:none;transition:all .25s;}
+.sch-btn-g:hover{background:rgba(102,126,234,.12);border-color:rgba(102,126,234,.5);transform:translateY(-1px);}
+.sch-strip{position:relative;z-index:2;border-top:1px solid rgba(102,126,234,.12);padding:12px 52px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:rgba(0,0,0,.2);}
+@media(max-width:768px){.sch-strip{padding:10px 24px;}}
+.sch-meta{font-size:11px;color:rgba(165,180,252,.35);display:flex;align-items:center;gap:6px;}
+.sch-meta strong{color:rgba(165,180,252,.65);font-weight:600;}
+.sch-meta-sep{width:3px;height:3px;border-radius:50%;background:rgba(102,126,234,.3);margin:0 6px;}
+</style>
+
+<div id="sc-hero">
+  <canvas id="sc-hero-canvas"></canvas>
+  <div class="sch-body">
+    <div class="sch-top">
+      <div class="sch-left">
+        <div class="sch-bc">📋 SCENARIO LIBRARY</div>
+        <div class="sch-live">
+          <div class="sch-live-dot"></div>
+          <span class="sch-live-txt">Live Scenarios</span>
+        </div>
+        <div class="sch-name"><span class="sch-name-inner">Explore real-world<br>performance scenarios.</span></div>
+        <div class="sch-sub">15 pre-built company scenarios with 750 employees across industries, geographies and rating systems. Pick any scenario to run all 16 calculators instantly - or upload your own org data.</div>
+        <div class="sch-chips">
+          <span class="sch-chip">📊 15 Scenarios</span>
+          <span class="sch-chip">👥 750 Employees</span>
+          <span class="sch-chip">🌍 8 Industries</span>
+          <span class="sch-chip">⚡ 16 Calculators</span>
+        </div>
+      </div>
+      <div class="sch-right">
+        <div class="sch-stats">
+          <div class="sch-stat"><div class="sch-stat-val" id="schsv1">0</div><div class="sch-stat-lbl">Scenarios</div></div>
+          <div class="sch-stat"><div class="sch-stat-val" id="schsv2">0</div><div class="sch-stat-lbl">Employees</div></div>
+          <div class="sch-stat"><div class="sch-stat-val" id="schsv3">0</div><div class="sch-stat-lbl">Calculators</div></div>
+        </div>
+        <div class="sch-ctas">
+          <a href="/pages/analyse-your-org.html" class="sch-btn-p">📂 Use Your Own Data</a>
+          <a href="/pages/pricing.html" class="sch-btn-g">✦ Go Pro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sch-strip">
+    <div class="sch-meta">Free: <strong>6 scenarios · OKR + 9-Box + Bell Curve calculators</strong></div>
+    <span class="sch-meta-sep"></span>
+    <div class="sch-meta">Pro: <strong>All 15 scenarios · All 16 calculators</strong></div>
+    <span class="sch-meta-sep"></span>
+    <div class="sch-meta">Click any card to begin →</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes schFadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes schPulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(102,126,234,.9);}50%{opacity:.3;box-shadow:none;}}'+
+    '@keyframes schShimmer{0%{background-position:-700px 0;}70%,100%{background-position:900px 0;}}'+
+    '.sch-bc{opacity:0;animation:schFadeUp .5s .05s ease forwards;}'+
+    '.sch-live{opacity:0;animation:schFadeUp .5s .12s ease forwards;}'+
+    '.sch-name{opacity:0;animation:schFadeUp .5s .2s ease forwards;}'+
+    '.sch-sub{opacity:0;animation:schFadeUp .5s .28s ease forwards;}'+
+    '.sch-chips{opacity:0;animation:schFadeUp .5s .35s ease forwards;}'+
+    '.sch-right{opacity:0;animation:schFadeUp .5s .38s ease forwards;}'+
+    '.sch-strip{opacity:0;animation:schFadeUp .4s .48s ease forwards;}'+
+    '.sch-live-dot{animation:schPulse 2s ease-in-out infinite;}'+
+    '.sch-name-inner{'+
+      'background:linear-gradient(90deg,#f4f3ff 20%,#c4b5fd 40%,#ffffff 50%,#a5b4fc 60%,#f4f3ff 80%);'+
+      'background-size:900px 100%;'+
+      '-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;'+
+      'animation:schShimmer 4s ease 0.8s infinite;'+
+    '}';
+  document.head.appendChild(s);
+
+  var canvas=document.getElementById('sc-hero-canvas');
+  var root=document.getElementById('sc-hero');
+  var ctx=canvas.getContext('2d');
+  var pts=[];var W,H;
+  function resize(){W=canvas.width=root.offsetWidth||800;H=canvas.height=root.offsetHeight||260;}
+  function initPts(){pts=[];for(var i=0;i<55;i++){pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.4+.4,o:Math.random()*.6+.2});}}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(102,126,234,'+(0.15*(1-d/120))+')';ctx.lineWidth=.7;ctx.stroke();}}}
+    pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.fill();});
+    requestAnimationFrame(draw);
+  }
+  resize();initPts();draw();
+  setTimeout(function(){resize();initPts();},600);
+  window.addEventListener('resize',function(){resize();initPts();});
+
+  function countUp(el,target,dur){var s=0,step=target/(dur/16);var t=setInterval(function(){s+=step;if(s>=target){el.textContent=target;clearInterval(t);}else{el.textContent=Math.floor(s);}},16);}
+  setTimeout(function(){
+    countUp(document.getElementById('schsv1'),15,900);
+    countUp(document.getElementById('schsv2'),750,1200);
+    countUp(document.getElementById('schsv3'),16,900);
+  },350);
+})();
+</script>
+
+
+
+<!-- SCENARIOS SEMANTIC ANIMATED GRID v2 - GATED -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  :where(#sc-grid) * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  #sc-grid {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 8px 0 48px;
+    width: 100%;
+  }
+
+  .scg-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 4px;
+  }
+
+  @media(max-width:900px) {
+    .scg-wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(max-width:560px) {
+    .scg-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .scg-card {
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    background: #1a1830;
+    border: 1px solid rgba(102, 126, 234, .18);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .35);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    opacity: 0;
+    animation: scgFadeUp .4s forwards;
+  }
+
+  .scg-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 52px rgba(102, 126, 234, .22);
+    border-color: rgba(102, 126, 234, .4);
+  }
+
+  .scg-card:nth-child(1) { animation-delay: .05s }
+  .scg-card:nth-child(2) { animation-delay: .1s }
+  .scg-card:nth-child(3) { animation-delay: .15s }
+  .scg-card:nth-child(4) { animation-delay: .2s }
+  .scg-card:nth-child(5) { animation-delay: .25s }
+  .scg-card:nth-child(6) { animation-delay: .3s }
+  .scg-card:nth-child(7) { animation-delay: .35s }
+  .scg-card:nth-child(8) { animation-delay: .4s }
+  .scg-card:nth-child(9) { animation-delay: .45s }
+  .scg-card:nth-child(10) { animation-delay: .5s }
+  .scg-card:nth-child(11) { animation-delay: .55s }
+  .scg-card:nth-child(12) { animation-delay: .6s }
+  .scg-card:nth-child(13) { animation-delay: .65s }
+  .scg-card:nth-child(14) { animation-delay: .7s }
+  .scg-card:nth-child(15) { animation-delay: .75s }
+
+  /* PRO CARD BLUR */
+  .scg-card-pro {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .scg-card-pro .scg-visual,
+  .scg-card-pro .scg-body {
+    filter: blur(4px);
+    user-select: none;
+  }
+
+  .scg-card-pro:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+    border-color: rgba(102, 126, 234, .12);
+  }
+
+  .scg-pro-lock {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 8, 30, .55);
+    backdrop-filter: blur(2px);
+    border-radius: 18px;
+    pointer-events: all;
+    gap: 6px;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .scg-pro-icon { font-size: 22px; }
+
+  .scg-pro-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    opacity: .9;
+  }
+
+  .scg-pro-sub {
+    font-size: 10px;
+    color: rgba(255, 255, 255, .5);
+  }
+
+  .scg-pro-btn {
+    margin-top: 6px;
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: opacity .2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .scg-pro-btn:hover { opacity: .85; }
+
+  /* PRO DIVIDER */
+  .scg-pro-heading {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0 4px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    color: rgba(165, 180, 252, .9);
+    background: rgba(102, 126, 234, .1);
+    border: 1px solid rgba(102, 126, 234, .25);
+    border-radius: 10px;
+    padding: 12px 20px;
+  }
+
+  .scg-pro-heading::before,
+  .scg-pro-heading::after { display: none; }
+
+  .scg-visual {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scg-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, .3);
+    color: white;
+    z-index: 10;
+  }
+
+  .badge-beginner { background: rgba(56, 239, 125, .4); }
+  .badge-intermediate { background: rgba(255, 210, 0, .4); }
+  .badge-advanced { background: rgba(240, 147, 251, .4); }
+
+  .scg-industry {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .9);
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    z-index: 10;
+  }
+
+  .scg-body {
+    padding: 18px 20px 20px;
+    background: #13111f;
+    border-top: 1px solid rgba(102, 126, 234, .12);
+  }
+
+  .scg-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f4f3ff;
+    margin-bottom: 6px;
+    letter-spacing: -.3px;
+    line-height: 1.3;
+  }
+
+  .scg-desc {
+    font-size: 12px;
+    color: rgba(165, 180, 252, .5);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scg-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid rgba(102, 126, 234, .1);
+  }
+
+  .scg-emp {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(165, 180, 252, .4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .scg-emp::before { content: '👥'; font-size: 11px; }
+
+  .scg-cta {
+    font-size: 11px;
+    font-weight: 700;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap .2s;
+  }
+
+  .scg-card:hover .scg-cta { gap: 7px; }
+
+  .finance-bar, .quota-bar { transform-box: fill-box; transform-origin: 50% 100%; }
+  .tree-leaf, .plant-leaf, .org-node, .edu-dot { transform-box: fill-box; transform-origin: 50% 50%; }
+
+  @keyframes scgFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes graphDraw { 0% { stroke-dashoffset: 300; } 60% { stroke-dashoffset: 0; } 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 300; } }
+  @keyframes graphPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+  @keyframes minHand { to { transform: rotate(360deg); } }
+  @keyframes hrHand { to { transform: rotate(360deg); } }
+  @keyframes nodePulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+  @keyframes lineAppear { 0%, 20% { stroke-opacity: 0; } 50% { stroke-opacity: .7; } 100% { stroke-opacity: 0; } }
+  @keyframes barLoop { 0% { transform: scaleY(0); } 35% { transform: scaleY(1); } 70% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+  @keyframes gearSpin { to { transform: rotate(360deg); } }
+  @keyframes gearSpinRev { to { transform: rotate(-360deg); } }
+  @keyframes branchLoop { 0% { stroke-dashoffset: 200; opacity: 1; } 40% { stroke-dashoffset: 0; opacity: 1; } 80% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 200; opacity: 0; } }
+  @keyframes leafLoop { 0%, 35% { opacity: 0; transform: scale(0); } 60% { opacity: 1; transform: scale(1.1); } 72%, 85% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0); } }
+  @keyframes rippleGreen { 0% { r: 5; stroke-opacity: 1; } 100% { r: 40; stroke-opacity: 0; } }
+  @keyframes stemLoop { 0% { stroke-dashoffset: 100; } 40% { stroke-dashoffset: 0; } 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 100; } }
+  @keyframes leafAppear { 0%, 35% { opacity: 0; transform: scale(0); } 60% { opacity: 1; transform: scale(1.1); } 75%, 88% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0); } }
+</style>
+
+<div id="sc-grid">
+  <div class="scg-wrap">
+
+    <!-- 1. HIGH-GROWTH TECH STARTUP - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=recFOxRBFHIT0az8u" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0f0c29,#302b63,#24243e)">
+        <svg width="200" height="120" viewBox="0 0 200 120"><defs><linearGradient id="techGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00f2fe"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs><polygon points="20,95 50,88 80,75 100,60 130,40 160,22 180,15 180,100 20,100" fill="url(#techGrad)" opacity=".18"/><polyline points="20,95 50,88 80,75 100,60 130,40 160,22 180,15" fill="none" stroke="#00f2fe" stroke-width="2.5" stroke-dasharray="300" stroke-dashoffset="300" style="animation:graphDraw 3s ease-in-out 0.5s infinite"/><circle cx="180" cy="15" r="5" fill="#00f2fe" style="animation:graphPulse 1.5s ease-in-out 2s infinite"/></svg>
+        <div class="scg-badge badge-beginner">Beginner</div>
+        <div class="scg-industry">Technology</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">High-Growth Tech Startup</div>
+        <div class="scg-desc">Series B startup, 120 employees. Fast-paced OKR-driven culture with steep growth targets.</div>
+        <div class="scg-footer"><div class="scg-emp">120 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- 2. PROFESSIONAL SERVICES - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=rectobtZt42HMeQPD" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)">
+        <svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="2"/><text x="60" y="52" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="7" font-family="Plus Jakarta Sans">BILLABLE</text><line x1="60" y1="60" x2="60" y2="35" stroke="white" stroke-width="3" stroke-linecap="round" style="transform-origin:60px 60px;animation:hrHand 120s linear infinite"/><line x1="60" y1="60" x2="60" y2="26" stroke="#4facfe" stroke-width="2" stroke-linecap="round" style="transform-origin:60px 60px;animation:minHand 4s steps(60,end) infinite"/><circle cx="60" cy="60" r="4" fill="white"/></svg>
+        <div class="scg-badge badge-intermediate">Intermediate</div>
+        <div class="scg-industry">Consulting</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">Professional Services Firm</div>
+        <div class="scg-desc">Mid-size consulting firm with billable hours, utilisation targets and partner-track performance.</div>
+        <div class="scg-footer"><div class="scg-emp">75 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- 3. REMOTE-FIRST SAAS - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=reciXFyWH9LBIuwgX" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
+        <svg width="200" height="130" viewBox="0 0 200 130"><line x1="100" y1="65" x2="30" y2="25" stroke="rgba(79,172,254,.5)" stroke-width="1.5" style="animation:lineAppear 3s ease-in-out 0.2s infinite"/><line x1="100" y1="65" x2="170" y2="25" stroke="rgba(79,172,254,.5)" stroke-width="1.5" style="animation:lineAppear 3s ease-in-out 0.7s infinite"/><line x1="100" y1="65" x2="160" y2="105" stroke="rgba(79,172,254,.5)" stroke-width="1.5" style="animation:lineAppear 3s ease-in-out 1.2s infinite"/><line x1="100" y1="65" x2="40" y2="105" stroke="rgba(79,172,254,.5)" stroke-width="1.5" style="animation:lineAppear 3s ease-in-out 1.7s infinite"/><circle cx="30" cy="25" r="7" fill="#4facfe" style="animation:nodePulse 2s ease-in-out 0.2s infinite"/><circle cx="170" cy="25" r="7" fill="#4facfe" style="animation:nodePulse 2s ease-in-out 0.8s infinite"/><circle cx="160" cy="105" r="7" fill="#4facfe" style="animation:nodePulse 2s ease-in-out 1.2s infinite"/><circle cx="40" cy="105" r="7" fill="#4facfe" style="animation:nodePulse 2s ease-in-out 1.6s infinite"/><circle cx="100" cy="65" r="14" fill="rgba(79,172,254,.2)" stroke="#4facfe" stroke-width="2"/><circle cx="100" cy="65" r="6" fill="#4facfe"/></svg>
+        <div class="scg-badge badge-advanced">Advanced</div>
+        <div class="scg-industry">SaaS</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">Remote-First SaaS</div>
+        <div class="scg-desc">Fully remote across 30 countries. Async-first culture valuing autonomy and trust.</div>
+        <div class="scg-footer"><div class="scg-emp">95 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- 4. FINANCIAL SERVICES - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=recLbFTZGyAPUdOvg" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a0a00,#2d1b00,#1a0f00)">
+        <svg width="200" height="120" viewBox="0 0 200 120"><rect class="finance-bar" x="33" y="65" width="14" height="23" fill="#ef4444" rx="2" style="animation:barLoop 4s ease-in-out 0.1s infinite"/><rect class="finance-bar" x="58" y="57" width="14" height="27" fill="#22c55e" rx="2" style="animation:barLoop 4s ease-in-out 0.5s infinite"/><rect class="finance-bar" x="83" y="62" width="14" height="18" fill="#ef4444" rx="2" style="animation:barLoop 4s ease-in-out 0.9s infinite"/><rect class="finance-bar" x="108" y="48" width="14" height="30" fill="#22c55e" rx="2" style="animation:barLoop 4s ease-in-out 1.3s infinite"/><rect class="finance-bar" x="133" y="42" width="14" height="28" fill="#22c55e" rx="2" style="animation:barLoop 4s ease-in-out 1.7s infinite"/><rect class="finance-bar" x="158" y="32" width="14" height="26" fill="#ffd200" rx="2" style="animation:barLoop 4s ease-in-out 2.1s infinite"/></svg>
+        <div class="scg-badge badge-intermediate">Intermediate</div>
+        <div class="scg-industry">Finance</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">Financial Services</div>
+        <div class="scg-desc">Investment management firm, 150 employees. High-pressure results culture in competitive markets.</div>
+        <div class="scg-footer"><div class="scg-emp">150 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- 5. FAMILY BUSINESS - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=recneEByYS8PJfl9r" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0a1f0a,#112211,#0d2b0d)">
+        <svg width="180" height="130" viewBox="0 0 180 130"><line x1="90" y1="115" x2="90" y2="75" stroke="#8B6914" stroke-width="5" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation:branchLoop 4.5s ease-in-out 0.1s infinite"/><line x1="90" y1="80" x2="50" y2="50" stroke="#8B6914" stroke-width="3" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation:branchLoop 4.5s ease-in-out 0.6s infinite"/><line x1="90" y1="80" x2="130" y2="50" stroke="#8B6914" stroke-width="3" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation:branchLoop 4.5s ease-in-out 0.6s infinite"/><circle class="tree-leaf" cx="30" cy="25" r="12" fill="rgba(56,239,125,.55)" style="animation:leafLoop 4.5s ease-in-out 1.5s infinite"/><circle class="tree-leaf" cx="65" cy="22" r="10" fill="rgba(56,239,125,.5)" style="animation:leafLoop 4.5s ease-in-out 1.7s infinite"/><circle class="tree-leaf" cx="115" cy="22" r="10" fill="rgba(56,239,125,.5)" style="animation:leafLoop 4.5s ease-in-out 1.7s infinite"/><circle class="tree-leaf" cx="150" cy="25" r="12" fill="rgba(56,239,125,.55)" style="animation:leafLoop 4.5s ease-in-out 1.5s infinite"/></svg>
+        <div class="scg-badge badge-advanced">Advanced</div>
+        <div class="scg-industry">Family Business</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">Family Business</div>
+        <div class="scg-desc">Second-generation family business navigating professionalisation, tenure bias and succession.</div>
+        <div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- 6. SOCIAL ENTERPRISE - FREE -->
+    <a href="/pages/scenarios-details.html?recordId=recOkRYPvkkHMEW4Y" class="scg-card">
+      <div class="scg-visual" style="background:linear-gradient(135deg,#061a06,#0a2e0a,#061a10)">
+        <svg width="180" height="130" viewBox="0 0 180 130"><rect x="60" y="108" width="60" height="14" rx="7" fill="rgba(139,90,43,.4)"/><line x1="90" y1="108" x2="90" y2="55" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation:stemLoop 4.5s ease-in-out 0.2s infinite"/><ellipse class="plant-leaf" cx="68" cy="80" rx="18" ry="10" fill="rgba(74,222,128,.6)" transform="rotate(-30,68,80)" style="animation:leafAppear 4.5s ease-in-out 1.1s infinite"/><ellipse class="plant-leaf" cx="112" cy="70" rx="18" ry="10" fill="rgba(74,222,128,.55)" transform="rotate(30,112,70)" style="animation:leafAppear 4.5s ease-in-out 1.3s infinite"/><circle class="plant-leaf" cx="90" cy="48" r="7" fill="#4ade80" style="animation:leafAppear 4.5s ease-in-out 1.6s infinite"/><text x="90" y="52" text-anchor="middle" fill="white" font-size="9">♥</text></svg>
+        <div class="scg-badge badge-intermediate">Intermediate</div>
+        <div class="scg-industry">Non-Profit</div>
+      </div>
+      <div class="scg-body">
+        <div class="scg-name">Social Enterprise</div>
+        <div class="scg-desc">Mission-driven NGO balancing impact metrics with limited budget and volunteer workforce management.</div>
+        <div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div>
+      </div>
+    </a>
+
+    <!-- PRO DIVIDER -->
+    <div class="scg-pro-heading">🔒 9 more scenarios - Pro only</div>
+
+    <!-- 7. ENTERPRISE HEALTHCARE - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Enterprise Healthcare" data-href="/pages/scenarios-details.html?recordId=recawJssrebQBLd8W">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Enterprise Healthcare · 350 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0a2e1a,#0d4a2a,#0a3d2e)"><svg width="220" height="100" viewBox="0 0 220 100"><polyline points="0,50 30,50 40,50 50,20 55,80 60,50 90,50 100,50 110,15 115,85 120,50 150,50 160,50 170,20 175,80 180,50 210,50 220,50" fill="none" stroke="#38ef7d" stroke-width="2.5" stroke-dasharray="400" stroke-dashoffset="400" style="animation:graphDraw 2.5s ease-in-out 0.3s infinite"/><circle cx="180" cy="50" r="4" fill="#38ef7d" style="animation:graphPulse 1.2s ease-in-out infinite"/></svg><div class="scg-badge badge-beginner">Beginner</div><div class="scg-industry">Healthcare</div></div>
+      <div class="scg-body"><div class="scg-name">Enterprise Healthcare</div><div class="scg-desc">Healthcare provider network with 350 employees under strict regulatory environment.</div><div class="scg-footer"><div class="scg-emp">350 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 8. MANUFACTURING - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Manufacturing Firm" data-href="/pages/scenarios-details.html?recordId=recAXwhOxEFGqJGJ6">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Manufacturing Firm · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d,#1a1a2e)"><svg width="200" height="120" viewBox="0 0 200 120"><g style="transform-origin:70px 60px;animation:gearSpin 4s linear infinite"><circle cx="70" cy="60" r="22" fill="none" stroke="rgba(102,126,234,.6)" stroke-width="4"/><circle cx="70" cy="60" r="8" fill="rgba(102,126,234,.4)"/><rect x="66" y="34" width="8" height="10" rx="2" fill="rgba(102,126,234,.6)"/><rect x="66" y="76" width="8" height="10" rx="2" fill="rgba(102,126,234,.6)"/><rect x="44" y="56" width="10" height="8" rx="2" fill="rgba(102,126,234,.6)"/><rect x="86" y="56" width="10" height="8" rx="2" fill="rgba(102,126,234,.6)"/></g><g style="transform-origin:115px 60px;animation:gearSpinRev 3s linear infinite"><circle cx="115" cy="60" r="16" fill="none" stroke="rgba(79,172,254,.6)" stroke-width="3"/><circle cx="115" cy="60" r="6" fill="rgba(79,172,254,.4)"/><rect x="111" y="40" width="8" height="8" rx="2" fill="rgba(79,172,254,.6)"/><rect x="111" y="72" width="8" height="8" rx="2" fill="rgba(79,172,254,.6)"/><rect x="95" y="56" width="8" height="8" rx="2" fill="rgba(79,172,254,.6)"/><rect x="127" y="56" width="8" height="8" rx="2" fill="rgba(79,172,254,.6)"/></g></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">Manufacturing</div></div>
+      <div class="scg-body"><div class="scg-name">Manufacturing Firm</div><div class="scg-desc">German manufacturing firm with works council, 3-tier rating system and seniority-based advancement.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 9. SALES - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Sales Organization" data-href="/pages/scenarios-details.html?recordId=rec9yQEQa0oHktGL9">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Sales Organization · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a0010,#2d0020,#1a001a)"><svg width="200" height="120" viewBox="0 0 200 120"><rect class="quota-bar" x="30" y="40" width="18" height="50" fill="#f5576c" rx="3" style="animation:barLoop 3s ease-in-out 0.1s infinite"/><rect class="quota-bar" x="60" y="25" width="18" height="65" fill="#f093fb" rx="3" style="animation:barLoop 3s ease-in-out 0.4s infinite"/><rect class="quota-bar" x="90" y="15" width="18" height="75" fill="#ffd200" rx="3" style="animation:barLoop 3s ease-in-out 0.7s infinite"/><rect class="quota-bar" x="120" y="30" width="18" height="60" fill="#f5576c" rx="3" style="animation:barLoop 3s ease-in-out 1s infinite"/><rect class="quota-bar" x="150" y="10" width="18" height="80" fill="#4ade80" rx="3" style="animation:barLoop 3s ease-in-out 1.3s infinite"/><line x1="20" y1="90" x2="185" y2="90" stroke="rgba(255,255,255,.2)" stroke-width="1"/><text x="100" y="108" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.4)" font-family="Segoe UI,sans-serif">QUOTA ATTAINMENT</text></svg><div class="scg-badge badge-intermediate">Intermediate</div><div class="scg-industry">Sales</div></div>
+      <div class="scg-body"><div class="scg-name">Sales Organization</div><div class="scg-desc">B2B SaaS sales company. Ratings normalised from quota attainment - 150%+ = Rating 5.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 10. CONSULTING - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Consulting Firm" data-href="/pages/scenarios-details.html?recordId=recVh26HxKOLwBb04">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Consulting Firm · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0d0d1a,#1a1a2e,#12122a)"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="100,8 75,40 125,40" fill="rgba(255,184,0,.8)" style="animation:nodePulse 2s ease-in-out 0s infinite"/><line x1="100" y1="40" x2="65" y2="68" stroke="rgba(102,126,234,.4)" stroke-width="1.5" style="animation:lineAppear 2.5s ease-in-out 0.2s infinite"/><line x1="100" y1="40" x2="135" y2="68" stroke="rgba(102,126,234,.4)" stroke-width="1.5" style="animation:lineAppear 2.5s ease-in-out 0.4s infinite"/><polygon points="65,68 50,95 80,95" fill="rgba(102,126,234,.7)" style="animation:nodePulse 2s ease-in-out 0.5s infinite"/><polygon points="135,68 120,95 150,95" fill="rgba(102,126,234,.7)" style="animation:nodePulse 2s ease-in-out 1s infinite"/><text x="100" y="115" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.3)" font-family="Segoe UI,sans-serif">UP OR OUT</text></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">Consulting</div></div>
+      <div class="scg-body"><div class="scg-name">Consulting Firm</div><div class="scg-desc">Strategy consulting with up-or-out culture. High performance bar, significant increment spread.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 11. MNC ASIA - PRO -->
+    <div class="scg-card scg-card-pro" data-name="MNC in Asia" data-href="/pages/scenarios-details.html?recordId=recO9J3gdVa0gMNY7">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">MNC in Asia · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0f0c29,#1a1035,#0d0d2e)"><svg width="200" height="120" viewBox="0 0 200 120"><rect x="80" y="8" width="40" height="22" rx="4" fill="rgba(255,184,0,.7)" style="animation:nodePulse 2s ease-in-out 0s infinite"/><line x1="100" y1="30" x2="45" y2="55" stroke="rgba(102,126,234,.3)" stroke-width="1.5"/><line x1="100" y1="30" x2="100" y2="55" stroke="rgba(102,126,234,.3)" stroke-width="1.5"/><line x1="100" y1="30" x2="155" y2="55" stroke="rgba(102,126,234,.3)" stroke-width="1.5"/><rect x="25" y="55" width="40" height="20" rx="3" fill="rgba(102,126,234,.6)" style="animation:nodePulse 2s ease-in-out 0.4s infinite"/><rect x="80" y="55" width="40" height="20" rx="3" fill="rgba(102,126,234,.6)" style="animation:nodePulse 2s ease-in-out 0.7s infinite"/><rect x="135" y="55" width="40" height="20" rx="3" fill="rgba(102,126,234,.6)" style="animation:nodePulse 2s ease-in-out 1s infinite"/><text x="100" y="108" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.3)" font-family="Segoe UI,sans-serif">REGIONAL HIERARCHY</text></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">MNC</div></div>
+      <div class="scg-body"><div class="scg-name">MNC in Asia</div><div class="scg-desc">Multinational with complex hierarchy, regional adjustments and cross-cultural performance norms.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 12. HOSPITALITY - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Hospitality" data-href="/pages/scenarios-details.html?recordId=recwRAmAt1kQHdRWQ">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Hospitality · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a0f00,#2d1f00,#1a1500)"><svg width="200" height="120" viewBox="0 0 200 120"><text x="100" y="52" text-anchor="middle" font-size="28" style="animation:nodePulse 1.8s ease-in-out infinite">🛎️</text><text x="42" y="90" text-anchor="middle" font-size="16" fill="#ffd200" style="animation:nodePulse 1.5s ease-in-out 0.2s infinite">★</text><text x="67" y="90" text-anchor="middle" font-size="16" fill="#ffd200" style="animation:nodePulse 1.5s ease-in-out 0.4s infinite">★</text><text x="92" y="90" text-anchor="middle" font-size="16" fill="#ffd200" style="animation:nodePulse 1.5s ease-in-out 0.6s infinite">★</text><text x="117" y="90" text-anchor="middle" font-size="16" fill="#ffd200" style="animation:nodePulse 1.5s ease-in-out 0.8s infinite">★</text><text x="142" y="90" text-anchor="middle" font-size="16" fill="rgba(255,210,0,.3)">★</text><text x="100" y="110" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.3)" font-family="Segoe UI,sans-serif">GUEST SATISFACTION</text></svg><div class="scg-badge badge-intermediate">Intermediate</div><div class="scg-industry">Hospitality</div></div>
+      <div class="scg-body"><div class="scg-name">Hospitality</div><div class="scg-desc">Hotel chain with service-focused ratings, seasonal workforce and high attrition challenges.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 13. CORPORATE AMERICA - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Corporate America" data-href="/pages/scenarios-details.html?recordId=recblkFWDrq6txqMC">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Corporate America · 250 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0f0f1a,#1a1a2e,#12122a)"><svg width="200" height="120" viewBox="0 0 200 120"><defs><linearGradient id="bellGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a78bfa" stop-opacity="0.6"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0.05"/></linearGradient></defs><path d="M20,95 Q60,10 100,8 Q140,10 180,95" fill="url(#bellGrad)"/><path d="M20,95 Q60,10 100,8 Q140,10 180,95" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="300" stroke-dashoffset="300" style="animation:graphDraw 2.5s ease-out 0.3s infinite"/><line x1="50" y1="20" x2="50" y2="95" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/><line x1="150" y1="20" x2="150" y2="95" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/><text x="35" y="15" font-size="8" fill="#ef4444" font-family="Segoe UI,sans-serif">10%</text><text x="130" y="15" font-size="8" fill="#22c55e" font-family="Segoe UI,sans-serif">20%</text></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">Corporate</div></div>
+      <div class="scg-body"><div class="scg-name">Corporate America</div><div class="scg-desc">Forced ranking 20/70/10 - top 20% rewarded heavily, bottom 10% managed out annually.</div><div class="scg-footer"><div class="scg-emp">250 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 14. GOVERNMENT - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Government Agency" data-href="/pages/scenarios-details.html?recordId=recc65F4m0DPvuyNi">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Government Agency · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#0a0f1a,#0f1930,#0a1220)"><svg width="200" height="120" viewBox="0 0 200 120"><rect x="55" y="15" width="90" height="70" rx="6" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/><line x1="68" y1="35" x2="132" y2="35" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/><line x1="68" y1="48" x2="132" y2="48" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/><line x1="68" y1="61" x2="110" y2="61" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/><rect x="62" y="22" width="76" height="58" rx="4" fill="none" stroke="rgba(239,68,68,.5)" stroke-width="2" stroke-dasharray="5,3" style="animation:nodePulse 2.5s ease-in-out infinite"/><text x="100" y="56" text-anchor="middle" fill="rgba(239,68,68,.85)" font-size="11" font-weight="800" font-family="Segoe UI,sans-serif" style="animation:nodePulse 2.5s ease-in-out infinite">APPROVED</text><text x="100" y="108" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.25)" font-family="Segoe UI,sans-serif">CIVIL SERVICE RATINGS</text></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">Government</div></div>
+      <div class="scg-body"><div class="scg-name">Government Agency</div><div class="scg-desc">Federal agency with civil service protections, grade inflation and seniority-based advancement.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+    <!-- 15. HIGHER EDUCATION - PRO -->
+    <div class="scg-card scg-card-pro" data-name="Higher Education" data-href="/pages/scenarios-details.html?recordId=recmZif8JPY77ykgH">
+      <div class="scg-pro-lock"><div class="scg-pro-icon">🔒</div><div class="scg-pro-label">Pro Scenario</div><div class="scg-pro-sub">Higher Education · 50 employees</div><a href="/pages/pricing.html" class="scg-pro-btn">Unlock with Pro →</a></div>
+      <div class="scg-visual" style="background:linear-gradient(135deg,#1a0f00,#1f1500,#0f1a0a)"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="100,8 60,30 100,52 140,30" fill="rgba(255,210,0,.7)" style="animation:nodePulse 2s ease-in-out infinite"/><line x1="60" y1="30" x2="60" y2="55" stroke="rgba(255,210,0,.4)" stroke-width="2"/><line x1="140" y1="30" x2="140" y2="55" stroke="rgba(255,210,0,.4)" stroke-width="2"/><line x1="60" y1="55" x2="140" y2="55" stroke="rgba(255,210,0,.4)" stroke-width="2"/><rect class="finance-bar" x="45" y="65" width="14" height="20" fill="rgba(255,210,0,.5)" rx="2" style="animation:barLoop 3s ease-in-out 0.2s infinite"/><rect class="finance-bar" x="70" y="58" width="14" height="27" fill="rgba(255,210,0,.6)" rx="2" style="animation:barLoop 3s ease-in-out 0.5s infinite"/><rect class="finance-bar" x="95" y="52" width="14" height="33" fill="rgba(255,210,0,.7)" rx="2" style="animation:barLoop 3s ease-in-out 0.8s infinite"/><rect class="finance-bar" x="120" y="58" width="14" height="27" fill="rgba(255,210,0,.6)" rx="2" style="animation:barLoop 3s ease-in-out 1.1s infinite"/><rect class="finance-bar" x="145" y="65" width="14" height="20" fill="rgba(255,210,0,.5)" rx="2" style="animation:barLoop 3s ease-in-out 1.4s infinite"/><text x="100" y="110" text-anchor="middle" font-size="9" fill="rgba(255,210,0,.35)" font-family="Segoe UI,sans-serif">TENURE + RESEARCH OUTPUT</text></svg><div class="scg-badge badge-advanced">Advanced</div><div class="scg-industry">Education</div></div>
+      <div class="scg-body"><div class="scg-name">Higher Education</div><div class="scg-desc">University managing academic and administrative staff with tenure tracks and research output metrics.</div><div class="scg-footer"><div class="scg-emp">50 employees</div><div class="scg-cta">Explore →</div></div></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── FIX: isPro checks viorah_plan first, then fallbacks ── */
+  function isPro(){
+    if(localStorage.getItem('viorah_plan')==='pro') return true;
+    if(typeof window.viorahIsPro==='function') return window.viorahIsPro();
+    var k=(localStorage.getItem('pms_pro_key')||'').trim().toUpperCase();
+    if(k==='VIORAH-PRO-2026'||k==='VIORAH-ADMIN-2026') return true;
+    if(k.startsWith('VIORAH-BETA-')){
+      var expMatch=k.match(/EXP(\d{8})$/);
+      if(expMatch){
+        var now=new Date();
+        var ymd=now.getFullYear().toString()+(now.getMonth()+1).toString().padStart(2,'0')+now.getDate().toString().padStart(2,'0');
+        if(ymd<=expMatch[1]) return true;
+      }
+    }
+    return false;
+  }
+
+  function unlock(){
+    var divider=document.querySelector('.scg-pro-heading');
+    if(divider) divider.remove();
+
+    document.querySelectorAll('.scg-card-pro').forEach(function(card){
+      card.classList.remove('scg-card-pro');
+      var lock=card.querySelector('.scg-pro-lock');
+      if(lock) lock.remove();
+      card.style.cursor='pointer';
+      card.style.pointerEvents='auto';
+
+      var href=card.getAttribute('data-href');
+      if(href){
+        var a=document.createElement('a');
+        a.href=href;
+        a.className=card.className;
+        a.style.cssText=card.style.cssText;
+        Array.from(card.childNodes).forEach(function(n){a.appendChild(n.cloneNode(true));});
+        card.parentNode.replaceChild(a,card);
+      }
+    });
+  }
+
+  /* Boot immediately - no polling needed */
+  if(isPro()) unlock();
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance management. Actually explained.</title>
+  <meta name="description" content="14 expert guides covering every major PMS framework. Theory first, execution second. Written for HR practitioners who need to use this in real orgs.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/learning-hub.html">
+  <meta property="og:title" content="Performance management. Actually explained.">
+  <meta property="og:description" content="14 expert guides covering every major PMS framework. Theory first, execution second. Written for HR practitioners who need to use this in real orgs.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Learning Hub</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     PMS TOOLKIT - LEARNING HUB v2
+     ============================================================ -->
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  #lh-root {
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    background: #080612;
+  }
+  #lh-canvas {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+  .lhh-body { position: relative; z-index: 2; padding: 44px 52px 36px; }
+  @media(max-width:768px){ .lhh-body { padding: 28px 20px 24px; } }
+  .lhh-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 40px; flex-wrap: wrap; margin-bottom: 32px;
+  }
+  .lhh-left { flex: 1; min-width: 280px; }
+  .lhh-eyebrow {
+    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(102,126,234,.6); margin-bottom: 14px;
+  }
+  .lhh-live {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 14px; border-radius: 100px;
+    background: rgba(102,126,234,.1); border: 1px solid rgba(102,126,234,.25);
+    margin-bottom: 16px;
+  }
+  .lhh-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #667eea; flex-shrink: 0; }
+  .lhh-live-txt { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(102,126,234,.8); }
+  .lhh-title-plain {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(22px,3.2vw,40px); font-weight: 700;
+    letter-spacing: -1px; line-height: 1.1; margin-bottom: 0; color: #f4f3ff;
+  }
+  .lhh-title-color {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(22px,3.2vw,40px); font-weight: 700;
+    letter-spacing: -1px; line-height: 1.1; margin-bottom: 14px;
+  }
+  .lhh-sub { font-size: 13px; color: rgba(165,180,252,.6); line-height: 1.75; margin-bottom: 20px; max-width: 500px; }
+  .lhh-chips { display: flex; gap: 9px; flex-wrap: wrap; }
+  .lhh-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600; padding: 5px 13px; border-radius: 100px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.6);
+  }
+  .lhh-right { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
+  .lhh-stats {
+    display: flex; gap: 1px; background: rgba(102,126,234,.15);
+    border-radius: 14px; overflow: hidden; border: 1px solid rgba(102,126,234,.2);
+  }
+  .lhh-stat { padding: 18px 22px; text-align: center; background: #0a0818; min-width: 88px; }
+  .lhh-stat:not(:last-child) { border-right: 1px solid rgba(102,126,234,.15); }
+  .lhh-stat-val {
+    font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700;
+    letter-spacing: -1px; line-height: 1; color: #f4f3ff; margin-bottom: 5px;
+  }
+  .lhh-stat-lbl { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(165,180,252,.4); }
+  .lhh-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .lhh-btn-p {
+    display: inline-flex; align-items: center; gap: 7px; padding: 11px 22px;
+    border-radius: 10px; font-size: 13px; font-weight: 700; font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2); color: white;
+    text-decoration: none; box-shadow: 0 4px 24px rgba(102,126,234,.4);
+  }
+  .lhh-btn-g {
+    display: inline-flex; align-items: center; gap: 7px; padding: 11px 18px;
+    border-radius: 10px; font-size: 13px; font-weight: 700; font-family: 'Inter', sans-serif;
+    background: transparent; border: 1px solid rgba(102,126,234,.35); color: #a5b4fc; text-decoration: none;
+  }
+  .lhh-strip {
+    position: relative; z-index: 2; border-top: 1px solid rgba(102,126,234,.15);
+    padding: 11px 52px; display: flex; gap: 5px; flex-wrap: wrap;
+    align-items: center; background: rgba(0,0,0,.25);
+  }
+  @media(max-width:768px){ .lhh-strip { padding: 10px 20px; } }
+  .lhh-meta { font-size: 11px; color: rgba(165,180,252,.4); }
+  .lhh-meta strong { color: rgba(165,180,252,.7); font-weight: 600; }
+</style>
+
+<div id="lh-root">
+  <canvas id="lh-canvas"></canvas>
+  <div class="lhh-body">
+    <div class="lhh-top">
+      <div class="lhh-left">
+        <div class="lhh-eyebrow">PMS LEARNING HUB</div>
+        <div class="lhh-live">
+          <div class="lhh-live-dot"></div>
+          <span class="lhh-live-txt">14 Expert Guides</span>
+        </div>
+        <div class="lhh-title-plain"><span class="lhh-shimmer-main">Everything You Need</span></div>
+        <div class="lhh-title-color"><span class="lhh-shimmer-accent">to Know About PMS.</span></div>
+        <div class="lhh-sub">14 expert guides, 25 templates - written by practitioners for practitioners. No fluff, no filler.</div>
+        <div class="lhh-chips">
+          <span class="lhh-chip">&#x1F4D8; 14 Expert Guides</span>
+          <span class="lhh-chip">&#x1F4C4; 25 Templates</span>
+          <span class="lhh-chip">&#x270D;&#xFE0F; Practitioner-written</span>
+        </div>
+      </div>
+      <div class="lhh-right">
+        <div class="lhh-stats">
+          <div class="lhh-stat">
+            <div class="lhh-stat-val" id="lhsv1">0</div>
+            <div class="lhh-stat-lbl">Guides</div>
+          </div>
+          <div class="lhh-stat">
+            <div class="lhh-stat-val" id="lhsv3">0</div>
+            <div class="lhh-stat-lbl">Templates</div>
+          </div>
+        </div>
+        <div class="lhh-ctas">
+          <a href="#lh-listing" class="lhh-btn-p">&#x1F4DA; Start Exploring</a>
+          <a href="/pages/pricing.html" class="lhh-btn-g">&#x2728; Go Pro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lhh-strip">
+    <span class="lhh-meta">Coverage: <strong>OKRs &middot; Bell Curve &middot; 9-Box &middot; Succession &middot; DEI &middot; Compensation</strong></span>
+    <span class="lhh-meta">&nbsp;&middot;&nbsp; Format: <strong>Guides + Templates</strong></span>
+    <span class="lhh-meta">&nbsp;&middot;&nbsp; Level: <strong>Beginner to Advanced</strong></span>
+  </div>
+</div>
+
+<script>
+  (function(){
+  var root=document.getElementById('lh-root');
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes lhhFU{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes lhhPL{0%,100%{opacity:1;box-shadow:0 0 8px #667eea;}50%{opacity:.3;box-shadow:none;}}'+
+    '@keyframes lhhSH1{0%{background-position:-700px 0;}70%,100%{background-position:900px 0;}}'+
+    '@keyframes lhhSH2{0%{background-position:-700px 0;}70%,100%{background-position:900px 0;}}'+
+    '.lhh-left{opacity:0;animation:lhhFU .5s .05s ease forwards;}'+
+    '.lhh-right{opacity:0;animation:lhhFU .5s .2s ease forwards;}'+
+    '.lhh-strip{opacity:0;animation:lhhFU .4s .4s ease forwards;}'+
+    '.lhh-live-dot{animation:lhhPL 2s ease-in-out infinite;}'+
+    '.lhh-shimmer-main{display:inline;background:linear-gradient(90deg,#f4f3ff 20%,#c4b5fd 40%,#ffffff 50%,#a5b4fc 60%,#f4f3ff 80%);background-size:900px 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:lhhSH1 4s ease 0.6s infinite;}'+
+    '.lhh-shimmer-accent{display:inline;background:linear-gradient(90deg,rgba(165,180,252,.8) 20%,rgba(255,255,255,.95) 40%,rgba(196,181,253,1) 50%,rgba(255,255,255,.95) 60%,rgba(165,180,252,.8) 80%);background-size:900px 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:lhhSH2 4s ease 1.2s infinite;}';
+  document.head.appendChild(s);
+
+  var canvas=document.getElementById('lh-canvas'),ctx=canvas.getContext('2d'),pts=[],W,H;
+  function resize(){W=canvas.width=root.offsetWidth||800;H=canvas.height=root.offsetHeight||300;}
+  function initPts(){pts=[];for(var i=0;i<60;i++){pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,o:Math.random()*.5+.1});}}
+  function draw(){ctx.clearRect(0,0,W,H);for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<125){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(102,126,234,'+(0.12*(1-d/125))+')';ctx.lineWidth=.7;ctx.stroke();}}}pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.fill();});requestAnimationFrame(draw);}
+  resize();initPts();draw();
+  setTimeout(function(){resize();initPts();},600);
+  window.addEventListener('resize',function(){resize();initPts();});
+
+  function countUp(el,target,dur){if(!el)return;var s=0,step=target/(dur/16);var t=setInterval(function(){s+=step;if(s>=target){el.textContent=target;clearInterval(t);}else{el.textContent=Math.floor(s);}},16);}
+  setTimeout(function(){
+    countUp(document.getElementById('lhsv1'),14,900);
+    countUp(document.getElementById('lhsv3'),25,900);
+  },350);
+})();
+</script>
+
+
+<!-- ── PROGRESS TRACKER ── -->
+<style>
+  #lh-progress-bar {
+    background: #0a0818;
+    border: 1px solid rgba(102,126,234,.15);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  #lh-progress-bar .lhp-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(165,180,252,.4); white-space: nowrap;
+  }
+  #lh-progress-bar .lhp-track {
+    flex: 1; height: 4px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden;
+  }
+  #lh-progress-bar .lhp-fill {
+    height: 100%; background: linear-gradient(90deg,#667eea,#764ba2); border-radius: 2px; transition: width .6s ease;
+  }
+  #lh-progress-bar .lhp-count {
+    font-size: 12px; font-weight: 700; color: rgba(165,180,252,.6); white-space: normal;
+  }
+  #lh-progress-bar { flex-wrap: wrap; }
+</style>
+<div id="lh-progress-bar">
+  <span class="lhp-label">Your Reading Progress</span>
+  <div class="lhp-track"><div class="lhp-fill" id="lhp-fill" style="width:0%"></div></div>
+  <span class="lhp-count" id="lhp-count">Start reading -- pick any guide below</span>
+</div>
+
+
+<!-- ── GUIDE LISTING ── -->
+<div id="lh-toast" style="position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-80px);background:linear-gradient(135deg,#059669,#047857);color:white;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 4px 24px rgba(5,150,105,.4);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);font-family:'Inter',sans-serif;white-space:nowrap;">
+  Pro access unlocked! All 14 guides available.
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  #lh-listing {
+    font-family: 'DM Sans', sans-serif;
+    background: #080612;
+    min-height: 100vh;
+    margin-bottom: -32px;
+  }
+  #lh-listing .lhl-filters {
+    background: #0f0c29; border-bottom: 1px solid rgba(102,126,234,.2);
+    padding: 0 40px; display: flex; align-items: center; gap: 4px;
+    overflow-x: auto; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 4px 16px rgba(0,0,0,.4);
+  }
+  #lh-listing .lhl-filter-btn {
+    padding: 14px 18px; font-size: 12px; font-weight: 700;
+    color: rgba(165,180,252,.4); border: none; background: none; cursor: pointer;
+    border-bottom: 3px solid transparent; white-space: nowrap; transition: all .2s;
+    font-family: 'DM Sans', sans-serif; letter-spacing: .3px;
+  }
+  #lh-listing .lhl-filter-btn:hover { color: #667eea; }
+  #lh-listing .lhl-filter-btn.active { color: #a5b4fc; border-bottom-color: #667eea; }
+  #lh-listing .lhl-grid-wrap { max-width: 1100px; margin: 0 auto; padding: 40px; }
+  #lh-listing .lhl-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  @media(max-width:900px){ #lh-listing .lhl-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){
+    #lh-listing .lhl-grid { grid-template-columns: 1fr; }
+    #lh-listing .lhl-filters { padding-left: 20px; padding-right: 20px; }
+    #lh-listing .lhl-grid-wrap { padding: 20px; }
+  }
+  #lh-listing .lhl-card {
+    background: #13111f; border-radius: 18px; overflow: hidden; text-decoration: none;
+    display: flex; flex-direction: column; border: 1px solid rgba(102,126,234,.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,.3); transition: transform .25s, box-shadow .25s, border-color .25s;
+    opacity: 0; animation: lhlCardUp .4s forwards; cursor: pointer;
+  }
+  #lh-listing .lhl-card.lhl-locked {
+    cursor: pointer; opacity: 0; animation: lhlCardUp .4s forwards;
+  }
+  #lh-listing .lhl-card.lhl-locked:hover {
+    transform: translateY(-3px); box-shadow: 0 12px 36px rgba(102,126,234,.12);
+    border-color: rgba(102,126,234,.2);
+  }
+  #lh-listing .lhl-card.lhl-locked .lhl-card-visual { filter: blur(4px) brightness(0.4); }
+  #lh-listing .lhl-lock-overlay {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; z-index: 10; gap: 6px;
+  }
+  #lh-listing .lhl-lock-icon { font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 8px rgba(0,0,0,.8)); }
+  #lh-listing .lhl-lock-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(165,180,252,.9); background: rgba(8,6,18,.7); padding: 3px 10px;
+    border-radius: 20px; border: 1px solid rgba(102,126,234,.3);
+  }
+  #lh-listing .lhl-card.lhl-locked .lhl-card-body { opacity: 0.55; }
+  #lh-listing .lhl-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(102,126,234,.16); border-color: rgba(102,126,234,.25); }
+  #lh-listing .lhl-card:nth-child(1){animation-delay:.05s} #lh-listing .lhl-card:nth-child(2){animation-delay:.1s}
+  #lh-listing .lhl-card:nth-child(3){animation-delay:.15s} #lh-listing .lhl-card:nth-child(4){animation-delay:.2s}
+  #lh-listing .lhl-card:nth-child(5){animation-delay:.25s} #lh-listing .lhl-card:nth-child(6){animation-delay:.3s}
+  #lh-listing .lhl-card:nth-child(7){animation-delay:.35s} #lh-listing .lhl-card:nth-child(8){animation-delay:.4s}
+  #lh-listing .lhl-card:nth-child(9){animation-delay:.45s} #lh-listing .lhl-card:nth-child(10){animation-delay:.5s}
+  #lh-listing .lhl-card:nth-child(11){animation-delay:.55s} #lh-listing .lhl-card:nth-child(12){animation-delay:.6s}
+  #lh-listing .lhl-card:nth-child(13){animation-delay:.65s} #lh-listing .lhl-card:nth-child(14){animation-delay:.7s}
+  #lh-listing .lhl-card-visual {
+    height: 160px; position: relative; overflow: hidden; display: flex;
+    align-items: flex-end; padding: 16px; transition: transform .4s ease, filter .3s ease;
+  }
+  #lh-listing .lhl-card-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #lh-listing .lhl-card:not(.lhl-locked):hover .lhl-card-visual { transform: scale(1.03); }
+  #lh-listing .lhl-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.7) 100%); transition: opacity .3s;
+  }
+  #lh-listing .lhl-card:not(.lhl-locked):hover .lhl-card-overlay { opacity: .85; }
+  #lh-listing .lhl-card-number {
+    font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900;
+    color: rgba(255,255,255,.06); position: absolute; right: 12px; bottom: -8px;
+    line-height: 1; pointer-events: none; user-select: none; z-index: 1;
+  }
+  #lh-listing .lhl-tier-badge {
+    position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 700;
+    letter-spacing: .5px; text-transform: uppercase; padding: 4px 10px;
+    border-radius: 100px; backdrop-filter: blur(8px); z-index: 2;
+  }
+  #lh-listing .badge-free { background: rgba(29,158,117,.25); color: #34d399; border: 1px solid rgba(29,158,117,.35); }
+  #lh-listing .badge-pro { background: rgba(102,126,234,.3); color: #a5b4fc; border: 1px solid rgba(102,126,234,.35); }
+  #lh-listing .lhl-cat-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,.85); background: rgba(0,0,0,.4); backdrop-filter: blur(8px);
+    padding: 4px 10px; border-radius: 100px; border: 1px solid rgba(255,255,255,.15);
+    position: relative; z-index: 2;
+  }
+  #lh-listing .lhl-card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; transition: opacity .3s; }
+  #lh-listing .lhl-linked-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #667eea; margin-bottom: 8px; }
+  #lh-listing .lhl-card-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: #f4f3ff; line-height: 1.35; margin-bottom: 8px; }
+  #lh-listing .lhl-card-desc { font-size: 12px; color: rgba(165,180,252,.5); line-height: 1.65; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
+  #lh-listing .lhl-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid rgba(102,126,234,.1); }
+  #lh-listing .lhl-read-time { font-size: 11px; color: rgba(165,180,252,.35); font-weight: 600; }
+  #lh-listing .lhl-read-btn { font-size: 11px; font-weight: 700; color: #667eea; display: flex; align-items: center; gap: 4px; transition: gap .2s; }
+  #lh-listing .lhl-card:not(.lhl-locked):hover .lhl-read-btn { gap: 7px; }
+  #lh-listing .lhl-read-btn-locked { font-size: 11px; font-weight: 700; color: rgba(165,180,252,.35); }
+  #lh-listing .lhl-read-btn-read { font-size: 11px; font-weight: 700; color: #34d399; }
+  #lh-listing .lhl-empty { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: rgba(165,180,252,.4); }
+  #lh-listing .lhl-pro-divider {
+    grid-column: 1/-1; display: flex; align-items: center; justify-content: center;
+    gap: 10px; padding: 12px 20px; margin: 8px 0 4px; font-size: 13px; font-weight: 800;
+    letter-spacing: .5px; color: rgba(165,180,252,.9); background: rgba(102,126,234,.1);
+    border: 1px solid rgba(102,126,234,.25); border-radius: 10px;
+  }
+  @keyframes lhlCardUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+</style>
+
+<div id="lh-listing">
+  <div class="lhl-filters" id="lhl-filters">
+    <button class="lhl-filter-btn active" data-filter="all">All 14</button>
+    <button class="lhl-filter-btn" data-filter="performance">Performance</button>
+    <button class="lhl-filter-btn" data-filter="okr">OKRs</button>
+    <button class="lhl-filter-btn" data-filter="compensation">Compensation</button>
+    <button class="lhl-filter-btn" data-filter="dei">DEI</button>
+    <button class="lhl-filter-btn" data-filter="succession">Succession</button>
+    <button class="lhl-filter-btn" data-filter="feedback">Feedback</button>
+    <button class="lhl-filter-btn" data-filter="analytics">Analytics</button>
+    <button class="lhl-filter-btn" data-filter="free">Free only</button>
+  </div>
+  <div class="lhl-grid-wrap">
+    <div class="lhl-grid" id="lhl-grid"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+
+var COVERS = {
+  'setting-okrs-that-work': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><defs><radialGradient id="okrbg" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a1035"/><stop offset="100%" stop-color="#080612"/></radialGradient></defs><rect width="400" height="160" fill="url(#okrbg)"/><circle cx="200" cy="80" r="65" fill="none" stroke="#667eea" stroke-width="1" opacity="0.2"/><circle cx="200" cy="80" r="48" fill="none" stroke="#667eea" stroke-width="1" opacity="0.35"/><circle cx="200" cy="80" r="30" fill="none" stroke="#a5b4fc" stroke-width="1.5" opacity="0.5"/><circle cx="200" cy="80" r="13" fill="#667eea" opacity="0.7"/><line x1="245" y1="35" x2="213" y2="67" stroke="#f4f3ff" stroke-width="2.5" stroke-linecap="round"/><polygon points="245,28 252,42 238,42" fill="#a5b4fc"/><circle cx="200" cy="80" r="4" fill="#fff"/><text x="20" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.3)">O K R</text></svg>',
+  'how-to-run-9box': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#080f1a"/><g transform="translate(130,20)"><rect x="0" y="0" width="40" height="40" rx="4" fill="#1a2a1a" stroke="#1D9E75" stroke-width="0.5"/><rect x="45" y="0" width="40" height="40" rx="4" fill="#1a2a1a" stroke="#334155" stroke-width="0.5"/><rect x="90" y="0" width="40" height="40" rx="4" fill="#2a1a3a" stroke="#667eea" stroke-width="1.5"/><rect x="0" y="45" width="40" height="40" rx="4" fill="#111827" stroke="#334155" stroke-width="0.5"/><rect x="45" y="45" width="40" height="40" rx="4" fill="#1e1b4b" stroke="#764ba2" stroke-width="1"/><rect x="90" y="45" width="40" height="40" rx="4" fill="#2a1a3a" stroke="#667eea" stroke-width="1"/><rect x="0" y="90" width="40" height="40" rx="4" fill="#1a1010" stroke="#ef4444" stroke-width="0.5" opacity="0.6"/><rect x="45" y="90" width="40" height="40" rx="4" fill="#111827" stroke="#334155" stroke-width="0.5"/><rect x="90" y="90" width="40" height="40" rx="4" fill="#1a2a1a" stroke="#1D9E75" stroke-width="0.5"/><circle cx="110" cy="20" r="6" fill="#667eea" opacity="0.9"/><circle cx="65" cy="65" r="5" fill="#764ba2" opacity="0.8"/><circle cx="110" cy="65" r="4" fill="#a5b4fc" opacity="0.7"/><circle cx="20" cy="20" r="4" fill="#1D9E75" opacity="0.8"/></g><text x="20" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.3)">PERFORMANCE POTENTIAL</text></svg>',
+  'bell-curve-vs-forced-ranking': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><defs><linearGradient id="bellbg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f0c29"/><stop offset="100%" stop-color="#1a1035"/></linearGradient><linearGradient id="curvegrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#a5b4fc" stop-opacity="0.6"/><stop offset="100%" stop-color="#667eea" stop-opacity="0.05"/></linearGradient></defs><rect width="400" height="160" fill="url(#bellbg)"/><path d="M40,130 C80,130 110,120 130,100 C150,80 160,40 200,25 C240,40 250,80 270,100 C290,120 320,130 360,130 Z" fill="url(#curvegrad)"/><path d="M40,130 C80,130 110,120 130,100 C150,80 160,40 200,25 C240,40 250,80 270,100 C290,120 320,130 360,130" fill="none" stroke="#a5b4fc" stroke-width="2"/><line x1="200" y1="130" x2="200" y2="30" stroke="rgba(165,180,252,0.3)" stroke-width="1" stroke-dasharray="4,3"/><rect x="155" y="40" width="90" height="90" fill="rgba(102,126,234,0.08)" stroke="rgba(102,126,234,0.2)" stroke-width="0.5"/><text x="188" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.4)">68%</text><text x="60" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.25)">LOW</text><text x="320" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.25)">HIGH</text></svg>',
+  'salary-increment-planning': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#0a0a1a"/><g transform="translate(40,20)"><rect x="0" y="60" width="30" height="60" rx="3" fill="#334155"/><rect x="0" y="40" width="30" height="20" rx="3" fill="#667eea" opacity="0.7"/><rect x="40" y="45" width="30" height="75" rx="3" fill="#334155"/><rect x="40" y="25" width="30" height="20" rx="3" fill="#a5b4fc" opacity="0.8"/><rect x="80" y="30" width="30" height="90" rx="3" fill="#1e1b4b"/><rect x="80" y="10" width="30" height="20" rx="3" fill="#667eea"/><rect x="120" y="50" width="30" height="70" rx="3" fill="#334155"/><rect x="120" y="35" width="30" height="15" rx="3" fill="#764ba2" opacity="0.8"/><rect x="160" y="55" width="30" height="65" rx="3" fill="#334155"/><rect x="160" y="40" width="30" height="15" rx="3" fill="#667eea" opacity="0.6"/><rect x="200" y="35" width="30" height="85" rx="3" fill="#1e1b4b"/><rect x="200" y="15" width="30" height="20" rx="3" fill="#a5b4fc"/><line x1="0" y1="120" x2="240" y2="120" stroke="rgba(165,180,252,0.15)" stroke-width="0.5"/></g><text x="20" y="152" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.3)">BUDGET ALLOCATION INCREMENTS</text></svg>',
+  'manager-dashboard-review': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#060612"/><rect x="15" y="15" width="110" height="60" rx="6" fill="#0f0c29" stroke="rgba(102,126,234,0.3)" stroke-width="0.5"/><text x="25" y="32" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">TEAM SCORE</text><text x="25" y="55" font-family="monospace" font-size="22" font-weight="bold" fill="#a5b4fc">7.4</text><text x="72" y="55" font-family="monospace" font-size="10" fill="#1D9E75">+2%</text><rect x="135" y="15" width="110" height="60" rx="6" fill="#0f0c29" stroke="rgba(102,126,234,0.3)" stroke-width="0.5"/><text x="145" y="32" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">AT RISK</text><text x="145" y="55" font-family="monospace" font-size="22" font-weight="bold" fill="#f87171">3</text><text x="172" y="55" font-family="monospace" font-size="10" fill="rgba(165,180,252,0.4)">/ 12</text><rect x="255" y="15" width="130" height="60" rx="6" fill="#0f0c29" stroke="rgba(102,126,234,0.3)" stroke-width="0.5"/><text x="265" y="32" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">PERFORMANCE</text><polyline points="265,60 280,50 295,55 310,38 325,45 340,32 370,40" fill="none" stroke="#667eea" stroke-width="1.5"/><rect x="15" y="88" width="370" height="55" rx="6" fill="#0f0c29" stroke="rgba(102,126,234,0.2)" stroke-width="0.5"/><rect x="25" y="98" width="60" height="8" rx="2" fill="rgba(165,180,252,0.15)"/><rect x="25" y="112" width="120" height="6" rx="2" fill="rgba(165,180,252,0.08)"/><rect x="25" y="124" width="90" height="6" rx="2" fill="rgba(165,180,252,0.08)"/><circle cx="345" cy="111" r="12" fill="rgba(102,126,234,0.2)" stroke="#667eea" stroke-width="1"/><text x="340" y="115" font-family="monospace" font-size="10" fill="#a5b4fc">-&gt;</text></svg>',
+  'mastering-calibration': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><defs><radialGradient id="calbg" cx="50%" cy="60%"><stop offset="0%" stop-color="#1a1035"/><stop offset="100%" stop-color="#080612"/></radialGradient></defs><rect width="400" height="160" fill="url(#calbg)"/><ellipse cx="200" cy="100" rx="80" ry="30" fill="none" stroke="rgba(102,126,234,0.3)" stroke-width="1"/><ellipse cx="200" cy="100" rx="80" ry="30" fill="rgba(30,27,75,0.4)"/><g fill="#a5b4fc" opacity="0.7"><circle cx="200" cy="55" r="8"/><rect x="192" y="65" width="16" height="20" rx="4"/><circle cx="140" cy="72" r="7"/><rect x="133" y="81" width="14" height="18" rx="4"/><circle cx="260" cy="72" r="7"/><rect x="253" y="81" width="14" height="18" rx="4"/><circle cx="115" cy="98" r="6"/><rect x="109" y="106" width="12" height="15" rx="3"/><circle cx="285" cy="98" r="6"/><rect x="279" y="106" width="12" height="15" rx="3"/></g><line x1="200" y1="75" x2="200" y2="70" stroke="rgba(165,180,252,0.5)" stroke-width="1"/><line x1="154" y1="89" x2="185" y2="82" stroke="rgba(165,180,252,0.2)" stroke-width="0.8"/><line x1="246" y1="89" x2="215" y2="82" stroke="rgba(165,180,252,0.2)" stroke-width="0.8"/><text x="20" y="152" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.3)">CALIBRATION SESSION</text></svg>',
+  'dei-analytics-guide': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#08060f"/><circle cx="165" cy="75" r="50" fill="rgba(102,126,234,0.12)" stroke="#667eea" stroke-width="1" opacity="0.8"/><circle cx="215" cy="75" r="50" fill="rgba(29,158,117,0.12)" stroke="#1D9E75" stroke-width="1" opacity="0.8"/><circle cx="190" cy="115" r="50" fill="rgba(212,83,126,0.1)" stroke="#D4537E" stroke-width="1" opacity="0.7"/><circle cx="165" cy="65" r="3" fill="#a5b4fc"/><circle cx="215" cy="65" r="3" fill="#5DCAA5"/><circle cx="190" cy="108" r="3" fill="#ED93B1"/><circle cx="190" cy="80" r="4" fill="#fff" opacity="0.6"/><text x="130" y="55" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.5)">GENDER</text><text x="220" y="55" font-family="monospace" font-size="8" fill="rgba(93,202,165,0.5)">LEVEL</text><text x="170" y="148" font-family="monospace" font-size="8" fill="rgba(237,147,177,0.5)">TENURE</text><text x="20" y="20" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.3)">DEI ANALYTICS</text></svg>',
+  'succession-pipeline': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#060a06"/><rect x="170" y="10" width="60" height="28" rx="5" fill="#1a2a1a" stroke="#1D9E75" stroke-width="1.5"/><text x="200" y="29" font-family="monospace" font-size="9" fill="#5DCAA5" text-anchor="middle">CEO</text><line x1="200" y1="38" x2="200" y2="52" stroke="rgba(29,158,117,0.4)" stroke-width="1"/><line x1="120" y1="52" x2="280" y2="52" stroke="rgba(29,158,117,0.4)" stroke-width="1"/><line x1="120" y1="52" x2="120" y2="66" stroke="rgba(29,158,117,0.3)" stroke-width="1"/><line x1="200" y1="52" x2="200" y2="66" stroke="rgba(29,158,117,0.3)" stroke-width="1"/><line x1="280" y1="52" x2="280" y2="66" stroke="rgba(29,158,117,0.3)" stroke-width="1"/><rect x="90" y="66" width="60" height="24" rx="4" fill="#1a2a1a" stroke="#0F6E56" stroke-width="1"/><rect x="170" y="66" width="60" height="24" rx="4" fill="#1a2a1a" stroke="#0F6E56" stroke-width="1"/><rect x="250" y="66" width="60" height="24" rx="4" fill="#1a2a1a" stroke="#0F6E56" stroke-width="1"/><text x="120" y="82" font-family="monospace" font-size="8" fill="#9FE1CB" text-anchor="middle">VP ENG</text><text x="200" y="82" font-family="monospace" font-size="8" fill="#9FE1CB" text-anchor="middle">VP HR</text><text x="280" y="82" font-family="monospace" font-size="8" fill="#9FE1CB" text-anchor="middle">VP OPS</text><rect x="60" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><rect x="108" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><rect x="156" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><rect x="204" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><rect x="252" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><rect x="300" y="108" width="40" height="18" rx="3" fill="#0d1f0d" stroke="rgba(29,158,117,0.3)" stroke-width="0.5"/><text x="20" y="150" font-family="monospace" font-size="9" fill="rgba(93,202,165,0.3)">SUCCESSION PIPELINE</text></svg>',
+  'pay-equity-audit': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#0a0612"/><g transform="translate(30,15)"><text x="0" y="12" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">LEVEL 1</text><rect x="0" y="18" width="55" height="16" rx="2" fill="#667eea" opacity="0.8"/><rect x="60" y="22" width="40" height="12" rx="2" fill="#D4537E" opacity="0.7"/><text x="120" y="30" font-family="monospace" font-size="8" fill="#f87171">-18%</text><text x="0" y="50" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">LEVEL 2</text><rect x="0" y="56" width="60" height="16" rx="2" fill="#667eea" opacity="0.8"/><rect x="60" y="58" width="52" height="12" rx="2" fill="#D4537E" opacity="0.7"/><text x="120" y="68" font-family="monospace" font-size="8" fill="#fca5a5">-8%</text><text x="0" y="88" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">LEVEL 3</text><rect x="0" y="94" width="65" height="16" rx="2" fill="#667eea" opacity="0.8"/><rect x="60" y="96" width="63" height="12" rx="2" fill="#5DCAA5" opacity="0.7"/><text x="130" y="106" font-family="monospace" font-size="8" fill="#34d399">+2%</text><text x="0" y="126" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.4)">LEVEL 4</text><rect x="0" y="132" width="70" height="16" rx="2" fill="#667eea" opacity="0.8"/><rect x="60" y="134" width="68" height="12" rx="2" fill="#5DCAA5" opacity="0.7"/><text x="135" y="145" font-family="monospace" font-size="8" fill="#34d399">+0%</text></g><rect x="195" y="15" width="180" height="130" rx="6" fill="rgba(10,6,18,0.5)" stroke="rgba(102,126,234,0.15)" stroke-width="0.5"/><text x="205" y="35" font-family="monospace" font-size="8" fill="rgba(165,180,252,0.35)">PAY GAP HEATMAP</text><rect x="205" y="45" width="30" height="18" rx="2" fill="rgba(239,68,68,0.5)"/><rect x="240" y="45" width="30" height="18" rx="2" fill="rgba(239,68,68,0.3)"/><rect x="275" y="45" width="30" height="18" rx="2" fill="rgba(29,158,117,0.3)"/><rect x="205" y="70" width="30" height="18" rx="2" fill="rgba(239,68,68,0.25)"/><rect x="240" y="70" width="30" height="18" rx="2" fill="rgba(29,158,117,0.4)"/><rect x="275" y="70" width="30" height="18" rx="2" fill="rgba(29,158,117,0.6)"/><rect x="205" y="95" width="30" height="18" rx="2" fill="rgba(29,158,117,0.5)"/><rect x="240" y="95" width="30" height="18" rx="2" fill="rgba(29,158,117,0.6)"/><rect x="275" y="95" width="30" height="18" rx="2" fill="rgba(29,158,117,0.7)"/></svg>',
+  'effective-pip-process': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#0a0612"/><path d="M40,80 L360,80" stroke="rgba(102,126,234,0.2)" stroke-width="2" stroke-dasharray="6,4"/><circle cx="80" cy="80" r="14" fill="#1e1b4b" stroke="#667eea" stroke-width="1.5"/><text x="75" y="85" font-family="monospace" font-size="10" fill="#a5b4fc">1</text><circle cx="160" cy="80" r="14" fill="#1e1b4b" stroke="#667eea" stroke-width="1.5"/><text x="155" y="85" font-family="monospace" font-size="10" fill="#a5b4fc">2</text><circle cx="240" cy="80" r="14" fill="#1e1b4b" stroke="#764ba2" stroke-width="1.5"/><text x="235" y="85" font-family="monospace" font-size="10" fill="#c4b5fd">3</text><circle cx="320" cy="80" r="14" fill="#0f2a0f" stroke="#1D9E75" stroke-width="1.5"/><text x="315" y="85" font-family="monospace" font-size="10" fill="#34d399">4</text><text x="62" y="55" font-family="monospace" font-size="7" fill="rgba(165,180,252,0.5)">DIAGNOSE</text><text x="143" y="55" font-family="monospace" font-size="7" fill="rgba(165,180,252,0.5)">DOCUMENT</text><text x="226" y="55" font-family="monospace" font-size="7" fill="rgba(196,181,253,0.5)">SUPPORT</text><text x="306" y="55" font-family="monospace" font-size="7" fill="rgba(52,211,153,0.6)">RESOLVE</text><text x="55" y="112" font-family="monospace" font-size="7" fill="rgba(165,180,252,0.3)">Week 1-2</text><text x="137" y="112" font-family="monospace" font-size="7" fill="rgba(165,180,252,0.3)">Week 3-4</text><text x="215" y="112" font-family="monospace" font-size="7" fill="rgba(165,180,252,0.3)">Week 5-8</text><text x="295" y="112" font-family="monospace" font-size="7" fill="rgba(52,211,153,0.4)">Week 9-12</text><text x="20" y="148" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.25)">PIP FRAMEWORK</text></svg>',
+  '360-feedback-guide': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#080612"/><circle cx="200" cy="80" r="20" fill="#1e1b4b" stroke="#667eea" stroke-width="2"/><text x="191" y="85" font-family="monospace" font-size="11" fill="#a5b4fc">YOU</text><g stroke="rgba(102,126,234,0.3)" stroke-width="1" stroke-dasharray="4,3"><line x1="200" y1="60" x2="200" y2="20"/><line x1="200" y1="100" x2="200" y2="140"/><line x1="180" y1="66" x2="145" y2="35"/><line x1="220" y1="66" x2="255" y2="35"/><line x1="180" y1="94" x2="145" y2="125"/><line x1="220" y1="94" x2="255" y2="125"/><line x1="180" y1="80" x2="130" y2="80"/><line x1="220" y1="80" x2="270" y2="80"/></g><g fill="#667eea" opacity="0.7"><circle cx="200" cy="16" r="9"/><circle cx="200" cy="144" r="9"/><circle cx="136" cy="26" r="9"/><circle cx="264" cy="26" r="9"/><circle cx="136" cy="134" r="9"/><circle cx="264" cy="134" r="9"/><circle cx="118" cy="80" r="9"/><circle cx="282" cy="80" r="9"/></g><g font-family="monospace" font-size="7" fill="rgba(165,180,252,0.5)" text-anchor="middle"><text x="200" y="13">MGR</text><text x="200" y="152">PEER</text><text x="136" y="22">SKIP</text><text x="264" y="22">PEER</text><text x="118" y="83">DR</text><text x="282" y="83">DR</text></g></svg>',
+  'performance-theatre': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><defs><radialGradient id="spot1" cx="30%" cy="0%" r="60%"><stop offset="0%" stop-color="rgba(250,199,75,0.25)"/><stop offset="100%" stop-color="transparent"/></radialGradient><radialGradient id="spot2" cx="70%" cy="0%" r="60%"><stop offset="0%" stop-color="rgba(102,126,234,0.2)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><rect width="400" height="160" fill="#050305"/><rect x="0" y="120" width="400" height="40" fill="#0a0612"/><rect x="0" y="118" width="400" height="4" fill="rgba(102,126,234,0.2)"/><rect width="400" height="160" fill="url(#spot1)"/><rect width="400" height="160" fill="url(#spot2)"/><rect x="20" y="0" width="15" height="80" rx="3" fill="#1a1025"/><rect x="365" y="0" width="15" height="80" rx="3" fill="#1a1025"/><circle cx="120" cy="5" r="8" fill="#2a1a0a" stroke="rgba(250,199,75,0.4)" stroke-width="1"/><circle cx="280" cy="5" r="8" fill="#1a1030" stroke="rgba(102,126,234,0.4)" stroke-width="1"/><text x="20" y="152" font-family="monospace" font-size="9" fill="rgba(165,180,252,0.25)">IS YOUR PMS REAL OR JUST A SHOW?</text></svg>',
+  'annual-reviews-fail': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#0a0606"/><rect x="100" y="20" width="200" height="120" rx="8" fill="#160a0a" stroke="rgba(239,68,68,0.3)" stroke-width="1"/><rect x="100" y="20" width="200" height="30" rx="8" fill="rgba(239,68,68,0.15)"/><rect x="100" y="42" width="200" height="8" fill="rgba(239,68,68,0.15)"/><text x="200" y="40" font-family="monospace" font-size="11" fill="rgba(248,113,113,0.7)" text-anchor="middle">ANNUAL REVIEW</text><g fill="rgba(165,180,252,0.15)" font-family="monospace" font-size="9"><text x="118" y="72">M</text><text x="140" y="72">T</text><text x="162" y="72">W</text><text x="184" y="72">T</text><text x="206" y="72">F</text><text x="228" y="72">S</text><text x="250" y="72">S</text><text x="118" y="90">1</text><text x="140" y="90">2</text><text x="162" y="90">3</text><text x="184" y="90">4</text><text x="206" y="90">5</text><text x="228" y="90">6</text><text x="250" y="90">7</text></g><path d="M155,55 L200,130 L245,55" fill="none" stroke="rgba(239,68,68,0.5)" stroke-width="2.5" stroke-linecap="round"/><circle cx="200" cy="92" r="5" fill="rgba(239,68,68,0.6)"/><text x="20" y="152" font-family="monospace" font-size="9" fill="rgba(248,113,113,0.3)">WHY ONCE A YEAR NEVER WORKS</text></svg>',
+  'balanced-scorecard': '<svg xmlns="https://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160"><rect width="400" height="160" fill="#060a0a"/><g transform="translate(200,80)"><polygon points="0,-55 55,0 0,55 -55,0" fill="none" stroke="rgba(29,158,117,0.2)" stroke-width="1"/><polygon points="0,-38 38,0 0,38 -38,0" fill="none" stroke="rgba(29,158,117,0.15)" stroke-width="1"/><polygon points="0,-20 20,0 0,20 -20,0" fill="none" stroke="rgba(29,158,117,0.1)" stroke-width="1"/><line x1="0" y1="-55" x2="0" y2="55" stroke="rgba(29,158,117,0.15)" stroke-width="0.5"/><line x1="-55" y1="0" x2="55" y2="0" stroke="rgba(29,158,117,0.15)" stroke-width="0.5"/><polygon points="0,-48 44,0 0,35 -30,0" fill="rgba(29,158,117,0.15)" stroke="#1D9E75" stroke-width="1.5"/><circle cx="0" cy="-48" r="4" fill="#1D9E75"/><circle cx="44" cy="0" r="4" fill="#5DCAA5"/><circle cx="0" cy="35" r="4" fill="#9FE1CB"/><circle cx="-30" cy="0" r="4" fill="#1D9E75" opacity="0.7"/></g><text x="185" y="18" font-family="monospace" font-size="7" fill="rgba(93,202,165,0.6)" text-anchor="middle">FINANCIAL</text><text x="340" y="85" font-family="monospace" font-size="7" fill="rgba(93,202,165,0.6)">CUSTOMER</text><text x="172" y="152" font-family="monospace" font-size="7" fill="rgba(93,202,165,0.5)" text-anchor="middle">INTERNAL</text><text x="20" y="85" font-family="monospace" font-size="7" fill="rgba(93,202,165,0.5)">LEARNING</text><text x="20" y="18" font-family="monospace" font-size="9" fill="rgba(29,158,105,0.4)">BALANCED SCORECARD</text></svg>'
+};
+
+var GUIDES = [
+  { sortOrder:1,  slug:'setting-okrs-that-work',        title:'Setting OKRs That Actually Work',                       description:'A practical framework for goals that drive real outcomes',                                                                    category:'OKR',          linkedCalc:'OKR',                tier:'Free', readTime:'10 min', tags:['okr'],          guideURL:'/guide?slug=setting-okrs-that-work' },
+  { sortOrder:2,  slug:'how-to-run-9box',               title:'How to Run a 9-Box Calibration',                        description:'Step-by-step guide to placing employees correctly in the 9-Box matrix',                                                    category:'Performance',  linkedCalc:'9-Box',              tier:'Free', readTime:'8 min',  tags:['performance'],  guideURL:'/guide?slug=how-to-run-9box' },
+  { sortOrder:3,  slug:'bell-curve-vs-forced-ranking',  title:'Bell Curve vs Forced Ranking',                          description:'When to use each approach and the real trade-offs',                                                                        category:'Performance',  linkedCalc:'Bell Curve',         tier:'Free', readTime:'6 min',  tags:['performance'],  guideURL:'/guide?slug=bell-curve-vs-forced-ranking' },
+  { sortOrder:4,  slug:'salary-increment-planning',     title:'Salary Increment Planning Under Budget Constraints',    description:'How to allocate increments fairly when the budget is tight',                                                               category:'Compensation', linkedCalc:'Increment',          tier:'Pro',  readTime:'8 min',  tags:['compensation'], guideURL:'/guide?slug=salary-increment-planning' },
+  { sortOrder:5,  slug:'manager-dashboard-review',      title:'The Manager Action Cockpit',                            description:'How to read your team data and turn every signal into a specific management action',                                        category:'Performance',  linkedCalc:'Manager Dashboard',  tier:'Pro',  readTime:'9 min',  tags:['performance'],  guideURL:'/guide?slug=manager-dashboard-review' },
+  { sortOrder:6,  slug:'mastering-calibration',         title:'Mastering Calibration Sessions',                        description:'How to run fair, bias-free calibration sessions that stick',                                                               category:'Performance',  linkedCalc:'Calibration',        tier:'Pro',  readTime:'11 min', tags:['performance'],  guideURL:'/guide?slug=mastering-calibration' },
+  { sortOrder:7,  slug:'dei-analytics-guide',           title:'DEI Analytics -- Reading the Data Right',               description:'How to interpret DEI metrics and take meaningful action',                                                                   category:'DEI',          linkedCalc:'DEI',                tier:'Pro',  readTime:'10 min', tags:['dei'],          guideURL:'/guide?slug=dei-analytics-guide' },
+  { sortOrder:8,  slug:'succession-pipeline',           title:'Building a Succession Pipeline',                        description:'A 4-step approach to building real bench strength',                                                                        category:'Succession',   linkedCalc:'Succession',         tier:'Pro',  readTime:'7 min',  tags:['succession'],   guideURL:'/guide?slug=succession-pipeline' },
+  { sortOrder:9,  slug:'pay-equity-audit',              title:'Pay Equity Audit Playbook',                             description:'How to identify and fix pay gaps in your organisation',                                                                    category:'Compensation', linkedCalc:'Compensation',       tier:'Pro',  readTime:'9 min',  tags:['compensation'], guideURL:'/guide?slug=pay-equity-audit' },
+  { sortOrder:10, slug:'effective-pip-process',         title:'Running an Effective PIP Process',                      description:'A humane, structured approach to performance improvement plans',                                                          category:'Performance',  linkedCalc:'PIP',                tier:'Pro',  readTime:'12 min', tags:['performance'],  guideURL:'/guide?slug=effective-pip-process' },
+  { sortOrder:11, slug:'360-feedback-guide',            title:'360 Feedback That Actually Changes Behaviour',          description:'How to design, run and debrief 360 feedback that creates real change',                                                     category:'Feedback',     linkedCalc:'360 Feedback',       tier:'Pro',  readTime:'10 min', tags:['feedback'],     guideURL:'/guide?slug=360-feedback-guide' },
+  { sortOrder:12, slug:'performance-theatre',           title:'Performance Theatre -- And How to Stop It',             description:'Why most PMS processes are performative, how to diagnose it and fix it',                                                   category:'Performance',  linkedCalc:'Calibration',        tier:'Pro',  readTime:'11 min', tags:['performance'],  guideURL:'/guide?slug=performance-theatre' },
+  { sortOrder:13, slug:'annual-reviews-fail',           title:'Why Annual Reviews Fail',                               description:'The structural reasons annual performance reviews consistently underdeliver, and the evidence-based alternatives',          category:'Performance',  linkedCalc:'9-Box',              tier:'Pro',  readTime:'10 min', tags:['performance'],  guideURL:'/guide?slug=annual-reviews-fail' },
+  { sortOrder:14, slug:'balanced-scorecard',            title:'The Balanced Scorecard -- Strategy Meets Performance',  description:'How to measure organisational performance across four perspectives and why financial metrics alone always lie',            category:'Analytics',    linkedCalc:'Balanced Scorecard', tier:'Pro',  readTime:'12 min', tags:['analytics'],    guideURL:'/guide?slug=balanced-scorecard' }
+];
+
+var FREE_SLUGS=['setting-okrs-that-work','how-to-run-9box','bell-curve-vs-forced-ranking'];
+var currentFilter='all';
+var READ_KEY='lh_read_guides';
+
+function getReadGuides(){try{return JSON.parse(localStorage.getItem(READ_KEY)||'[]');}catch(e){return[];}}
+function markRead(slug){var r=getReadGuides();if(r.indexOf(slug)===-1){r.push(slug);localStorage.setItem(READ_KEY,JSON.stringify(r));}updateProgress();}
+function updateProgress(){
+  var r=getReadGuides();var pct=Math.round((r.length/GUIDES.length)*100);
+  var fill=document.getElementById('lhp-fill');var count=document.getElementById('lhp-count');
+  if(fill)fill.style.width=pct+'%';
+  if(count){
+    if(r.length===0)count.textContent='Start reading -- pick any guide below \u2193';
+    else if(r.length===GUIDES.length)count.textContent='All 14 guides read \u2714';
+    else count.textContent=r.length+' of 14 read';
+  }
+}
+
+function isPro(){
+  if(localStorage.getItem('viorah_plan')==='pro') return true;
+  if(typeof window.viorahIsPro==='function') return window.viorahIsPro();
+  var k=(localStorage.getItem('virorah_pro_key')||'').trim().toUpperCase();
+  if(k==='VIRORAH-ADMIN-2026') return true;
+  return false;
+}
+
+function showLHToast(){var t=document.getElementById('lh-toast');if(!t)return;t.style.transform='translateX(-50%) translateY(0)';setTimeout(function(){t.style.transform='translateX(-50%) translateY(-80px)';},4000);}
+
+function filterGuides(filter){
+  if(filter==='all') return GUIDES;
+  if(filter==='free') return GUIDES.filter(function(g){return g.tier==='Free';});
+  return GUIDES.filter(function(g){return g.tags.indexOf(filter)>-1;});
+}
+
+function makeCard(g,i,isLocked){
+  var readGuides=getReadGuides();var isRead=readGuides.indexOf(g.slug)>-1;
+  var svgCover=COVERS[g.slug]||'';
+  var tierBadge=g.tier==='Free'?'<span class="lhl-tier-badge badge-free">Free</span>':'<span class="lhl-tier-badge badge-pro">Pro</span>';
+  var ctaHtml=isLocked?'<span class="lhl-read-btn-locked">\uD83D\uDD12 Pro only</span>':isRead?'<span class="lhl-read-btn-read">\u2714 Read</span>':'<span class="lhl-read-btn">Read guide \u2192</span>';
+  var lockOverlayHtml=isLocked?'<div class="lhl-lock-overlay"><div class="lhl-lock-icon">\uD83D\uDD12</div><div class="lhl-lock-label">Pro Only</div></div>':'';
+  var cardClass=isLocked?'lhl-card lhl-locked':'lhl-card';
+  var cardClick=isLocked?'onclick="showLHGate()"':'onclick="lhOpenGuide(\''+g.slug+'\',\''+g.guideURL+'\')"';
+  return '<div class="'+cardClass+'" style="animation-delay:'+(i*0.05+0.05)+'s;" '+cardClick+'>'+
+    '<div class="lhl-card-visual" style="background:#0f0c29;">'+svgCover+'<div class="lhl-card-overlay"></div>'+
+    '<div class="lhl-card-number">'+g.sortOrder+'</div>'+tierBadge+'<span class="lhl-cat-tag">'+g.category+'</span>'+lockOverlayHtml+
+    '</div>'+
+    '<div class="lhl-card-body">'+
+      '<div class="lhl-linked-tag">'+g.linkedCalc+'</div>'+
+      '<div class="lhl-card-title">'+g.title+'</div>'+
+      '<div class="lhl-card-desc">'+g.description+'</div>'+
+      '<div class="lhl-card-footer"><span class="lhl-read-time">'+g.readTime+' read</span>'+ctaHtml+'</div>'+
+    '</div>'+
+  '</div>';
+}
+
+function renderGrid(filter){
+  var grid=document.getElementById('lhl-grid');if(!grid)return;
+  var guides=filterGuides(filter);
+  if(guides.length===0){grid.innerHTML='<div class="lhl-empty">No guides match this filter.</div>';return;}
+  var proUser=isPro();var html='';var proShown=0;
+  guides.forEach(function(g,i){
+    var isFree=FREE_SLUGS.indexOf(g.slug)>-1;
+    if(isFree){html+=makeCard(g,i,false);}
+    else{
+      if(proUser){html+=makeCard(g,i,false);}
+      else{
+        if(proShown===0&&filter==='all'){html+='<div class="lhl-pro-divider">\uD83D\uDD12 11 more guides -- Pro only</div>';}
+        html+=makeCard(g,i,true);proShown++;
+      }
+    }
+  });
+  grid.innerHTML=html;
+}
+
+window.lhOpenGuide=function(slug,url){
+  if(!isPro()&&FREE_SLUGS.indexOf(slug)===-1){showLHGate();return;}
+  markRead(slug);renderGrid(currentFilter);window.location.href=url;
+};
+
+window.showLHGate=function(){
+  if(document.getElementById('lh-modal'))return;
+  var modal=document.createElement('div');
+  modal.id='lh-modal';
+  modal.style.cssText='position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(8,6,18,.85);backdrop-filter:blur(8px);padding:24px;font-family:Inter,sans-serif;';
+  modal.innerHTML=
+    '<div style="background:#0f0c29;border:1.5px solid rgba(102,126,234,.3);border-radius:20px;padding:40px;max-width:460px;width:100%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,.5);position:relative;">'+
+      '<button onclick="document.getElementById(\'lh-modal\').remove()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.3);font-size:20px;cursor:pointer;line-height:1;">\u00d7</button>'+
+      '<div style="font-size:32px;margin-bottom:12px;">\uD83D\uDCDA</div>'+
+      '<div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;background:rgba(102,126,234,.1);border:1px solid rgba(102,126,234,.25);padding:4px 16px;border-radius:20px;display:inline-block;margin-bottom:16px;">Pro Guides</div>'+
+      '<div style="font-size:22px;font-weight:800;color:#f4f3ff;line-height:1.2;margin-bottom:10px;">11 deeper guides.<br>Pro only.</div>'+
+      '<p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:20px;">Pay equity playbooks. Calibration mastery. PIP frameworks that are humane and legally sound. Built for practitioners who need the real stuff.</p>'+
+      '<a href="/pages/pricing.html" style="display:block;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;margin-bottom:12px;box-shadow:0 4px 20px rgba(102,126,234,.4);">Upgrade to Pro</a>'+
+      '<div style="display:flex;gap:8px;margin-bottom:6px;">'+
+        '<input id="lh-modal-key" type="text" placeholder="Already have a key? Enter it here" style="flex:1;padding:10px 13px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(102,126,234,.3);color:#f4f3ff;font-size:12px;font-family:monospace;outline:none;">'+
+        '<button onclick="lhModalUnlock()" style="padding:10px 16px;border-radius:8px;background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:white;font-size:12px;font-weight:700;cursor:pointer;">Unlock</button>'+
+      '</div>'+
+      '<div id="lh-modal-err" style="font-size:11px;color:#f87171;display:none;margin-top:4px;">Invalid or expired key.</div>'+
+      '<div style="font-size:11px;color:rgba(255,255,255,.2);margin-top:8px;"><a href="/pages/scenarios.html" style="color:rgba(165,180,252,.4);text-decoration:none;">Back to free features</a></div>'+
+    '</div>';
+  document.body.appendChild(modal);
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.remove();});
+  document.getElementById('lh-modal-key').addEventListener('keydown',function(e){if(e.key==='Enter')lhModalUnlock();});
+};
+
+window.lhModalUnlock=function(){
+  var inp=document.getElementById('lh-modal-key');var err=document.getElementById('lh-modal-err');var val=inp.value.trim();
+  if(!val)return;
+  var k=val.toUpperCase();
+  err.style.display='none';
+  fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev', {
+    method:'POST',
+    headers:{'Content-Type':'application/json','X-Action':'validate-key'},
+    body: JSON.stringify({ key: k })
+  }).then(function(r){ return r.json(); }).then(function(result){
+    if(result.valid){
+      localStorage.setItem('viorah_plan','pro');
+      localStorage.setItem('viorah_key', k);
+      document.getElementById('lh-modal').remove();
+      showLHToast();
+      renderGrid(currentFilter);
+    } else {
+      err.textContent='Invalid or expired key.';
+      err.style.display='block';
+      setTimeout(function(){err.style.display='none';},3000);
+    }
+  }).catch(function(){
+    err.textContent='Could not verify key. Please try again.';
+    err.style.display='block';
+    setTimeout(function(){err.style.display='none';},3000);
+  });
+};
+
+function initFilters(){
+  var btns=document.querySelectorAll('#lhl-filters .lhl-filter-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');currentFilter=btn.getAttribute('data-filter');renderGrid(currentFilter);
+    });
+  });
+}
+
+function boot(){renderGrid('all');initFilters();updateProgress();}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}else{boot();}
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

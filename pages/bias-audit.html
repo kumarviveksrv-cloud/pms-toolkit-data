@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bias Audit - Detect &amp; Fix Rating Bias in Performance Reviews | Virorah PMS</title>
+  <meta name="description" content="Upload your ratings. AI finds the bias hiding in the numbers. Gender gaps. Recency bias. Grade inflation. Most biased systems look normal on the surface.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/bias-audit.html">
+  <meta property="og:title" content="Bias Audit - Detect & Fix Rating Bias in Performance Reviews | Virorah PMS">
+  <meta property="og:description" content="Upload your ratings. AI finds the bias hiding in the numbers. Gender gaps. Recency bias. Grade inflation. Most biased systems look normal on the surface.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Bias Audit</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH PMS - BIAS AUDIT (/bias-audit)
+     Pro-gated · Detect + Fix + Coach
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #050410;
+  --card: #0d0b1e;
+  --card2: #11102a;
+  --purple: #6366f1;
+  --violet: #7c3aed;
+  --emerald: #10b981;
+  --amber: #f59e0b;
+  --rose: #f43f5e;
+  --sky: #38bdf8;
+  --text: #f4f3ff;
+  --muted: #a5b4fc;
+  --faint: rgba(99,102,241,.10);
+  --border: rgba(99,102,241,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+#ba-wrap {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  padding: 0 0 80px;
+  position: relative;
+  overflow-x: hidden;
+}
+#ba-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+/* gate - position:absolute inside #ba-wrap so Softr nav stays visible */
+#ba-gate {
+  position: absolute; top: 0; left: 0; width: 100%; min-height: 100%; z-index: 900;
+  background: rgba(5,4,16,.92); backdrop-filter: blur(16px);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.ba-gate-box {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 48px 40px; max-width: 460px; width: 100%;
+  text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,.5); position: relative; overflow: hidden;
+}
+.ba-gate-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--rose),var(--purple),transparent); }
+.ba-gate-icon { font-size: 40px; margin-bottom: 16px; }
+.ba-gate-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:10px; }
+.ba-gate-sub { font-size:14px; color:rgba(165,180,252,.65); margin-bottom:28px; line-height:1.7; }
+.ba-gate-input { width:100%; padding:13px 16px; border-radius:10px; margin-bottom:12px; background:rgba(255,255,255,.06); border:1px solid var(--border); color:var(--text); font-size:14px; font-family:'Space Grotesk',sans-serif; outline:none; transition:border-color .2s; }
+.ba-gate-input:focus { border-color:var(--purple); }
+.ba-gate-btn { width:100%; padding:13px; border-radius:10px; border:none; cursor:pointer; background:linear-gradient(135deg,var(--rose),var(--purple)); color:#fff; font-size:14px; font-weight:700; font-family:'Space Grotesk',sans-serif; transition:opacity .2s,transform .15s; }
+.ba-gate-btn:hover { opacity:.9; transform:translateY(-1px); }
+.ba-gate-err { font-size:12px; color:var(--rose); margin-top:8px; min-height:16px; }
+.ba-gate-link { font-size:12px; color:rgba(165,180,252,.45); margin-top:16px; }
+.ba-gate-link a { color:var(--muted); text-decoration:none; }
+
+/* layout */
+#ba-content { position:relative; z-index:10; max-width:1160px; margin:0 auto; padding:0 40px; }
+
+/* hero */
+.ba-hero { padding:80px 0 48px; }
+.ba-eyebrow { display:inline-flex; align-items:center; gap:8px; padding:5px 16px; border-radius:20px; margin-bottom:20px; background:rgba(244,63,94,.08); border:1px solid rgba(244,63,94,.25); font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#fda4af; }
+.ba-eyebrow-dot { width:5px; height:5px; border-radius:50%; background:var(--rose); animation:baPulse 1.6s ease-in-out infinite; }
+@keyframes baPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.5)}}
+.ba-hero-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(36px,5vw,64px); font-weight:700; line-height:1.05; letter-spacing:-1.5px; margin-bottom:16px; }
+.ba-hero-title span { background:linear-gradient(135deg,#fda4af,var(--rose),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.ba-hero-sub { font-size:17px; color:rgba(165,180,252,.6); line-height:1.75; max-width:620px; }
+.ba-hero-sub strong { color:var(--text); font-weight:600; }
+
+/* tabs */
+.ba-tabs { display:flex; gap:4px; margin-bottom:28px; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:4px; width:fit-content; }
+.ba-tab { padding:10px 24px; border-radius:9px; border:none; cursor:pointer; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600; color:rgba(165,180,252,.5); background:transparent; transition:all .2s; }
+.ba-tab.active { background:var(--rose); color:#fff; }
+.ba-tab:not(.active):hover { color:var(--muted); }
+
+.ba-panel { display:none; }
+.ba-panel.active { display:block; animation:baFade .3s ease; }
+@keyframes baFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* card */
+.ba-card { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:36px; position:relative; overflow:hidden; }
+.ba-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(244,63,94,.35),transparent); }
+
+.ba-label { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; display:block; }
+
+/* manual entry */
+.ba-manual-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+@media(max-width:900px){.ba-manual-grid{grid-template-columns:1fr;}}
+
+.ba-rows { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+.ba-row { display:grid; grid-template-columns:1fr 120px 32px; gap:8px; align-items:center; }
+.ba-input { width:100%; padding:10px 12px; border-radius:8px; background:rgba(255,255,255,.05); border:1px solid rgba(99,102,241,.15); color:var(--text); font-size:13px; font-family:'DM Sans',sans-serif; outline:none; transition:border-color .2s; }
+.ba-input:focus { border-color:var(--purple); }
+.ba-rating-select { width:100%; padding:10px 10px; border-radius:8px; background:rgba(255,255,255,.05); border:1px solid rgba(99,102,241,.15); color:var(--text); font-size:13px; font-family:'DM Sans',sans-serif; outline:none; cursor:pointer; }
+.ba-rating-select option { background:#0d0b1e; }
+.ba-del-btn { width:32px; height:32px; border-radius:7px; border:none; cursor:pointer; background:rgba(244,63,94,.1); color:var(--rose); font-size:16px; display:flex; align-items:center; justify-content:center; transition:background .2s; flex-shrink:0; }
+.ba-del-btn:hover { background:rgba(244,63,94,.2); }
+.ba-add-btn { padding:8px 18px; border-radius:8px; border:1px dashed rgba(99,102,241,.3); cursor:pointer; background:transparent; color:var(--muted); font-size:13px; font-family:'DM Sans',sans-serif; transition:all .2s; }
+.ba-add-btn:hover { border-color:var(--purple); color:var(--text); }
+
+.ba-ctx { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0; }
+.ba-select { width:100%; padding:11px 14px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid var(--border); color:var(--text); font-size:13px; font-family:'DM Sans',sans-serif; outline:none; cursor:pointer; transition:border-color .2s; }
+.ba-select:focus { border-color:var(--purple); }
+.ba-select option { background:#0d0b1e; }
+
+.ba-run-btn { width:100%; padding:14px; border-radius:12px; border:none; cursor:pointer; background:linear-gradient(135deg,var(--rose),var(--purple)); color:#fff; font-size:14px; font-weight:700; font-family:'Space Grotesk',sans-serif; letter-spacing:.4px; transition:opacity .2s,transform .15s,box-shadow .2s; box-shadow:0 4px 24px rgba(244,63,94,.3); display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; }
+.ba-run-btn:hover:not(:disabled) { opacity:.9; transform:translateY(-1px); box-shadow:0 8px 32px rgba(244,63,94,.45); }
+.ba-run-btn:disabled { opacity:.5; cursor:not-allowed; }
+
+/* CSV panel */
+.ba-csv-textarea { width:100%; min-height:180px; padding:16px; border-radius:12px; background:rgba(255,255,255,.05); border:1px solid var(--border); color:var(--text); font-size:13px; font-family:'JetBrains Mono',monospace; line-height:1.7; resize:vertical; outline:none; transition:border-color .2s; }
+.ba-csv-textarea:focus { border-color:var(--purple); }
+.ba-csv-hint { font-size:11px; color:rgba(165,180,252,.4); margin-top:6px; line-height:1.6; }
+.ba-csv-preview { margin-top:10px; font-size:12px; color:rgba(165,180,252,.5); min-height:18px; }
+
+/* results */
+.ba-results { margin-top:32px; }
+.ba-results-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; }
+@media(max-width:900px){.ba-results-grid{grid-template-columns:1fr;}}
+
+.ba-bias-list { display:flex; flex-direction:column; gap:12px; }
+.ba-bias-card { border-radius:14px; padding:18px 20px; border:1px solid; position:relative; overflow:hidden; }
+.ba-bias-card.detected { background:rgba(244,63,94,.06); border-color:rgba(244,63,94,.25); }
+.ba-bias-card.clean { background:rgba(16,185,129,.05); border-color:rgba(16,185,129,.2); }
+.ba-bias-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.ba-bias-name { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; }
+.ba-bias-badge { font-size:10px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:20px; }
+.ba-bias-badge.yes { background:rgba(244,63,94,.15); color:#fda4af; }
+.ba-bias-badge.no { background:rgba(16,185,129,.12); color:#6ee7b7; }
+.ba-bias-desc { font-size:12px; color:rgba(165,180,252,.6); line-height:1.6; }
+.ba-bias-stat { font-size:11px; font-family:'JetBrains Mono',monospace; color:rgba(165,180,252,.45); margin-top:6px; }
+
+.ba-severity { display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:12px; margin-bottom:20px; }
+.ba-severity.high { background:rgba(244,63,94,.08); border:1px solid rgba(244,63,94,.25); }
+.ba-severity.medium { background:rgba(245,158,11,.07); border:1px solid rgba(245,158,11,.22); }
+.ba-severity.low { background:rgba(16,185,129,.06); border:1px solid rgba(16,185,129,.2); }
+.ba-sev-icon { font-size:26px; }
+.ba-sev-label { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; margin-bottom:3px; }
+.ba-sev-sub { font-size:12px; color:rgba(165,180,252,.55); line-height:1.5; }
+
+.ba-dist-wrap { margin-bottom:20px; }
+.ba-dist-title { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+.ba-dist-bars { display:flex; gap:8px; align-items:flex-end; height:100px; }
+.ba-dist-col { flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; }
+.ba-dist-bar-wrap { width:100%; display:flex; align-items:flex-end; height:80px; }
+.ba-dist-bar { width:100%; border-radius:5px 5px 0 0; transition:height .8s cubic-bezier(.4,0,.2,1); min-height:4px; }
+.ba-dist-pct { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600; }
+.ba-dist-lbl { font-size:10px; color:rgba(165,180,252,.4); letter-spacing:.5px; }
+.ba-dist-legend { display:flex; gap:16px; margin-top:10px; }
+.ba-dist-legend-item { display:flex; align-items:center; gap:6px; font-size:11px; color:rgba(165,180,252,.5); }
+.ba-dist-legend-dot { width:8px; height:8px; border-radius:2px; }
+
+.ba-fix-card { background:rgba(56,189,248,.05); border:1px solid rgba(56,189,248,.18); border-radius:14px; padding:20px; margin-bottom:16px; }
+.ba-fix-label { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--sky); margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+.ba-fix-text { font-size:13px; color:rgba(165,180,252,.75); line-height:1.75; }
+
+.ba-script-card { background:rgba(99,102,241,.06); border:1px solid rgba(99,102,241,.2); border-radius:14px; padding:20px; }
+.ba-script-label { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+.ba-script-text { font-size:13px; color:rgba(165,180,252,.7); line-height:1.85; font-style:italic; }
+.ba-script-text strong { color:var(--text); font-style:normal; font-weight:600; }
+
+.ba-placeholder { text-align:center; padding:48px 20px; color:rgba(165,180,252,.3); font-size:14px; line-height:1.8; }
+.ba-placeholder-icon { font-size:40px; margin-bottom:12px; opacity:.35; }
+
+.ba-loading { text-align:center; padding:48px 20px; }
+.ba-spinner { width:40px; height:40px; border-radius:50%; margin:0 auto 16px; border:3px solid rgba(244,63,94,.15); border-top-color:var(--rose); animation:baSpin .8s linear infinite; }
+@keyframes baSpin{to{transform:rotate(360deg)}}
+.ba-loading-text { font-size:14px; color:rgba(165,180,252,.5); }
+
+.ba-pdf-btn {
+  display: none; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 13px 20px; margin-top: 24px;
+  border-radius: 10px; border: 1px solid rgba(244,63,94,.3); cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+  background: linear-gradient(135deg, rgba(244,63,94,.10), rgba(99,102,241,.08));
+  color: #fda4af; transition: all .2s;
+}
+.ba-pdf-btn:hover { background: linear-gradient(135deg,rgba(244,63,94,.2),rgba(99,102,241,.15)); border-color: var(--rose); color: #fff; }
+.ba-pdf-btn.visible { display: flex; }
+
+.ba-cta-strip { margin-top:40px; padding:28px 36px; background:linear-gradient(135deg,rgba(244,63,94,.08),rgba(99,102,241,.08)); border:1px solid rgba(244,63,94,.2); border-radius:16px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.ba-cta-text { font-size:15px; color:rgba(165,180,252,.75); }
+.ba-cta-text strong { color:var(--text); font-size:16px; display:block; margin-bottom:4px; }
+.ba-cta-btn { padding:12px 28px; border-radius:10px; text-decoration:none; background:linear-gradient(135deg,var(--rose),var(--purple)); color:#fff; font-size:13px; font-weight:700; font-family:'Space Grotesk',sans-serif; white-space:nowrap; transition:opacity .2s; }
+.ba-cta-btn:hover { opacity:.85; }
+
+@media(max-width:600px){
+  #ba-content{padding:0 20px;}
+  .ba-hero{padding:60px 0 36px;}
+  .ba-card{padding:24px;}
+  .ba-ctx{grid-template-columns:1fr;}
+  .ba-row{grid-template-columns:1fr 100px 32px;}
+}
+</style>
+
+<canvas id="ba-bg"></canvas>
+
+<!-- gate is now INSIDE ba-wrap so position:absolute does not cover Softr nav -->
+<div id="ba-wrap">
+
+  <!-- PRO GATE -->
+  <div id="ba-gate">
+    <div class="ba-gate-box">
+      <div class="ba-gate-icon">&#x1F50D;</div>
+      <div class="ba-gate-title">Bias Audit</div>
+      <div class="ba-gate-sub">This is a <strong style="color:#fda4af">Pro-only</strong> tool. Enter your Virorah Pro key to detect, fix, and coach away rating biases in your team's performance reviews.</div>
+      <input class="ba-gate-input" id="ba-key-input" type="text" placeholder="Enter your Virorah Pro key" autocomplete="off" spellcheck="false">
+      <button class="ba-gate-btn" id="ba-key-btn">Unlock Bias Audit &#x2192;</button>
+      <div class="ba-gate-err" id="ba-gate-err"></div>
+      <div class="ba-gate-link">Don't have a key? <a href="/pages/pricing.html">Upgrade to Pro &#x2192;</a></div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div id="ba-content">
+
+    <div class="ba-hero">
+      <div class="ba-eyebrow"><div class="ba-eyebrow-dot"></div>Pro Feature &middot; AI-Powered</div>
+      <h1 class="ba-hero-title">Bias <span>Audit.</span></h1>
+      <p class="ba-hero-sub">Feed in a manager's rating distribution. The AI detects which biases are statistically present, shows you <strong>what a clean distribution should look like</strong>, and gives you the exact calibration script to fix it.</p>
+    </div>
+
+    <div class="ba-tabs">
+      <button class="ba-tab active" id="ba-tab-manual" onclick="baSwitch('manual')">&#x270F; Manual Entry</button>
+      <button class="ba-tab" id="ba-tab-csv" onclick="baSwitch('csv')">&#x1F4C4; Paste CSV</button>
+    </div>
+
+    <!-- MANUAL ENTRY PANEL -->
+    <div class="ba-panel active" id="ba-panel-manual">
+      <div class="ba-manual-grid">
+        <div class="ba-card">
+          <label class="ba-label">&#x1F465; Enter employee ratings</label>
+          <div class="ba-rows" id="ba-manual-rows"></div>
+          <button class="ba-add-btn" onclick="baAddRow()">+ Add Employee</button>
+          <div class="ba-ctx">
+            <select class="ba-select" id="ba-manual-scale">
+              <option value="1-5">Rating Scale: 1-5</option>
+              <option value="1-4">Rating Scale: 1-4</option>
+              <option value="1-3">Rating Scale: 1-3</option>
+              <option value="1-10">Rating Scale: 1-10</option>
+            </select>
+            <select class="ba-select" id="ba-manual-dept">
+              <option value="">Department (optional)</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
+              <option value="HR">HR / People</option>
+              <option value="Finance">Finance</option>
+              <option value="Operations">Operations</option>
+              <option value="Product">Product</option>
+              <option value="Customer Success">Customer Success</option>
+            </select>
+          </div>
+          <select class="ba-select" id="ba-manual-manager" style="margin-bottom:0;">
+            <option value="">Manager name (optional)</option>
+          </select>
+          <input class="ba-input" id="ba-manual-manager-text" placeholder="Or type manager name..." style="margin-top:8px;">
+          <button class="ba-run-btn" id="ba-manual-btn" onclick="baRunManual()">
+            <span>&#x1F50D;</span> Run Bias Audit
+          </button>
+        </div>
+        <div class="ba-card" id="ba-manual-result-card">
+          <div id="ba-manual-result">
+            <div class="ba-placeholder">
+              <div class="ba-placeholder-icon">&#x1F3AF;</div>
+              Add at least <strong style="color:var(--muted)">5 employees</strong> with ratings on the left,<br>then hit <strong style="color:var(--muted)">Run Bias Audit</strong>.<br><br>
+              The AI will detect biases statistically present<br>in this manager's distribution.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSV PANEL -->
+    <div class="ba-panel" id="ba-panel-csv">
+      <div class="ba-manual-grid">
+        <div class="ba-card">
+          <label class="ba-label">&#x1F4C4; Paste ratings data</label>
+          <textarea class="ba-csv-textarea" id="ba-csv-input"
+            placeholder="Name, Rating&#10;Priya Sharma, 4&#10;Rahul Mehta, 3&#10;Ananya Kumar, 3&#10;Vikram Singh, 3&#10;Deepika Nair, 3&#10;Arjun Patel, 4&#10;Sneha Iyer, 2&#10;Rohan Das, 3&#10;Kavya Reddy, 3&#10;Amit Joshi, 3"></textarea>
+          <div class="ba-csv-hint">Paste two columns: Name and Rating. Header row optional. Comma or tab separated.</div>
+          <div class="ba-csv-preview" id="ba-csv-preview"></div>
+          <div class="ba-ctx" style="margin-top:14px;">
+            <select class="ba-select" id="ba-csv-scale">
+              <option value="1-5">Rating Scale: 1-5</option>
+              <option value="1-4">Rating Scale: 1-4</option>
+              <option value="1-3">Rating Scale: 1-3</option>
+              <option value="1-10">Rating Scale: 1-10</option>
+            </select>
+            <select class="ba-select" id="ba-csv-dept">
+              <option value="">Department (optional)</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
+              <option value="HR">HR / People</option>
+              <option value="Finance">Finance</option>
+              <option value="Operations">Operations</option>
+              <option value="Product">Product</option>
+              <option value="Customer Success">Customer Success</option>
+            </select>
+          </div>
+          <input class="ba-input" id="ba-csv-manager-text" placeholder="Manager name (optional)" style="margin-bottom:0;">
+          <button class="ba-run-btn" id="ba-csv-btn" onclick="baRunCSV()">
+            <span>&#x1F50D;</span> Run Bias Audit
+          </button>
+        </div>
+        <div class="ba-card" id="ba-csv-result-card">
+          <div id="ba-csv-result">
+            <div class="ba-placeholder">
+              <div class="ba-placeholder-icon">&#x1F4CA;</div>
+              Paste your ratings CSV on the left,<br>then hit <strong style="color:var(--muted)">Run Bias Audit</strong>.<br><br>
+              Works best with <strong style="color:var(--muted)">8-30 employees</strong><br>for statistically meaningful patterns.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- full report -->
+    <div id="ba-full-report" style="display:none;">
+      <div class="ba-results">
+        <div class="ba-results-grid">
+          <div>
+            <div class="ba-label" style="margin-bottom:14px;">&#x26A0; Biases Detected</div>
+            <div class="ba-bias-list" id="ba-bias-list"></div>
+          </div>
+          <div>
+            <div class="ba-dist-wrap">
+              <div class="ba-dist-title">Rating Distribution</div>
+              <div class="ba-dist-bars" id="ba-dist-bars"></div>
+              <div class="ba-dist-legend">
+                <div class="ba-dist-legend-item"><div class="ba-dist-legend-dot" style="background:rgba(99,102,241,.6)"></div>Actual</div>
+                <div class="ba-dist-legend-item"><div class="ba-dist-legend-dot" style="background:rgba(16,185,129,.5)"></div>Expected (healthy)</div>
+              </div>
+            </div>
+            <div class="ba-fix-card">
+              <div class="ba-fix-label">&#x1F527; How to Fix This Distribution</div>
+              <div class="ba-fix-text" id="ba-fix-text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-script-card">
+          <div class="ba-script-label">&#x1F3AF; Calibration Conversation Script</div>
+          <div class="ba-script-text" id="ba-script-text"></div>
+        </div>
+        <button class="ba-pdf-btn" id="ba-pdf-btn" onclick="baExportPDF()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Bias Audit Report (.pdf)
+        </button>
+      </div>
+    </div>
+
+    <div class="ba-cta-strip">
+      <div class="ba-cta-text">
+        <strong>Ratings calibrated? Now check the goals behind them.</strong>
+        Fair ratings mean nothing if the goals were vague to begin with. Run the Goal Diagnostic Lab to close the loop.
+      </div>
+      <a href="/pages/goal-lab.html" class="ba-cta-btn">Go to Goal Diagnostic Lab &#x2192;</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* Pro gate */
+(function(){
+  function vrCheck(){
+    try {
+      if (localStorage.getItem('viorah_plan') !== 'pro') return false;
+      var expStr = localStorage.getItem('viorah_plan_exp');
+      if (!expStr) return true;
+      var expDate = new Date(parseInt(expStr));
+      if (isNaN(expDate.getTime())) return true;
+      if (new Date() > expDate) {
+        localStorage.removeItem('viorah_plan');
+        localStorage.removeItem('viorah_plan_exp');
+        return false;
+      }
+      return true;
+    } catch(e) { return false; }
+  }
+  if(vrCheck()) document.getElementById('ba-gate').style.display='none';
+  document.getElementById('ba-key-btn').addEventListener('click',function(){
+    var v=(document.getElementById('ba-key-input').value||'').trim();
+    var btn=document.getElementById('ba-key-btn');
+    if(!v){ document.getElementById('ba-gate-err').textContent='Please enter your Pro key.'; return; }
+    btn.disabled=true; btn.textContent='Validating...';
+    fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev',{
+      method:'POST',headers:{'Content-Type':'application/json','X-Action':'validate-key'},
+      body:JSON.stringify({key:v})
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if(data.valid){
+        localStorage.setItem('viorah_key',v);
+        localStorage.setItem('viorah_plan','pro');
+        document.getElementById('ba-gate').style.display='none';
+      } else {
+        document.getElementById('ba-gate-err').textContent='Invalid key. Check your Pro key or upgrade at /pricing.';
+        btn.disabled=false; btn.textContent='Unlock Bias Audit \u2192';
+      }
+    }).catch(function(){
+      document.getElementById('ba-gate-err').textContent='Connection error. Please try again.';
+      btn.disabled=false; btn.textContent='Unlock Bias Audit \u2192';
+    });
+  });
+  document.getElementById('ba-key-input').addEventListener('keydown',function(e){ if(e.key==='Enter') document.getElementById('ba-key-btn').click(); });
+})();
+
+/* Background particles */
+(function(){
+  var c=document.getElementById('ba-bg'); if(!c) return;
+  var ctx=c.getContext('2d'); var pts=[];
+  function resize(){ c.width=window.innerWidth; c.height=window.innerHeight; }
+  function init(){ pts=[]; for(var i=0;i<55;i++) pts.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.3+.3,o:Math.random()*.4+.1}); }
+  function draw(){ ctx.clearRect(0,0,c.width,c.height); for(var i=0;i<pts.length;i++){ for(var j=i+1;j<pts.length;j++){ var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<110){ ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.strokeStyle='rgba(244,63,94,'+(0.08*(1-d/110))+')'; ctx.lineWidth=.4; ctx.stroke(); } } } pts.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>c.width)p.vx*=-1; if(p.y<0||p.y>c.height)p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(165,180,252,'+p.o+')'; ctx.fill(); }); requestAnimationFrame(draw); }
+  resize(); init(); draw(); window.addEventListener('resize',function(){ resize(); init(); });
+})();
+
+function baSwitch(tab){
+  ['manual','csv'].forEach(function(t){
+    document.getElementById('ba-panel-'+t).classList.toggle('active',t===tab);
+    document.getElementById('ba-tab-'+t).classList.toggle('active',t===tab);
+  });
+  document.getElementById('ba-full-report').style.display='none';
+}
+
+var baRowCount=0;
+function buildRatingOpts(max){
+  var opts='<option value="">Rating</option>';
+  for(var v=1;v<=max;v++) opts+='<option>'+v+'</option>';
+  return opts;
+}
+
+function getManualMax(){
+  var scale=document.getElementById('ba-manual-scale').value||'1-5';
+  return parseInt(scale.split('-')[1])||5;
+}
+
+function baAddRow(){
+  var rows=document.getElementById('ba-manual-rows');
+  var id='ba-row-'+baRowCount++;
+  var div=document.createElement('div'); div.className='ba-row'; div.id=id;
+  div.innerHTML='<input class="ba-input" placeholder="Employee name (optional)">'+
+    '<select class="ba-rating-select">'+buildRatingOpts(getManualMax())+'</select>'+
+    '<button class="ba-del-btn" title="Remove">x</button>';
+  rows.appendChild(div);
+  div.querySelector('.ba-del-btn').addEventListener('click',function(){ div.remove(); });
+}
+
+document.getElementById('ba-manual-scale').addEventListener('change',function(){
+  var max=getManualMax();
+  document.querySelectorAll('#ba-manual-rows .ba-rating-select').forEach(function(sel){
+    var current=sel.value;
+    sel.innerHTML=buildRatingOpts(max);
+    if(parseInt(current)<=max) sel.value=current;
+  });
+});
+
+for(var _i=0;_i<8;_i++) baAddRow();
+
+document.getElementById('ba-csv-input').addEventListener('input',function(){
+  var parsed=parseCSV(this.value);
+  var el=document.getElementById('ba-csv-preview');
+  if(parsed.length>0) el.textContent=parsed.length+' employees detected';
+  else el.textContent='';
+});
+
+function parseCSV(raw){
+  var lines=raw.trim().split('\n').filter(function(l){ return l.trim(); });
+  var result=[];
+  lines.forEach(function(line){
+    var parts=line.split(/[,\t]/).map(function(p){ return p.trim(); });
+    if(parts.length>=2){
+      var rating=parseFloat(parts[parts.length-1]);
+      if(!isNaN(rating)&&rating>=1){
+        if(parts[0].toLowerCase()==='name'||parts[0].toLowerCase()==='employee') return;
+        result.push({name:parts[0]||('Employee'),rating:rating});
+      }
+    } else if(parts.length===1){
+      var r=parseFloat(parts[0]);
+      if(!isNaN(r)&&r>=1) result.push({name:'Employee '+(result.length+1),rating:r});
+    }
+  });
+  return result;
+}
+
+function buildStats(employees, scale){
+  var ratings=employees.map(function(e){ return e.rating; });
+  var n=ratings.length;
+  var sum=ratings.reduce(function(a,b){ return a+b; },0);
+  var mean=(sum/n).toFixed(2);
+  var max=parseInt(scale.split('-')[1]);
+  var dist={};
+  for(var v=1;v<=max;v++) dist[v]=0;
+  ratings.forEach(function(r){ var rv=Math.round(r); if(dist[rv]!==undefined) dist[rv]++; });
+  var distPct={};
+  for(var v=1;v<=max;v++) distPct[v]=Math.round((dist[v]/n)*100);
+  var spreadStd=(function(){
+    var variance=ratings.reduce(function(acc,r){ return acc+Math.pow(r-mean,2); },0)/n;
+    return Math.sqrt(variance).toFixed(2);
+  })();
+  return { ratings:ratings, n:n, mean:parseFloat(mean), max:max, dist:dist, distPct:distPct, std:parseFloat(spreadStd) };
+}
+
+async function callClaude(prompt){
+  var key=localStorage.getItem('viorah_key')||'';
+  var res=await fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({requestType:'bias-audit',key:key,model:'claude-sonnet-4-6',max_tokens:1200,messages:[{role:'user',content:prompt}]})
+  });
+  if(!res.ok){
+    var err=await res.json().catch(function(){ return {}; });
+    throw new Error(err.error||'Request failed ('+res.status+')');
+  }
+  var data=await res.json();
+  var text=data.content.map(function(b){ return b.text||''; }).join('');
+  return JSON.parse(text.replace(/```json|```/g,'').trim());
+}
+
+function renderDistBars(distPct, max){
+  var colors=['#6366f1','#8b5cf6','#a78bfa','#c4b5fd','#e879f9','#38bdf8','#10b981','#f59e0b','#f43f5e','#fb923c'];
+  var expected5={1:5,2:20,3:45,4:25,5:5};
+  var expected4={1:5,2:35,3:45,4:15};
+  var expected3={1:15,2:65,3:20};
+  var expected10={1:2,2:5,3:10,4:15,5:25,6:20,7:12,8:7,9:3,10:1};
+  var expMap={5:expected5,4:expected4,3:expected3,10:expected10};
+  var exp=expMap[max]||expected5;
+  var html='';
+  for(var v=1;v<=max;v++){
+    var act=distPct[v]||0;
+    var exv=exp[v]||0;
+    var col=colors[(v-1)%colors.length];
+    html+='<div class="ba-dist-col">'+
+      '<div class="ba-dist-bar-wrap" style="position:relative;">'+
+        '<div class="ba-dist-bar" style="position:absolute;bottom:0;left:2px;right:2px;height:0%;background:rgba(16,185,129,.35);border-radius:4px 4px 0 0;" data-h="'+exv+'%"></div>'+
+        '<div class="ba-dist-bar" style="position:absolute;bottom:0;left:0;right:0;height:0%;background:'+col+';opacity:.85;border-radius:4px 4px 0 0;" data-h="'+act+'%"></div>'+
+      '</div>'+
+      '<div class="ba-dist-pct" style="color:'+col+'">'+act+'%</div>'+
+      '<div class="ba-dist-lbl">'+v+'</div>'+
+    '</div>';
+  }
+  document.getElementById('ba-dist-bars').innerHTML=html;
+  setTimeout(function(){
+    document.querySelectorAll('.ba-dist-bar').forEach(function(el){ el.style.height=el.dataset.h; });
+  },100);
+}
+
+function renderResult(aiData, stats){
+  var sevClass=aiData.severity==='High'?'high':(aiData.severity==='Medium'?'medium':'low');
+  var sevIcon=aiData.severity==='High'?'🔴':(aiData.severity==='Medium'?'🟡':'🟢');
+  var biasHtml=aiData.biases.map(function(b){
+    var det=b.detected;
+    return '<div class="ba-bias-card '+(det?'detected':'clean')+'">'+
+      '<div class="ba-bias-top">'+
+        '<span class="ba-bias-name">'+(det?'\u26A0 ':'')+b.name+'</span>'+
+        '<span class="ba-bias-badge '+(det?'yes':'no')+'">'+( det?'DETECTED':'CLEAR')+'</span>'+
+      '</div>'+
+      '<div class="ba-bias-desc">'+b.description+'</div>'+
+      (b.stat?'<div class="ba-bias-stat">'+b.stat+'</div>':'')+
+    '</div>';
+  }).join('');
+  document.getElementById('ba-bias-list').innerHTML=
+    '<div class="ba-severity '+sevClass+'">'+
+      '<div class="ba-sev-icon">'+sevIcon+'</div>'+
+      '<div><div class="ba-sev-label">'+aiData.severity+' Severity</div><div class="ba-sev-sub">'+aiData.severity_reason+'</div></div>'+
+    '</div>'+biasHtml;
+  renderDistBars(stats.distPct, stats.max);
+  document.getElementById('ba-fix-text').innerHTML=aiData.fix;
+  document.getElementById('ba-script-text').innerHTML=aiData.script;
+  document.getElementById('ba-full-report').style.display='block';
+  document.getElementById('ba-pdf-btn').classList.add('visible');
+  setTimeout(function(){ document.getElementById('ba-full-report').scrollIntoView({behavior:'smooth',block:'start'}); },200);
+}
+
+function baExportPDF(){
+  var sevLabel=document.querySelector('.ba-sev-label');
+  var sevReason=document.querySelector('.ba-sev-sub');
+  var biasCards=document.querySelectorAll('.ba-bias-card');
+  var fixEl=document.getElementById('ba-fix-text');
+  var scriptEl=document.getElementById('ba-script-text');
+  if(!sevLabel||!biasCards.length){ alert('Run a bias audit first, then download.'); return; }
+  var sevColor=sevLabel.textContent.includes('High')?'#e11d48':sevLabel.textContent.includes('Medium')?'#d97706':'#059669';
+  var biasHtml='';
+  biasCards.forEach(function(card){
+    var detected=card.classList.contains('detected');
+    var name=card.querySelector('.ba-bias-name');
+    var desc=card.querySelector('.ba-bias-desc');
+    var stat=card.querySelector('.ba-bias-stat');
+    biasHtml+='<div style="padding:12px 16px;border-radius:8px;margin-bottom:8px;border:1px solid '+(detected?'#fecdd3':'#bbf7d0')+';background:'+(detected?'#fff1f2':'#f0fdf4')+';"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><div style="font-family:Space Grotesk,sans-serif;font-size:12px;font-weight:700;">'+(name?name.textContent:'')+'</div><div style="font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 8px;border-radius:20px;background:'+(detected?'#ffe4e6':'#dcfce7')+';color:'+(detected?'#e11d48':'#16a34a')+';">'+(detected?'DETECTED':'CLEAR')+'</div></div><div style="font-size:11px;color:#555;line-height:1.5;">'+(desc?desc.textContent:'')+'</div>'+(stat&&stat.textContent?'<div style="font-size:10px;color:#888;font-family:monospace;margin-top:4px;">'+stat.textContent+'</div>':'')+'</div>';
+  });
+  var body='<h1 style="font-family:Space Grotesk,sans-serif;font-size:26px;font-weight:700;color:#f43f5e;margin-bottom:6px;">Bias Audit Report</h1>'+
+    '<p style="font-size:12px;color:#999;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid #eee;">Generated on '+new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})+' - Virorah PMS</p>'+
+    '<div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:18px 22px;margin-bottom:24px;display:flex;align-items:center;gap:18px;"><div style="font-family:Space Grotesk,sans-serif;font-size:28px;font-weight:700;color:'+sevColor+';line-height:1;">'+(sevLabel?sevLabel.textContent:'')+'</div><div><div style="font-family:Space Grotesk,sans-serif;font-size:13px;font-weight:700;margin-bottom:4px;">Bias Severity</div><div style="font-size:12px;color:#666;">'+(sevReason?sevReason.textContent:'')+'</div></div></div>'+
+    '<div style="font-family:Space Grotesk,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f43f5e;margin-bottom:12px;">Biases Detected</div>'+biasHtml+
+    '<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:18px 20px;margin:20px 0;"><div style="font-family:Space Grotesk,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2563eb;margin-bottom:10px;">How to Fix This Distribution</div><div style="font-size:13px;color:#1e3a5f;line-height:1.75;">'+(fixEl?fixEl.textContent:'')+'</div></div>'+
+    '<div style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:18px 20px;"><div style="font-family:Space Grotesk,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7c3aed;margin-bottom:10px;">Calibration Conversation Script</div><div style="font-size:13px;color:#4a1d96;line-height:1.85;font-style:italic;">'+(scriptEl?scriptEl.textContent:'')+'</div></div>';
+  var w=window.open('','_blank','width=860,height=700');
+  var tag_o='<ht'+'ml>',tag_c='</ht'+'ml>',hd_o='<he'+'ad>',hd_c='</he'+'ad>',bd_o='<bo'+'dy>',bd_c='</bo'+'dy>';
+  w.document.write('<!DOCTYPE html>'+tag_o+hd_o+'<meta charset="UTF-8"><title>Bias Audit Report - Virorah PMS</title>'+
+    '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">'+
+    '<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;background:#fff;color:#1a1a2e;padding:48px;max-width:800px;margin:0 auto;}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;font-size:11px;color:#aaa;display:flex;justify-content:space-between;}@media print{body{padding:24px;}}</style>'+
+    hd_c+bd_o+body+'<div class="footer"><span>Virorah PMS - virorah.com</span><span>Pro Report - Confidential</span></div>'+bd_c+tag_c);
+  w.document.close();
+  setTimeout(function(){ w.print(); },700);
+}
+
+function baFinishLocal(targetId, success){
+  var el=document.getElementById(targetId);
+  if(!el) return;
+  if(success){
+    el.innerHTML='<div class="ba-placeholder"><div class="ba-placeholder-icon">\u2713</div>Report ready. Scroll down to see the full breakdown.</div>';
+  } else {
+    el.innerHTML='<div class="ba-placeholder"><div class="ba-placeholder-icon">\u26A0</div>Something went wrong. Please try again.</div>';
+  }
+}
+
+async function runAudit(employees, scale, dept, manager){
+  if(employees.length<5){ alert('Please enter at least 5 employees for a meaningful audit.'); return false; }
+  var stats=buildStats(employees, scale);
+  var employeeBlock=employees.map(function(e,i){ return (i+1)+'. '+e.name+' - Rating: '+e.rating; }).join('\n');
+  var managerStr=manager?'Manager: '+manager:'Manager: unnamed';
+  var deptStr=dept?'Department: '+dept:'Department: unspecified';
+  var prompt='You are an expert HR analytics consultant running a bias audit on a manager performance rating distribution.\n\n'+
+    managerStr+'\n'+deptStr+'\n'+
+    'Rating Scale: '+scale+'\nTeam size: '+employees.length+'\nMean rating: '+stats.mean+'\nStd deviation: '+stats.std+'\n\nRATINGS:\n'+employeeBlock+'\n\n'+
+    'Analyse this distribution for performance rating biases. Return ONLY valid JSON (no markdown):\n'+
+    '{"severity":"<High|Medium|Low>","severity_reason":"<one sentence with specific number>","biases":['+
+    '{"name":"Central Tendency Bias","detected":<true|false>,"description":"<specific to this team>","stat":"<e.g. 68% rated at midpoint>"},'+
+    '{"name":"Leniency Bias","detected":<true|false>,"description":"<specific>","stat":"<e.g. 75% rated 4-5>"},'+
+    '{"name":"Severity Bias","detected":<true|false>,"description":"<specific>","stat":"<e.g. 60% rated 1-2>"},'+
+    '{"name":"Halo Effect","detected":<true|false>,"description":"<specific>","stat":"<relevant stat>"},'+
+    '{"name":"Recency Bias","detected":<true|false>,"description":"<specific>","stat":""}],'+
+    '"fix":"<3-4 sentences on healthy distribution with specific numbers>",'+
+    '"script":"<4-6 sentence calibration script for HRBP using <strong> tags for key phrases>"}';
+  try {
+    renderResult(await callClaude(prompt), stats);
+    return true;
+  } catch(e) {
+    document.getElementById('ba-full-report').style.display='none';
+    alert((e&&e.message)||'Something went wrong. Please try again.');
+    return false;
+  }
+}
+
+async function baRunManual(){
+  var rows=document.querySelectorAll('#ba-manual-rows .ba-row');
+  var employees=[];
+  rows.forEach(function(row){
+    var name=row.querySelector('input').value.trim()||'Employee '+(employees.length+1);
+    var rating=parseFloat(row.querySelector('select').value);
+    if(!isNaN(rating)&&rating>=1) employees.push({name:name,rating:rating});
+  });
+  var scale=document.getElementById('ba-manual-scale').value;
+  var dept=document.getElementById('ba-manual-dept').value;
+  var manager=document.getElementById('ba-manual-manager-text').value.trim();
+  var btn=document.getElementById('ba-manual-btn');
+  btn.disabled=true;
+  document.getElementById('ba-manual-result').innerHTML='<div class="ba-loading"><div class="ba-spinner"></div><div class="ba-loading-text">Detecting bias patterns in '+employees.length+' ratings...</div></div>';
+  var ok=await runAudit(employees, scale, dept, manager);
+  baFinishLocal('ba-manual-result', ok);
+  btn.disabled=false;
+}
+
+async function baRunCSV(){
+  var raw=document.getElementById('ba-csv-input').value;
+  var employees=parseCSV(raw);
+  if(employees.length<5){ alert('Need at least 5 valid ratings. Check your format: Name, Rating (one per line).'); return; }
+  var scale=document.getElementById('ba-csv-scale').value;
+  var dept=document.getElementById('ba-csv-dept').value;
+  var manager=document.getElementById('ba-csv-manager-text').value.trim();
+  var btn=document.getElementById('ba-csv-btn');
+  btn.disabled=true;
+  document.getElementById('ba-csv-result').innerHTML='<div class="ba-loading"><div class="ba-spinner"></div><div class="ba-loading-text">Detecting bias patterns in '+employees.length+' ratings...</div></div>';
+  var ok=await runAudit(employees, scale, dept, manager);
+  baFinishLocal('ba-csv-result', ok);
+  btn.disabled=false;
+}
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>
