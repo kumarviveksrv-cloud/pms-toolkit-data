@@ -75,6 +75,20 @@
       window.viorahIsAdmin = function () { return window._pmsPlan === 'admin'; };
       window.viorahSaveKey = function () { /* no-op — Clerk handles auth now */ };
 
+      /* localStorage bridge: migrated pages (certifications, downloads, ...)
+       * read localStorage.viorah_plan directly instead of calling
+       * viorahIsPro(). Mirror the Clerk plan into it on every page load.
+       * Admin is intentionally NOT bridged (it would need viorah_key).
+       * TODO: remove together with the shim above. */
+      try {
+        if (window._pmsPlan === 'pro' || window._pmsPlan === 'admin') {
+          localStorage.setItem('viorah_plan', 'pro');
+        } else {
+          localStorage.removeItem('viorah_plan');
+        }
+        localStorage.removeItem('viorah_plan_exp');
+      } catch (e) { /* storage unavailable: pages fall back to free */ }
+
       /* Auth OK — reveal page and hydrate nav/user chip */
       bodyEl.style.visibility = '';
       _hydrateNavUserChip(user);
