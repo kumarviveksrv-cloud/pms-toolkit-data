@@ -120,7 +120,7 @@
         if(t) setTimeout(function(){ t.scrollIntoView({behavior:'smooth',block:'start'}); }, 60);
       } else {
         try{ sessionStorage.setItem('vg_pending_scroll', item.target); }catch(e){}
-        window.location.href = '/pages/scenarios-details.html';
+        window.location.href = '/pages/scenarios-details.html?recordId=recFOxRBFHIT0az8u';
       }
     } else if(item.path){
       window.location.href = item.path;
