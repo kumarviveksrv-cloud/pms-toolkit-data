@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bring a real performance-related situation. Get a full action plan.</title>
+  <meta name="description" content="PROBE the root cause. PROTOCOL chooses the right process. LEDGER documents it. RESOLVE scripts the conversation. One real situation in. Full action plan out.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/case-room.html">
+  <meta property="og:title" content="Bring a real performance-related situation. Get a full action plan.">
+  <meta property="og:description" content="PROBE the root cause. PROTOCOL chooses the right process. LEDGER documents it. RESOLVE scripts the conversation. One real situation in. Full action plan out.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">The Case Room</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<style>
+  #cr-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; position:relative; }
+  #cr-root * { box-sizing:border-box; }
+
+  #cr-gate { position:absolute; top:0; left:0; width:100%; min-height:100%; z-index:900; background:rgba(5,4,16,.92); backdrop-filter:blur(16px); display:flex; align-items:center; justify-content:center; padding:24px; }
+  .cr-gate-box { background:#0d0b1e; border:1px solid rgba(102,126,234,.25); border-radius:20px; padding:48px 40px; max-width:460px; width:100%; text-align:center; box-shadow:0 40px 80px rgba(0,0,0,.5); position:relative; overflow:hidden; }
+  .cr-gate-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#667eea,#a78bfa,transparent); }
+  .cr-gate-icon { font-size:40px; margin-bottom:16px; }
+  .cr-gate-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:10px; color:#f0eeff; }
+  .cr-gate-sub { font-size:14px; color:rgba(196,181,253,.65); margin-bottom:28px; line-height:1.7; }
+  .cr-gate-input { width:100%; padding:13px 16px; border-radius:10px; margin-bottom:12px; background:rgba(255,255,255,.06); border:1px solid rgba(102,126,234,.25); color:#f0eeff; font-size:14px; font-family:'Space Grotesk',sans-serif; outline:none; transition:border-color .2s; }
+  .cr-gate-input:focus { border-color:#667eea; }
+  .cr-gate-btn { width:100%; padding:13px; border-radius:10px; border:none; cursor:pointer; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:14px; font-weight:700; font-family:'Space Grotesk',sans-serif; transition:opacity .2s,transform .15s; }
+  .cr-gate-btn:hover { opacity:.9; transform:translateY(-1px); }
+  .cr-gate-err { font-size:12px; color:#f87171; margin-top:8px; min-height:16px; }
+  .cr-gate-link { font-size:12px; color:rgba(165,180,252,.45); margin-top:16px; }
+  .cr-gate-link a { color:#a5b4fc; text-decoration:none; }
+
+  .cr-hero { background:linear-gradient(160deg,#080612 0%,#150a2e 50%,#080612 100%); padding:48px 44px 40px; border-radius:16px 16px 0 0; position:relative; overflow:hidden; }
+  .cr-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.5),rgba(167,139,250,.3),rgba(102,126,234,.5),transparent); }
+  .cr-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.7); margin-bottom:16px; }
+  .cr-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#667eea; box-shadow:0 0 10px rgba(102,126,234,.8); }
+  .cr-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:16px; max-width:700px; }
+  .cr-title span { background:linear-gradient(135deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .cr-sub { font-size:14px; color:rgba(196,181,253,.6); line-height:1.75; max-width:620px; margin-bottom:20px; }
+  .cr-compass-row { display:flex; gap:8px; flex-wrap:wrap; }
+  .cr-compass-pill { padding:6px 14px; border-radius:100px; background:rgba(102,126,234,.1); border:1px solid rgba(102,126,234,.25); font-size:11.5px; font-weight:700; color:#a5b4fc; }
+
+  .cr-input-panel { margin:0 44px 32px; padding:32px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.1); border-radius:16px; }
+  .cr-panel-title { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; }
+  .cr-panel-sub { font-size:12.5px; color:rgba(196,181,253,.5); margin-bottom:20px; line-height:1.6; }
+
+  .cr-context-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px; }
+  @media(max-width:700px){ .cr-context-grid{ grid-template-columns:1fr; } }
+  .cr-field-label { font-size:11px; font-weight:700; color:rgba(196,181,253,.5); margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px; }
+  .cr-select, .cr-input { width:100%; padding:10px 12px; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#f0eeff; font-size:13px; font-family:inherit; }
+  .cr-select:focus, .cr-input:focus, .cr-textarea:focus { outline:none; border-color:#667eea; }
+
+  .cr-textarea { width:100%; padding:14px 16px; border-radius:10px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#f0eeff; font-size:13.5px; font-family:inherit; min-height:140px; resize:vertical; margin-bottom:20px; line-height:1.6; }
+
+  .cr-example-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .cr-example-lbl { font-size:11px; color:rgba(196,181,253,.4); }
+  .cr-example-chip { padding:5px 12px; border-radius:100px; background:rgba(102,126,234,.08); border:1px solid rgba(102,126,234,.25); color:#a5b4fc; font-size:11px; font-weight:600; cursor:pointer; font-family:inherit; }
+  .cr-example-chip:hover { background:rgba(102,126,234,.16); border-color:rgba(102,126,234,.45); }
+
+  .cr-submit-btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:10px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; font-size:14px; font-weight:800; border:none; cursor:pointer; }
+  .cr-submit-btn:disabled { opacity:.4; cursor:not-allowed; }
+
+  .cr-results { margin:0 44px 40px; display:none; flex-direction:column; gap:16px; }
+  .cr-section { padding:26px 28px; border-radius:14px; border:1px solid; }
+  .cr-section.probe { background:rgba(102,126,234,.05); border-color:rgba(102,126,234,.25); }
+  .cr-section.protocol { background:rgba(167,139,250,.05); border-color:rgba(167,139,250,.25); }
+  .cr-section.ledger { background:rgba(52,211,153,.05); border-color:rgba(52,211,153,.25); }
+  .cr-section.resolve { background:rgba(251,191,36,.05); border-color:rgba(251,191,36,.25); }
+  .cr-section-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+  .cr-section.probe .cr-section-eyebrow { color:#a5b4fc; }
+  .cr-section.protocol .cr-section-eyebrow { color:#c4b5fd; }
+  .cr-section.ledger .cr-section-eyebrow { color:#6ee7b7; }
+  .cr-section.resolve .cr-section-eyebrow { color:#fcd34d; }
+  .cr-field-block { margin-bottom:14px; }
+  .cr-field-block:last-child { margin-bottom:0; }
+  .cr-field-lbl { font-size:10px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:rgba(196,181,253,.4); margin-bottom:5px; }
+  .cr-field-val { font-size:13.5px; color:rgba(240,238,255,.85); line-height:1.7; }
+  .cr-field-val.mono { font-family:'DM Mono',monospace; font-size:12.5px; }
+
+  .cr-steps-list { display:flex; flex-direction:column; gap:10px; }
+  .cr-step-item { display:flex; gap:12px; padding:12px 14px; background:rgba(255,255,255,.03); border-radius:10px; border:1px solid rgba(255,255,255,.06); }
+  .cr-step-num { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:rgba(167,139,250,.15); color:#c4b5fd; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .cr-step-body { flex:1; min-width:0; }
+  .cr-step-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; margin-bottom:4px; }
+  .cr-step-name { font-size:13px; font-weight:700; color:#f0eeff; }
+  .cr-step-time { font-size:10.5px; font-weight:700; color:#a5b4fc; background:rgba(102,126,234,.12); padding:2px 8px; border-radius:20px; white-space:nowrap; }
+  .cr-step-detail { font-size:12.5px; color:rgba(196,181,253,.6); line-height:1.6; }
+
+  .cr-download-row { margin:0 44px 40px; text-align:center; display:none; }
+  .cr-download-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); color:#f0eeff; font-size:13px; font-weight:700; cursor:pointer; }
+
+  .cr-error { margin:0 44px 32px; padding:20px 24px; border-radius:12px; background:rgba(248,113,113,.08); border:1px solid rgba(248,113,113,.3); color:#f87171; font-size:13px; display:none; }
+</style>
+
+<div id="cr-root">
+  <div id="cr-gate">
+    <div class="cr-gate-box">
+      <div class="cr-gate-icon">&#x1F512;</div>
+      <div class="cr-gate-title">The Case Room</div>
+      <div class="cr-gate-sub">This is a <strong style="color:#a5b4fc">Pro-only</strong> tool. Enter your Virorah Pro key to run a real situation through the Performance Compass.</div>
+      <input class="cr-gate-input" id="cr-gate-input" type="text" placeholder="Enter your Virorah Pro key" autocomplete="off" spellcheck="false">
+      <button class="cr-gate-btn" id="cr-gate-btn">Unlock The Case Room &#x2192;</button>
+      <div class="cr-gate-err" id="cr-gate-err"></div>
+      <div class="cr-gate-link">Don't have a key? <a href="/pages/pricing.html">Upgrade to Pro &#x2192;</a></div>
+    </div>
+  </div>
+  <div class="cr-hero">
+    <div class="cr-eyebrow"><div class="cr-eyebrow-dot"></div>Simulate &middot; The Case Room</div>
+    <div class="cr-title">Bring a real situation. <span>Get a full action plan.</span></div>
+    <div class="cr-sub">Describe exactly what's happening, right now, with real people. The Virorah Performance Compass runs it through root cause, the right process, the documentation, and the conversation itself.</div>
+    <div class="cr-compass-row">
+      <span class="cr-compass-pill">PROBE</span>
+      <span class="cr-compass-pill">PROTOCOL</span>
+      <span class="cr-compass-pill">LEDGER</span>
+      <span class="cr-compass-pill">RESOLVE</span>
+    </div>
+  </div>
+
+  <div class="cr-input-panel">
+    <div class="cr-panel-title">Describe the situation</div>
+    <div class="cr-panel-sub">Org context is optional, but the more you give, the more specific the Humacity financial exposure figure in PROTOCOL becomes.</div>
+
+    <div class="cr-context-grid">
+      <div>
+        <div class="cr-field-label">Industry</div>
+        <input class="cr-input" id="cr-industry" type="text" placeholder="e.g. B2B SaaS, healthcare staffing">
+      </div>
+      <div>
+        <div class="cr-field-label">Org Size</div>
+        <input class="cr-input" id="cr-orgsize" type="text" placeholder="e.g. 120 employees">
+      </div>
+      <div>
+        <div class="cr-field-label">Avg Annual Compensation</div>
+        <input class="cr-input" id="cr-avgsalary" type="text" placeholder="e.g. $60,000 or INR 12,00,000">
+      </div>
+    </div>
+
+    <div class="cr-field-label">What's actually happening</div>
+    <div class="cr-example-row">
+      <span class="cr-example-lbl">Not sure how much detail to give? Try an example:</span>
+      <button class="cr-example-chip" id="cr-ex-a">Star performer, formal warning</button>
+      <button class="cr-example-chip" id="cr-ex-b">Quiet exclusion, no complaint yet</button>
+    </div>
+    <textarea class="cr-textarea" id="cr-situation" placeholder="Be specific. Names aren't necessary, but the real behaviour, timeline, and what you've already tried are."></textarea>
+
+    <button class="cr-submit-btn" id="cr-submit-btn">Run the Compass</button>
+  </div>
+
+  <div class="cr-error" id="cr-error"></div>
+
+  <div class="cr-results" id="cr-results"></div>
+
+  <div class="cr-download-row" id="cr-download-row">
+    <button class="cr-download-btn" id="cr-download-btn">Download as PDF</button>
+  </div>
+</div>
+
+<script>
+/* Pro gate */
+(function(){
+  var WORKER_URL = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+  function vrCheck(){
+    try {
+      if (localStorage.getItem('viorah_plan') !== 'pro') return false;
+      var expStr = localStorage.getItem('viorah_plan_exp');
+      if (!expStr) return true;
+      var expDate = new Date(parseInt(expStr));
+      if (isNaN(expDate.getTime())) return true;
+      if (new Date() > expDate) {
+        localStorage.removeItem('viorah_plan');
+        localStorage.removeItem('viorah_plan_exp');
+        return false;
+      }
+      return true;
+    } catch(e) { return false; }
+  }
+  if(vrCheck()) document.getElementById('cr-gate').style.display = 'none';
+  document.getElementById('cr-gate-btn').addEventListener('click', function(){
+    var v = (document.getElementById('cr-gate-input').value || '').trim();
+    var btn = document.getElementById('cr-gate-btn');
+    var errEl = document.getElementById('cr-gate-err');
+    errEl.textContent = '';
+    if(!v){ errEl.textContent = 'Please enter your Pro key.'; return; }
+    btn.disabled = true; btn.textContent = 'Validating...';
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Action': 'validate-key' },
+      body: JSON.stringify({ key: v })
+    }).then(function(r){ return r.json(); }).then(function(result){
+      if(result.valid){
+        localStorage.setItem('viorah_key', v);
+        localStorage.setItem('viorah_plan', 'pro');
+        document.getElementById('cr-gate').style.display = 'none';
+      } else {
+        errEl.textContent = 'Invalid key. Check your Pro key or upgrade at /pricing.';
+        btn.disabled = false; btn.textContent = 'Unlock The Case Room \u2192';
+      }
+    }).catch(function(){
+      errEl.textContent = 'Could not verify key. Please try again.';
+      btn.disabled = false; btn.textContent = 'Unlock The Case Room \u2192';
+    });
+  });
+  document.getElementById('cr-gate-input').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('cr-gate-btn').click(); });
+})();
+</script>
+<script>
+(function(){
+"use strict";
+
+var WORKER = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+var lastResult = null;
+
+var ORG_PROFILE_KEY = "virorah_org_profile";
+
+function loadOrgProfile(){
+  try {
+    var raw = localStorage.getItem(ORG_PROFILE_KEY);
+    if(!raw) return;
+    var p = JSON.parse(raw);
+    if(p.industry) document.getElementById("cr-industry").value = p.industry;
+    if(p.orgSize) document.getElementById("cr-orgsize").value = p.orgSize;
+    if(p.avgSalary) document.getElementById("cr-avgsalary").value = p.avgSalary;
+  } catch(e){ /* malformed or missing profile, ignore */ }
+}
+
+function saveOrgProfile(){
+  var industry = document.getElementById("cr-industry").value.trim();
+  var orgSize = document.getElementById("cr-orgsize").value.trim();
+  var avgSalary = document.getElementById("cr-avgsalary").value.trim();
+  if(!industry && !orgSize && !avgSalary) return;
+  try {
+    localStorage.setItem(ORG_PROFILE_KEY, JSON.stringify({
+      industry: industry,
+      orgSize: orgSize,
+      avgSalary: avgSalary,
+      updatedAt: new Date().toISOString(),
+      updatedFrom: "case-room"
+    }));
+  } catch(e){ /* storage unavailable, ignore */ }
+}
+
+loadOrgProfile();
+
+var EXAMPLES = {
+  a: "One of my best performers just got a formal warning for missing three deadlines this month. She says her manager keeps changing priorities mid-sprint and never confirms decisions in writing, so she is constantly guessing what is actually expected.",
+  b: "A team lead has started quietly excluding one person from meetings. No formal complaint yet, but two teammates have mentioned it to me privately. The excluded employee's performance has started slipping too."
+};
+
+document.getElementById("cr-ex-a").addEventListener("click", function(){
+  document.getElementById("cr-situation").value = EXAMPLES.a;
+});
+document.getElementById("cr-ex-b").addEventListener("click", function(){
+  document.getElementById("cr-situation").value = EXAMPLES.b;
+});
+
+function buildPrompt(){
+  var situation = document.getElementById("cr-situation").value.trim();
+  var industry = document.getElementById("cr-industry").value.trim();
+  var orgSize = document.getElementById("cr-orgsize").value.trim();
+  var avgSalary = document.getElementById("cr-avgsalary").value.trim();
+
+  var context = [];
+  if(industry) context.push("Industry: " + industry);
+  if(orgSize) context.push("Org size: " + orgSize);
+  if(avgSalary) context.push("Average annual CTC: " + avgSalary);
+
+  var contextLine = context.length ? ("Org context -- " + context.join(", ") + ".\n\n") : "";
+  return contextLine + "Situation: " + situation;
+}
+
+function setLoading(isLoading){
+  var btn = document.getElementById("cr-submit-btn");
+  btn.disabled = isLoading;
+  btn.textContent = isLoading ? "Running the Compass..." : "Run the Compass";
+}
+
+function showError(msg){
+  var el = document.getElementById("cr-error");
+  el.textContent = msg;
+  el.style.display = "block";
+}
+
+function hideError(){
+  document.getElementById("cr-error").style.display = "none";
+}
+
+function fieldBlock(label, value){
+  return "<div class=\"cr-field-block\"><div class=\"cr-field-lbl\">" + label + "</div><div class=\"cr-field-val\">" + value + "</div></div>";
+}
+
+function renderResults(data){
+  var html = "";
+
+  html += "<div class=\"cr-section probe\">";
+  html += "<div class=\"cr-section-eyebrow\">PROBE \u00B7 Root Cause</div>";
+  html += fieldBlock("Classification", data.probe.classification);
+  html += fieldBlock("Diagnosis", data.probe.diagnosis);
+  if(data.probe.keyEvidence && data.probe.keyEvidence.length){
+    html += fieldBlock("Key Evidence", data.probe.keyEvidence.join(" \u00B7 "));
+  }
+  html += "</div>";
+
+  html += "<div class=\"cr-section protocol\">";
+  html += "<div class=\"cr-section-eyebrow\">PROTOCOL \u00B7 The Right Process</div>";
+  html += fieldBlock("Recommended Process", data.protocol.recommendedProcess);
+  html += fieldBlock("Rationale", data.protocol.rationale);
+  if(data.protocol.steps && data.protocol.steps.length){
+    var stepsHtml = '<div class="cr-steps-list">' + data.protocol.steps.map(function(s, i){
+      return '<div class="cr-step-item"><div class="cr-step-num">' + (i+1) + '</div><div class="cr-step-body"><div class="cr-step-head"><span class="cr-step-name">' + s.step + '</span><span class="cr-step-time">' + s.timeline + '</span></div><div class="cr-step-detail">' + s.detail + '</div></div></div>';
+    }).join('') + '</div>';
+    html += fieldBlock("Steps", stepsHtml);
+  }
+  if(data.protocol.nonNegotiables && data.protocol.nonNegotiables.length){
+    html += fieldBlock("Non-Negotiables", data.protocol.nonNegotiables.join(" \u00B7 "));
+  }
+  if(data.protocol.humacityExposure){
+    html += fieldBlock("Humacity Financial Exposure", "<span class=\"cr-field-val mono\">" + data.protocol.humacityExposure.figure + "</span><br>" + data.protocol.humacityExposure.basis);
+  }
+  html += "</div>";
+
+  html += "<div class=\"cr-section ledger\">";
+  html += "<div class=\"cr-section-eyebrow\">LEDGER \u00B7 Documentation</div>";
+  html += fieldBlock("What To Record", data.ledger.whatToRecord);
+  html += fieldBlock("Tone", data.ledger.tone);
+  html += fieldBlock("Draft Language", data.ledger.draftLanguage);
+  html += "</div>";
+
+  html += "<div class=\"cr-section resolve\">";
+  html += "<div class=\"cr-section-eyebrow\">RESOLVE \u00B7 The Conversation</div>";
+  html += fieldBlock("Conversation Type", data.resolve.conversationType);
+  html += fieldBlock("Opening", data.resolve.opening);
+  if(data.resolve.keyPoints && data.resolve.keyPoints.length){
+    html += fieldBlock("Key Points", data.resolve.keyPoints.join(" \u00B7 "));
+  }
+  if(data.resolve.avoidLanguage && data.resolve.avoidLanguage.length){
+    html += fieldBlock("Avoid", data.resolve.avoidLanguage.join(" \u00B7 "));
+  }
+  html += fieldBlock("Closing", data.resolve.closing);
+  html += "</div>";
+
+  var results = document.getElementById("cr-results");
+  results.innerHTML = html;
+  results.style.display = "flex";
+  document.getElementById("cr-download-row").style.display = "block";
+}
+
+function runCompass(){
+  hideError();
+  saveOrgProfile();
+  var situation = document.getElementById("cr-situation").value.trim();
+  if(!situation){
+    showError("Describe the situation before running the Compass.");
+    return;
+  }
+
+  setLoading(true);
+
+  var proKey = localStorage.getItem("viorah_key") || "";
+
+  fetch(WORKER + "/pages/case-room.html", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      prompt: buildPrompt(),
+      industry: document.getElementById("cr-industry").value.trim(),
+      orgSize: document.getElementById("cr-orgsize").value.trim(),
+      avgSalary: document.getElementById("cr-avgsalary").value.trim(),
+      key: proKey
+    })
+  })
+  .then(function(r){
+    if(!r.ok){
+      return r.json().catch(function(){ return null; }).then(function(errData){
+        throw new Error((errData && errData.error) || ("Error " + r.status));
+      });
+    }
+    return r.json();
+  })
+  .then(function(data){
+    lastResult = data;
+    renderResults(data);
+  })
+  .catch(function(err){
+    showError(err.message);
+  })
+  .finally(function(){
+    setLoading(false);
+  });
+}
+
+function downloadSummary(){
+  if(!lastResult) return;
+  var d = lastResult;
+  var date = new Date().toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric"});
+
+  var tag_o="<ht"+"ml>", tag_c="</ht"+"ml>", hd_o="<he"+"ad>", hd_c="</he"+"ad>", bd_o="<bo"+"dy>", bd_c="</bo"+"dy>";
+
+  var html = "<!DOCTYPE html>" + tag_o + hd_o + "<meta charset=\"utf-8\"><title>Case Room Action Plan</title><style>";
+  html += "body{font-family:'Segoe UI',Arial,sans-serif;margin:0 auto;padding:40px;max-width:800px;color:#1a1a2e;}";
+  html += "h1{font-size:24px;font-weight:800;margin-bottom:4px;}";
+  html += ".eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#667eea;margin-bottom:8px;}";
+  html += ".meta{font-size:12px;color:#6b7280;margin-bottom:32px;}";
+  html += ".section{margin-bottom:20px;padding:20px 24px;border-radius:10px;border-left:4px solid;page-break-inside:avoid;}";
+  html += ".probe{background:#f5f3ff;border-color:#667eea;}";
+  html += ".protocol{background:#faf5ff;border-color:#a78bfa;}";
+  html += ".ledger{background:#f0fdf9;border-color:#34d399;}";
+  html += ".resolve{background:#fffbeb;border-color:#f59e0b;}";
+  html += ".st{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}";
+  html += ".probe .st{color:#667eea;}.protocol .st{color:#7c3aed;}.ledger .st{color:#059669;}.resolve .st{color:#d97706;}";
+  html += ".f{margin-bottom:12px;}.fl{font-size:10px;font-weight:700;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;letter-spacing:.5px;}";
+  html += ".fv{font-size:13px;color:#374151;line-height:1.7;}.mono{font-family:monospace;font-size:12px;font-weight:700;}";
+  html += ".footer{margin-top:28px;padding-top:14px;border-top:1px solid #e5e7eb;font-size:11px;color:#9ca3af;}";
+  html += "@media print{body{padding:20px;}.section{break-inside:avoid;}}";
+  html += "</style>" + hd_c + bd_o;
+
+  html += "<div class=\"eyebrow\">The Case Room \u00B7 Virorah PMS</div>";
+  html += "<h1>Performance Case Action Plan</h1>";
+  html += "<div class=\"meta\">Generated " + date + "</div>";
+
+  html += "<div class=\"section probe\">";
+  html += "<div class=\"st\">PROBE \u00B7 Root Cause Diagnosis</div>";
+  html += "<div class=\"f\"><div class=\"fl\">Classification</div><div class=\"fv\">" + d.probe.classification + "</div></div>";
+  html += "<div class=\"f\"><div class=\"fl\">Diagnosis</div><div class=\"fv\">" + d.probe.diagnosis + "</div></div>";
+  if(d.probe.keyEvidence && d.probe.keyEvidence.length){
+    html += "<div class=\"f\"><div class=\"fl\">Key Evidence</div><div class=\"fv\">" + d.probe.keyEvidence.join(" \u00B7 ") + "</div></div>";
+  }
+  html += "</div>";
+
+  html += "<div class=\"section protocol\">";
+  html += "<div class=\"st\">PROTOCOL \u00B7 The Right Process</div>";
+  html += "<div class=\"f\"><div class=\"fl\">Recommended Process</div><div class=\"fv\">" + d.protocol.recommendedProcess + "</div></div>";
+  html += "<div class=\"f\"><div class=\"fl\">Rationale</div><div class=\"fv\">" + d.protocol.rationale + "</div></div>";
+  if(d.protocol.steps && d.protocol.steps.length){
+    var stepsHtml = "<ol style=\"margin:0;padding-left:20px;\">" + d.protocol.steps.map(function(s){
+      return "<li style=\"margin-bottom:10px;line-height:1.6;\"><strong>" + s.step + "</strong> <span style=\"color:#7c3aed;font-weight:600;\">(" + s.timeline + ")</span><br><span style=\"color:#4b5563;\">" + s.detail + "</span></li>";
+    }).join("") + "</ol>";
+    html += "<div class=\"f\"><div class=\"fl\">Steps</div><div class=\"fv\">" + stepsHtml + "</div></div>";
+  }
+  if(d.protocol.nonNegotiables && d.protocol.nonNegotiables.length){
+    html += "<div class=\"f\"><div class=\"fl\">Non-Negotiables</div><div class=\"fv\">" + d.protocol.nonNegotiables.join(" \u00B7 ") + "</div></div>";
+  }
+  if(d.protocol.humacityExposure){
+    html += "<div class=\"f\"><div class=\"fl\">Humacity Financial Exposure</div><div class=\"fv\"><span class=\"mono\">" + d.protocol.humacityExposure.figure + "</span><br>" + d.protocol.humacityExposure.basis + "</div></div>";
+  }
+  html += "</div>";
+
+  html += "<div class=\"section ledger\">";
+  html += "<div class=\"st\">LEDGER \u00B7 Documentation</div>";
+  html += "<div class=\"f\"><div class=\"fl\">What To Record</div><div class=\"fv\">" + d.ledger.whatToRecord + "</div></div>";
+  html += "<div class=\"f\"><div class=\"fl\">Tone</div><div class=\"fv\">" + d.ledger.tone + "</div></div>";
+  html += "<div class=\"f\"><div class=\"fl\">Draft Language</div><div class=\"fv\">" + d.ledger.draftLanguage + "</div></div>";
+  html += "</div>";
+
+  html += "<div class=\"section resolve\">";
+  html += "<div class=\"st\">RESOLVE \u00B7 The Conversation</div>";
+  html += "<div class=\"f\"><div class=\"fl\">Conversation Type</div><div class=\"fv\">" + d.resolve.conversationType + "</div></div>";
+  html += "<div class=\"f\"><div class=\"fl\">Opening</div><div class=\"fv\">" + d.resolve.opening + "</div></div>";
+  if(d.resolve.keyPoints && d.resolve.keyPoints.length){
+    html += "<div class=\"f\"><div class=\"fl\">Key Points</div><div class=\"fv\">" + d.resolve.keyPoints.join(" \u00B7 ") + "</div></div>";
+  }
+  if(d.resolve.avoidLanguage && d.resolve.avoidLanguage.length){
+    html += "<div class=\"f\"><div class=\"fl\">Language to Avoid</div><div class=\"fv\">" + d.resolve.avoidLanguage.join(" \u00B7 ") + "</div></div>";
+  }
+  html += "<div class=\"f\"><div class=\"fl\">Closing</div><div class=\"fv\">" + d.resolve.closing + "</div></div>";
+  html += "</div>";
+
+  html += "<div class=\"footer\">Virorah PMS Case Room \u00B7 For HR leadership use only. Validate recommendations against your organisation context before acting.</div>";
+  html += bd_c + tag_c;
+
+  var pw = window.open("", "_blank");
+  pw.document.write(html);
+  pw.document.close();
+  pw.focus();
+  setTimeout(function(){ pw.print(); }, 600);
+}
+
+document.getElementById("cr-submit-btn").addEventListener("click", runCompass);
+document.getElementById("cr-download-btn").addEventListener("click", downloadSummary);
+
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+.fcsb3-card { font-family:'DM Sans',sans-serif; background:#13111f; border:1px solid rgba(167,139,250,.22); border-radius:16px; padding:26px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.fcsb3-card * { box-sizing:border-box; }
+.fcsb3-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:#fbbf24; margin-bottom:8px; }
+.fcsb3-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; color:#f0eeff; line-height:1.4; max-width:480px; }
+.fcsb3-sub { font-size:13px; color:rgba(196,181,253,.55); margin-top:6px; line-height:1.6; max-width:480px; }
+.fcsb3-btn { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#080612; background:linear-gradient(135deg,#fbbf24,#a78bfa); padding:12px 22px; border-radius:100px; text-decoration:none; white-space:nowrap; }
+.fcsb3-btn:hover { opacity:.9; }
+@media(max-width:640px){ .fcsb3-card{ padding:22px 20px; } }
+</style>
+<div class="fcsb3-card">
+  <div>
+    <div class="fcsb3-eyebrow">You're Not the First</div>
+    <div class="fcsb3-title">Someone has navigated a situation close to yours before</div>
+    <div class="fcsb3-sub">22 documented FORGE case studies, real and applied, across the same conditions your plan just diagnosed. Worth a look before you act.</div>
+  </div>
+  <a class="fcsb3-btn" href="/pages/forge-case-studies.html">Explore Case Studies</a>
+</div>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

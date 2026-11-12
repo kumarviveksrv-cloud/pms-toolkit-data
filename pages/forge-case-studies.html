@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every FORGE condition has a real precedent.</title>
+  <meta name="description" content="22 case studies. Skunk Works, Pixar, SpaceX, ISRO. See exactly how every FORGE condition played out in a real org, before applying it to yours.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/forge-case-studies.html">
+  <meta property="og:title" content="Every FORGE condition has a real precedent.">
+  <meta property="og:description" content="22 case studies. Skunk Works, Pixar, SpaceX, ISRO. See exactly how every FORGE condition played out in a real org, before applying it to yours.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Forge Case Studies</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#fcs-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; border-radius:16px; overflow:hidden; }
+#fcs-root * { box-sizing:border-box; }
+#fcs-hero { padding:44px 44px 30px; background:linear-gradient(160deg,#080612 0%,#0f0820 60%,#080612 100%); border-bottom:1px solid rgba(139,92,246,.15); }
+.fcs-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.6); margin-bottom:14px; }
+.fcs-dot { width:6px; height:6px; border-radius:50%; background:#fbbf24; box-shadow:0 0 10px rgba(251,191,36,.8); }
+.fcs-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:800; letter-spacing:-1px; margin-bottom:12px; }
+.fcs-title span { background:linear-gradient(135deg,#fbbf24,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.fcs-sub { font-size:13.5px; color:rgba(196,181,253,.55); line-height:1.75; max-width:640px; margin-bottom:22px; }
+.fcs-filters { display:flex; gap:20px; flex-wrap:wrap; }
+.fcs-filter-group { display:flex; gap:6px; align-items:center; }
+.fcs-filter-label { font-size:10px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:rgba(196,181,253,.35); margin-right:4px; }
+.fcs-chip { padding:6px 14px; border-radius:100px; font-size:11.5px; font-weight:700; background:rgba(255,255,255,.03); border:1px solid rgba(139,92,246,.18); color:rgba(196,181,253,.6); cursor:pointer; transition:all .2s; font-family:'Space Grotesk',sans-serif; }
+.fcs-chip:hover { border-color:rgba(139,92,246,.4); }
+.fcs-chip.active { background:linear-gradient(135deg,#f59e0b,#fbbf24); color:#080612; border-color:transparent; }
+
+#fcs-content { padding:28px 44px 44px; }
+@media(max-width:768px){ #fcs-hero{padding:28px 22px 22px;} #fcs-content{padding:20px 22px 32px;} }
+
+.fcs-count { font-size:12px; color:rgba(196,181,253,.4); margin-bottom:16px; font-family:'DM Mono',monospace; }
+.fcs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+.fcs-card { background:rgba(255,255,255,.025); border:1px solid rgba(139,92,246,.15); border-radius:14px; padding:20px; cursor:pointer; transition:all .2s; display:flex; flex-direction:column; }
+.fcs-card:hover { transform:translateY(-3px); border-color:rgba(139,92,246,.4); box-shadow:0 12px 32px rgba(139,92,246,.12); }
+.fcs-card-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+.fcs-tag { font-size:9px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+.fcs-tag.track-diag { background:rgba(52,211,153,.12); color:#34d399; border:1px solid rgba(52,211,153,.28); }
+.fcs-tag.track-design { background:rgba(251,191,36,.12); color:#fbbf24; border:1px solid rgba(251,191,36,.28); }
+.fcs-tag.type-found { background:rgba(96,165,250,.12); color:#60a5fa; border:1px solid rgba(96,165,250,.28); }
+.fcs-tag.type-applied { background:rgba(244,114,182,.12); color:#f472b6; border:1px solid rgba(244,114,182,.28); }
+.fcs-card-condition { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+.fcs-card-title { font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:#f0eeff; line-height:1.4; margin-bottom:10px; flex:1; }
+.fcs-card-foot { display:flex; align-items:center; justify-content:space-between; font-size:11px; color:rgba(196,181,253,.4); margin-top:auto; }
+.fcs-card-read { color:#a78bfa; font-weight:700; }
+
+/* MODAL */
+#fcs-modal-backdrop { position:fixed; inset:0; z-index:99998; background:rgba(5,4,16,.85); backdrop-filter:blur(6px); display:none; align-items:flex-start; justify-content:center; padding:5vh 20px; overflow-y:auto; }
+#fcs-modal-backdrop.active { display:flex; }
+#fcs-modal { width:min(720px,92vw); background:#0d0b1e; border:1px solid rgba(139,92,246,.3); border-radius:18px; box-shadow:0 24px 72px rgba(0,0,0,.6); margin-bottom:5vh; }
+.fcs-modal-head { padding:28px 32px 20px; border-bottom:1px solid rgba(139,92,246,.15); position:relative; }
+.fcs-modal-close { position:absolute; top:24px; right:24px; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.06); border:none; cursor:pointer; color:rgba(196,181,253,.6); font-size:13px; display:flex; align-items:center; justify-content:center; }
+.fcs-modal-close:hover { background:rgba(255,255,255,.12); color:#fff; }
+.fcs-modal-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:800; color:#fff; line-height:1.3; margin:14px 0 8px; padding-right:40px; }
+.fcs-modal-meta { font-size:11px; color:rgba(196,181,253,.4); font-family:'DM Mono',monospace; letter-spacing:.5px; }
+/* STORY MODE */
+.fcs-progress { display:flex; gap:5px; padding:16px 32px 0; }
+.fcs-progress-seg { flex:1; height:3px; border-radius:2px; background:rgba(139,92,246,.18); cursor:pointer; transition:background .2s; }
+.fcs-progress-seg:hover { background:rgba(139,92,246,.32); }
+.fcs-progress-seg.active { background:linear-gradient(90deg,#f59e0b,#fbbf24); }
+.fcs-progress-seg.done { background:rgba(167,139,250,.4); }
+
+.fcs-story-wrap { position:relative; display:flex; align-items:stretch; }
+.fcs-story-arrow { flex:0 0 auto; width:44px; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:rgba(196,181,253,.35); font-size:18px; transition:color .2s; }
+.fcs-story-arrow:hover { color:#fbbf24; }
+.fcs-story-arrow:disabled { opacity:.2; cursor:default; }
+.fcs-story-arrow:disabled:hover { color:rgba(196,181,253,.35); }
+@media(max-width:768px){ .fcs-story-arrow{ display:none; } }
+
+.fcs-story-stage { flex:1; padding:26px 8px 32px; min-height:260px; touch-action:pan-y; }
+@media(min-width:769px){ .fcs-story-stage{ padding:26px 20px 32px; } }
+.fcs-story-text-wrap { opacity:1; transition:opacity .15s ease; }
+.fcs-story-counter { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; color:rgba(196,181,253,.35); margin-bottom:10px; }
+.fcs-story-label { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#a78bfa; margin-bottom:12px; }
+.fcs-story-label.lesson { color:#fbbf24; }
+.fcs-story-text { font-size:15px; color:rgba(196,181,253,.9); line-height:1.85; }
+.fcs-story-lesson-box { background:rgba(251,191,36,.06); border:1px solid rgba(251,191,36,.2); border-radius:12px; padding:20px 22px; }
+.fcs-story-sources { font-size:11.5px; color:rgba(196,181,253,.4); line-height:1.7; }
+</style>
+
+<div id="fcs-root">
+  <div id="fcs-hero">
+    <div class="fcs-eyebrow"><div class="fcs-dot"></div>FORGE Case Study Library</div>
+    <div class="fcs-title">22 real conditions. <span>22 real outcomes.</span></div>
+    <div class="fcs-sub">Every FORGE condition paired with two case studies: one grounded in real, documented history, one a realistic scenario from an actual team. Not theory, evidence.</div>
+    <div class="fcs-filters">
+      <div class="fcs-filter-group">
+        <span class="fcs-filter-label">Track</span>
+        <button class="fcs-chip active" data-filter-track="all">All</button>
+        <button class="fcs-chip" data-filter-track="diagnostic">Diagnostic</button>
+        <button class="fcs-chip" data-filter-track="design">Design</button>
+      </div>
+      <div class="fcs-filter-group">
+        <span class="fcs-filter-label">Type</span>
+        <button class="fcs-chip active" data-filter-type="all">All</button>
+        <button class="fcs-chip" data-filter-type="foundational">Foundational</button>
+        <button class="fcs-chip" data-filter-type="applied">Applied</button>
+      </div>
+    </div>
+  </div>
+  <div id="fcs-content">
+    <div class="fcs-count" id="fcs-count"></div>
+    <div class="fcs-grid" id="fcs-grid"></div>
+  </div>
+</div>
+
+<div id="fcs-modal-backdrop">
+  <div id="fcs-modal"></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+var trackFilter = "all";
+var typeFilter = "all";
+
+var CS = [
+  {
+    id:"direction-clarity-foundational", track:"diagnostic", condition:"Direction Clarity", type:"foundational", region:"India, 2013-14",
+    title:"ISRO's Mangalyaan: The Cheapest Interplanetary Mission Ever Flown, by Refusing to Chase Everything at Once",
+    starting:"In 2012, when the Indian government approved ISRO's Mars Orbiter Mission, the agency was working with roughly a tenth of NASA's annual budget and had never attempted an interplanetary mission before. Other national space programmes with far larger budgets, China's and Russia's among them, had recently failed at the same goal. The obvious institutional temptation was to build a mission broad enough to prove India's capability across every dimension at once.",
+    turning:"ISRO's mission planners made the opposite call. Rather than building new heavy-lift capability or a larger spacecraft bus, they committed to reusing the architecture already proven on the Chandrayaan-1 lunar mission, and to a scientific payload deliberately kept light, roughly 15 kilograms, a fraction of what NASA's comparable MAVEN mission carried. The mission's goal was narrowed to one specific, achievable target: demonstrate that India could design, launch, and operate an autonomous spacecraft through the full sequence of Earth departure, deep-space cruise, and Mars orbit insertion.",
+    path:"Every subsequent design trade-off flowed from that narrow, explicit goal. Where a broader mission would have needed a larger, more powerful rocket, ISRO's team accepted a smaller launch vehicle and instead used a longer, more complex trajectory involving multiple Earth orbits before departure. The science payload was limited to instruments that served the core objective. Every team member, across mission design, propulsion, and operations, was working from the same unambiguous definition of what winning looked like.",
+    outcome:"Mangalyaan entered Mars orbit on 24 September 2014, making India the first country in the world to reach Mars on its very first attempt, and the fourth space agency ever to do so. The total mission cost was approximately 74 million US dollars, roughly a seventh of what NASA's comparable MAVEN mission cost. The mission became widely cited, including in later peer-reviewed analysis, as a model of what a small, resource-constrained team can achieve specifically because the scope was disciplined rather than expansive.",
+    lesson:"Direction Clarity isn't about writing a better vision statement. It's about every person on the team being able to answer, without hesitation, what winning looks like for their specific piece of the work this quarter. ISRO's team could answer that question identically across mission design, propulsion, and operations. Most organisations can't, not because their people are less capable, but because nobody ever narrowed the goal enough for the answer to be the same for everyone.",
+    sources:"Sourced from ISRO's public mission archives, contemporaneous reporting on the Mars Orbiter Mission's cost and design, and a 2026 peer-reviewed PNAS analysis of frugal space innovation practices."
+  },
+  {
+    id:"direction-clarity-applied", track:"diagnostic", condition:"Direction Clarity", type:"applied", region:"India, composite scenario",
+    title:"The Fintech Where \"Growth\" Meant Five Different Things to Five Teams",
+    starting:"A Bangalore-based fintech, roughly 220 employees, had grown quickly enough that its founding team's original, shared, intuitive understanding of what the company was trying to achieve had quietly fragmented. Every team could confidently state that their goal was growth, but when the head of people operations asked five department heads privately what growth actually meant for their team that quarter, she got five genuinely different answers.",
+    turning:"The fragmentation became visible and costly during a single resourcing decision: engineering, marketing, and the newly formed international expansion team all separately claimed the next quarter's hiring budget as essential to the company's growth priority, each with a genuinely reasonable case, none aware the others were making the identical claim. The CEO, forced to arbitrate a conflict that shouldn't have needed arbitrating, realised the actual problem wasn't the budget.",
+    path:"Rather than writing a new company-wide vision statement, leadership instead named one specific, narrow definition of growth for the coming two quarters, retention among existing high-value customers, and explicitly deprioritised the other four candidate definitions for that period, in writing, distributed to every team. Every subsequent resourcing and roadmap decision was tested against that one narrow definition.",
+    outcome:"The next two quarterly resourcing conversations took a fraction of the time the previous conflict had taken, because there was no longer genuine ambiguity about which competing claim served the actual priority. Customer retention, the metric the company had explicitly chosen to focus on, improved measurably over the two quarters.",
+    lesson:"Direction Clarity fails silently in most organisations, not through disagreement, but through everyone confidently pursuing a different, equally reasonable interpretation of a vague shared word like growth. The fix isn't a better vision statement, it's naming one specific, narrow priority and explicitly saying no to the other reasonable candidates.",
+    sources:null
+  },
+  {
+    id:"leadership-density-foundational", track:"diagnostic", condition:"Leadership Density", type:"foundational", region:"United States, 2010s-20s",
+    title:"\"Everyone Is a Systems Engineer, or No One Is\": SpaceX and the Collapse of Design-Versus-Ownership",
+    starting:"Traditional aerospace and defense contractors typically separate the person who designs a system from the person who owns its requirements. A systems engineering group defines what a component must do; a design engineering group builds it; a separate review board approves whether it meets the requirement. Each layer adds time, and distributes ownership so widely that no single engineer is fully accountable for whether a design decision is correct.",
+    turning:"As SpaceX scaled from Falcon 1 to Falcon 9 and began developing Starship, the company deliberately rejected this separation. The internal principle, attributed across multiple engineering accounts of the company's culture, was blunt: everyone is a systems engineer, or no one is.",
+    path:"Job titles and team structures at SpaceX collapsed the traditional systems-engineer-versus-design-engineer distinction into a single role wherever practical. Engineers who wanted a requirement changed didn't submit a request to a separate review board, they made the case directly, and often had the authority to make the change themselves if the justification held.",
+    outcome:"SpaceX developed the Falcon 9, now the most frequently launched orbital rocket in the world, in roughly four years, substantially faster than comparable government-led programmes with far larger budgets. Multiple industry analyses, including NASA's own documented comparisons, credit the collapsed ownership structure directly as a driver of the pace difference.",
+    lesson:"Leadership Density isn't only about having strong managers. It's about how many layers a decision has to travel through before someone with real ownership can act on it. SpaceX's answer wasn't better leaders, it was fewer layers between the person with the knowledge and the person with the authority.",
+    sources:"Sourced from engineering culture accounts of SpaceX across multiple industry publications and NASA Commercial Crew Program comparative reports."
+  },
+  {
+    id:"leadership-density-applied", track:"diagnostic", condition:"Leadership Density", type:"applied", region:"UAE, composite scenario",
+    title:"The Dubai Logistics Firm With a Brilliant CEO and a Hollow Middle",
+    starting:"A regional logistics and freight-forwarding company based in Dubai, roughly 600 employees across five countries, had built its early success almost entirely around its founder-CEO's personal relationships and instinct for the market. Regional managers existed on the org chart but functioned largely as message-passers, relaying the CEO's decisions downward rather than making decisions of their own.",
+    turning:"The company's expansion into a sixth country stalled badly, not because the opportunity was poor, but because the CEO, stretched across six markets, couldn't personally make every decision fast enough anymore. A major client contract was lost specifically because a regional manager, faced with a pricing question the CEO hadn't pre-approved, waited four days for an answer while a competitor closed the deal in one.",
+    path:"The company's new Chief People Officer mapped every decision that had required the CEO's direct sign-off in the previous quarter, and found roughly 70 percent were genuinely routine. Those decisions were explicitly delegated to regional managers, with clear boundaries on what still required escalation, and the managers were then evaluated, for the first time, on decisions made rather than decisions relayed.",
+    outcome:"Within two quarters, average decision turnaround time for the delegated categories dropped from days to hours. The CEO, freed from routine sign-offs, was able to focus on the market entry that had stalled, which subsequently closed successfully. Two regional managers previously seen as merely competent were identified, once given real authority, as genuinely strong leaders.",
+    lesson:"An organisation can look leadership-dense on the org chart and be leadership-thin in practice, if every real decision still funnels through one person. The diagnostic isn't whether you have managers, it's how many decisions in a typical week actually get made below the top, versus merely relayed from it.",
+    sources:null
+  },
+  {
+    id:"performance-differentiation-foundational", track:"diagnostic", condition:"Performance Differentiation", type:"foundational", region:"UAE, 2020-21",
+    title:"Trusting Engineers Averaging Age 27: How the UAE Differentiated by Capability, Not Tenure",
+    starting:"When the UAE announced its intention to reach Mars by 2021, it had no prior interplanetary space programme and a space agency still building its most basic institutional experience. The conventional approach would have been to lead the mission with the most senior engineers available, following the traditional logic that seniority and reliability go together.",
+    turning:"The UAE's leadership made the explicit, genuinely risky decision to build the mission around a young team, ultimately averaging 27 years old, and to give them real ownership of the mission's technical decisions. The mandate, repeated by mission leadership, was direct: build, don't buy.",
+    path:"Roughly 200 Emirati engineers, most under 35, were given direct technical ownership of specific subsystems, working alongside experienced partners at US research institutions specifically as a capability-transfer arrangement. Differentiation here didn't mean higher pay for tenure, it meant real decision authority handed to whoever demonstrated capability for a specific subsystem, regardless of age.",
+    outcome:"The Hope Probe successfully entered Mars orbit on 9 February 2021, making the UAE the fifth entity in the world, and the first Arab nation, to reach Mars, one of only a small number of countries to succeed on a first attempt. Mission leadership repeatedly credited the trust placed in the young engineering team as central to the outcome.",
+    lesson:"Performance Differentiation is usually framed as pay bands and promotion ladders, but its more fundamental form is decision authority. The UAE differentiated by giving real ownership to whoever had earned the specific capability, regardless of tenure, rather than defaulting to seniority as a proxy for trust.",
+    sources:"Sourced from UAE Space Agency and Mohammed Bin Rashid Space Centre public statements, and contemporaneous reporting on the Emirates Mars Mission team."
+  },
+  {
+    id:"performance-differentiation-applied", track:"diagnostic", condition:"Performance Differentiation", type:"applied", region:"United States, composite scenario",
+    title:"The SaaS Scale-Up Where Flat Rewards Quietly Pushed the Best People Out",
+    starting:"A Series B enterprise SaaS company in Austin, roughly 180 employees, had built its early culture around a well-intentioned principle: everyone on a team gets treated equally, merit recognised informally through visibility rather than differentiated pay. This worked with a small founding team. Past 150 people, it stopped working, though nobody could initially explain why attrition among the strongest engineers had crept upward.",
+    turning:"An exit interview with a senior engineer, one the CTO considered among the best three people on the team, surfaced the actual problem. She wasn't leaving for more money elsewhere, though the new offer did pay more. She was leaving because, in her words to HR, being excellent and being adequate got treated exactly the same, and she got tired of that.",
+    path:"HR introduced explicit performance differentiation for the first time, not as a punitive ranking system but as a genuine reward gap: top-quartile performers received meaningfully larger increments, faster access to high-visibility projects, and were explicitly named as such in calibration conversations. The rollout was deliberately transparent about why the change was happening and what the criteria were.",
+    outcome:"In the two performance cycles following the change, voluntary attrition among top-quartile performers dropped by more than half compared to the prior year. Several employees previously rated as merely solid were identified, once real differentiation existed, as genuinely exceptional performers who had never had a reason to stand out under the flat system.",
+    lesson:"Flat reward systems feel fair in the room and expensive outside it, in the specific form of your best people quietly deciding elsewhere is where excellence gets recognised. Performance Differentiation isn't about creating hierarchy for its own sake, it's making sure the gap between excellent and adequate is visible enough that excellent people have a reason to stay.",
+    sources:null
+  },
+  {
+    id:"feedback-velocity-foundational", track:"diagnostic", condition:"Feedback Velocity", type:"foundational", region:"United States/Germany, 2020",
+    title:"Project Lightspeed: The Twice-Weekly Meeting That Collapsed Months of Pharma Approval Into Days",
+    starting:"Traditional pharmaceutical development runs through a strictly sequential process, discovery, preclinical testing, then each clinical trial phase in turn, decision-making distributed across numerous committees and layered sign-offs. A typical vaccine has historically taken ten to fifteen years, market to research. When COVID-19 emerged as a global emergency in early 2020, that timeline was incompatible with the urgency of the moment.",
+    turning:"Pfizer's CEO made a specific structural change rather than simply asking teams to work faster: he collapsed the normal chain of committee approvals into a single meeting, held twice weekly, with every relevant decision-maker present at the same time. The reasoning was that innovation and bureaucracy do not coexist, and the fastest way to eliminate delay was to remove the distance between a decision being needed and the person able to make it.",
+    path:"Rather than running each phase of development sequentially, teams ran multiple stages in parallel wherever the science allowed it, manufacturing scale-up began before clinical trials had fully concluded, a decision that in normal practice would only follow full trial data review by a separate committee. A question raised on a Tuesday didn't wait for a quarterly review, it got a decision within days, sometimes hours.",
+    outcome:"The Pfizer-BioNTech vaccine went from initial development to emergency authorisation in under a year, compared to the historical decade-plus timeline, without skipping the underlying safety and efficacy testing itself. The company's own subsequent case studies used the same collapsed-decision-meeting structure again for its antiviral treatment programme.",
+    lesson:"Feedback Velocity isn't primarily about how often you run reviews, it's about how far a piece of information has to travel before it reaches someone who can act on it. Pfizer didn't add more meetings, it removed the distance between the meeting and the decision by putting every decision-maker in the same room, twice a week, instead of scattered across a sequence of separate approvals.",
+    sources:"Sourced from Pfizer's own public accounts of Project Lightspeed and contemporaneous reporting on the Pfizer-BioNTech vaccine development timeline."
+  },
+  {
+    id:"feedback-velocity-applied", track:"diagnostic", condition:"Feedback Velocity", type:"applied", region:"India, composite scenario",
+    title:"The Firm Where Annual-Only Reviews Let a Problem Compound for a Full Year",
+    starting:"A mid-sized precision components manufacturer outside Pune, roughly 400 employees, ran one annual review cycle every March, with ratings that determined the entire year's increment and bonus decisions in one sitting. A shift supervisor on the assembly floor had, by his own manager's later account, been struggling with a specific quality-control process for the better part of ten months, and nobody with the authority to intervene knew, because the only formal upward channel was the annual review.",
+    turning:"The problem surfaced through a defect recall, a batch of components that failed a downstream quality audit, traced back to the same process the supervisor had been quietly struggling with for most of the year. The plant head's question was blunt: how long had this been happening, and why did nobody know.",
+    path:"The HR lead introduced a monthly floor-level check-in between shift supervisors and their manager, kept short and deliberately decoupled from the annual rating process, so supervisors could surface a struggling process without it reading as a confession that would hurt their review. A separate, faster escalation path was created specifically for quality-relevant issues.",
+    outcome:"Within the first two quarters of the new cadence, three separate process issues were surfaced and resolved within weeks rather than months. The original supervisor, once the problem was addressed properly instead of hidden, was promoted the following year.",
+    lesson:"Feedback Velocity isn't measured by how thorough your review process is, it's measured by how long a known problem sits unaddressed because the only channel for it to travel is slow. An annual cycle isn't a feedback system, it's a once-a-year audit.",
+    sources:null
+  },
+  {
+    id:"human-capital-return-foundational", track:"diagnostic", condition:"Human Capital Return", type:"foundational", region:"Australia, 2002-present",
+    title:"Atlassian's Bet on Self-Service Over a Sales Team, and What It Forced the Product to Become",
+    starting:"When Mike Cannon-Brookes and Scott Farquhar founded Atlassian in Sydney in 2002, bootstrapped on a credit card, the conventional path for enterprise software aimed at the large US market was to invest heavily in a traditional sales organisation, since B2B software was assumed to require relationship-driven selling.",
+    turning:"The founders made a deliberate, genuinely risky choice to invest instead in a self-service purchasing model, letting the product itself do the work of convincing a customer to buy. This was a bet that if the product had to sell itself without a salesperson in the room, the company would be structurally forced to keep the product excellent, since there would be no sales relationship to paper over a mediocre one.",
+    path:"Every dollar that would otherwise have funded a sales headcount instead funded product development and support quality. The founders' own principle, stated in retrospective interviews, was explicit: they chose a model that removed the safety net a sales team would otherwise provide.",
+    outcome:"Atlassian grew to serve over 300,000 organisations worldwide and became one of the most successful software companies to emerge from Australia, reaching a market capitalisation in the tens of billions of dollars, having built almost its entire early growth on this self-service model rather than a traditional enterprise sales force.",
+    lesson:"Human Capital Return isn't only about calculating ROI on a specific hire, it's about where an organisation chooses to concentrate its people investment at all. Atlassian's decision to not build a sales team was really a forcing function that made product and people investment the thing the business had to get right.",
+    sources:"Sourced from Atlassian's own published company history and founder retrospectives, including their 20-year anniversary account of early strategic decisions."
+  },
+  {
+    id:"human-capital-return-applied", track:"diagnostic", condition:"Human Capital Return", type:"applied", region:"United Kingdom, composite scenario",
+    title:"The Consultancy That Never Calculated What a Bad Senior Hire Actually Cost",
+    starting:"A management consultancy in London, around 90 consultants, had a well-regarded but informal hiring process for senior roles. Nobody in the firm, including finance, had ever formally calculated what it cost the business when a senior hire didn't work out, the assumption being that a bad hire was simply an unfortunate but rare cost of doing business.",
+    turning:"A partner-level hire, brought in with high expectations, left after fourteen months having generated almost no new client revenue and having driven two strong mid-level consultants to leave during his tenure, both citing his management style directly. The managing partner asked finance what the whole episode had actually cost the firm.",
+    path:"The answer, once properly calculated including recruitment fees, compensation, replacement costs, and lost client opportunity, was large enough to fundamentally change how the firm approached senior hiring. HR introduced structured reference checks targeting management style specifically, and built a simple tool estimating the projected cost of a bad senior hire before an offer was extended.",
+    outcome:"In the eighteen months following the change, the firm made three fewer senior hiring mistakes than its own historical average would have predicted, and the finance team began reporting people investment ROI as a standing quarterly metric for the first time.",
+    lesson:"Human Capital Return doesn't require sophisticated modelling to start mattering, it requires calculating, once, what a bad decision actually cost, and making that number visible before the next similar decision gets made.",
+    sources:null
+  },
+  {
+    id:"stakes-foundational", track:"design", condition:"Stakes", type:"foundational", region:"United States, 1943",
+    title:"The 150-Day Deadline That Was Never Going to Move",
+    starting:"In 1943, with Nazi Germany fielding the first operational jet fighters, the US military faced a genuine and immediate strategic problem: American piston-engine fighters had no answer to a jet-powered adversary, and the gap wasn't theoretical, it was actively threatening air superiority in an active war.",
+    turning:"Lockheed's chief engineer, Clarence \"Kelly\" Johnson, was given roughly 150 days to design, build, and deliver a working jet fighter prototype. This wasn't an internally set stretch goal, it was a real deadline attached to a real, externally imposed consequence.",
+    path:"Johnson assembled a small, hand-picked team, deliberately kept separate from Lockheed's normal bureaucratic processes, operating with minimal formal oversight, under an operating discipline that prioritised speed and direct engineer authority over the layered sign-offs normal aircraft development involved.",
+    outcome:"The team delivered the XP-80 Shooting Star prototype in 143 days, 37 days ahead of even the aggressive deadline, becoming America's first operational jet fighter. The division born from this project, later known as Skunk Works, went on to produce the U-2 and the SR-71 Blackbird under the same small-team, high-autonomy philosophy.",
+    lesson:"Stakes work as a performance condition specifically because they're real, not because they're stated forcefully. A 150-day deadline mattered because a Nazi jet fighter threat was real and immediate, not because Kelly Johnson announced it with urgency. You cannot manufacture the effect of genuine stakes through language alone.",
+    sources:"Sourced from Lockheed Martin's own public accounts of the Skunk Works division's founding and the XP-80 development timeline."
+  },
+  {
+    id:"stakes-applied", track:"design", condition:"Stakes", type:"applied", region:"Singapore, composite scenario",
+    title:"The Fintech That Tried to Manufacture Urgency, and Watched the Team See Through It Immediately",
+    starting:"A Singapore-based payments fintech, roughly 110 employees, was preparing to launch a new merchant onboarding product. Leadership, wanting the launch to feel high-stakes and galvanising the way founders often describe their best sprints, announced an aggressive six-week deadline framed internally as make-or-break for the company's next funding round.",
+    turning:"Within days, several engineers had quietly worked out that the actual funding round timeline had nothing to do with this specific launch date, the round was already substantially committed regardless of the product's ship date. The deadline wasn't real, it was a motivational device, and once one senior engineer said so openly in a team channel, the manufactured urgency collapsed immediately. Velocity on the project, instead of increasing, visibly dropped over the following two weeks.",
+    path:"The head of product, realising the manufactured deadline had backfired, went back to the team and named an actual, verifiable stake instead: the company's single largest existing merchant client had explicitly said they would evaluate a competitor's product if the new onboarding flow wasn't live before their own quarterly planning cycle, a real date with a real, named consequence the team could verify themselves.",
+    outcome:"Engagement and velocity recovered within the following sprint once the real stake was named, according to the team's own sprint retrospectives, and the product shipped nine days after the original manufactured deadline, but ahead of the real client's planning cycle, which is the date that had actually mattered.",
+    lesson:"Stakes only work as a performance condition when they are real and verifiable, not when they are announced with urgency. This team didn't need convincing that the deadline mattered, they needed a deadline that actually did, and they could tell the difference within days of being given a false one.",
+    sources:null
+  },
+  {
+    id:"ownership-fusion-foundational", track:"design", condition:"Ownership Fusion", type:"foundational", region:"UAE, 2014-21",
+    title:"Build and Not to Buy: How the UAE Forced Real Capability Instead of Purchased Competence",
+    starting:"When the UAE committed to reaching Mars by 2021, the fastest, lowest-risk path, by conventional logic, would have been to purchase a largely completed spacecraft or contract the mission's core engineering out to an established space power with decades of relevant experience.",
+    turning:"UAE leadership explicitly rejected that path, issuing a direct mandate, repeated publicly by mission officials, to build and not to buy, meaning the country's own engineers, most in their twenties, would own the mission's actual technical decisions, with international partners serving in a genuine capability-transfer role.",
+    path:"Emirati engineers were embedded for years at a US research laboratory specifically to build real, transferable expertise, and were given ownership, not oversight, of specific spacecraft subsystems. The Emirati team made the actual engineering trade-off decisions, with the US partner providing expertise and review, not the reverse arrangement.",
+    outcome:"The Hope Probe, entirely designed and operated with Emirati engineers holding genuine technical ownership, successfully reached Mars orbit in 2021 on its first attempt. The stated long-term goal, since realised in subsequent UAE space initiatives, was that the country would emerge with a genuine, durable space engineering capability of its own.",
+    lesson:"Ownership Fusion isn't just about collapsing decision layers within an existing team, it's about the harder choice of building capability in-house even when buying it would be faster and safer in the short term. The UAE could have had a faster Mars mission by purchasing one, it chose the harder path because owning the capability mattered more.",
+    sources:"Sourced from UAE Space Agency and Mohammed Bin Rashid Space Centre public statements, and Laboratory for Atmospheric and Space Physics collaboration accounts."
+  },
+  {
+    id:"ownership-fusion-applied", track:"design", condition:"Ownership Fusion", type:"applied", region:"United States, composite scenario",
+    title:"The Nurse-Turned-Product-Lead Who Cut Four Sign-Offs Down to One",
+    starting:"A healthtech startup in Boston, building clinical workflow software, had a product decision process that required sign-off from product, engineering, a clinical advisor, and compliance, in sequence, for any feature change affecting clinical workflow. Even minor, clearly beneficial changes took four to six weeks to approve.",
+    turning:"A product lead who had spent eight years as a practising nurse before joining the company, and who understood both the clinical and technical sides of most proposed changes better than any single reviewer in the existing chain, proposed a structural change after watching a genuinely urgent patient-safety fix sit in the approval queue for three weeks.",
+    path:"For a defined category of changes that a single qualified person could reasonably evaluate, the four-stage sequential review was replaced with direct ownership: the product lead, given explicit authority by leadership, made the call herself, informed by direct consultation with whichever function was actually relevant. Higher-risk categories kept the full review, deliberately.",
+    outcome:"Average approval time for the redefined category dropped from four to six weeks to under a week, and a subsequent instance of a similar patient-safety issue was resolved in four days rather than three weeks.",
+    lesson:"Ownership Fusion doesn't mean removing all review, it means being honest about which decisions genuinely need multiple sign-offs and which ones are being slowed down by a process built for a different, higher-risk category of decision.",
+    sources:null
+  },
+  {
+    id:"candor-architecture-foundational", track:"design", condition:"Candor Architecture", type:"foundational", region:"United States, 1995-present",
+    title:"The Pixar Braintrust: Why Steve Jobs Was Never Allowed in the Room",
+    starting:"In the years before Pixar's first Braintrust meetings, animation studios operated the way most creative organisations do: critique flowed downward from whoever held the most authority in the room. A small group of directors found that when they reviewed each other's work informally, without a studio executive present, the feedback was sharper and more useful than any formal review.",
+    turning:"Ed Catmull, Pixar's co-founder, noticed the pattern and formalised it into what became known as the Braintrust. The genuinely consequential decision came next: Catmull made the explicit call that Steve Jobs, arguably the single most powerful person at the company, would never attend Braintrust sessions.",
+    path:"The Braintrust had no formal authority over a director's decisions, its role was advisory only. Critique was aimed structurally at the work, never the person, captured in the internal principle that a director is not the same as their idea. The explicit exclusion of positional authority was treated as a structural rule of the room, not a courtesy.",
+    outcome:"The Braintrust became, by Catmull's own account, Pixar's primary mechanism for turning early films with genuine weaknesses into the films eventually released. Toy Story 2 was substantially reworked after Braintrust sessions surfaced fundamental story problems late in production, a costly decision the studio made because the critique was trusted.",
+    lesson:"Candor doesn't fail because people are dishonest, it fails because authority in the room makes honesty expensive. The Braintrust worked because Catmull removed the single most expensive presence, not because he asked people to be braver.",
+    sources:"Sourced from Ed Catmull's published accounts of Pixar's creative process, including Creativity, Inc., and corroborating interviews on the Braintrust's structure and history."
+  },
+  {
+    id:"candor-architecture-applied", track:"design", condition:"Candor Architecture", type:"applied", region:"India, composite scenario",
+    title:"The Family Business Where the Founder's Presence Quietly Ended Real Feedback",
+    starting:"A third-generation manufacturing business in Ahmedabad, roughly 300 employees, held a weekly leadership review chaired by the founder-chairman, now in his seventies. Once the chairman entered the room, the tenor of every discussion shifted: proposals debated vigorously beforehand were presented to him without dissent.",
+    turning:"The chairman's son, being groomed to eventually lead the company, noticed the pattern during a strategic decision about entering a new product category, a decision he privately believed was a mistake. Despite two senior leaders having voiced serious concerns to him privately beforehand, nobody raised them once the chairman was in the room.",
+    path:"The son proposed a separate, smaller pre-review session, held without the chairman present, where the leadership team would debate a decision fully and honestly before it reached the chairman's meeting. The chairman would then receive the team's genuine, debated recommendation, retaining full authority to override it.",
+    outcome:"Within a year, two significant decisions were substantively revised after the pre-review session surfaced concerns that would previously have gone unspoken. The chairman himself became an active supporter of the new structure once he saw it producing better-reasoned recommendations.",
+    lesson:"Candor Architecture doesn't require removing the person in authority from every conversation, sometimes it means creating a room they simply aren't in yet, where the honest version of the discussion can happen first.",
+    sources:null
+  },
+  {
+    id:"risk-segregation-foundational", track:"design", condition:"Risk Segregation", type:"foundational", region:"United States, 2020s",
+    title:"Why SpaceX Lets Starship Explode But Gives Dragon the Widest Safety Margins in the Industry",
+    starting:"Most engineering organisations apply a roughly uniform standard of risk tolerance across all of their work: mistakes are mistakes, and the goal is to minimise them everywhere, equally. This sounds prudent and is, in practice, a significant constraint on innovation.",
+    turning:"SpaceX's development philosophy for Starship made an explicit, unusual choice: early prototypes would be built cheaply, tested aggressively, and allowed to fail, sometimes spectacularly, specifically because each failure generated real flight data no ground simulation could replicate.",
+    path:"The same company applied an entirely different standard to Dragon, which carries human astronauts. Dragon's development carries far larger safety margins and none of the accept-visible-failure philosophy governing Starship prototypes. The two programmes operate under genuinely different risk tolerances because the company made an explicit, named distinction between where failure is cheap and where it is never acceptable.",
+    outcome:"Starship's early test flights, several ending in the vehicle's destruction, generated engineering data credited with materially accelerating the programme's development, while Dragon has maintained a strong human-rated safety record under its separately, deliberately more conservative standard.",
+    lesson:"Risk Segregation means naming, explicitly, where boldness is safe and where it genuinely isn't, rather than treating every mistake as equally weighted. An organisation with uniform risk tolerance everywhere usually ends up too cautious where speed matters and not careful enough where it matters most.",
+    sources:"Sourced from SpaceX's own technical retrospectives on Starship testing and public comparisons between Starship and Dragon development philosophies."
+  },
+  {
+    id:"risk-segregation-applied", track:"design", condition:"Risk Segregation", type:"applied", region:"UAE, composite scenario",
+    title:"The Fintech That Punished a Typo and a Compliance Breach With Equal Severity",
+    starting:"A digital payments startup in Dubai, around 70 employees, had a single, uniform incident-review process: any mistake, regardless of type or consequence, went through the same formal review and the same manager conversation. The intention was consistency and fairness.",
+    turning:"A junior engineer who had shipped a copy error in a marketing email went through the identical formal incident review as a separate engineer who had shipped a change briefly exposing a compliance-relevant data field. She later told her manager she had started triple-checking even low-stakes work out of fear of the review process.",
+    path:"Engineering and compliance leads created an explicit two-tier system: a safe to fail category covering marketing copy and internal tooling, where mistakes were discussed briefly without formal review, and a zero tolerance category covering customer funds and compliance, which retained the full rigorous review.",
+    outcome:"Shipping velocity on lower-stakes work increased measurably, and the number of near-miss compliance issues caught before reaching production also increased, because the compliance-relevant review, no longer diluted by trivial cases, received more careful attention.",
+    lesson:"Treating all mistakes as equally serious doesn't make an organisation safer, it makes people afraid to move quickly anywhere. Risk Segregation isn't about lowering standards, it's being honest that a typo and a compliance breach are not the same category of problem.",
+    sources:null
+  },
+  {
+    id:"signature-foundational", track:"design", condition:"Signature", type:"foundational", region:"United States, 1983-84",
+    title:"The Signatures Cast Inside Every Original Macintosh, Meant for No One to Ever See",
+    starting:"By 1982, the team building Apple's original Macintosh had been through years of internal politics, competing with the company's larger, better-resourced Lisa division, operating with the self-image of underdogs. Apple's formal review systems, like most companies, had no real mechanism for permanently marking an individual's specific contribution.",
+    turning:"At some point during final production, members of the Macintosh team decided, informally and without any executive directive, to have every team member's signature cast permanently into the interior plastic case of every Macintosh manufactured, invisible to any customer who never opened the machine.",
+    path:"The signatures were etched into the mold used to produce the case, meaning every Macintosh unit across the entire production run carried the same permanent, physical record of exactly who built it. It cost the company essentially nothing and required no approval from a formal recognition programme.",
+    outcome:"The signatures became one of the most enduring and frequently referenced details in Apple's own history and the broader mythology of the original Macintosh project, referenced decades later by team members as a genuinely meaningful part of what the project meant to them.",
+    lesson:"Signature as a condition works precisely because it exists outside the formal review and reward system, not despite that. If your only form of recognition runs through a formal performance cycle, you are missing the form people actually remember decades later.",
+    sources:"Sourced from Apple's own retrospective accounts of the Macintosh project and Folklore.org's documented oral histories of the original engineering team."
+  },
+  {
+    id:"signature-applied", track:"design", condition:"Signature", type:"applied", region:"United States, composite scenario",
+    title:"The Nonprofit Where the Person Holding the Team Together Left, and Nobody Noticed Until She Was Gone",
+    starting:"A mid-sized education nonprofit in Chicago, around 40 staff, had one program coordinator who, by informal consensus, was the person who actually made the organisation function day to day. None of this appeared anywhere in her formal job description, which rated her as a solid, unremarkable performer.",
+    turning:"She resigned, citing burnout and, more pointedly, that she had never once, in four years, been formally recognised for the actual role she played holding the organisation together. Her departure was followed within two months by a noticeable decline in cross-team coordination.",
+    path:"The executive director introduced a deliberately informal recognition practice: a monthly all-staff meeting closing ritual where anyone could nominate a colleague for something that had genuinely helped them that month but wasn't the kind of thing that would show up in a performance review.",
+    outcome:"Within six months, at least three staff members whose contributions had previously been similarly invisible were named repeatedly by colleagues, and the organisation's engagement survey showed a measurable increase in staff feeling their informal work was valued.",
+    lesson:"The work that actually holds a team together is often precisely the work no formal review captures. Signature as a practice doesn't need to be elaborate, it needs to exist at all, aimed specifically at the kind of contribution the formal system was never built to see.",
+    sources:null
+  },
+  {
+    id:"radical-scope-discipline-foundational", track:"design", condition:"Radical Scope Discipline", type:"foundational", region:"United States, 2009-14",
+    title:"\"Does This Make Messaging Better?\": How WhatsApp Stayed at 50 Engineers for 900 Million Users",
+    starting:"By the early 2010s, as WhatsApp's user base grew into the hundreds of millions, the conventional pattern was to grow headcount roughly in proportion to users, adding features and teams as the product's ambitions expanded. WhatsApp's co-founders, both former Yahoo engineers, had explicitly different instincts.",
+    turning:"The company adopted, and genuinely enforced, a single operating filter for every proposed feature: does this make messaging better. If a proposal couldn't clearly answer yes, it didn't get built, regardless of what competitors were doing or whether it might generate additional revenue.",
+    path:"The discipline was applied continuously, year after year, as the company scaled past a billion users. Engineering teams stayed deliberately small, sub-teams of one to three engineers with real autonomy, servers were run lean, and features other platforms added, social feeds, advertising-driven functionality, were consistently declined.",
+    outcome:"At the time of Facebook's 2014 acquisition for 19 billion dollars, WhatsApp was serving roughly 450 million users with approximately 35 engineers, a ratio widely cited as one of the most efficient at that scale ever documented, maintained for years afterward even as the user base continued growing.",
+    lesson:"Radical Scope Discipline isn't a decision you make once at launch, it's a filter you apply every single time a new request arrives, indefinitely. WhatsApp's real achievement was saying no to feature creep continuously, for years, long after the discipline would have been easy to abandon.",
+    sources:"Sourced from WhatsApp engineering team public talks and interviews, and contemporaneous reporting on the Facebook acquisition and WhatsApp's engineering headcount."
+  },
+  {
+    id:"radical-scope-discipline-applied", track:"design", condition:"Radical Scope Discipline", type:"applied", region:"India, composite scenario",
+    title:"The D2C Brand Whose Roadmap Became Unrecognisable Eighteen Months After Launch",
+    starting:"A direct-to-consumer skincare brand based in Mumbai launched with a sharp, focused proposition: three products, each solving one specific skin concern, with the founding team explicit that they would rather do three things exceptionally than ten things adequately.",
+    turning:"Eighteen months after launch, the catalogue had grown to 27 SKUs, largely because each competitor entry triggered an internal reaction to match it. The head of product, reviewing the roadmap ahead of a fundraising round, realised she could no longer clearly articulate what the brand stood for to a prospective investor.",
+    path:"The founders ran a deliberately uncomfortable exercise: every existing product and roadmap item was tested against a single question, reconstructed from the brand's own original positioning, does this deepen our authority on the three original concerns, or dilute it. Eleven SKUs failed the test and were discontinued over two quarters.",
+    outcome:"Revenue per SKU increased substantially in the two quarters following the cut, and customer reviews began describing the brand for the first time in over a year using language close to its original positioning, rather than the increasingly generic language that had crept in.",
+    lesson:"Scope creep rarely announces itself as a single bad decision, it accumulates through a series of individually reasonable additions. The fix isn't a one-time cleanup, it's a standing, permanent filter reapplied to every new proposal, indefinitely.",
+    sources:null
+  }
+];
+
+var TRACK_LABEL = { diagnostic:"Diagnostic", design:"Design" };
+var TYPE_LABEL = { foundational:"Foundational", applied:"Applied" };
+
+var ICON_ARROW = String.fromCodePoint(8594);
+var ICON_CLOSE = String.fromCodePoint(10005);
+var ICON_DOT = String.fromCodePoint(183);
+
+function esc(s){ return s.replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function matchesFilter(cs){
+  var okTrack = (trackFilter==="all") || (cs.track===trackFilter);
+  var okType  = (typeFilter==="all") || (cs.type===typeFilter);
+  return okTrack && okType;
+}
+
+function renderGrid(){
+  var grid = document.getElementById("fcs-grid");
+  var countEl = document.getElementById("fcs-count");
+  var visible = CS.filter(matchesFilter);
+  countEl.textContent = visible.length + " of " + CS.length + " case studies";
+
+  grid.innerHTML = visible.map(function(cs){
+    var trackCls = cs.track==="diagnostic" ? "track-diag" : "track-design";
+    var typeCls = cs.type==="foundational" ? "type-found" : "type-applied";
+    return '<div class="fcs-card" data-id="' + cs.id + '">' +
+      '<div class="fcs-card-tags">' +
+        '<span class="fcs-tag ' + trackCls + '">' + TRACK_LABEL[cs.track] + '</span>' +
+        '<span class="fcs-tag ' + typeCls + '">' + TYPE_LABEL[cs.type] + '</span>' +
+      '</div>' +
+      '<div class="fcs-card-condition">' + esc(cs.condition) + '</div>' +
+      '<div class="fcs-card-title">' + esc(cs.title) + '</div>' +
+      '<div class="fcs-card-foot"><span>' + esc(cs.region) + '</span><span class="fcs-card-read">Read case ' + ICON_ARROW + '</span></div>' +
+    '</div>';
+  }).join("");
+
+  grid.querySelectorAll(".fcs-card").forEach(function(card){
+    card.addEventListener("click", function(){ openModal(card.getAttribute("data-id")); });
+  });
+}
+
+var ICON_ARROW_LEFT = String.fromCodePoint(8592);
+
+var storySections = [];
+var storyIndex = 0;
+var touchStartX = 0;
+var touchStartY = 0;
+
+function buildSections(cs){
+  var arr = [];
+  arr.push({ label:"The Starting Condition", text:cs.starting });
+  arr.push({ label:"The Turning Point", text:cs.turning });
+  arr.push({ label:"The Path Taken", text:cs.path });
+  arr.push({ label:"The Documented Outcome", text:cs.outcome });
+  arr.push({ label:"The Lesson", text:cs.lesson, isLesson:true });
+  if(cs.sources){ arr.push({ label:"Sources", text:cs.sources, isSources:true }); }
+  return arr;
+}
+
+function openModal(id){
+  var cs = null;
+  for(var i=0;i<CS.length;i++){ if(CS[i].id===id){ cs = CS[i]; break; } }
+  if(!cs) return;
+
+  var trackCls = cs.track==="diagnostic" ? "track-diag" : "track-design";
+  var typeCls = cs.type==="foundational" ? "type-found" : "type-applied";
+
+  storySections = buildSections(cs);
+  storyIndex = 0;
+
+  var progressHtml = storySections.map(function(s,i){
+    return '<div class="fcs-progress-seg" data-seg-index="' + i + '"></div>';
+  }).join("");
+
+  var modal = document.getElementById("fcs-modal");
+  modal.innerHTML =
+    '<div class="fcs-modal-head">' +
+      '<button class="fcs-modal-close" id="fcs-modal-close-btn">' + ICON_CLOSE + '</button>' +
+      '<div class="fcs-card-tags">' +
+        '<span class="fcs-tag ' + trackCls + '">' + TRACK_LABEL[cs.track] + '</span>' +
+        '<span class="fcs-tag ' + typeCls + '">' + TYPE_LABEL[cs.type] + '</span>' +
+      '</div>' +
+      '<div class="fcs-modal-title">' + esc(cs.title) + '</div>' +
+      '<div class="fcs-modal-meta">' + esc(cs.condition).toUpperCase() + ' ' + ICON_DOT + ' ' + esc(cs.region).toUpperCase() + '</div>' +
+    '</div>' +
+    '<div class="fcs-progress" id="fcs-progress">' + progressHtml + '</div>' +
+    '<div class="fcs-story-wrap">' +
+      '<button class="fcs-story-arrow" id="fcs-story-prev">' + ICON_ARROW_LEFT + '</button>' +
+      '<div class="fcs-story-stage" id="fcs-story-stage"></div>' +
+      '<button class="fcs-story-arrow" id="fcs-story-next">' + ICON_ARROW + '</button>' +
+    '</div>';
+
+  document.getElementById("fcs-modal-close-btn").addEventListener("click", closeModal);
+  document.getElementById("fcs-story-prev").addEventListener("click", function(){ goToSection(storyIndex-1); });
+  document.getElementById("fcs-story-next").addEventListener("click", function(){ goToSection(storyIndex+1); });
+
+  document.querySelectorAll("[data-seg-index]").forEach(function(seg){
+    seg.addEventListener("click", function(){ goToSection(parseInt(seg.getAttribute("data-seg-index"),10)); });
+  });
+
+  var stage = document.getElementById("fcs-story-stage");
+  stage.addEventListener("touchstart", function(e){
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive:true });
+  stage.addEventListener("touchend", function(e){
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+      if(dx < 0){ goToSection(storyIndex+1); } else { goToSection(storyIndex-1); }
+    }
+  }, { passive:true });
+
+  renderStory();
+  document.getElementById("fcs-modal-backdrop").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function renderStory(){
+  var s = storySections[storyIndex];
+  var stage = document.getElementById("fcs-story-stage");
+  if(!stage || !s) return;
+
+  var labelCls = s.isLesson ? "fcs-story-label lesson" : "fcs-story-label";
+  var counter = "SECTION " + (storyIndex+1) + " OF " + storySections.length;
+  var bodyHtml = '<div class="fcs-story-counter">' + counter + '</div>' +
+    '<div class="' + labelCls + '">' + esc(s.label) + '</div>';
+
+  if(s.isLesson){
+    bodyHtml += '<div class="fcs-story-lesson-box"><div class="fcs-story-text">' + esc(s.text) + '</div></div>';
+  } else if(s.isSources){
+    bodyHtml += '<div class="fcs-story-sources">' + esc(s.text) + '</div>';
+  } else {
+    bodyHtml += '<div class="fcs-story-text">' + esc(s.text) + '</div>';
+  }
+
+  stage.style.opacity = "0";
+  setTimeout(function(){
+    stage.innerHTML = '<div class="fcs-story-text-wrap">' + bodyHtml + '</div>';
+    stage.style.opacity = "1";
+  }, 90);
+
+  document.querySelectorAll("[data-seg-index]").forEach(function(seg){
+    var idx = parseInt(seg.getAttribute("data-seg-index"),10);
+    seg.classList.remove("active","done");
+    if(idx === storyIndex){ seg.classList.add("active"); }
+    else if(idx < storyIndex){ seg.classList.add("done"); }
+  });
+
+  var prevBtn = document.getElementById("fcs-story-prev");
+  var nextBtn = document.getElementById("fcs-story-next");
+  if(prevBtn) prevBtn.disabled = (storyIndex === 0);
+  if(nextBtn) nextBtn.disabled = (storyIndex === storySections.length-1);
+}
+
+function goToSection(index){
+  if(index < 0 || index >= storySections.length) return;
+  storyIndex = index;
+  renderStory();
+}
+
+function closeModal(){
+  document.getElementById("fcs-modal-backdrop").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("fcs-modal-backdrop").addEventListener("click", function(e){
+  if(e.target.id === "fcs-modal-backdrop") closeModal();
+});
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){ closeModal(); return; }
+  if(!document.getElementById("fcs-modal-backdrop").classList.contains("active")) return;
+  if(e.key === "ArrowRight"){ goToSection(storyIndex+1); }
+  if(e.key === "ArrowLeft"){ goToSection(storyIndex-1); }
+});
+
+document.querySelectorAll("[data-filter-track]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    trackFilter = btn.getAttribute("data-filter-track");
+    document.querySelectorAll("[data-filter-track]").forEach(function(b){ b.classList.remove("active"); });
+    btn.classList.add("active");
+    renderGrid();
+  });
+});
+document.querySelectorAll("[data-filter-type]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    typeFilter = btn.getAttribute("data-filter-type");
+    document.querySelectorAll("[data-filter-type]").forEach(function(b){ b.classList.remove("active"); });
+    btn.classList.add("active");
+    renderGrid();
+  });
+});
+
+renderGrid();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

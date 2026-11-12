@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High performance isn't a decision. It's a system.</title>
+  <meta name="description" content="Eight real people. Trust, safety, energy and belief flowing in real time. Six months. Your decisions ripple and compound. Stages 1 and 2 are free.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/forge.html">
+  <meta property="og:title" content="High performance isn't a decision. It's a system.">
+  <meta property="og:description" content="Eight real people. Trust, safety, energy and belief flowing in real time. Six months. Your decisions ripple and compound. Stages 1 and 2 are free.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Forge Simulation</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     FORGE TEAM v2 - "THE LIVING SYSTEM"
+     World's first hands-on High Performance Team simulator
+     Team thermodynamics · contagion engine · discovered Laws
+     Free: Stages 1-2 · Pro: Stages 3-6
+     Virorah PMS · Vektor design system
+     ============================================================ -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+  rel="stylesheet">
+<style>
+  #fg-root {
+    font-family: 'DM Sans', sans-serif;
+    background: #080612;
+    color: #f0eeff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #fg-root * {
+    box-sizing: border-box;
+  }
+
+  /* HERO */
+  #fg-hero {
+    position: relative;
+    background: linear-gradient(160deg, #080612 0%, #0f0820 50%, #080612 100%);
+    padding: 56px 48px 40px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(139, 92, 246, .15);
+  }
+
+  #fg-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fg-hero-body {
+    position: relative;
+    z-index: 2;
+  }
+
+  .fg-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(167, 139, 250, .6);
+    margin-bottom: 16px;
+  }
+
+  .fg-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a78bfa;
+    box-shadow: 0 0 10px rgba(167, 139, 250, .8);
+    animation: fgPulse 2s ease-in-out infinite;
+  }
+
+  .fg-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.04;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #f0eeff 0%, #c4b5fd 40%, #f0eeff 80%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fgShimmer 5s ease infinite;
+  }
+
+  .fg-hero-sub {
+    font-size: 15px;
+    color: rgba(196, 181, 253, .6);
+    line-height: 1.75;
+    max-width: 620px;
+    margin-bottom: 24px;
+  }
+
+  .fg-hero-sub strong {
+    color: #f0eeff;
+    font-weight: 700;
+  }
+
+  .fg-hero-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .fg-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 13px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(139, 92, 246, .1);
+    border: 1px solid rgba(139, 92, 246, .2);
+    color: rgba(196, 181, 253, .75);
+  }
+
+  /* STAGE BAR */
+  #fg-stages-bar {
+    background: rgba(0, 0, 0, .3);
+    border-bottom: 1px solid rgba(139, 92, 246, .1);
+    padding: 16px 48px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  .fg-step {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background .2s;
+  }
+
+  .fg-step:hover {
+    background: rgba(139, 92, 246, .08);
+  }
+
+  .fg-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    transition: all .3s;
+  }
+
+  .fg-step-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .fg-step-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color .3s;
+  }
+
+  .fg-step-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .fg-step-sep {
+    width: 24px;
+    height: 1px;
+    flex-shrink: 0;
+    background: rgba(139, 92, 246, .2);
+  }
+
+  .s-locked .fg-step-num {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: rgba(255, 255, 255, .2);
+  }
+
+  .s-locked .fg-step-name {
+    color: rgba(255, 255, 255, .2);
+  }
+
+  .s-locked .fg-step-tag {
+    color: rgba(255, 255, 255, .15);
+  }
+
+  .s-free .fg-step-num {
+    background: rgba(139, 92, 246, .15);
+    border: 1px solid rgba(139, 92, 246, .3);
+    color: #a78bfa;
+  }
+
+  .s-free .fg-step-name {
+    color: #a78bfa;
+  }
+
+  .s-free .fg-step-tag {
+    color: rgba(167, 139, 250, .5);
+  }
+
+  .s-active .fg-step-num {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    border: none;
+    color: white;
+    box-shadow: 0 0 16px rgba(124, 58, 237, .5);
+  }
+
+  .s-active .fg-step-name {
+    color: #f0eeff;
+  }
+
+  .s-active .fg-step-tag {
+    color: rgba(167, 139, 250, .6);
+  }
+
+  .s-done .fg-step-num {
+    background: linear-gradient(135deg, #059669, #34d399);
+    border: none;
+    color: white;
+  }
+
+  .s-done .fg-step-name {
+    color: #34d399;
+  }
+
+  .s-done .fg-step-tag {
+    color: rgba(52, 211, 153, .5);
+  }
+
+  .s-pro .fg-step-num {
+    background: rgba(251, 191, 36, .08);
+    border: 1px solid rgba(251, 191, 36, .2);
+    color: rgba(251, 191, 36, .4);
+  }
+
+  .s-pro .fg-step-name {
+    color: rgba(251, 191, 36, .4);
+  }
+
+  .s-pro .fg-step-tag {
+    color: rgba(251, 191, 36, .3);
+  }
+
+  /* CONTENT */
+  #fg-content {
+    padding: 40px 48px 48px;
+  }
+
+  @media(max-width:768px) {
+    #fg-hero {
+      padding: 36px 24px 28px;
+    }
+
+    #fg-stages-bar {
+      padding: 12px 24px;
+    }
+
+    #fg-content {
+      padding: 28px 24px 36px;
+    }
+  }
+
+  .fg-sec-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(167, 139, 250, .45);
+    margin-bottom: 8px;
+  }
+
+  .fg-sec-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: #f0eeff;
+    margin-bottom: 6px;
+  }
+
+  .fg-sec-sub {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .5);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+
+  .fg-panel {
+    display: none;
+  }
+
+  .fg-panel.active {
+    display: block;
+  }
+
+  /* LIVING NETWORK */
+  .fg-network-wrap {
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, .05), transparent 70%);
+    border: 1px solid rgba(139, 92, 246, .15);
+    border-radius: 18px;
+    padding: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  #fg-network-canvas {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+    cursor: pointer;
+  }
+
+  .fg-network-hint {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(196, 181, 253, .4);
+    pointer-events: none;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .fg-network-legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .fg-leg-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: rgba(196, 181, 253, .55);
+  }
+
+  .fg-leg-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+
+  /* TEAM CARDS (compact, click for modal) */
+  .fg-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .fg-card {
+    position: relative;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(139, 92, 246, .15);
+    border-radius: 14px;
+    padding: 18px;
+    cursor: pointer;
+    transition: all .25s;
+    overflow: hidden;
+  }
+
+  .fg-card:hover {
+    border-color: rgba(139, 92, 246, .4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .3);
+  }
+
+  .fg-card-glow {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: .12;
+    filter: blur(22px);
+    pointer-events: none;
+  }
+
+  .fg-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fg-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+
+  .fg-arch {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 100px;
+    max-width: 120px;
+    text-align: right;
+    line-height: 1.3;
+  }
+
+  .fg-card-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #f0eeff;
+    letter-spacing: -.3px;
+    margin-bottom: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fg-card-role {
+    font-size: 11px;
+    color: rgba(196, 181, 253, .45);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fg-card-tension {
+    font-size: 11px;
+    color: rgba(196, 181, 253, .55);
+    line-height: 1.55;
+    padding: 9px 11px;
+    background: rgba(139, 92, 246, .06);
+    border: 1px solid rgba(139, 92, 246, .1);
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fg-card-tension strong {
+    color: rgba(196, 181, 253, .9);
+  }
+
+  .fg-card-tap {
+    font-size: 10px;
+    color: rgba(167, 139, 250, .5);
+    margin-top: 10px;
+    font-family: 'DM Mono', monospace;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* MODAL */
+  #fg-modal-ov {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .72);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  #fg-modal-ov.open {
+    display: flex;
+  }
+
+  #fg-modal {
+    background: linear-gradient(135deg, #0d0b22, #13102e);
+    border: 1px solid rgba(139, 92, 246, .3);
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 540px;
+    width: 100%;
+    max-height: 86vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .5);
+  }
+
+  #fg-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: rgba(255, 255, 255, .5);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+  }
+
+  #fg-modal-close:hover {
+    background: rgba(255, 255, 255, .1);
+    color: white;
+  }
+
+  .fg-m-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .fg-m-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -.4px;
+    color: #f0eeff;
+    margin-bottom: 3px;
+  }
+
+  .fg-m-role {
+    font-size: 12px;
+    color: rgba(196, 181, 253, .45);
+    margin-bottom: 18px;
+  }
+
+  .fg-m-currents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .fg-m-current {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 9px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+
+  .fg-m-current-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .fg-m-current-lbl {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: rgba(196, 181, 253, .4);
+  }
+
+  .fg-m-sec {
+    margin-bottom: 16px;
+  }
+
+  .fg-m-sec-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(167, 139, 250, .5);
+    margin-bottom: 7px;
+  }
+
+  .fg-m-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .75);
+    line-height: 1.7;
+  }
+
+  .fg-m-dilemma {
+    background: rgba(139, 92, 246, .08);
+    border: 1px solid rgba(139, 92, 246, .2);
+    border-radius: 10px;
+    padding: 13px 15px;
+    font-size: 13px;
+    color: rgba(196, 181, 253, .8);
+    line-height: 1.6;
+  }
+
+  .fg-m-dilemma strong {
+    color: #a78bfa;
+  }
+
+  /* DIAGNOSE */
+  .fg-diag-summary {
+    background: rgba(139, 92, 246, .08);
+    border: 1px solid rgba(139, 92, 246, .2);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+
+  .fg-diag-summary-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fg-diag-summary-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .72);
+    line-height: 1.75;
+  }
+
+  .fg-diag-summary-text strong {
+    color: #f0eeff;
+  }
+
+  /* SIM HUD */
+  .fg-hud {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    background: rgba(0, 0, 0, .25);
+    border: 1px solid rgba(139, 92, 246, .18);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+  }
+
+  .fg-hud-turn {
+    text-align: center;
+  }
+
+  .fg-hud-turn-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #a78bfa;
+    line-height: 1;
+  }
+
+  .fg-hud-turn-lbl {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(196, 181, 253, .4);
+    margin-top: 3px;
+  }
+
+  .fg-hud-dims {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .fg-hud-dim {
+    text-align: center;
+    min-width: 54px;
+  }
+
+  .fg-hud-dim-bar {
+    height: 5px;
+    background: rgba(255, 255, 255, .07);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+
+  .fg-hud-dim-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width .9s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  .fg-hud-dim-lbl {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: rgba(196, 181, 253, .4);
+  }
+
+  .fg-hud-dim-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(196, 181, 253, .7);
+  }
+
+  .fg-hud-attn {
+    text-align: center;
+  }
+
+  .fg-hud-attn-dots {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .fg-hud-attn-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(139, 92, 246, .3);
+    transition: all .3s;
+  }
+
+  .fg-hud-attn-dot.spent {
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .08);
+  }
+
+  .fg-hud-attn-dot.avail {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    border: none;
+    box-shadow: 0 0 8px rgba(124, 58, 237, .5);
+  }
+
+  .fg-hud-attn-lbl {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(196, 181, 253, .4);
+  }
+
+  /* SITUATIONS / INTERVENTIONS */
+  .fg-situation {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(139, 92, 246, .15);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 18px;
+    transition: opacity .3s;
+  }
+
+  .fg-situation.resolved {
+    opacity: .55;
+  }
+
+  .fg-sit-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+
+  .fg-sit-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #f0eeff;
+    letter-spacing: -.3px;
+    margin-bottom: 8px;
+  }
+
+  .fg-sit-scenario {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .7);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    border-left: 3px solid rgba(139, 92, 246, .4);
+  }
+
+  .fg-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .fg-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .03);
+    border: 1.5px solid rgba(139, 92, 246, .15);
+    cursor: pointer;
+    transition: all .2s;
+    font-size: 13px;
+    color: rgba(196, 181, 253, .78);
+    line-height: 1.5;
+    text-align: left;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .fg-opt:hover:not(:disabled) {
+    border-color: rgba(139, 92, 246, .4);
+    background: rgba(139, 92, 246, .08);
+    color: #f0eeff;
+  }
+
+  .fg-opt:disabled {
+    cursor: default;
+  }
+
+  .fg-opt.chosen {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, .12);
+    color: #f0eeff;
+  }
+
+  .fg-opt.dimmed {
+    opacity: .4;
+  }
+
+  .fg-opt-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, .15);
+    border: 1px solid rgba(139, 92, 246, .25);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #a78bfa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .fg-opt-cost {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(167, 139, 250, .6);
+    font-family: 'DM Mono', monospace;
+    white-space: nowrap;
+  }
+
+  /* IMMEDIATE READ (not right/wrong - just what you observe) */
+  .fg-read {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, .22);
+    border-radius: 10px;
+    border-left: 3px solid rgba(167, 139, 250, .5);
+  }
+
+  .fg-read.visible {
+    display: block;
+    animation: fgFade .4s ease;
+  }
+  }
+
+  .fg-read-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(167, 139, 250, .6);
+    margin-bottom: 7px;
+  }
+
+  .fg-read-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .75);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* TICK / END TURN */
+  .fg-tick-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border-radius: 11px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, .4);
+    transition: all .2s;
+  }
+
+  .fg-tick-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, .55);
+  }
+
+  .fg-tick-btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* RIPPLE EVENTS (delayed consequences) */
+  .fg-ripple {
+    background: linear-gradient(135deg, rgba(0, 0, 0, .3), rgba(139, 92, 246, .06));
+    border: 1px solid rgba(167, 139, 250, .3);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+    animation: fgRippleIn .5s ease;
+  }
+  }
+
+  .fg-ripple-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fbbf24;
+    margin-bottom: 10px;
+  }
+
+  .fg-ripple-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .8);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .fg-ripple-trace {
+    font-size: 11px;
+    color: rgba(167, 139, 250, .6);
+    font-family: 'DM Mono', monospace;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(167, 139, 250, .2);
+  }
+
+  .fg-ripple-trace strong {
+    color: #a78bfa;
+  }
+
+  /* LAW DISCOVERY */
+  #fg-law-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(140px);
+    z-index: 2000;
+    max-width: 440px;
+    width: calc(100% - 48px);
+    background: linear-gradient(135deg, #1a1340, #0d0b22);
+    border: 1px solid rgba(251, 191, 36, .4);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6), 0 0 30px rgba(251, 191, 36, .15);
+    transition: transform .5s cubic-bezier(.34, 1.56, .64, 1);
+  }
+
+  #fg-law-toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .fg-law-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fbbf24;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .fg-law-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #f0eeff;
+    letter-spacing: -.3px;
+    margin-bottom: 8px;
+  }
+
+  .fg-law-desc {
+    font-size: 12px;
+    color: rgba(196, 181, 253, .7);
+    line-height: 1.65;
+  }
+
+  /* CODEX */
+  .fg-codex {
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(139, 92, 246, .12);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .fg-codex-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .fg-codex-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #f0eeff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fg-codex-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(167, 139, 250, .6);
+  }
+
+  .fg-codex-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  @media(max-width:560px) {
+    .fg-codex-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .fg-codex-law {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 11px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(255, 255, 255, .05);
+    font-size: 11px;
+    transition: all .3s;
+  }
+
+  .fg-codex-law.unlocked {
+    background: rgba(251, 191, 36, .06);
+    border-color: rgba(251, 191, 36, .2);
+  }
+
+  .fg-codex-law-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, .05);
+  }
+
+  .fg-codex-law.unlocked .fg-codex-law-icon {
+    background: rgba(251, 191, 36, .15);
+  }
+
+  .fg-codex-law-name {
+    font-weight: 600;
+    color: rgba(196, 181, 253, .4);
+  }
+
+  .fg-codex-law.unlocked .fg-codex-law-name {
+    color: #f0eeff;
+  }
+
+  /* PRO GATE */
+  .fg-pro-gate {
+    background: linear-gradient(135deg, rgba(124, 58, 237, .1), rgba(139, 92, 246, .06));
+    border: 1px solid rgba(139, 92, 246, .25);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .fg-pro-icon {
+    font-size: 42px;
+    margin-bottom: 14px;
+  }
+
+  .fg-pro-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #f0eeff;
+    margin-bottom: 10px;
+    letter-spacing: -.3px;
+  }
+
+  .fg-pro-sub {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .6);
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto 22px;
+  }
+
+  .fg-pro-features {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .fg-pro-feat {
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: rgba(139, 92, 246, .1);
+    border: 1px solid rgba(139, 92, 246, .2);
+    color: rgba(196, 181, 253, .7);
+  }
+
+  .fg-pro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, .4);
+    transition: all .25s;
+  }
+
+  .fg-pro-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(124, 58, 237, .55);
+  }
+
+  /* BUTTONS */
+  .fg-btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .fg-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, .35);
+    transition: all .2s;
+  }
+
+  .fg-btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(124, 58, 237, .5);
+  }
+
+  .fg-btn-primary:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .fg-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    background: transparent;
+    border: 1px solid rgba(139, 92, 246, .3);
+    color: #a78bfa;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  .fg-btn-secondary:hover {
+    background: rgba(139, 92, 246, .1);
+  }
+
+  /* FINAL RECKONING */
+  .fg-final {
+    text-align: center;
+    padding: 36px 20px 20px;
+  }
+
+  .fg-final-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 84px;
+    font-weight: 800;
+    letter-spacing: -4px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .fg-final-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .fg-final-sub {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .55);
+    max-width: 460px;
+    margin: 0 auto 8px;
+    line-height: 1.7;
+  }
+
+  .fg-ghost {
+    background: linear-gradient(135deg, rgba(96, 165, 250, .06), rgba(139, 92, 246, .04));
+    border: 1px dashed rgba(96, 165, 250, .3);
+    border-radius: 14px;
+    padding: 22px;
+    margin: 24px 0;
+  }
+
+  .fg-ghost-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .fg-ghost-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .7);
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  .fg-ghost-text strong {
+    color: #93c5fd;
+  }
+
+  /* LOADING */
+  .fg-loading {
+    display: none;
+    text-align: center;
+    padding: 28px 20px;
+  }
+
+  .fg-loading.visible {
+    display: block;
+  }
+
+  .fg-loading-orb {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    margin: 0 auto 14px;
+    animation: fgOrb 1.4s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+  }
+  }
+
+  .fg-loading-text {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .6);
+    font-weight: 600;
+  }
+
+  .fg-dots::after {
+    content: '...';
+    animation: fgDots 1.2s steps(4, end) infinite;
+  }
+
+  60%,
+  100% {
+    content: '...'
+  }
+  }
+</style>
+
+<!-- LAW TOAST -->
+<div id="fg-law-toast">
+  <div class="fg-law-tag">🔓 Law Discovered</div>
+  <div class="fg-law-name" id="fg-law-name"> - </div>
+  <div class="fg-law-desc" id="fg-law-desc"> - </div>
+</div>
+
+<!-- MODAL -->
+<div id="fg-modal-ov">
+  <div id="fg-modal">
+    <button id="fg-modal-close" onclick="fgCloseModal()">✕</button>
+    <div id="fg-modal-body"></div>
+  </div>
+</div>
+
+<div id="fg-root">
+
+  <!-- HERO -->
+  <div id="fg-hero">
+    <canvas id="fg-hero-canvas"></canvas>
+    <div class="fg-hero-body">
+      <div class="fg-eyebrow">
+        <div class="fg-eyebrow-dot"></div>Forge Team Simulation · A Living Simulation
+      </div>
+      <h1 class="fg-hero-title">High performance isn't<br>a decision. It's a system.</h1>
+      <p class="fg-hero-sub">Every book hands you a list - psychological safety, trust, accountability - and expects the lesson to stick. It never does. So we built the opposite:
+        <strong>a living team of 8 real people whose trust, safety, energy and belief flow into each other in real time.</strong>
+        You won't be told the right answer. You'll set conditions, run six months, and watch what emerges. Just like
+        real life.</p>
+      <div class="fg-hero-chips">
+        <span class="fg-chip">🧬 Team thermodynamics engine</span>
+        <span class="fg-chip">🌊 Decisions ripple & compound</span>
+        <span class="fg-chip">🔓 Discover the hidden Laws yourself</span>
+        <span class="fg-chip">🆓 Stages 1–2 Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE BAR -->
+  <div id="fg-stages-bar">
+    <div class="fg-step s-active" onclick="fgGoStage(0)" id="fg-step-0">
+      <div class="fg-step-num">1</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">Inherit</div>
+        <div class="fg-step-tag">Free · Meet the system</div>
+      </div>
+    </div>
+    <div class="fg-step-sep"></div>
+    <div class="fg-step s-free" onclick="fgGoStage(1)" id="fg-step-1">
+      <div class="fg-step-num">2</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">Read</div>
+        <div class="fg-step-tag">Free · Diagnose the currents</div>
+      </div>
+    </div>
+    <div class="fg-step-sep"></div>
+    <div class="fg-step s-pro" onclick="fgGoStage(2)" id="fg-step-2">
+      <div class="fg-step-num">🔒</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">First Moves</div>
+        <div class="fg-step-tag">Pro · Months 1–2</div>
+      </div>
+    </div>
+    <div class="fg-step-sep"></div>
+    <div class="fg-step s-pro" onclick="fgGoStage(3)" id="fg-step-3">
+      <div class="fg-step-num">🔒</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">Pressure</div>
+        <div class="fg-step-tag">Pro · Months 3–4</div>
+      </div>
+    </div>
+    <div class="fg-step-sep"></div>
+    <div class="fg-step s-pro" onclick="fgGoStage(4)" id="fg-step-4">
+      <div class="fg-step-num">🔒</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">Fracture</div>
+        <div class="fg-step-tag">Pro · Month 5</div>
+      </div>
+    </div>
+    <div class="fg-step-sep"></div>
+    <div class="fg-step s-pro" onclick="fgGoStage(5)" id="fg-step-5">
+      <div class="fg-step-num">🔒</div>
+      <div class="fg-step-info">
+        <div class="fg-step-name">Reckoning</div>
+        <div class="fg-step-tag">Pro · Month 6 + Ghost</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div id="fg-content">
+
+    <!-- STAGE 1: INHERIT -->
+    <div class="fg-panel active" id="fg-panel-0">
+      <div class="fg-sec-eyebrow">Stage 1 · Inherit</div>
+      <h2 class="fg-sec-title">This is your team. It's already alive.</h2>
+      <p class="fg-sec-sub">You've just inherited 8 people. Below is the team as a living network - the lines are
+        relationships, the colours are trust. Watch it for a moment. Notice the red bleeding out from one node. That's
+        not decoration. That's your biggest problem, and it's already spreading. Tap any person to understand them.</p>
+
+      <div class="fg-network-wrap">
+        <canvas id="fg-network-canvas" height="420"></canvas>
+        <div class="fg-network-hint" id="fg-net-hint">● live · trust flows along the links · tap a node</div>
+      </div>
+      <div class="fg-network-legend">
+        <div class="fg-leg-item">
+          <div class="fg-leg-dot" style="background:#34d399;"></div>Healthy trust
+        </div>
+        <div class="fg-leg-item">
+          <div class="fg-leg-dot" style="background:#fbbf24;"></div>Strained
+        </div>
+        <div class="fg-leg-item">
+          <div class="fg-leg-dot" style="background:#ef4444;"></div>Toxic / draining
+        </div>
+        <div class="fg-leg-item">
+          <div class="fg-leg-dot" style="background:#60a5fa;"></div>You haven't met them yet
+        </div>
+      </div>
+
+      <div class="fg-team-grid" id="fg-team-grid"></div>
+      <div class="fg-btn-row">
+        <button class="fg-btn-primary" onclick="fgGoStage(1)">I've met them → Read the currents →</button>
+      </div>
+    </div>
+
+    <!-- STAGE 2: READ -->
+    <div class="fg-panel" id="fg-panel-1">
+      <div class="fg-sec-eyebrow">Stage 2 · Read</div>
+      <h2 class="fg-sec-title">Before you act, learn to read the system.</h2>
+      <p class="fg-sec-sub">Great managers diagnose before they intervene. Every person carries four hidden currents - 
+        Trust, Safety, Energy, Belief. They don't stay put. They flow between people. Here's your team's baseline, and
+        the one truth that will define everything you do next.</p>
+
+      <div class="fg-hud" style="margin-bottom:24px;">
+        <div class="fg-hud-turn">
+          <div class="fg-hud-turn-val" id="fg-base-hpt"> - </div>
+          <div class="fg-hud-turn-lbl">Baseline HPT</div>
+        </div>
+        <div class="fg-hud-dims" id="fg-base-dims"></div>
+        <div class="fg-hud-attn">
+          <div class="fg-hud-turn-val" style="font-size:18px;color:#f87171;">6mo</div>
+          <div class="fg-hud-attn-lbl">You have</div>
+        </div>
+      </div>
+
+      <div class="fg-diag-summary">
+        <div class="fg-diag-summary-title">🧠 The one thing that matters most</div>
+        <div class="fg-diag-summary-text">
+          Your team's defining weakness is <strong>Safety - sitting at a critical 34%</strong>. And here's what the
+          textbooks won't tell you: it's not 8 separate problems. It's <strong>one source</strong>. Arjun, your best
+          performer, is draining safety from everyone in his orbit - Ryan has gone silent, Priya has disappeared into
+          his shadow, Sarah absorbs the overflow. Until you address the <strong>source</strong>, every other fix will
+          leak away. But you also have a hidden asset: Fatima quietly <strong>generates</strong> trust for everyone near
+          her. She is load-bearing, and nobody - including your own rating system - can see it. Lose her, and the whole
+          structure sags. You have six months and limited attention each turn. You cannot fix everything.
+          <strong>Choosing what to ignore is the job.</strong>
+        </div>
+      </div>
+
+      <div class="fg-btn-row">
+        <button class="fg-btn-secondary" onclick="fgGoStage(0)">← Back</button>
+        <button class="fg-btn-primary" onclick="fgGoStage(2)">Begin the simulation →</button>
+      </div>
+    </div>
+
+    <!-- STAGES 3-5: SIM PANELS (built by JS) -->
+    <div class="fg-panel" id="fg-panel-2"></div>
+    <div class="fg-panel" id="fg-panel-3"></div>
+    <div class="fg-panel" id="fg-panel-4"></div>
+
+    <!-- STAGE 6: RECKONING -->
+    <div class="fg-panel" id="fg-panel-5"></div>
+
+  </div>
+</div>
+
+<script>
+  (function(){
+'use strict';
+
+/* Softr strips @keyframes from style tags - inject via JS */
+(function(){
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes fgPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}'+
+    '@keyframes fgShimmer{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}'+
+    '@keyframes fgFade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes fgRippleIn{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:scale(1);}}'+
+    '@keyframes fgOrb{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.15);opacity:.8;}}'+
+    '@keyframes fgDots{0%,20%{content:"."}40%{content:".."}60%,100%{content:"..."}}';
+  document.head.appendChild(s);
+})();
+
+var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+
+function isPro(){
+  if(localStorage.getItem('virorah_plan')==='pro') return true;
+  if(localStorage.getItem('viorah_plan')==='pro') return true;
+  if((localStorage.getItem('viorah_key')||'').trim()) return true;
+  var keys=['virorah_pro_key','pms_pro_key','pro_key'];
+  for(var i=0;i<keys.length;i++){
+    var k=(localStorage.getItem(keys[i])||'').trim().toUpperCase();
+    if(k==='VIRORAH-ADMIN-2026'||k.indexOf('VIRORAH-PRO-CUST')===0) return true;
+  }
+  return false;
+}
+
+/* ════════════════════════════════════════════
+   THE TEAM - each person is a node with currents
+   ════════════════════════════════════════════ */
+var TEAM = [
+  { id:'arjun', name:'Arjun Mehta', role:'Senior Analyst · 6 yrs', emoji:'🔥', color:'#ef4444', gradFrom:'#7f1d1d', gradTo:'#dc2626',
+    arch:'The Brilliant Jerk', archBg:'rgba(239,68,68,.18)', archFg:'#f87171',
+    currents:{trust:38,safety:62,energy:78,belief:70},
+    role_type:'drainer', radius:['ryan','priya','sarah'], radiusStrength:-6,
+    tension:'<strong>The problem:</strong> Dismisses juniors publicly. Two complaints. One person quietly considering leaving because of him.',
+    backstory:'12 years in. Genuinely the smartest in any room - and he knows it. Flawless work, corrosive presence. He thinks he\'s raising standards. The team feels bullied.',
+    dilemma:'Your highest performer is draining the team\'s safety. Protect his output and lose the room. Confront him and risk losing him.' },
+
+  { id:'priya', name:'Priya Nair', role:'Mid Analyst · 3 yrs', emoji:'⭐', color:'#a78bfa', gradFrom:'#3b0764', gradTo:'#7c3aed',
+    arch:'The Invisible Star', archBg:'rgba(167,139,250,.18)', archFg:'#a78bfa',
+    currents:{trust:55,safety:48,energy:60,belief:42},
+    role_type:'latent', radius:[], radiusStrength:0,
+    tension:'<strong>Hidden truth:</strong> She quietly does large parts of Arjun\'s work. Her ratings reflect none of it.',
+    backstory:'Quiet, methodical, exceptional. She gravitated to Arjun\'s projects thinking it was learning. It became unpaid ghostwriting. She\'s never complained. She doesn\'t know she should.',
+    dilemma:'Her ratings say average. Her real contribution says exceptional. The system is failing her - and she\'s a flight risk you can\'t see yet.' },
+
+  { id:'david', name:'David Okafor', role:'Senior Mgr · 11 yrs', emoji:'🌅', color:'#94a3b8', gradFrom:'#1e293b', gradTo:'#475569',
+    arch:'The Checked-Out Veteran', archBg:'rgba(148,163,184,.15)', archFg:'#94a3b8',
+    currents:{trust:60,safety:64,energy:32,belief:30},
+    role_type:'anchor', radius:[], radiusStrength:0,
+    tension:'<strong>Declining from a 5/5 history.</strong> 11 years of institutional knowledge. The team respects him deeply - but he stopped trying 18 months ago.',
+    backstory:'He built this team 8 years ago. Watched four managers come and go. He went quiet when his last big proposal was rejected. He\'s not lazy. He\'s grieving a version of himself.',
+    dilemma:'Reignite him or manage him out? Get it wrong and 11 years of knowledge walks out the door - quietly breaking three processes nobody documented.' },
+
+  { id:'sarah', name:'Sarah Chen', role:'Junior Analyst · 1 yr', emoji:'⚡', color:'#60a5fa', gradFrom:'#1e3a5f', gradTo:'#2563eb',
+    arch:'The Anxious Achiever', archBg:'rgba(96,165,250,.15)', archFg:'#60a5fa',
+    currents:{trust:58,safety:55,energy:40,belief:66},
+    role_type:'absorber', radius:[], radiusStrength:0,
+    tension:'<strong>Working 14-hour days.</strong> Early burnout signals. Never says no. Brilliant but fragile.',
+    backstory:'First job. Terrified of failing. She ties her worth to her output. Physically can\'t leave work unfinished. Three people quietly added to her plate this month. Nobody noticed.',
+    dilemma:'She will never ask for help. She will burn out silently. Wait for her to speak, or act before she breaks?' },
+
+  { id:'marcus', name:'Marcus James', role:'Senior Analyst · 5 yrs', emoji:'🎭', color:'#f59e0b', gradFrom:'#451a03', gradTo:'#b45309',
+    arch:'The Political Animal', archBg:'rgba(245,158,11,.15)', archFg:'#f59e0b',
+    currents:{trust:44,safety:58,energy:62,belief:55},
+    role_type:'leech', radius:['priya'], radiusStrength:-3,
+    tension:'<strong>Excellent upward. Mediocre at delivery.</strong> Takes credit, creates quiet division. His numbers look clean.',
+    backstory:'He learned early that being liked by leaders beats output quality. Not malicious - pragmatic. He genuinely believes visibility IS performance. He\'s already angling to be your ally.',
+    dilemma:'His metrics say strong. His behaviour is quietly corrosive. How do you evaluate someone whose damage is invisible in the data?' },
+
+  { id:'fatima', name:'Fatima Al-Rashid', role:'Mid Analyst · 4 yrs', emoji:'🌿', color:'#34d399', gradFrom:'#022c22', gradTo:'#065f46',
+    arch:'The Culture Carrier', archBg:'rgba(52,211,153,.15)', archFg:'#34d399',
+    currents:{trust:72,safety:60,energy:58,belief:64},
+    role_type:'healer', radius:['ryan','sarah','david','priya'], radiusStrength:4,
+    tension:'<strong>Average on paper. Load-bearing in practice.</strong> The team\'s glue - everyone\'s confidante, the informal leader.',
+    backstory:'She chases connection, not titles. She knows who\'s struggling at home. She held the team together for two months when the last manager left. None of it shows on her review.',
+    dilemma:'Your rating system can\'t see her. But if she leaves, the team\'s social architecture collapses overnight.' },
+
+  { id:'ryan', name:'Ryan Patel', role:'Junior Analyst · 3 mo', emoji:'🌱', color:'#86efac', gradFrom:'#052e16', gradTo:'#16a34a',
+    arch:'The New Joiner', archBg:'rgba(134,239,172,.15)', archFg:'#86efac',
+    currents:{trust:50,safety:36,energy:64,belief:58},
+    role_type:'fragile', radius:[], radiusStrength:0,
+    tension:'<strong>3 months in. Subtly excluded by Arjun. No proper onboarding.</strong> Already going quiet.',
+    backstory:'Top of his MBA class. Chose this team over two offers. His induction was a laptop and a Slack invite. Arjun dismissed his first idea publicly. He hasn\'t shared one since.',
+    dilemma:'His first year shapes his entire trajectory. Right now it\'s going badly - and he doesn\'t know why.' },
+
+  { id:'linda', name:'Linda Morris', role:'Senior Analyst · 7 yrs', emoji:'🚀', color:'#f472b6', gradFrom:'#500724', gradTo:'#be185d',
+    arch:'The Flight Risk', archBg:'rgba(244,114,182,.15)', archFg:'#f472b6',
+    currents:{trust:46,safety:60,energy:44,belief:34},
+    role_type:'timed', radius:[], radiusStrength:0, timer:4,
+    tension:'<strong>Has a competing offer. Hasn\'t told you.</strong> Disengaged, leaves on time, stopped volunteering.',
+    backstory:'Seven years. Built the comp model the company runs on. Promised a promotion for 18 months. Had coffee with a recruiter "just to check." The role is everything she was promised here. She hasn\'t decided.',
+    dilemma:'The decision window is open right now. In 2–3 turns it closes for good. Do you read the signs and act in time?' }
+];
+
+function teamById(id){ for(var i=0;i<TEAM.length;i++){ if(TEAM[i].id===id) return TEAM[i]; } return null; }
+
+/* ════════════════════════════════════════════
+   THE LAWS - discovered, never taught
+   ════════════════════════════════════════════ */
+var LAWS = {
+  contagion:    { icon:'🦠', name:'The Contagion Principle', desc:'Toxicity spreads faster than excellence. One unaddressed drainer lowers safety across everyone in their orbit - silently, before anyone says a word.' },
+  silence:      { icon:'🤐', name:'The Cost of Silence', desc:'Safety doesn\'t collapse loudly. It leaks. People stop contributing long before they ever complain. By the time it\'s spoken, it\'s late.' },
+  invisible:    { icon:'👻', name:'The Invisible Labor Trap', desc:'What you don\'t measure, you lose. The people holding a team together rarely show up on a performance review - until they\'re gone.' },
+  recognition:  { icon:'✨', name:'The Recognition Multiplier', desc:'Seeing one person rewarded fairly lifts belief in everyone watching. Recognition isn\'t a transaction with one person - it\'s a signal to the whole room.' },
+  burnout:      { icon:'🔥', name:'The Burnout Lag', desc:'Energy doesn\'t decline in a straight line. It holds, holds, holds - then collapses all at once. The reliable ones break without warning because they never warned you.' },
+  trustbank:    { icon:'🏦', name:'The Trust Bank', desc:'Trust is earned in drops and lost in buckets. One act of protection under pressure buys more than a year of being pleasant.' },
+  authority:    { icon:'⚖️', name:'The Authority Paradox', desc:'The more you command, the less they own. Control produces compliance. Conditions produce commitment. You cannot order a team into high performance.' },
+  shadow:       { icon:'🌑', name:'The Founder\'s Shadow', desc:'A checked-out veteran isn\'t lazy - they\'re grieving a past version of themselves. Give them a reason to matter again and the knowledge comes back with them.' },
+  attention:    { icon:'🎯', name:'The Attention Scarcity Law', desc:'You cannot fix everything at once. Choosing what to deliberately ignore this month is not failure - it is the entire discipline of management.' },
+  window:       { icon:'⏳', name:'The Closing Window', desc:'Some problems have a clock you can\'t see. By the time a flight risk hands you a resignation, the window to keep them already closed weeks ago.' },
+  source:       { icon:'🎯', name:'Treat the Source, Not the Symptom', desc:'Moving people away from a problem manages the symptom. The drain continues for everyone left behind. Systems heal only when you address the source.' },
+  emergence:    { icon:'🌊', name:'High Performance Is Emergent', desc:'You never built a high-performing team by choosing it. You set the conditions - safety, fairness, clarity, meaning - and it emerged on its own. Or it didn\'t.' }
+};
+
+/* ════════════════════════════════════════════
+   STATE
+   ════════════════════════════════════════════ */
+var S = {
+  stage:0, turn:1, attentionMax:2, attentionLeft:2,
+  resolved:{},          // situationId -> optionIdx
+  pendingRipples:[],    // {fireTurn, text, trace, type}
+  lawsFound:{},         // lawKey -> true
+  history:[],
+  ended:false
+};
+
+/* deep copy starting currents so restart works */
+function snapshotCurrents(){ var m={}; TEAM.forEach(function(t){ m[t.id]={trust:t.currents.trust,safety:t.currents.safety,energy:t.currents.energy,belief:t.currents.belief}; }); return m; }
+var START_CURRENTS = snapshotCurrents();
+
+/* ════════════════════════════════════════════
+   SYSTEM TICK - the heart of the living model
+   contagion spreads, decay happens, currents move
+   ════════════════════════════════════════════ */
+function clamp(v){ return Math.max(0,Math.min(100,v)); }
+
+function systemTick(){
+  // 1. Contagion: each person with a radius pushes effect onto neighbours
+  TEAM.forEach(function(src){
+    if(src.role_type==='drainer' || src.role_type==='leech' || src.role_type==='healer'){
+      (src.radius||[]).forEach(function(tid){
+        var tgt=teamById(tid); if(!tgt) return;
+        if(src.role_type==='healer'){
+          tgt.currents.trust=clamp(tgt.currents.trust + src.radiusStrength);
+          tgt.currents.safety=clamp(tgt.currents.safety + Math.round(src.radiusStrength*0.6));
+        } else {
+          tgt.currents.safety=clamp(tgt.currents.safety + src.radiusStrength);
+        }
+      });
+    }
+  });
+  // 2. Natural decay: energy drifts down slightly, belief decays if trust low
+  TEAM.forEach(function(t){
+    t.currents.energy=clamp(t.currents.energy - 1);
+    if(t.currents.trust<45) t.currents.belief=clamp(t.currents.belief - 2);
+    // absorbers lose energy faster
+    if(t.role_type==='absorber') t.currents.energy=clamp(t.currents.energy - 2);
+  });
+}
+
+function teamHPT(){
+  var sum=0,n=0;
+  TEAM.forEach(function(t){
+    var avg=(t.currents.trust+t.currents.safety+t.currents.energy+t.currents.belief)/4;
+    sum+=avg; n++;
+  });
+  return Math.round(sum/n);
+}
+
+function dimAverages(){
+  var d={trust:0,safety:0,energy:0,belief:0};
+  TEAM.forEach(function(t){ d.trust+=t.currents.trust; d.safety+=t.currents.safety; d.energy+=t.currents.energy; d.belief+=t.currents.belief; });
+  var n=TEAM.length;
+  return { trust:Math.round(d.trust/n), safety:Math.round(d.safety/n), energy:Math.round(d.energy/n), belief:Math.round(d.belief/n) };
+}
+
+/* ════════════════════════════════════════════
+   SITUATIONS - interventions with system effects
+   Each option mutates currents + may schedule a ripple
+   + may flip a person's role_type (the deep mechanic)
+   ════════════════════════════════════════════ */
+var SITUATIONS = {
+  // STAGE 3 (months 1-2)
+  s3:[
+    { id:'arjun_early', title:'The First Crack', tag:'⚠️ Safety', tagBg:'rgba(239,68,68,.12)', tagFg:'#f87171',
+      scenario:'Week 2. Two people privately tell you Arjun dismissed their ideas in front of the team last week. Ryan - your new joiner - has gone completely silent since. Arjun just submitted his best output yet. A leadership review is in 3 weeks.',
+      target:'arjun', cost:1,
+      options:[
+        { text:'Confront the behaviour directly this week. Non-negotiable boundary, regardless of his numbers.', cost:1,
+          effects:function(){ var a=teamById('arjun'); a.role_type='neutralised'; a.radius=[]; bump('arjun','safety',-4); bump('arjun','trust',6); bump('ryan','safety',8); bump('priya','safety',6); discover('source'); },
+          read:'Arjun goes quiet. Defensive at first. But the room exhales - you can almost feel it. You\'ve cut the drain at the source. What grows back now depends on what you do next.',
+          ripple:{ inTurns:2, type:'good', text:'Two weeks later, Ryan shares an idea in standup. A good one. Arjun asks a clarifying question instead of dismissing it. Not warmth - but restraint. The room relaxes.', trace:'Traces back to → Turn 1: confronting the source of the drain.' } },
+        { text:'Wait until after the leadership review. His numbers matter too much right now.', cost:1,
+          effects:function(){ bump('priya','safety',-6); bump('ryan','safety',-8); discover('silence'); },
+          read:'Nothing visible changes. Arjun keeps performing. The complaints fade from your inbox. It feels almost like it resolved itself. It didn\'t.',
+          ripple:{ inTurns:3, type:'bad', text:'Priya sends a meeting request marked "confidential." She\'s exploring her options. "I don\'t feel safe speaking up in this team," she writes. You\'ve lost weeks you can\'t get back.', trace:'Traces back to → Turn 1: choosing his output over the team\'s safety.' } },
+        { text:'Tell the complainants to be more direct with Arjun themselves. Build their resilience.', cost:1,
+          effects:function(){ bump('ryan','safety',-5); bump('ryan','trust',-4); discover('silence'); },
+          read:'They nod and leave your office. They will not be raising it with Arjun. You\'ve quietly told them this is their problem to solve.',
+          ripple:{ inTurns:2, type:'bad', text:'Ryan gives notice. In his exit chat: "I thought it was me at first. Then I realised nobody here feels safe saying anything."', trace:'Traces back to → Turn 1: pushing the problem back onto the victims.' } }
+      ] },
+
+    { id:'linda_signal', title:'The Quiet Withdrawal', tag:'🚀 Belief', tagBg:'rgba(244,114,182,.12)', tagFg:'#f472b6',
+      scenario:'Week 3. Linda - your most tenured analyst - now leaves at exactly 6pm. She declined two stretch projects with vague excuses. In your 1:1 she was present but distant. Your instinct says something is wrong.',
+      target:'linda', cost:1,
+      options:[
+        { text:'Open a direct conversation now: "I\'ve noticed a shift - is there something you need that you\'re not getting?"', cost:1,
+          effects:function(){ var l=teamById('linda'); l.timer=99; bump('linda','belief',14); bump('linda','trust',10); bump('linda','energy',6); discover('window'); },
+          read:'She\'s startled you noticed. The conversation runs 90 minutes. The promotion she was promised 18 months ago surfaces. You can\'t grant it yourself - but you make a credible commitment, and act on it within the week.',
+          ripple:{ inTurns:2, type:'good', text:'Linda emails the recruiter to postpone. She volunteers to lead a project for the first time in months. The window stayed open because you walked through it in time.', trace:'Traces back to → Turn 1: reading the signal before the clock ran out.' } },
+        { text:'Give it two weeks. Maybe it\'s personal. Don\'t pry.', cost:0,
+          effects:function(){ /* timer keeps ticking */ discover('window'); },
+          read:'You give her space. It feels respectful. The clock you can\'t see keeps ticking.',
+          ripple:null },
+        { text:'Assign her a high-visibility project to re-engage her.', cost:1,
+          effects:function(){ bump('linda','energy',5); bump('linda','belief',3); },
+          read:'She takes it. Engagement lifts - briefly. But you\'ve treated the symptom. The promotion conversation she actually needs is still unhad.',
+          ripple:{ inTurns:3, type:'bad', text:'The lift fades. The root cause was never the work - it was the unmet promise. She\'s back to 6pm departures, and now the recruiter has called again.', trace:'Traces back to → Turn 1: a project can\'t fix a broken promise.' } }
+      ] }
+  ],
+
+  // STAGE 4 (months 3-4)
+  s4:[
+    { id:'priya_project', title:'The Visibility Fork', tag:'⭐ Belief', tagBg:'rgba(167,139,250,.12)', tagFg:'#a78bfa',
+      scenario:'Month 3. A high-stakes cross-functional project needs a lead. Arjun is the obvious choice by seniority. But you\'ve started seeing Priya\'s real capability. This is a visibility opportunity - or a risk.',
+      target:'priya', cost:1,
+      options:[
+        { text:'Give Priya the lead, Arjun as technical advisor. Explicit role separation.', cost:1,
+          effects:function(){ var p=teamById('priya'); p.role_type='rising'; bump('priya','belief',16); bump('priya','energy',10); bump('priya','trust',8); bump('ryan','belief',6); bump('sarah','belief',5); discover('recognition'); },
+          read:'Priya hesitates, then accepts. Over the next weeks you watch her grow into it. And something unexpected: Ryan and Sarah are watching too. If she can be seen, maybe they can.',
+          ripple:{ inTurns:2, type:'good', text:'Priya delivers two days early. Stakeholders name her specifically. Arjun privately admits she\'s better at stakeholder management than he expected. Belief lifts across the juniors - recognition was never about one person.', trace:'Traces back to → Turn 3: making invisible work visible.' } },
+        { text:'Give it to Arjun. Too important to experiment. Priya gets the next one.', cost:1,
+          effects:function(){ bump('priya','belief',-8); bump('priya','trust',-5); },
+          read:'Arjun leads. It succeeds technically. At the debrief, three people\'s contributions appear in his self-assessment. You notice. Nobody else does. Priya says nothing - and disappears a little further.',
+          ripple:{ inTurns:2, type:'bad', text:'Priya stops volunteering ideas. The invisible star is going dark, and you handed her the dimmer switch.', trace:'Traces back to → Turn 3: the safe choice that confirmed her invisibility.' } }
+      ] },
+
+    { id:'sarah_break', title:'The Silent Overload', tag:'⚡ Energy', tagBg:'rgba(96,165,250,.12)', tagFg:'#60a5fa',
+      scenario:'Month 3. Sarah has quietly taken on three extra tasks this month - none formally assigned. Colleagues asked casually; she said yes to all. She\'s working past midnight. You find out from Fatima, not Sarah.',
+      target:'sarah', cost:1,
+      options:[
+        { text:'Proactively remove two tasks. Don\'t ask - she\'ll object. Tell her you\'ve reassigned them.', cost:1,
+          effects:function(){ bump('sarah','energy',16); bump('sarah','trust',12); bump('sarah','safety',6); discover('burnout'); },
+          read:'She objects at first - "I can handle it." You hold firm. Two days later: "Thank you for making that call. I didn\'t realise how close to the edge I was." She takes an afternoon off for the first time in months.',
+          ripple:null },
+        { text:'Have a 1:1 and tell her she needs to learn to say no. Growth area.', cost:1,
+          effects:function(){ bump('sarah','energy',2); bump('sarah','safety',-3); },
+          read:'She hears it as criticism. She starts saying no - but now she\'s anxious about looking like she can\'t cope. You\'ve added a worry on top of the exhaustion.',
+          ripple:null },
+        { text:'Wait for Sarah to raise it. She\'s an adult - she knows her limits.', cost:0,
+          effects:function(){ bump('sarah','energy',-8); discover('burnout'); },
+          read:'You respect her autonomy. She never raises it. She physically cannot.',
+          ripple:{ inTurns:2, type:'bad', text:'Sarah calls in sick three days running. The note says exhaustion. She returns quieter, output down 30%. The burnout held steady - then collapsed all at once, exactly as it always does.', trace:'Traces back to → Turn 3: waiting for a warning she was never going to give.' } }
+      ] },
+
+    { id:'david_review', title:'The Veteran\'s Crossroads', tag:'🌅 Energy', tagBg:'rgba(148,163,184,.12)', tagFg:'#94a3b8',
+      scenario:'Month 4. David\'s check-in. He showed up differently for two weeks after your earlier conversation, then slipped back. Today he\'s engaged but guarded. You have 45 minutes and 11 years of knowledge on the line.',
+      target:'david', cost:1,
+      options:[
+        { text:'Offer him a real new role - Team Knowledge Lead - that makes his 11 years his primary contribution.', cost:1,
+          effects:function(){ var d=teamById('david'); d.role_type='reignited'; bump('david','energy',20); bump('david','belief',18); bump('david','trust',8); discover('shadow'); },
+          read:'The reframe lands. Something shifts behind his eyes. He documents three critical processes nobody knew he alone understood. He runs his first knowledge session in 8 years.',
+          ripple:{ inTurns:2, type:'good', text:'David emails you on a Sunday: "First time in 18 months I\'ve looked forward to a Monday." The grief lifted because you gave him a reason to matter again.', trace:'Traces back to → Turn 4: seeing the grief, not the laziness.' } },
+        { text:'Put him on a formal PIP. He\'s had his chance.', cost:1,
+          effects:function(){ bump('david','trust',-12); bump('david','belief',-10); bump('fatima','trust',-4); },
+          read:'David goes very still. The PIP came without the documented support that should have preceded it. He mentions, quietly, that he\'ll be "looking into his options."',
+          ripple:{ inTurns:2, type:'bad', text:'David retains a lawyer. HR is not pleased - the process was initiated too abruptly. And the team noticed how you treated the man who built this place.', trace:'Traces back to → Turn 4: punishing grief as if it were defiance.' } },
+        { text:'Encourage him again. More patience, same conversation.', cost:1,
+          effects:function(){ bump('david','energy',3); },
+          read:'He appreciates it. Nothing structural changes. You\'ve now had the same conversation twice - the issue was never the encouragement, it was the absence of a real reason to return.',
+          ripple:null }
+      ] }
+  ],
+
+  // STAGE 5 (month 5 - fracture)
+  s5:[
+    { id:'credit', title:'The Stolen Credit', tag:'🎭 Safety', tagBg:'rgba(245,158,11,.12)', tagFg:'#f59e0b',
+      scenario:'Month 5. The project Priya led is presented to leadership. In the summary, Marcus has written three paragraphs attributing 60% of the strategy to himself. Priya has said nothing. Three team members noticed - and are watching what you do.',
+      target:'marcus', cost:1,
+      options:[
+        { text:'Correct the record immediately. Rewrite attribution. Direct private conversation with Marcus about the pattern.', cost:1,
+          effects:function(){ var m=teamById('marcus'); m.role_type='checked'; m.radius=[]; bump('priya','belief',12); bump('priya','trust',10); bump('ryan','trust',6); bump('sarah','trust',5); bump('fatima','trust',4); discover('trustbank'); },
+          read:'You rewrite it within the hour and copy the leadership thread. Marcus is privately furious, then chastened. Priya says nothing to you - but Fatima does, two days later: "That\'s the first time a manager ever did that for her."',
+          ripple:{ inTurns:1, type:'good', text:'Three people who were watching quietly updated their assessment of you. Trust is earned in drops and lost in buckets - you just made a large deposit in front of an audience.', trace:'Traces back to → Turn 5: protecting someone under pressure.' } },
+        { text:'Let Priya handle it. She should advocate for herself.', cost:0,
+          effects:function(){ bump('priya','belief',-12); bump('priya','trust',-8); bump('ryan','trust',-5); bump('sarah','trust',-5); discover('trustbank'); },
+          read:'Priya says nothing. Nobody does. Marcus\'s version becomes the official record. The team has just learned exactly what you will and won\'t protect.',
+          ripple:{ inTurns:1, type:'bad', text:'The lesson lands in every corner of the room. Three people privately downgrade how much they\'ll risk for you. Trust lost in buckets.', trace:'Traces back to → Turn 5: staying silent when it counted.' } },
+        { text:'Raise it in Marcus\'s next performance review. Document it formally.', cost:1,
+          effects:function(){ bump('priya','belief',-4); },
+          read:'It goes in the review notes for later. Marcus knows. Quietly, he begins undermining Priya\'s next initiative before it even starts. You\'ve given him a 6-month head start.',
+          ripple:null }
+      ] },
+
+    { id:'fatima_review', title:'The Unmeasurable Asset', tag:'🌿 Belief', tagBg:'rgba(52,211,153,.12)', tagFg:'#34d399',
+      scenario:'Month 5. Fatima\'s annual review. On every metric she\'s a 3 - solid, meets expectations, no standout output. But you\'ve watched her hold Ryan together, mediate three tensions that never became complaints. Your rating system has no box for any of it.',
+      target:'fatima', cost:1,
+      options:[
+        { text:'Rate her a 4. Name "cultural stewardship & team cohesion" as a performance dimension. Fight for the increment.', cost:1,
+          effects:function(){ var f=teamById('fatima'); bump('fatima','belief',16); bump('fatima','trust',12); bump('fatima','energy',8); f.radiusStrength=6; discover('invisible'); },
+          read:'Fatima reads her review three times. She\'d never seen the words "cultural stewardship" in a performance document. She shows it to her partner that evening. Her healing radius just got stronger - because someone finally saw it.',
+          ripple:{ inTurns:1, type:'good', text:'Fatima rejects two recruiter approaches over the next month - ones she\'d have taken seriously before. The load-bearing wall just reinforced itself.', trace:'Traces back to → Turn 5: measuring what mattered, not just what was easy to measure.' } },
+        { text:'Rate her a 3. The system is the system. Average increment.', cost:0,
+          effects:function(){ var f=teamById('fatima'); bump('fatima','belief',-14); bump('fatima','trust',-10); f.role_type='leaving'; f.radiusStrength=0; discover('invisible'); },
+          read:'Fatima is gracious in the meeting. She thanks you for your time. That evening she updates her CV. She doesn\'t tell you she\'s looking.',
+          ripple:{ inTurns:2, type:'bad', text:'Fatima\'s healing radius goes dark - the trust she was quietly generating for Ryan, Sarah, David and Priya stops flowing. The whole network sags. You measured her at a 3, so a 3 is what you\'ll keep.', trace:'Traces back to → Turn 5: the invisible labor trap, sprung.' } }
+      ] },
+
+    { id:'arjun_ultimatum', title:'The Final Boundary', tag:'🔥 Safety', tagBg:'rgba(239,68,68,.12)', tagFg:'#f87171',
+      scenario:'Month 5. Despite earlier conversations, last week Arjun dismissed Sarah\'s suggestion in front of a client. Sarah has asked to be moved off any project involving him. You have a decision that the whole team will read.',
+      target:'arjun', cost:1,
+      options:[
+        { text:'Formal written warning. This specific behaviour in a client setting is terminable if repeated. No ambiguity.', cost:1,
+          effects:function(){ var a=teamById('arjun'); a.role_type='neutralised'; a.radius=[]; bump('arjun','trust',4); bump('sarah','safety',10); bump('ryan','safety',6); bump('priya','safety',6); discover('source'); },
+          read:'Arjun reads the warning. Silent for a week. Then he asks for a 1:1 - and tells you about being publicly humiliated by a senior early in his own career. It doesn\'t excuse it. But he asks to apologise to Sarah. She agrees to talk. The first real turning point.',
+          ripple:{ inTurns:1, type:'good', text:'The team sees the boundary held with the highest performer. Safety climbs across everyone in his former blast radius. The source is finally, properly addressed.', trace:'Traces back to → Turn 5: results without respect is not high performance.' } },
+        { text:'Move Sarah off Arjun\'s projects. Separate them. Keep both happy.', cost:1,
+          effects:function(){ bump('sarah','safety',3); bump('ryan','safety',-4); bump('priya','safety',-3); discover('source'); },
+          read:'You\'ve structurally confirmed to the team that Arjun\'s behaviour is something to manage around, not address. Three people quietly file that information away for when they decide whether to speak up about their own situations.',
+          ripple:{ inTurns:2, type:'bad', text:'The drain never stopped - you just moved one person out of its path. Everyone still in the blast radius noticed you chose avoidance over the source.', trace:'Traces back to → Turn 5: treating the symptom, sparing the source.' } }
+      ] }
+  ]
+};
+
+function bump(id,dim,amt){ var t=teamById(id); if(t){ t.currents[dim]=clamp(t.currents[dim]+amt); } }
+
+function discover(key){
+  if(S.lawsFound[key]) return;
+  S.lawsFound[key]=true;
+  showLawToast(key);
+  renderCodex();
+}
+
+/* ════════════════════════════════════════════
+   LAW TOAST
+   ════════════════════════════════════════════ */
+var lawQueue=[], lawShowing=false;
+function showLawToast(key){
+  lawQueue.push(key);
+  if(!lawShowing) nextLaw();
+}
+function nextLaw(){
+  if(lawQueue.length===0){ lawShowing=false; return; }
+  lawShowing=true;
+  var key=lawQueue.shift();
+  var law=LAWS[key];
+  document.getElementById('fg-law-name').textContent=law.name;
+  document.getElementById('fg-law-desc').textContent=law.desc;
+  var toast=document.getElementById('fg-law-toast');
+  toast.classList.add('show');
+  setTimeout(function(){ toast.classList.remove('show'); setTimeout(nextLaw,500); }, 4200);
+}
+
+/* ════════════════════════════════════════════
+   HERO CANVAS (ambient particles)
+   ════════════════════════════════════════════ */
+(function(){
+  var canvas=document.getElementById('fg-hero-canvas');
+  var root=document.getElementById('fg-hero');
+  var ctx=canvas.getContext('2d');
+  var pts=[],W,H;
+  function resize(){ W=canvas.width=root.offsetWidth||800; H=canvas.height=root.offsetHeight||280; }
+  function init(){ pts=[]; for(var i=0;i<42;i++){ pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.3+.3,o:Math.random()*.4+.1}); } }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){ for(var j=i+1;j<pts.length;j++){ var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<110){ ctx.beginPath(); ctx.strokeStyle='rgba(139,92,246,'+(0.12*(1-d/110))+')'; ctx.lineWidth=.6; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); } } }
+    pts.forEach(function(p){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(167,139,250,'+p.o+')'; ctx.fill(); p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; });
+    requestAnimationFrame(draw);
+  }
+  resize(); init(); draw();
+  setTimeout(function(){resize();init();},500);
+  window.addEventListener('resize',function(){resize();init();});
+})();
+
+/* ════════════════════════════════════════════
+   LIVING NETWORK CANVAS - the WOW centrepiece
+   ════════════════════════════════════════════ */
+var netState={ nodes:[], links:[], hot:null, raf:null };
+function initNetwork(){
+  var canvas=document.getElementById('fg-network-canvas');
+  if(!canvas) return;
+  var ctx=canvas.getContext('2d');
+  function size(){ canvas.width=canvas.offsetWidth; }
+  size();
+  var W=canvas.width, H=canvas.height;
+
+  // place nodes in a loose circle, Arjun off to one side
+  var cx=W/2, cy=H/2, R=Math.min(W,H)*0.34;
+  netState.nodes=TEAM.map(function(t,i){
+    var ang=(i/TEAM.length)*Math.PI*2 - Math.PI/2;
+    return { id:t.id, t:t, x:cx+Math.cos(ang)*R+(Math.random()-.5)*20, y:cy+Math.sin(ang)*R+(Math.random()-.5)*20, vx:0, vy:0, baseR:18 };
+  });
+  // links = relationships; toxic edges from drainers, healing from healer
+  netState.links=[];
+  TEAM.forEach(function(t){
+    (t.radius||[]).forEach(function(tid){
+      netState.links.push({ a:t.id, b:tid, kind:(t.role_type==='healer'?'heal':(t.role_type==='drainer'||t.role_type==='leech'?'drain':'neutral')), pulse:Math.random()*Math.PI*2 });
+    });
+  });
+  // add a few neutral relationship links for visual richness
+  var extra=[['priya','fatima'],['david','fatima'],['sarah','ryan'],['linda','david'],['marcus','linda']];
+  extra.forEach(function(e){ netState.links.push({a:e[0],b:e[1],kind:'neutral',pulse:Math.random()*Math.PI*2}); });
+
+  function nodeById(id){ for(var i=0;i<netState.nodes.length;i++){ if(netState.nodes[i].id===id) return netState.nodes[i]; } return null; }
+
+  function trustColor(v){
+    if(v>=60) return [52,211,153];
+    if(v>=45) return [251,191,36];
+    return [239,68,68];
+  }
+
+  var t=0;
+  function frame(){
+    t+=0.016;
+    W=canvas.width; H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+
+    // gentle float
+    netState.nodes.forEach(function(n){ n.x+=Math.sin(t+n.x*0.01)*0.12; n.y+=Math.cos(t+n.y*0.01)*0.12; });
+
+    // draw links
+    netState.links.forEach(function(l){
+      var a=nodeById(l.a), b=nodeById(l.b); if(!a||!b) return;
+      l.pulse+=0.04;
+      var col, w, alpha;
+      if(l.kind==='drain'){ col='239,68,68'; w=2.2; alpha=0.35+0.25*Math.sin(l.pulse); }
+      else if(l.kind==='heal'){ col='52,211,153'; w=1.8; alpha=0.3+0.2*Math.sin(l.pulse); }
+      else { col='139,92,246'; w=1; alpha=0.16; }
+      ctx.beginPath();
+      ctx.strokeStyle='rgba('+col+','+alpha+')';
+      ctx.lineWidth=w;
+      ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      // travelling particle for drain/heal
+      if(l.kind!=='neutral'){
+        var prog=(Math.sin(l.pulse*0.7)+1)/2;
+        var px=a.x+(b.x-a.x)*prog, py=a.y+(b.y-a.y)*prog;
+        ctx.beginPath(); ctx.arc(px,py,2.4,0,Math.PI*2); ctx.fillStyle='rgba('+col+',0.9)'; ctx.fill();
+      }
+    });
+
+    // draw nodes
+    netState.nodes.forEach(function(n){
+      var c=n.t.currents;
+      var energyR=n.baseR + (c.energy/100)*6;
+      var tc=trustColor(c.trust);
+      // glow
+      var safetyGlow=(c.safety/100);
+      var grd=ctx.createRadialGradient(n.x,n.y,2,n.x,n.y,energyR+16);
+      grd.addColorStop(0,'rgba('+tc[0]+','+tc[1]+','+tc[2]+','+(0.25+0.25*safetyGlow)+')');
+      grd.addColorStop(1,'rgba('+tc[0]+','+tc[1]+','+tc[2]+',0)');
+      ctx.beginPath(); ctx.arc(n.x,n.y,energyR+16,0,Math.PI*2); ctx.fillStyle=grd; ctx.fill();
+      // node body
+      ctx.beginPath(); ctx.arc(n.x,n.y,energyR,0,Math.PI*2);
+      ctx.fillStyle='#0d0b22'; ctx.fill();
+      ctx.lineWidth=2.2; ctx.strokeStyle='rgba('+tc[0]+','+tc[1]+','+tc[2]+',0.9)'; ctx.stroke();
+      // emoji
+      ctx.font='15px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(n.t.emoji, n.x, n.y+1);
+      // name
+      ctx.font='600 9px "DM Sans",sans-serif'; ctx.fillStyle='rgba(196,181,253,0.6)';
+      ctx.fillText(n.t.name.split(' ')[0], n.x, n.y+energyR+11);
+    });
+
+    netState.raf=requestAnimationFrame(frame);
+  }
+  if(netState.raf) cancelAnimationFrame(netState.raf);
+  frame();
+
+  // click → modal
+  canvas.onclick=function(e){
+    var rect=canvas.getBoundingClientRect();
+    var mx=(e.clientX-rect.left)*(canvas.width/rect.width);
+    var my=(e.clientY-rect.top)*(canvas.height/rect.height);
+    for(var i=0;i<netState.nodes.length;i++){
+      var n=netState.nodes[i];
+      var dx=mx-n.x, dy=my-n.y;
+      if(dx*dx+dy*dy < 28*28){ fgOpenModal(n.id); return; }
+    }
+  };
+  window.addEventListener('resize',function(){ size(); });
+}
+
+/* ════════════════════════════════════════════
+   TEAM GRID + MODAL
+   ════════════════════════════════════════════ */
+function buildTeamGrid(){
+  var grid=document.getElementById('fg-team-grid');
+  grid.innerHTML=TEAM.map(function(c){
+    return '<div class="fg-card" onclick="fgOpenModal(\''+c.id+'\')">'+
+      '<div class="fg-card-glow" style="background:'+c.color+';"></div>'+
+      '<div class="fg-card-top">'+
+        '<div class="fg-avatar" style="background:linear-gradient(135deg,'+c.gradFrom+','+c.gradTo+');">'+c.emoji+'</div>'+
+        '<div class="fg-arch" style="background:'+c.archBg+';color:'+c.archFg+';border:1px solid '+c.color+'44;">'+c.arch+'</div>'+
+      '</div>'+
+      '<div class="fg-card-name">'+c.name+'</div>'+
+      '<div class="fg-card-role">'+c.role+'</div>'+
+      '<div class="fg-card-tension">'+c.tension+'</div>'+
+      '<div class="fg-card-tap">tap to understand →</div>'+
+    '</div>';
+  }).join('');
+}
+
+window.fgOpenModal=function(id){
+  var c=teamById(id); if(!c) return;
+  var dimColor=function(v){ return v>=65?'#34d399':v>=45?'#fbbf24':'#f87171'; };
+  var cur=c.currents;
+  document.getElementById('fg-modal-body').innerHTML=
+    '<div class="fg-m-avatar" style="background:linear-gradient(135deg,'+c.gradFrom+','+c.gradTo+');">'+c.emoji+'</div>'+
+    '<div class="fg-m-name">'+c.name+'</div>'+
+    '<div class="fg-m-role">'+c.role+' · <span style="color:'+c.archFg+'">'+c.arch+'</span></div>'+
+    '<div class="fg-m-currents">'+
+      '<div class="fg-m-current"><div class="fg-m-current-val" style="color:'+dimColor(cur.trust)+'">'+cur.trust+'</div><div class="fg-m-current-lbl">Trust</div></div>'+
+      '<div class="fg-m-current"><div class="fg-m-current-val" style="color:'+dimColor(cur.safety)+'">'+cur.safety+'</div><div class="fg-m-current-lbl">Safety</div></div>'+
+      '<div class="fg-m-current"><div class="fg-m-current-val" style="color:'+dimColor(cur.energy)+'">'+cur.energy+'</div><div class="fg-m-current-lbl">Energy</div></div>'+
+      '<div class="fg-m-current"><div class="fg-m-current-val" style="color:'+dimColor(cur.belief)+'">'+cur.belief+'</div><div class="fg-m-current-lbl">Belief</div></div>'+
+    '</div>'+
+    '<div class="fg-m-sec"><div class="fg-m-sec-title">Backstory</div><div class="fg-m-text">'+c.backstory+'</div></div>'+
+    '<div class="fg-m-sec"><div class="fg-m-sec-title">The Tension</div><div class="fg-m-dilemma"><strong>⚡ </strong>'+c.dilemma+'</div></div>';
+  document.getElementById('fg-modal-ov').classList.add('open');
+};
+window.fgCloseModal=function(){ document.getElementById('fg-modal-ov').classList.remove('open'); };
+document.getElementById('fg-modal-ov').addEventListener('click',function(e){ if(e.target===this) fgCloseModal(); });
+
+/* ════════════════════════════════════════════
+   STAGE 2 baseline render
+   ════════════════════════════════════════════ */
+function renderBaseline(){
+  document.getElementById('fg-base-hpt').textContent=teamHPT();
+  var d=dimAverages();
+  var dims=[['Trust',d.trust],['Safety',d.safety],['Energy',d.energy],['Belief',d.belief]];
+  document.getElementById('fg-base-dims').innerHTML=dims.map(function(x){
+    var col=x[1]>=60?'#34d399':x[1]>=45?'#fbbf24':'#f87171';
+    return '<div class="fg-hud-dim"><div class="fg-hud-dim-bar"><div class="fg-hud-dim-fill" style="width:0%;background:'+col+';" data-w="'+x[1]+'"></div></div><div class="fg-hud-dim-val" style="color:'+col+'">'+x[1]+'</div><div class="fg-hud-dim-lbl">'+x[0]+'</div></div>';
+  }).join('');
+  setTimeout(function(){ document.querySelectorAll('#fg-base-dims .fg-hud-dim-fill').forEach(function(el){ el.style.width=el.getAttribute('data-w')+'%'; }); },100);
+}
+
+/* ════════════════════════════════════════════
+   STAGE NAVIGATION
+   ════════════════════════════════════════════ */
+window.fgGoStage=function(idx){
+  if(idx>=2 && !isPro()){ showProGate(idx); return; }
+  S.stage=idx;
+  document.querySelectorAll('.fg-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('fg-panel-'+idx).classList.add('active');
+  document.querySelectorAll('.fg-step').forEach(function(s,i){
+    s.className='fg-step '+(i<idx?'s-done':i===idx?'s-active':i<2?'s-free':'s-pro');
+    var num=s.querySelector('.fg-step-num');
+    if(i<idx) num.textContent='✓'; else if(i===idx) num.textContent=i+1; else if(i<2) num.textContent=i+1; else num.textContent='🔒';
+  });
+  if(idx===0){ initNetwork(); }
+  if(idx===1){ renderBaseline(); }
+  if(idx===2){ buildSimStage('s3', 2, 'First Moves', 'Stage 3 · Months 1–2', 'Two situations land on your desk. You have limited attention this turn - you cannot resolve everything. Choose where to spend it, then end the turn and watch the system respond.'); }
+  if(idx===3){ buildSimStage('s4', 3, 'Pressure', 'Stage 4 · Months 3–4', 'The pressure builds. Three situations, three turns of attention. Old decisions are still rippling. Read the network - it\'s changed since you started.'); }
+  if(idx===4){ buildSimStage('s5', 4, 'Fracture', 'Stage 5 · Month 5', 'Everything surfaces at once. This is where teams either consolidate or come apart. Your earlier choices have set the stage for what\'s now possible.'); }
+  if(idx===5){ buildReckoning(); }
+  setTimeout(function(){ document.getElementById('fg-root').scrollIntoView({behavior:'smooth',block:'start'}); },50);
+};
+
+function showProGate(idx){
+  var panel=document.getElementById('fg-panel-'+idx);
+  document.querySelectorAll('.fg-panel').forEach(function(p){ p.classList.remove('active'); });
+  panel.classList.add('active');
+  panel.innerHTML=
+    '<div class="fg-pro-gate">'+
+      '<div class="fg-pro-icon">🧬</div>'+
+      '<div class="fg-pro-title">The simulation runs in Pro</div>'+
+      '<div class="fg-pro-sub">You\'ve met the team and read the system. Now run it. Six months of decisions, a living network that responds to every move, consequences that ripple turns later, and the hidden Laws of high performance - discovered, not taught.</div>'+
+      '<div class="fg-pro-features">'+
+        '<span class="fg-pro-feat">🌊 Contagion engine</span>'+
+        '<span class="fg-pro-feat">⏳ Delayed consequences</span>'+
+        '<span class="fg-pro-feat">🔓 12 discoverable Laws</span>'+
+        '<span class="fg-pro-feat">👻 The counterfactual ending</span>'+
+      '</div>'+
+      '<a href="/pages/pricing.html" class="fg-pro-btn">🚀 Unlock with Virorah PMS Pro</a>'+
+    '</div>';
+}
+
+/* ════════════════════════════════════════════
+   BUILD A SIMULATION STAGE
+   ════════════════════════════════════════════ */
+function buildSimStage(key, stageIdx, name, eyebrow, intro){
+  var panel=document.getElementById('fg-panel-'+stageIdx);
+  var sits=SITUATIONS[key];
+  // attention budget = number of "cost 1" situations available, capped
+  S.attentionMax = key==='s3'?2 : key==='s4'?3 : 3;
+  S.attentionLeft = S.attentionMax;
+
+  var d=dimAverages();
+  var dimsHtml=[['Trust',d.trust],['Safety',d.safety],['Energy',d.energy],['Belief',d.belief]].map(function(x){
+    var col=x[1]>=60?'#34d399':x[1]>=45?'#fbbf24':'#f87171';
+    return '<div class="fg-hud-dim"><div class="fg-hud-dim-bar"><div class="fg-hud-dim-fill" style="width:'+x[1]+'%;background:'+col+';"></div></div><div class="fg-hud-dim-val" style="color:'+col+'">'+x[1]+'</div><div class="fg-hud-dim-lbl">'+x[0]+'</div></div>';
+  }).join('');
+
+  var attnDots='';
+  for(var i=0;i<S.attentionMax;i++){ attnDots+='<div class="fg-hud-attn-dot avail" id="'+key+'-attn-'+i+'"></div>'; }
+
+  var sitsHtml=sits.map(function(sit,si){
+    var opts=sit.options.map(function(opt,oi){
+      var costLbl=opt.cost===0?'free':opt.cost+' attention';
+      return '<button class="fg-opt" id="'+key+'-'+si+'-'+oi+'" onclick="fgChoose(\''+key+'\','+si+','+oi+')">'+
+        '<div class="fg-opt-num">'+(oi+1)+'</div>'+
+        '<div>'+opt.text+'</div>'+
+        '<div class="fg-opt-cost">'+costLbl+'</div>'+
+      '</button>';
+    }).join('');
+    return '<div class="fg-situation" id="'+key+'-sit-'+si+'">'+
+      '<div class="fg-sit-tag" style="background:'+sit.tagBg+';color:'+sit.tagFg+';">'+sit.tag+'</div>'+
+      '<div class="fg-sit-title">'+sit.title+'</div>'+
+      '<div class="fg-sit-scenario">'+sit.scenario+'</div>'+
+      '<div class="fg-options">'+opts+'</div>'+
+      '<div class="fg-read" id="'+key+'-read-'+si+'"></div>'+
+    '</div>';
+  }).join('');
+
+  panel.innerHTML=
+    '<div class="fg-sec-eyebrow">'+eyebrow+'</div>'+
+    '<h2 class="fg-sec-title">'+name+'</h2>'+
+    '<p class="fg-sec-sub">'+intro+'</p>'+
+    '<div class="fg-hud">'+
+      '<div class="fg-hud-turn"><div class="fg-hud-turn-val" id="'+key+'-hpt">'+teamHPT()+'</div><div class="fg-hud-turn-lbl">Team HPT</div></div>'+
+      '<div class="fg-hud-dims" id="'+key+'-dims">'+dimsHtml+'</div>'+
+      '<div class="fg-hud-attn"><div class="fg-hud-attn-dots">'+attnDots+'</div><div class="fg-hud-attn-lbl" id="'+key+'-attn-lbl">Attention left</div></div>'+
+    '</div>'+
+    '<div id="'+key+'-ripples"></div>'+
+    sitsHtml+
+    renderCodexHTML()+
+    '<div class="fg-btn-row">'+
+      '<button class="fg-btn-secondary" onclick="fgGoStage('+(stageIdx-1)+')">← Back</button>'+
+      '<button class="fg-btn-primary" id="'+key+'-tick" onclick="fgEndTurn(\''+key+'\','+stageIdx+')" disabled>End the turn → watch the system respond</button>'+
+    '</div>';
+
+  // fire any ripples scheduled for this turn
+  fireRipples(key);
+  renderCodex();
+}
+
+/* ════════════════════════════════════════════
+   CHOOSE AN OPTION
+   ════════════════════════════════════════════ */
+window.fgChoose=function(key, si, oi){
+  if(S.resolved[key+'-'+si]!==undefined) return;
+  var sit=SITUATIONS[key][si];
+  var opt=sit.options[oi];
+  if(opt.cost>S.attentionLeft){
+    // not enough attention - flash the HUD label
+    var lbl=document.getElementById(key+'-attn-lbl');
+    if(lbl){ lbl.textContent='Out of attention!'; lbl.style.color='#f87171'; setTimeout(function(){ lbl.textContent='Attention left'; lbl.style.color=''; },1400); }
+    discover('attention');
+    return;
+  }
+
+  S.resolved[key+'-'+si]=oi;
+  S.attentionLeft-=opt.cost;
+
+  // apply effects
+  opt.effects();
+
+  // schedule ripple
+  if(opt.ripple){
+    S.pendingRipples.push({ fireKey:null, fireTurn:S.turn+opt.ripple.inTurns, text:opt.ripple.text, trace:opt.ripple.trace, type:opt.ripple.type });
+  }
+
+  // UI: mark chosen, dim others, disable
+  sit.options.forEach(function(o,j){
+    var btn=document.getElementById(key+'-'+si+'-'+j);
+    if(!btn) return;
+    btn.disabled=true;
+    if(j===oi) btn.classList.add('chosen'); else btn.classList.add('dimmed');
+  });
+  document.getElementById(key+'-sit-'+si).classList.add('resolved');
+
+  // show the immediate read (NOT right/wrong - just observation)
+  var readEl=document.getElementById(key+'-read-'+si);
+  readEl.innerHTML='<div class="fg-read-title">What you observe</div><div class="fg-read-text">'+opt.read+'</div>';
+  readEl.classList.add('visible');
+
+  // update HUD live
+  refreshHUD(key);
+  updateAttnDots(key);
+
+  // enable end-turn once attention spent OR all situations resolved
+  var allResolved = SITUATIONS[key].every(function(s,i){ return S.resolved[key+'-'+i]!==undefined; });
+  if(S.attentionLeft<=0 || allResolved){
+    var tick=document.getElementById(key+'-tick');
+    if(tick) tick.disabled=false;
+    // dim any unresolved situations' options to signal you're out of attention
+    if(S.attentionLeft<=0){
+      SITUATIONS[key].forEach(function(s,i){
+        if(S.resolved[key+'-'+i]===undefined){
+          s.options.forEach(function(o,j){
+            var b=document.getElementById(key+'-'+i+'-'+j);
+            if(b && o.cost>0){ b.disabled=true; b.classList.add('dimmed'); }
+          });
+          // show the "ignored" read
+          var rEl=document.getElementById(key+'-read-'+i);
+          if(rEl && !rEl.classList.contains('visible')){
+            rEl.innerHTML='<div class="fg-read-title" style="color:rgba(248,113,113,.6);">Left unattended</div><div class="fg-read-text">You ran out of attention this turn. This situation continues unaddressed - and will keep evolving on its own.</div>';
+            rEl.classList.add('visible');
+          }
+          discover('attention');
+        }
+      });
+    }
+  }
+};
+
+function updateAttnDots(key){
+  for(var i=0;i<S.attentionMax;i++){
+    var dot=document.getElementById(key+'-attn-'+i);
+    if(!dot) continue;
+    dot.className='fg-hud-attn-dot '+(i<S.attentionLeft?'avail':'spent');
+  }
+}
+
+function refreshHUD(key){
+  document.getElementById(key+'-hpt').textContent=teamHPT();
+  var d=dimAverages();
+  var dims=[['Trust',d.trust],['Safety',d.safety],['Energy',d.energy],['Belief',d.belief]];
+  var cont=document.getElementById(key+'-dims');
+  cont.innerHTML=dims.map(function(x){
+    var col=x[1]>=60?'#34d399':x[1]>=45?'#fbbf24':'#f87171';
+    return '<div class="fg-hud-dim"><div class="fg-hud-dim-bar"><div class="fg-hud-dim-fill" style="width:'+x[1]+'%;background:'+col+';"></div></div><div class="fg-hud-dim-val" style="color:'+col+'">'+x[1]+'</div><div class="fg-hud-dim-lbl">'+x[0]+'</div></div>';
+  }).join('');
+}
+
+/* ════════════════════════════════════════════
+   END TURN - system ticks, time advances, ripples fire
+   ════════════════════════════════════════════ */
+window.fgEndTurn=function(key, stageIdx){
+  // advance Linda's timer (timed flight-risk)
+  var linda=teamById('linda');
+  if(linda.role_type==='timed' && linda.timer<90){
+    linda.timer--;
+    if(linda.timer<=0 && !linda.gone){
+      linda.gone=true; linda.role_type='gone';
+      bump('linda','trust',-40); bump('linda','energy',-40); bump('linda','belief',-40);
+      S.pendingRipples.push({ fireTurn:S.turn+1, type:'bad', text:'Linda hands in her resignation. She accepted the competing offer last week. There was a window to keep her - it closed quietly while you were busy with everything else.', trace:'Traces back to → an unread signal in the early turns.' });
+      discover('window');
+    }
+  }
+
+  // run the tick
+  systemTick();
+  S.turn++;
+
+  // loading beat, then advance
+  var tick=document.getElementById(key+'-tick');
+  tick.disabled=true; tick.textContent='The system is responding…';
+  setTimeout(function(){ fgGoStage(stageIdx+1); }, 700);
+};
+
+/* ════════════════════════════════════════════
+   FIRE RIPPLES due this turn
+   ════════════════════════════════════════════ */
+function fireRipples(key){
+  var due=S.pendingRipples.filter(function(r){ return r.fireTurn<=S.turn; });
+  S.pendingRipples=S.pendingRipples.filter(function(r){ return r.fireTurn>S.turn; });
+  if(due.length===0) return;
+  var cont=document.getElementById(key+'-ripples');
+  if(!cont) return;
+  cont.innerHTML=due.map(function(r){
+    var tagColor=r.type==='good'?'#34d399':'#fbbf24';
+    var tagText=r.type==='good'?'🌊 A ripple reaches you':'🌊 The consequence arrives';
+    var border=r.type==='good'?'rgba(52,211,153,.3)':'rgba(251,191,36,.3)';
+    return '<div class="fg-ripple" style="border-color:'+border+';">'+
+      '<div class="fg-ripple-tag" style="color:'+tagColor+';">'+tagText+'</div>'+
+      '<div class="fg-ripple-text">'+r.text+'</div>'+
+      '<div class="fg-ripple-trace">'+r.trace+'</div>'+
+    '</div>';
+  }).join('');
+}
+
+/* ════════════════════════════════════════════
+   CODEX (discovered laws)
+   ════════════════════════════════════════════ */
+function renderCodexHTML(){
+  var keys=Object.keys(LAWS);
+  var found=Object.keys(S.lawsFound).length;
+  var laws=keys.map(function(k){
+    var unlocked=S.lawsFound[k];
+    var law=LAWS[k];
+    return '<div class="fg-codex-law '+(unlocked?'unlocked':'')+'" title="'+(unlocked?law.desc:'Discover this by playing')+'">'+
+      '<div class="fg-codex-law-icon">'+(unlocked?law.icon:'🔒')+'</div>'+
+      '<div class="fg-codex-law-name">'+(unlocked?law.name:'Undiscovered Law')+'</div>'+
+    '</div>';
+  }).join('');
+  return '<div class="fg-codex" id="fg-codex"><div class="fg-codex-head"><div class="fg-codex-title">📖 The Laws You\'ve Discovered</div><div class="fg-codex-count">'+found+' / '+keys.length+'</div></div><div class="fg-codex-grid">'+laws+'</div></div>';
+}
+function renderCodex(){
+  document.querySelectorAll('#fg-codex').forEach(function(el){
+    var tmp=document.createElement('div'); tmp.innerHTML=renderCodexHTML();
+    el.replaceWith(tmp.firstChild);
+  });
+}
+
+/* ════════════════════════════════════════════
+   STAGE 6 - RECKONING + COUNTERFACTUAL GHOST
+   ════════════════════════════════════════════ */
+function buildReckoning(){
+  var panel=document.getElementById('fg-panel-5');
+  // fire any remaining ripples conceptually into the summary
+  var hpt=teamHPT();
+  var d=dimAverages();
+  var lawsFound=Object.keys(S.lawsFound).length;
+  var totalLaws=Object.keys(LAWS).length;
+
+  var label,color,desc;
+  if(hpt>=78){ label='High Performing Team'; color='#34d399'; desc='You didn\'t order this into existence - you set the conditions and it emerged. Safety held, fairness was visible, the right people felt seen. This is what the books point at but can\'t describe. You just lived it.'; }
+  else if(hpt>=64){ label='Emerging Performance'; color='#60a5fa'; desc='Real progress on the currents that matter. You moved the system in the right direction, but some sources went unaddressed and the cost compounded. That gap is the most honest teacher you\'ll find.'; }
+  else if(hpt>=50){ label='Still Functional'; color='#fbbf24'; desc='The team holds together - but it\'s carrying unhealed drains. Some decisions treated symptoms while the source kept working in the background. You can feel where it leaks. That feeling is the lesson.'; }
+  else { label='Fracturing'; color='#f87171'; desc='The system is coming apart at the seams. Toxicity spread faster than you contained it, and the people holding things together stopped being able to. The insight you\'ve earned here is worth more than the score.'; }
+
+  // counterfactual: best-case had they treated the source early + protected Fatima/Priya
+  var ghostText;
+  var arjun=teamById('arjun'), fatima=teamById('fatima'), priya=teamById('priya'), linda=teamById('linda');
+  var missed=[];
+  if(arjun.role_type==='drainer') missed.push('Arjun\'s drain was never cut at the source - it pulled the whole network down for six months');
+  if(fatima.role_type==='leaving' || fatima.role_type==='gone') missed.push('Fatima\'s invisible labor went unrewarded, and her healing radius went dark');
+  if(linda.gone) missed.push('Linda\'s window closed before you read the signal');
+  if(priya.currents.belief<50) missed.push('Priya\'s real contribution stayed invisible');
+
+  var ghostBody = missed.length
+    ? 'In the timeline where you cut the drain at its source early, protected your invisible contributors, and read the signals before the windows closed - this team reaches an HPT of <strong>~84</strong>. The gap between that number and yours isn\'t talent. It\'s '+missed.length+' specific moment'+(missed.length>1?'s':'')+': '+missed.join('; ')+'.'
+    : 'You played close to the ideal line - treating sources over symptoms, making the invisible visible, and moving before the windows closed. The ghost of the path-not-taken looks almost exactly like the team you built. That is rare.';
+
+  var dimsHtml=[['Trust',d.trust],['Safety',d.safety],['Energy',d.energy],['Belief',d.belief]].map(function(x){
+    var c=x[1]>=60?'#34d399':x[1]>=45?'#fbbf24':'#f87171';
+    return '<div class="fg-hud-dim" style="min-width:64px;"><div class="fg-hud-dim-bar"><div class="fg-hud-dim-fill" style="width:'+x[1]+'%;background:'+c+';"></div></div><div class="fg-hud-dim-val" style="color:'+c+'">'+x[1]+'</div><div class="fg-hud-dim-lbl">'+x[0]+'</div></div>';
+  }).join('');
+
+  panel.innerHTML=
+    '<div class="fg-sec-eyebrow">Stage 6 · The Reckoning</div>'+
+    '<h2 class="fg-sec-title">Six months later.</h2>'+
+    '<p class="fg-sec-sub">You ran the same diagnostic you ran on day one. Here\'s where your team actually landed - and the team it could have been.</p>'+
+    '<div class="fg-final">'+
+      '<div class="fg-final-num" style="background:linear-gradient(135deg,'+color+',#f0eeff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">'+hpt+'</div>'+
+      '<div style="font-size:12px;color:rgba(196,181,253,.4);margin-bottom:8px;">HPT SCORE · STARTED AT '+teamHPTFromStart()+'</div>'+
+      '<div class="fg-final-label" style="color:'+color+'">'+label+'</div>'+
+      '<div class="fg-final-sub">'+desc+'</div>'+
+    '</div>'+
+    '<div class="fg-hud" style="grid-template-columns:1fr;"><div class="fg-hud-dims" style="justify-content:center;">'+dimsHtml+'</div></div>'+
+    '<div class="fg-ghost">'+
+      '<div class="fg-ghost-title">👻 The Path Not Taken</div>'+
+      '<div class="fg-ghost-text">'+ghostBody+'</div>'+
+    '</div>'+
+    renderCodexHTML().replace('id="fg-codex"','id="fg-codex-final"')+
+    '<div style="text-align:center;font-size:13px;color:rgba(196,181,253,.55);margin:18px 0;line-height:1.7;">You discovered <strong style="color:#fbbf24;">'+lawsFound+' of '+totalLaws+'</strong> Laws of high performance this run. '+(lawsFound<totalLaws?'The system plays differently every time - replay to discover the rest.':'You\'ve uncovered every Law. You don\'t just know the concept now. You\'ve felt it move.')+'</div>'+
+    '<div class="fg-btn-row" style="justify-content:center;">'+
+      '<button class="fg-btn-secondary" onclick="fgGoStage(4)">← Back</button>'+
+      '<button class="fg-btn-primary" onclick="fgRestart()">↺ Run it again - differently</button>'+
+    '</div>';
+
+  // animate the final number
+  var numEl=panel.querySelector('.fg-final-num');
+  if(numEl){ var target=hpt, start=0, step=target/(800/16); var iv=setInterval(function(){ start+=step; if(start>=target){ numEl.textContent=target; clearInterval(iv); } else numEl.textContent=Math.floor(start); },16); }
+}
+
+function teamHPTFromStart(){
+  var sum=0;
+  TEAM.forEach(function(t){ var s=START_CURRENTS[t.id]; sum+=(s.trust+s.safety+s.energy+s.belief)/4; });
+  return Math.round(sum/TEAM.length);
+}
+
+/* ════════════════════════════════════════════
+   RESTART
+   ════════════════════════════════════════════ */
+window.fgRestart=function(){
+  // restore currents + role types
+  TEAM.forEach(function(t){
+    var s=START_CURRENTS[t.id];
+    t.currents={trust:s.trust,safety:s.safety,energy:s.energy,belief:s.belief};
+  });
+  // reset mutated roles
+  teamById('arjun').role_type='drainer'; teamById('arjun').radius=['ryan','priya','sarah'];
+  teamById('fatima').role_type='healer'; teamById('fatima').radius=['ryan','sarah','david','priya']; teamById('fatima').radiusStrength=4;
+  teamById('marcus').role_type='leech'; teamById('marcus').radius=['priya'];
+  teamById('priya').role_type='latent';
+  teamById('david').role_type='anchor';
+  teamById('sarah').role_type='absorber';
+  teamById('ryan').role_type='fragile';
+  var l=teamById('linda'); l.role_type='timed'; l.timer=4; l.gone=false;
+
+  S={ stage:0, turn:1, attentionMax:2, attentionLeft:2, resolved:{}, pendingRipples:[], lawsFound:{}, history:[], ended:false };
+  ['fg-panel-2','fg-panel-3','fg-panel-4','fg-panel-5'].forEach(function(id){ var el=document.getElementById(id); if(el) el.innerHTML=''; });
+  fgGoStage(0);
+};
+
+/* ════════════════════════════════════════════
+   INIT
+   ════════════════════════════════════════════ */
+buildTeamGrid();
+initNetwork();
+
+})();
+</script>
+
+<script>
+  (function(){
+var CHECK_INTERVAL=500;
+var injected=false;
+setInterval(function(){
+  if(injected) return;
+  var btns=document.querySelectorAll('#fg-root .fg-btn-secondary, #fg-root .fg-btn-primary');
+  for(var i=0;i<btns.length;i++){
+    if(btns[i].textContent.indexOf('Run it again')!==-1 || btns[i].textContent.indexOf('run it again')!==-1){
+      var wrap=document.createElement('div');
+      wrap.style.cssText='display:flex;gap:12px;flex-wrap:wrap;margin-right:4px;';
+
+      var linkDiagnose=document.createElement('a');
+      linkDiagnose.href='/pages/forge-your-org.html';
+      linkDiagnose.className=btns[i].className.replace('fg-btn-secondary','fg-btn-primary');
+      linkDiagnose.style.cssText='background:linear-gradient(135deg,#059669,#34d399);text-decoration:none;';
+      linkDiagnose.textContent='Diagnose Your Org';
+
+      var linkBuild=document.createElement('a');
+      linkBuild.href='/pages/the-foundry.html';
+      linkBuild.className=btns[i].className.replace('fg-btn-secondary','fg-btn-primary');
+      linkBuild.style.cssText='background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#080612;text-decoration:none;';
+      linkBuild.textContent='Build One From Scratch';
+
+      wrap.appendChild(linkDiagnose);
+      wrap.appendChild(linkBuild);
+      btns[i].parentNode.insertBefore(wrap,btns[i]);
+      injected=true;
+      return;
+    }
+  }
+},CHECK_INTERVAL);
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

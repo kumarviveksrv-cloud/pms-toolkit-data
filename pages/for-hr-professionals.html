@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice the calibration argument before the room does.</title>
+  <meta name="description" content="FORGE diagnoses your org. The Case Room handles your hardest situations. The Foundry builds the team you are accountable for. Built for real HR work.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/for-hr-professionals.html">
+  <meta property="og:title" content="Practice the calibration argument before the room does.">
+  <meta property="og:description" content="FORGE diagnoses your org. The Case Room handles your hardest situations. The Foundry builds the team you are accountable for. Built for real HR work.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+<!-- Standalone public page: no app shell (sidebar/topbar), no auth redirect. Used for the landing and persona pages. -->
+
+<!-- ============================================================
+     VIRORAH PMS - /for-hr-professionals
+     Persona landing page targeting HRBPs & Senior HR Managers
+     Pain-first opening. Self-contained. Matches platform design.
+     Deploy as new Softr page at /for-hr-professionals
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  html, body, [class*="app-"], [class*="layout-"] { background: #050410 !important; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:     #050410;
+  --card:   #0d0b1e;
+  --card2:  #11102a;
+  --purple: #6366f1;
+  --violet: #7c3aed;
+  --muted:  #a5b4fc;
+  --text:   #f4f3ff;
+  --sub:    rgba(244,243,255,.62);
+  --border: rgba(99,102,241,.20);
+  --faint:  rgba(99,102,241,.08);
+  --rose:   #f87171;
+  --green:  #4ade80;
+}
+html {
+  background: var(--bg);
+  min-height: 100vh;
+}
+body {
+  background: var(--bg); color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* ── STARS ── */
+#hrp-stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hstar { position: absolute; border-radius: 50%; background: rgba(165,180,252,.45); animation: htwinkle 3s infinite ease-in-out; }
+@keyframes htwinkle { 0%,100%{opacity:.2;} 50%{opacity:.8;} }
+
+/* ── HEADER ── */
+#hrp-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(5,4,16,.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+#hrp-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; transition: color .2s; }
+#hrp-back:hover { color: var(--text); }
+#hrp-logo { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none; }
+#hrp-cta-sm { font-size: 12px; font-weight: 600; padding: 7px 16px; border-radius: 8px; background: var(--faint); border: 1px solid var(--border); color: var(--muted); text-decoration: none; transition: all .2s; }
+#hrp-cta-sm:hover { background: var(--purple); border-color: var(--purple); color: white; }
+
+/* ── HERO (PAIN-FIRST) ── */
+#hrp-hero {
+  position: relative; z-index: 1;
+  padding: 140px 24px 90px;
+  text-align: center;
+  max-width: 1100px; margin: 0 auto;
+}
+.hrp-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 24px;
+  padding: 8px 16px; border-radius: 20px;
+  background: var(--faint); border: 1px solid var(--border);
+}
+.hrp-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 8px var(--purple); }
+.hrp-hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 5.5vw, 62px);
+  font-weight: 500; line-height: 1.15;
+  color: var(--text);
+  max-width: 900px; margin: 0 auto 24px;
+  letter-spacing: -0.5px;
+}
+.hrp-hero-h1 em {
+  font-style: italic; font-weight: 600;
+  background: linear-gradient(135deg, #a78bfa, #6366f1);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hrp-hero-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+.hrp-hero-sub {
+  font-size: 17px; line-height: 1.75; color: var(--sub);
+  max-width: 640px; margin: 0 auto 40px;
+}
+.hrp-hero-ctas {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+.hrp-btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px; border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: white; font-size: 14px; font-weight: 700;
+  text-decoration: none; transition: all .2s;
+  box-shadow: 0 4px 24px rgba(99,102,241,.4);
+}
+.hrp-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,.6); }
+.hrp-btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px; border-radius: 10px;
+  background: var(--faint); border: 1px solid var(--border);
+  color: var(--muted); font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: all .2s;
+}
+.hrp-btn-ghost:hover { background: rgba(99,102,241,.15); color: var(--text); }
+
+/* ── MAIN ── */
+#hrp-main { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 24px 100px; }
+.hrp-section { margin-bottom: 100px; }
+.hrp-section-head { text-align: center; max-width: 700px; margin: 0 auto 52px; }
+.hrp-section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 14px;
+}
+.hrp-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 600;
+  color: var(--text); line-height: 1.25;
+}
+.hrp-section-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #a78bfa, #6366f1);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hrp-section-sub {
+  font-size: 16px; color: var(--sub); line-height: 1.75;
+  margin-top: 16px;
+}
+
+/* ── PAIN CARDS ── */
+.hrp-pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.hrp-pain-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 32px 28px;
+  position: relative; overflow: hidden;
+}
+.hrp-pain-card::before {
+  content: attr(data-num);
+  position: absolute; top: 20px; right: 24px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 46px; font-weight: 700; color: rgba(99,102,241,.1);
+  line-height: 1;
+}
+.hrp-pain-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(248,113,113,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 20px;
+}
+.hrp-pain-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px; font-weight: 700; color: var(--text);
+  margin-bottom: 12px; line-height: 1.35;
+}
+.hrp-pain-desc {
+  font-size: 14px; line-height: 1.7; color: var(--sub);
+}
+
+/* ── CALCULATOR CARDS ── */
+.hrp-calc-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.hrp-calc-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 32px 32px 28px;
+  text-decoration: none; color: inherit; display: block;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.hrp-calc-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99,102,241,.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,.3);
+}
+.hrp-calc-card::after {
+  content: '→'; position: absolute; top: 32px; right: 32px;
+  font-size: 20px; color: var(--muted); opacity: .4;
+  transition: transform .2s, opacity .2s;
+}
+.hrp-calc-card:hover::after { transform: translateX(4px); opacity: 1; }
+.hrp-calc-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(99,102,241,.15), rgba(124,58,237,.1));
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 18px;
+}
+.hrp-calc-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--text);
+  margin-bottom: 8px;
+}
+.hrp-calc-desc {
+  font-size: 13.5px; line-height: 1.65; color: var(--sub);
+  margin-bottom: 14px;
+}
+.hrp-calc-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .5px;
+  padding: 4px 10px; border-radius: 20px;
+  background: rgba(99,102,241,.12); border: 1px solid var(--border);
+  color: var(--muted); text-transform: uppercase;
+}
+
+/* ── COMPARISON TABLE ── */
+.hrp-compare {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px; overflow: hidden;
+}
+.hrp-compare-row {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.hrp-compare-row:last-child { border-bottom: none; }
+.hrp-compare-row.header {
+  background: rgba(99,102,241,.04);
+}
+.hrp-compare-cell {
+  padding: 22px 24px;
+  border-right: 1px solid var(--border);
+  font-size: 13.5px; line-height: 1.6;
+}
+.hrp-compare-cell:last-child { border-right: none; }
+.hrp-compare-cell.dim {
+  color: rgba(244,243,255,.4);
+}
+.hrp-compare-cell.win {
+  color: var(--text); font-weight: 500;
+}
+.hrp-compare-cell.win strong {
+  color: var(--green);
+}
+.hrp-compare-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.hrp-compare-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 700; color: var(--text);
+  text-align: center;
+}
+.hrp-compare-h.us {
+  color: var(--green);
+}
+
+/* ── WHO IT'S NOT FOR ── */
+.hrp-notfor {
+  background: rgba(248,113,113,.03);
+  border: 1px solid rgba(248,113,113,.15);
+  border-radius: 20px; padding: 40px 44px;
+}
+.hrp-notfor-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--text);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hrp-notfor-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0;
+  font-size: 14px; line-height: 1.7; color: var(--sub);
+}
+.hrp-notfor-x {
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(248,113,113,.14); color: var(--rose);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; margin-top: 1px;
+}
+
+/* ── FINAL CTA ── */
+.hrp-cta-final {
+  padding: 60px 44px;
+  background: linear-gradient(135deg, rgba(99,102,241,.14), rgba(124,58,237,.09));
+  border: 1px solid var(--border); border-radius: 24px;
+  text-align: center;
+}
+.hrp-cta-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; color: var(--text); margin-bottom: 14px; line-height: 1.25; }
+.hrp-cta-h em { font-style: italic; background: linear-gradient(135deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hrp-cta-p { font-size: 15.5px; color: var(--sub); line-height: 1.75; max-width: 560px; margin: 0 auto 32px; }
+.hrp-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── PAGE FOOTER ── */
+.hrp-footer {
+  margin-top: 80px; padding-top: 24px;
+  border-top: .5px solid var(--border);
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+}
+.hrp-footer a { font-size: 12px; color: rgba(165,180,252,.4); text-decoration: none; transition: color .2s; }
+.hrp-footer a:hover { color: var(--muted); }
+
+@media(max-width:820px){
+  .hrp-pain-grid { grid-template-columns: 1fr; }
+  .hrp-calc-grid { grid-template-columns: 1fr; }
+  .hrp-compare-row { grid-template-columns: 1fr; }
+  .hrp-compare-cell { border-right: none; border-bottom: 1px solid var(--border); }
+  .hrp-compare-cell:last-child { border-bottom: none; }
+}
+@media(max-width:600px){
+  #hrp-hero { padding: 110px 16px 60px; }
+  #hrp-main { padding: 0 16px 60px; }
+  .hrp-notfor { padding: 28px 22px; }
+  .hrp-cta-final { padding: 36px 22px; }
+}
+</style>
+
+<!-- STARS -->
+<div id="hrp-stars"></div>
+
+<!-- HEADER -->
+<header id="hrp-header">
+  <a href="/pages/home.html" id="hrp-back">&#8592; virorah.com</a>
+  <a href="/pages/home.html" id="hrp-logo">Virorah <span style="color:var(--muted);font-weight:400;">PMS</span></a>
+  <a href="/pages/home.html" id="hrp-cta-sm">Explore Platform</a>
+</header>
+
+<!-- HERO -->
+<section id="hrp-hero">
+  <div class="hrp-eyebrow">
+    <span class="hrp-eyebrow-dot"></span>
+    Built for HR Business Partners &amp; Senior HR Managers
+  </div>
+
+  <h1 class="hrp-hero-h1">You're running calibration on <span class="hrp-hero-num">47</span> people next month. When was the last time you <em>actually practiced</em> the conversation?</h1>
+
+  <p class="hrp-hero-sub">Every HR cycle brings the same silent bet, that experience alone will carry you through the hardest performance decisions. Virorah PMS is the practice environment that ends that bet.</p>
+
+  <div class="hrp-hero-ctas">
+    <a href="/pages/build-9box.html" class="hrp-btn-primary">&#9654; Try it free, no sign-in needed</a>
+    <a href="/pages/home.html" class="hrp-btn-ghost">See the full platform</a>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main id="hrp-main">
+
+  <!-- PAIN SECTION -->
+  <section class="hrp-section">
+    <div class="hrp-section-head">
+      <div class="hrp-section-label">Sound familiar?</div>
+      <h2 class="hrp-section-title">The <em>quiet gaps</em> in every senior HR career.</h2>
+    </div>
+
+    <div class="hrp-pain-grid">
+      <div class="hrp-pain-card" data-num="01">
+        <div class="hrp-pain-icon">&#x1F4C9;</div>
+        <div class="hrp-pain-title">You've never rehearsed a calibration argument.</div>
+        <div class="hrp-pain-desc">You know the theory. You've read the frameworks. But every calibration meeting is a live rehearsal in front of managers who watch your every hesitation.</div>
+      </div>
+
+      <div class="hrp-pain-card" data-num="02">
+        <div class="hrp-pain-icon">&#x1F4CA;</div>
+        <div class="hrp-pain-title">Bell curve pushback catches you flat-footed.</div>
+        <div class="hrp-pain-desc">A manager insists their team has zero Rating 2s. You know they're wrong. You don't have five minutes to build the data story that changes their mind, live in the room.</div>
+      </div>
+
+      <div class="hrp-pain-card" data-num="03">
+        <div class="hrp-pain-icon">&#x2696;&#xFE0F;</div>
+        <div class="hrp-pain-title">DEI callouts arrive after the cycle closes.</div>
+        <div class="hrp-pain-desc">The ratings are locked. Then someone runs the demographics. You're now explaining a bias pattern that could have been caught upstream, if you'd had the tool to see it.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURATED CALCULATORS -->
+  <section class="hrp-section">
+    <div class="hrp-section-head">
+      <div class="hrp-section-label">Built for your cycle</div>
+      <h2 class="hrp-section-title">Four calculators <em>you'll actually reach for.</em></h2>
+      <p class="hrp-section-sub">The tools senior HR pros use every cycle, now interactive, running on 750 simulated employees you can practice on before your real cycle starts.</p>
+    </div>
+
+    <div class="hrp-calc-grid">
+      <a href="/pages/scenarios.html" class="hrp-calc-card">
+        <div class="hrp-calc-icon">&#x1F5FA;&#xFE0F;</div>
+        <div class="hrp-calc-name">9-Box Grid</div>
+        <div class="hrp-calc-desc">Plot performance vs potential. Spot flight risks. Identify succession gaps. Run it live on your team or 15 pre-loaded scenarios.</div>
+        <span class="hrp-calc-tag">Cycle-critical</span>
+      </a>
+
+      <a href="/pages/scenarios.html" class="hrp-calc-card">
+        <div class="hrp-calc-icon">&#x2696;&#xFE0F;</div>
+        <div class="hrp-calc-name">Calibration Simulator</div>
+        <div class="hrp-calc-desc">Practice the exact meeting before you run it. Manager biases, budget constraints, forced distributions, all modelled.</div>
+        <span class="hrp-calc-tag">Highest impact</span>
+      </a>
+
+      <a href="/pages/scenarios.html" class="hrp-calc-card">
+        <div class="hrp-calc-icon">&#x1F4C8;</div>
+        <div class="hrp-calc-name">Bell Curve Analysis</div>
+        <div class="hrp-calc-desc">Model forced vs open distributions. See what happens to team morale, budget, and rating credibility under each scenario.</div>
+        <span class="hrp-calc-tag">Manager pushback</span>
+      </a>
+
+      <a href="/pages/scenarios.html" class="hrp-calc-card">
+        <div class="hrp-calc-icon">&#x2696;&#xFE0F;</div>
+        <div class="hrp-calc-name">DEI Analytics</div>
+        <div class="hrp-calc-desc">Surface rating and increment bias by demographic, before the cycle closes. Not after. Have the harder conversation earlier.</div>
+        <span class="hrp-calc-tag">Upstream fix</span>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/pages/scenarios.html" class="hrp-btn-ghost" style="font-size:13px;">Plus 12 more calculators &rarr;</a>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="hrp-section">
+    <div class="hrp-section-head">
+      <div class="hrp-section-label">The alternatives</div>
+      <h2 class="hrp-section-title">Every option you have <em>right now.</em></h2>
+    </div>
+
+    <div class="hrp-compare">
+      <div class="hrp-compare-row header">
+        <div class="hrp-compare-cell hrp-compare-label">If you want to...</div>
+        <div class="hrp-compare-cell hrp-compare-h">The usual path</div>
+        <div class="hrp-compare-cell hrp-compare-h us">Virorah PMS</div>
+      </div>
+
+      <div class="hrp-compare-row">
+        <div class="hrp-compare-cell">Practice a calibration session before the real one</div>
+        <div class="hrp-compare-cell dim">Nothing exists. You wing it.</div>
+        <div class="hrp-compare-cell win"><strong>Simulator with 750 employees</strong>, live in seconds</div>
+      </div>
+
+      <div class="hrp-compare-row">
+        <div class="hrp-compare-cell">Learn a new PMS framework hands-on</div>
+        <div class="hrp-compare-cell dim">SHRM / HRCI course, ₹40k–1L, weeks of study</div>
+        <div class="hrp-compare-cell win"><strong>Free to explore</strong>, upgrade at ₹999/mo</div>
+      </div>
+
+      <div class="hrp-compare-row">
+        <div class="hrp-compare-cell">Run 9-Box or Bell Curve on your team's data</div>
+        <div class="hrp-compare-cell dim">Excel, or wait for a Workday consultant</div>
+        <div class="hrp-compare-cell win"><strong>Upload CSV</strong>, instant results, private in-browser</div>
+      </div>
+
+      <div class="hrp-compare-row">
+        <div class="hrp-compare-cell">Prove hands-on PMS skill to a hiring manager</div>
+        <div class="hrp-compare-cell dim">A LinkedIn certification anyone can buy</div>
+        <div class="hrp-compare-cell win"><strong>Simulation-scored credential</strong> with LinkedIn badge</div>
+      </div>
+
+      <div class="hrp-compare-row">
+        <div class="hrp-compare-cell">Model a difficult 1:1 conversation</div>
+        <div class="hrp-compare-cell dim">Rehearse in your head, or with a coach at ₹5k/session</div>
+        <div class="hrp-compare-cell win"><strong>AI-scored simulator</strong>, 10 HR scenarios, unlimited practice</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S NOT FOR -->
+  <section class="hrp-section">
+    <div class="hrp-notfor">
+      <h3 class="hrp-notfor-title">
+        <span style="color:var(--rose);">&#x26A0;&#xFE0F;</span>
+        Virorah PMS isn't for everyone.
+      </h3>
+      <p style="font-size:14px; color:var(--sub); line-height:1.7; margin-bottom:18px;">Some honest disqualification, because your time matters.</p>
+
+      <div class="hrp-notfor-item">
+        <div class="hrp-notfor-x">&#x2715;</div>
+        <div>If you're looking for a full HRIS to run your live employee database, you want Darwinbox, Workday, or SAP. Not us.</div>
+      </div>
+
+      <div class="hrp-notfor-item">
+        <div class="hrp-notfor-x">&#x2715;</div>
+        <div>If you want a certification that only tests memorised frameworks, SHRM and HRCI are cheaper on that specific goal.</div>
+      </div>
+
+      <div class="hrp-notfor-item">
+        <div class="hrp-notfor-x">&#x2715;</div>
+        <div>If you're an HR intern or first-year associate not yet running cycles, our student track is more appropriate.</div>
+      </div>
+
+      <div class="hrp-notfor-item">
+        <div class="hrp-notfor-x">&#x2715;</div>
+        <div>If you don't believe practising something makes you better at it, Virorah PMS won't convince you.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="hrp-cta-final">
+    <h3 class="hrp-cta-h">Your next calibration is closer than <em>you think.</em></h3>
+    <p class="hrp-cta-p">Build a 9-Box on your team in 90 seconds. No sign-in. See what Virorah PMS actually does before you decide anything.</p>
+    <div class="hrp-cta-btns">
+      <a href="/pages/build-9box.html" class="hrp-btn-primary">&#9654; Build a 9-Box now</a>
+      <a href="/pages/home.html" class="hrp-btn-ghost">Explore all 16 calculators</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="hrp-footer">
+    <a href="/pages/about.html">About</a>
+    <a href="mailto:info@virorah.com">info@virorah.com</a>
+    <a href="/pages/legal.html">Privacy Policy</a>
+    <a href="/pages/terms.html">Terms of Service</a>
+  </div>
+
+</main>
+
+<!-- STAR SCRIPT -->
+<script>
+(function(){
+  var c = document.getElementById('hrp-stars');
+  if(!c) return;
+  for(var i=0;i<80;i++){
+    var s=document.createElement('div');
+    s.className='hstar';
+    var sz=Math.random()*2+1;
+    s.style.cssText='width:'+sz+'px;height:'+sz+'px;top:'+(Math.random()*100)+'%;left:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*3)+'s;animation-duration:'+(2.5+Math.random()*2)+'s;';
+    c.appendChild(s);
+  }
+})();
+</script>
+
+<!-- Global scripts ported from the Softr header/footer (no Cmd+K or sidebar on standalone pages) -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+</body>
+</html>

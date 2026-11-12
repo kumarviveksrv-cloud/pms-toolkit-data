@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One report. Every people risk in your org.</title>
+  <meta name="description" content="Upload your CSV. AI diagnoses your org: performance health, flight risk, pay equity, succession gaps. 5 priority recommendations delivered as a PDF.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/org-health.html">
+  <meta property="og:title" content="One report. Every people risk in your org.">
+  <meta property="og:description" content="Upload your CSV. AI diagnoses your org: performance health, flight risk, pay equity, succession gaps. 5 priority recommendations delivered as a PDF.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Org Health Report</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIORAH - PRO GATE v3
+     Keys validated via Cloudflare Worker + KV store.
+     No keys hardcoded. Adding customers = zero Softr republishes.
+     ============================================================ -->
+<style>
+#pgv2-wrap { font-family: 'Space Grotesk','DM Sans','Segoe UI',sans-serif; }
+
+#pgv2-gate {
+  padding: 48px 24px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 55vh;
+  background: linear-gradient(160deg,#080614 0%,#0d0b1e 60%,#080614 100%);
+  position: relative; overflow: hidden;
+}
+#pgv2-gate::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 60% at 30% 30%,rgba(99,102,241,.12) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 50% at 70% 70%,rgba(124,58,237,.10) 0%,transparent 60%);
+}
+.pgv2-card {
+  background:rgba(255,255,255,.03); border:1.5px solid rgba(99,102,241,.25);
+  border-radius:24px; padding:48px 40px; max-width:540px; width:100%;
+  text-align:center; position:relative; z-index:2;
+  box-shadow:0 8px 48px rgba(0,0,0,.4);
+}
+.pgv2-card::before {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:60%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(99,102,241,.6),transparent);
+}
+.pgv2-lock {
+  width:72px; height:72px; border-radius:50%;
+  background:rgba(99,102,241,.10); border:1.5px solid rgba(99,102,241,.25);
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px; margin:0 auto 24px;
+  animation:pgv2Pulse 2.5s ease-in-out infinite;
+}
+@keyframes pgv2Pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+.pgv2-eyebrow {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:4px 14px; border-radius:20px; margin-bottom:18px;
+  background:rgba(99,102,241,.10); border:1px solid rgba(99,102,241,.25);
+  font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#a5b4fc;
+}
+.pgv2-title {
+  font-size:clamp(22px,3.5vw,32px); font-weight:700;
+  color:#f4f3ff; line-height:1.2; margin-bottom:12px;
+}
+.pgv2-title em {
+  font-style:italic;
+  background:linear-gradient(135deg,#c4b5fd,#6366f1);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.pgv2-body { font-size:14px; color:rgba(244,243,255,.5); line-height:1.7; margin-bottom:24px; }
+.pgv2-body strong { color:rgba(244,243,255,.75); }
+.pgv2-feats { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-bottom:24px; }
+.pgv2-feat {
+  padding:5px 12px; border-radius:20px; font-size:11px; font-weight:600;
+  background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.18);
+  color:rgba(244,243,255,.55);
+}
+.pgv2-price-row { margin-bottom:22px; }
+.pgv2-price-num { font-size:38px; font-weight:800; color:#f4f3ff; line-height:1; letter-spacing:-1px; }
+.pgv2-price-period { font-size:14px; color:rgba(244,243,255,.35); }
+.pgv2-price-note { font-size:11px; color:rgba(244,243,255,.25); margin-top:4px; }
+.pgv2-btn-primary {
+  display:block; width:100%; padding:15px 24px; border-radius:11px;
+  font-size:14px; font-weight:700;
+  background:linear-gradient(135deg,#6366f1,#7c3aed); color:white;
+  text-decoration:none; text-align:center; border:none; cursor:pointer;
+  font-family:inherit; box-shadow:0 4px 24px rgba(99,102,241,.45);
+  transition:transform .2s,box-shadow .2s; margin-bottom:10px;
+}
+.pgv2-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(99,102,241,.6);}
+.pgv2-btn-secondary {
+  display:block; width:100%; padding:12px 24px; border-radius:11px;
+  font-size:13px; font-weight:600; background:transparent;
+  border:1px solid rgba(255,255,255,.08); color:rgba(244,243,255,.4);
+  text-decoration:none; text-align:center; cursor:pointer; font-family:inherit;
+  transition:border-color .2s,color .2s; margin-bottom:16px;
+}
+.pgv2-btn-secondary:hover{border-color:rgba(99,102,241,.3);color:rgba(244,243,255,.65);}
+.pgv2-key-row { display:flex; gap:8px; margin-bottom:8px; }
+.pgv2-key-input {
+  flex:1; padding:10px 14px; border-radius:8px;
+  background:rgba(255,255,255,.05); border:1px solid rgba(99,102,241,.2);
+  color:#f4f3ff; font-size:12px; font-family:monospace; outline:none;
+}
+.pgv2-key-input::placeholder{color:rgba(244,243,255,.25);}
+.pgv2-key-input:focus{border-color:rgba(99,102,241,.5);}
+.pgv2-key-btn {
+  padding:10px 16px; border-radius:8px; font-size:12px; font-weight:700;
+  background:rgba(99,102,241,.2); border:1px solid rgba(99,102,241,.3);
+  color:#a5b4fc; cursor:pointer; font-family:inherit; white-space:nowrap;
+  transition:background .2s;
+}
+.pgv2-key-btn:hover{background:rgba(99,102,241,.35);}
+.pgv2-key-btn:disabled{opacity:.5;cursor:not-allowed;}
+.pgv2-key-hint{font-size:11px;color:rgba(244,243,255,.2);}
+.pgv2-key-error{font-size:11px;color:#f87171;margin-top:6px;display:none;}
+.pgv2-key-success{font-size:11px;color:#34d399;margin-top:6px;display:none;}
+.pgv2-trust{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.05);
+}
+.pgv2-trust-item{font-size:11px;color:rgba(244,243,255,.2);}
+</style>
+
+<!-- Toast -->
+<div id="pgv2-toast" style="position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-80px);background:linear-gradient(135deg,#059669,#047857);color:white;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 4px 24px rgba(5,150,105,.4);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);font-family:'Space Grotesk','DM Sans','Segoe UI',sans-serif;white-space:nowrap;">
+  🎉 Pro access unlocked! Welcome to Virorah Pro.
+</div>
+
+<div id="pgv2-wrap">
+  <div id="pgv2-gate">
+    <div class="pgv2-card">
+      <div class="pgv2-lock">🔒</div>
+      <div class="pgv2-eyebrow">✦ Pro Feature</div>
+      <h2 class="pgv2-title">This is where <em>real</em><br>work happens.</h2>
+      <p class="pgv2-body">
+        You've explored the samples. Now run every calculator on
+        <strong>your actual organisation</strong> - real employees, real salaries, real insights.
+      </p>
+      <div class="pgv2-feats">
+        <span class="pgv2-feat">📂 Real org data</span>
+        <span class="pgv2-feat">🔢 All 12 calculators</span>
+        <span class="pgv2-feat">🎓 Certifications</span>
+        <span class="pgv2-feat">🧠 AI Learning Path</span>
+        <span class="pgv2-feat">📄 Manager Report Card</span>
+        <span class="pgv2-feat">🌐 Spatial 9-Box</span>
+        <span class="pgv2-feat">🏅 LinkedIn Badge</span>
+      </div>
+      <div class="pgv2-price-row">
+        <div><span class="pgv2-price-num">₹999</span><span class="pgv2-price-period">/month</span></div>
+        <div class="pgv2-price-note">₹9,999/year · $29/month internationally · Cancel anytime</div>
+      </div>
+      <a href="/pages/pricing.html" class="pgv2-btn-primary">🚀 Upgrade to Pro - Unlock Everything</a>
+      <a href="/pages/scenarios.html" class="pgv2-btn-secondary">← Keep exploring free features</a>
+      <div class="pgv2-key-row">
+        <input type="text" class="pgv2-key-input" id="pgv2-key-input"
+               placeholder="Already paid? Enter your access key…">
+        <button class="pgv2-key-btn" id="pgv2-unlock-btn" onclick="pgv2Activate()">Unlock →</button>
+      </div>
+      <div class="pgv2-key-hint">Your access key is emailed after payment</div>
+      <div class="pgv2-key-error" id="pgv2-key-error">Invalid key. Please check and try again.</div>
+      <div class="pgv2-key-success" id="pgv2-key-success">✓ Key accepted! Unlocking Pro…</div>
+      <div class="pgv2-trust">
+        <span class="pgv2-trust-item">🔒 Secure via Razorpay</span>
+        <span class="pgv2-trust-item">📊 Data stays in your browser</span>
+        <span class="pgv2-trust-item">⚡ Instant access</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+
+  var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+  var SK     = 'viorah_plan';
+  var SK_EXP = 'viorah_plan_exp';
+
+  function isPro(){
+    try{
+      if(localStorage.getItem(SK) !== 'pro') return false;
+      var expStr = localStorage.getItem(SK_EXP);
+      if(!expStr) return true;
+      var exp = new Date(parseInt(expStr));
+      if(new Date() > exp){ localStorage.removeItem(SK); localStorage.removeItem(SK_EXP); return false; }
+      return true;
+    }catch(e){ return false; }
+  }
+
+  function setPro(permanent){
+    try{
+      localStorage.setItem(SK, 'pro');
+      if(permanent) localStorage.removeItem(SK_EXP);
+    }catch(e){}
+  }
+
+  function hideNextBlock(hide){
+    function doIt(){
+      var wrap = document.getElementById('pgv2-wrap');
+      if(!wrap) return;
+      var el = wrap; var found = false;
+      for(var i=0; i<12; i++){
+        if(!el || !el.parentElement) break;
+        el = el.parentElement;
+        var next = el.nextElementSibling;
+        if(next && next !== document.body && next.tagName !== 'SCRIPT'){
+          if(hide){ next.style.setProperty('display','none','important'); next.setAttribute('data-pgv2-hidden','1'); }
+          else { next.style.removeProperty('display'); next.removeAttribute('data-pgv2-hidden'); }
+          found = true; break;
+        }
+      }
+      if(!found){
+        var allBlocks = document.querySelectorAll('[class*="block"],[class*="section"],[class*="container"]');
+        var afterUs = false;
+        for(var j=0; j<allBlocks.length; j++){
+          var b = allBlocks[j];
+          if(b.contains(wrap)){ afterUs = true; continue; }
+          if(afterUs && !wrap.contains(b) && b.offsetHeight > 50){
+            if(hide){ b.style.setProperty('display','none','important'); b.setAttribute('data-pgv2-hidden','1'); }
+            else { b.style.removeProperty('display'); b.removeAttribute('data-pgv2-hidden'); }
+            break;
+          }
+        }
+      }
+    }
+    doIt(); setTimeout(doIt,150); setTimeout(doIt,500); setTimeout(doIt,1000); setTimeout(doIt,2000);
+  }
+
+  function render(){
+    var gate = document.getElementById('pgv2-gate');
+    if(!gate) return;
+    if(isPro()){
+      gate.style.display = 'none';
+      hideNextBlock(false);
+    } else {
+      gate.style.display = 'flex';
+      hideNextBlock(true);
+    }
+  }
+
+  window.pgv2Activate = async function(){
+    var inp  = document.getElementById('pgv2-key-input');
+    var err  = document.getElementById('pgv2-key-error');
+    var succ = document.getElementById('pgv2-key-success');
+    var btn  = document.getElementById('pgv2-unlock-btn');
+    var key  = (inp.value||'').trim().toUpperCase();
+    err.style.display = succ.style.display = 'none';
+    if(!key) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Checking…';
+
+    try {
+      const response = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Action': 'validate-key' },
+        body: JSON.stringify({ key })
+      });
+      const result = await response.json();
+
+      if(result.valid){
+        succ.textContent = '✓ Pro access unlocked!';
+        succ.style.display = 'block';
+        setPro(result.permanent !== false);
+        try{ localStorage.setItem('viorah_key', key); }catch(e){}
+        setTimeout(function(){
+          showToast();
+          setTimeout(render, 800);
+        }, 400);
+      } else {
+        err.textContent = 'Invalid key. Please check and try again.';
+        err.style.display = 'block';
+        inp.style.borderColor = 'rgba(248,113,113,.5)';
+        setTimeout(function(){ inp.style.borderColor=''; }, 1500);
+      }
+    } catch(e) {
+      err.textContent = 'Could not verify key. Please try again.';
+      err.style.display = 'block';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Unlock →';
+  };
+
+  /* Enter key support */
+  document.addEventListener('DOMContentLoaded', function(){
+    var inp = document.getElementById('pgv2-key-input');
+    if(inp) inp.addEventListener('keydown', function(e){ if(e.key==='Enter') pgv2Activate(); });
+  });
+
+  /* URL key auto-activation */
+  (function(){
+    try{
+      var p = new URLSearchParams(window.location.search);
+      var k = (p.get('key')||'').trim().toUpperCase();
+      if(k){
+        fetch(WORKER_URL, {
+          method:'POST',
+          headers:{'Content-Type':'application/json','X-Action':'validate-key'},
+          body: JSON.stringify({ key: k })
+        }).then(r=>r.json()).then(result=>{
+          if(result.valid){
+            setPro(true);
+            try{ localStorage.setItem('viorah_key', k); }catch(e){}
+            showToast();
+            window.history.replaceState({},  '', window.location.pathname);
+            setTimeout(render, 500);
+          }
+        }).catch(()=>{});
+      }
+    }catch(e){}
+  })();
+
+  function showToast(){
+    var t = document.getElementById('pgv2-toast');
+    if(!t) return;
+    t.textContent = '🎉 Pro access unlocked! Welcome to Virorah Pro.';
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    setTimeout(function(){ t.style.transform='translateX(-50%) translateY(-80px)'; }, 4000);
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', render);
+  } else { render(); }
+  setTimeout(render, 500);
+
+})();
+</script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #080612;
+    --surface: #0f0c29;
+    --card: #13111f;
+    --border: rgba(102, 126, 234, 0.15);
+    --border-strong: rgba(102, 126, 234, 0.3);
+    --purple: #667eea;
+    --purple-light: #a5b4fc;
+    --purple-dim: rgba(102, 126, 234, 0.1);
+    --gold: #c9a84c;
+    --gold-dim: rgba(201, 168, 76, 0.12);
+    --text: #f4f3ff;
+    --text-muted: rgba(165, 180, 252, 0.55);
+    --text-dim: rgba(165, 180, 252, 0.35);
+    --green: #1D9E75;
+    --green-light: #34d399;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --success-bg: rgba(29, 158, 117, 0.12);
+    --success-border: rgba(29, 158, 117, 0.3);
+    --warn-bg: rgba(245, 158, 11, 0.12);
+    --warn-border: rgba(245, 158, 11, 0.3);
+    --danger-bg: rgba(239, 68, 68, 0.12);
+    --danger-border: rgba(239, 68, 68, 0.3);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  #org-health-root {
+    font-family: 'Inter', sans-serif;
+    background: var(--ink);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .ohh {
+    background: linear-gradient(160deg, #080612 0%, #0f0a1e 60%, #080612 100%);
+    padding: 44px 52px 36px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ohh::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  @media(max-width:768px) {
+    .ohh {
+      padding: 28px 20px 24px;
+    }
+  }
+
+  .ohh-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(102, 126, 234, 0.6);
+    margin-bottom: 14px;
+  }
+
+  .ohh-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .ohh-title-accent {
+    display: inline;
+    background: linear-gradient(90deg, #c9a84c, #f4d17a, #c9a84c);
+    background-size: 400px 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 3s ease 1s infinite;
+  }
+
+  @keyframes goldShimmer {
+    0% {
+      background-position: -400px 0;
+    }
+
+    70%,
+    100% {
+      background-position: 400px 0;
+    }
+  }
+
+  .ohh-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 480px;
+  }
+
+  .oh-wrap {
+    padding: 32px 52px;
+  }
+
+  @media(max-width:768px) {
+    .oh-wrap {
+      padding: 20px;
+    }
+  }
+
+  .oh-no-data {
+    border: 1px dashed var(--border-strong);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    background: var(--surface);
+  }
+
+  .oh-data-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .oh-data-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .oh-data-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .oh-data-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .oh-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .oh-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .oh-stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    background: linear-gradient(135deg, #fff, var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .oh-stat-lbl {
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 3px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .oh-covers {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .oh-covers strong {
+    color: var(--text);
+  }
+
+  .oh-generate-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 24px rgba(102, 126, 234, 0.4);
+    transition: all .25s;
+  }
+
+  .oh-generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.6);
+  }
+
+  .oh-generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .oh-upload-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 11px 24px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  #oh-loading {
+    display: none;
+    text-align: center;
+  }
+
+  .oh-spinner {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    border: 2.5px solid var(--border-strong);
+    border-top-color: var(--purple);
+    border-radius: 50%;
+    animation: ohSpin 0.9s linear infinite;
+  }
+
+  @keyframes ohSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .oh-loading-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .oh-loading-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .oh-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .oh-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: color .3s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .oh-step.active {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .oh-step.done {
+    color: var(--green-light);
+  }
+
+  .oh-step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-strong);
+    flex-shrink: 0;
+    transition: background .3s;
+  }
+
+  .oh-step.active .oh-step-dot {
+    background: var(--purple);
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.7);
+  }
+
+  .oh-step.done .oh-step-dot {
+    background: var(--green-light);
+  }
+
+  #oh-error {
+    display: none;
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+  }
+
+  .oh-error-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 12px 0 8px;
+  }
+
+  .oh-error-msg {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  #oh-report {
+    display: none;
+  }
+
+  .oh-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .oh-report-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .oh-report-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+
+  .oh-report-date {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .oh-report-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .oh-btn-outline {
+    padding: 9px 18px;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--purple-light);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all .2s;
+  }
+
+  .oh-btn-outline:hover {
+    background: var(--purple-dim);
+  }
+
+  .oh-btn-solid {
+    padding: 9px 18px;
+    border: 1px solid var(--border-strong);
+    background: var(--purple);
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all .2s;
+  }
+
+  .oh-btn-solid:hover {
+    background: #764ba2;
+  }
+
+  .oh-report-body {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .oh-section {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+    animation: ohFadeUp 0.5s ease both;
+  }
+
+  .oh-section:last-child {
+    border-bottom: none;
+  }
+
+  @keyframes ohFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .oh-section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .oh-section-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--purple-dim);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .oh-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .oh-grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .oh-grade-green {
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--green-light);
+  }
+
+  .oh-grade-amber {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--amber);
+  }
+
+  .oh-grade-red {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: #f87171;
+  }
+
+  .oh-body-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(244, 243, 255, 0.75);
+  }
+
+  .oh-body-text p {
+    margin-bottom: 10px;
+  }
+
+  .oh-body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .oh-insight {
+    background: rgba(201, 168, 76, 0.08);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(244, 243, 255, 0.8);
+  }
+
+  .oh-insight strong {
+    color: var(--gold);
+  }
+
+  .oh-redflag {
+    background: var(--danger-bg);
+    border-left: 3px solid var(--red);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(244, 243, 255, 0.8);
+  }
+
+  .oh-redflag strong {
+    color: #f87171;
+  }
+
+  .oh-score-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .oh-score-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    min-width: 80px;
+  }
+
+  .oh-score-pill-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .oh-score-pill-lbl {
+    font-size: 9px;
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .oh-rec-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .oh-rec {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: border-color .2s;
+  }
+
+  .oh-rec:hover {
+    border-color: var(--border-strong);
+  }
+
+  .oh-rec-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .oh-rec-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .oh-rec-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .oh-rec-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .oh-rec-time {
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .oh-rec-priority {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .oh-pri-high {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: #f87171;
+  }
+
+  .oh-pri-med {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--amber);
+  }
+
+  .oh-pri-low {
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--green-light);
+  }
+
+  .oh-report-footer {
+    padding: 16px 32px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  @media(max-width:600px) {
+    .oh-section {
+      padding: 20px;
+    }
+
+    .oh-wrap {
+      padding: 16px;
+    }
+
+    .ohh {
+      padding: 28px 20px;
+    }
+  }
+</style>
+
+<div id="org-health-root">
+
+  <div class="ohh">
+    <div class="ohh-eyebrow">AI-Powered Intelligence</div>
+    <h1 class="ohh-title">Org Health<br><span class="ohh-title-accent">Diagnostics</span></h1>
+    <p class="ohh-sub">Upload your employee data once. Get a McKinsey-grade organisational health report in 60-80
+      seconds.</p>
+  </div>
+
+  <div class="oh-wrap">
+
+    <div class="oh-back-link-row" style="margin-bottom:20px;">
+      <a href="/pages/analyse-your-org.html"
+        style="font-size:12px;color:rgba(165,180,252,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .2s;"
+        onmouseover="this.style.color='rgba(165,180,252,0.85)'"
+        onmouseout="this.style.color='rgba(165,180,252,0.5)'">&#x2190; Back to Analyse Your Org</a>
+    </div>
+
+    <div id="oh-launch">
+      <div id="oh-no-data" class="oh-no-data" style="display:none;">
+        <div style="font-size:36px;margin-bottom:12px;">&#x1F4C2;</div>
+        <div
+          style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;">
+          No Organisation Data Found</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">Upload your employee CSV first, then
+          come back here to generate your report.</div>
+        <a href="/pages/analyse-your-org.html" class="oh-upload-link">Upload Your Data &#x2192;</a>
+      </div>
+
+      <div id="oh-data-ready" class="oh-data-card" style="display:none;">
+        <div class="oh-data-label">Ready to Analyse</div>
+        <div class="oh-data-title" id="oh-org-name">Your Organisation</div>
+        <div class="oh-data-meta" id="oh-org-meta">Loading...</div>
+        <div class="oh-stats" id="oh-stats-grid"></div>
+        <div class="oh-covers">
+          <strong>What this report covers:</strong><br>
+          Executive Summary &middot; Performance Health &middot; Flight Risk &amp; Retention &middot; Compensation Equity &middot; Succession Readiness &middot; DEI Health &middot; 5 Priority Recommendations
+        </div>
+        <button class="oh-generate-btn" onclick="ohGenerate()" id="oh-gen-btn">
+          <span>&#x1F52C;</span><span>Generate Org Health Report</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="oh-loading">
+      <div class="oh-spinner"></div>
+      <div class="oh-loading-title">Analysing Your Organisation</div>
+      <div class="oh-loading-sub">This takes about 60-80 seconds</div>
+      <div class="oh-steps" id="oh-steps">
+        <div class="oh-step active" id="ohstep-1">
+          <div class="oh-step-dot"></div>Reading employee data
+        </div>
+        <div class="oh-step" id="ohstep-2">
+          <div class="oh-step-dot"></div>Analysing performance distribution
+        </div>
+        <div class="oh-step" id="ohstep-3">
+          <div class="oh-step-dot"></div>Identifying flight risks &amp; patterns
+        </div>
+        <div class="oh-step" id="ohstep-4">
+          <div class="oh-step-dot"></div>Evaluating compensation equity
+        </div>
+        <div class="oh-step" id="ohstep-5">
+          <div class="oh-step-dot"></div>Generating strategic recommendations
+        </div>
+        <div class="oh-step" id="ohstep-6">
+          <div class="oh-step-dot"></div>Compiling your report
+        </div>
+      </div>
+    </div>
+
+    <div id="oh-error">
+      <div style="font-size:32px;">&#x26A0;&#xFE0F;</div>
+      <div class="oh-error-title">Report Generation Failed</div>
+      <div class="oh-error-msg" id="oh-error-msg">Something went wrong. Please try again.</div>
+      <button class="oh-btn-solid" onclick="ohReset()">Try Again</button>
+    </div>
+
+    <div id="oh-report">
+      <div class="oh-report-header">
+        <div>
+          <div class="oh-report-label">Confidential - For HR Leadership</div>
+          <div class="oh-report-title" id="oh-report-title">Org Health Report</div>
+          <div class="oh-report-date" id="oh-report-date"></div>
+        </div>
+        <div class="oh-report-actions">
+          <button class="oh-btn-outline" onclick="ohRegenerate()">&#x21BA; Regenerate</button>
+          <button class="oh-btn-solid" onclick="window.print()">&#x2B07; Save as PDF</button>
+        </div>
+      </div>
+
+      <div class="oh-report-body" id="oh-report-body"></div>
+
+      <div style="margin-top:20px;text-align:center;">
+        <button class="oh-btn-outline" onclick="ohReset()" style="font-size:12px;">&#x2190; Back to Dashboard</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function(){
+  var STORAGE_KEY = "pms_custom_org_v1";
+
+  function loadData(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)||"null"); }catch(e){ return null; }
+  }
+
+  function init(){
+    var data = loadData();
+    var launch = document.getElementById("oh-launch");
+    var noData = document.getElementById("oh-no-data");
+    var ready  = document.getElementById("oh-data-ready");
+    launch.style.display = "block";
+    document.getElementById("oh-loading").style.display = "none";
+    document.getElementById("oh-error").style.display   = "none";
+    document.getElementById("oh-report").style.display  = "none";
+
+    if(!data){ noData.style.display="block"; ready.style.display="none"; return; }
+    noData.style.display = "none";
+    ready.style.display  = "block";
+
+    var emps = data.employees||[];
+    var avgRating = emps.length ? (emps.reduce(function(s,e){ return s+e.perfRating; },0)/emps.length).toFixed(1) : 0;
+    var highPerf  = emps.filter(function(e){ return e.perfRating>=4; }).length;
+    var highRisk  = emps.filter(function(e){ return e.flightRisk==="High"; }).length;
+    var managers  = emps.filter(function(e){ return e.isManager; }).length;
+
+    document.getElementById("oh-org-name").textContent = data.companyName||"Your Organisation";
+    document.getElementById("oh-org-meta").textContent = "Uploaded " + (data.uploadDate||"recently") + " \u00B7 " + emps.length + " employees";
+
+    document.getElementById("oh-stats-grid").innerHTML = [
+      [emps.length,"Employees"],
+      [avgRating,"Avg Perf Rating"],
+      [highPerf,"High Performers"],
+      [highRisk,"Flight Risk"],
+      [managers,"Managers"]
+    ].map(function(item){
+      return "<div class=\"oh-stat\"><div class=\"oh-stat-num\">" + item[0] + "</div><div class=\"oh-stat-lbl\">" + item[1] + "</div></div>";
+    }).join("");
+  }
+
+  window.ohGenerate = async function(){
+    var data = loadData();
+    if(!data) return;
+    document.getElementById("oh-launch").style.display   = "none";
+    document.getElementById("oh-loading").style.display  = "block";
+
+    var steps = [1,2,3,4,5,6];
+    var cur = 0;
+    var interval = setInterval(function(){
+      if(cur>0) document.getElementById("ohstep-"+cur).className="oh-step done";
+      if(cur<steps.length){ document.getElementById("ohstep-"+(cur+1)).className="oh-step active"; cur++; }
+    }, 11000);
+
+    try{
+      var report = await callAPI(data);
+      clearInterval(interval);
+      steps.forEach(function(i){ document.getElementById("ohstep-"+i).className="oh-step done"; });
+      await new Promise(function(r){ setTimeout(r,500); });
+      renderReport(report, data);
+    } catch(err){
+      clearInterval(interval);
+      document.getElementById("oh-loading").style.display = "none";
+      document.getElementById("oh-error").style.display   = "block";
+      document.getElementById("oh-error-msg").textContent = err.message||"Something went wrong. Please try again.";
+    }
+  };
+
+  async function callAPI(data){
+    var emps = data.employees||[];
+    var sym  = data.currencySymbol||"\u20B9";
+    var total= emps.length||1;
+    var avgPerf = (emps.reduce(function(s,e){ return s+e.perfRating; },0)/total).toFixed(2);
+    var dist={5:0,4:0,3:0,2:0,1:0};
+    emps.forEach(function(e){ var r=Math.round(e.perfRating); dist[r]=(dist[r]||0)+1; });
+    var highRisk = emps.filter(function(e){ return e.flightRisk==="High"; }).length;
+    var medRisk  = emps.filter(function(e){ return e.flightRisk==="Medium"; }).length;
+    var readyNow = emps.filter(function(e){ return e.succReadiness==="Ready Now"; }).length;
+    var totalPay = emps.reduce(function(s,e){ return s+e.salary; },0);
+    var avgSal   = Math.round(totalPay/total);
+    var genderDist={};
+    emps.forEach(function(e){ var g=e.gender||"Unknown"; genderDist[g]=(genderDist[g]||0)+1; });
+    var depts={};
+    emps.forEach(function(e){ if(e.department) depts[e.department]=(depts[e.department]||0)+1; });
+    var compaEmps = emps.filter(function(e){ return e.compaRatio; });
+    var avgCompa = compaEmps.length ? (compaEmps.reduce(function(s,e){ return s+e.compaRatio; },0)/compaEmps.length).toFixed(2) : "N/A";
+    var top5    = emps.slice().sort(function(a,b){ return b.perfRating-a.perfRating; }).slice(0,5).map(function(e){ return e.name; }).join(", ");
+    var bottom5 = emps.slice().sort(function(a,b){ return a.perfRating-b.perfRating; }).slice(0,5).map(function(e){ return e.name; }).join(", ");
+
+    var prompt = "You are a senior McKinsey HR analytics consultant. Analyse this org data and generate an Org Health Report as JSON.\n\nDATA:\nCompany: " + (data.companyName||"Organisation") + " | Employees: " + total + " | Avg Perf: " + avgPerf + "/5\nPerf Distribution: R5:" + dist[5] + " R4:" + dist[4] + " R3:" + dist[3] + " R2:" + dist[2] + " R1:" + dist[1] + "\nFlight Risk: High:" + highRisk + " Medium:" + medRisk + " Low:" + (total-highRisk-medRisk) + "\nSuccession Ready Now: " + readyNow + "/" + total + "\nAvg Salary: " + sym + avgSal.toLocaleString() + " | Avg Compa-Ratio: " + avgCompa + "\nGender: " + JSON.stringify(genderDist) + " | Departments: " + JSON.stringify(depts) + "\nTop Performers: " + top5 + " | Lowest: " + bottom5 + "\nIncrement Budget: " + data.incrementBudgetPct + "%\n\nReturn ONLY valid JSON with this exact structure. No markdown, no backticks, no preamble. Start with { end with }. No newlines inside string values.\n\n{\"overallScore\":integer,\"overallGrade\":\"Excellent|Good|Fair|Critical\",\"executiveSummary\":\"3 short sharp paragraphs separated by || \",\"performanceHealth\":{\"score\":integer,\"grade\":\"Excellent|Good|Fair|Critical\",\"analysis\":\"2 paragraphs separated by || \",\"keyInsight\":\"one sentence\",\"redFlag\":\"one sentence or null\"},\"retentionRisk\":{\"score\":integer,\"grade\":\"Excellent|Good|Fair|Critical\",\"analysis\":\"2 paragraphs separated by || \",\"keyInsight\":\"one sentence\",\"redFlag\":\"one sentence or null\"},\"compensationEquity\":{\"score\":integer,\"grade\":\"Excellent|Good|Fair|Critical\",\"analysis\":\"2 paragraphs separated by || \",\"keyInsight\":\"one sentence\",\"redFlag\":\"one sentence or null\"},\"successionReadiness\":{\"score\":integer,\"grade\":\"Excellent|Good|Fair|Critical\",\"analysis\":\"2 paragraphs separated by || \",\"keyInsight\":\"one sentence\",\"redFlag\":\"one sentence or null\"},\"deiHealth\":{\"score\":integer,\"grade\":\"Excellent|Good|Fair|Critical\",\"analysis\":\"2 paragraphs separated by || \",\"keyInsight\":\"one sentence\",\"redFlag\":\"one sentence or null\"},\"recommendations\":[{\"title\":\"string\",\"detail\":\"string\",\"priority\":\"High|Medium|Low\",\"timeframe\":\"string\"}]}";
+
+    // v5.31 FIX: read actual key from viorah_key (set by global key capture script)
+    // with fallback to viorah_plan for any session that predates the global script.
+    // Also adds requestType so the Worker routes to the org-health auth + cap branch.
+    var proKey = localStorage.getItem("viorah_key") || localStorage.getItem("viorah_plan") || "";
+
+    var response = await fetch("https://pms-toolkit-ai.kumarvivek-srv.workers.dev", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        requestType: "org-health",
+        key: proKey,
+        model: "claude-sonnet-4-6",
+        max_tokens: 8000,
+        messages: [{role:"user", content: prompt}]
+      })
+    });
+
+    if(!response.ok){
+      var errData = await response.json().catch(function(){ return null; });
+      throw new Error((errData && errData.error) || ("API error: " + response.status));
+    }
+
+    var result = await response.json();
+    var text = result.content.map(function(b){ return b.text||""; }).join("");
+
+    var first = text.indexOf("{");
+    var last  = text.lastIndexOf("}");
+    if(first===-1||last===-1) throw new Error("No JSON found in response");
+    var jsonStr = text.slice(first, last+1);
+
+    try{
+      return JSON.parse(jsonStr);
+    } catch(e){
+      jsonStr = jsonStr.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g," ");
+      jsonStr = jsonStr.replace(/("(?:[^"\\]|\\.)*")|(\n)/g,function(m,str,nl){ return str||" "; });
+      try{
+        return JSON.parse(jsonStr);
+      } catch(e2){
+        throw new Error("Report data was malformed. Please try again.");
+      }
+    }
+  }
+
+  function gradeClass(g){
+    if(g==="Excellent"||g==="Good") return "oh-grade-green";
+    if(g==="Fair") return "oh-grade-amber";
+    return "oh-grade-red";
+  }
+
+  function renderSection(section){
+    var paras = (section.analysis||"").split("||").filter(function(p){ return p.trim(); })
+      .map(function(p){ return "<p>" + p.trim() + "</p>"; }).join("");
+    return "<div class=\"oh-grade " + gradeClass(section.grade) + "\">" + section.grade + " \u00B7 " + section.score + "/100</div>" +
+      "<div class=\"oh-body-text\">" + paras + "</div>" +
+      (section.keyInsight ? "<div class=\"oh-insight\"><strong>\uD83D\uDCA1 Key Insight:</strong> " + section.keyInsight + "</div>" : "") +
+      (section.redFlag && section.redFlag!=="null" ? "<div class=\"oh-redflag\"><strong>\uD83D\uDEA8 Red Flag:</strong> " + section.redFlag + "</div>" : "");
+  }
+
+  function renderReport(r, data){
+    document.getElementById("oh-loading").style.display = "none";
+    document.getElementById("oh-report").style.display  = "block";
+
+    document.getElementById("oh-report-title").textContent =
+      (data.companyName||"Your Organisation") + " - Org Health Report";
+    document.getElementById("oh-report-date").textContent =
+      "Generated " + new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}) + " \u00B7 " + data.employees.length + " employees analysed";
+
+    var execParas = (r.executiveSummary||"").split("||").filter(function(p){ return p.trim(); })
+      .map(function(p){ return "<p>" + p.trim() + "</p>"; }).join("");
+
+    var sectionKeys = ["performanceHealth","retentionRisk","compensationEquity","successionReadiness","deiHealth"];
+    var sectionLabels = {performanceHealth:"Performance",retentionRisk:"Retention",compensationEquity:"Compensation",successionReadiness:"Succession",deiHealth:"DEI"};
+    var scorePills = sectionKeys.map(function(k){
+      return "<div class=\"oh-score-pill\"><div class=\"oh-score-pill-num\">" + ((r[k]||{}).score||" - ") + "</div><div class=\"oh-score-pill-lbl\">" + sectionLabels[k] + "</div></div>";
+    }).join("");
+
+    var recs = (r.recommendations||[]).map(function(rec,i){
+      return "<div class=\"oh-rec\">" +
+        "<div class=\"oh-rec-num\">" + (i+1) + "</div>" +
+        "<div class=\"oh-rec-body\">" +
+          "<div class=\"oh-rec-title\">" + rec.title + "</div>" +
+          "<div class=\"oh-rec-detail\">" + rec.detail + "</div>" +
+          "<div class=\"oh-rec-time\">\u23F1 " + rec.timeframe + "</div>" +
+        "</div>" +
+        "<div class=\"oh-rec-priority oh-pri-" + (rec.priority==="High"?"high":rec.priority==="Medium"?"med":"low") + "\">" + rec.priority + "</div>" +
+      "</div>";
+    }).join("");
+
+    var sections = [
+      { icon:"\uD83D\uDCCB", title:"Executive Summary", content:
+        "<div class=\"oh-grade " + gradeClass(r.overallGrade) + "\">Overall Health Score: " + r.overallScore + "/100 - " + r.overallGrade + "</div>" +
+        "<div class=\"oh-score-row\">" + scorePills + "</div>" +
+        "<div class=\"oh-body-text\">" + execParas + "</div>",
+        delay: 0 },
+      { icon:"\uD83D\uDCCA", title:"Performance Distribution Health", content: renderSection(r.performanceHealth||{}), delay: 0.08 },
+      { icon:"\u26A0\uFE0F", title:"Flight Risk & Retention Analysis", content: renderSection(r.retentionRisk||{}), delay: 0.16 },
+      { icon:"\uD83D\uDCB0", title:"Compensation Equity", content: renderSection(r.compensationEquity||{}), delay: 0.24 },
+      { icon:"\uD83D\uDD2E", title:"Succession Readiness", content: renderSection(r.successionReadiness||{}), delay: 0.32 },
+      { icon:"\uD83C\uDF0D", title:"DEI Health Check", content: renderSection(r.deiHealth||{}), delay: 0.40 },
+      { icon:"\uD83C\uDFAF", title:"Strategic Recommendations", content:"<div class=\"oh-rec-list\">" + recs + "</div>", delay: 0.48 }
+    ];
+
+    document.getElementById("oh-report-body").innerHTML =
+      sections.map(function(s){
+        return "<div class=\"oh-section\" style=\"animation-delay:" + s.delay + "s\">" +
+          "<div class=\"oh-section-head\">" +
+            "<div class=\"oh-section-icon\">" + s.icon + "</div>" +
+            "<div class=\"oh-section-title\">" + s.title + "</div>" +
+          "</div>" +
+          s.content +
+        "</div>";
+      }).join("") +
+      "<div class=\"oh-report-footer\">This report was generated by Virorah PMS AI Diagnostics Engine using your uploaded employee data. For internal HR leadership use only. Validate recommendations against your organisation's specific context before implementation.</div>";
+  }
+
+  window.ohRegenerate = function(){
+    document.getElementById("oh-report").style.display = "none";
+    for(var i=1;i<=6;i++) document.getElementById("ohstep-"+i).className = i===1 ? "oh-step active" : "oh-step";
+    window.ohGenerate();
+  };
+
+  window.ohReset = function(){
+    document.getElementById("oh-report").style.display  = "none";
+    document.getElementById("oh-error").style.display   = "none";
+    document.getElementById("oh-loading").style.display = "none";
+    for(var i=1;i<=6;i++) document.getElementById("ohstep-"+i).className = i===1 ? "oh-step active" : "oh-step";
+    init();
+  };
+
+  init();
+})();
+</script>
+
+<style media="print">
+  /* Hide everything on the page including Softr nav, sidebar, and logo */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Restore only our report block */
+  #org-health-root,
+  #org-health-root * {
+    visibility: visible !important;
+  }
+
+  /* Pull it to the top-left corner so nav gap disappears */
+  #org-health-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white !important;
+    color: #1a1a2e !important;
+  }
+
+  /* Hide states that are not the report */
+  .ohh,
+  #oh-launch,
+  #oh-loading,
+  #oh-error,
+  .oh-report-actions,
+  .oh-btn-outline,
+  .oh-btn-solid {
+    display: none !important;
+  }
+
+  /* Ensure report is visible */
+  #oh-report {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* White backgrounds throughout */
+  .oh-report-body {
+    background: white !important;
+    border-color: #e5e7eb !important;
+  }
+
+  .oh-section {
+    background: white !important;
+    border-bottom-color: #e5e7eb !important;
+    break-inside: avoid;
+  }
+
+  .oh-score-pill {
+    background: #f9fafb !important;
+    border-color: #e5e7eb !important;
+  }
+
+  .oh-rec {
+    background: #f9fafb !important;
+    border-color: #e5e7eb !important;
+  }
+
+  /* Readable text colours */
+  .oh-report-title {
+    color: #1a1a2e !important;
+  }
+
+  .oh-report-label {
+    color: #667eea !important;
+  }
+
+  .oh-report-date {
+    color: #6b7280 !important;
+  }
+
+  .oh-section-title {
+    color: #1a1a2e !important;
+  }
+
+  .oh-body-text,
+  .oh-body-text p {
+    color: #374151 !important;
+  }
+
+  .oh-rec-title {
+    color: #1a1a2e !important;
+  }
+
+  .oh-rec-detail {
+    color: #4b5563 !important;
+  }
+
+  .oh-rec-time {
+    color: #6b7280 !important;
+  }
+
+  .oh-report-footer {
+    color: #9ca3af !important;
+    border-top-color: #e5e7eb !important;
+    background: #f9fafb !important;
+  }
+
+  /* Score pill numbers lose gradient in print - force solid colour */
+  .oh-score-pill-num {
+    color: #1a1a2e !important;
+    -webkit-text-fill-color: #1a1a2e !important;
+    background: none !important;
+  }
+
+  .oh-score-pill-lbl {
+    color: #6b7280 !important;
+  }
+
+  /* Section icons */
+  .oh-section-icon {
+    background: #f0eeff !important;
+    border-color: #c4b5fd !important;
+  }
+
+  /* Grade badges */
+  .oh-grade-green {
+    background: rgba(29, 158, 117, 0.1) !important;
+    color: #1D9E75 !important;
+    border-color: rgba(29, 158, 117, 0.3) !important;
+  }
+
+  .oh-grade-amber {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #d97706 !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .oh-grade-red {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #dc2626 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+  }
+
+  /* Priority badges */
+  .oh-pri-high {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #dc2626 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+  }
+
+  .oh-pri-med {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #d97706 !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .oh-pri-low {
+    background: rgba(29, 158, 117, 0.1) !important;
+    color: #059669 !important;
+    border-color: rgba(29, 158, 117, 0.3) !important;
+  }
+
+  /* Rec number circles keep purple */
+  .oh-rec-num {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Insight and redflag callouts */
+  .oh-insight {
+    background: rgba(201, 168, 76, 0.08) !important;
+    color: #374151 !important;
+  }
+
+  .oh-redflag {
+    background: rgba(239, 68, 68, 0.08) !important;
+    color: #374151 !important;
+  }
+
+  /* Back link - hide in print */
+  .oh-back-link-row {
+    display: none !important;
+  }
+</style>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

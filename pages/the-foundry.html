@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extraordinary teams are built on purpose.</title>
+  <meta name="description" content="Six conditions. Grounded in real cases from Skunk Works to SpaceX to ISRO. Answer real questions. Walk away with six artifacts and a combined Operating Kit.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/the-foundry.html">
+  <meta property="og:title" content="Extraordinary teams are built on purpose.">
+  <meta property="og:description" content="Six conditions. Grounded in real cases from Skunk Works to SpaceX to ISRO. Answer real questions. Walk away with six artifacts and a combined Operating Kit.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">The Foundry</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<style>
+  #tf-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; position:relative; }
+  #tf-root * { box-sizing:border-box; }
+
+  #tf-gate { position:absolute; top:0; left:0; width:100%; min-height:100%; z-index:900; background:rgba(5,4,16,.92); backdrop-filter:blur(16px); display:flex; align-items:center; justify-content:center; padding:24px; }
+  .tf-gate-box { background:#0d0b1e; border:1px solid rgba(251,191,36,.25); border-radius:20px; padding:48px 40px; max-width:460px; width:100%; text-align:center; box-shadow:0 40px 80px rgba(0,0,0,.5); position:relative; overflow:hidden; }
+  .tf-gate-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#fbbf24,#f97316,transparent); }
+  .tf-gate-icon { font-size:40px; margin-bottom:16px; }
+  .tf-gate-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:10px; color:#f0eeff; }
+  .tf-gate-sub { font-size:14px; color:rgba(196,181,253,.65); margin-bottom:28px; line-height:1.7; }
+  .tf-gate-input { width:100%; padding:13px 16px; border-radius:10px; margin-bottom:12px; background:rgba(255,255,255,.06); border:1px solid rgba(251,191,36,.25); color:#f0eeff; font-size:14px; font-family:'Space Grotesk',sans-serif; outline:none; transition:border-color .2s; }
+  .tf-gate-input:focus { border-color:#fbbf24; }
+  .tf-gate-btn { width:100%; padding:13px; border-radius:10px; border:none; cursor:pointer; background:linear-gradient(135deg,#fbbf24,#f97316); color:#1a1a2e; font-size:14px; font-weight:700; font-family:'Space Grotesk',sans-serif; transition:opacity .2s,transform .15s; }
+  .tf-gate-btn:hover { opacity:.9; transform:translateY(-1px); }
+  .tf-gate-err { font-size:12px; color:#f87171; margin-top:8px; min-height:16px; }
+  .tf-gate-link { font-size:12px; color:rgba(165,180,252,.45); margin-top:16px; }
+  .tf-gate-link a { color:#fbbf24; text-decoration:none; }
+
+  .tf-hero { background:linear-gradient(160deg,#080612 0%,#150a2e 50%,#080612 100%); padding:48px 44px 40px; border-radius:16px 16px 0 0; position:relative; overflow:hidden; }
+  .tf-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(251,191,36,.5),rgba(167,139,250,.3),rgba(251,191,36,.5),transparent); }
+  .tf-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(251,191,36,.7); margin-bottom:16px; }
+  .tf-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#fbbf24; box-shadow:0 0 10px rgba(251,191,36,.8); }
+  .tf-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,4vw,44px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:16px; max-width:760px; }
+  .tf-title span { background:linear-gradient(135deg,#fbbf24,#f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .tf-sub { font-size:14px; color:rgba(196,181,253,.6); line-height:1.75; max-width:640px; margin-bottom:24px; }
+  .tf-pillrow { display:flex; gap:8px; flex-wrap:wrap; }
+  .tf-pill { padding:6px 14px; border-radius:100px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:11.5px; font-weight:600; color:rgba(240,238,255,.8); }
+
+  .tf-precedent { margin:24px 44px; padding:24px 28px; background:rgba(102,126,234,.05); border:1px solid rgba(102,126,234,.2); border-radius:14px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .tf-precedent-lbl { font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:rgba(167,139,250,.5); margin-bottom:8px; }
+  .tf-precedent-title { font-size:16px; font-weight:700; color:#f0eeff; margin-bottom:6px; }
+  .tf-precedent-body { font-size:12.5px; color:rgba(196,181,253,.55); line-height:1.6; max-width:520px; }
+  .tf-precedent-btn { flex-shrink:0; display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:10px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap; }
+
+  .tf-fork { margin:0 44px 32px; padding:32px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.1); border-radius:16px; }
+  .tf-fork-q { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .tf-fork-opts { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:640px){ .tf-fork-opts{ grid-template-columns:1fr; } }
+  .tf-fork-card { padding:20px; border-radius:12px; border:2px solid rgba(255,255,255,.1); background:rgba(255,255,255,.02); cursor:pointer; transition:all .2s; }
+  .tf-fork-card:hover { border-color:rgba(251,191,36,.4); }
+  .tf-fork-card.selected { border-color:#fbbf24; background:rgba(251,191,36,.06); }
+  .tf-fork-card-title { font-size:14px; font-weight:700; margin-bottom:6px; }
+  .tf-fork-card-desc { font-size:12px; color:rgba(196,181,253,.5); line-height:1.5; }
+
+  .tf-stepper { display:flex; gap:6px; padding:0 44px 24px; overflow-x:auto; }
+  .tf-step { flex-shrink:0; display:flex; align-items:center; gap:8px; padding:8px 14px; border-radius:100px; font-size:11.5px; font-weight:700; border:1px solid rgba(255,255,255,.12); color:rgba(196,181,253,.4); cursor:pointer; }
+  .tf-step.active { border-color:#fbbf24; color:#fbbf24; background:rgba(251,191,36,.08); }
+  .tf-step.done { border-color:rgba(52,211,153,.4); color:#34d399; }
+
+  .tf-stage { margin:0 44px 32px; padding:32px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.1); border-radius:16px; }
+  .tf-stage-title { font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:800; margin-bottom:6px; }
+  .tf-stage-sub { font-size:13px; color:rgba(196,181,253,.55); line-height:1.6; margin-bottom:22px; }
+  .tf-q-label { font-size:13px; font-weight:700; color:#f0eeff; margin-bottom:8px; }
+  .tf-example-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .tf-example-lbl { font-size:11px; color:rgba(196,181,253,.4); }
+  .tf-example-chip { padding:5px 12px; border-radius:100px; background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.25); color:#fbbf24; font-size:11px; font-weight:600; cursor:pointer; font-family:inherit; }
+  .tf-example-chip:hover { background:rgba(251,191,36,.16); border-color:rgba(251,191,36,.45); }
+  .tf-q-input { width:100%; padding:12px 14px; border-radius:10px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#f0eeff; font-size:13px; font-family:inherit; resize:vertical; min-height:70px; margin-bottom:18px; }
+  .tf-q-input:focus { outline:none; border-color:#fbbf24; }
+  .tf-generate-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 26px; border-radius:10px; background:linear-gradient(135deg,#fbbf24,#f97316); color:#1a1a2e; font-size:13px; font-weight:800; border:none; cursor:pointer; }
+  .tf-generate-btn:disabled { opacity:.4; cursor:not-allowed; }
+
+  .tf-artifact { margin-top:24px; padding:24px; background:rgba(251,191,36,.04); border:1px solid rgba(251,191,36,.25); border-radius:14px; }
+  .tf-artifact-title { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:800; color:#fbbf24; margin-bottom:14px; }
+  .tf-artifact-field { margin-bottom:14px; }
+  .tf-artifact-field-lbl { font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:rgba(251,191,36,.55); margin-bottom:4px; }
+  .tf-artifact-field-val { font-size:13px; color:rgba(240,238,255,.85); line-height:1.65; }
+  .tf-artifact-dl { display:inline-flex; align-items:center; gap:8px; margin-top:10px; padding:9px 18px; border-radius:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#f0eeff; font-size:12px; font-weight:700; cursor:pointer; }
+  .tf-artifact-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+  .tf-next-btn { display:inline-flex; align-items:center; gap:8px; padding:9px 20px; border-radius:8px; background:linear-gradient(135deg,#fbbf24,#f97316); border:none; color:#1a1a2e; font-size:12px; font-weight:800; cursor:pointer; }
+  .tf-next-btn:hover { opacity:.9; }
+  .tf-artifact-done-note { margin-top:14px; padding:12px 16px; background:rgba(52,211,153,.08); border:1px solid rgba(52,211,153,.25); border-radius:10px; font-size:12.5px; color:#6ee7b7; }
+
+  .tf-kit-banner { margin:0 44px 40px; padding:28px 32px; background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(249,115,22,.06)); border:1px solid rgba(251,191,36,.3); border-radius:16px; text-align:center; }
+  .tf-kit-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:800; margin-bottom:8px; }
+  .tf-kit-sub { font-size:13px; color:rgba(196,181,253,.6); margin-bottom:18px; }
+  .tf-kit-btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:10px; background:linear-gradient(135deg,#fbbf24,#f97316); color:#1a1a2e; font-size:14px; font-weight:800; border:none; cursor:pointer; }
+</style>
+
+<div id="tf-root">
+  <div id="tf-gate">
+    <div class="tf-gate-box">
+      <div class="tf-gate-icon">&#x1F512;</div>
+      <div class="tf-gate-title">The Foundry</div>
+      <div class="tf-gate-sub">This is a <strong style="color:#fbbf24">Pro-only</strong> tool. Enter your Virorah Pro key to build your team's six-condition Operating Kit.</div>
+      <input class="tf-gate-input" id="tf-gate-input" type="text" placeholder="Enter your Virorah Pro key" autocomplete="off" spellcheck="false">
+      <button class="tf-gate-btn" id="tf-gate-btn">Unlock The Foundry &#x2192;</button>
+      <div class="tf-gate-err" id="tf-gate-err"></div>
+      <div class="tf-gate-link">Don't have a key? <a href="/pages/pricing.html">Upgrade to Pro &#x2192;</a></div>
+    </div>
+  </div>
+  <div class="tf-hero">
+    <div class="tf-eyebrow"><div class="tf-eyebrow-dot"></div>FORGE &middot; THE FOUNDRY</div>
+    <div class="tf-title">Build a <span>genuinely extraordinary</span> team.</div>
+    <div class="tf-sub">Not infrastructure hygiene, the rarer conditions that separate merely healthy teams from breakthrough ones. Six conditions, grounded in real cases from Skunk Works to SpaceX to ISRO to the original Macintosh team. Answer a few real questions at each stage and walk away with six tangible, usable artifacts for your team, an <strong>Operating Kit</strong>, not a values poster.</div>
+    <div class="tf-pillrow">
+      <span class="tf-pill">6 research-backed conditions</span>
+      <span class="tf-pill">Downloadable artifact per stage</span>
+      <span class="tf-pill">Combined Operating Kit at the end</span>
+    </div>
+  </div>
+
+  <div class="tf-precedent">
+    <div>
+      <div class="tf-precedent-lbl">Before you build further</div>
+      <div class="tf-precedent-title">Every condition you're building toward already has a real precedent</div>
+      <div class="tf-precedent-body">Skunk Works, Pixar, SpaceX, the original Macintosh team. See exactly how each of the six Design Track conditions played out somewhere real.</div>
+    </div>
+    <a href="/pages/forge-case-studies.html" class="tf-precedent-btn">Explore Case Studies</a>
+  </div>
+
+  <div id="tf-fork-section" class="tf-fork">
+    <div class="tf-fork-q">Are you building this team from scratch, or redesigning one that already exists?</div>
+    <div class="tf-fork-opts">
+      <div class="tf-fork-card" data-fork="scratch" onclick="tfSelectFork('scratch')">
+        <div class="tf-fork-card-title">From scratch</div>
+        <div class="tf-fork-card-desc">No team yet, or early enough that you're architecting it from the ground up.</div>
+      </div>
+      <div class="tf-fork-card" data-fork="reimagine" onclick="tfSelectFork('reimagine')">
+        <div class="tf-fork-card-title">Reimagining an existing team</div>
+        <div class="tf-fork-card-desc">A real team exists today. You're intentionally redesigning how it operates.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tf-stepper" class="tf-stepper" style="display:none;"></div>
+  <div id="tf-stage-container"></div>
+  <div id="tf-kit-section" style="display:none;"></div>
+</div>
+
+<script>
+/* Pro gate */
+(function(){
+  var WORKER_URL = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+  function vrCheck(){
+    try {
+      if (localStorage.getItem('viorah_plan') !== 'pro') return false;
+      var expStr = localStorage.getItem('viorah_plan_exp');
+      if (!expStr) return true;
+      var expDate = new Date(parseInt(expStr));
+      if (isNaN(expDate.getTime())) return true;
+      if (new Date() > expDate) {
+        localStorage.removeItem('viorah_plan');
+        localStorage.removeItem('viorah_plan_exp');
+        return false;
+      }
+      return true;
+    } catch(e) { return false; }
+  }
+  if(vrCheck()) document.getElementById('tf-gate').style.display = 'none';
+  document.getElementById('tf-gate-btn').addEventListener('click', function(){
+    var v = (document.getElementById('tf-gate-input').value || '').trim();
+    var btn = document.getElementById('tf-gate-btn');
+    var errEl = document.getElementById('tf-gate-err');
+    errEl.textContent = '';
+    if(!v){ errEl.textContent = 'Please enter your Pro key.'; return; }
+    btn.disabled = true; btn.textContent = 'Validating...';
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Action': 'validate-key' },
+      body: JSON.stringify({ key: v })
+    }).then(function(r){ return r.json(); }).then(function(result){
+      if(result.valid){
+        localStorage.setItem('viorah_key', v);
+        localStorage.setItem('viorah_plan', 'pro');
+        document.getElementById('tf-gate').style.display = 'none';
+      } else {
+        errEl.textContent = 'Invalid key. Check your Pro key or upgrade at /pricing.';
+        btn.disabled = false; btn.textContent = 'Unlock The Foundry \u2192';
+      }
+    }).catch(function(){
+      errEl.textContent = 'Could not verify key. Please try again.';
+      btn.disabled = false; btn.textContent = 'Unlock The Foundry \u2192';
+    });
+  });
+  document.getElementById('tf-gate-input').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('tf-gate-btn').click(); });
+})();
+</script>
+<script>
+(function(){
+"use strict";
+
+var WORKER = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+
+var ORG_PROFILE_KEY = "virorah_org_profile";
+var orgProfile = null;
+(function(){
+  try {
+    var raw = localStorage.getItem(ORG_PROFILE_KEY);
+    if(raw) orgProfile = JSON.parse(raw);
+  } catch(e){ orgProfile = null; }
+})();
+
+var STAGES = [
+  { id:"stakes", label:"Stakes", icon:String.fromCodePoint(0x1F525),
+    title:"Real, felt, specific consequence",
+    sub:"Not manufactured urgency. What genuinely happens if this fails, and why does it matter right now, not abstractly.",
+    questions:[
+      { key:"mission", label:"What is this team here to pull off?", placeholder:"Be specific, not a mission statement.",
+        examples:[
+          {label:"Competitive launch", text:"Ship a genuinely reliable payments product before our biggest competitor launches theirs, currently 4 months out."},
+          {label:"Healthcare pilot", text:"Build the clinical trial coordination team from zero to running 3 concurrent trials without a single protocol deviation."},
+          {label:"Support turnaround", text:"Take our support function from 48-hour response times to same-day resolution on 90% of tickets within two quarters."}
+        ]
+      },
+      { key:"consequence", label:"What genuinely happens if it fails?", placeholder:"The real, felt consequence, not a generic business risk.",
+        examples:[
+          {label:"Losing key accounts", text:"We lose our two biggest enterprise accounts, who've already told us they're evaluating the competitor, and layoffs follow within the year."},
+          {label:"Losing the reference customer", text:"The hospital system cancels the pilot contract and we lose our only reference customer in healthcare, which was supposed to open the entire vertical."},
+          {label:"Losing institutional knowledge", text:"Our best support reps, who are already frustrated, start leaving, and we lose the institutional knowledge that makes escalations survivable at all."}
+        ]
+      }
+    ]
+  },
+  { id:"ownership", label:"Ownership", icon:String.fromCodePoint(0x1F91D),
+    title:"Decisions collapsed to whoever's closest",
+    sub:"Where is approval currently slower than the person actually doing the work?",
+    questions:[
+      { key:"decisions", label:"What recurring decisions get stuck waiting for approval?", placeholder:"",
+        examples:[
+          {label:"Pricing exceptions", text:"Every pricing exception over 10% has to go through the VP of Sales personally, even for deals under $5,000."},
+          {label:"Small product tweaks", text:"Any change to the onboarding flow needs sign-off from both the design lead and the CTO, even for copy tweaks."},
+          {label:"Hiring approvals", text:"Hiring decisions for support reps route through the COO, who's three levels removed from the interviews."}
+        ]
+      },
+      { key:"closest", label:"Who is actually closest to each of those problems today?", placeholder:"",
+        examples:[
+          {label:"The reps on the calls", text:"The account executives on the calls, who already know which exceptions actually save the deal versus which are just habit."},
+          {label:"The designers running tests", text:"The two product designers who run weekly user tests and see exactly where people drop off."},
+          {label:"The team lead in the interviews", text:"The support team lead, who's sat in on every interview and already has a clear read on who'll last."}
+        ]
+      }
+    ]
+  },
+  { id:"candor", label:"Candor", icon:String.fromCodePoint(0x1F5E3),
+    title:"A protected room for real critique",
+    sub:"What work most needs honest critique, and who currently sits in that room who shouldn't?",
+    questions:[
+      { key:"work", label:"What kind of work most needs honest critique right now?", placeholder:"",
+        examples:[
+          {label:"Sprint demos", text:"Our sprint demos, where everyone claps regardless of whether the feature actually works end to end."},
+          {label:"Client pitch decks", text:"Client pitch decks, which go out with the same weak narrative structure every time because no one wants to be the one who says it's not working."},
+          {label:"Code reviews", text:"Code reviews on the core billing service, where junior engineers approve senior engineers' PRs without really reading them."}
+        ]
+      },
+      { key:"authority", label:"Who currently sits in that room whose authority distorts the critique?", placeholder:"",
+        examples:[
+          {label:"The founder in the room", text:"The founder, who sits in on every demo and whose visible reaction sets the tone before anyone else speaks."},
+          {label:"The account director", text:"The account director, whose seniority means junior strategists soften their real opinion on the deck in front of them."},
+          {label:"The original author", text:"The engineering manager, who wrote half of the original billing service and gets defensive the moment someone questions it."}
+        ]
+      }
+    ]
+  },
+  { id:"risk", label:"Risk", icon:String.fromCodePoint(0x26A1),
+    title:"Where failure is cheap vs never acceptable",
+    sub:"Most teams treat every mistake as equally weighted. That quietly kills boldness everywhere.",
+    questions:[
+      { key:"safe", label:"Where is it currently safe, or should be safe, to experiment and fail?", placeholder:"",
+        examples:[
+          {label:"Internal tooling", text:"Internal tooling and workflow experiments, since nothing there touches a live customer."},
+          {label:"Free-tier emails", text:"New onboarding email sequences to our free tier, where a bad variant just costs us a few days of data."},
+          {label:"Friendly-customer prototypes", text:"Early-stage prototypes we show to 3-5 friendly customers before anything goes near the general roadmap."}
+        ]
+      },
+      { key:"never", label:"Where can failure never be tolerated?", placeholder:"",
+        examples:[
+          {label:"Patient data", text:"Anything touching patient data or the medication dosage calculator, full stop."},
+          {label:"Production billing", text:"Production billing runs, since a mistake there means real money moving incorrectly out of customer accounts."},
+          {label:"Public security changes", text:"Public-facing security changes, where even a short-lived misconfiguration is a headline risk."}
+        ]
+      }
+    ]
+  },
+  { id:"signature", label:"Signature", icon:String.fromCodePoint(0x270D),
+    title:"Durable recognition outside formal review",
+    sub:"Tangible, permanent, not tied to the annual review cycle.",
+    questions:[
+      { key:"unrecognised", label:"Describe a piece of quietly unrecognised work on this team.", placeholder:"",
+        examples:[
+          {label:"The test suite rewrite", text:"One engineer rewrote our flaky test suite over two weekends, unprompted, and CI has been stable ever since, but it's never come up in a review."},
+          {label:"The onboarding ritual", text:"Our ops lead has personally onboarded every new hire's laptop and access for two years, and nobody's ever thanked her for it directly."},
+          {label:"The macro library", text:"A support rep built an internal macro library that cut average handle time by 20%, and it's now used company-wide, uncredited."}
+        ]
+      },
+      { key:"meaningful", label:"What would feel genuinely meaningful to recognise, to this specific team?", placeholder:"",
+        examples:[
+          {label:"Trust over praise", text:"This team cares more about being trusted with hard problems than public praise, so being handed the next ambiguous, high-stakes project would land harder than an award."},
+          {label:"A personal note", text:"A handwritten note from the founder, kept and pinned above her desk, would mean more to her than a bonus she can't tell anyone about."},
+          {label:"Naming it after him", text:"Naming the macro library after him internally, so his name is literally in the tool everyone uses daily, would be more lasting than a one-time shoutout."}
+        ]
+      }
+    ]
+  },
+  { id:"scope", label:"Scope", icon:String.fromCodePoint(0x1F3AF),
+    title:"Continuously refusing scope creep",
+    sub:"An enforced ongoing rule, not a one-time launch decision.",
+    questions:[
+      { key:"core", label:"What does this team exist to do exceptionally well?", placeholder:"",
+        examples:[
+          {label:"Fast prototyping", text:"Turn ambiguous customer problems into working prototypes within two weeks, faster than anyone else in the company."},
+          {label:"Reliable infrastructure", text:"Keep our production infrastructure boringly reliable, so no other team has to think about uptime."},
+          {label:"Complex enterprise deals", text:"Close enterprise deals that take six to nine months and involve procurement, legal, and security review, without losing momentum."}
+        ]
+      },
+      { key:"creep", label:"What has crept into scope lately that doesn't serve that?", placeholder:"",
+        examples:[
+          {label:"Building others' dashboards", text:"We've started building one-off internal dashboards for other teams because we're 'the technical ones,' which eats a day a week that used to go to prototyping."},
+          {label:"Every incident retro", text:"We've been pulled into every incident retro across the company, not just our own systems, because we're seen as the reliability experts for everything."},
+          {label:"Renewal negotiations", text:"We've started handling renewal negotiations too, which used to sit with customer success, and it's splitting our focus right before quarter close."}
+        ]
+      }
+    ]
+  }
+];
+
+var S = { fork:null, results:{}, inputs:{} };
+
+window.tfSelectFork = function(fork){
+  S.fork = fork;
+  document.querySelectorAll(".tf-fork-card").forEach(function(c){
+    c.classList.toggle("selected", c.getAttribute("data-fork") === fork);
+  });
+  document.getElementById("tf-fork-section").style.display = "none";
+  document.getElementById("tf-stepper").style.display = "flex";
+  buildStepper();
+  showStage(STAGES[0].id);
+};
+
+function buildStepper(){
+  var wrap = document.getElementById("tf-stepper");
+  wrap.innerHTML = STAGES.map(function(s){
+    var cls = "tf-step" + (S.results[s.id] ? " done" : "");
+    return "<div class=\"" + cls + "\" data-stage=\"" + s.id + "\">" + s.icon + " " + s.label + "</div>";
+  }).join("");
+  wrap.querySelectorAll(".tf-step").forEach(function(el){
+    el.addEventListener("click", function(){
+      showStage(el.getAttribute("data-stage"));
+    });
+  });
+}
+
+function showStage(id){
+  document.querySelectorAll(".tf-step").forEach(function(el){
+    el.classList.toggle("active", el.getAttribute("data-stage") === id);
+  });
+  var stage = STAGES.filter(function(s){ return s.id === id; })[0];
+  if(!stage) return;
+
+  var container = document.getElementById("tf-stage-container");
+  var existing = S.results[id];
+
+  var html = "<div class=\"tf-stage\">";
+  html += "<div class=\"tf-stage-title\">" + stage.icon + " " + stage.title + "</div>";
+  html += "<div class=\"tf-stage-sub\">" + stage.sub + "</div>";
+
+  stage.questions.forEach(function(q){
+    var val = (S.inputs[id] && S.inputs[id][q.key]) || "";
+    html += "<div class=\"tf-q-label\">" + q.label + "</div>";
+    if(q.examples && q.examples.length){
+      html += "<div class=\"tf-example-row\"><span class=\"tf-example-lbl\">Not sure what to write? Try an example:</span>";
+      q.examples.forEach(function(ex, i){
+        html += "<button type=\"button\" class=\"tf-example-chip\" data-stage=\"" + id + "\" data-key=\"" + q.key + "\" data-ex-idx=\"" + i + "\">" + ex.label + "</button>";
+      });
+      html += "</div>";
+    }
+    html += "<textarea class=\"tf-q-input\" data-stage=\"" + id + "\" data-key=\"" + q.key + "\" placeholder=\"" + (q.placeholder || "") + "\">" + val + "</textarea>";
+  });
+
+  html += "<button class=\"tf-generate-btn\" id=\"tf-gen-btn\" data-stage=\"" + id + "\">" + String.fromCodePoint(0x2728) + " Generate Artifact</button>";
+  html += "<div id=\"tf-artifact-slot\"></div>";
+  html += "</div>";
+
+  container.innerHTML = html;
+
+  container.querySelectorAll(".tf-q-input").forEach(function(el){
+    el.addEventListener("input", function(){
+      tfSetInput(el.getAttribute("data-stage"), el.getAttribute("data-key"), el.value);
+    });
+  });
+
+  container.querySelectorAll(".tf-example-chip").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var stageId = btn.getAttribute("data-stage");
+      var key = btn.getAttribute("data-key");
+      var idx = parseInt(btn.getAttribute("data-ex-idx"), 10);
+      var stageObj = STAGES.filter(function(s){ return s.id === stageId; })[0];
+      var qObj = stageObj.questions.filter(function(qq){ return qq.key === key; })[0];
+      var exampleText = qObj.examples[idx].text;
+      var textarea = container.querySelector("textarea[data-stage=\"" + stageId + "\"][data-key=\"" + key + "\"]");
+      if(textarea){
+        textarea.value = exampleText;
+        tfSetInput(stageId, key, exampleText);
+      }
+    });
+  });
+
+  var genBtn = document.getElementById("tf-gen-btn");
+  if(genBtn){
+    genBtn.addEventListener("click", function(){
+      tfGenerate(genBtn.getAttribute("data-stage"));
+    });
+  }
+
+  if(existing){
+    renderArtifact(id, existing, false);
+  }
+}
+
+function tfSetInput(stageId, key, value){
+  if(!S.inputs[stageId]) S.inputs[stageId] = {};
+  S.inputs[stageId][key] = value;
+}
+
+function tfGenerate(key){
+  var stage = STAGES.filter(function(s){ return s.id === key; })[0];
+  var inputs = S.inputs[key] || {};
+  var promptBody = stage.questions.map(function(q){
+    return q.label + " " + (inputs[q.key] || "(not answered)");
+  }).join("\n");
+
+  var contextLine = "";
+  if(orgProfile && (orgProfile.industry || orgProfile.orgSize || orgProfile.avgSalary)){
+    var contextParts = [];
+    if(orgProfile.industry) contextParts.push("Industry: " + orgProfile.industry);
+    if(orgProfile.orgSize) contextParts.push("Org size: " + orgProfile.orgSize);
+    if(orgProfile.avgSalary) contextParts.push("Average annual CTC: " + orgProfile.avgSalary);
+    contextLine = "Org context -- " + contextParts.join(", ") + ".\n\n";
+  }
+  var prompt = contextLine + promptBody;
+
+  var btn = document.getElementById("tf-gen-btn");
+  if(btn){ btn.disabled = true; btn.textContent = "Generating..."; }
+  renderArtifact(key, null, true);
+
+  var proKey = localStorage.getItem("viorah_key") || "";
+
+  fetch(WORKER + "/design-track", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ stage: key, fork: S.fork, prompt: prompt, key: proKey })
+  })
+  .then(function(r) {
+    if (!r.ok) {
+      return r.json().catch(function(){ return null; }).then(function(errData){
+        throw new Error((errData && errData.error) || ("Error " + r.status));
+      });
+    }
+    return r.json();
+  })
+  .then(function(data) {
+    S.results[key] = data;
+    buildStepper();
+    renderArtifact(key, data, false);
+  })
+  .catch(function(err){
+    var slot = document.getElementById("tf-artifact-slot");
+    if(slot) slot.innerHTML = "<div class=\"tf-artifact\"><div class=\"tf-artifact-title\">Something went wrong</div><div class=\"tf-artifact-field-val\">" + err.message + "</div></div>";
+  })
+  .finally(function(){
+    if(btn){ btn.disabled = false; btn.textContent = String.fromCodePoint(0x2728) + " Generate Artifact"; }
+    checkAllDone();
+  });
+}
+
+function renderArtifact(key, data, isLoading){
+  var slot = document.getElementById("tf-artifact-slot");
+  if(!slot) return;
+  if(isLoading){
+    slot.innerHTML = "<div class=\"tf-artifact\"><div class=\"tf-artifact-title\">Generating your artifact...</div></div>";
+    return;
+  }
+  if(!data){ slot.innerHTML = ""; return; }
+
+  var html = "<div class=\"tf-artifact\">";
+  html += "<div class=\"tf-artifact-title\">" + (data.artifactTitle || "Artifact") + "</div>";
+  Object.keys(data).forEach(function(field){
+    if(field === "artifactTitle") return;
+    var val = data[field];
+    if(typeof val === "object" && val !== null){
+      val = Array.isArray(val) ? val.join(", ") : JSON.stringify(val);
+    }
+    html += "<div class=\"tf-artifact-field\"><div class=\"tf-artifact-field-lbl\">" + field + "</div><div class=\"tf-artifact-field-val\">" + val + "</div></div>";
+  });
+
+  var stageIdx = STAGES.map(function(s){ return s.id; }).indexOf(key);
+  var nextStage = (stageIdx > -1 && stageIdx < STAGES.length - 1) ? STAGES[stageIdx + 1] : null;
+
+  html += "<div class=\"tf-artifact-actions\">";
+  html += "<button class=\"tf-artifact-dl\" data-key=\"" + key + "\">" + String.fromCodePoint(0x2B07) + " Save as PDF</button>";
+  if(nextStage){
+    html += "<button class=\"tf-next-btn\" id=\"tf-next-btn\" data-next=\"" + nextStage.id + "\">Next: " + nextStage.icon + " " + nextStage.label + " " + String.fromCodePoint(0x2192) + "</button>";
+  }
+  html += "</div>";
+  if(!nextStage){
+    html += "<div class=\"tf-artifact-done-note\">" + String.fromCodePoint(0x2713) + " That's all six. Scroll down to download your combined Operating Kit.</div>";
+  }
+
+  html += "</div>";
+  slot.innerHTML = html;
+
+  var dlBtn = slot.querySelector(".tf-artifact-dl");
+  if(dlBtn){
+    dlBtn.addEventListener("click", function(){
+      tfDownloadArtifact(dlBtn.getAttribute("data-key"));
+    });
+  }
+
+  var nextBtn = slot.querySelector(".tf-next-btn");
+  if(nextBtn){
+    nextBtn.addEventListener("click", function(){
+      showStage(nextBtn.getAttribute("data-next"));
+      var stageEl = document.getElementById("tf-stage-container");
+      if(stageEl) stageEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+}
+
+function tfDownloadArtifact(key){
+  var data = S.results[key];
+  if(!data) return;
+  var stage = STAGES.filter(function(s){ return s.id === key; })[0];
+  var date = new Date().toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric"});
+
+  var tag_o="<ht"+"ml>", tag_c="</ht"+"ml>", hd_o="<he"+"ad>", hd_c="</he"+"ad>", bd_o="<bo"+"dy>", bd_c="</bo"+"dy>";
+
+  var html = "<!DOCTYPE html>" + tag_o + hd_o + "<meta charset=\"utf-8\"><title>Foundry Artifact</title><style>";
+  html += "body{font-family:'Segoe UI',Arial,sans-serif;margin:0 auto;padding:40px;max-width:800px;color:#1a1a2e;}";
+  html += ".eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#d97706;margin-bottom:8px;}";
+  html += "h1{font-size:22px;font-weight:800;margin-bottom:4px;}";
+  html += ".meta{font-size:12px;color:#6b7280;margin-bottom:28px;}";
+  html += ".artifact{padding:20px 24px;border-radius:10px;background:#fffbeb;border-left:4px solid #f59e0b;margin-bottom:20px;page-break-inside:avoid;}";
+  html += ".artifact-title{font-size:16px;font-weight:800;color:#92400e;margin-bottom:16px;}";
+  html += ".f{margin-bottom:12px;}.fl{font-size:10px;font-weight:700;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;letter-spacing:.5px;}";
+  html += ".fv{font-size:13px;color:#374151;line-height:1.7;}";
+  html += ".footer{margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:11px;color:#9ca3af;}";
+  html += "@media print{body{padding:20px;}.artifact{break-inside:avoid;}}";
+  html += "</style>" + hd_c + bd_o;
+
+  html += "<div class=\"eyebrow\">The Foundry \u00B7 Virorah PMS \u00B7 " + (stage ? stage.label : key) + "</div>";
+  html += "<h1>" + (data.artifactTitle || "Artifact") + "</h1>";
+  html += "<div class=\"meta\">Generated " + date + "</div>";
+
+  html += "<div class=\"artifact\">";
+  html += "<div class=\"artifact-title\">" + (data.artifactTitle || "Artifact") + "</div>";
+  Object.keys(data).forEach(function(field){
+    if(field === "artifactTitle") return;
+    var val = data[field];
+    if(typeof val === "object" && val !== null){
+      val = Array.isArray(val) ? val.join(" \u00B7 ") : JSON.stringify(val);
+    }
+    html += "<div class=\"f\"><div class=\"fl\">" + field + "</div><div class=\"fv\">" + val + "</div></div>";
+  });
+  html += "</div>";
+
+  html += "<div class=\"footer\">Virorah PMS Foundry \u00B7 For team leadership use only. Validate against your team context before implementing.</div>";
+  html += bd_c + tag_c;
+
+  var pw = window.open("", "_blank");
+  pw.document.write(html);
+  pw.document.close();
+  pw.focus();
+  setTimeout(function(){ pw.print(); }, 600);
+}
+
+function checkAllDone(){
+  var allDone = STAGES.every(function(s){ return !!S.results[s.id]; });
+  document.getElementById("tf-kit-section").style.display = allDone ? "block" : "none";
+  if(allDone){
+    document.getElementById("tf-kit-section").innerHTML =
+      "<div class=\"tf-kit-banner\">" +
+        "<div class=\"tf-kit-title\">" + String.fromCodePoint(0x1F3C6) + " All six conditions built</div>" +
+        "<div class=\"tf-kit-sub\">Download the combined Operating Kit, all six artifacts in one PDF.</div>" +
+        "<button class=\"tf-kit-btn\" onclick=\"tfDownloadKit()\">" + String.fromCodePoint(0x2B07) + " Download Operating Kit as PDF</button>" +
+      "</div>";
+  }
+}
+
+window.tfDownloadKit = function(){
+  var date = new Date().toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric"});
+  var tag_o="<ht"+"ml>", tag_c="</ht"+"ml>", hd_o="<he"+"ad>", hd_c="</he"+"ad>", bd_o="<bo"+"dy>", bd_c="</bo"+"dy>";
+
+  var html = "<!DOCTYPE html>" + tag_o + hd_o + "<meta charset=\"utf-8\"><title>Foundry Operating Kit</title><style>";
+  html += "body{font-family:'Segoe UI',Arial,sans-serif;margin:0 auto;padding:40px;max-width:800px;color:#1a1a2e;}";
+  html += ".eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#d97706;margin-bottom:8px;}";
+  html += "h1{font-size:24px;font-weight:800;margin-bottom:4px;}";
+  html += ".meta{font-size:12px;color:#6b7280;margin-bottom:32px;}";
+  html += ".section{margin-bottom:24px;padding:20px 24px;border-radius:10px;border-left:4px solid #f59e0b;background:#fffbeb;page-break-inside:avoid;}";
+  html += ".section-title{font-size:14px;font-weight:800;color:#92400e;margin-bottom:12px;}";
+  html += ".f{margin-bottom:10px;}.fl{font-size:10px;font-weight:700;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;letter-spacing:.5px;}";
+  html += ".fv{font-size:13px;color:#374151;line-height:1.7;}";
+  html += ".footer{margin-top:28px;padding-top:14px;border-top:1px solid #e5e7eb;font-size:11px;color:#9ca3af;}";
+  html += "@media print{body{padding:20px;}.section{break-inside:avoid;}}";
+  html += "</style>" + hd_c + bd_o;
+
+  html += "<div class=\"eyebrow\">The Foundry \u00B7 Virorah PMS \u00B7 Operating Kit</div>";
+  html += "<h1>Team Operating Kit</h1>";
+  html += "<div class=\"meta\">Generated " + date + " \u00B7 All six conditions</div>";
+
+  STAGES.forEach(function(s){
+    var data = S.results[s.id];
+    if(!data) return;
+    html += "<div class=\"section\">";
+    html += "<div class=\"section-title\">" + s.label + " \u00B7 " + (data.artifactTitle || "") + "</div>";
+    Object.keys(data).forEach(function(field){
+      if(field === "artifactTitle") return;
+      var val = data[field];
+      if(typeof val === "object" && val !== null){
+        val = Array.isArray(val) ? val.join(" \u00B7 ") : JSON.stringify(val);
+      }
+      html += "<div class=\"f\"><div class=\"fl\">" + field + "</div><div class=\"fv\">" + val + "</div></div>";
+    });
+    html += "</div>";
+  });
+
+  html += "<div class=\"footer\">Virorah PMS Foundry \u00B7 For team leadership use only. Validate each condition against your team context before implementing.</div>";
+  html += bd_c + tag_c;
+
+  var pw = window.open("", "_blank");
+  pw.document.write(html);
+  pw.document.close();
+  pw.focus();
+  setTimeout(function(){ pw.print(); }, 600);
+};
+
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+.fcsb2-card { font-family:'DM Sans',sans-serif; background:#13111f; border:1px solid rgba(251,191,36,.22); border-radius:16px; padding:26px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.fcsb2-card * { box-sizing:border-box; }
+.fcsb2-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:#fbbf24; margin-bottom:8px; }
+.fcsb2-title { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; color:#f0eeff; line-height:1.4; max-width:480px; }
+.fcsb2-sub { font-size:13px; color:rgba(196,181,253,.55); margin-top:6px; line-height:1.6; max-width:480px; }
+.fcsb2-btn { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#080612; background:linear-gradient(135deg,#fbbf24,#a78bfa); padding:12px 22px; border-radius:100px; text-decoration:none; white-space:nowrap; }
+.fcsb2-btn:hover { opacity:.9; }
+@media(max-width:640px){ .fcsb2-card{ padding:22px 20px; } }
+</style>
+<div class="fcsb2-card">
+  <div>
+    <div class="fcsb2-eyebrow">Before You Build Further</div>
+    <div class="fcsb2-title">Every condition you're building toward already has a real precedent</div>
+    <div class="fcsb2-sub">Skunk Works, Pixar, SpaceX, the original Macintosh team. See exactly how each of the six Design Track conditions played out somewhere real.</div>
+  </div>
+  <a class="fcsb2-btn" href="/pages/forge-case-studies.html">Explore Case Studies</a>
+</div>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

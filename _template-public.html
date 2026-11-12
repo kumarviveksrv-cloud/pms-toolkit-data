@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}">
+  <link rel="canonical" href="https://pms.virorah.com/pages/{{SLUG}}.html">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESC}}">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+<!-- Standalone public page: no app shell (sidebar/topbar), no auth redirect. Used for the landing and persona pages. -->
+
+{{CONTENT}}
+
+<!-- Global scripts ported from the Softr header/footer (no Cmd+K or sidebar on standalone pages) -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+</body>
+</html>

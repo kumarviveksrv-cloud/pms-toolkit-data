@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop staring at spreadsheets. See your org in 3D.</title>
+  <meta name="description" content="Every employee. Three dimensions. Orbit it, zoom in, click to inspect. Flight risks pulse red. Stars glow gold. This is what your org actually looks like.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/spatial-3d.html">
+  <meta property="og:title" content="Stop staring at spreadsheets. See your org in 3D.">
+  <meta property="og:description" content="Every employee. Three dimensions. Orbit it, zoom in, click to inspect. Flight risks pulse red. Stars glow gold. This is what your org actually looks like.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Spatial 3D</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- === VIORAH - SPATIAL 9-BOX 3D (JARVIS EDITION) === -->
+<style>
+  #spatial9box-root * { box-sizing:border-box; margin:0; padding:0; }
+  #spatial9box-root {
+    font-family:'Segoe UI',system-ui,sans-serif;
+    background:#020a14; border-radius:16px; overflow:hidden; width:100%; color:white;
+  }
+  #s9b-header {
+    background:linear-gradient(135deg,#020e1c 0%,#051828 50%,#020e1c 100%);
+    border-bottom:1px solid rgba(0,200,255,.15); padding:16px 24px 12px;
+  }
+  .s9b-eyebrow { display:inline-flex; align-items:center; gap:6px; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#00c8ff; margin-bottom:6px; }
+  .s9b-eyebrow-dot { width:5px; height:5px; border-radius:50%; background:#00c8ff; animation:s9bPulse 1.5s ease-in-out infinite; }
+  @keyframes s9bPulse{0%,100%{opacity:1;box-shadow:0 0 6px #00c8ff}50%{opacity:.4;box-shadow:none}}
+  .s9b-title { font-size:20px; font-weight:800; color:white; letter-spacing:-.3px; margin-bottom:3px; }
+  .s9b-sub { font-size:11px; color:rgba(0,200,255,.5); margin-bottom:12px; }
+  .s9b-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .s9b-select { background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.25); color:#a0d8ef; padding:6px 10px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer; outline:none; font-family:inherit; }
+  .s9b-select option { background:#020e1c; color:white; }
+  .s9b-btn { background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.25); color:#80d0f0; padding:6px 12px; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer; transition:all .2s; font-family:inherit; white-space:nowrap; }
+  .s9b-btn:hover { background:rgba(0,200,255,.2); color:white; border-color:#00c8ff; }
+  .s9b-btn.active { background:rgba(0,200,255,.3); color:#00c8ff; border-color:#00c8ff; box-shadow:0 0 10px rgba(0,200,255,.3); }
+  #s9b-body { display:flex; position:relative; }
+  #s9b-canvas-wrap { flex:1; position:relative; background:#020a14; min-height:560px; overflow:hidden; cursor:grab; }
+  #s9b-canvas { display:block; width:100%!important; }
+  #s9b-stats { position:absolute; top:14px; left:14px; background:rgba(2,10,20,.9); backdrop-filter:blur(8px); border:1px solid rgba(0,200,255,.15); border-radius:8px; padding:10px 14px; display:flex; flex-direction:column; gap:5px; min-width:130px; }
+  .s9b-stat { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:11px; }
+  .s9b-stat span { color:rgba(255,255,255,.5); }
+  .s9b-stat strong { font-weight:800; font-size:12px; }
+  #s9b-legend { position:absolute; bottom:14px; left:14px; background:rgba(2,10,20,.9); backdrop-filter:blur(8px); border:1px solid rgba(0,200,255,.15); border-radius:8px; padding:10px 14px; display:grid; grid-template-columns:1fr 1fr; gap:4px 12px; }
+  .s9b-legend-item { display:flex; align-items:center; gap:6px; font-size:10px; font-weight:600; color:rgba(255,255,255,.6); }
+  .s9b-legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  #s9b-tooltip { position:absolute; display:none; pointer-events:none; background:rgba(2,10,20,.95); border:1px solid rgba(0,200,255,.35); border-radius:8px; padding:8px 12px; font-size:11px; line-height:1.6; color:white; max-width:200px; z-index:10; backdrop-filter:blur(8px); box-shadow:0 0 20px rgba(0,200,255,.15); }
+  #s9b-loading { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#020a14; z-index:20; gap:14px; }
+  .s9b-loading-spinner { width:40px; height:40px; border-radius:50%; border:2px solid rgba(0,200,255,.15); border-top-color:#00c8ff; animation:s9b-spin 1s linear infinite; box-shadow:0 0 15px rgba(0,200,255,.3); }
+  @keyframes s9b-spin{to{transform:rotate(360deg)}}
+  .s9b-loading-text { font-size:12px; color:rgba(0,200,255,.6); letter-spacing:2px; text-transform:uppercase; }
+  #s9b-hint { position:absolute; top:14px; right:14px; background:rgba(0,200,255,.06); border:1px solid rgba(0,200,255,.15); border-radius:6px; padding:5px 10px; font-size:10px; font-weight:600; color:rgba(0,200,255,.6); letter-spacing:.5px; pointer-events:none; }
+  #s9b-sidebar { width:0; overflow:hidden; background:linear-gradient(180deg,#020e1c,#020a14); border-left:1px solid rgba(0,200,255,.1); transition:width .3s ease; flex-shrink:0; }
+  #s9b-sidebar.open { width:280px; }
+  .s9b-sidebar-inner { width:280px; padding:20px; height:100%; overflow-y:auto; }
+  #s9b-close { float:right; background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.2); color:rgba(0,200,255,.6); width:24px; height:24px; border-radius:4px; cursor:pointer; font-size:12px; display:flex; align-items:center; justify-content:center; transition:all .2s; margin-bottom:12px; }
+  #s9b-close:hover { background:rgba(0,200,255,.2); color:white; }
+  .s9b-emp-name { font-size:17px; font-weight:800; color:white; margin-bottom:4px; line-height:1.2; clear:both; }
+  .s9b-emp-role { font-size:12px; color:rgba(0,200,255,.5); margin-bottom:14px; }
+  .s9b-emp-box-badge { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:4px; font-size:11px; font-weight:700; border-width:1px; border-style:solid; margin-bottom:16px; }
+  .s9b-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+  .s9b-stat-card { background:rgba(0,200,255,.05); border:1px solid rgba(0,200,255,.1); border-radius:6px; padding:10px; text-align:center; }
+  .s9b-stat-card .val { font-size:18px; font-weight:800; color:white; margin-bottom:2px; }
+  .s9b-stat-card .lbl { font-size:10px; color:rgba(0,200,255,.5); font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+  .s9b-action-box { border-radius:6px; padding:12px; border-left-width:2px; border-left-style:solid; background:rgba(0,200,255,.04); font-size:11px; line-height:1.7; color:rgba(255,255,255,.7); }
+  .s9b-action-label { font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(0,200,255,.4); margin-bottom:6px; }
+  .s9b-divider { border:none; border-top:1px solid rgba(0,200,255,.08); margin:14px 0; }
+  .s9b-sidebar-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:10px; color:rgba(0,200,255,.3); font-size:13px; text-align:center; padding:40px 20px; }
+  #s9b-learn { background:linear-gradient(135deg,#020e1c,#020a14); border-top:1px solid rgba(0,200,255,.1); padding:12px 24px; display:flex; align-items:center; justify-content:space-between; }
+  .s9b-learn-btn { display:inline-flex; align-items:center; gap:8px; background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.2); color:#80d0f0; padding:8px 16px; border-radius:6px; font-size:11px; font-weight:700; text-decoration:none; transition:all .2s; font-family:inherit; cursor:pointer; }
+  .s9b-learn-btn:hover { background:rgba(0,200,255,.18); color:white; border-color:#00c8ff; }
+  .s9b-note { font-size:11px; color:rgba(0,200,255,.25); }
+  .s9b-axis-overlay { position:absolute; pointer-events:none; font-size:11px; font-weight:700; letter-spacing:2px; color:rgba(0,200,255,.6); text-transform:uppercase; font-family:'Segoe UI',system-ui,sans-serif; text-shadow:0 0 10px rgba(0,200,255,.4); white-space:nowrap; }
+
+  /* ── NATIVE FULLSCREEN CSS - hides header/footer when browser goes fullscreen ── */
+  #spatial9box-root:fullscreen { width:100vw!important; height:100vh!important; border-radius:0!important; display:flex!important; flex-direction:column!important; background:#020a14!important; }
+  #spatial9box-root:fullscreen #s9b-header { display:none!important; }
+  #spatial9box-root:fullscreen #s9b-learn  { display:none!important; }
+  #spatial9box-root:fullscreen #s9b-body   { flex:1!important; min-height:0!important; overflow:hidden!important; }
+  #spatial9box-root:fullscreen #s9b-canvas-wrap { height:100%!important; min-height:0!important; flex:1!important; }
+  /* Safari */
+  #spatial9box-root:-webkit-full-screen { width:100vw!important; height:100vh!important; border-radius:0!important; display:flex!important; flex-direction:column!important; background:#020a14!important; }
+  #spatial9box-root:-webkit-full-screen #s9b-header { display:none!important; }
+  #spatial9box-root:-webkit-full-screen #s9b-learn  { display:none!important; }
+  #spatial9box-root:-webkit-full-screen #s9b-body   { flex:1!important; min-height:0!important; overflow:hidden!important; }
+  #spatial9box-root:-webkit-full-screen #s9b-canvas-wrap { height:100%!important; min-height:0!important; flex:1!important; }
+
+  /* Fullscreen page mode (URL param) */
+  body.s9b-page-fs { overflow:hidden!important; }
+  body.s9b-page-fs #spatial9box-root { position:fixed!important; inset:0!important; z-index:99999!important; border-radius:0!important; width:100vw!important; height:100vh!important; display:flex!important; flex-direction:column; }
+  body.s9b-page-fs #s9b-header { display:none!important; }
+  body.s9b-page-fs #s9b-learn  { display:none!important; }
+  body.s9b-page-fs #s9b-body   { flex:1!important; min-height:0!important; overflow:hidden!important; }
+  body.s9b-page-fs #s9b-canvas-wrap { min-height:0!important; height:100%!important; }
+  body.s9b-page-fs #s9b-canvas { height:100%!important; width:100%!important; }
+
+  /* ── MOBILE: responsive layout + touch support ── */
+  @media(max-width:768px){
+    .s9b-controls{gap:6px;}
+    .s9b-btn,.s9b-select{font-size:10px;padding:5px 8px;}
+    #s9b-float-fs{display:none!important;}
+    #s9b-stats{padding:8px 10px;min-width:110px;}
+    .s9b-stat{font-size:10px;}
+    #s9b-legend{grid-template-columns:1fr;}
+    .s9b-legend-item{font-size:9px;}
+    #s9b-hint{font-size:9px;padding:4px 8px;right:8px;top:8px;}
+    /* Sidebar becomes a bottom-up overlay so it doesn't crush the canvas */
+    #s9b-body{position:relative;}
+    #s9b-sidebar{position:absolute!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;max-height:0;overflow:hidden!important;z-index:50;border-left:none!important;border-top:1px solid rgba(0,200,255,.2);transition:max-height .35s ease!important;}
+    #s9b-sidebar.open{width:100%!important;max-height:55vh;}
+    .s9b-sidebar-inner{width:100%!important;}
+  }
+</style>
+<div id="spatial9box-root">
+  <div id="s9b-header">
+    <div class="s9b-eyebrow"><div class="s9b-eyebrow-dot"></div>3D VISUALISATION</div>
+    <div class="s9b-title">&#x1F310; Spatial 9-Box Grid</div>
+    <div class="s9b-sub">Drag to orbit &nbsp;&middot;&nbsp; Scroll to zoom &nbsp;&middot;&nbsp; Click any node to inspect</div>
+    <div class="s9b-controls">
+      <select class="s9b-select" id="s9b-dept"><option value="all">All Departments</option></select>
+      <select class="s9b-select" id="s9b-risk">
+        <option value="all">All Risk Levels</option>
+        <option value="high">&#x26A0;&#xFE0F; High Risk Only</option>
+        <option value="normal">&#x2705; Normal Risk Only</option>
+      </select>
+      <button class="s9b-btn active" id="s9b-autorotate">&#x27F3; Auto-Rotate</button>
+      <button class="s9b-btn active" id="s9b-risk-pulse">&#x1F534; Risk Pulse</button>
+      <button class="s9b-btn" id="s9b-reset">&#x21BA; Reset</button>
+      <button class="s9b-btn" id="s9b-fs-btn" style="margin-left:auto;">&#x26F6; Fullscreen</button>
+    </div>
+  </div>
+  <div id="s9b-body">
+    <div id="s9b-canvas-wrap">
+      <canvas id="s9b-canvas"></canvas>
+      <div id="s9b-stats"><div class="s9b-stat"><span>Loading&hellip;</span></div></div>
+      <div id="s9b-legend"></div>
+      <div id="s9b-hint">Drag to orbit &middot; Scroll to zoom</div>
+      <button id="s9b-float-fs" style="position:absolute;top:14px;left:155px;z-index:100;background:rgba(0,200,255,.12);border:1px solid rgba(0,200,255,.35);color:#00c8ff;padding:7px 14px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Segoe UI',system-ui,sans-serif;letter-spacing:.5px;transition:all .2s;box-shadow:0 0 10px rgba(0,200,255,.2);">&#x26F6; Fullscreen</button>
+      <div id="s9b-tooltip"></div>
+      <div id="s9b-loading">
+        <div class="s9b-loading-spinner"></div>
+        <div class="s9b-loading-text">Initialising 3D Scene&hellip;</div>
+      </div>
+      <div id="s9b-locked" style="display:none;position:absolute;inset:0;z-index:25;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#020a14;text-align:center;padding:40px;">
+        <div style="font-size:40px;">&#x1F512;</div>
+        <div style="font-size:16px;font-weight:800;color:white;">This scenario is Pro only</div>
+        <div style="font-size:12px;color:rgba(0,200,255,.5);max-width:340px;line-height:1.7;">The six free scenarios are open to everyone. This one, and eight others, unlock with a Pro key.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <input type="text" id="s9b-key-input" placeholder="Enter your access key&hellip;" style="padding:9px 14px;border-radius:6px;background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.25);color:white;font-size:12px;font-family:monospace;outline:none;min-width:220px;">
+          <button id="s9b-key-btn" class="s9b-btn active" style="padding:9px 18px;">Unlock &rarr;</button>
+        </div>
+        <div id="s9b-key-error" style="display:none;font-size:11px;color:#ff4455;"></div>
+        <a href="/pages/pricing.html" class="s9b-btn" style="text-decoration:none;">View Pricing</a>
+      </div>
+      <div class="s9b-axis-overlay" style="bottom:46px;left:50%;transform:translateX(-50%);">PERFORMANCE &nbsp;&rarr;</div>
+      <div class="s9b-axis-overlay" style="top:50%;left:155px;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);">POTENTIAL</div>
+      <div class="s9b-axis-overlay" style="top:50%;left:145px;">&uarr;</div>
+    </div>
+    <div id="s9b-sidebar">
+      <div class="s9b-sidebar-inner">
+        <div id="s9b-sidebar-content">
+          <div class="s9b-sidebar-empty"><div style="font-size:28px;opacity:.3">&#x1F3AF;</div><div>Click any sphere<br>to inspect</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="s9b-learn">
+    <a class="s9b-learn-btn" href="/pages/guide.html?slug=how-to-run-9box">&#x1F4D6; Learn - How to Run a 9-Box Calibration &rarr;</a>
+    <span class="s9b-note" id="s9b-count-note"></span>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+
+function stripParents(el,n){for(var i=0;i<n;i++){if(el&&el.parentElement){el.parentElement.style.padding='0';el.parentElement.style.maxWidth='100%';el=el.parentElement;}}}
+stripParents(document.getElementById('spatial9box-root'),8);
+
+if(window.location.search.indexOf('fullscreen=1')>-1){
+  document.body.classList.add('s9b-page-fs');
+}
+
+var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+var FREE_DATA_URL = 'https://kumarviveksrv-cloud.github.io/pms-toolkit-data/free_scenarios.json';
+
+var BOX_DEF=[
+  {key:'Star',     label:'Star',            icon:'\u2b50',perfMin:2.8,perfMax:3.0,potMin:0.9,potMax:1.0, col:2,row:2,color:0xffe566,hex:'#ffe566'},
+  {key:'HighPerf', label:'High Performer',  icon:'\ud83d\udd25',perfMin:2.8,perfMax:3.0,potMin:0.6,potMax:0.89,col:2,row:1,color:0x00d4ff,hex:'#00d4ff'},
+  {key:'TrustPro', label:'Trusted Pro',     icon:'\ud83c\udfc5',perfMin:2.8,perfMax:3.0,potMin:0.0,potMax:0.59,col:2,row:0,color:0x00ff88,hex:'#00ff88'},
+  {key:'Core',     label:'Core Performer',  icon:'\ud83d\udc8e',perfMin:2.1,perfMax:2.79,potMin:0.9,potMax:1.0, col:1,row:2,color:0xff6eb4,hex:'#ff6eb4'},
+  {key:'Solid',    label:'Solid Performer', icon:'\u2705',perfMin:2.1,perfMax:2.79,potMin:0.6,potMax:0.89,col:1,row:1,color:0x7ee8ff,hex:'#7ee8ff'},
+  {key:'Incon',    label:'Inconsistent',    icon:'\u26a1',perfMin:2.1,perfMax:2.79,potMin:0.0,potMax:0.59,col:1,row:0,color:0xffb833,hex:'#ffb833'},
+  {key:'Emerging', label:'Emerging Talent', icon:'\ud83c\udf31',perfMin:0.0,perfMax:2.09,potMin:0.9,potMax:1.0, col:0,row:2,color:0xd966ff,hex:'#d966ff'},
+  {key:'QMark',    label:'Question Mark',   icon:'\u2753',perfMin:0.0,perfMax:2.09,potMin:0.6,potMax:0.89,col:0,row:1,color:0x8877ee,hex:'#8877ee'},
+  {key:'Low',      label:'Low Performer',   icon:'\u26a0\ufe0f',perfMin:0.0,perfMax:2.09,potMin:0.0,potMax:0.59,col:0,row:0,color:0xff4455,hex:'#ff4455'},
+];
+var BOX_ACTIONS={
+  Star:'Retain at all costs - assign to strategic high-visibility projects and accelerated leadership track.',
+  HighPerf:'Stretch with new challenges - consider promotion timeline and succession planning now.',
+  TrustPro:'Expert contributor - recognise specialist value, protect from flight risk, offer technical leadership.',
+  Core:'Invest in visibility - strong potential needs better performance foundations and coaching.',
+  Solid:'Engage and develop - reliable contributor who could reach High Performer with the right stretch assignment.',
+  Incon:'Investigate root cause - role fit, motivation or external factors? Clarify before next cycle.',
+  Emerging:'Structured development plan - high potential needs specific performance goals and milestone accountability.',
+  QMark:'Diagnose carefully - is this a development issue or a fundamental role fit problem?',
+  Low:'Performance Improvement Plan - set clear targets with 90-day review. Document from day one.',
+};
+function getBoxKey(p,q){for(var i=0;i<BOX_DEF.length;i++){var b=BOX_DEF[i];if(p>=b.perfMin&&p<=b.perfMax&&q>=b.potMin&&q<=b.potMax)return b.key;}return 'Low';}
+function getBoxDef(k){return BOX_DEF.find(function(b){return b.key===k;})||BOX_DEF[8];}
+var COL_X=[-4.5,0,4.5],ROW_Y=[-4.5,0,4.5],ZONE_SZ=4.5;
+
+var s=document.createElement('script');
+s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.onload=loadData;
+s.onerror=function(){showError('Failed to load 3D engine');};
+document.head.appendChild(s);
+
+function showError(msg){var el=document.getElementById('s9b-loading');if(el){el.innerHTML='<div style="color:#ff4455;font-size:14px;text-align:center;padding:20px;">\u274c '+msg+'</div>';}}
+
+function showLocked(recordId){
+  var loading=document.getElementById('s9b-loading'); if(loading) loading.style.display='none';
+  var locked=document.getElementById('s9b-locked'); if(locked) locked.style.display='flex';
+  var btn=document.getElementById('s9b-key-btn');
+  var inp=document.getElementById('s9b-key-input');
+  var err=document.getElementById('s9b-key-error');
+  if(btn && !btn._wired){
+    btn._wired=true;
+    btn.addEventListener('click',function(){ attemptUnlock(recordId,inp,err); });
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter') attemptUnlock(recordId,inp,err); });
+  }
+}
+
+function attemptUnlock(recordId,inp,err){
+  var key=(inp.value||'').trim();
+  err.style.display='none';
+  if(!key) return;
+  fetchProScenario(recordId,key).then(function(sc){
+    if(sc){
+      try{ localStorage.setItem('viorah_key', key); }catch(e){}
+      document.getElementById('s9b-locked').style.display='none';
+      initScene(sc, sc.name || 'Scenario');
+    } else {
+      err.textContent='Invalid key, or this key has hit its monthly scenario limit.';
+      err.style.display='block';
+    }
+  });
+}
+
+function fetchProScenario(recordId, key){
+  return fetch(WORKER_URL + '/scenario-content', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ recordId: recordId, key: key })
+  }).then(function(r){ return r.json(); }).then(function(data){
+    return data && !data.error ? data : null;
+  }).catch(function(){ return null; });
+}
+
+function loadData(){
+  var params=new URLSearchParams(window.location.search);
+  var recordId=params.get('recordId')||'recFOxRBFHIT0az8u';
+  if(recordId==='custom_org'){
+    try{var stored=localStorage.getItem('pms_custom_org_v1');if(stored){var co=JSON.parse(stored);if(co&&co.employees){initScene(co,co.scenarioName||'Your Organisation');return;}}}catch(e){}
+    showError('No uploaded org data found');return;
+  }
+
+  fetch(FREE_DATA_URL)
+    .then(function(r){return r.json();})
+    .then(function(freeData){
+      var sc = freeData[recordId];
+      if(sc){
+        initScene(sc, sc.name || 'Scenario');
+        return;
+      }
+      var storedKey=null;
+      try{ storedKey=localStorage.getItem('viorah_key'); }catch(e){}
+      if(storedKey){
+        fetchProScenario(recordId, storedKey).then(function(proSc){
+          if(proSc){ initScene(proSc, proSc.name || 'Scenario'); }
+          else { showLocked(recordId); }
+        });
+      } else {
+        showLocked(recordId);
+      }
+    })
+    .catch(function(){ showError('Failed to load data'); });
+}
+
+function initScene(scenario,scenarioName){
+  var allEmps=scenario.employees||[];
+  var emps=allEmps.filter(function(e){return e.perfScore!==undefined&&e.potScore!==undefined;});
+  if(emps.length>450){emps=emps.slice().sort(function(){return Math.random()-.5;}).slice(0,450);}
+  var sym=scenario.currencySymbol||'\u20b9';
+  var canvasEl=document.getElementById('s9b-canvas');
+  var wrap=document.getElementById('s9b-canvas-wrap');
+  var W=wrap.clientWidth||800;
+
+  /* MOBILE-AWARE HEIGHT: phones get more vertical space */
+  var isMobile=window.innerWidth<768;
+  var H=isMobile
+    ?Math.max(460,Math.round(window.innerHeight*.72))
+    :Math.max(520,Math.min(700,Math.round(window.innerHeight*.65)));
+  canvasEl.style.height=H+'px';
+
+  var renderer=new THREE.WebGLRenderer({canvas:canvasEl,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(W,H,false);
+  renderer.setClearColor(0x020a14,1);
+
+  var scene=new THREE.Scene();
+  scene.fog=new THREE.Fog(0x020a14,30,60);
+  var camera=new THREE.PerspectiveCamera(55,W/H,.1,100);
+  var sph={r:26,phi:1.05,theta:-.55};
+  var initSph={r:26,phi:1.05,theta:-.55};
+  var camTarget=new THREE.Vector3(0,0,0);
+
+  function updateCamera(){
+    camera.position.set(
+      camTarget.x+sph.r*Math.sin(sph.phi)*Math.sin(sph.theta),
+      camTarget.y+sph.r*Math.cos(sph.phi),
+      camTarget.z+sph.r*Math.sin(sph.phi)*Math.cos(sph.theta)
+    );
+    camera.lookAt(camTarget);
+  }
+  updateCamera();
+
+  scene.add(new THREE.AmbientLight(0x001122,2));
+  var dir=new THREE.DirectionalLight(0x00aaff,.5);dir.position.set(6,12,8);scene.add(dir);
+  [[0x00d4ff,5,5,-.15],[0xff6eb4,-5,5,-.1],[0xff4455,-5,-5,-.1],[0x00ff88,5,-5,-.1]].forEach(function(l){
+    var pl=new THREE.PointLight(l[0],.6,18);pl.position.set(l[1],l[2],4);scene.add(pl);
+  });
+
+  var grid=new THREE.GridHelper(18,18,0x003344,0x001a22);
+  grid.position.y=-6;scene.add(grid);
+
+  BOX_DEF.forEach(function(b){
+    var cx=COL_X[b.col],cy=ROW_Y[b.row];
+    var pg=new THREE.PlaneGeometry(ZONE_SZ,ZONE_SZ);
+    var pm=new THREE.MeshBasicMaterial({color:b.color,transparent:true,opacity:.025,side:THREE.DoubleSide});
+    var pl=new THREE.Mesh(pg,pm);pl.position.set(cx,cy,-.1);scene.add(pl);
+    var bg=new THREE.BoxGeometry(ZONE_SZ,ZONE_SZ,6.5);
+    var eg=new THREE.EdgesGeometry(bg);
+    var em=new THREE.LineBasicMaterial({color:0x004466,transparent:true,opacity:.35});
+    var ls=new THREE.LineSegments(eg,em);ls.position.set(cx,cy,0);scene.add(ls);
+    var sp=makeLabel(b.icon+' '+b.label,b.hex,17);
+    sp.position.set(cx,cy+ZONE_SZ*.49,3.4);sp.scale.set(3.8,.7,1);scene.add(sp);
+  });
+
+  var axMat=new THREE.LineBasicMaterial({color:0x004466,transparent:true,opacity:.4});
+  var axXG=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-8,0,0),new THREE.Vector3(8,0,0)]);
+  var axYG=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,-8,0),new THREE.Vector3(0,8,0)]);
+  scene.add(new THREE.Line(axXG,axMat));scene.add(new THREE.Line(axYG,axMat));
+
+  var sphereMeshes=[],flightRiskObjs=[],deptSet={};
+  var salaries=emps.map(function(e){return e.salary||50000;});
+  var minSal=Math.min.apply(null,salaries)||1,maxSal=Math.max.apply(null,salaries)||1;
+  var grouped={};BOX_DEF.forEach(function(b){grouped[b.key]=0;});
+
+  emps.forEach(function(e){
+    var boxKey=getBoxKey(e.perfScore,e.potScore),bd=getBoxDef(boxKey);
+    grouped[boxKey]=(grouped[boxKey]||0)+1;
+    if(e.department)deptSet[e.department]=1;
+    var cx=COL_X[bd.col],cy=ROW_Y[bd.row];
+    var jx=(Math.random()-.5)*3.8,jy=(Math.random()-.5)*3.8,jz=(Math.random()-.5)*5.5;
+    var sal=e.salary||50000;
+    var radius=.15+((sal-minSal)/(maxSal-minSal+1))*.18;
+    var geo=new THREE.SphereGeometry(radius,12,10);
+    var mat=new THREE.MeshPhongMaterial({color:bd.color,emissive:bd.color,emissiveIntensity:.4,shininess:200,specular:0xffffff,transparent:true,opacity:.92});
+    var mesh=new THREE.Mesh(geo,mat);
+    mesh.position.set(cx+jx,cy+jy,jz);
+    mesh.userData={emp:e,boxKey:boxKey,bd:bd,origEI:.4,radius:radius,sym:sym};
+    scene.add(mesh);sphereMeshes.push(mesh);
+    var haloGeo=new THREE.SphereGeometry(radius*1.4,10,8);
+    var haloMat=new THREE.MeshBasicMaterial({color:bd.color,transparent:true,opacity:.06,side:THREE.BackSide});
+    mesh.add(new THREE.Mesh(haloGeo,haloMat));
+    if(e.flightRisk==='High'||e.flightRisk==='high'||e.flightRisk===3){
+      var tr=new THREE.TorusGeometry(radius+.12,.035,8,24);
+      var tm=new THREE.MeshBasicMaterial({color:0xff2233,transparent:true,opacity:.9});
+      var torus=new THREE.Mesh(tr,tm);mesh.add(torus);
+      flightRiskObjs.push({mesh:mesh,torus:torus,t:Math.random()*Math.PI*2});
+    }
+  });
+
+  var deptSel=document.getElementById('s9b-dept');
+  Object.keys(deptSet).sort().forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d;deptSel.appendChild(opt);});
+
+  var statsEl=document.getElementById('s9b-stats');
+  statsEl.innerHTML=[
+    {k:'Star',l:'\u2b50 Stars',c:'#ffe566'},{k:'HighPerf',l:'\ud83d\udd25 High Perf',c:'#00d4ff'},
+    {k:'Emerging',l:'\ud83c\udf31 Emerging',c:'#d966ff'},{k:'Low',l:'\u26a0\ufe0f Low Perf',c:'#ff4455'},
+  ].map(function(s){return '<div class="s9b-stat"><span style="color:'+s.c+'">'+s.l+'</span><strong style="color:'+s.c+'">'+(grouped[s.k]||0)+'</strong></div>';}).join('')+
+  '<div class="s9b-stat"><span style="color:rgba(0,200,255,.5)">Shown</span><strong style="color:#00c8ff">'+emps.length+'</strong></div>';
+
+  var legendEl=document.getElementById('s9b-legend');
+  legendEl.innerHTML=BOX_DEF.map(function(b){return '<div class="s9b-legend-item"><div class="s9b-legend-dot" style="background:'+b.hex+';box-shadow:0 0 4px '+b.hex+'"></div>'+b.label+'</div>';}).join('');
+
+  var noteEl=document.getElementById('s9b-count-note');
+  if(noteEl)noteEl.textContent=emps.length+' employees \u00b7 '+scenarioName;
+
+  var autoRotate=true,autoRotateSpeed=0.003;
+  var isDragging=false,lastX=0,lastY=0,dragStartX=0,dragStartY=0;
+
+  /* ── MOUSE EVENTS ── */
+  canvasEl.addEventListener('mousedown',function(ev){if(ev.button!==0)return;isDragging=true;lastX=dragStartX=ev.clientX;lastY=dragStartY=ev.clientY;canvasEl.style.cursor='grabbing';});
+  window.addEventListener('mouseup',function(){isDragging=false;canvasEl.style.cursor='grab';});
+  canvasEl.addEventListener('mousemove',function(ev){
+    var rect=canvasEl.getBoundingClientRect();
+    mouse.x=((ev.clientX-rect.left)/rect.width)*2-1;
+    mouse.y=-((ev.clientY-rect.top)/rect.height)*2+1;
+    tooltipX=ev.clientX-rect.left;tooltipY=ev.clientY-rect.top;
+    if(isDragging){var dx=ev.clientX-lastX,dy=ev.clientY-lastY;sph.theta-=dx*.0065;sph.phi=Math.max(.12,Math.min(Math.PI-.12,sph.phi+dy*.0065));lastX=ev.clientX;lastY=ev.clientY;updateCamera();}
+  });
+  canvasEl.addEventListener('wheel',function(ev){ev.preventDefault();sph.r=Math.max(8,Math.min(42,sph.r+ev.deltaY*.038));updateCamera();},{passive:false});
+
+  /* ── TOUCH EVENTS: single-finger drag=rotate, two-finger pinch=zoom, tap=select ── */
+  var touchDragStartX=0,touchDragStartY=0,touchLastX=0,touchLastY=0;
+  var pinchStartDist=0,pinchStartR=0;
+
+  canvasEl.addEventListener('touchstart',function(ev){
+    ev.preventDefault();
+    if(ev.touches.length===1){
+      isDragging=true;
+      touchLastX=touchDragStartX=ev.touches[0].clientX;
+      touchLastY=touchDragStartY=ev.touches[0].clientY;
+    }else if(ev.touches.length===2){
+      isDragging=false;
+      var dx=ev.touches[0].clientX-ev.touches[1].clientX;
+      var dy=ev.touches[0].clientY-ev.touches[1].clientY;
+      pinchStartDist=Math.sqrt(dx*dx+dy*dy);
+      pinchStartR=sph.r;
+    }
+  },{passive:false});
+
+  canvasEl.addEventListener('touchmove',function(ev){
+    ev.preventDefault();
+    if(ev.touches.length===1&&isDragging){
+      var dx=ev.touches[0].clientX-touchLastX;
+      var dy=ev.touches[0].clientY-touchLastY;
+      sph.theta-=dx*0.007;
+      sph.phi=Math.max(0.12,Math.min(Math.PI-0.12,sph.phi+dy*0.007));
+      touchLastX=ev.touches[0].clientX;
+      touchLastY=ev.touches[0].clientY;
+      updateCamera();
+    }else if(ev.touches.length===2&&pinchStartDist>0){
+      isDragging=false;
+      var dx=ev.touches[0].clientX-ev.touches[1].clientX;
+      var dy=ev.touches[0].clientY-ev.touches[1].clientY;
+      var dist=Math.sqrt(dx*dx+dy*dy);
+      sph.r=Math.max(8,Math.min(42,pinchStartR*(pinchStartDist/dist)));
+      updateCamera();
+    }
+  },{passive:false});
+
+  canvasEl.addEventListener('touchend',function(ev){
+    ev.preventDefault();
+    if(ev.touches.length===0){
+      isDragging=false;
+      var t=ev.changedTouches[0];
+      var mdx=Math.abs(t.clientX-touchDragStartX);
+      var mdy=Math.abs(t.clientY-touchDragStartY);
+      if(mdx<10&&mdy<10){
+        /* Tap - fire raycaster like a click */
+        var rect=canvasEl.getBoundingClientRect();
+        mouse.x=((t.clientX-rect.left)/rect.width)*2-1;
+        mouse.y=-((t.clientY-rect.top)/rect.height)*2+1;
+        raycaster.setFromCamera(mouse,camera);
+        var hits=raycaster.intersectObjects(sphereMeshes);
+        if(hits.length>0)selectEmployee(hits[0].object);
+        else deselectEmployee();
+      }
+      pinchStartDist=0;
+    }
+  },{passive:false});
+  /* ── END TOUCH ── */
+
+  document.getElementById('s9b-autorotate').addEventListener('click',function(){autoRotate=!autoRotate;this.classList.toggle('active',autoRotate);});
+
+  var root=document.getElementById('spatial9box-root');
+  var fsBtn=document.getElementById('s9b-fs-btn');
+  var floatFsBtn=document.getElementById('s9b-float-fs');
+
+  function doEnterFs(){
+    var req=root.requestFullscreen||root.webkitRequestFullscreen||root.mozRequestFullScreen||root.msRequestFullscreen;
+    if(req) req.call(root).catch(function(e){console.warn('Fullscreen denied:',e);});
+  }
+  function doExitFs(){
+    var ex=document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen||document.msExitFullscreen;
+    if(ex) ex.call(document);
+  }
+  function isInFs(){
+    return !!(document.fullscreenElement||document.webkitFullscreenElement||document.mozFullScreenElement||document.msFullscreenElement);
+  }
+  function onFsChange(){
+    var inFs=isInFs();
+    var lbl=inFs?'\u2715 Exit Full':'\u26f6 Fullscreen';
+    fsBtn.textContent=lbl; fsBtn.classList.toggle('active',inFs);
+    if(floatFsBtn) floatFsBtn.textContent=lbl;
+    setTimeout(function(){
+      var W2=inFs?window.innerWidth:(wrap.clientWidth||800);
+      var H2=inFs?window.innerHeight:H;
+      renderer.setSize(W2,H2,false);
+      camera.aspect=W2/H2; camera.updateProjectionMatrix();
+      canvasEl.style.height=H2+'px';
+    },100);
+  }
+  document.addEventListener('fullscreenchange',onFsChange);
+  document.addEventListener('webkitfullscreenchange',onFsChange);
+  document.addEventListener('mozfullscreenchange',onFsChange);
+  document.addEventListener('MSFullscreenChange',onFsChange);
+
+  fsBtn.addEventListener('click',function(){ isInFs()?doExitFs():doEnterFs(); });
+  if(floatFsBtn){
+    floatFsBtn.addEventListener('click',function(){ isInFs()?doExitFs():doEnterFs(); });
+    floatFsBtn.addEventListener('mouseenter',function(){ this.style.background='rgba(0,200,255,.25)';this.style.color='white'; });
+    floatFsBtn.addEventListener('mouseleave',function(){ this.style.background='rgba(0,200,255,.12)';this.style.color='#00c8ff'; });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&isInFs()) doExitFs(); });
+
+  document.getElementById('s9b-reset').addEventListener('click',function(){sph.r=initSph.r;sph.phi=initSph.phi;sph.theta=initSph.theta;updateCamera();autoRotate=true;document.getElementById('s9b-autorotate').classList.add('active');});
+
+  var pulseOn=true;
+  document.getElementById('s9b-risk-pulse').addEventListener('click',function(){pulseOn=!pulseOn;this.classList.toggle('active',pulseOn);});
+  deptSel.addEventListener('change',function(){var v=this.value;sphereMeshes.forEach(function(sm){var m=v==='all'||sm.userData.emp.department===v;sm.material.opacity=m?.92:.06;});});
+  document.getElementById('s9b-risk').addEventListener('change',function(){var v=this.value;sphereMeshes.forEach(function(sm){var isH=sm.userData.emp.flightRisk==='High'||sm.userData.emp.flightRisk===3;var m=v==='all'||(v==='high'&&isH)||(v==='normal'&&!isH);sm.material.opacity=m?.92:.06;});});
+
+  var raycaster=new THREE.Raycaster();
+  var mouse=new THREE.Vector2(-9999,-9999);
+  var tooltipX=0,tooltipY=0,hoveredMesh=null,selectedMesh=null;
+  var tooltipEl=document.getElementById('s9b-tooltip');
+
+  canvasEl.addEventListener('click',function(ev){
+    if(Math.abs(ev.clientX-dragStartX)>4||Math.abs(ev.clientY-dragStartY)>4)return;
+    raycaster.setFromCamera(mouse,camera);
+    var hits=raycaster.intersectObjects(sphereMeshes);
+    if(hits.length>0)selectEmployee(hits[0].object);else deselectEmployee();
+  });
+  document.getElementById('s9b-sidebar').addEventListener('click',function(ev){if(ev.target.id==='s9b-close')deselectEmployee();});
+
+  function selectEmployee(sm){
+    if(selectedMesh&&selectedMesh!==sm){selectedMesh.scale.setScalar(1);selectedMesh.material.emissiveIntensity=selectedMesh.userData.origEI;}
+    selectedMesh=sm;sm.scale.setScalar(1.6);sm.material.emissiveIntensity=1.2;
+    var e=sm.userData.emp,bd=sm.userData.bd,boxKey=sm.userData.boxKey,sym=sm.userData.sym;
+    var rc=e.flightRisk==='High'?'#ff4455':e.flightRisk==='Medium'?'#ffb833':'#00ff88';
+    document.getElementById('s9b-sidebar-content').innerHTML=
+      '<button id="s9b-close" style="float:right;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);color:rgba(0,200,255,.6);width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:14px;">\u2715</button>'+
+      '<div class="s9b-emp-name">'+e.name+'</div>'+
+      '<div class="s9b-emp-role">'+(e.role||e.department||'')+'</div>'+
+      '<div class="s9b-emp-box-badge" style="color:'+bd.hex+';border-color:'+bd.hex+'44;background:'+bd.hex+'11">'+bd.icon+' '+bd.label+'</div>'+
+      '<div class="s9b-stat-grid">'+
+        '<div class="s9b-stat-card"><div class="val">'+e.perfRating+'</div><div class="lbl">Performance</div></div>'+
+        '<div class="s9b-stat-card"><div class="val">'+e.potRating+'</div><div class="lbl">Potential</div></div>'+
+        '<div class="s9b-stat-card"><div class="val" style="color:'+rc+'">'+(e.flightRisk||' - ')+'</div><div class="lbl">Flight Risk</div></div>'+
+        '<div class="s9b-stat-card"><div class="val">'+(e.okrScore!==undefined?Math.round(e.okrScore*100)+'%':' - ')+'</div><div class="lbl">OKR</div></div>'+
+      '</div>'+
+      '<hr class="s9b-divider">'+
+      '<div style="font-size:11px;color:rgba(0,200,255,.4);margin-bottom:6px;font-weight:600;letter-spacing:.5px;">DEPARTMENT \u00b7 SALARY</div>'+
+      '<div style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:14px;">'+(e.department||' - ')+' \u00b7 '+sym+(e.salary?e.salary.toLocaleString():' - ')+'</div>'+
+      '<div class="s9b-action-label">RECOMMENDED ACTION</div>'+
+      '<div class="s9b-action-box" style="border-left-color:'+bd.hex+'">'+BOX_ACTIONS[boxKey]+'</div>';
+    document.getElementById('s9b-close').addEventListener('click',deselectEmployee);
+    document.getElementById('s9b-sidebar').classList.add('open');
+  }
+  function deselectEmployee(){
+    if(selectedMesh){selectedMesh.scale.setScalar(1);selectedMesh.material.emissiveIntensity=selectedMesh.userData.origEI;selectedMesh=null;}
+    document.getElementById('s9b-sidebar').classList.remove('open');
+    document.getElementById('s9b-sidebar-content').innerHTML='<div class="s9b-sidebar-empty"><div style="font-size:28px;opacity:.3">\ud83c\udfaf</div><div>Click any sphere<br>to inspect</div></div>';
+  }
+
+  var clock=new THREE.Clock();
+  function animate(){
+    requestAnimationFrame(animate);
+    var t=clock.getElapsedTime();
+    if(autoRotate&&!isDragging){sph.theta+=autoRotateSpeed;updateCamera();}
+    if(pulseOn){flightRiskObjs.forEach(function(o){var p=.6+Math.sin(t*3+o.t)*.4;o.torus.material.opacity=p;var sc=.9+Math.sin(t*3.5+o.t)*.1;o.torus.scale.setScalar(sc);});}
+    if(!isDragging){
+      raycaster.setFromCamera(mouse,camera);
+      var hits=raycaster.intersectObjects(sphereMeshes);
+      if(hoveredMesh&&hoveredMesh!==selectedMesh){hoveredMesh.scale.setScalar(1);hoveredMesh.material.emissiveIntensity=hoveredMesh.userData.origEI;}
+      if(hits.length>0){
+        var hm=hits[0].object;hoveredMesh=hm;
+        if(hm!==selectedMesh){hm.scale.setScalar(1.4);hm.material.emissiveIntensity=.9;}
+        var he=hm.userData.emp,hbd=hm.userData.bd;
+        tooltipEl.innerHTML='<strong>'+he.name+'</strong><br>'+hbd.icon+' '+hbd.label+'<br>'+(he.department||'')+(he.flightRisk==='High'?'&nbsp;&middot;&nbsp;<span style="color:#ff4455">\u26a0\ufe0f High Risk</span>':'');
+        tooltipEl.style.display='block';tooltipEl.style.left=(tooltipX+16)+'px';tooltipEl.style.top=(tooltipY-12)+'px';
+        canvasEl.style.cursor='pointer';
+      } else {
+        hoveredMesh=null;tooltipEl.style.display='none';
+        canvasEl.style.cursor=isDragging?'grabbing':'grab';
+      }
+    } else {tooltipEl.style.display='none';}
+    renderer.render(scene,camera);
+  }
+
+  /* Update hint text for touch devices */
+  if(window.innerWidth<768){
+    var hintEl=document.getElementById('s9b-hint');
+    if(hintEl)hintEl.textContent='Drag to rotate \u00b7 Pinch to zoom \u00b7 Tap to inspect';
+  }
+
+  document.getElementById('s9b-loading').style.display='none';
+  animate();
+
+  if(window.location.search.indexOf('fullscreen=1')>-1){
+    setTimeout(function(){
+      renderer.setSize(window.innerWidth,window.innerHeight,false);
+      camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();
+      canvasEl.style.height=window.innerHeight+'px';
+    },150);
+  }
+
+  window.addEventListener('resize',function(){
+    var inFs=isInFs()||document.body.classList.contains('s9b-page-fs');
+    var W2=inFs?window.innerWidth:(wrap.clientWidth||800);
+    var H2=inFs?window.innerHeight:H;
+    renderer.setSize(W2,H2,false);camera.aspect=W2/H2;camera.updateProjectionMatrix();
+    canvasEl.style.height=H2+'px';
+  });
+}
+
+function makeLabel(text,hexColor,fontSize){
+  var c=document.createElement('canvas');c.width=512;c.height=80;
+  var ctx=c.getContext('2d');
+  ctx.fillStyle='rgba(2,10,20,.85)';ctx.beginPath();
+  ctx.moveTo(10,6);ctx.lineTo(502,6);ctx.quadraticCurveTo(506,6,506,10);
+  ctx.lineTo(506,70);ctx.quadraticCurveTo(506,74,502,74);
+  ctx.lineTo(10,74);ctx.quadraticCurveTo(6,74,6,70);
+  ctx.lineTo(6,10);ctx.quadraticCurveTo(6,6,10,6);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle='rgba(0,200,255,.3)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.fillStyle=hexColor||'#00c8ff';
+  ctx.font='700 '+(fontSize||18)+'px Segoe UI,system-ui,sans-serif';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.shadowColor=hexColor||'#00c8ff';ctx.shadowBlur=12;
+  ctx.fillText(text,256,40);
+  var tex=new THREE.CanvasTexture(c);
+  var mat=new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false});
+  return new THREE.Sprite(mat);
+}
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

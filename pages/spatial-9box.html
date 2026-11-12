@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your org in 3D. Nothing like it exists.</title>
+  <meta name="description" content="Each dot is an employee. Stars glow gold. Flight risks pulse red. Drag to rotate. The only 3D talent map in HR tech, and it runs on your real data.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/spatial-9box.html">
+  <meta property="og:title" content="Your org in 3D. Nothing like it exists.">
+  <meta property="og:description" content="Each dot is an employee. Stars glow gold. Flight risks pulse red. Drag to rotate. The only 3D talent map in HR tech, and it runs on your real data.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Spatial 9-Box</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- VIRORAH - SPATIAL 9-BOX DEDICATED PAGE (REBUILT - flagship reveal, consistent fonts) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+#s9p {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: #020108;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Ambient aurora glow */
+#s9p .s9p-aurora {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 22% 18%, rgba(99,102,241,.22) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 82% 82%, rgba(124,58,237,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 38% at 50% 50%, rgba(16,185,129,.06) 0%, transparent 60%);
+  animation: s9pGlow 7s ease-in-out infinite alternate;
+}
+@keyframes s9pGlow { from{opacity:.65} to{opacity:1} }
+
+/* Starfield canvas behind everything */
+#s9p-stars { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
+
+.s9p-inner {
+  position: relative; z-index: 10;
+  max-width: 1240px; margin: 0 auto;
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1.05fr;
+  gap: 56px; align-items: center;
+  padding: 100px 48px 80px;
+}
+
+/* ── LEFT: copy ── */
+.s9p-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 18px; border-radius: 20px; margin-bottom: 28px;
+  background: rgba(99,102,241,.12); border: 1px solid rgba(99,102,241,.32);
+  font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+  color: #a5b4fc;
+}
+.s9p-dot { width: 6px; height: 6px; border-radius: 50%; background: #6366f1; animation: s9pPulse 1.5s ease-in-out infinite; }
+@keyframes s9pPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+
+.s9p-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5.5vw, 78px);
+  font-weight: 300; line-height: 1.04; margin-bottom: 26px; color: #fff;
+  letter-spacing: -1px;
+}
+.s9p-title em { font-style: italic; font-weight: 300; color: rgba(244,243,255,.4); display: block; }
+.s9p-title strong {
+  display: block; font-weight: 700;
+  background: linear-gradient(135deg, #f4f3ff 0%, #c4b5fd 38%, #6366f1 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.s9p-desc { font-size: 16px; color: rgba(244,243,255,.5); line-height: 1.85; margin-bottom: 36px; max-width: 480px; }
+.s9p-desc strong { color: rgba(244,243,255,.82); font-weight: 600; }
+
+.s9p-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+.s9p-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; border-radius: 12px;
+  font-size: 15px; font-weight: 700; font-family: inherit;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: #fff; border: none; cursor: pointer;
+  box-shadow: 0 4px 36px rgba(99,102,241,.55);
+  transition: transform .2s, box-shadow .2s; text-decoration: none;
+}
+.s9p-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 52px rgba(99,102,241,.72); }
+.s9p-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 26px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-family: inherit;
+  background: rgba(255,255,255,.05); color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.12); cursor: pointer;
+  transition: all .2s; text-decoration: none;
+}
+.s9p-back:hover { background: rgba(255,255,255,.09); color: #fff; border-color: rgba(255,255,255,.2); }
+
+.s9p-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.s9p-pill {
+  padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+  color: rgba(255,255,255,.45); transition: all .2s;
+}
+.s9p-pill:hover { background: rgba(99,102,241,.12); border-color: rgba(99,102,241,.3); color: #c4b5fd; }
+
+.s9p-stats { display: flex; gap: 36px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.08); }
+.s9p-stat-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700;
+  background: linear-gradient(135deg,#f4f3ff,#a5b4fc);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  letter-spacing: -1px; font-variant-numeric: tabular-nums;
+}
+.s9p-stat-lbl { font-size: 10px; color: rgba(255,255,255,.3); margin-top: 5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── RIGHT: live 3D sphere ── */
+.s9p-stage { position: relative; }
+.s9p-fs-btn {
+  position: absolute; top: 14px; right: 14px; z-index: 5;
+  width: 38px; height: 38px; border-radius: 9px;
+  background: rgba(5,4,16,.7); backdrop-filter: blur(8px);
+  border: 1px solid rgba(99,102,241,.3); color: rgba(165,180,252,.85);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s;
+}
+.s9p-fs-btn:hover { background: rgba(99,102,241,.25); border-color: rgba(99,102,241,.6); color: #fff; transform: scale(1.06); }
+#s9p-canvas {
+  width: 100%; height: 540px; border-radius: 24px;
+  border: 1px solid rgba(99,102,241,.18); background: radial-gradient(ellipse at center, #0a0820 0%, #030210 75%);
+  display: block; cursor: grab; box-shadow: 0 40px 90px rgba(0,0,0,.5), inset 0 0 80px rgba(99,102,241,.05);
+}
+#s9p-canvas:active { cursor: grabbing; }
+.s9p-hud {
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center;
+  background: rgba(5,4,16,.82); backdrop-filter: blur(12px);
+  border: 1px solid rgba(99,102,241,.22); border-radius: 40px; padding: 10px 22px;
+  white-space: nowrap;
+}
+.s9p-hud-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 16px; min-width: 60px; }
+.s9p-hud-num { font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 700; color: #fff; line-height: 1; display: block; text-align: center; }
+.s9p-hud-lbl { font-size: 8.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(165,180,252,.42); margin-top: 4px; display: block; text-align: center; }
+.s9p-hud-sep { width: 1px; height: 28px; background: rgba(99,102,241,.2); flex-shrink: 0; }
+
+.s9p-stage.is-fullscreen { position: fixed; inset: 0; z-index: 9000; background: #020108; display: flex; align-items: center; justify-content: center; padding: 0; }
+.s9p-stage.is-fullscreen #s9p-canvas { width: 100vw; height: 100vh; border-radius: 0; border: none; box-shadow: none; }
+.s9p-stage.is-fullscreen .s9p-fs-btn { top: 24px; right: 24px; width: 44px; height: 44px; }
+.s9p-stage.is-fullscreen .s9p-hud { bottom: 34px; }
+
+@media(max-width: 960px){
+  .s9p-inner { grid-template-columns: 1fr; gap: 40px; padding: 90px 24px 60px; text-align: center; }
+  .s9p-eyebrow, .s9p-ctas, .s9p-pills, .s9p-stats { justify-content: center; }
+  .s9p-desc { margin-left: auto; margin-right: auto; }
+  .s9p-stage { order: -1; }
+  #s9p-canvas { height: 380px; }
+  .s9p-title em, .s9p-title strong { display: inline; }
+}
+</style>
+
+<div id="s9p">
+  <canvas id="s9p-stars"></canvas>
+  <div class="s9p-aurora"></div>
+
+  <div class="s9p-inner">
+    <!-- LEFT: copy -->
+    <div class="s9p-copy">
+      <div class="s9p-eyebrow"><div class="s9p-dot"></div>World's First &middot; 3D Talent Intelligence</div>
+      <h1 class="s9p-title">
+        <em>Your entire workforce.</em>
+        <strong>Floating in space.</strong>
+      </h1>
+      <p class="s9p-desc">
+        Every employee, every performance score, every flight risk - suspended in three dimensions. <strong>Orbit it, zoom in, click any sphere to inspect.</strong> Nothing like this exists anywhere else in HR.
+      </p>
+      <div class="s9p-ctas">
+        <a class="s9p-btn" href="/pages/spatial-3d.html?recordId=recFOxRBFHIT0az8u&fullscreen=1" target="_blank">&#x1F310; Launch 3D Talent Map</a>
+        <a class="s9p-back" href="/">&larr; Back to Home</a>
+      </div>
+      <div class="s9p-pills">
+        <span class="s9p-pill">&#x1F504; Drag to orbit</span>
+        <span class="s9p-pill">&#x1F50D; Scroll to zoom</span>
+        <span class="s9p-pill">&#x1F446; Click to inspect</span>
+        <span class="s9p-pill">&#x26A0;&#xFE0F; Flight risk pulse</span>
+        <span class="s9p-pill">&#x1F4C2; Upload your org data</span>
+      </div>
+      <div class="s9p-stats">
+        <div class="s9p-stat"><div class="s9p-stat-num">750</div><div class="s9p-stat-lbl">Employees mapped</div></div>
+        <div class="s9p-stat"><div class="s9p-stat-num">9</div><div class="s9p-stat-lbl">Talent zones</div></div>
+        <div class="s9p-stat"><div class="s9p-stat-num">3D</div><div class="s9p-stat-lbl">Real-time orbit</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: live 3D sphere -->
+    <div class="s9p-stage">
+      <button id="s9p-fs-btn" class="s9p-fs-btn" title="Fullscreen" aria-label="View fullscreen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <canvas id="s9p-canvas"></canvas>
+      <div class="s9p-hud">
+        <div class="s9p-hud-item"><span class="s9p-hud-num" id="s9hud-total">0</span><span class="s9p-hud-lbl">Employees</span></div>
+        <div class="s9p-hud-sep"></div>
+        <div class="s9p-hud-item"><span class="s9p-hud-num" id="s9hud-stars">0</span><span class="s9p-hud-lbl">Stars</span></div>
+        <div class="s9p-hud-sep"></div>
+        <div class="s9p-hud-item"><span class="s9p-hud-num" id="s9hud-risk">0</span><span class="s9p-hud-lbl">At Risk</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── Starfield backdrop ── */
+  (function(){
+    var sc = document.getElementById('s9p-stars');
+    if(!sc) return;
+    var sx = sc.getContext('2d');
+    var stars = [];
+    function resize(){ sc.width = sc.offsetWidth; sc.height = sc.offsetHeight; init(); }
+    function init(){ stars=[]; var n=Math.round((sc.width*sc.height)/9000); for(var i=0;i<n;i++) stars.push({x:Math.random()*sc.width,y:Math.random()*sc.height,r:Math.random()*1.2+.3,tw:Math.random()*Math.PI*2,sp:Math.random()*.02+.005}); }
+    function draw(){ sx.clearRect(0,0,sc.width,sc.height); stars.forEach(function(s){ s.tw+=s.sp; var o=(Math.sin(s.tw)+1)*.4+.2; sx.beginPath(); sx.arc(s.x,s.y,s.r,0,Math.PI*2); sx.fillStyle='rgba(255,255,255,'+o+')'; sx.fill(); }); requestAnimationFrame(draw); }
+    resize(); draw();
+    window.addEventListener('resize', resize);
+  })();
+
+  /* ── Live 3D talent sphere ── */
+  var canvas = document.getElementById('s9p-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var stage = document.querySelector('.s9p-stage');
+  var fsBtn = document.getElementById('s9p-fs-btn');
+  var W, H, CX, CY, sphereR=1;
+
+  var TIERS = [
+    { color:'#4ade80', glow:'rgba(74,222,128,',  count:20, isRisk:false, isStar:true  },
+    { color:'#a78bfa', glow:'rgba(167,139,250,', count:78, isRisk:false, isStar:false },
+    { color:'#f59e0b', glow:'rgba(245,158,11,',  count:42, isRisk:false, isStar:false },
+    { color:'#ef4444', glow:'rgba(239,68,68,',   count:16, isRisk:true,  isStar:false }
+  ];
+
+  var dots = [];
+  var rotY=0, rotX=0.32, targetRotX=0.32;
+  var autoSpin=0.0040;
+  var dragging=false, lastX=0, lastY=0, dragVX=0;
+
+  function resize(){
+    var rect=canvas.getBoundingClientRect(); var dpr=window.devicePixelRatio||1;
+    canvas.width=rect.width*dpr; canvas.height=rect.height*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    W=rect.width; H=rect.height; CX=W/2; CY=H/2; sphereR=Math.min(W,H)*0.34;
+  }
+  function createDots(){
+    dots=[];
+    TIERS.forEach(function(tier){
+      for(var i=0;i<tier.count;i++){
+        var u=Math.random(), v=Math.random();
+        var theta=2*Math.PI*u, phi=Math.acos(2*v-1);
+        var r=0.7+Math.random()*0.3;
+        dots.push({ x:r*Math.sin(phi)*Math.cos(theta), y:r*Math.sin(phi)*Math.sin(theta), z:r*Math.cos(phi),
+          baseSize: tier.isStar?3.4:(tier.isRisk?3:2.4), color:tier.color, glow:tier.glow,
+          isRisk:tier.isRisk, isStar:tier.isStar, pulsePhase:Math.random()*Math.PI*2 });
+      }
+    });
+  }
+  function project(d){
+    var cy=Math.cos(rotY), sy=Math.sin(rotY);
+    var x1=d.x*cy - d.z*sy, z1=d.x*sy + d.z*cy;
+    var cx=Math.cos(rotX), sx2=Math.sin(rotX);
+    var y1=d.y*cx - z1*sx2, z2=d.y*sx2 + z1*cx;
+    var persp=2.6/(2.6-z2);
+    return { sx:CX+x1*sphereR*persp, sy:CY+y1*sphereR*persp, depth:z2, scale:persp };
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    if(!dragging){ rotY += autoSpin + dragVX; dragVX*=0.92; }
+    rotX += (targetRotX-rotX)*0.05;
+    var proj = dots.map(function(d){ var p=project(d); p.d=d; return p; });
+    proj.sort(function(a,b){ return a.depth-b.depth; });
+    proj.forEach(function(p){
+      var d=p.d; d.pulsePhase+=0.045;
+      var pulse=(Math.sin(d.pulsePhase)+1)*0.5;
+      var depthN=(p.depth+1)/2;
+      var alpha=0.32+depthN*0.68;
+      var sz=d.baseSize*p.scale*(0.7+depthN*0.5);
+      if(d.isRisk){ var rr=sz*2.2+pulse*sz*2.6; ctx.beginPath(); ctx.arc(p.sx,p.sy,rr,0,Math.PI*2); ctx.strokeStyle=d.glow+(0.5*(1-pulse)*alpha)+')'; ctx.lineWidth=1; ctx.stroke(); }
+      if(d.isStar){ var g2=ctx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,sz*4.2); g2.addColorStop(0,d.glow+(0.32*alpha)+')'); g2.addColorStop(1,d.glow+'0)'); ctx.beginPath(); ctx.arc(p.sx,p.sy,sz*4.2,0,Math.PI*2); ctx.fillStyle=g2; ctx.fill(); }
+      var dg=ctx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,sz*2.3); dg.addColorStop(0,d.glow+alpha+')'); dg.addColorStop(0.5,d.glow+(alpha*0.4)+')'); dg.addColorStop(1,d.glow+'0)'); ctx.beginPath(); ctx.arc(p.sx,p.sy,sz*2.3,0,Math.PI*2); ctx.fillStyle=dg; ctx.fill();
+      ctx.beginPath(); ctx.arc(p.sx,p.sy,sz*0.78,0,Math.PI*2); ctx.fillStyle=d.color; ctx.globalAlpha=alpha; ctx.fill(); ctx.globalAlpha=1;
+    });
+    requestAnimationFrame(draw);
+  }
+  function pDown(e){ dragging=true; lastX=(e.touches?e.touches[0].clientX:e.clientX); lastY=(e.touches?e.touches[0].clientY:e.clientY); }
+  function pMove(e){ if(!dragging) return; var cx=(e.touches?e.touches[0].clientX:e.clientX), cy=(e.touches?e.touches[0].clientY:e.clientY); var dx=cx-lastX, dy=cy-lastY; rotY+=dx*0.008; dragVX=dx*0.0006; targetRotX=Math.max(-1.2,Math.min(1.2,targetRotX+dy*0.006)); lastX=cx; lastY=cy; if(e.cancelable) e.preventDefault(); }
+  function pUp(){ dragging=false; }
+  canvas.addEventListener('mousedown', pDown);
+  window.addEventListener('mousemove', pMove);
+  window.addEventListener('mouseup', pUp);
+  canvas.addEventListener('touchstart', pDown, {passive:true});
+  canvas.addEventListener('touchmove', pMove, {passive:false});
+  canvas.addEventListener('touchend', pUp);
+
+  if(fsBtn && stage){
+    fsBtn.addEventListener('click', function(){ stage.classList.toggle('is-fullscreen'); setTimeout(resize,60); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && stage.classList.contains('is-fullscreen')){ stage.classList.remove('is-fullscreen'); setTimeout(resize,60); } });
+  }
+
+  function animHUD(){
+    var total=750,st=90,rk=58,t=0,s=0,r=0;
+    var hT=document.getElementById('s9hud-total'),hS=document.getElementById('s9hud-stars'),hR=document.getElementById('s9hud-risk');
+    var iv=setInterval(function(){ t=Math.min(t+13,total); s=Math.min(s+2,st); r=Math.min(r+1,rk); if(hT)hT.textContent=t; if(hS)hS.textContent=s; if(hR)hR.textContent=r; if(t>=total) clearInterval(iv); },20);
+  }
+
+  resize(); createDots(); draw();
+  window.addEventListener('resize', resize);
+  var obs=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ animHUD(); obs.disconnect(); }},{threshold:0.3});
+  obs.observe(canvas);
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>

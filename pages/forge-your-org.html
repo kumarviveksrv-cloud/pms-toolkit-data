@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnose your org. Get a 90-day fix.</title>
+  <meta name="description" content="FORGE scores your team against 5 conditions, gets the financial exposure, and hands you a 90-day playbook. No generic advice. Your org's actual problem.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/forge-your-org.html">
+  <meta property="og:title" content="Diagnose your org. Get a 90-day fix.">
+  <meta property="og:description" content="FORGE scores your team against 5 conditions, gets the financial exposure, and hands you a 90-day playbook. No generic advice. Your org's actual problem.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Forge Your Org</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<style>
+  #fyo-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; position:relative; }
+  #fyo-root * { box-sizing:border-box; }
+
+  #fyo-gate { position:absolute; top:0; left:0; width:100%; min-height:100%; z-index:900; background:rgba(5,4,16,.92); backdrop-filter:blur(16px); display:flex; align-items:center; justify-content:center; padding:24px; }
+  .fyo-gate-box { background:#0d0b1e; border:1px solid rgba(102,126,234,.25); border-radius:20px; padding:48px 40px; max-width:460px; width:100%; text-align:center; box-shadow:0 40px 80px rgba(0,0,0,.5); position:relative; overflow:hidden; }
+  .fyo-gate-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#667eea,#a78bfa,transparent); }
+  .fyo-gate-icon { font-size:40px; margin-bottom:16px; }
+  .fyo-gate-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:10px; color:#f0eeff; }
+  .fyo-gate-sub { font-size:14px; color:rgba(196,181,253,.65); margin-bottom:28px; line-height:1.7; }
+  .fyo-gate-input { width:100%; padding:13px 16px; border-radius:10px; margin-bottom:12px; background:rgba(255,255,255,.06); border:1px solid rgba(102,126,234,.25); color:#f0eeff; font-size:14px; font-family:'Space Grotesk',sans-serif; outline:none; transition:border-color .2s; }
+  .fyo-gate-input:focus { border-color:#667eea; }
+  .fyo-gate-btn { width:100%; padding:13px; border-radius:10px; border:none; cursor:pointer; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:14px; font-weight:700; font-family:'Space Grotesk',sans-serif; transition:opacity .2s,transform .15s; }
+  .fyo-gate-btn:hover { opacity:.9; transform:translateY(-1px); }
+  .fyo-gate-err { font-size:12px; color:#f87171; margin-top:8px; min-height:16px; }
+  .fyo-gate-link { font-size:12px; color:rgba(165,180,252,.45); margin-top:16px; }
+  .fyo-gate-link a { color:#a5b4fc; text-decoration:none; }
+
+  .fyo-hero { background:linear-gradient(160deg,#080612 0%,#150a2e 50%,#080612 100%); padding:48px 44px 40px; border-radius:16px 16px 0 0; position:relative; overflow:hidden; }
+  .fyo-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(102,126,234,.5),rgba(167,139,250,.3),rgba(102,126,234,.5),transparent); }
+  .fyo-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(167,139,250,.7); margin-bottom:16px; }
+  .fyo-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#667eea; box-shadow:0 0 10px rgba(102,126,234,.8); }
+  .fyo-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:16px; max-width:700px; }
+  .fyo-title span { background:linear-gradient(135deg,#667eea,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .fyo-sub { font-size:14px; color:rgba(196,181,253,.6); line-height:1.75; max-width:620px; margin-bottom:20px; }
+  .fyo-cond-row { display:flex; gap:8px; flex-wrap:wrap; }
+  .fyo-cond-pill { padding:6px 14px; border-radius:100px; background:rgba(102,126,234,.1); border:1px solid rgba(102,126,234,.25); font-size:11px; font-weight:700; color:#a5b4fc; }
+
+  .fyo-input-panel { margin:0 44px 32px; padding:32px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.1); border-radius:16px; }
+  .fyo-panel-title { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; }
+  .fyo-panel-sub { font-size:12.5px; color:rgba(196,181,253,.5); margin-bottom:20px; line-height:1.6; }
+
+  .fyo-context-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px; }
+  @media(max-width:700px){ .fyo-context-grid{ grid-template-columns:1fr; } }
+  .fyo-field-label { font-size:11px; font-weight:700; color:rgba(196,181,253,.5); margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px; }
+  .fyo-input, .fyo-textarea { width:100%; padding:10px 12px; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#f0eeff; font-size:13px; font-family:inherit; }
+  .fyo-input:focus, .fyo-textarea:focus { outline:none; border-color:#667eea; }
+  .fyo-textarea { padding:14px 16px; font-size:13.5px; min-height:130px; resize:vertical; margin-bottom:20px; line-height:1.6; }
+
+  .fyo-example-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .fyo-example-lbl { font-size:11px; color:rgba(196,181,253,.4); }
+  .fyo-example-chip { padding:5px 12px; border-radius:100px; background:rgba(102,126,234,.08); border:1px solid rgba(102,126,234,.25); color:#a5b4fc; font-size:11px; font-weight:600; cursor:pointer; font-family:inherit; }
+  .fyo-example-chip:hover { background:rgba(102,126,234,.16); border-color:rgba(102,126,234,.45); }
+
+  .fyo-submit-btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:10px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; font-size:14px; font-weight:800; border:none; cursor:pointer; }
+  .fyo-submit-btn:disabled { opacity:.4; cursor:not-allowed; }
+
+  .fyo-error { margin:0 44px 32px; padding:20px 24px; border-radius:12px; background:rgba(248,113,113,.08); border:1px solid rgba(248,113,113,.3); color:#f87171; font-size:13px; display:none; }
+
+  .fyo-results { margin:0 44px 40px; display:none; flex-direction:column; gap:16px; }
+
+  .fyo-cond-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-bottom:16px; }
+  .fyo-cond-card { padding:18px; border-radius:12px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); }
+  .fyo-cond-name { font-size:11px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:rgba(196,181,253,.5); margin-bottom:8px; }
+  .fyo-cond-score { font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:800; margin-bottom:4px; }
+  .fyo-cond-label { font-size:11.5px; font-weight:700; margin-bottom:8px; }
+  .fyo-cond-rationale { font-size:12px; color:rgba(196,181,253,.5); line-height:1.55; }
+
+  .fyo-section { padding:26px 28px; border-radius:14px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.1); }
+  .fyo-section-eyebrow { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#a5b4fc; margin-bottom:14px; }
+  .fyo-primary-box { padding:16px 18px; border-radius:10px; background:rgba(248,113,113,.06); border:1px solid rgba(248,113,113,.25); margin-bottom:16px; }
+  .fyo-primary-lbl { font-size:10px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:#f87171; margin-bottom:6px; }
+  .fyo-primary-val { font-size:14px; font-weight:700; margin-bottom:6px; }
+  .fyo-primary-desc { font-size:12.5px; color:rgba(196,181,253,.6); line-height:1.6; }
+  .fyo-exposure-total { font-family:'DM Mono',monospace; font-size:20px; font-weight:700; color:#fbbf24; }
+
+  .fyo-month-block { margin-bottom:18px; }
+  .fyo-month-block:last-child { margin-bottom:0; }
+  .fyo-month-title { font-size:13px; font-weight:800; color:#f0eeff; margin-bottom:4px; }
+  .fyo-month-focus { font-size:12px; color:rgba(196,181,253,.5); margin-bottom:10px; line-height:1.5; }
+  .fyo-week-row { display:flex; gap:10px; padding:10px 0; border-top:1px solid rgba(255,255,255,.06); font-size:12.5px; }
+  .fyo-week-tag { flex-shrink:0; font-family:'DM Mono',monospace; font-size:10px; color:#a5b4fc; width:60px; }
+  .fyo-week-body { color:rgba(240,238,255,.8); line-height:1.55; }
+  .fyo-week-body b { color:#f0eeff; }
+  .fyo-key-list { list-style:none; padding:0; margin:0; }
+  .fyo-key-list li { padding:8px 0; border-top:1px solid rgba(255,255,255,.06); font-size:12.5px; color:rgba(240,238,255,.8); line-height:1.55; }
+
+  .fyo-qw-card { padding:14px 16px; border-radius:10px; background:rgba(52,211,153,.05); border:1px solid rgba(52,211,153,.2); margin-bottom:10px; }
+  .fyo-qw-card:last-child { margin-bottom:0; }
+  .fyo-qw-action { font-size:13px; font-weight:700; color:#f0eeff; margin-bottom:6px; }
+  .fyo-qw-meta { font-size:10.5px; color:#6ee7b7; margin-bottom:6px; }
+  .fyo-qw-why { font-size:12px; color:rgba(196,181,253,.5); line-height:1.5; }
+
+  .fyo-exp-row { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:12px 0; border-top:1px solid rgba(255,255,255,.06); }
+  .fyo-exp-left { flex:1; min-width:0; }
+  .fyo-exp-cond { font-size:12.5px; font-weight:700; color:#f0eeff; margin-bottom:3px; }
+  .fyo-exp-calc { font-size:11px; color:rgba(196,181,253,.45); line-height:1.5; }
+  .fyo-exp-cost { font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#fbbf24; flex-shrink:0; text-align:right; max-width:220px; }
+
+  .fyo-tool-guidance { font-size:13px; color:rgba(240,238,255,.8); line-height:1.7; }
+
+  .fyo-download-row { margin:0 44px 40px; text-align:center; display:none; }
+  .fyo-download-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); color:#f0eeff; font-size:13px; font-weight:700; cursor:pointer; }
+
+  .fyo-loading { text-align:center; padding:56px 20px; }
+  .fyo-spinner { width:40px; height:40px; border-radius:50%; margin:0 auto 18px; border:3px solid rgba(102,126,234,.18); border-top-color:#667eea; animation:fyoSpin .8s linear infinite; }
+  @keyframes fyoSpin { to{ transform:rotate(360deg); } }
+  .fyo-loading-text { font-size:13.5px; color:rgba(196,181,253,.6); transition:opacity .3s ease; }
+
+  .fyo-action-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .fyo-regen-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:10px; background:rgba(102,126,234,.08); border:1px solid rgba(102,126,234,.3); color:#a5b4fc; font-size:13px; font-weight:700; cursor:pointer; }
+  .fyo-regen-btn:disabled { opacity:.4; cursor:not-allowed; }
+  .fyo-regen-caution { margin-top:12px; font-size:11px; color:rgba(196,181,253,.4); max-width:440px; margin-left:auto; margin-right:auto; line-height:1.6; }
+</style>
+
+<div id="fyo-root">
+  <div id="fyo-gate">
+    <div class="fyo-gate-box">
+      <div class="fyo-gate-icon">&#x1F512;</div>
+      <div class="fyo-gate-title">Forge Your Org</div>
+      <div class="fyo-gate-sub">This is a <strong style="color:#a5b4fc">Pro-only</strong> tool. Enter your Virorah Pro key to diagnose your organisation and get a costed 90-day playbook.</div>
+      <input class="fyo-gate-input" id="fyo-gate-input" type="text" placeholder="Enter your Virorah Pro key" autocomplete="off" spellcheck="false">
+      <button class="fyo-gate-btn" id="fyo-gate-btn">Unlock Forge Your Org &#x2192;</button>
+      <div class="fyo-gate-err" id="fyo-gate-err"></div>
+      <div class="fyo-gate-link">Don't have a key? <a href="/pages/pricing.html">Upgrade to Pro &#x2192;</a></div>
+    </div>
+  </div>
+  <div class="fyo-hero">
+    <div class="fyo-eyebrow"><div class="fyo-eyebrow-dot"></div>FORGE &middot; Forge Your Org</div>
+    <div class="fyo-title">Diagnose your team. <span>Get a 90-day fix.</span></div>
+    <div class="fyo-sub">Score your real organisation against 5 conditions that separate high-performing teams from everyone else, then walk away with a specific, financially-costed playbook.</div>
+    <div class="fyo-cond-row">
+      <span class="fyo-cond-pill">Direction Clarity</span>
+      <span class="fyo-cond-pill">Leadership Density</span>
+      <span class="fyo-cond-pill">Performance Differentiation</span>
+      <span class="fyo-cond-pill">Feedback Velocity</span>
+      <span class="fyo-cond-pill">Human Capital Return</span>
+    </div>
+  </div>
+
+  <div class="fyo-input-panel">
+    <div class="fyo-panel-title">Tell us about your organisation</div>
+    <div class="fyo-panel-sub">Org context is optional but sharpens the financial exposure figures. The more specific your description below, the more specific the diagnosis.</div>
+
+    <div class="fyo-context-grid">
+      <div>
+        <div class="fyo-field-label">Industry</div>
+        <input class="fyo-input" id="fyo-industry" type="text" placeholder="e.g. B2B SaaS, healthcare staffing">
+      </div>
+      <div>
+        <div class="fyo-field-label">Org Size</div>
+        <input class="fyo-input" id="fyo-orgsize" type="text" placeholder="e.g. 300 employees">
+      </div>
+      <div>
+        <div class="fyo-field-label">Avg Annual Compensation</div>
+        <input class="fyo-input" id="fyo-avgsalary" type="text" placeholder="e.g. $80,000 or INR 9,00,000">
+      </div>
+    </div>
+
+    <div class="fyo-field-label">What's the real challenge right now</div>
+    <div class="fyo-example-row">
+      <span class="fyo-example-lbl">Not sure how much detail to give? Try an example:</span>
+      <button class="fyo-example-chip" id="fyo-ex-a">Attrition &amp; stalled growth</button>
+      <button class="fyo-example-chip" id="fyo-ex-b">Missed targets, no coaching</button>
+    </div>
+    <textarea class="fyo-textarea" id="fyo-challenge" placeholder="Describe what's actually going on, not the symptom you assume it is. Include what management maturity looks like today."></textarea>
+
+    <button class="fyo-submit-btn" id="fyo-submit-btn">Diagnose My Org</button>
+  </div>
+
+  <div class="fyo-error" id="fyo-error"></div>
+
+  <div class="fyo-results" id="fyo-results"></div>
+
+  <div class="fyo-download-row" id="fyo-download-row">
+    <div class="fyo-action-row">
+      <button class="fyo-download-btn" id="fyo-download-btn">Download the playbook</button>
+      <button class="fyo-regen-btn" id="fyo-regen-btn">&#x21bb; Regenerate diagnosis</button>
+    </div>
+    <div class="fyo-regen-caution">Each regeneration uses one of your monthly diagnostic runs. Only regenerate if this result didn't reflect your actual situation well.</div>
+  </div>
+</div>
+
+<script>
+/* Pro gate */
+(function(){
+  var WORKER_URL = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+  function vrCheck(){
+    try {
+      if (localStorage.getItem('viorah_plan') !== 'pro') return false;
+      var expStr = localStorage.getItem('viorah_plan_exp');
+      if (!expStr) return true;
+      var expDate = new Date(parseInt(expStr));
+      if (isNaN(expDate.getTime())) return true;
+      if (new Date() > expDate) {
+        localStorage.removeItem('viorah_plan');
+        localStorage.removeItem('viorah_plan_exp');
+        return false;
+      }
+      return true;
+    } catch(e) { return false; }
+  }
+  if(vrCheck()) document.getElementById('fyo-gate').style.display = 'none';
+  document.getElementById('fyo-gate-btn').addEventListener('click', function(){
+    var v = (document.getElementById('fyo-gate-input').value || '').trim();
+    var btn = document.getElementById('fyo-gate-btn');
+    var errEl = document.getElementById('fyo-gate-err');
+    errEl.textContent = '';
+    if(!v){ errEl.textContent = 'Please enter your Pro key.'; return; }
+    btn.disabled = true; btn.textContent = 'Validating...';
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Action': 'validate-key' },
+      body: JSON.stringify({ key: v })
+    }).then(function(r){ return r.json(); }).then(function(result){
+      if(result.valid){
+        localStorage.setItem('viorah_key', v);
+        localStorage.setItem('viorah_plan', 'pro');
+        document.getElementById('fyo-gate').style.display = 'none';
+      } else {
+        errEl.textContent = 'Invalid key. Check your Pro key or upgrade at /pricing.';
+        btn.disabled = false; btn.textContent = 'Unlock Forge Your Org \u2192';
+      }
+    }).catch(function(){
+      errEl.textContent = 'Could not verify key. Please try again.';
+      btn.disabled = false; btn.textContent = 'Unlock Forge Your Org \u2192';
+    });
+  });
+  document.getElementById('fyo-gate-input').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('fyo-gate-btn').click(); });
+})();
+</script>
+<script>
+(function(){
+"use strict";
+
+var WORKER = "https://pms-toolkit-ai.kumarvivek-srv.workers.dev";
+var lastResult = null;
+
+var ORG_PROFILE_KEY = "virorah_org_profile";
+
+function loadOrgProfile(){
+  try {
+    var raw = localStorage.getItem(ORG_PROFILE_KEY);
+    if(!raw) return;
+    var p = JSON.parse(raw);
+    if(p.industry) document.getElementById("fyo-industry").value = p.industry;
+    if(p.orgSize) document.getElementById("fyo-orgsize").value = p.orgSize;
+    if(p.avgSalary) document.getElementById("fyo-avgsalary").value = p.avgSalary;
+  } catch(e){ /* malformed or missing profile, ignore */ }
+}
+
+function saveOrgProfile(){
+  var industry = document.getElementById("fyo-industry").value.trim();
+  var orgSize = document.getElementById("fyo-orgsize").value.trim();
+  var avgSalary = document.getElementById("fyo-avgsalary").value.trim();
+  if(!industry && !orgSize && !avgSalary) return;
+  try {
+    localStorage.setItem(ORG_PROFILE_KEY, JSON.stringify({
+      industry: industry,
+      orgSize: orgSize,
+      avgSalary: avgSalary,
+      updatedAt: new Date().toISOString(),
+      updatedFrom: "forge-your-org"
+    }));
+  } catch(e){ /* storage unavailable, ignore */ }
+}
+
+loadOrgProfile();
+
+var EXAMPLES = {
+  a: "Our senior engineers keep leaving within 18 months. Exit interviews mention no growth path, but we do promote people, just inconsistently. Middle managers rate everyone as meets expectations regardless of actual performance, so top performers feel invisible.",
+  b: "Sales targets have been missed for three straight quarters. Reps say the goals set at the top never get broken down into anything they can act on week to week. Nobody has had a real coaching conversation with their manager in months."
+};
+
+document.getElementById("fyo-ex-a").addEventListener("click", function(){
+  document.getElementById("fyo-challenge").value = EXAMPLES.a;
+});
+document.getElementById("fyo-ex-b").addEventListener("click", function(){
+  document.getElementById("fyo-challenge").value = EXAMPLES.b;
+});
+
+function buildPrompt(){
+  var challenge = document.getElementById("fyo-challenge").value.trim();
+  var industry = document.getElementById("fyo-industry").value.trim();
+  var orgSize = document.getElementById("fyo-orgsize").value.trim();
+  var avgSalary = document.getElementById("fyo-avgsalary").value.trim();
+
+  var context = [];
+  if(industry) context.push("Industry: " + industry);
+  if(orgSize) context.push("Org size: " + orgSize);
+  if(avgSalary) context.push("Average annual CTC: " + avgSalary);
+
+  var contextLine = context.length ? ("Org context -- " + context.join(", ") + ".\n\n") : "";
+  return contextLine + "Challenge: " + challenge;
+}
+
+function setLoading(isLoading){
+  var btn = document.getElementById("fyo-submit-btn");
+  btn.disabled = isLoading;
+  btn.textContent = isLoading ? "Diagnosing..." : "Diagnose My Org";
+  var regenBtn = document.getElementById("fyo-regen-btn");
+  if(regenBtn) regenBtn.disabled = isLoading;
+}
+
+var FYO_LOADING_MESSAGES = [
+  "Reading your organisation...",
+  "Scoring the five conditions...",
+  "Calculating financial exposure...",
+  "Building your 90-day playbook...",
+  "Finalising quick wins..."
+];
+var fyoLoadingInterval = null;
+
+function showLoading(){
+  var results = document.getElementById("fyo-results");
+  results.innerHTML = '<div class="fyo-loading"><div class="fyo-spinner"></div><div class="fyo-loading-text" id="fyo-loading-text">' + FYO_LOADING_MESSAGES[0] + '</div></div>';
+  results.style.display = "flex";
+  document.getElementById("fyo-download-row").style.display = "none";
+  var idx = 0;
+  fyoLoadingInterval = setInterval(function(){
+    idx = (idx + 1) % FYO_LOADING_MESSAGES.length;
+    var el = document.getElementById("fyo-loading-text");
+    if(el){
+      el.style.opacity = 0;
+      setTimeout(function(){
+        el.textContent = FYO_LOADING_MESSAGES[idx];
+        el.style.opacity = 1;
+      }, 300);
+    }
+  }, 2600);
+}
+
+function stopLoading(){
+  if(fyoLoadingInterval){ clearInterval(fyoLoadingInterval); fyoLoadingInterval = null; }
+}
+
+function showError(msg){
+  var el = document.getElementById("fyo-error");
+  el.textContent = msg;
+  el.style.display = "block";
+}
+
+function hideError(){
+  document.getElementById("fyo-error").style.display = "none";
+}
+
+function renderResults(data){
+  var html = "";
+
+  var condCards = data.diagnosis.conditions.map(function(c){
+    var color = c.score >= 4 ? "#34d399" : c.score >= 3 ? "#fbbf24" : "#f87171";
+    return '<div class="fyo-cond-card">' +
+      '<div class="fyo-cond-name">' + c.name + '</div>' +
+      '<div class="fyo-cond-score" style="color:' + color + '">' + c.score + '/5</div>' +
+      '<div class="fyo-cond-label" style="color:' + color + '">' + c.label + '</div>' +
+      '<div class="fyo-cond-rationale">' + c.rationale + '</div>' +
+    '</div>';
+  }).join("");
+
+  html += '<div class="fyo-cond-grid">' + condCards + '</div>';
+
+  html += '<div class="fyo-section">';
+  html += '<div class="fyo-section-eyebrow">Diagnosis</div>';
+  html += '<div class="fyo-primary-box">';
+  html += '<div class="fyo-primary-lbl">Primary Constraint</div>';
+  html += '<div class="fyo-primary-val">' + data.diagnosis.primaryConstraint + '</div>';
+  html += '<div class="fyo-primary-desc">' + data.diagnosis.primaryRationale + '</div>';
+  html += '</div>';
+  html += '<div class="fyo-exposure-total">Total exposure: ' + data.diagnosis.totalFinancialExposure + '</div>';
+  html += '</div>';
+
+  html += '<div class="fyo-section">';
+  html += '<div class="fyo-section-eyebrow">90-Day Playbook</div>';
+
+  html += '<div class="fyo-month-block">';
+  html += '<div class="fyo-month-title">Month 1 -- ' + data.playbook.month1.focus + '</div>';
+  html += '<div class="fyo-month-focus">' + data.playbook.month1.focusRationale + '</div>';
+  data.playbook.month1.weeks.forEach(function(w){
+    html += '<div class="fyo-week-row"><div class="fyo-week-tag">' + w.week + '</div><div class="fyo-week-body"><b>' + w.action + '</b><br>Owner: ' + w.owner + ' &middot; ' + w.outcome + '</div></div>';
+  });
+  html += '</div>';
+
+  html += '<div class="fyo-month-block">';
+  html += '<div class="fyo-month-title">Month 2 -- ' + data.playbook.month2.focus + '</div>';
+  html += '<div class="fyo-month-focus">' + data.playbook.month2.focusRationale + '</div>';
+  html += '<ul class="fyo-key-list">' + data.playbook.month2.keyActions.map(function(a){ return '<li>' + a + '</li>'; }).join("") + '</ul>';
+  html += '<div class="fyo-week-row"><div class="fyo-week-tag">Milestone</div><div class="fyo-week-body">' + data.playbook.month2.milestone + '</div></div>';
+  html += '</div>';
+
+  html += '<div class="fyo-month-block">';
+  html += '<div class="fyo-month-title">Month 3 -- ' + data.playbook.month3.focus + '</div>';
+  html += '<div class="fyo-month-focus">' + data.playbook.month3.focusRationale + '</div>';
+  html += '<ul class="fyo-key-list">' + data.playbook.month3.keyActions.map(function(a){ return '<li>' + a + '</li>'; }).join("") + '</ul>';
+  html += '<div class="fyo-week-row"><div class="fyo-week-tag">Milestone</div><div class="fyo-week-body">' + data.playbook.month3.milestone + '</div></div>';
+  html += '</div>';
+
+  html += '</div>';
+
+  html += '<div class="fyo-section">';
+  html += '<div class="fyo-section-eyebrow">Quick Wins</div>';
+  data.quickWins.forEach(function(q){
+    html += '<div class="fyo-qw-card">' +
+      '<div class="fyo-qw-action">' + q.action + '</div>' +
+      '<div class="fyo-qw-meta">' + q.timeline + ' &middot; Effort: ' + q.effort + ' &middot; Impact: ' + q.impact + '</div>' +
+      '<div class="fyo-qw-why">' + q.whyItMatters + '</div>' +
+    '</div>';
+  });
+  html += '</div>';
+
+  html += '<div class="fyo-section">';
+  html += '<div class="fyo-section-eyebrow">Humacity Financial Exposure &middot; ' + data.humacityExposure.totalExposure + '</div>';
+  data.humacityExposure.breakdown.forEach(function(b){
+    html += '<div class="fyo-exp-row"><div class="fyo-exp-left"><div class="fyo-exp-cond">' + b.condition + '</div><div class="fyo-exp-calc">' + b.calculation + ' &middot; Closing this gap: ' + b.closingThisGap + '</div></div><div class="fyo-exp-cost">' + b.annualCost + '</div></div>';
+  });
+  html += '</div>';
+
+  html += '<div class="fyo-section">';
+  html += '<div class="fyo-section-eyebrow">Applying This In Your PMS Tool</div>';
+  html += '<div class="fyo-tool-guidance">' + data.pmsToolGuidance + '</div>';
+  html += '</div>';
+
+  var results = document.getElementById("fyo-results");
+  results.innerHTML = html;
+  results.style.display = "flex";
+  document.getElementById("fyo-download-row").style.display = "block";
+}
+
+function runDiagnosis(){
+  hideError();
+  saveOrgProfile();
+  var challenge = document.getElementById("fyo-challenge").value.trim();
+  if(!challenge){
+    showError("Describe the real challenge before running the diagnosis.");
+    return;
+  }
+
+  setLoading(true);
+  showLoading();
+
+  fetch(WORKER + "/forge-playbook", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      prompt: buildPrompt(),
+      industry: document.getElementById("fyo-industry").value.trim(),
+      orgSize: document.getElementById("fyo-orgsize").value.trim(),
+      avgSalary: document.getElementById("fyo-avgsalary").value.trim(),
+      key: localStorage.getItem("viorah_key") || ""
+    })
+  })
+  .then(function(r){
+    if(!r.ok){
+      return r.json().catch(function(){ return null; }).then(function(errData){
+        throw new Error((errData && errData.error) || ("Error " + r.status));
+      });
+    }
+    return r.json();
+  })
+  .then(function(data){
+    lastResult = data;
+    renderResults(data);
+  })
+  .catch(function(err){
+    document.getElementById("fyo-results").style.display = "none";
+    showError(err.message);
+  })
+  .finally(function(){
+    setLoading(false);
+    stopLoading();
+  });
+}
+
+function downloadPlaybook(){
+  if(!lastResult) return;
+  var d = lastResult;
+  var text = "FORGE YOUR ORG -- 90-DAY PLAYBOOK\n\n";
+  text += "PRIMARY CONSTRAINT: " + d.diagnosis.primaryConstraint + "\n" + d.diagnosis.primaryRationale + "\n\n";
+  text += "TOTAL FINANCIAL EXPOSURE: " + d.diagnosis.totalFinancialExposure + "\n\n";
+  text += "MONTH 1 -- " + d.playbook.month1.focus + "\n";
+  d.playbook.month1.weeks.forEach(function(w){ text += w.week + ": " + w.action + " (Owner: " + w.owner + ")\n"; });
+  text += "\nMONTH 2 -- " + d.playbook.month2.focus + "\n" + d.playbook.month2.keyActions.join("\n") + "\n";
+  text += "\nMONTH 3 -- " + d.playbook.month3.focus + "\n" + d.playbook.month3.keyActions.join("\n") + "\n";
+
+  var blob = new Blob([text], { type: "text/plain" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "forge-your-org-playbook.txt";
+  a.click();
+}
+
+document.getElementById("fyo-submit-btn").addEventListener("click", runDiagnosis);
+document.getElementById("fyo-download-btn").addEventListener("click", downloadPlaybook);
+document.getElementById("fyo-regen-btn").addEventListener("click", runDiagnosis);
+
+})();
+</script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+  rel="stylesheet">
+<style>
+  .fcsb-card {
+    font-family: 'DM Sans', sans-serif;
+    background: #13111f;
+    border: 1px solid rgba(139, 92, 246, .22);
+    border-radius: 16px;
+    padding: 26px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .fcsb-card * {
+    box-sizing: border-box;
+  }
+
+  .fcsb-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #fbbf24;
+    margin-bottom: 8px;
+  }
+
+  .fcsb-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f0eeff;
+    line-height: 1.4;
+    max-width: 480px;
+  }
+
+  .fcsb-sub {
+    font-size: 13px;
+    color: rgba(196, 181, 253, .55);
+    margin-top: 6px;
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  .fcsb-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #080612;
+    background: linear-gradient(135deg, #fbbf24, #a78bfa);
+    padding: 12px 22px;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .fcsb-btn:hover {
+    opacity: .9;
+  }
+
+  @media(max-width:640px) {
+    .fcsb-card {
+      padding: 22px 20px;
+    }
+  }
+</style>
+<div class="fcsb-card">
+  <div>
+    <div class="fcsb-eyebrow">Real Teams, Real Outcomes</div>
+    <div class="fcsb-title">See how real teams fixed the five conditions in your playbook</div>
+    <div class="fcsb-sub">Every FORGE diagnostic condition paired with a documented case, one real, one applied, showing
+      how another team actually closed the gap.</div>
+  </div>
+  <a class="fcsb-btn" href="/pages/forge-case-studies.html">Explore Case Studies</a>
+</div>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>
