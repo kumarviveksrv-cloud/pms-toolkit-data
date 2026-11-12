@@ -56,6 +56,16 @@
       ]
     },
     {
+      section: 'Humacity',
+      items: [
+        { label: 'Value Ledger',       href: '/pages/humacity-ledger.html',          icon: 'file-text',   pro: false },
+        { label: 'Talent Premium',     href: '/pages/humacity-talent-premium.html',  icon: 'award',       pro: false },
+        { label: 'Org Vitals',         href: '/pages/humacity-org-vitals.html',      icon: 'activity',    pro: false },
+        { label: 'Human P&L',          href: '/pages/humacity-human-pl.html',        icon: 'trending-up', pro: false },
+        { label: 'Human Balance Sheet',href: '/pages/humacity-balance-sheet.html',   icon: 'layout',      pro: false }
+      ]
+    },
+    {
       section: 'Learn',
       items: [
         { label: 'Learning Hub',         href: '/pages/learning-hub.html',    icon: 'book',          pro: false },
