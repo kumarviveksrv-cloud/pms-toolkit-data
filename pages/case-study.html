@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study | Virorah PMS</title>
+  <meta name="description" content="Real performance management case studies. Some companies got it right. Some got it catastrophically wrong. See the decisions that made the difference.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/case-study.html">
+  <meta property="og:title" content="Case Study | Virorah PMS">
+  <meta property="og:description" content="Real performance management case studies. Some companies got it right. Some got it catastrophically wrong. See the decisions that made the difference.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Case Study</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     CASE STUDY ENGINE - "The Living Case Study"
+     Scrollytelling + Interactive Decisions + Living Data Viz
+     Reusable: any case renders from a CASE data object
+     Flagship populated: techcorp-rating-inflation
+     Virorah PMS · Vektor design system · Softr-safe
+     Reads ?slug= from URL; falls back to flagship
+     ============================================================ -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#cse-root { font-family:'DM Sans',sans-serif; background:#080612; color:#f0eeff; position:relative; }
+#cse-root * { box-sizing:border-box; }
+
+/* PROGRESS RAIL */
+#cse-rail { position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,#667eea,#a78bfa); z-index:500; transition:width .12s linear; }
+
+/* MODE TOGGLE (cinematic / text) */
+#cse-modebar { position:sticky; top:0; z-index:400; background:rgba(8,6,18,.82); backdrop-filter:blur(12px); border-bottom:1px solid rgba(102,126,234,.15); padding:12px 40px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.cse-back { font-size:12px; font-weight:600; color:rgba(165,180,252,.6); text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:color .2s; }
+.cse-back:hover { color:#a5b4fc; }
+.cse-toggle { display:inline-flex; background:rgba(255,255,255,.04); border:1px solid rgba(102,126,234,.18); border-radius:9px; padding:3px; }
+.cse-toggle-btn { padding:7px 16px; border-radius:7px; font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; border:none; background:transparent; color:rgba(165,180,252,.5); cursor:pointer; transition:all .2s; }
+.cse-toggle-btn.active { background:linear-gradient(135deg,#667eea,#764ba2); color:white; }
+
+/* ── CINEMATIC MODE ── */
+#cse-cinema { display:block; }
+.cse-scene { min-height:62vh; display:flex; align-items:center; justify-content:center; padding:60px 40px; position:relative; }
+.cse-scene-inner { max-width:760px; width:100%; opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease; }
+.cse-scene.in .cse-scene-inner { opacity:1; transform:translateY(0); }
+@media(max-width:768px){ .cse-scene{ padding:48px 22px; min-height:auto; } }
+
+/* opening scene */
+.cse-hero { text-align:center; padding-top:48px; }
+.cse-hero-badge { display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px; border-radius:100px; margin-bottom:24px; }
+.cse-hero-company { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(165,180,252,.5); margin-bottom:18px; }
+.cse-hero-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(32px,5.5vw,60px); font-weight:800; letter-spacing:-2px; line-height:1.04; margin-bottom:22px; background:linear-gradient(135deg,#f0eeff,#c4b5fd 60%,#f0eeff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.cse-hero-standfirst { font-size:17px; color:rgba(196,181,253,.7); line-height:1.8; max-width:580px; margin:0 auto 30px; }
+.cse-hero-meta { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+.cse-hero-metaitem { font-size:12px; color:rgba(165,180,252,.45); display:flex; align-items:center; gap:6px; }
+.cse-scroll-cue { margin-top:46px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; color:rgba(167,139,250,.5); animation:cseBob 2s ease-in-out infinite; }
+
+/* narrative beat */
+.cse-kicker { font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:rgba(167,139,250,.55); margin-bottom:14px; }
+.cse-beat-head { font-family:'Space Grotesk',sans-serif; font-size:clamp(22px,3.2vw,32px); font-weight:800; letter-spacing:-.6px; line-height:1.18; color:#f0eeff; margin-bottom:18px; }
+.cse-beat-body { font-size:16px; line-height:1.85; color:rgba(196,181,253,.72); }
+.cse-beat-body strong { color:#f0eeff; font-weight:700; }
+.cse-pullquote { font-family:'Space Grotesk',sans-serif; font-size:clamp(22px,3.5vw,34px); font-weight:700; line-height:1.3; letter-spacing:-.5px; color:#f0eeff; border-left:3px solid #7c3aed; padding-left:24px; }
+.cse-pullquote-attr { display:block; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:rgba(167,139,250,.6); margin-top:14px; letter-spacing:0; }
+
+/* BIG STAT reveal */
+.cse-bigstat { text-align:center; }
+.cse-bigstat-num { font-family:'Space Grotesk',sans-serif; font-size:clamp(72px,14vw,150px); font-weight:800; letter-spacing:-5px; line-height:1; background:linear-gradient(135deg,#ef4444,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.cse-bigstat-label { font-size:16px; color:rgba(196,181,253,.65); line-height:1.6; max-width:480px; margin:14px auto 0; }
+.cse-bigstat-label strong { color:#f0eeff; }
+
+/* LIVING DATA VIZ - bell curve */
+.cse-viz-wrap { background:rgba(255,255,255,.02); border:1px solid rgba(102,126,234,.15); border-radius:18px; padding:28px 28px 22px; }
+.cse-viz-title { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#f0eeff; margin-bottom:4px; }
+.cse-viz-sub { font-size:12px; color:rgba(165,180,252,.45); margin-bottom:22px; }
+.cse-bars { display:flex; align-items:flex-end; justify-content:space-between; gap:10px; height:200px; margin-bottom:14px; }
+.cse-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:8px; }
+.cse-bar { width:100%; border-radius:7px 7px 0 0; height:0; transition:height 1.1s cubic-bezier(.34,1.2,.64,1); position:relative; }
+.cse-bar-val { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; opacity:0; transition:opacity .5s ease .6s; }
+.cse-bar-lbl { font-size:10px; font-weight:600; color:rgba(165,180,252,.5); text-align:center; line-height:1.3; }
+.cse-viz-caption { font-size:12px; color:rgba(165,180,252,.5); line-height:1.6; text-align:center; padding-top:14px; border-top:1px dashed rgba(102,126,234,.18); }
+.cse-viz-caption strong { color:#f87171; }
+
+/* attrition counter viz */
+.cse-people-grid { display:grid; grid-template-columns:repeat(20,1fr); gap:6px; margin-bottom:18px; }
+@media(max-width:560px){ .cse-people-grid{ grid-template-columns:repeat(12,1fr); } }
+.cse-person { aspect-ratio:1; border-radius:3px; background:rgba(102,126,234,.18); transition:background .4s ease, transform .4s ease; }
+.cse-person.leaving { background:#ef4444; transform:scale(1.15); }
+.cse-person.star { background:#34d399; }
+
+/* ── INTERACTIVE DECISION ── */
+.cse-decision { background:linear-gradient(155deg,#15122e,#1d1942 60%,#15122e); border:1.5px solid rgba(102,126,234,.35); border-radius:20px; padding:34px; box-shadow:0 16px 60px rgba(102,126,234,.14); }
+.cse-decision-tag { display:inline-flex; align-items:center; gap:7px; font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#a78bfa; margin-bottom:14px; }
+.cse-decision-q { font-family:'Space Grotesk',sans-serif; font-size:clamp(20px,3vw,26px); font-weight:800; letter-spacing:-.5px; line-height:1.25; color:#f0eeff; margin-bottom:10px; }
+.cse-decision-setup { font-size:14px; color:rgba(196,181,253,.65); line-height:1.7; margin-bottom:22px; }
+.cse-choices { display:flex; flex-direction:column; gap:11px; }
+.cse-choice { display:flex; align-items:flex-start; gap:13px; padding:16px 18px; border-radius:12px; background:rgba(255,255,255,.03); border:1.5px solid rgba(102,126,234,.18); cursor:pointer; transition:all .2s; text-align:left; width:100%; font-family:'DM Sans',sans-serif; font-size:14px; color:rgba(196,181,253,.8); line-height:1.55; }
+.cse-choice:hover:not(:disabled) { border-color:rgba(139,92,246,.45); background:rgba(139,92,246,.08); transform:translateX(3px); color:#f0eeff; }
+.cse-choice:disabled { cursor:default; }
+.cse-choice.picked { border-color:#7c3aed; background:rgba(124,58,237,.14); color:#f0eeff; }
+.cse-choice.faded { opacity:.4; }
+.cse-choice-key { width:26px; height:26px; border-radius:7px; background:rgba(139,92,246,.15); border:1px solid rgba(139,92,246,.3); font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:800; color:#a78bfa; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cse-reveal { display:none; margin-top:20px; padding:22px; border-radius:14px; background:rgba(0,0,0,.28); border-left:3px solid #7c3aed; animation:cseFadeUp .5s ease; }
+.cse-reveal.show { display:block; }
+.cse-reveal-verdict { font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; }
+.cse-reveal-what { font-size:14px; color:rgba(196,181,253,.78); line-height:1.75; margin-bottom:14px; }
+.cse-reveal-what strong { color:#f0eeff; }
+.cse-reveal-actual { font-size:13px; color:rgba(196,181,253,.6); line-height:1.7; padding-top:14px; border-top:1px dashed rgba(167,139,250,.2); }
+.cse-reveal-actual b { color:#a78bfa; font-weight:700; }
+.cse-continue { display:inline-flex; align-items:center; gap:8px; margin-top:18px; padding:12px 24px; border-radius:10px; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; background:linear-gradient(135deg,#7c3aed,#a78bfa); color:white; border:none; cursor:pointer; transition:all .2s; }
+.cse-continue:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(124,58,237,.5); }
+
+/* LESSON / TAKEAWAY block */
+.cse-lesson { background:linear-gradient(135deg,rgba(52,211,153,.07),rgba(102,126,234,.05)); border:1px solid rgba(52,211,153,.22); border-radius:18px; padding:30px; }
+.cse-lesson-tag { font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#34d399; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.cse-lesson-list { display:flex; flex-direction:column; gap:14px; }
+.cse-lesson-item { display:flex; gap:13px; align-items:flex-start; font-size:14px; color:rgba(196,181,253,.78); line-height:1.65; }
+.cse-lesson-item strong { color:#f0eeff; }
+.cse-lesson-check { width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,#059669,#34d399); color:white; font-size:11px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+
+/* closing / CTA */
+.cse-closing { text-align:center; }
+.cse-closing-head { font-family:'Space Grotesk',sans-serif; font-size:clamp(22px,3.5vw,32px); font-weight:800; letter-spacing:-.6px; color:#f0eeff; margin-bottom:12px; }
+.cse-closing-sub { font-size:14px; color:rgba(196,181,253,.6); line-height:1.7; max-width:480px; margin:0 auto 26px; }
+.cse-closing-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.cse-btn-p { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:11px; font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; background:linear-gradient(135deg,#667eea,#764ba2); color:white; text-decoration:none; box-shadow:0 4px 20px rgba(102,126,234,.4); transition:all .2s; }
+.cse-btn-p:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(102,126,234,.55); }
+.cse-btn-g { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:11px; font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; background:transparent; border:1px solid rgba(102,126,234,.3); color:#a5b4fc; text-decoration:none; transition:all .2s; }
+.cse-btn-g:hover { background:rgba(102,126,234,.1); }
+
+/* ── TEXT MODE ── */
+#cse-text { display:none; max-width:720px; margin:0 auto; padding:48px 40px 80px; }
+@media(max-width:768px){ #cse-text{ padding:36px 22px 60px; } }
+#cse-text .cse-text-kicker { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(165,180,252,.5); margin-bottom:14px; }
+#cse-text h1 { font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,4vw,40px); font-weight:800; letter-spacing:-1px; line-height:1.12; color:#f0eeff; margin-bottom:18px; }
+#cse-text .cse-text-stand { font-size:17px; color:rgba(196,181,253,.7); line-height:1.8; margin-bottom:32px; padding-bottom:24px; border-bottom:1px solid rgba(102,126,234,.15); }
+#cse-text h2 { font-family:'Space Grotesk',sans-serif; font-size:21px; font-weight:700; color:#f0eeff; margin:34px 0 14px; letter-spacing:-.3px; }
+#cse-text p { font-size:16px; line-height:1.85; color:rgba(196,181,253,.72); margin-bottom:18px; }
+#cse-text p strong { color:#f0eeff; }
+#cse-text .cse-text-quote { font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:600; line-height:1.4; color:#f0eeff; border-left:3px solid #7c3aed; padding-left:20px; margin:26px 0; }
+#cse-text .cse-text-lessons { background:rgba(52,211,153,.06); border:1px solid rgba(52,211,153,.2); border-radius:14px; padding:24px; margin-top:30px; }
+
+/* utilities */
+@media(max-width:768px){ #cse-modebar{ padding:12px 22px; } }
+.cse-hidden { display:none !important; }
+</style>
+
+<div id="cse-rail"></div>
+
+<div id="cse-root">
+
+  <div id="cse-modebar">
+    <a href="/pages/case-studies.html" class="cse-back">← All case studies</a>
+    <div class="cse-toggle">
+      <button class="cse-toggle-btn active" id="cse-mode-cinema" onclick="cseSetMode('cinema')">✨ Cinematic</button>
+      <button class="cse-toggle-btn" id="cse-mode-text" onclick="cseSetMode('text')">📖 Read as text</button>
+    </div>
+  </div>
+
+  <div id="cse-cinema"></div>
+  <div id="cse-text"></div>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* Softr-safe keyframe injection */
+(function(){
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes cseBob{0%,100%{transform:translateY(0);opacity:.5;}50%{transform:translateY(6px);opacity:1;}}'+
+    '@keyframes cseFadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes csePulseDot{0%,100%{opacity:1;box-shadow:0 0 8px currentColor;}50%{opacity:.4;box-shadow:none;}}';
+  document.head.appendChild(s);
+})();
+
+/* ════════════════════════════════════════════
+   THE CASE LIBRARY
+   Each case is pure data. The engine renders it.
+   Scene types: hero | beat | quote | bigstat | bars | people | decision | lesson | closing
+   ════════════════════════════════════════════ */
+var CASES = {
+
+  'techcorp-rating-inflation': {
+    company:'TechCorp Solutions', industry:'B2B SaaS', outcome:'success',
+    accent:'#667eea',
+    title:'The Year Everyone Was Exceptional',
+    standfirst:'When 78% of a workforce is rated "Exceeds Expectations," the rating has stopped meaning anything. The four people who noticed first were the four best engineers - and they all resigned within ninety days of each other.',
+    meta:['B2B SaaS','420 employees','18-month arc'],
+    scenes:[
+      { type:'beat', kicker:'How it began',
+        head:'It looked like a great year on paper.',
+        body:'TechCorp had just closed its best revenue year ever. Morale felt high. And when the annual performance ratings came in, the distribution seemed to confirm it: <strong>almost four out of five employees had "exceeded expectations."</strong> Leadership saw a high-performing organisation. What they were actually looking at was a measurement system that had quietly stopped working.' },
+
+      { type:'bars', kicker:'The data', vizTitle:'TechCorp rating distribution', vizSub:'Annual review - 420 employees',
+        bars:[
+          {lbl:'Needs\nImprovement', val:2, color:'#ef4444'},
+          {lbl:'Meets\nExpectations', val:20, color:'#f59e0b'},
+          {lbl:'Exceeds\nExpectations', val:62, color:'#667eea'},
+          {lbl:'Outstanding', val:16, color:'#a78bfa'}
+        ],
+        caption:'A healthy distribution clusters around "Meets." TechCorp\'s clustered around <strong>"Exceeds" - 78% above the bar.</strong> When almost everyone is exceptional, the word means nothing.' },
+
+      { type:'beat', kicker:'The hidden cost',
+        head:'Inflation devalues the currency.',
+        body:'A rating is a currency. Its value comes from scarcity. When a "5" is handed out freely, it stops signalling anything - to managers, to compensation, and most dangerously, <strong>to the people who genuinely earned it.</strong> The strongest performers looked around, saw colleagues who coasted holding the same rating they did, and drew the obvious conclusion: <strong>excellence here is invisible.</strong>' },
+
+      { type:'quote',
+        quote:'"I realised my 5 was worth exactly the same as the 5 of someone who shipped nothing all year. So what was the point of the late nights?"',
+        attr:' - Senior Engineer, in her exit interview' },
+
+      { type:'people', kicker:'The exodus', vizTitle:'What happened over the next 90 days',
+        total:60, stars:4, leaving:4,
+        caption:'Four of TechCorp\'s strongest engineers resigned within a single quarter. None cited pay. All four, independently, described <strong>a rating system that had stopped telling the truth.</strong>' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'You\'re the new Head of People. What do you fix first?',
+        setup:'You\'ve inherited the inflated system. The board wants the attrition stopped. You have four obvious levers. Most leaders reach for the wrong one first. What\'s your opening move?',
+        choices:[
+          { key:'A', text:'Impose a forced ranking / bell curve - cap the top ratings so the numbers normalise immediately.',
+            verdict:'risky', verdictColor:'#f87171',
+            what:'This fixes the <strong>symptom</strong> overnight but detonates trust. Forced distributions pit colleagues against each other and punish genuinely strong teams who happen to sit together. You\'d trade an inflation problem for a morale collapse - and likely a discrimination claim.',
+            actual:'This is exactly what FinanceY Capital did in a different case - and lost its three best portfolio managers inside 18 months.' },
+          { key:'B', text:'Retrain managers on what each rating actually means, with calibrated examples and evidence requirements.',
+            verdict:'the strongest first move', verdictColor:'#34d399',
+            what:'Inflation isn\'t a numbers problem - it\'s a <strong>definition problem</strong>. Managers were rating generously because nobody had ever defined the bar with real evidence. Recalibrating the meaning, with worked examples and a requirement to cite evidence, fixes the <strong>source</strong>. The distribution corrects itself because the judgments behind it are finally sound.',
+            actual:'This is what TechCorp\'s new Head of People actually did first - definitions and manager calibration before touching a single number.' },
+          { key:'C', text:'Tie ratings directly to compensation tiers to force managers to take them seriously.',
+            verdict:'risky', verdictColor:'#f87171',
+            what:'Linking inflated ratings straight to money <strong>before</strong> fixing their meaning just makes the inflation expensive. Managers under pressure will inflate <em>more</em> to protect their people\'s pay. You\'d harden the exact behaviour you\'re trying to undo.',
+            actual:'TechCorp considered this and explicitly sequenced it for later - after definitions were fixed, not before.' },
+          { key:'D', text:'Run an engagement survey to understand why the top performers are leaving.',
+            verdict:'too slow', verdictColor:'#fbbf24',
+            what:'Not wrong - but not first. You already know <strong>why</strong> they\'re leaving; the exit interviews told you. Spending a quarter surveying while more stars walk out the door treats diagnosis as a substitute for action. Listen, yes - but the source is already clear.',
+            actual:'TechCorp did survey - but in parallel, not instead of fixing the calibration.' }
+        ] },
+
+      { type:'beat', kicker:'What they did',
+        head:'They fixed the meaning before the math.',
+        body:'TechCorp\'s new Head of People resisted the urge to slam a bell curve on the org. Instead, over one cycle, they: rewrote each rating definition with <strong>concrete, evidenced examples</strong>; ran live calibration sessions where managers had to defend ratings with proof; and only <strong>then</strong> let the distribution find its honest shape. No quota was ever imposed. The curve normalised on its own - because the judgments underneath it had become real.' },
+
+      { type:'bigstat', num:'31%', label:'The share rated "Exceeds" the following year - down from 62%. Not because a quota forced it, but because <strong>the rating finally meant something again.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'Rating inflation is a definition problem, not a numbers problem.', rest:'Fix what each level <em>means</em> with evidence before you ever touch the distribution.' },
+          {strong:'A forced curve treats the symptom and detonates trust.', rest:'Normalisation should emerge from honest judgment, not be imposed by quota.' },
+          {strong:'Your best people are the first to notice a broken system.', rest:'When excellence becomes invisible, the excellent leave first - and quietly.' },
+          {strong:'Sequence matters.', rest:'Definitions → calibration → then compensation links. Reverse the order and you harden the problem.' }
+        ] },
+
+      { type:'closing',
+        head:'See it happen on real data.',
+        sub:'Run TechCorp\'s exact rating distribution through the Bell Curve and Calibration Simulator - and watch inflation correct itself the way it did here.',
+        primary:{label:'Open the Calibration Simulator', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+
+    /* full prose version for "Read as text" */
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'Rating inflation is a definition problem, not a numbers problem.',
+        'A forced curve treats the symptom and detonates trust.',
+        'Your best people are the first to notice a broken system.',
+        'Sequence matters: definitions, then calibration, then compensation.'
+      ],
+      sections:[
+        { h:null, p:['TechCorp had just closed its best revenue year ever. Morale felt high. And when the annual performance ratings came in, the distribution seemed to confirm it: almost four out of five employees had "exceeded expectations." Leadership saw a high-performing organisation. What they were actually looking at was a measurement system that had quietly stopped working.'] },
+        { h:'The hidden cost', p:['A rating is a currency. Its value comes from scarcity. When a "5" is handed out freely, it stops signalling anything - to managers, to compensation, and most dangerously, to the people who genuinely earned it.','The strongest performers looked around, saw colleagues who coasted holding the same rating they did, and drew the obvious conclusion: excellence here is invisible.'], quote:'"I realised my 5 was worth exactly the same as the 5 of someone who shipped nothing all year. So what was the point of the late nights?" - Senior Engineer, exit interview' },
+        { h:'The exodus', p:['Four of TechCorp\'s strongest engineers resigned within a single quarter. None cited pay. All four, independently, described a rating system that had stopped telling the truth.'] },
+        { h:'What they did', p:['TechCorp\'s new Head of People resisted the urge to slam a bell curve on the org. Instead, over one cycle, they rewrote each rating definition with concrete, evidenced examples; ran live calibration sessions where managers had to defend ratings with proof; and only then let the distribution find its honest shape.','No quota was ever imposed. The curve normalised on its own - because the judgments underneath it had become real. The following year, the share rated "Exceeds" fell from 62% to 31% - not because a quota forced it, but because the rating finally meant something again.'] }
+      ]
+    }
+  },
+
+  'startupx-chaos-to-structure': {
+    company:'StartupX', industry:'Consumer Tech', outcome:'success',
+    accent:'#34d399',
+    title:'Growing Pains: When a Startup Realises It Needs Real HR',
+    standfirst:'Series B. 140 employees. Zero performance system. And 90 days until investor due diligence. One question on the term sheet turned a scrappy startup\'s biggest blind spot into its sharpest advantage.',
+    meta:['Consumer Tech','140 employees','90-day sprint'],
+    scenes:[
+      { type:'beat', kicker:'The setup',
+        head:'Speed was the whole identity.',
+        body:'StartupX had grown from 12 to 140 people in two years. Performance management was a luxury they\'d deliberately skipped - it felt like the kind of bureaucracy they\'d left big companies to escape. <strong>Promotions happened by gut. Raises happened by who asked loudest. Feedback happened in Slack, or not at all.</strong> It worked, right up until the moment it very publicly didn\'t.' },
+
+      { type:'beat', kicker:'The trigger',
+        head:'Then the term sheet arrived.',
+        body:'Series B funding was on the table. Buried in the due-diligence checklist was a single line: <strong>"Describe your performance management and talent retention framework."</strong> The founders looked at each other. There wasn\'t one. The investor wasn\'t asking out of curiosity - at 140 people, the absence of a system <strong>is</strong> the risk.' },
+
+      { type:'quote',
+        quote:'"We told ourselves we were too fast-moving for process. What the investor heard was: we have no idea who our best people are, or how to keep them."',
+        attr:' - Co-founder & CEO, StartupX' },
+
+      { type:'bigstat', num:'90', label:'Days until due diligence. <strong>Zero</strong> existing framework. The clock that turned a blind spot into a forcing function.' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'90 days, 140 people, no system. Where do you start?',
+        setup:'You\'re brought in as StartupX\'s first People lead. The temptation is to copy a big-company framework wholesale. But you have 90 days and a culture that despises bureaucracy. What\'s your opening move?',
+        choices:[
+          { key:'A', text:'Buy and roll out a full enterprise PMS suite - annual reviews, 9-box, calibration, the works.',
+            verdict:'too heavy, too fast', verdictColor:'#fbbf24',
+            what:'Dropping a 50-page enterprise framework onto a 140-person startup in 90 days is how you get <strong>malicious compliance</strong>. People fill in forms to satisfy the investor, then ignore them. You\'d have a framework that exists on paper and nowhere else - which is arguably worse than nothing, because now it\'s <em>documented</em> that you don\'t follow your own process.',
+            actual:'StartupX explicitly rejected this. The CEO called it "buying a suit three sizes too big and hoping we grow into it before anyone notices."' },
+          { key:'B', text:'Start with one lightweight thing done well: clear role expectations + a simple quarterly check-in. Build from there.',
+            verdict:'the right first move', verdictColor:'#34d399',
+            what:'A startup needs a <strong>skeleton, not an exoskeleton</strong>. Defining what good looks like for each role, plus a simple quarterly conversation, gives the investor a real, honest framework <em>and</em> respects the culture. It\'s small enough to actually get adopted - and adoption is the only metric that matters in 90 days.',
+            actual:'This is exactly what StartupX did - role clarity first, then a single quarterly check-in ritual, before anything more.' },
+          { key:'C', text:'Survey all 140 employees first to understand what they want from a performance system.',
+            verdict:'admirable, but stalls', verdictColor:'#fbbf24',
+            what:'Listening is good - but a 90-day clock means you can\'t spend three weeks gathering opinions on something most employees have never experienced. You\'d be asking people to design a system they have no reference point for. <strong>Ship a v1, then listen as they use it.</strong>',
+            actual:'StartupX did gather input - but lightweight and in parallel, not as a blocker to shipping v1.' },
+          { key:'D', text:'Focus only on identifying and locking in the top 20 performers before the investor looks closer.',
+            verdict:'solves optics, not the risk', verdictColor:'#f87171',
+            what:'Retention of your best people matters enormously - but doing <em>only</em> this is treating the symptom the investor noticed, not the cause. A system that only "sees" 20 people leaves 120 in the dark and signals that performance management here is about politics, not fairness.',
+            actual:'StartupX did prioritise retention - but built it into the universal framework, not as a separate VIP track.' }
+        ] },
+
+      { type:'beat', kicker:'What they built',
+        head:'A skeleton, not an exoskeleton.',
+        body:'In 90 days, StartupX shipped exactly three things: <strong>clear role expectations</strong> for every position, a <strong>simple quarterly check-in</strong> between every employee and manager, and a <strong>lightweight rating scale</strong> with real definitions. No 9-box. No forced curve. No 50-page handbook. Just enough structure to be honest, and light enough to actually get used. The investor didn\'t want a perfect system - they wanted evidence the founders <em>understood the risk</em> and had a credible plan.' },
+
+      { type:'bigstat', num:'94%', label:'Quarterly check-in completion rate within two cycles. <strong>Adoption</strong> - the only number that proves a system is real and not theatre.' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'A startup needs a skeleton, not an exoskeleton.', rest:'Match the weight of the system to the stage of the company. One thing done well beats ten things ignored.' },
+          {strong:'Adoption is the only metric that matters early.', rest:'A simple framework people actually use beats a sophisticated one they route around.' },
+          {strong:'The absence of a system IS the risk.', rest:'At scale, "we move too fast for process" reads to investors as "we can\'t see or keep our talent."' },
+          {strong:'Ship v1, then listen.', rest:'You can\'t survey your way to a system people have never experienced. Launch small, iterate on real usage.' }
+        ] },
+
+      { type:'closing',
+        head:'Build the skeleton on real data.',
+        sub:'Use the Scenario Library to model a 140-person startup and design a lightweight framework that scales - exactly like StartupX did.',
+        primary:{label:'Open the Scenario Library', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'A startup needs a skeleton, not an exoskeleton - match the system to the stage.',
+        'Adoption is the only metric that matters early.',
+        'The absence of a system is itself the risk at scale.',
+        'Ship a v1, then listen - don\'t survey your way to a system nobody has used.'
+      ],
+      sections:[
+        { h:null, p:['StartupX had grown from 12 to 140 people in two years. Performance management was a luxury they\'d deliberately skipped. Promotions happened by gut. Raises happened by who asked loudest. Feedback happened in Slack, or not at all. It worked, right up until the moment it very publicly didn\'t.'] },
+        { h:'The trigger', p:['Series B funding was on the table. Buried in the due-diligence checklist was a single line: "Describe your performance management and talent retention framework." There wasn\'t one. At 140 people, the absence of a system is the risk.'], quote:'"We told ourselves we were too fast-moving for process. What the investor heard was: we have no idea who our best people are, or how to keep them." - Co-founder & CEO' },
+        { h:'What they built', p:['In 90 days, StartupX shipped exactly three things: clear role expectations for every position, a simple quarterly check-in between every employee and manager, and a lightweight rating scale with real definitions.','No 9-box. No forced curve. No 50-page handbook. Just enough structure to be honest, and light enough to actually get used. Within two cycles, quarterly check-in completion hit 94% - proof the system was real, not theatre.'] }
+      ]
+    }
+  },
+
+  'financey-forced-ranking': {
+    company:'FinanceY Capital', industry:'Investment Management', outcome:'cautionary',
+    accent:'#ef4444',
+    title:'The Year the Stars Went Dark',
+    standfirst:'A new CEO imported forced ranking from his Wall Street days, certain it would sharpen performance. Within eighteen months, the firm\'s three best portfolio managers had walked - and a discrimination claim was making its way through the courts.',
+    meta:['Investment Mgmt','Cautionary tale','18-month collapse'],
+    scenes:[
+      { type:'beat', kicker:'How it began',
+        head:'A conviction borrowed from somewhere else.',
+        body:'FinanceY\'s new CEO had spent two decades at a bulge-bracket bank where <strong>stack ranking was gospel</strong> - every year, the bottom 10% were managed out, the top 20% lavishly rewarded. It had felt brutal but effective. So he imported it wholesale into FinanceY, a 90-person investment firm built on tight-knit, collaborative deal teams. <strong>He never asked whether the medicine fit the patient.</strong>' },
+
+      { type:'beat', kicker:'The mechanism',
+        head:'The math that forces a loser.',
+        body:'Forced ranking requires that <strong>someone</strong> lands at the bottom - regardless of how good they actually are. At FinanceY, deal teams of four or five were now competing internally for a fixed number of top slots. People who had spent years sharing models, covering each other\'s blind spots, and mentoring juniors suddenly had a structural reason to <strong>stop helping each other.</strong> The collaboration that made the firm great became a competitive liability overnight.' },
+
+      { type:'quote',
+        quote:'"I used to walk a junior through my whole thesis. Now? Why would I? If she ranks above me, I\'m the one in the bottom bucket. The system taught us to hoard."',
+        attr:' - Portfolio Manager, FinanceY (one of the three who left)' },
+
+      { type:'people', kicker:'The exodus', vizTitle:'The collaboration network, 18 months in',
+        total:60, stars:3, leaving:3,
+        caption:'The three highest-conviction portfolio managers - the firm\'s actual stars - resigned within 18 months. <strong>Forced ranking doesn\'t identify your best people. It teaches them that excellence here is a zero-sum trap.</strong>' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'You\'re the CHRO. The CEO is set on forced ranking. What do you do?',
+        setup:'The CEO is convinced stack ranking will sharpen the firm. You can see the collaborative culture that makes FinanceY work. You have one meeting to influence the decision. What\'s your play?',
+        choices:[
+          { key:'A', text:'Implement it as instructed - he\'s the CEO, and it worked at his last firm.',
+            verdict:'the costly path they took', verdictColor:'#f87171',
+            what:'Deferring to "it worked there" ignores that <strong>context is the whole game</strong>. A model built for thousands of interchangeable analysts is poison for small, interdependent deal teams. Implementing without challenge is how FinanceY lost three stars and inherited a lawsuit. "The CEO said so" is not a defence in an employment tribunal.',
+            actual:'This is the path FinanceY actually took - and it cost them their best people and a discrimination claim.' },
+          { key:'B', text:'Bring data: model the impact on FinanceY\'s specific team structure and present the collaboration risk before rollout.',
+            verdict:'the move that could have saved them', verdictColor:'#34d399',
+            what:'You don\'t win this by saying "I disagree." You win by showing the CEO <strong>what forced ranking does to teams of five versus teams of five thousand</strong> - the interdependency math, the comparison to firms that abandoned it, the legal exposure of forced distributions. Make the risk concrete and specific to FinanceY. Influence through evidence, not opinion.',
+            actual:'This is what the case teaches in hindsight - the CHRO who models the specific risk, with data, before rollout is the one who prevents the disaster.' },
+          { key:'C', text:'Refuse to implement it and escalate to the board.',
+            verdict:'right instinct, wrong first step', verdictColor:'#fbbf24',
+            what:'Going over the CEO\'s head in your first disagreement burns the relationship and your credibility - and you may lose the war anyway. Escalation is a real tool, but it\'s a <strong>last</strong> resort, not an opening move. Try to win with evidence first; keep the board in reserve.',
+            actual:'No FinanceY exec took this path - but even if they had, leading with escalation rather than evidence rarely persuades.' },
+          { key:'D', text:'Implement a softer version - ranking for the bottom 5% only, to limit the damage.',
+            verdict:'still the same poison, diluted', verdictColor:'#fbbf24',
+            what:'A "lite" forced ranking still introduces the zero-sum logic that breaks collaboration - it just breaks it more slowly. The fundamental problem isn\'t the <em>size</em> of the forced bucket; it\'s that <strong>any</strong> forced distribution tells interdependent teammates to compete instead of cooperate.',
+            actual:'Compromise versions of forced ranking tend to deliver the cultural damage without even the clarity the CEO wanted.' }
+        ] },
+
+      { type:'beat', kicker:'The aftermath',
+        head:'Two years to undo eighteen months.',
+        body:'FinanceY eventually scrapped forced ranking - but the damage outlasted the policy. The three departed PMs took institutional knowledge and client relationships with them. The discrimination claim, rooted in how the forced distribution had disproportionately bucketed certain groups, dragged through the courts and the press. <strong>It took the firm roughly two years to rebuild the collaborative trust that eighteen months of stack ranking had dismantled.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'A model that works in one context can be poison in another.', rest:'Stack ranking built for thousands of interchangeable roles destroys small interdependent teams.' },
+          {strong:'Forced ranking doesn\'t find your best people - it teaches them to leave.', rest:'When excellence becomes zero-sum, your stars are the first to opt out.' },
+          {strong:'Forced distributions carry real legal exposure.', rest:'When a quota disproportionately buckets protected groups, the system itself becomes evidence.' },
+          {strong:'Influence the decision with data, before rollout.', rest:'"I disagree" loses. Modelling the specific, contextual risk is how HR actually changes a CEO\'s mind.' }
+        ] },
+
+      { type:'closing',
+        head:'Model the damage before it happens.',
+        sub:'Run a forced-ranking distribution against a collaborative team structure in the Bell Curve tool - and see the collaboration risk FinanceY missed.',
+        primary:{label:'Open the Bell Curve tool', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'A model that works in one context can be poison in another.',
+        'Forced ranking doesn\'t find your best people - it teaches them to leave.',
+        'Forced distributions carry real legal exposure.',
+        'Influence the decision with data, before rollout - not opinion, after.'
+      ],
+      sections:[
+        { h:null, p:['FinanceY\'s new CEO had spent two decades at a bulge-bracket bank where stack ranking was gospel - every year the bottom 10% managed out, the top 20% lavishly rewarded. So he imported it wholesale into FinanceY, a 90-person firm built on tight-knit, collaborative deal teams. He never asked whether the medicine fit the patient.'] },
+        { h:'The mechanism', p:['Forced ranking requires that someone lands at the bottom, regardless of how good they are. Deal teams of four or five were now competing internally for a fixed number of top slots. People who had shared models and mentored juniors suddenly had a structural reason to stop helping each other.'], quote:'"I used to walk a junior through my whole thesis. Now? Why would I? If she ranks above me, I\'m the one in the bottom bucket. The system taught us to hoard." - Portfolio Manager who left' },
+        { h:'The exodus', p:['The three highest-conviction portfolio managers - the firm\'s actual stars - resigned within 18 months. A discrimination claim, rooted in how the forced distribution had bucketed certain groups, made its way through the courts.'] },
+        { h:'The aftermath', p:['FinanceY eventually scrapped forced ranking, but the damage outlasted the policy. It took roughly two years to rebuild the collaborative trust that eighteen months of stack ranking had dismantled.'] }
+      ]
+    }
+  },
+
+  'legal-challenge': {
+    company:'Crestwood Facilities', industry:'Facilities Management', outcome:'cautionary',
+    accent:'#ef4444',
+    title:'The PIP That Became a Court Case',
+    standfirst:'A performance improvement plan was opened twenty-two days after an employee disclosed her pregnancy - with no prior documented feedback anywhere in her file. What followed was eighteen months of litigation and a settlement that cost more than her annual salary.',
+    meta:['Facilities Mgmt','Cautionary tale','18 months in court'],
+    scenes:[
+      { type:'beat', kicker:'The background',
+        head:'A quiet performer, until suddenly she wasn\'t.',
+        body:'For three years, the employee\'s file at Crestwood was unremarkable - no glowing reviews, but no documented concerns either. Her manager would later claim her performance had been "slipping for months." <strong>None of it was written down.</strong> Not one formal conversation, not one logged piece of feedback, not a single note. In performance management, what isn\'t documented didn\'t happen.' },
+
+      { type:'beat', kicker:'The trigger',
+        head:'Twenty-two days.',
+        body:'On a Monday, the employee disclosed to her manager that she was pregnant. <strong>Twenty-two days later</strong>, she was placed on a formal Performance Improvement Plan - the first formal performance action in her entire three-year tenure. From the company\'s side, the timing was a coincidence. From every other angle that matters - hers, her lawyer\'s, and eventually the court\'s - <strong>the timing was the whole story.</strong>' },
+
+      { type:'bigstat', num:'22', label:'Days between the pregnancy disclosure and the PIP. <strong>With zero prior documented feedback</strong>, that number became the centre of gravity for everything that followed.' },
+
+      { type:'quote',
+        quote:'"There was no paper trail showing a performance problem before the disclosure. So the only documented thing that changed before the PIP… was that she told us she was pregnant. That\'s not a defensible position. That\'s the plaintiff\'s opening slide."',
+        attr:' - Employment counsel reviewing the case' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'You\'re the HRBP. The manager wants to PIP her now. What do you do?',
+        setup:'The manager insists performance has genuinely declined and wants to move fast. You\'ve just learned she disclosed her pregnancy three weeks ago. There is nothing in her file. The manager is frustrated with your hesitation. What\'s your move?',
+        choices:[
+          { key:'A', text:'Approve the PIP - if performance is genuinely down, the timing is just unfortunate coincidence.',
+            verdict:'the move that became the lawsuit', verdictColor:'#f87171',
+            what:'Genuine performance issues don\'t protect you when there\'s <strong>no contemporaneous documentation</strong> and the only recorded event before the PIP is a protected disclosure. "It was a coincidence" is not a legal defence - the burden shifts to <em>you</em> to prove it wasn\'t. With an empty file, you can\'t. This is precisely the move that cost Crestwood 18 months and a six-figure settlement.',
+            actual:'This is exactly what Crestwood did. The empty file turned a possibly-legitimate performance concern into an indefensible legal position.' },
+          { key:'B', text:'Pause the PIP. Start proper, contemporaneous documentation of specific performance gaps from today - and involve legal before any formal action.',
+            verdict:'the move that prevents the case', verdictColor:'#34d399',
+            what:'If the performance problem is real, it will still be real in 60 days - now <strong>documented, specific, and evidenced</strong>. Pausing isn\'t protecting a poor performer; it\'s protecting the <em>process</em> so that any future action is defensible. Involving legal early, given the proximity to a protected disclosure, is not optional. You separate the timing from the substance by building a real record before you act.',
+            actual:'This is the path the case teaches: pause, document properly, involve legal - the timing risk is managed by building an evidenced record before any formal step.' },
+          { key:'C', text:'Drop the performance concern entirely to avoid any legal risk.',
+            verdict:'overcorrection', verdictColor:'#fbbf24',
+            what:'A pregnancy disclosure doesn\'t make someone immune to performance management - and abandoning a genuine concern entirely is its own failure. It\'s unfair to the team and signals that protected status pauses accountability. The answer isn\'t "never address it." It\'s <strong>"address it properly, with documentation, and legal awareness."</strong>',
+            actual:'Doing nothing would have spared the lawsuit but left a real issue unmanaged - the goal is a defensible process, not avoidance.' },
+          { key:'D', text:'Approve the PIP but back-date some informal feedback notes to establish a prior record.',
+            verdict:'catastrophic - never do this', verdictColor:'#f87171',
+            what:'Fabricating or back-dating documentation transforms a civil employment dispute into potential <strong>fraud and spoliation of evidence</strong>. It is discoverable, it destroys all credibility, and it can expose individuals personally. There is no version of this that ends well. The empty file is a problem; faking its contents is a catastrophe.',
+            actual:'Any hint of back-dated documentation would have escalated Crestwood\'s exposure from an employment claim into something far graver.' }
+        ] },
+
+      { type:'beat', kicker:'The aftermath',
+        head:'Eighteen months, and a number bigger than her salary.',
+        body:'The claim alleged the PIP was a pretext for pregnancy discrimination. With no prior documentation, Crestwood couldn\'t demonstrate the performance concern pre-dated the disclosure. The matter dragged through proceedings for <strong>eighteen months</strong> before settling - for a sum that exceeded the employee\'s annual salary, before legal fees. The manager\'s frustration in that first meeting had felt urgent. <strong>The empty file made the urgency irrelevant.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'No documentation means it didn\'t happen.', rest:'A performance concern with no contemporaneous record is legally invisible - and indefensible.' },
+          {strong:'Timing near a protected disclosure shifts the burden to you.', rest:'A PIP weeks after a pregnancy, illness, or complaint disclosure must be airtight, or it reads as retaliation.' },
+          {strong:'Pausing to document is protecting the process, not the poor performer.', rest:'A real problem survives 60 days. Build the evidenced record first, then act.' },
+          {strong:'Never, ever back-date documentation.', rest:'It converts an employment dispute into fraud - and exposes individuals personally.' }
+        ] },
+
+      { type:'closing',
+        head:'Build a defensible PIP, the right way.',
+        sub:'Use the PIP Tracker to structure documented, milestone-based plans that hold up - with the paper trail Crestwood never had.',
+        primary:{label:'Open the PIP Tracker', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'No documentation means it didn\'t happen - a concern with no record is indefensible.',
+        'Timing near a protected disclosure shifts the legal burden onto you.',
+        'Pausing to document properly protects the process, not the poor performer.',
+        'Never back-date documentation - it converts a dispute into fraud.'
+      ],
+      sections:[
+        { h:null, p:['For three years, the employee\'s file at Crestwood was unremarkable - no glowing reviews, but no documented concerns either. Her manager would later claim her performance had been "slipping for months." None of it was written down. In performance management, what isn\'t documented didn\'t happen.'] },
+        { h:'The trigger', p:['On a Monday, the employee disclosed that she was pregnant. Twenty-two days later, she was placed on a formal Performance Improvement Plan - the first formal performance action in her entire three-year tenure. From the company\'s side, the timing was a coincidence. From every other angle that matters, the timing was the whole story.'], quote:'"The only documented thing that changed before the PIP was that she told us she was pregnant. That\'s not a defensible position. That\'s the plaintiff\'s opening slide." - Employment counsel' },
+        { h:'The aftermath', p:['The claim alleged the PIP was a pretext for pregnancy discrimination. With no prior documentation, Crestwood couldn\'t demonstrate the performance concern pre-dated the disclosure.','The matter dragged through proceedings for eighteen months before settling - for a sum that exceeded the employee\'s annual salary, before legal fees. The empty file made the manager\'s urgency irrelevant.'] }
+      ]
+    }
+  },
+
+  'retailz-reduced-turnover': {
+    company:'RetailZ', industry:'Organised Retail', outcome:'success',
+    accent:'#34d399',
+    title:'Fixing the Revolving Door',
+    standfirst:'RetailZ was bleeding 40% of its workforce every year, burning crores in replacement costs. Leadership assumed the fix would be expensive - better pay, bigger bonuses, a new benefits platform. The actual fix cost almost nothing. It was five minutes per employee, per week.',
+    meta:['Organised Retail','40% turnover','Near-zero-cost fix'],
+    scenes:[
+      { type:'beat', kicker:'The problem',
+        head:'A revolving door nobody could stop.',
+        body:'RetailZ ran dozens of stores and lost <strong>roughly four in ten frontline employees every year</strong>. Each exit cost real money - hiring, onboarding, the productivity dip while a new person learned the ropes. Leadership had tried the obvious levers: small pay bumps, a referral bonus, a slicker benefits portal. The needle barely moved. They were treating a retention problem as a <strong>compensation problem</strong>, and it wasn\'t.' },
+
+      { type:'bigstat', num:'40%', label:'Annual frontline turnover. Crores in repeated replacement cost - and every expensive fix they\'d tried had <strong>missed the actual cause.</strong>' },
+
+      { type:'beat', kicker:'The real diagnosis',
+        head:'People weren\'t leaving for money.',
+        body:'When RetailZ finally analysed exit data properly, a pattern emerged that had nothing to do with pay. Employees who left overwhelmingly reported the same thing: <strong>they had no idea how they were doing, no one checked in on them, and they felt invisible.</strong> Most had gone weeks or months without a single meaningful conversation with their manager. They didn\'t leave because the money was bad. <strong>They left because nobody noticed they were there.</strong>' },
+
+      { type:'quote',
+        quote:'"In four months, my manager spoke to me about my actual work exactly twice. Both times it was to point out a mistake. I wasn\'t underpaid. I was unseen."',
+        attr:' - Former store associate, exit survey' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'40% turnover, every expensive fix has failed. What do you try?',
+        setup:'You\'re the new People Director. The CFO is bracing for you to ask for a big retention budget. But the exit data is pointing somewhere else entirely. What do you propose?',
+        choices:[
+          { key:'A', text:'Push for an across-the-board pay raise to make RetailZ more competitive.',
+            verdict:'expensive, and misses the cause', verdictColor:'#fbbf24',
+            what:'Raising pay when people are leaving because they feel <strong>invisible</strong> is spending a fortune to fix the wrong problem. You might slow the bleed slightly, but you\'ll have permanently raised your cost base without addressing why people actually disengage. The exit data already told you money isn\'t the driver.',
+            actual:'RetailZ had already tried pay-based fixes. They barely moved the needle - because pay was never the real issue.' },
+          { key:'B', text:'Introduce a simple, mandatory weekly 5-minute check-in between every employee and their manager.',
+            verdict:'the fix that worked', verdictColor:'#34d399',
+            what:'The root cause was invisibility, so the fix is <strong>visibility</strong> - and it\'s almost free. A structured five-minute weekly conversation ("how\'s it going, what\'s in your way, what did you do well") makes every employee feel seen, every week. It\'s small enough to actually sustain, and it directly targets the real reason people were leaving.',
+            actual:'This is precisely what RetailZ did - a mandatory weekly five-minute check-in. Turnover fell dramatically, at near-zero cost.' },
+          { key:'C', text:'Launch an annual engagement survey to track sentiment over time.',
+            verdict:'measures the problem, doesn\'t fix it', verdictColor:'#fbbf24',
+            what:'A survey tells you how people feel once a year - but people who feel invisible don\'t need to be <em>measured</em>, they need to be <em>seen</em>. Surveying without changing the daily manager-employee contact is like weighing yourself repeatedly instead of changing your diet.',
+            actual:'RetailZ did eventually track sentiment - but the actual fix was the weekly contact, not the measurement of it.' },
+          { key:'D', text:'Build a recognition platform with points, badges, and rewards.',
+            verdict:'gamifies the symptom', verdictColor:'#fbbf24',
+            what:'Recognition tech can help - but bolting a points system onto managers who never talk to their people just automates a relationship that doesn\'t exist. Badges don\'t make someone feel seen; <strong>a manager who knows their name and their week does.</strong> Fix the human contact first.',
+            actual:'RetailZ kept it human and analog first. The five-minute conversation did what no platform could.' }
+        ] },
+
+      { type:'beat', kicker:'What they did',
+        head:'Five minutes. Every week. Non-negotiable.',
+        body:'RetailZ rolled out a single ritual: every manager, every week, a <strong>five-minute structured check-in</strong> with each direct report. Three questions - how\'s it going, what\'s blocking you, what went well. No forms to file, no system to log into. Just consistent, structured human contact. The entire intervention cost almost nothing but manager time. <strong>And manager time, it turned out, was the one thing employees had been starving for.</strong>' },
+
+      { type:'bigstat', num:'5 min', label:'Per employee, per week. The entire cost of the fix that solved a crores-deep turnover problem. <strong>Visibility was never expensive - it was just absent.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'People rarely leave for the reason you assume.', rest:'RetailZ spent on pay for years; the real driver was feeling invisible. Diagnose before you spend.' },
+          {strong:'The most powerful retention lever is often the cheapest.', rest:'Consistent human contact beats expensive platforms and pay bumps for frontline engagement.' },
+          {strong:'Frequency beats formality.', rest:'A five-minute weekly conversation outperforms an elaborate annual review for making people feel seen.' },
+          {strong:'You can\'t survey your way out of an attention problem.', rest:'Measuring sentiment isn\'t the same as changing the daily experience that creates it.' }
+        ] },
+
+      { type:'closing',
+        head:'Model the cost of turnover yourself.',
+        sub:'Use the Manager Dashboard to see how check-in frequency maps to retention - and find the cheap lever RetailZ almost missed.',
+        primary:{label:'Open the Manager Dashboard', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'People rarely leave for the reason you assume - diagnose before you spend.',
+        'The most powerful retention lever is often the cheapest: human contact.',
+        'Frequency beats formality - five minutes weekly beats an annual review.',
+        'You can\'t survey your way out of an attention problem.'
+      ],
+      sections:[
+        { h:null, p:['RetailZ ran dozens of stores and lost roughly four in ten frontline employees every year. Each exit cost real money. Leadership had tried the obvious levers: small pay bumps, a referral bonus, a slicker benefits portal. The needle barely moved. They were treating a retention problem as a compensation problem, and it wasn\'t.'] },
+        { h:'The real diagnosis', p:['When RetailZ finally analysed exit data properly, a pattern emerged that had nothing to do with pay. Employees who left reported the same thing: they had no idea how they were doing, no one checked in, and they felt invisible. They didn\'t leave because the money was bad. They left because nobody noticed they were there.'], quote:'"In four months, my manager spoke to me about my actual work exactly twice. Both times to point out a mistake. I wasn\'t underpaid. I was unseen." - Former associate' },
+        { h:'What they did', p:['RetailZ rolled out a single ritual: every manager, every week, a five-minute structured check-in with each direct report. Three questions - how\'s it going, what\'s blocking you, what went well. No forms, no system. Just consistent human contact.','The entire intervention cost almost nothing but manager time. Turnover fell dramatically. Visibility was never expensive - it was just absent.'] }
+      ]
+    }
+  },
+
+  'star-who-burned-out': {
+    company:'Centris Pharma', industry:'Pharmaceuticals', outcome:'cautionary',
+    accent:'#ef4444',
+    title:'What Happens When You Push a Star Too Far',
+    standfirst:'Five consecutive Rating 5s. Every critical project routed through her. Then one Monday she simply didn\'t show up - and never came back. There were seven warning signs across eighteen months. Every one of them was visible. Every one was read as a strength.',
+    meta:['Pharmaceuticals','Cautionary tale','7 missed signals'],
+    scenes:[
+      { type:'beat', kicker:'The star',
+        head:'She was the one you could always count on.',
+        body:'At Centris Pharma, she was the gold standard. Five straight years of top ratings. When a project absolutely could not fail, it went to her. When a deadline was impossible, she made it possible. Leadership loved her, and they showed it the way organisations usually do - <strong>by giving her more.</strong> More projects, more scope, more of the load that nobody else could carry. It looked like recognition. It was actually a slow-motion overload.' },
+
+      { type:'beat', kicker:'The signals',
+        head:'Seven warnings, all read as strengths.',
+        body:'Over eighteen months the signs accumulated: she stopped taking leave. She was emailing at 2am. She quietly absorbed two departing colleagues\' workloads without complaint. She went silent in meetings she used to dominate. She stopped pushing back. Each signal had a healthy-sounding interpretation - <strong>"dedicated," "committed," "low-maintenance," "a safe pair of hands."</strong> The organisation chose the flattering reading every single time. <strong>Burnout doesn\'t always look like collapse. Sometimes it looks like your most reliable employee getting quieter.</strong>' },
+
+      { type:'people', kicker:'The warning signs', vizTitle:'18 months of signals',
+        total:40, stars:7, leaving:7,
+        caption:'Seven distinct warning signs over eighteen months - declining leave, late-night work, absorbed workloads, growing silence. <strong>All visible. All reframed as virtues. None acted on.</strong>' },
+
+      { type:'quote',
+        quote:'"We kept saying how lucky we were to have someone so committed. We never once asked what that commitment was costing her. We mistook her silence for stability."',
+        attr:' - Her manager, after she left' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'Your best performer has gone quiet and stopped taking leave. What do you do?',
+        setup:'She\'s still delivering flawlessly. She\'s never complained. But you\'ve noticed the 2am emails, the cancelled holidays, the new silence in meetings. Everything on paper says she\'s fine. Your gut says otherwise. What\'s your move?',
+        choices:[
+          { key:'A', text:'Nothing - she\'s your top performer and she\'s still delivering. Don\'t fix what isn\'t broken.',
+            verdict:'the path that lost her', verdictColor:'#f87171',
+            what:'"Still delivering" is exactly what makes burnout invisible until it\'s terminal. By the time output drops, the person is often already gone internally. Reading flawless delivery as proof of wellbeing is how Centris lost her - <strong>the absence of complaint is not the presence of wellbeing.</strong>',
+            actual:'This is what Centris did. She delivered right up until the Monday she didn\'t show - and never came back.' },
+          { key:'B', text:'Proactively intervene: reduce her load, mandate her leave, and have an honest conversation about sustainability - before output drops.',
+            verdict:'the move that saves her', verdictColor:'#34d399',
+            what:'High performers will almost never raise the hand themselves - their identity is tied to carrying the load. So the manager has to act <strong>before</strong> the data shows a problem, on the behavioural signals alone. Forcing rest she won\'t take for herself, and redistributing load she\'ll never admit she can\'t handle, is the intervention. <strong>Protecting your best people from their own over-commitment is the job.</strong>',
+            actual:'This is the lesson Centris learned too late - the signals were all there to act on, eighteen months before she broke.' },
+          { key:'C', text:'Give her a big bonus and public recognition to show she\'s valued.',
+            verdict:'rewards the overload', verdictColor:'#fbbf24',
+            what:'Recognition feels caring, but rewarding someone for unsustainable effort just <strong>reinforces the behaviour that\'s burning them out</strong>. A bonus tells her the 2am emails are working. What she needs isn\'t more reason to push harder - it\'s permission, structurally enforced, to stop.',
+            actual:'Centris did reward her generously every year. The rewards confirmed that overextension was the path to approval.' },
+          { key:'D', text:'Wait for her next 1:1 and ask if everything\'s okay.',
+            verdict:'too passive, too late', verdictColor:'#fbbf24',
+            what:'Asking "are you okay?" to someone whose entire identity is being okay will get you one answer: "I\'m fine." Burned-out high performers are the <em>least</em> likely to self-report. A passive question isn\'t an intervention - you have to act on the behaviour you can see, not wait for an admission that will never come.',
+            actual:'Gentle check-ins that rely on self-disclosure rarely surface burnout in high performers - they\'re built to mask it.' }
+        ] },
+
+      { type:'beat', kicker:'The Monday',
+        head:'And then she was simply gone.',
+        body:'There was no dramatic blow-up, no resignation letter full of grievances. One Monday she didn\'t come in. A doctor\'s note followed - burnout, complete exhaustion. She never returned to Centris. The organisation lost five years of institutional excellence not to a competitor, not to better pay, <strong>but to its own inability to read reliability as a risk.</strong> The seven signals had been a countdown. Nobody had been reading the clock.' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'Burnout in high performers looks like reliability, not collapse.', rest:'Stopped leave, late-night work, growing silence - the warning signs masquerade as virtues.' },
+          {strong:'The absence of complaint is not the presence of wellbeing.', rest:'Your best people are the least likely to ask for help. You have to act on signals, not wait for words.' },
+          {strong:'Rewarding overload reinforces it.', rest:'Bonuses for unsustainable effort tell your stars that burning out is the path to approval.' },
+          {strong:'Protecting people from their own over-commitment is a core management duty.', rest:'Sometimes the kindest, smartest act is to force the rest they\'ll never take themselves.' }
+        ] },
+
+      { type:'closing',
+        head:'Spot the signals before the Monday.',
+        sub:'Use the Manager Report Card to surface flight and burnout risk in your team - the warning signs Centris read as strengths.',
+        primary:{label:'Open the Manager Report Card', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'Burnout in high performers looks like reliability, not collapse.',
+        'The absence of complaint is not the presence of wellbeing.',
+        'Rewarding overload reinforces it.',
+        'Protecting people from their own over-commitment is a core management duty.'
+      ],
+      sections:[
+        { h:null, p:['At Centris Pharma, she was the gold standard. Five straight years of top ratings. When a project absolutely could not fail, it went to her. Leadership showed their appreciation the way organisations usually do - by giving her more. More projects, more scope, more of the load nobody else could carry. It looked like recognition. It was a slow-motion overload.'] },
+        { h:'The signals', p:['Over eighteen months the signs accumulated: she stopped taking leave, emailed at 2am, absorbed two departing colleagues\' workloads, went silent in meetings, stopped pushing back. Each signal had a healthy-sounding interpretation - "dedicated," "committed," "low-maintenance." The organisation chose the flattering reading every time.'], quote:'"We kept saying how lucky we were to have someone so committed. We never asked what that commitment was costing her. We mistook her silence for stability." - Her manager' },
+        { h:'The Monday', p:['There was no dramatic blow-up. One Monday she didn\'t come in. A doctor\'s note followed - burnout, complete exhaustion. She never returned.','Centris lost five years of institutional excellence not to a competitor or better pay, but to its own inability to read reliability as a risk. The seven signals had been a countdown. Nobody was reading the clock.'] }
+      ]
+    }
+  },
+
+  'dei-audit-fallout': {
+    company:'Harbridge Group', industry:'Financial Services', outcome:'cautionary',
+    accent:'#ef4444',
+    title:'Three Years of Data, One Devastating Finding',
+    standfirst:'It started as a routine DEI baseline audit - a box-ticking exercise nobody expected to matter. Then the analysis surfaced three consecutive years of women being rated systematically lower than men at identical levels. The fallout was legal, financial, and cultural - and entirely self-inflicted.',
+    meta:['Financial Services','Cautionary tale','3-year pattern'],
+    scenes:[
+      { type:'beat', kicker:'The routine check',
+        head:'Nobody expected the audit to find anything.',
+        body:'Harbridge Group commissioned a DEI baseline audit the way most firms do - to satisfy a board request and produce a reassuring slide. The expectation was a clean bill of health. Instead, when the performance ratings were broken down by gender <strong>at matched levels and roles</strong>, a pattern emerged that nobody could explain away: across three straight years, <strong>women were rated meaningfully lower than men doing the same jobs.</strong>' },
+
+      { type:'bars', kicker:'The finding', vizTitle:'Average performance rating, matched levels', vizSub:'Harbridge Group - 3-year aggregate',
+        bars:[
+          {lbl:'Men\n(avg rating)', val:38, color:'#667eea'},
+          {lbl:'Women\n(avg rating)', val:32, color:'#ef4444'}
+        ],
+        caption:'A consistent <strong>0.6-point gap</strong> at identical levels, sustained across three years. Not one rogue manager - a <strong>systemic pattern</strong> baked into how the whole organisation judged performance.' },
+
+      { type:'beat', kicker:'Why it was so damaging',
+        head:'A pattern is worse than an incident.',
+        body:'A single biased rating is a mistake. <strong>Three years of consistent, measurable, same-direction bias is a system.</strong> And a system that the company had now <em>documented in its own audit</em>. The data Harbridge created to look responsible became the single most powerful piece of evidence against it - in legal terms, in regulatory terms, and in the eyes of every employee who eventually heard about it. <strong>You cannot un-know a finding like this once it\'s in writing.</strong>' },
+
+      { type:'quote',
+        quote:'"The most dangerous document in the building was the one we commissioned ourselves. We went looking for a clean slide and found three years of evidence we couldn\'t unsee - or undo."',
+        attr:' - Chief People Officer, Harbridge Group' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'The audit just revealed a 3-year gender rating gap. What do you do first?',
+        setup:'You\'re the CPO. The finding is real, documented, and systemic. The instinct in the room is to contain it. You have one chance to set the response on the right path. What\'s your first move?',
+        choices:[
+          { key:'A', text:'Bury the report and quietly adjust the rating process going forward without acknowledging the past.',
+            verdict:'the move that compounds the risk', verdictColor:'#f87171',
+            what:'Suppressing a documented finding of systemic discrimination doesn\'t make it disappear - it converts a fixable problem into a <strong>cover-up</strong>. Audits get discovered. The moment it surfaces that leadership knew and concealed, the legal and reputational damage multiplies far beyond the original gap.',
+            actual:'Any attempt to bury a documented bias finding tends to transform a remediation problem into a far graver concealment problem.' },
+          { key:'B', text:'Acknowledge it, bring in legal and remediate transparently: fix past pay/rating impacts AND the system that caused them.',
+            verdict:'the only defensible path', verdictColor:'#34d399',
+            what:'Once a pattern is documented, the only path that limits damage is <strong>transparent remediation</strong>. That means addressing the harm already done (rating and pay corrections for those affected) <em>and</em> fixing the root cause - calibration, bias training, structural checks. Painful and expensive, yes. But it\'s the only response that turns evidence-against-you into proof you acted in good faith.',
+            actual:'Transparent remediation - fixing both the historical harm and the systemic cause - is the only response that holds up legally and culturally.' },
+          { key:'C', text:'Blame and discipline the individual managers who gave the lower ratings.',
+            verdict:'scapegoating misses the system', verdictColor:'#fbbf24',
+            what:'A consistent pattern across the whole org over three years isn\'t a few bad managers - it\'s a <strong>systemic flaw in how performance is defined and calibrated</strong>. Punishing individuals lets the actual system off the hook and ensures the bias simply continues under new names. You fix systems by fixing systems, not by finding villains.',
+            actual:'Pinning a systemic, organisation-wide pattern on individual managers leaves the root cause fully intact.' },
+          { key:'D', text:'Commission a second audit to verify before taking any action.',
+            verdict:'delay dressed as diligence', verdictColor:'#fbbf24',
+            what:'A consistent three-year pattern is already robust evidence - re-auditing to "be sure" is often just a way to delay an uncomfortable response. Worse, the clock is now running: every cycle you wait without acting adds to the documented period of known, un-remediated bias.',
+            actual:'Verification has its place, but using it to defer remediation only lengthens the period of documented inaction.' }
+        ] },
+
+      { type:'beat', kicker:'The reckoning',
+        head:'The cost of a self-inflicted wound.',
+        body:'Harbridge faced legal exposure, the expense of remediating three years of rating and pay impacts, and a deep cultural blow - employees who learned the firm had measured them through a biased lens. The hardest part for leadership to accept: <strong>none of it was an accident of fate.</strong> The bias had lived quietly in the system for years. The audit didn\'t create the problem - it forced the firm to finally see, and own, what it had been doing all along.' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'A pattern is categorically worse than an incident.', rest:'Consistent, same-direction bias over years is a documented system - not a one-off mistake.' },
+          {strong:'The data you create to look responsible can become evidence against you.', rest:'Audit findings are discoverable. Once a bias pattern is in writing, you cannot un-know it.' },
+          {strong:'Systemic problems demand systemic fixes, not scapegoats.', rest:'Org-wide patterns come from how performance is defined and calibrated - punishing individuals leaves the cause intact.' },
+          {strong:'Transparent remediation is the only defensible response.', rest:'Fix the historical harm AND the system. Concealment converts a fixable problem into a cover-up.' }
+        ] },
+
+      { type:'closing',
+        head:'Audit your own ratings before someone else does.',
+        sub:'Use the DEI Analytics tool to surface rating gaps across gender and level on your real data - and catch the pattern Harbridge documented too late.',
+        primary:{label:'Open DEI Analytics', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'A pattern is categorically worse than an incident.',
+        'The data you create to look responsible can become evidence against you.',
+        'Systemic problems demand systemic fixes, not scapegoats.',
+        'Transparent remediation is the only defensible response.'
+      ],
+      sections:[
+        { h:null, p:['Harbridge Group commissioned a DEI baseline audit the way most firms do - to satisfy a board request and produce a reassuring slide. Instead, when performance ratings were broken down by gender at matched levels, a pattern emerged nobody could explain away: across three straight years, women were rated meaningfully lower than men doing the same jobs - a consistent 0.6-point gap.'] },
+        { h:'Why it was so damaging', p:['A single biased rating is a mistake. Three years of consistent, measurable, same-direction bias is a system - one the company had now documented in its own audit.','The data Harbridge created to look responsible became the most powerful piece of evidence against it. You cannot un-know a finding like this once it\'s in writing.'], quote:'"The most dangerous document in the building was the one we commissioned ourselves. We went looking for a clean slide and found three years of evidence we couldn\'t unsee." - Chief People Officer' },
+        { h:'The reckoning', p:['Harbridge faced legal exposure, the cost of remediating three years of rating and pay impacts, and a deep cultural blow. The hardest part for leadership to accept: none of it was an accident. The bias had lived quietly in the system for years. The audit didn\'t create the problem - it forced the firm to finally own what it had been doing all along.'] }
+      ]
+    }
+  },
+
+  'calibration-collapse': {
+    company:'Arcata Digital', industry:'Digital Marketing', outcome:'success',
+    accent:'#667eea',
+    title:'The Room Where One Voice Decided Everything',
+    standfirst:'For four years, every calibration session at Arcata Digital bent toward the same person. The CRO was the loudest voice in the room, and every contested rating somehow moved in his direction. A new HRBP changed one small thing about how the room worked - and it changed everything.',
+    meta:['Digital Marketing','4 years of drift','One structural fix'],
+    scenes:[
+      { type:'beat', kicker:'The room',
+        head:'Calibration in name only.',
+        body:'On paper, Arcata Digital ran proper calibration sessions - managers gathered to discuss and align on ratings before they were finalised. In practice, the room had a gravity well. The CRO was charismatic, senior, and certain. When he advocated for one of his people, the rating went up. When he questioned someone else\'s, it came down. Over four years, <strong>every contested rating in that room drifted toward whatever he thought</strong> - and everyone had quietly learned to stop fighting it.' },
+
+      { type:'beat', kicker:'The cost',
+        head:'A process that laundered one person\'s bias.',
+        body:'Calibration is supposed to <strong>remove</strong> individual bias by pooling many perspectives. Arcata\'s calibration did the opposite - it took one person\'s preferences and gave them the legitimacy of a "group decision." Managers stopped preparing real evidence because they knew the room didn\'t actually decide on evidence. The strongest performers in <em>other</em> leaders\' teams were systematically under-rated relative to the CRO\'s favourites. <strong>The process designed to ensure fairness had become the mechanism of unfairness.</strong>' },
+
+      { type:'quote',
+        quote:'"We told ourselves we calibrated as a group. The truth is we calibrated to one man\'s opinion and called it consensus. Everyone knew. Nobody said it."',
+        attr:' - Department head, Arcata Digital' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'One dominant voice owns every calibration. How do you fix the room?',
+        setup:'You\'re the new HRBP. You can see the CRO bends every session his way, and everyone defers. You can\'t remove him from calibration. You have one change to make to how the room works. What is it?',
+        choices:[
+          { key:'A', text:'Privately ask the CRO to speak less and let others lead more.',
+            verdict:'relies on goodwill, rarely holds', verdictColor:'#fbbf24',
+            what:'A quiet word might work for one session, but it depends entirely on one powerful person voluntarily ceding influence - and old dynamics reassert themselves fast. You\'re trying to fix a <strong>structural</strong> problem with a <strong>personal</strong> favour. Structure beats willpower every time.',
+            actual:'Behavioural requests on dominant personalities tend to fade within a session or two without a structural change underneath them.' },
+          { key:'B', text:'Change the process: require evidence-based pre-reads and have each manager commit their ratings privately BEFORE open discussion.',
+            verdict:'the structural fix that worked', verdictColor:'#34d399',
+            what:'The fix isn\'t to silence the loud voice - it\'s to <strong>capture independent judgment before the loud voice can anchor it.</strong> When every manager submits evidence-backed ratings privately first, the room starts from genuine independent positions, not from whatever the CRO says first. Anchoring bias collapses. The discussion becomes about reconciling real evidence, not deferring to status. One small change to <em>sequence</em>, and the whole power dynamic dissolves.',
+            actual:'This is exactly what Arcata\'s new HRBP did - private, evidence-based commitments before open discussion. The CRO\'s gravity well disappeared overnight.' },
+          { key:'C', text:'Remove the CRO from calibration sessions entirely.',
+            verdict:'creates a bigger problem', verdictColor:'#fbbf24',
+            what:'Excluding a senior leader from calibration is a political grenade - and it\'s also wrong in principle. His perspective <em>should</em> be in the room; it just shouldn\'t <em>dominate</em> it. The goal isn\'t to remove voices, it\'s to make sure no single voice can anchor the rest. Exclusion fixes the symptom while creating a war.',
+            actual:'Removing the senior voice would have solved the anchoring at the cost of a major political rupture - and lost a legitimate perspective.' },
+          { key:'D', text:'Bring in an external facilitator to run the sessions.',
+            verdict:'helps, but doesn\'t fix the cause', verdictColor:'#fbbf24',
+            what:'A skilled facilitator can manage the room better - but the moment they leave, the gravity well returns, because the <strong>underlying sequence</strong> still lets one voice anchor everyone. Facilitation manages the dynamic; changing when and how judgments are captured <em>removes</em> it.',
+            actual:'Facilitation can soften a dominant voice, but only a structural change to how ratings are committed removes the anchoring for good.' }
+        ] },
+
+      { type:'beat', kicker:'What changed',
+        head:'One change to sequence. Everything else followed.',
+        body:'The new HRBP introduced a single rule: <strong>before any discussion, every manager submitted their ratings privately, each backed by specific evidence.</strong> Only then did the room open up - and now the conversation was about reconciling genuine differences in documented judgment, not about reading which way the CRO was leaning. He still had a voice. It was just one voice among many now, instead of the only one that counted. Within two cycles, ratings in other leaders\' teams corrected upward, and managers started actually preparing - because for the first time, <strong>the evidence in the room mattered more than the volume.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'Calibration can launder bias instead of removing it.', rest:'A process meant to pool perspectives can instead give one person\'s preference the legitimacy of "consensus."' },
+          {strong:'Capture independent judgment before discussion begins.', rest:'Private, evidence-based commitments first kills anchoring bias - the loudest voice can\'t set the starting point.' },
+          {strong:'Fix the structure, not the personality.', rest:'You rarely fix a dominant voice with a quiet word. You fix it by changing the sequence so no voice can anchor the room.' },
+          {strong:'Evidence requirements raise the whole room\'s game.', rest:'When managers must bring proof, they prepare - and the discussion shifts from status to substance.' }
+        ] },
+
+      { type:'closing',
+        head:'Run a calibration the room can trust.',
+        sub:'Use the Calibration Simulator to practise evidence-first, anchor-free sessions - the structure that broke Arcata\'s four-year drift.',
+        primary:{label:'Open the Calibration Simulator', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'Calibration can launder bias instead of removing it.',
+        'Capture independent judgment before discussion begins.',
+        'Fix the structure, not the personality.',
+        'Evidence requirements raise the whole room\'s game.'
+      ],
+      sections:[
+        { h:null, p:['On paper, Arcata Digital ran proper calibration sessions. In practice, the room had a gravity well. The CRO was charismatic, senior, and certain. When he advocated for one of his people, the rating went up. When he questioned someone else\'s, it came down. Over four years, every contested rating drifted toward whatever he thought - and everyone had learned to stop fighting it.'] },
+        { h:'The cost', p:['Calibration is supposed to remove individual bias by pooling perspectives. Arcata\'s did the opposite - it took one person\'s preferences and gave them the legitimacy of a "group decision." The strongest performers in other leaders\' teams were systematically under-rated relative to the CRO\'s favourites.'], quote:'"We told ourselves we calibrated as a group. The truth is we calibrated to one man\'s opinion and called it consensus. Everyone knew. Nobody said it." - Department head' },
+        { h:'What changed', p:['The new HRBP introduced a single rule: before any discussion, every manager submitted their ratings privately, each backed by specific evidence. Only then did the room open up - and now the conversation was about reconciling documented judgment, not reading which way the CRO was leaning.','He still had a voice - just one among many. Within two cycles, ratings in other teams corrected upward, and managers started preparing, because the evidence in the room finally mattered more than the volume.'] }
+      ]
+    }
+  },
+
+  'family-business-problem': {
+    company:'Verma Textiles', industry:'Manufacturing', outcome:'success',
+    accent:'#34d399',
+    title:'The Rating That Everyone Saw Through',
+    standfirst:'For six years, the founder\'s son received a Rating 5 - while missing his targets four of those years. Everyone in the building knew. Nobody said a word. Until one employee, in one calibration meeting, finally asked the question that stopped the room cold.',
+    meta:['Manufacturing','Family business','6 years of silence'],
+    scenes:[
+      { type:'beat', kicker:'The open secret',
+        head:'Everyone knew. That was the problem.',
+        body:'At Verma Textiles, the founder\'s son held a senior role and, every single year, the top rating. The trouble was that his numbers didn\'t support it - he\'d <strong>missed his targets in four of the last six years</strong>. The whole organisation understood the unwritten rule: his rating wasn\'t about performance, it was about surname. People didn\'t resent him so much as they resented what his rating <em>signalled</em> - <strong>that the system was rigged, and that effort and merit were optional for the right people.</strong>' },
+
+      { type:'bars', kicker:'The data nobody acted on', vizTitle:'Founder\'s son - rating vs. target achievement', vizSub:'Verma Textiles - 6-year view',
+        bars:[
+          {lbl:'Avg\nRating\ngiven', val:50, color:'#a78bfa'},
+          {lbl:'Years\ntarget\nmet', val:17, color:'#ef4444'}
+        ],
+        caption:'A perfect rating record against a target-miss record of <strong>four years out of six</strong>. The gap between the two bars was visible to everyone - and addressed by no one.' },
+
+      { type:'beat', kicker:'The hidden cost',
+        head:'One unearned 5 devalues every earned one.',
+        body:'The damage wasn\'t really to the son - it was to <strong>everyone else</strong>. When the highest rating in the company demonstrably had nothing to do with results, every other person\'s rating lost meaning too. Why push for a 5 through genuine excellence when the top rating is visibly available through birth? The unearned rating quietly told the most ambitious people at Verma that <strong>this was not a place where merit was the currency.</strong> The best of them started to drift.' },
+
+      { type:'quote',
+        quote:'"Nobody was angry that the boss\'s son had a job. We were angry that his 5 meant our 5s were worth nothing. He didn\'t cheapen himself. He cheapened all of us."',
+        attr:' - Plant supervisor, Verma Textiles' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'The founder\'s underperforming son gets a 5 every year. You run HR. What do you do?',
+        setup:'You\'ve just taken over People at Verma. The pattern is obvious and documented. The founder is proud, protective, and signs your paycheck. Confronting this could end your tenure. Looking away corrodes the whole company. What\'s your move?',
+        choices:[
+          { key:'A', text:'Leave it alone - it\'s a family business, the founder\'s prerogative, and not worth your job.',
+            verdict:'the slow corrosion', verdictColor:'#f87171',
+            what:'Self-preservation is understandable, but every cycle you let it stand, the rating system loses more credibility and your best non-family people lose more faith. You\'d be trading short-term safety for the slow hollowing-out of the entire performance culture - and your own integrity along with it.',
+            actual:'For six years, this was effectively the organisation\'s posture - and it quietly eroded merit across the whole company.' },
+          { key:'B', text:'Present the founder with the data privately - rating vs. results - and frame it around what the unearned 5 costs the rest of the company.',
+            verdict:'the move that broke the cycle', verdictColor:'#34d399',
+            what:'You don\'t win this by attacking the son or moralising. You win by showing the founder, privately and with data, that <strong>the unearned rating is damaging the very company he built</strong> - demotivating his best people and signalling that merit doesn\'t matter. Frame it as protecting his legacy, not policing his family. Make the cost concrete and the choice his.',
+            actual:'A version of this is what finally shifted Verma - the founder, shown the cost to the wider business, agreed the rating had to reflect results like everyone else\'s.' },
+          { key:'C', text:'Quietly tell other managers to rate their own people more generously to "balance it out."',
+            verdict:'spreads the rot', verdictColor:'#f87171',
+            what:'Fighting one inflated rating by inflating everyone\'s just gives you TechCorp\'s problem on purpose - universal inflation where no rating means anything. You\'d be curing favouritism with company-wide dishonesty. Two wrongs make a broken system.',
+            actual:'Compensating with broader inflation would have destroyed the rating\'s meaning entirely - trading one problem for a worse one.' },
+          { key:'D', text:'Raise it publicly in the calibration meeting to force the issue with witnesses.',
+            verdict:'right issue, reckless method', verdictColor:'#fbbf24',
+            what:'Ambushing the founder publicly may feel principled, but it corners a proud person into defending his son in front of an audience - the most likely way to get a hard "no" and a short exit for you. The issue is right; the venue is wrong. <strong>Private data first, public process second.</strong>',
+            actual:'Interestingly, in the real arc it took one brave employee\'s question in a meeting to surface it - but the resolution came through the founder being shown the cost privately, not cornered publicly.' }
+        ] },
+
+      { type:'beat', kicker:'The turning point',
+        head:'The question that stopped the room.',
+        body:'It finally broke open when one employee, in a calibration session, asked the simple question everyone had swallowed for six years: <strong>"If any of us missed targets four years out of six, what rating would we get?"</strong> The silence said everything. Confronted - privately, with the data, and framed around the health of the company he\'d spent his life building - the founder made the hard call. His son would be rated on results, like everyone else. <strong>The rating dropped. And across the company, the meaning of a 5 quietly came back to life.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'An unearned top rating devalues every earned one.', rest:'Favouritism at the top tells everyone below that merit is optional - and your best people believe it.' },
+          {strong:'The damage is to the system, not just the individual.', rest:'One rigged rating quietly corrodes the credibility of the entire performance process.' },
+          {strong:'Influence the powerful with cost, not morality.', rest:'Frame it around what the unearned rating costs the business they care about - not around fairness lectures.' },
+          {strong:'Private data beats public ambush.', rest:'Cornering a proud decision-maker in front of an audience invites a defensive "no." Bring the evidence privately first.' }
+        ] },
+
+      { type:'closing',
+        head:'See what one rigged rating does to the whole curve.',
+        sub:'Model rating integrity across a full org in the Bell Curve and Calibration tools - and see the corrosion Verma lived for six years.',
+        primary:{label:'Open the Calibration Simulator', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'An unearned top rating devalues every earned one.',
+        'The damage is to the system, not just the individual.',
+        'Influence the powerful with cost, not morality.',
+        'Private data beats public ambush.'
+      ],
+      sections:[
+        { h:null, p:['At Verma Textiles, the founder\'s son held a senior role and, every year, the top rating - despite missing his targets four of the last six years. The whole organisation understood the unwritten rule: his rating wasn\'t about performance, it was about surname.'] },
+        { h:'The hidden cost', p:['The damage wasn\'t really to the son - it was to everyone else. When the highest rating in the company demonstrably had nothing to do with results, every other rating lost meaning. The unearned rating quietly told the most ambitious people that this was not a place where merit was the currency. The best of them started to drift.'], quote:'"Nobody was angry that the boss\'s son had a job. We were angry that his 5 meant our 5s were worth nothing." - Plant supervisor' },
+        { h:'The turning point', p:['It broke open when one employee asked, in a calibration session, the question everyone had swallowed for six years: "If any of us missed targets four years out of six, what rating would we get?" The silence said everything.','Confronted privately, with data, and framed around the health of the company he\'d built, the founder made the hard call. His son would be rated on results, like everyone else. The rating dropped - and across the company, the meaning of a 5 quietly came back to life.'] }
+      ]
+    }
+  },
+
+  'remote-first-reckoning': {
+    company:'NovaBuild Technologies', industry:'SaaS', outcome:'success',
+    accent:'#34d399',
+    title:'Managing People You\'ve Never Met',
+    standfirst:'NovaBuild ran 95 employees across 14 countries. When they finally analysed their ratings, they found APAC staff scored 0.7 points lower than everyone else - not because of their performance, but because of their time zone.',
+    meta:['SaaS','95 people · 14 countries','Proximity bias'],
+    scenes:[
+      { type:'beat', kicker:'The setup',
+        head:'A truly global team - rated by a local instinct.',
+        body:'NovaBuild was proudly remote-first: 95 people spread across 14 countries and almost every time zone. The leadership team, however, sat mostly in one region. When the annual ratings came back, a quiet pattern emerged that nobody had designed: <strong>employees in APAC - the time zone furthest from leadership - were consistently rated lower</strong> than everyone else. Not a little. By about <strong>0.7 of a full rating point.</strong>' },
+
+      { type:'bars', kicker:'The finding', vizTitle:'Average rating by region', vizSub:'NovaBuild - same roles, same levels',
+        bars:[
+          {lbl:'HQ\nregion', val:42, color:'#667eea'},
+          {lbl:'Europe', val:40, color:'#a78bfa'},
+          {lbl:'Americas', val:39, color:'#60a5fa'},
+          {lbl:'APAC', val:30, color:'#ef4444'}
+        ],
+        caption:'APAC sat <strong>0.7 points below</strong> everyone else at identical roles and levels. The cause wasn\'t performance. It was <strong>proximity - the people leadership saw least, scored lowest.</strong>' },
+
+      { type:'beat', kicker:'The mechanism',
+        head:'Out of sight, out of mind, down a rating.',
+        body:'The bias had a simple, human cause: <strong>proximity</strong>. APAC employees overlapped least with leadership\'s working hours. They were in fewer live conversations, fewer hallway-equivalent moments, fewer "saw it happen" experiences. So their contributions were less <em>visible</em> - and managers, unconsciously, rated visibility as performance. The work was just as good. It simply happened while the decision-makers were asleep. <strong>In a remote company, whoever managers can\'t see, they undervalue.</strong>' },
+
+      { type:'quote',
+        quote:'"My manager never saw me work. He saw my pull requests merge overnight while he slept and somehow read that as ‘less engaged.\' I wasn\'t less engaged. I was eight hours ahead."',
+        attr:' - Senior Engineer, APAC, NovaBuild' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'Your remote team\'s farthest time zone is rated 0.7 lower. How do you fix it?',
+        setup:'You\'re Head of People at NovaBuild. The gap is real, documented, and tied to proximity, not performance. You need a fix that works for a 14-country, always-distributed company. What do you do?',
+        choices:[
+          { key:'A', text:'Tell managers to "be aware of proximity bias" in a training session and trust them to correct it.',
+            verdict:'awareness alone rarely sticks', verdictColor:'#fbbf24',
+            what:'Bias training raises awareness for about a week, then the unconscious pattern quietly returns - because the <strong>underlying conditions</strong> haven\'t changed. APAC is still less visible, managers are still rating on what they see. You can\'t willpower your way out of a structural visibility gap.',
+            actual:'NovaBuild knew awareness alone wouldn\'t hold - the gap was structural, so the fix had to be too.' },
+          { key:'B', text:'Require evidence-based ratings drawn from written artifacts (shipped work, docs, async updates) - not from live visibility.',
+            verdict:'the structural fix that worked', verdictColor:'#34d399',
+            what:'If the bias comes from rating <strong>visibility</strong>, the fix is to rate <strong>evidence</strong> instead. NovaBuild required every rating to be grounded in artifacts - code shipped, docs written, async updates, measurable outcomes - things that exist regardless of time zone. Suddenly APAC\'s "invisible" overnight work was just as documented as anyone\'s. The proximity advantage evaporated because proximity stopped being the input.',
+            actual:'This is what NovaBuild did - anchoring ratings in async, written evidence that exists independent of when leadership is awake. The gap closed.' },
+          { key:'C', text:'Rotate leadership working hours so they overlap with APAC regularly.',
+            verdict:'helps, but band-aids the cause', verdictColor:'#fbbf24',
+            what:'More overlap with APAC is genuinely good for connection - but it doesn\'t fix the root problem that ratings depend on being <em>seen</em> at all. You\'d improve one region\'s visibility while leaving the underlying "I rate what I witness" instinct intact for the next distributed team. Treat the cause, not the symptom.',
+            actual:'NovaBuild did improve overlap for connection - but the rating fix was anchoring judgment in evidence, not presence.' },
+          { key:'D', text:'Apply a +0.7 correction factor to all APAC ratings to close the statistical gap.',
+            verdict:'fakes fairness, fixes nothing', verdictColor:'#f87171',
+            what:'A blanket correction factor papers over the gap without addressing why it exists - and it\'s unfair in both directions, over-rewarding weak APAC performers and under-recognising strong ones. You\'d replace one distortion with another and learn nothing about the real cause.',
+            actual:'A mechanical correction would have hidden the symptom while leaving the proximity bias fully operational underneath.' }
+        ] },
+
+      { type:'beat', kicker:'What they did',
+        head:'They rated the evidence, not the eyeballs.',
+        body:'NovaBuild rebuilt its rating process around a single principle: <strong>a rating must be grounded in artifacts, not impressions.</strong> Shipped work, written docs, async updates, measurable outcomes - evidence that exists independent of when the decision-maker happens to be online. Live visibility stopped being a proxy for performance. Within one cycle, the APAC gap narrowed sharply, not because anyone\'s work changed, but because <strong>the work was finally being judged on what it was, not on whether leadership had watched it happen.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'In remote teams, visibility masquerades as performance.', rest:'Whoever managers see least, they unconsciously rate lowest - regardless of actual output.' },
+          {strong:'Proximity bias is structural, so the fix must be structural.', rest:'Awareness training fades; anchoring ratings in evidence removes the bias at its source.' },
+          {strong:'Rate artifacts, not impressions.', rest:'Written, async evidence exists regardless of time zone - it levels the playing field automatically.' },
+          {strong:'Correction factors hide problems; they don\'t solve them.', rest:'Statistical patches mask the symptom while leaving the underlying bias fully intact.' }
+        ] },
+
+      { type:'closing',
+        head:'Find the proximity bias in your own ratings.',
+        sub:'Use DEI Analytics to break ratings down by region and team - and surface the time-zone gap NovaBuild almost missed.',
+        primary:{label:'Open DEI Analytics', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'In remote teams, visibility masquerades as performance.',
+        'Proximity bias is structural, so the fix must be structural.',
+        'Rate artifacts, not impressions.',
+        'Correction factors hide problems; they don\'t solve them.'
+      ],
+      sections:[
+        { h:null, p:['NovaBuild was proudly remote-first: 95 people across 14 countries. The leadership team sat mostly in one region. When the annual ratings came back, a pattern emerged nobody had designed: employees in APAC - the time zone furthest from leadership - were consistently rated about 0.7 of a point lower than everyone else.'] },
+        { h:'The mechanism', p:['The bias had a simple, human cause: proximity. APAC employees overlapped least with leadership\'s hours. They were in fewer live conversations, so their contributions were less visible - and managers unconsciously rated visibility as performance. The work was just as good. It simply happened while the decision-makers were asleep.'], quote:'"My manager never saw me work. He saw my pull requests merge overnight while he slept and read that as \'less engaged.\' I wasn\'t less engaged. I was eight hours ahead." - Senior Engineer, APAC' },
+        { h:'What they did', p:['NovaBuild rebuilt its rating process around a single principle: a rating must be grounded in artifacts, not impressions. Shipped work, docs, async updates, measurable outcomes - evidence that exists independent of when the decision-maker is online.','Within one cycle, the APAC gap narrowed sharply - not because anyone\'s work changed, but because it was finally being judged on what it was, not on whether leadership had watched it happen.'] }
+      ]
+    }
+  },
+
+  'post-merger-crisis': {
+    company:'Meridian + Apex', industry:'Professional Services', outcome:'cautionary',
+    accent:'#ef4444',
+    title:'Two Rating Scales, One Culture War',
+    standfirst:'One company rated on a 5-point scale. The other used 3 points. The merger made them one company overnight. The first combined performance review cycle made them enemies - because nobody had asked what a "good" rating even meant anymore.',
+    meta:['Professional Services','Cautionary tale','Post-merger collision'],
+    scenes:[
+      { type:'beat', kicker:'The merger',
+        head:'Two companies. Two scales. One review cycle.',
+        body:'When Meridian and Apex merged, leadership integrated the obvious things - payroll, email, branding, office space. What nobody flagged as urgent was the <strong>performance rating scale</strong>. Meridian had always used a generous 5-point scale where most strong performers landed at 4. Apex used a stricter 3-point scale where a 3 was reserved for the genuinely exceptional. On paper, a trivial difference. In practice, <strong>a buried landmine set to go off at the first combined review cycle.</strong>' },
+
+      { type:'beat', kicker:'The collision',
+        head:'The same number meant opposite things.',
+        body:'When the merged company ran its first unified review, the scales were crudely mapped together - and chaos followed. Apex employees, used to a 3 meaning "outstanding," suddenly saw their 3s sitting alongside Meridian 3s that meant "merely adequate." Meridian people who\'d always gotten 4s now looked inflated next to Apex\'s hard-earned 3s. <strong>Everyone felt cheated, and everyone was technically right</strong> - because the company had merged two languages without agreeing on a dictionary. The "ex-Apex vs ex-Meridian" resentment hardened into open factionalism.' },
+
+      { type:'quote',
+        quote:'"A 3 was the proudest rating of my career at Apex. After the merger, a 3 made me look average. Nobody changed my work. They just changed what the number meant - and didn\'t tell anyone."',
+        attr:' - Senior Consultant, formerly Apex' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'Two merged companies, two incompatible rating scales, one cycle away. What do you do?',
+        setup:'You\'re leading People integration. The first combined review cycle is approaching fast. Both legacy scales are still in people\'s heads and emotions. What\'s your move before the cycle hits?',
+        choices:[
+          { key:'A', text:'Map the old scales together with a conversion formula and run the cycle on schedule.',
+            verdict:'the move that started the war', verdictColor:'#f87171',
+            what:'A mechanical conversion ignores that the two scales encode totally different <strong>meanings and cultures</strong>, not just different numbers. Mapping 3→4 or 5→3 on a spreadsheet doesn\'t translate "what good looks like" - it just collides two value systems and lets each side feel robbed. This is exactly how Meridian+Apex turned a merger into factions.',
+            actual:'This is essentially what happened - a crude mapping run under time pressure, which detonated the cultural integration.' },
+          { key:'B', text:'Pause, co-design ONE new shared scale with clear definitions, and explicitly re-onboard everyone to what each level means before any cycle runs.',
+            verdict:'the integration that holds', verdictColor:'#34d399',
+            what:'The real problem isn\'t the numbers - it\'s that the two halves of the company don\'t share a <strong>definition of good</strong>. You have to build one new scale, define each level with concrete examples, and re-onboard <em>both</em> legacy populations to it as equals. It\'s slower, and it may mean delaying the first cycle - but it\'s the only path that makes the merged company one organisation instead of two tribes sharing a logo.',
+            actual:'The lesson in hindsight: a merger of rating systems is a merger of meanings. One co-designed scale, taught to everyone, is the only thing that prevents the culture war.' },
+          { key:'C', text:'Let each legacy group keep its own scale for the first year to ease the transition.',
+            verdict:'delays and entrenches the divide', verdictColor:'#fbbf24',
+            what:'Running two scales in one company doesn\'t ease anything - it <strong>institutionalises the us-vs-them split</strong> and makes cross-company comparison (for promotions, pay, calibration) impossible. You\'d be postponing the hard conversation while making the eventual reconciliation even messier.',
+            actual:'Parallel scales would have hard-wired the factional divide into the company\'s structure for a full year.' },
+          { key:'D', text:'Adopt whichever scale the larger legacy company used - majority wins.',
+            verdict:'wins on optics, loses on trust', verdictColor:'#fbbf24',
+            what:'Imposing the bigger company\'s scale signals to the smaller side that the "merger" was really an <strong>acquisition where their culture loses</strong>. Even if the scale itself is fine, the message - your way of measuring worth doesn\'t count - poisons the integration. Co-design beats conquest.',
+            actual:'Defaulting to the larger company\'s scale would have read as cultural takeover, deepening the resentment rather than resolving it.' }
+        ] },
+
+      { type:'beat', kicker:'The aftermath',
+        head:'A landmine that was entirely avoidable.',
+        body:'The factionalism that followed Meridian+Apex\'s first review cycle took far longer and cost far more to heal than simply pausing to build a shared scale ever would have. Trust between the two legacy halves fractured along rating lines. Top performers on the "losing" side of the conversion left, convinced the merger had quietly downgraded them. The bitter irony: <strong>the integration team had carefully merged every system that was easy to see - and missed the one that lived in people\'s sense of their own worth.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'A rating scale is a language, not a number.', rest:'Merging scales means merging meanings - a 3 on one scale and a 3 on another can be opposites.' },
+          {strong:'You can\'t convert your way out of a culture clash.', rest:'A conversion formula maps numbers; it doesn\'t reconcile two different definitions of "good."' },
+          {strong:'Co-design beats conquest.', rest:'Imposing one side\'s scale reads as an acquisition of worth - build one new shared scale together instead.' },
+          {strong:'The dangerous integration gaps are the invisible ones.', rest:'Payroll and email are easy to merge. The systems tied to people\'s sense of their own value are where mergers actually fracture.' }
+        ] },
+
+      { type:'closing',
+        head:'Design one scale everyone can trust.',
+        sub:'Use the Calibration and Rating tools to build clear, shared definitions of each level - the dictionary Meridian+Apex never wrote.',
+        primary:{label:'Open the Calibration Simulator', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'A rating scale is a language, not a number - merging scales means merging meanings.',
+        'You can\'t convert your way out of a culture clash.',
+        'Co-design beats conquest - build one new shared scale together.',
+        'The dangerous integration gaps are the invisible ones.'
+      ],
+      sections:[
+        { h:null, p:['When Meridian and Apex merged, leadership integrated the obvious things - payroll, email, branding. What nobody flagged as urgent was the performance rating scale. Meridian used a generous 5-point scale where strong performers landed at 4. Apex used a stricter 3-point scale where a 3 was reserved for the exceptional. On paper, trivial. In practice, a buried landmine.'] },
+        { h:'The collision', p:['When the merged company ran its first unified review, the scales were crudely mapped together and chaos followed. Apex employees used to a 3 meaning "outstanding" saw their 3s sitting next to Meridian 3s meaning "adequate." Everyone felt cheated, and everyone was technically right - because the company had merged two languages without agreeing on a dictionary.'], quote:'"A 3 was the proudest rating of my career at Apex. After the merger, it made me look average. Nobody changed my work. They just changed what the number meant - and didn\'t tell anyone." - Senior Consultant, formerly Apex' },
+        { h:'The aftermath', p:['The factionalism took far longer and cost far more to heal than pausing to build a shared scale would have. Top performers on the "losing" side of the conversion left, convinced the merger had downgraded them.','The bitter irony: the integration team had carefully merged every system that was easy to see - and missed the one that lived in people\'s sense of their own worth.'] }
+      ]
+    }
+  },
+
+  'ipo-pressure-cooker': {
+    company:'Luminary Labs', industry:'SaaS / Pre-IPO', outcome:'success',
+    accent:'#34d399',
+    title:'Performance Management in 90 Days',
+    standfirst:'The S-1 filing was 90 days out. The investment bank asked Luminary Labs to describe its performance and talent framework. There wasn\'t one. What followed - under brutal time pressure - became the most instructive talent conversation the leadership team had ever had.',
+    meta:['SaaS / Pre-IPO','90 days to S-1','High-stakes sprint'],
+    scenes:[
+      { type:'beat', kicker:'The pressure',
+        head:'The one question the bankers always ask.',
+        body:'Luminary Labs was sprinting toward an IPO. The product was strong, revenue was real, the deck was polished. Then, during diligence, the investment bank asked the question that exposes every fast-grown company: <strong>"Walk us through your performance management and key-talent retention framework."</strong> Luminary didn\'t have one. With 90 days to the S-1, this wasn\'t a nice-to-have - public-market investors price <strong>talent risk</strong>, and "we have no system" is a discount on your valuation.' },
+
+      { type:'bigstat', num:'90', label:'Days to the S-1 filing. <strong>Zero</strong> formal performance framework. The forcing function that turned a gap into the leadership team\'s sharpest talent conversation.' },
+
+      { type:'beat', kicker:'The realisation',
+        head:'The deadline forced a clarity they\'d avoided.',
+        body:'Under the gun, Luminary\'s leadership couldn\'t do what they\'d always done - defer the messy people questions. The IPO clock forced them to answer things they\'d dodged for years: <strong>Who are our genuinely critical people? What happens to the company if any of them leaves next month? How do we even know who\'s performing?</strong> The pressure didn\'t create the talent risk - it had been there all along. It just made it <strong>impossible to keep ignoring.</strong>' },
+
+      { type:'quote',
+        quote:'"The bankers didn\'t want a perfect HR system in 90 days - they\'re not naive. They wanted proof we knew who our critical people were and had a credible plan to keep them. That question taught us more about our own company than two years of growth had."',
+        attr:' - CEO, Luminary Labs' },
+
+      { type:'decision',
+        tag:'Your turn',
+        q:'90 days to S-1, no framework. What do you prioritise?',
+        setup:'You\'re brought in to fix this fast. The temptation is to build a comprehensive enterprise system to impress the bankers. But you have 90 days and a company that\'s never had process. What do you focus on first?',
+        choices:[
+          { key:'A', text:'Build a full, sophisticated enterprise PMS to show the bank a mature, complete system.',
+            verdict:'impressive on paper, hollow underneath', verdictColor:'#fbbf24',
+            what:'A elaborate framework slapped together in 90 days is theatre - and sophisticated investors see through theatre. Worse, you\'d be presenting a system nobody actually uses, which is a <strong>credibility risk</strong> if diligence digs even one layer down. Depth you can\'t demonstrate is worse than honest simplicity.',
+            actual:'Luminary resisted building an elaborate facade - the bankers wanted credibility, not complexity.' },
+          { key:'B', text:'Focus first on identifying critical talent and a credible retention plan, then a simple, real performance framework around it.',
+            verdict:'exactly what the moment needs', verdictColor:'#34d399',
+            what:'The bank\'s actual concern is <strong>talent risk</strong>: if your key people walk after the IPO, the investment thesis breaks. So you lead with what matters most - a clear-eyed map of your critical people and a real plan to retain them - then build a simple, genuine performance framework around it. It\'s honest, it\'s achievable in 90 days, and it answers the question they\'re actually asking.',
+            actual:'This is what Luminary did - critical-talent identification and retention first, wrapped in a lightweight but real performance framework. The diligence conversation became a strength, not a liability.' },
+          { key:'C', text:'Buy an off-the-shelf HR platform and point to it as evidence of a system.',
+            verdict:'a tool is not a framework', verdictColor:'#fbbf24',
+            what:'Purchasing software answers "do you have a tool" but not "do you understand and manage your talent" - which is the real question. A platform with no thinking behind it is an empty box with a logo. The bankers want to see <strong>judgment</strong>, not a procurement receipt.',
+            actual:'Luminary knew a tool wouldn\'t substitute for actually understanding their talent landscape.' },
+          { key:'D', text:'Delay the IPO timeline to build the framework properly over six months.',
+            verdict:'over-corrects, misses the point', verdictColor:'#fbbf24',
+            what:'Slipping an IPO to build a perfect HR system is the tail wagging the dog - and signals you can\'t execute under pressure, which itself spooks investors. The bank never asked for perfection in 90 days; they asked for evidence of <strong>credible understanding and a plan</strong>. That\'s achievable on schedule.',
+            actual:'Luminary hit the timeline - the point was a credible, honest framework, not a delayed perfect one.' }
+        ] },
+
+      { type:'beat', kicker:'What they built',
+        head:'Credible, honest, and done in time.',
+        body:'Luminary built exactly what the moment required: a clear map of their <strong>critical talent</strong>, a concrete retention plan for the people the company couldn\'t afford to lose, and a <strong>simple, genuinely-used performance framework</strong> around it - real role expectations, real check-ins, real rating definitions. No enterprise bloat, no theatre. When the bankers asked their question, leadership answered with clarity and evidence. The framework didn\'t just satisfy diligence - <strong>it made Luminary a better-run company on the other side of the IPO.</strong>' },
+
+      { type:'lesson', tag:'What this teaches',
+        items:[
+          {strong:'A deadline is a clarity-forcing function.', rest:'The IPO clock made Luminary answer talent questions it had dodged for years - pressure surfaced what comfort had hidden.' },
+          {strong:'Investors price talent risk, not HR sophistication.', rest:'The real question is "who are your critical people and how do you keep them" - not "how elaborate is your system."' },
+          {strong:'Credibility beats complexity under scrutiny.', rest:'A simple framework you actually use beats an impressive one you can\'t demonstrate. Sophisticated investors see through theatre.' },
+          {strong:'A tool is not a framework.', rest:'Buying software answers "do you have a system" but not "do you understand your talent" - and judgment is what\'s being assessed.' }
+        ] },
+
+      { type:'closing',
+        head:'Map your critical talent before someone asks.',
+        sub:'Use the Succession and Manager Report Card tools to identify flight risk and key-person dependency - the questions Luminary answered just in time.',
+        primary:{label:'Open the Succession tool', href:'/pages/scenarios.html'},
+        secondary:{label:'Next case study →', href:'/pages/case-studies.html'} }
+    ],
+    textVersion:{
+      lessonsTitle:'The four lessons',
+      lessons:[
+        'A deadline is a clarity-forcing function.',
+        'Investors price talent risk, not HR sophistication.',
+        'Credibility beats complexity under scrutiny.',
+        'A tool is not a framework - judgment is what\'s being assessed.'
+      ],
+      sections:[
+        { h:null, p:['Luminary Labs was sprinting toward an IPO. The product was strong, revenue real, deck polished. Then the investment bank asked the question that exposes every fast-grown company: "Walk us through your performance management and key-talent retention framework." Luminary didn\'t have one. With 90 days to the S-1, "we have no system" is a discount on your valuation.'] },
+        { h:'The realisation', p:['Under the gun, leadership couldn\'t defer the messy people questions any longer. The IPO clock forced them to answer things they\'d dodged for years: Who are our genuinely critical people? What happens if any of them leaves next month? The pressure didn\'t create the talent risk - it just made it impossible to keep ignoring.'], quote:'"The bankers didn\'t want a perfect HR system in 90 days. They wanted proof we knew who our critical people were and had a plan to keep them. That question taught us more about our company than two years of growth had." - CEO' },
+        { h:'What they built', p:['Luminary built exactly what the moment required: a clear map of their critical talent, a concrete retention plan, and a simple, genuinely-used performance framework around it. No enterprise bloat, no theatre.','When the bankers asked their question, leadership answered with clarity and evidence. The framework didn\'t just satisfy diligence - it made Luminary a better-run company on the other side of the IPO.'] }
+      ]
+    }
+  }
+,
+
+  /* ── CASE 13 ── Central Workforce Agency ─────────────────────────────── */
+  'civil-service-ceiling':{
+    meta:{
+      title:'The Ceiling Nobody Talks About',
+      company:'Central Workforce Agency', industry:'Government / Public Sector', outcome:'success',
+      tier:'pro', slug:'civil-service-ceiling',
+      hook:'A performance system that couldn\'t fire anyone. Couldn\'t pay anyone more. Couldn\'t promote anyone faster. And yet - it worked.',
+      standfirst:'When the usual performance levers don\'t exist, most HR leaders give up and call it "the system." One Head of People decided to find out what was actually left - and discovered it was enough.'
+    },
+    scenes:[
+      { type:'narrative', kicker:'The brief',
+        body:'The Central Workforce Agency had 1,400 employees, a union agreement that effectively prohibited dismissal for underperformance, a pay spine so rigid that exceptional performance earned the same increment as adequate performance, and a promotion system tied entirely to tenure and vacancy. When the new Head of People asked her leadership team what consequences existed for poor performance, the room went quiet. <strong>The honest answer was: none.</strong>' },
+      { type:'stat', kicker:'The reality check',
+        stat:'94%', statLabel:'of employees received "meets expectations" or above - for eleven consecutive years',
+        body:'Not because CWA had hired eleven years\' worth of exceptional people. Because the system had made honest rating a pointless exercise. Why rate someone "needs improvement" when nothing can follow from it? Managers had quietly concluded that candour served no one and filed it away.' },
+      { type:'narrative', kicker:'The trap',
+        body:'It\'s the most seductive trap in public-sector people management: <strong>blame the constraints.</strong> "I can\'t pay them more. I can\'t promote them faster. I can\'t exit them. There\'s nothing I can do." And so nothing gets done. Performance conversations become compliance rituals. Development becomes a box-tick. The organisation flatlines - not because the people are mediocre, but because no one ever told them what great looked like, <em>or made it matter.</em>' },
+      { type:'pullquote',
+        quote:'"Every system has constraints. The question is what you build inside them - not whether you\'re going to complain about them." - Head of People, CWA',
+        attribution:'Head of People, Central Workforce Agency' },
+      { type:'narrative', kicker:'The reframe',
+        body:'The Head of People stopped asking what was blocked and started asking what wasn\'t. Pay: blocked. Promotion speed: blocked. Dismissal: effectively blocked. But <strong>visibility wasn\'t blocked. Recognition wasn\'t blocked. Assignment quality wasn\'t blocked. Development investment wasn\'t blocked. Feedback frequency wasn\'t blocked.</strong> And - critically - which manager someone worked for wasn\'t blocked. She had more tools than she\'d realised. She\'d just stopped looking when she hit the first wall.' },
+      { type:'decision',
+        setup:'You\'re the Head of People. The union agreement is immovable. Pay and promotion timelines are fixed. What\'s your opening move to make performance management meaningful again?',
+        options:[
+          { label:'Launch a formal "recognition and visibility" programme - high performer of the quarter, public praise, named in leadership briefings',
+            what:'Visibility and public recognition are real motivators - but leading with a programme rather than a system makes recognition feel like a PR exercise. It helps the top 10% without changing the daily experience of the 90%.', right:false,
+            actual:'CWA did eventually add recognition elements - but as a layer on top of a rebuilt framework, not as the first move.' },
+          { label:'Rebuild the performance conversation itself - clear role expectations, quarterly structured check-ins, feedback that\'s developmental not evaluative',
+            what:'When extrinsic rewards are locked, the quality of the relationship and conversation becomes the lever. Rebuilding the framework around genuine development - not consequence - turns the constraint into the design principle. This is what actually changes the day-to-day experience for 1,400 people.',  right:true,
+            actual:'This is exactly what CWA\'s Head of People did. The system couldn\'t reward - so she built one designed to develop.' },
+          { label:'Focus exclusively on the top 15% - fast-track development programmes, stretch assignments, acting-up opportunities',
+            what:'Investing in high performers inside constrained systems is smart - but it leaves 85% of the organisation unchanged and often increases the cynicism of those excluded. The flatline continues for most people.', right:false,
+            actual:'CWA did create stretch opportunities - but as part of a universal rebuild, not a VIP lane.' },
+          { label:'Work with unions to renegotiate the performance-consequence link over the next two years',
+            what:'Renegotiation is a legitimate long game - but it\'s a two-year project that leaves this year\'s 1,400 people in exactly the same system. The constraint you can\'t move in the short term shouldn\'t stop you building inside it now.', right:false,
+            actual:'CWA eventually opened a dialogue with unions - but did not wait for it. The rebuild started immediately.' }
+        ] },
+      { type:'stat', kicker:'The result - three years on',
+        stat:'71%', statLabel:'of managers said they now "regularly have genuine development conversations" - up from 18%',
+        body:'Not a single contractual term changed. The pay spine stayed fixed. The union agreement was unchanged. But the culture of performance had shifted - because the conversations underneath it had changed. <strong>When you can\'t change the consequences, you change the meaning.</strong>' },
+      { type:'lessons',
+        items:[
+          { icon:'⛓️', h:'Constraints are the design brief', p:'Every system has them. Public-sector constraints are just more visible. The question is never whether constraints exist - it\'s whether you design inside them or use them as an excuse.' },
+          { icon:'💬', h:'The conversation IS the intervention', p:'When extrinsic rewards are locked, the quality and frequency of the developmental conversation becomes the entire performance system. Most organisations underinvest here even when rewards are available.' },
+          { icon:'👁️', h:'Visibility is not a reward - it\'s a right', p:'Every employee deserves to know clearly how they\'re performing and what growth looks like for them. This costs nothing contractually. It is not blocked by any union agreement. And it is almost universally absent.' },
+          { icon:'🔄', h:'Flatline is a choice', p:'Organisations that flatline on performance don\'t do so because constraints made candour impossible. They do so because leaders decided the effort wasn\'t worth it when no consequence would follow. That\'s a values call, not a structural one.' }
+        ] },
+      { type:'cta',
+        heading:'Build performance conversations that work without the usual levers',
+        sub:'Use the Manager Dashboard and 360° Feedback tools to design a development-led performance framework - no pay or promotion changes required.',
+        ctaLabel:'Try the Manager Dashboard', ctaHref:'#manager-dashboard' },
+      { type:'textmode',
+        sections:[
+          { h:null, p:['Central Workforce Agency had 1,400 employees, a union agreement that effectively prohibited dismissal for underperformance, a pay spine so rigid that exceptional and adequate performance earned the same increment, and a promotion system tied entirely to tenure. When the Head of People asked what consequences existed for poor performance, the room went quiet.'] },
+          { h:'The ceiling', p:['94% of employees had received "meets expectations" or above for eleven consecutive years. Not because CWA had hired eleven years of exceptional people. Because managers had quietly concluded that candour served no one - and filed it away.','The trap: blame the constraints. "I can\'t pay more, I can\'t promote faster, I can\'t exit." And so nothing gets done. The organisation flatlines not because the people are mediocre, but because no one made great performance matter.'] },
+          { h:'The reframe', p:['The Head of People stopped asking what was blocked and started asking what wasn\'t. Pay: blocked. Promotion speed: blocked. But visibility wasn\'t blocked. Recognition wasn\'t blocked. Assignment quality wasn\'t blocked. Development investment wasn\'t blocked. Feedback frequency wasn\'t blocked. She had more tools than she\'d realised.'] },
+          { h:'What they built', p:['CWA rebuilt its performance system from scratch - not around consequences, but around development. Clear role expectations for every position. Quarterly structured check-ins focused on growth, not evaluation. Feedback that was genuinely developmental. Stretch assignments allocated through a transparent system. Manager coaching on how to have real conversations.','Three years on: 71% of managers said they now regularly had genuine development conversations - up from 18%. Not a single contractual term changed. The culture shifted because the conversations underneath it had changed.'] }
+        ]
+      }
+    ]
+  },
+
+  /* ── CASE 14 ── Pulse Media ──────────────────────────────────────────── */
+  'gen-z-review-revolt':{
+    meta:{
+      title:'The Review They Called "Dehumanising"',
+      company:'Pulse Media', industry:'Digital Media / Publishing', outcome:'success',
+      tier:'pro', slug:'gen-z-review-revolt',
+      hook:'Their Gen Z workforce didn\'t just dislike the annual review. They named it, publicly, in a company all-hands: "dehumanising."',
+      standfirst:'When a third of your workforce uses the word "dehumanising" to describe your core people process, you have two choices: defend the process or understand the generation. Pulse Media chose to understand.'
+    },
+    scenes:[
+      { type:'narrative', kicker:'The all-hands moment',
+        body:'It was supposed to be a routine quarterly all-hands. The People team had added a segment on "performance culture" to gather input before the annual review cycle. <strong>They got more input than they expected.</strong> A 24-year-old video producer put her hand up and said, calmly and clearly: "I want to be honest - I find the annual review genuinely dehumanising. I\'m rated on a number. Nobody explains what the number means or how I can change it. And then twelve months pass before anyone formally asks how I\'m doing. It doesn\'t feel like development. It feels like judgment."' },
+      { type:'stat', kicker:'The data behind the moment',
+        stat:'34%', statLabel:'of employees aged 18–27 described the annual review as "stressful but useless" in the post-all-hands pulse survey',
+        body:'Not a vocal minority. A third of the demographic that Pulse Media depended on for its next decade of content creation and audience growth. The Head of People looked at that number and made a decision: <strong>this isn\'t a communication problem. It\'s a design problem.</strong>' },
+      { type:'narrative', kicker:'What Gen Z was actually saying',
+        body:'It would have been easy to dismiss this as entitlement - "they just don\'t like being assessed." But the Head of People went deeper. She ran three focus groups, and what emerged was more specific and more useful than she\'d expected. <strong>Gen Z employees weren\'t rejecting accountability.</strong> They were rejecting infrequency, opacity, and disconnection from growth. They wanted to know how they were doing - more often, not less. They wanted the criteria to be legible. They wanted feedback that connected to their development, not just their rating. <em>They wanted a system that treated them like professionals, not outputs.</em>' },
+      { type:'pullquote',
+        quote:'"We don\'t hate being assessed. We hate being assessed once a year, by a number, with no explanation, and then being told that\'s our development for the year."',
+        attribution:'Focus group participant, age 23, Pulse Media' },
+      { type:'bars', kicker:'What Pulse\'s annual review was vs. what Gen Z employees wanted',
+        vizTitle:'Pulse Media: the design gap', vizSub:'Gen Z satisfaction score - current process (out of 10)',
+        bars:[
+          { lbl:'Feedback\nfrequency', val:2, color:'#ef4444' },
+          { lbl:'Criteria\nclarity', val:3, color:'#ef4444' },
+          { lbl:'Linked to\ngrowth', val:2, color:'#ef4444' },
+          { lbl:'Felt like a\nconversation', val:1, color:'#ef4444' },
+          { lbl:'Actionable\noutput', val:2, color:'#ef4444' }
+        ],
+        caption:'Every dimension rated <strong>1–3 out of 10</strong> on current process. Gen Z expectation on every dimension: <strong>8–9 out of 10</strong>. This is not a communication gap - it is a design gap.' },
+      { type:'decision',
+        setup:'You\'re Head of People at Pulse Media. A third of your Gen Z workforce called the annual review dehumanising. What\'s your redesign principle?',
+        options:[
+          { label:'Abolish annual reviews entirely - replace with continuous informal feedback and quarterly career conversations',
+            what:'Abolishing structure entirely sounds radical and Gen-Z-friendly - but without some structured touchpoint, feedback becomes inconsistent across managers. The Gen Z critique was about quality and frequency, not about structure existing at all. Pure informality often serves the loudest voices and ignores the quietest.', right:false,
+            actual:'Pulse Media retained a light annual summary - but radically reduced its weight and changed its purpose.' },
+          { label:'Keep the annual review but add a rating explanation session - managers must justify every rating in a 30-minute 1:1',
+            what:'Explanation improves transparency - but it\'s still one conversation per year, still built around a rating. It addresses the "opacity" complaint without addressing "infrequency" or "disconnection from growth." It\'s a patch, not a redesign.', right:false,
+            actual:'Pulse added explanation - but as a feature of a redesigned system, not as the system itself.' },
+          { label:'Redesign around frequency + growth - quarterly check-ins as the primary rhythm, annual review becomes a light summary not a singular event',
+            what:'This addresses the actual diagnosis: infrequency, opacity, disconnection from growth. The annual review stops being an event you survive and becomes a summary of four conversations that have already happened. Rating has context because development has context. This is what the Gen Z critique was actually calling for.', right:true,
+            actual:'Exactly what Pulse did. Four quarterly check-ins, each developmental. The annual "review" became a five-minute summary sign-off.' },
+          { label:'Run a full co-design process - six months of working groups to design the ideal Gen-Z-first performance system from scratch',
+            what:'Co-design builds buy-in - but six months of working groups while the current "dehumanising" system continues for another cycle often generates cynicism faster than it builds trust. Speed of action matters when trust is broken.', right:false,
+            actual:'Pulse did involve a working group - but set a 60-day design sprint, not a six-month process.' }
+        ] },
+      { type:'narrative', kicker:'The redesign',
+        body:'Pulse Media rebuilt its performance rhythm around four quarterly check-ins: <strong>a 45-minute conversation, focused entirely on growth, progress, and blockers.</strong> No rating in the quarterly. No forms. Just a structured conversation with three anchoring questions. The annual review became exactly what it should have always been - a five-minute sign-off and light summary of the four conversations that had already happened. <strong>The rating didn\'t disappear. It just stopped being the point.</strong>' },
+      { type:'stat', kicker:'One cycle later',
+        stat:'79%', statLabel:'of Gen Z employees rated the redesigned system as "useful to my development" - up from 21%',
+        body:'The word "dehumanising" didn\'t appear once in the follow-up survey. Not because the People team had policed the language. Because the experience had changed. <strong>The system had been built around the human, not around the HR calendar.</strong>' },
+      { type:'lessons',
+        items:[
+          { icon:'🎯', h:'Gen Z isn\'t rejecting accountability - they\'re rejecting bad design', p:'The critique isn\'t "don\'t assess us." It\'s "assess us well - frequently, transparently, and in connection with our growth." That\'s a higher bar, not a lower one.' },
+          { icon:'📆', h:'Frequency is the intervention', p:'One conversation per year means the rating arrives with no context and no runway. Four conversations per year means the annual summary lands in a relationship that has been built and maintained. Context changes everything.' },
+          { icon:'🔍', h:'Opacity is a choice', p:'If an employee can\'t articulate why they received the rating they received, and what they\'d need to do to receive a higher one, the system has failed - regardless of how sophisticated the rubric is.' },
+          { icon:'⚡', h:'Speed of response signals seriousness', p:'When an all-hands surfaces a 34% dissatisfaction rate and the People team acts within 60 days, it signals that feedback is real. When it takes eighteen months, it signals that feedback is theatre.' }
+        ] },
+      { type:'cta',
+        heading:'Redesign your performance rhythm before your best people vote with their feet',
+        sub:'Use the 360° Feedback and Manager Dashboard tools to build a quarterly check-in rhythm that Gen Z - and everyone else - will actually find useful.',
+        ctaLabel:'Try 360° Feedback', ctaHref:'#360-feedback' },
+      { type:'textmode',
+        sections:[
+          { h:null, p:['At a routine quarterly all-hands, a 24-year-old Pulse Media video producer said clearly: "I find the annual review genuinely dehumanising. I\'m rated on a number. Nobody explains what it means or how I can change it. And then twelve months pass before anyone formally asks how I\'m doing."'] },
+          { h:'The data', p:['A post-all-hands pulse survey found that 34% of employees aged 18–27 described the annual review as "stressful but useless." The Head of People ran three focus groups. What emerged was specific: Gen Z employees weren\'t rejecting accountability. They were rejecting infrequency, opacity, and disconnection from growth.'] },
+          { h:'The redesign', p:['Pulse rebuilt around four quarterly check-ins: a 45-minute developmental conversation with three anchoring questions, no rating, no forms. The annual review became a five-minute summary sign-off on the four conversations that had already happened.','One cycle later: 79% of Gen Z employees rated the redesigned system as "useful to my development" - up from 21%. The word "dehumanising" did not appear once in the follow-up survey.'] }
+        ]
+      }
+    ]
+  },
+
+  /* ── CASE 15 ── Axiom Insurance ──────────────────────────────────────── */
+  'consequence-free-ratings':{
+    meta:{
+      title:'When Ratings Stopped Meaning Anything',
+      company:'Axiom Insurance', industry:'Insurance / Financial Services', outcome:'cautionary',
+      tier:'pro', slug:'consequence-free-ratings',
+      hook:'Engagement dropped 19 points in one year. The culprit wasn\'t pay, or workload, or leadership. It was the moment employees realised their performance rating - excellent or poor - changed absolutely nothing.',
+      standfirst:'Quiet quitting didn\'t start with a decision to disengage. It started with a test: "Does what I do here matter?" At Axiom, the answer the system gave was no.'
+    },
+    scenes:[
+      { type:'narrative', kicker:'The 19-point drop',
+        body:'Axiom Insurance\'s annual engagement survey had been stable for four years - hovering in the 68–71% favourable range. When the 2023 results came in at 52%, the leadership team\'s first instinct was external: cost-of-living pressure, hybrid working friction, industry headwinds. But when they sliced the data by what actually correlated with disengagement, a single factor emerged with uncomfortable clarity. <strong>The employees who had disengaged most sharply were the ones who had been rated "Exceeds" or "Outstanding" for two or more consecutive years - and had received the same outcome as everyone else.</strong>' },
+      { type:'bars', kicker:'The engagement collapse - who disengaged most',
+        vizTitle:'Axiom Insurance: engagement drop by rating history', vizSub:'2023 engagement score by performance history (% favourable)',
+        bars:[
+          { lbl:'Outstanding\n2+ years', val:41, color:'#ef4444' },
+          { lbl:'Exceeds\n2+ years', val:47, color:'#f59e0b' },
+          { lbl:'Meets - \nconsistent', val:58, color:'#667eea' },
+          { lbl:'Below - \nall years', val:49, color:'#a78bfa' }
+        ],
+        caption:'The highest performers - rated Outstanding or Exceeds for two or more years - dropped to <strong>41% and 47% engaged</strong>. Consistent "Meets" employees held more ground. <strong>Quiet quitting started at the top.</strong>' },
+      { type:'narrative', kicker:'The test they ran - and the answer they got',
+        body:'It emerged from the focus groups in a form nobody expected. A senior underwriter - eleven years at Axiom, rated "Outstanding" three times in four years - said it plainly: <strong>"I ran an experiment. For six months last year I did exactly what was required and nothing more. My rating was the same. My pay increase was the same. My promotion timeline didn\'t change. I learned that Axiom doesn\'t actually need me to be exceptional - they just need me to be present."</strong> Three colleagues in the same focus group nodded. They had run versions of the same experiment.' },
+      { type:'pullquote',
+        quote:'"I ran an experiment. Six months of doing exactly what was required. My rating was the same. My increase was the same. I learned that Axiom doesn\'t actually need me to be exceptional - they just need me to be present."',
+        attribution:'Senior Underwriter, 11 years at Axiom Insurance' },
+      { type:'narrative', kicker:'How ratings become consequence-free',
+        body:'This doesn\'t happen through a single bad decision. It happens through the accumulation of small ones, over years. Pay budgets get compressed, and the delta between a 3% increase and a 4.5% increase feels negligible. Promotion cycles slow down and the relationship to rating blurs. Calibration sessions get cancelled or rushed. Managers stop defending their ratings under pressure because nobody is checking. <strong>One day, the rating is still being entered into the system - but it has stopped being connected to anything real. It\'s a formality everyone fills in and nobody believes.</strong>' },
+      { type:'decision',
+        setup:'You\'re CHRO at Axiom. Engagement has dropped 19 points. Your best people ran an experiment - and confirmed ratings don\'t matter. What\'s your first move?',
+        options:[
+          { label:'Relaunch engagement - a company-wide campaign around "Your voice matters," more frequent pulse surveys, visible leadership responses to feedback',
+            what:'Engagement campaigns address symptoms, not causes. If the underlying signal is "what I do here doesn\'t change anything," then a "your voice matters" campaign will be read as confirmation that the organisation knows there\'s a problem and is offering communication instead of change. It often makes cynicism worse.', right:false,
+            actual:'Axiom did increase communication - but only after changing the underlying structure that had disconnected ratings from outcomes.' },
+          { label:'Compress the performance distribution - mandate that managers force differentiation with a fixed bell curve to make ratings more meaningful',
+            what:'Forced distribution addresses the wrong problem. The issue isn\'t that managers are rating everyone highly - it\'s that high ratings aren\'t connected to different outcomes. A bell curve that still leads to the same pay delta and the same promotion timeline is still consequence-free; it\'s just consequence-free with more conflict.', right:false,
+            actual:'Axiom considered this. The CHRO rejected it as treating the symptom while leaving the cause.' },
+          { label:'Rebuild the consequence architecture - widen the pay delta between rating bands, create explicit links between rating and development investment, speed up promotion review for top performers',
+            what:'This addresses the actual diagnosis: when ratings stop being connected to differentiated outcomes, they stop meaning anything. Rebuilding the consequence architecture - even modestly - re-establishes the signal. "Exceptional" needs to feel different to live, or it becomes a fiction everyone agrees to perform.', right:true,
+            actual:'Exactly what Axiom\'s CHRO did. A wider pay delta, a top-performer development fund, and bi-annual promotion reviews for Outstanding-rated employees.' },
+          { label:'Exit the lowest performers - make it visible that "Below Expectations" has real consequences, which will signal to top performers that the system has teeth',
+            what:'Making consequences real at the bottom is necessary - but it doesn\'t solve the top-performer problem. High performers who have run their experiment and found ratings don\'t matter are not re-engaged by watching peers exit. They\'re re-engaged when their own exceptional performance is visibly, materially recognised.', right:false,
+            actual:'Axiom did address chronic underperformance - but recognised this was not the primary driver of the 19-point drop.' }
+        ] },
+      { type:'stat', kicker:'The cost of consequence-free ratings',
+        stat:'₹2.3 Cr', statLabel:'estimated annual productivity loss attributable to disengaged high performers - before a single resignation',
+        body:'Axiom\'s finance team ran the calculation. The 19-point engagement drop hadn\'t yet produced an unusual resignation spike. <strong>The cost was invisible - it was living inside the gap between what exceptional employees were capable of and what they had decided to deliver.</strong> Quiet quitting is expensive precisely because it\'s quiet.' },
+      { type:'lessons',
+        items:[
+          { icon:'🔗', h:'A rating without a consequence is a fiction', p:'The moment employees discover - empirically, through their own experiment - that their rating doesn\'t change anything material, the entire performance system collapses into administrative theatre. It keeps happening in the HRMS. It just stops being real.' },
+          { icon:'📉', h:'Quiet quitting starts at the top', p:'The conventional picture is disengagement among average or underperforming employees. The Axiom data shows the opposite: the most damaging disengagement was among consistent high performers. They disengage more completely, more invisibly, and more expensively than anyone else.' },
+          { icon:'💰', h:'The cost is invisible until it isn\'t', p:'Consequence-free ratings don\'t produce immediate resignations. They produce a slow, rational recalibration of effort to the level the organisation has signalled it requires. By the time resignations follow, the productivity loss has been running for years.' },
+          { icon:'📐', h:'The delta matters, even when it\'s small', p:'You don\'t need a dramatic pay difference between rating bands. You need a difference that is real enough that an "Outstanding" employee who compares their outcome to a "Meets" colleague feels the distinction. "Same but slightly more" has a threshold below which it signals sameness, not recognition.' }
+        ] },
+      { type:'cta',
+        heading:'Before your best people run their own experiment - run yours',
+        sub:'Use the Compensation Equity and Calibration tools to audit whether your rating bands are actually connected to differentiated outcomes - before the engagement drop tells you they\'re not.',
+        ctaLabel:'Try Compensation Equity', ctaHref:'#compensation-equity' },
+      { type:'textmode',
+        sections:[
+          { h:null, p:['Axiom Insurance\'s engagement score dropped from 70% to 52% in a single year. When the data was sliced, the sharpest disengagement was among employees rated "Exceeds" or "Outstanding" for two or more consecutive years. The best people had disengaged most.'] },
+          { h:'The experiment', p:['In a focus group, a senior underwriter explained what had happened: "I ran an experiment. For six months I did exactly what was required and nothing more. My rating was the same. My pay increase was the same. My promotion timeline didn\'t change. I learned that Axiom doesn\'t need me to be exceptional - they just need me to be present." Three colleagues nodded. They\'d run versions of the same test.'] },
+          { h:'How ratings become consequence-free', p:['It doesn\'t happen through a single bad decision. Pay deltas compress over budget cycles. Promotion timelines slow. Calibration sessions get rushed. One day the rating is still being entered - but it\'s no longer connected to anything real. It\'s a formality everyone performs and nobody believes.'] },
+          { h:'What happened next', p:['Axiom\'s CHRO rebuilt the consequence architecture: a wider pay delta between rating bands, a top-performer development fund, and bi-annual promotion reviews for Outstanding-rated employees. Engagement recovered to 64% the following year.','The lesson: quiet quitting is expensive precisely because it\'s quiet. Axiom\'s finance team estimated ₹2.3 crore in annual productivity loss was already running before a single resignation.'] }
+        ]
+      }
+    ]
+  }
+
+};
+
+/* ════════════════════════════════════════════
+   RESOLVE WHICH CASE TO LOAD
+   ════════════════════════════════════════════ */
+function getSlug(){
+  try {
+    var p=new URLSearchParams(window.location.search);
+    var s=p.get('slug');
+    if(s && CASES[s]) return s;
+  } catch(e){}
+  return 'techcorp-rating-inflation'; // flagship fallback
+}
+var SLUG=getSlug();
+var CASE=CASES[SLUG];
+
+/* ════════════════════════════════════════════
+   RENDER CINEMATIC MODE
+   ════════════════════════════════════════════ */
+var FREE_SLUGS = ['techcorp-rating-inflation','startupx-chaos-to-structure','financey-forced-ranking'];
+var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+
+function isPro(){
+  try{ return localStorage.getItem('viorah_plan')==='pro'; }catch(e){ return false; }
+}
+
+function esc(s){ return String(s==null?'':s); }
+
+function buildCinema(){
+  var c=CASE;
+  var html='';
+
+  // HERO scene
+  var badgeColor = c.outcome==='success' ? 'rgba(52,211,153,.18);color:#34d399;border:1px solid rgba(52,211,153,.3)' : 'rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.28)';
+  var badgeText = c.outcome==='success' ? '◆ Success Story' : '◆ Cautionary Tale';
+  html+='<div class="cse-scene" data-scene><div class="cse-scene-inner cse-hero">'+
+    '<div class="cse-hero-badge" style="background:'+badgeColor+'">'+badgeText+'</div>'+
+    '<div class="cse-hero-company">'+esc(c.company)+' · '+esc(c.industry)+'</div>'+
+    '<h1 class="cse-hero-title">'+esc(c.title)+'</h1>'+
+    '<p class="cse-hero-standfirst">'+esc(c.standfirst)+'</p>'+
+    '<div class="cse-hero-meta">'+c.meta.map(function(m){ return '<div class="cse-hero-metaitem">◦ '+esc(m)+'</div>'; }).join('')+'</div>'+
+    '<div class="cse-scroll-cue">↓ scroll to begin</div>'+
+  '</div></div>';
+
+  // SCENES
+  c.scenes.forEach(function(sc, idx){
+    html+='<div class="cse-scene" data-scene><div class="cse-scene-inner">'+renderScene(sc, idx)+'</div></div>';
+  });
+
+  document.getElementById('cse-cinema').innerHTML=html;
+}
+
+function renderScene(sc, idx){
+  if(sc.type==='beat'){
+    return (sc.kicker?'<div class="cse-kicker">'+esc(sc.kicker)+'</div>':'')+
+      '<h2 class="cse-beat-head">'+esc(sc.head)+'</h2>'+
+      '<div class="cse-beat-body">'+sc.body+'</div>';
+  }
+  if(sc.type==='quote'){
+    return '<blockquote class="cse-pullquote">'+esc(sc.quote)+
+      (sc.attr?'<span class="cse-pullquote-attr">'+esc(sc.attr)+'</span>':'')+'</blockquote>';
+  }
+  if(sc.type==='bigstat'){
+    return '<div class="cse-bigstat"><div class="cse-bigstat-num" data-bigstat>'+esc(sc.num)+'</div>'+
+      '<div class="cse-bigstat-label">'+sc.label+'</div></div>';
+  }
+  if(sc.type==='bars'){
+    var maxv=Math.max.apply(null, sc.bars.map(function(b){return b.val;}));
+    var bars=sc.bars.map(function(b){
+      var h=Math.round((b.val/maxv)*100);
+      return '<div class="cse-bar-col">'+
+        '<div class="cse-bar-val" style="color:'+b.color+'">'+b.val+'%</div>'+
+        '<div class="cse-bar" data-barh="'+h+'" style="background:linear-gradient(180deg,'+b.color+','+b.color+'aa);"></div>'+
+        '<div class="cse-bar-lbl">'+esc(b.lbl).replace(/\n/g,'<br>')+'</div>'+
+      '</div>';
+    }).join('');
+    return (sc.kicker?'<div class="cse-kicker">'+esc(sc.kicker)+'</div>':'')+
+      '<div class="cse-viz-wrap">'+
+        '<div class="cse-viz-title">'+esc(sc.vizTitle)+'</div>'+
+        '<div class="cse-viz-sub">'+esc(sc.vizSub)+'</div>'+
+        '<div class="cse-bars" data-bars>'+bars+'</div>'+
+        '<div class="cse-viz-caption">'+sc.caption+'</div>'+
+      '</div>';
+  }
+  if(sc.type==='people'){
+    var dots='';
+    for(var i=0;i<sc.total;i++){
+      var cls='cse-person';
+      if(i<sc.stars) cls+=' star';
+      dots+='<div class="'+cls+'" data-person="'+i+'"></div>';
+    }
+    return (sc.kicker?'<div class="cse-kicker">'+esc(sc.kicker)+'</div>':'')+
+      '<div class="cse-viz-wrap">'+
+        '<div class="cse-viz-title">'+esc(sc.vizTitle)+'</div>'+
+        '<div class="cse-viz-sub" style="margin-bottom:18px;"><span style="color:#34d399;">●</span> top performers &nbsp; <span style="color:#ef4444;">●</span> resigned</div>'+
+        '<div class="cse-people-grid" data-people="'+sc.stars+'">'+dots+'</div>'+
+        '<div class="cse-viz-caption">'+sc.caption+'</div>'+
+      '</div>';
+  }
+  if(sc.type==='decision'){
+    var choices=sc.choices.map(function(ch,ci){
+      return '<button class="cse-choice" id="cse-ch-'+ci+'" onclick="cseChoose('+ci+')">'+
+        '<div class="cse-choice-key">'+esc(ch.key)+'</div>'+
+        '<div>'+esc(ch.text)+'</div>'+
+      '</button>';
+    }).join('');
+    return '<div class="cse-decision">'+
+      '<div class="cse-decision-tag">⚡ '+esc(sc.tag)+'</div>'+
+      '<div class="cse-decision-q">'+esc(sc.q)+'</div>'+
+      '<div class="cse-decision-setup">'+esc(sc.setup)+'</div>'+
+      '<div class="cse-choices" id="cse-choices">'+choices+'</div>'+
+      '<div class="cse-reveal" id="cse-reveal"></div>'+
+    '</div>';
+  }
+  if(sc.type==='lesson'){
+    var items=sc.items.map(function(it){
+      return '<div class="cse-lesson-item"><div class="cse-lesson-check">✓</div><div><strong>'+esc(it.strong)+'</strong> '+it.rest+'</div></div>';
+    }).join('');
+    return '<div class="cse-lesson"><div class="cse-lesson-tag">🎓 '+esc(sc.tag)+'</div><div class="cse-lesson-list">'+items+'</div></div>';
+  }
+  if(sc.type==='closing'){
+    return '<div class="cse-closing">'+
+      '<h2 class="cse-closing-head">'+esc(sc.head)+'</h2>'+
+      '<p class="cse-closing-sub">'+esc(sc.sub)+'</p>'+
+      '<div class="cse-closing-btns">'+
+        '<a href="'+esc(sc.primary.href)+'" class="cse-btn-p">'+esc(sc.primary.label)+'</a>'+
+        '<a href="'+esc(sc.secondary.href)+'" class="cse-btn-g">'+esc(sc.secondary.label)+'</a>'+
+      '</div>'+
+    '</div>';
+  }
+  return '';
+}
+
+/* DECISION interaction */
+var DECISION_SCENE=null;
+CASE.scenes.forEach(function(sc){ if(sc.type==='decision') DECISION_SCENE=sc; });
+
+window.cseChoose=function(ci){
+  if(!DECISION_SCENE) return;
+  var picked=DECISION_SCENE.choices[ci];
+  // lock all
+  DECISION_SCENE.choices.forEach(function(ch,j){
+    var btn=document.getElementById('cse-ch-'+j);
+    if(!btn) return;
+    btn.disabled=true;
+    if(j===ci) btn.classList.add('picked'); else btn.classList.add('faded');
+  });
+  var rev=document.getElementById('cse-reveal');
+  rev.innerHTML=
+    '<div class="cse-reveal-verdict" style="color:'+picked.verdictColor+'">'+
+      (picked.verdict==='the strongest first move'?'✓ ':(picked.verdictColor==='#34d399'?'✓ ':'→ '))+esc(picked.verdict)+'</div>'+
+    '<div class="cse-reveal-what">'+picked.what+'</div>'+
+    '<div class="cse-reveal-actual"><b>What actually happened:</b> '+picked.actual+'</div>'+
+    '<button class="cse-continue" onclick="cseScrollNext()">Continue the story →</button>';
+  rev.classList.add('show');
+};
+
+window.cseScrollNext=function(){
+  var scenes=document.querySelectorAll('#cse-cinema .cse-scene');
+  // find the decision scene, scroll to the one after
+  for(var i=0;i<scenes.length;i++){
+    if(scenes[i].querySelector('.cse-decision')){
+      if(scenes[i+1]) scenes[i+1].scrollIntoView({behavior:'smooth',block:'center'});
+      break;
+    }
+  }
+};
+
+/* ════════════════════════════════════════════
+   SCROLL OBSERVER - reveal scenes + trigger viz
+   ════════════════════════════════════════════ */
+function initScrollObserver(){
+  var scenes=document.querySelectorAll('#cse-cinema .cse-scene');
+  if(!('IntersectionObserver' in window)){
+    scenes.forEach(function(s){ s.classList.add('in'); triggerViz(s); });
+    return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        triggerViz(e.target);
+      }
+    });
+  }, { threshold:0.35 });
+  scenes.forEach(function(s){ obs.observe(s); });
+}
+
+function triggerViz(scene){
+  if(scene.dataset.vizDone) return;
+  // bars
+  var bars=scene.querySelector('[data-bars]');
+  if(bars){
+    scene.dataset.vizDone='1';
+    bars.querySelectorAll('.cse-bar').forEach(function(b,i){
+      setTimeout(function(){
+        b.style.height=b.getAttribute('data-barh')+'%';
+        var val=b.parentElement.querySelector('.cse-bar-val');
+        if(val) setTimeout(function(){ val.style.opacity='1'; }, 500);
+      }, i*120);
+    });
+  }
+  // people exodus
+  var people=scene.querySelector('[data-people]');
+  if(people){
+    scene.dataset.vizDone='1';
+    var starCount=parseInt(people.getAttribute('data-people'));
+    setTimeout(function(){
+      var dots=people.querySelectorAll('.cse-person');
+      // the stars (first N) turn red one by one = the resignations
+      for(var i=0;i<starCount;i++){
+        (function(idx){ setTimeout(function(){
+          if(dots[idx]) dots[idx].classList.add('leaving');
+        }, 600+idx*450); })(i);
+      }
+    }, 400);
+  }
+  // big stat count-up
+  var big=scene.querySelector('[data-bigstat]');
+  if(big && !big.dataset.done){
+    big.dataset.done='1';
+    var raw=big.textContent.trim();
+    var num=parseInt(raw.replace(/[^0-9]/g,''));
+    var suffix=raw.replace(/[0-9]/g,'');
+    if(!isNaN(num)){
+      var start=0, step=num/(900/16);
+      var iv=setInterval(function(){ start+=step; if(start>=num){ big.textContent=num+suffix; clearInterval(iv); } else big.textContent=Math.floor(start)+suffix; },16);
+    }
+  }
+}
+
+/* ════════════════════════════════════════════
+   PROGRESS RAIL
+   ════════════════════════════════════════════ */
+function initRail(){
+  window.addEventListener('scroll', function(){
+    var h=document.documentElement.scrollHeight - window.innerHeight;
+    var pct=h>0 ? (window.scrollY/h)*100 : 0;
+    var rail=document.getElementById('cse-rail');
+    if(rail) rail.style.width=Math.min(100,pct)+'%';
+  }, { passive:true });
+}
+
+/* ════════════════════════════════════════════
+   TEXT MODE
+   ════════════════════════════════════════════ */
+function buildText(){
+  var c=CASE, t=c.textVersion;
+  var html='<div class="cse-text-kicker">'+esc(c.company)+' · '+esc(c.industry)+'</div>'+
+    '<h1>'+esc(c.title)+'</h1>'+
+    '<div class="cse-text-stand">'+esc(c.standfirst)+'</div>';
+  t.sections.forEach(function(sec){
+    if(sec.h) html+='<h2>'+esc(sec.h)+'</h2>';
+    sec.p.forEach(function(para){ html+='<p>'+esc(para)+'</p>'; });
+    if(sec.quote) html+='<blockquote class="cse-text-quote">'+esc(sec.quote)+'</blockquote>';
+  });
+  html+='<div class="cse-text-lessons"><h2 style="margin-top:0;">'+esc(t.lessonsTitle)+'</h2>';
+  t.lessons.forEach(function(l,i){ html+='<p style="margin-bottom:10px;"><strong>'+(i+1)+'.</strong> '+esc(l)+'</p>'; });
+  html+='</div>';
+  document.getElementById('cse-text').innerHTML=html;
+}
+
+window.cseSetMode=function(mode){
+  var cinema=document.getElementById('cse-cinema');
+  var text=document.getElementById('cse-text');
+  var rail=document.getElementById('cse-rail');
+  document.getElementById('cse-mode-cinema').classList.toggle('active', mode==='cinema');
+  document.getElementById('cse-mode-text').classList.toggle('active', mode==='text');
+  if(mode==='cinema'){ cinema.style.display='block'; text.style.display='none'; if(rail) rail.style.display='block'; }
+  else { cinema.style.display='none'; text.style.display='block'; if(rail) rail.style.display='none'; window.scrollTo(0,0); }
+};
+
+/* ════════════════════════════════════════════
+   BOOT
+   ════════════════════════════════════════════ */
+function renderGate(){
+  var cinema = document.getElementById('cse-cinema');
+  var text = document.getElementById('cse-text');
+  var rail = document.getElementById('cse-rail');
+  if(rail) rail.style.display = 'none';
+  var caseTitle = CASE.title || (CASE.meta && CASE.meta.title) || 'This case study';
+  cinema.style.display = 'block';
+  cinema.innerHTML =
+    '<div style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 24px;">'+
+      '<div style="max-width:460px;width:100%;text-align:center;background:rgba(255,255,255,.03);border:1.5px solid rgba(102,126,234,.3);border-radius:20px;padding:44px 36px;font-family:\'DM Sans\',sans-serif;">'+
+        '<div style="font-size:32px;margin-bottom:14px;">🔒</div>'+
+        '<div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a78bfa;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);display:inline-block;padding:4px 14px;border-radius:20px;margin-bottom:16px;">Pro Case Study</div>'+
+        '<h2 style="font-family:\'Space Grotesk\',sans-serif;font-size:22px;font-weight:800;color:#f0eeff;margin-bottom:10px;">'+esc(caseTitle)+'</h2>'+
+        '<p style="font-size:13px;color:rgba(196,181,253,.6);line-height:1.7;margin-bottom:22px;">This case study is included in the Pro plan, along with 11 others, every calculator, and the AI Learning Path.</p>'+
+        '<a href="/pages/pricing.html" style="display:block;padding:13px 24px;border-radius:11px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;margin-bottom:10px;">🚀 Upgrade to Pro</a>'+
+        '<div style="display:flex;gap:8px;margin-bottom:6px;">'+
+          '<input id="cse-gate-key" type="text" placeholder="Already have a key? Enter it here" style="flex:1;padding:10px 13px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(102,126,234,.3);color:#f0eeff;font-size:12px;font-family:monospace;outline:none;">'+
+          '<button id="cse-gate-btn" style="padding:10px 16px;border-radius:8px;background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:white;font-size:12px;font-weight:700;cursor:pointer;">Unlock</button>'+
+        '</div>'+
+        '<div id="cse-gate-err" style="font-size:11px;color:#f87171;margin-top:6px;display:none;"></div>'+
+        '<div style="margin-top:14px;"><a href="/pages/case-studies.html" style="font-size:11px;color:rgba(165,180,252,.4);text-decoration:none;">← Back to all case studies</a></div>'+
+      '</div>'+
+    '</div>';
+  text.style.display = 'none';
+  document.getElementById('cse-gate-btn').addEventListener('click', function(){
+    var inp = document.getElementById('cse-gate-key');
+    var err = document.getElementById('cse-gate-err');
+    var v = (inp.value||'').trim().toUpperCase();
+    err.style.display = 'none';
+    if(!v) return;
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','X-Action':'validate-key'},
+      body: JSON.stringify({ key: v })
+    }).then(function(r){ return r.json(); }).then(function(result){
+      if(result.valid){
+        localStorage.setItem('viorah_plan','pro');
+        localStorage.setItem('viorah_key', v);
+        location.reload();
+      } else {
+        err.textContent = 'Invalid or expired key.';
+        err.style.display = 'block';
+      }
+    }).catch(function(){
+      err.textContent = 'Could not verify key. Please try again.';
+      err.style.display = 'block';
+    });
+  });
+  document.getElementById('cse-gate-key').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('cse-gate-btn').click(); });
+}
+
+var isCaseFree = FREE_SLUGS.indexOf(SLUG) > -1;
+if(!isCaseFree && !isPro()){
+  renderGate();
+} else {
+  buildCinema();
+  buildText();
+  initScrollObserver();
+  initRail();
+}
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+
+
+</body>
+</html>
