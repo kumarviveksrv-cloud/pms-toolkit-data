@@ -148,7 +148,9 @@
     const startBadge = item.href === '/pages/tour.html'
       ? '<span class="nav-start-badge">Start</span>'
       : '';
-    return '<a class="pms-nav-item" href="' + item.href + '">' +
+    const here = window.location.pathname.replace(/\/index\.html$/, '');
+    const isActive = item.href === here;
+    return '<a class="pms-nav-item' + (isActive ? ' active' : '') + '"' + (isActive ? ' aria-current="page"' : '') + ' href="' + item.href + '">' +
       icon(item.icon) +
       '<span>' + item.label + '</span>' +
       startBadge +
