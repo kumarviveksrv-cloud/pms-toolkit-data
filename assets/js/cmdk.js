@@ -127,6 +127,19 @@
     }
   }
 
+  // Arrived from another page via a calculator entry: scroll to it once the calculator has rendered
+  (function(){
+    var id=null;
+    try{ id=sessionStorage.getItem('vg_pending_scroll'); }catch(e){}
+    if(!id || !isPmsPage()) return;
+    try{ sessionStorage.removeItem('vg_pending_scroll'); }catch(e){}
+    var tries=0, iv=setInterval(function(){
+      var t=document.getElementById(id);
+      if(t && t.offsetHeight>0){ clearInterval(iv); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+      else if(++tries>40){ clearInterval(iv); }
+    },250);
+  })();
+
   function openPalette(){
     backdrop.classList.add('active');
     input.value = '';
