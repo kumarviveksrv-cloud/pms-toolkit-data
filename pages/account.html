@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account | Virorah PMS</title>
+  <meta name="description" content="Manage your Virorah PMS profile, plan, security and data.">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,  // page shows its own sign-in prompt
+      requirePro:  false   // set true for pro-only pages
+    };
+  </script>
+
+  <!-- Page-specific styles -->
+  <style>
+    .acct-wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:20px;padding-bottom:48px}
+    .acct-head h1{font-family:var(--font-display);font-size:26px;margin:0 0 4px}
+    .acct-head p{margin:0;color:var(--text-muted);font-size:14px}
+    .acct-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+    .acct-card h2{font-family:var(--font-display);font-size:16px;margin:0 0 4px}
+    .acct-card .sub{color:var(--text-muted);font-size:13px;margin:0 0 16px;line-height:1.5}
+    .acct-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+    .acct-kv{display:flex;flex-direction:column;gap:2px}
+    .acct-kv span{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em}
+    .acct-kv b{font-size:15px;font-weight:600;word-break:break-all}
+    .acct-input{flex:1;min-width:220px;background:var(--bg);border:1px solid var(--border-strong);color:var(--text);border-radius:var(--radius-sm);padding:10px 12px;font:inherit;font-size:14px;letter-spacing:.03em}
+    .acct-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+    .acct-msg{font-size:13px;margin-top:10px;min-height:18px}
+    .acct-msg.ok{color:var(--success)}.acct-msg.err{color:var(--danger)}
+    .acct-danger{border-color:rgba(239,68,68,.35)}
+    .acct-btns{display:flex;flex-wrap:wrap;gap:10px}
+    #acct-profile{min-height:120px}
+    .acct-signedout{text-align:center;padding:48px 16px;color:var(--text-muted)}
+    @media(max-width:600px){.acct-card{padding:16px}.acct-row{flex-direction:column;align-items:stretch}}
+  </style>
+  <script src="/assets/js/pms-fetch.js"></script>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Account</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+      <div class="acct-wrap" id="acct-root" hidden>
+        <div class="acct-head">
+          <h1>Your account</h1>
+          <p>Profile, plan, security and data, all in one place.</p>
+        </div>
+
+        <section class="acct-card" id="acct-plan-card">
+          <div class="acct-row">
+            <div class="acct-kv"><span>Signed in as</span><b id="acct-email">Loading...</b></div>
+            <div class="acct-kv"><span>Plan</span><b id="acct-plan"><span class="badge badge-gray">Checking...</span></b></div>
+            <div class="acct-btns">
+              <a class="btn btn-secondary btn-sm" href="/pages/billing.html">Manage billing</a>
+              <a class="btn btn-ghost btn-sm" id="acct-upgrade" href="/pages/pricing.html" hidden>See plans</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="acct-card">
+          <h2>Profile and security</h2>
+          <p class="sub">Change your name, photo, email, password, two-step verification and active sessions. You can also delete your account here.</p>
+          <div id="acct-profile"></div>
+        </section>
+
+        <section class="acct-card" id="acct-claim-card">
+          <h2>Link an access key</h2>
+          <p class="sub">Paid with a different email than the one you signed up with, or have an older access key? Paste it here and it links to this account. One key can be linked to up to 3 accounts.</p>
+          <div class="acct-row" style="justify-content:flex-start">
+            <input class="acct-input" id="acct-key" type="text" placeholder="Your access key" autocomplete="off" spellcheck="false">
+            <button class="btn btn-primary btn-sm" id="acct-claim-btn" type="button">Link key</button>
+          </div>
+          <div class="acct-msg" id="acct-claim-msg" role="status"></div>
+        </section>
+
+        <section class="acct-card">
+          <h2>Your data</h2>
+          <p class="sub">Calculator settings, progress and preferences are saved in this browser. Download a copy, or clear them from this device. Uploaded org data and your account itself are not affected by clearing.</p>
+          <div class="acct-btns">
+            <button class="btn btn-secondary btn-sm" id="acct-export" type="button">Download my data (JSON)</button>
+            <button class="btn btn-ghost btn-sm" id="acct-clear" type="button">Clear data on this device</button>
+          </div>
+          <div class="acct-msg" id="acct-data-msg" role="status"></div>
+        </section>
+
+        <section class="acct-card acct-danger">
+          <h2>Sign out</h2>
+          <p class="sub">Ends your session on this device.</p>
+          <button class="btn btn-danger btn-sm" id="acct-signout" type="button">Sign out</button>
+        </section>
+      </div>
+
+      <div class="acct-signedout" id="acct-out" hidden>
+        <h2 style="font-family:var(--font-display)">Sign in to see your account</h2>
+        <p>Your profile, plan and settings live here once you are signed in.</p>
+        <a class="btn btn-primary" href="/login.html">Sign in</a>
+      </div>
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+<script>
+(function () {
+  var WORKER = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+  var $ = function (id) { return document.getElementById(id); };
+  var KEEP = /^(virorah_|viorah_|pms_|sim_|vg_)/, SKIP = /^(viorah_key|viorah_plan)$/;
+  var LABEL = { free: ['Free', 'badge-gray'], pro: ['Virorah Pro', 'badge-purple'], admin: ['Admin', 'badge-green'] };
+
+  function msg(id, text, cls) { var e = $(id); e.textContent = text || ''; e.className = 'acct-msg ' + (cls || ''); }
+
+  function paintPlan(plan, email) {
+    var l = LABEL[plan] || [plan || 'Free', 'badge-blue'];
+    $('acct-plan').innerHTML = '<span class="badge ' + l[1] + '"></span>';
+    $('acct-plan').firstChild.textContent = l[0];
+    if (email) $('acct-email').textContent = email;
+    $('acct-upgrade').hidden = (plan === 'pro' || plan === 'admin');
+  }
+
+  function dataKeys() {
+    var out = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (KEEP.test(k) && !SKIP.test(k)) out.push(k);
+    }
+    return out;
+  }
+
+  document.addEventListener('pms:auth-ready', function (e) {
+    var d = e.detail || {}, user = d.user;
+    if (!user) { $('acct-out').hidden = false; return; }
+    $('acct-root').hidden = false;
+    var email = (user.primaryEmailAddress && user.primaryEmailAddress.emailAddress) || '';
+    paintPlan(d.plan || window._pmsPlan, email);
+    try { window._clerk.mountUserProfile($('acct-profile'), { appearance: { variables: { colorPrimary: '#667eea', colorBackground: '#13131f', colorText: '#f4f3ff', colorInputBackground: '#080612', colorInputText: '#f4f3ff' } } }); }
+    catch (err) { $('acct-profile').textContent = 'Profile editor could not load. Refresh the page to try again.'; }
+  });
+  document.addEventListener('pms:plan-changed', function (e) { paintPlan(e.detail && e.detail.plan); });
+
+  $('acct-claim-btn').addEventListener('click', async function () {
+    var key = $('acct-key').value.trim();
+    if (!key) { msg('acct-claim-msg', 'Please enter your access key.', 'err'); return; }
+    var btn = this; btn.disabled = true; msg('acct-claim-msg', 'Linking...', '');
+    try {
+      var r = await fetch(WORKER + '/claim-key', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: key }) });
+      var j = await r.json().catch(function () { return {}; });
+      if (r.ok && j.ok !== false) {
+        msg('acct-claim-msg', 'Linked. Your plan is updating.', 'ok'); $('acct-key').value = '';
+        if (window.pmsRefreshPlan) await window.pmsRefreshPlan();
+        paintPlan(window._pmsPlan);
+      } else { msg('acct-claim-msg', j.error || 'That key could not be linked.', 'err'); }
+    } catch (err) { msg('acct-claim-msg', 'Network problem. Please try again.', 'err'); }
+    btn.disabled = false;
+  });
+
+  $('acct-export').addEventListener('click', function () {
+    var data = { exportedAt: new Date().toISOString(), email: $('acct-email').textContent, data: {} };
+    dataKeys().forEach(function (k) { var v = localStorage.getItem(k); try { data.data[k] = JSON.parse(v); } catch (e) { data.data[k] = v; } });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+    a.download = 'virorah-pms-data.json'; document.body.appendChild(a); a.click(); a.remove();
+    msg('acct-data-msg', 'Downloaded ' + dataKeys().length + ' saved items.', 'ok');
+  });
+
+  $('acct-clear').addEventListener('click', function () {
+    var n = dataKeys().length;
+    if (!n) { msg('acct-data-msg', 'Nothing saved on this device.', ''); return; }
+    if (!confirm('Clear ' + n + ' saved items from this browser? This cannot be undone. Your account and plan are not affected.')) return;
+    dataKeys().forEach(function (k) { localStorage.removeItem(k); });
+    msg('acct-data-msg', 'Cleared ' + n + ' items from this device.', 'ok');
+  });
+
+  $('acct-signout').addEventListener('click', async function () {
+    try { localStorage.removeItem('viorah_plan'); if (localStorage.getItem('viorah_key') === 'CLERK-SESSION') localStorage.removeItem('viorah_key'); } catch (e) {}
+    try { await window._clerk.signOut(); } catch (e) {}
+    location.href = '/login.html';
+  });
+})();
+</script>
+
+
+<!-- Page-specific scripts go here -->
+
+</body>
+</html>

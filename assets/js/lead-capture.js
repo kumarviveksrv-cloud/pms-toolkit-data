@@ -28,6 +28,7 @@
 
     function showModal() {
       if (triggered) return;
+      if (window._pmsUser) return; // signed-in people already have an account
       triggered = true;
       if (timer) clearTimeout(timer);
       backdrop.classList.add('vr-open');
