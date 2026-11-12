@@ -235,7 +235,7 @@
 
     /* Update once auth resolves and we know the plan */
     document.addEventListener('pms:auth-ready', function (e) {
-      const isPro = (e.detail && e.detail.plan === 'pro');
+      const isPro = !!(e.detail && (e.detail.plan === 'pro' || e.detail.plan === 'admin'));
       root.innerHTML = buildSidebar(isPro);
       bindMobileToggle();
     });

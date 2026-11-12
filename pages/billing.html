@@ -31,6 +31,7 @@
   <style>
     /* page styles live in the migrated content block below */
   </style>
+  <script src="/assets/js/pms-fetch.js"></script>
 </head>
 <body>
 
@@ -337,8 +338,15 @@
     el.textContent = '';
   }
 
+  /* Signed-in Pro users do not type a key: the Worker finds theirs from their account. */
+  function abGetKey() {
+    const typed = document.getElementById('ab-key-input').value.trim().toUpperCase();
+    if (typed) return typed;
+    return (window._pmsPlan === 'pro' || window._pmsPlan === 'admin') ? 'CLERK-SESSION' : '';
+  }
+
   async function abCheckStatus() {
-    const key = document.getElementById('ab-key-input').value.trim().toUpperCase();
+    const key = abGetKey();
     if (!key) { abShowMsg('ab-key-msg', 'error', 'Please enter your access key.'); return; }
 
     const btn = document.getElementById('ab-check-btn');
@@ -397,13 +405,22 @@
     }
   }
 
+  /* Signed in with a Pro plan: skip the key box and load the billing status straight away. */
+  document.addEventListener('pms:auth-ready', function (e) {
+    if (e.detail && (e.detail.plan === 'pro' || e.detail.plan === 'admin')) {
+      const sec = document.getElementById('ab-key-section');
+      if (sec) sec.style.display = 'none';
+      abCheckStatus();
+    }
+  });
+
   async function abConfirmCancel() {
     const confirmed = confirm(
       'Are you sure you want to cancel?\n\nYour access will continue until the end of the current billing period.'
     );
     if (!confirmed) return;
 
-    const key = document.getElementById('ab-key-input').value.trim().toUpperCase();
+    const key = abGetKey();
     const btn = document.getElementById('ab-cancel-btn');
     btn.disabled = true;
     btn.innerHTML = '<span class="ab-spinner"></span>Cancelling...';
