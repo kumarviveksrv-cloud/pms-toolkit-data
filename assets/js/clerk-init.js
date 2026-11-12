@@ -1,5 +1,5 @@
 /**
- * Virorah PMS — Clerk Auth Init
+ * Virorah PMS - Clerk Auth Init
  * Loads the Clerk JS SDK, guards protected pages, and exposes
  * the current user + plan to every page.
  *
@@ -17,7 +17,7 @@
 
   /* ---- Clerk publishable key (replace with real key before deploy) ---- */
   const CLERK_PK = window.PMS_CLERK_PK ||
-    'pk_live_Y2xlcmsudmlyb3JhaC5jb20k'; // placeholder — set in _config.js
+    'pk_live_Y2xlcmsudmlyb3JhaC5jb20k'; // placeholder - set in _config.js
 
   /* ---- Pages ---- */
   const LOGIN_PATH  = '/login.html';
@@ -48,7 +48,7 @@
       const user = Clerk.user;
 
       if (REQUIRE_AUTH && !user) {
-        /* Not signed in — redirect to login */
+        /* Not signed in - redirect to login */
         const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
         window.location.replace(LOGIN_PATH + '?redirect_url=' + returnUrl);
         return;
@@ -60,7 +60,7 @@
       }
 
       if (REQUIRE_PRO && window._pmsPlan !== 'pro') {
-        /* Not a Pro user — redirect to pricing */
+        /* Not a Pro user - redirect to pricing */
         window.location.replace(PRICING_PATH + '?upgrade=1');
         return;
       }
@@ -73,7 +73,7 @@
        * ------------------------------------------------------------------ */
       window.viorahIsPro   = function () { return window._pmsPlan === 'pro'; };
       window.viorahIsAdmin = function () { return window._pmsPlan === 'admin'; };
-      window.viorahSaveKey = function () { /* no-op — Clerk handles auth now */ };
+      window.viorahSaveKey = function () { /* no-op - Clerk handles auth now */ };
 
       /* localStorage bridge: migrated pages (certifications, downloads, ...)
        * read localStorage.viorah_plan directly instead of calling
@@ -89,7 +89,7 @@
         localStorage.removeItem('viorah_plan_exp');
       } catch (e) { /* storage unavailable: pages fall back to free */ }
 
-      /* Auth OK — reveal page and hydrate nav/user chip */
+      /* Auth OK - reveal page and hydrate nav/user chip */
       bodyEl.style.visibility = '';
       _hydrateNavUserChip(user);
       _markActiveNavItem();

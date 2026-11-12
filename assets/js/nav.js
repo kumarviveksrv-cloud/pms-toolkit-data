@@ -1,5 +1,5 @@
 /**
- * Virorah PMS — Sidebar Navigation Builder
+ * Virorah PMS - Sidebar Navigation Builder
  * Injects the full sidebar nav into any element with id="pms-nav-root".
  * Nav structure mirrors the Softr navigation extracted via MCP.
  */
