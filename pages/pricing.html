@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro access. ₹999/month India · $19/month Global. Cancel anytime.</title>
+  <meta name="description" content="Everything unlocked. FORGE diagnostic, The Case Room, The Foundry, real org data, all 16 calculators, 4 certifications. No annual lock-in. India or international, one flat monthly price.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/pricing.html">
+  <meta property="og:title" content="Pro access. ₹999/month India · $19/month Global. Cancel anytime.">
+  <meta property="og:description" content="Everything unlocked. FORGE diagnostic, The Case Room, The Foundry, real org data, all 16 calculators, 4 certifications. No annual lock-in. India or international, one flat monthly price.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Pricing</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH - PRICING PAGE v5
+     v5: "Forge Team" renamed to "Forge Simulation" throughout.
+     Added The Case Room, Forge Your Org, and The Foundry to both
+     the Free tier's locked-features list and the Pro tier's feature
+     list, none of the three appeared anywhere on this page before.
+     Corrected a stale comment claiming Dodo was still in Test Mode,
+     it has been Live Mode since the flip earlier. Script block was
+     already Softr-safe, all currency symbols and icons use proper
+     \uXXXX JS escape sequences rather than raw HTML entities, so no
+     changes were needed there.
+     ============================================================
+     VIORAH - PRICING PAGE v4 (FINAL) + COMPLIANCE FIXES
+     Monthly only · ₹999 India · $19 Global
+     Razorpay (India) · Dodo Payments (international)
+     FIXES APPLIED:
+     1. Autopay disclosure line below Pro CTA button
+     2. Consent checkbox with /terms link in modal
+     3. Pay button starts disabled until checkbox ticked
+     4. closeModal resets checkbox state
+     ============================================================ -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --deep: #080614;
+    --card: #110e24;
+    --card2: #18153a;
+    --purple: #667eea;
+    --violet: #764ba2;
+    --text: #f0eeff;
+    --muted: #9d8fff;
+    --border: rgba(102, 126, 234, .22);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  #pr-root {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--deep);
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 24px;
+  }
+
+  #pr-root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 15% 0%, rgba(102, 126, 234, .13) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 85% 100%, rgba(118, 75, 162, .10) 0%, transparent 55%);
+  }
+
+  #pr-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes prPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(1.5); }
+  }
+
+  @keyframes prShimmer {
+    0% { background-position: -600px 0 }
+    70%, 100% { background-position: 900px 0 }
+  }
+
+  @keyframes prFadeUp {
+    from { opacity: 0; transform: translateY(18px) }
+    to { opacity: 1; transform: translateY(0) }
+  }
+
+  .pr-f1 { animation: prFadeUp .5s .05s ease both; }
+  .pr-f2 { animation: prFadeUp .5s .15s ease both; }
+  .pr-f3 { animation: prFadeUp .5s .25s ease both; }
+  .pr-f4 { animation: prFadeUp .5s .35s ease both; }
+  .pr-f5 { animation: prFadeUp .5s .45s ease both; }
+
+  .pr-shimmer {
+    display: inline;
+    background: linear-gradient(90deg, #c4b5fd 25%, #fff 45%, #a78bfa 52%, #667eea 60%, #c4b5fd 75%);
+    background-size: 900px 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: prShimmer 3.5s ease 1s infinite;
+  }
+
+  .pr-head { position: relative; z-index: 2; text-align: center; padding: 72px 24px 52px; }
+
+  .pr-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 18px; border-radius: 20px; margin-bottom: 22px;
+    background: rgba(102, 126, 234, .10); border: 1px solid rgba(102, 126, 234, .28);
+    font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+  }
+
+  .pr-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa, var(--purple));
+    animation: prPulse 2.2s ease-in-out infinite;
+  }
+
+  .pr-head h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -.5px; margin-bottom: 18px; color: var(--text); }
+  .pr-head-sub { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto 28px; line-height: 1.75; }
+  .pr-head-sub strong { color: var(--text); }
+
+  .pr-philosophy {
+    display: inline-flex; align-items: flex-start; gap: 12px;
+    padding: 16px 22px; border-radius: 14px; margin-bottom: 40px;
+    background: rgba(52, 211, 153, .07); border: 1px solid rgba(52, 211, 153, .2);
+    max-width: 560px; text-align: left;
+  }
+  .pr-philosophy-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .pr-philosophy-text { font-size: 13px; color: rgba(52, 211, 153, .85); line-height: 1.65; font-weight: 500; }
+  .pr-philosophy-text strong { color: #34d399; font-weight: 700; display: block; margin-bottom: 3px; font-size: 13px; }
+
+  .pr-toggles { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+  .pr-toggle { display: inline-flex; align-items: center; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .10); border-radius: 10px; padding: 4px; }
+  .pr-toggle-btn { padding: 8px 20px; border-radius: 7px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--muted); font-family: 'Space Grotesk', sans-serif; transition: all .2s; white-space: nowrap; }
+  .pr-toggle-btn.active { background: linear-gradient(135deg, var(--purple), var(--violet)); color: white; box-shadow: 0 2px 14px rgba(102, 126, 234, .4); }
+
+  .pr-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 0 auto; padding: 0 24px 72px; position: relative; z-index: 2; }
+  @media(max-width:660px) { .pr-cards { grid-template-columns: 1fr; } }
+
+  .pr-card { border-radius: 22px; padding: 38px 32px; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+  .pr-card:hover { transform: translateY(-5px); }
+  .pr-card.free { background: rgba(255, 255, 255, .03); border: 1px solid rgba(255, 255, 255, .09); }
+  .pr-card.free:hover { box-shadow: 0 16px 48px rgba(0, 0, 0, .35); }
+  .pr-card.pro { background: linear-gradient(155deg, #15122e 0%, #1d1942 55%, #15122e 100%); border: 1.5px solid rgba(102, 126, 234, .4); box-shadow: 0 8px 48px rgba(102, 126, 234, .18); }
+  .pr-card.pro:hover { box-shadow: 0 20px 64px rgba(102, 126, 234, .3); }
+  .pr-card.pro::before { content: ''; position: absolute; top: -80px; right: -80px; width: 260px; height: 260px; background: radial-gradient(circle, rgba(102, 126, 234, .18) 0%, transparent 70%); pointer-events: none; }
+
+  .pr-popular { position: absolute; top: 22px; right: 22px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; box-shadow: 0 3px 14px rgba(245, 158, 11, .45); }
+  .pr-tier { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .free .pr-tier { color: rgba(255, 255, 255, .35); }
+  .pro .pr-tier { color: var(--purple); }
+
+  .pr-price-block { margin-bottom: 8px; }
+  .pr-price { font-size: 52px; font-weight: 800; line-height: 1; color: var(--text); display: flex; align-items: flex-start; gap: 2px; letter-spacing: -1px; }
+  .pr-price-sym { font-size: 22px; font-weight: 700; margin-top: 8px; }
+  .pr-price-period { font-size: 14px; font-weight: 500; color: var(--muted); align-self: flex-end; margin-bottom: 4px; margin-left: 2px; }
+  .pr-price-note { font-size: 12px; color: var(--muted); margin-top: 5px; margin-bottom: 6px; }
+
+  .pr-no-lockin { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(52, 211, 153, .1); border: 1px solid rgba(52, 211, 153, .25); color: #34d399; margin-bottom: 20px; }
+
+  .pr-cta { display: block; width: 100%; padding: 15px 20px; border-radius: 11px; font-size: 14px; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer; border: none; font-family: 'Space Grotesk', sans-serif; transition: transform .2s, box-shadow .2s; margin-bottom: 8px; position: relative; z-index: 3; }
+  .free .pr-cta { background: rgba(255, 255, 255, .07); border: 1.5px solid rgba(255, 255, 255, .14); color: var(--text); }
+  .free .pr-cta:hover { background: rgba(255, 255, 255, .12); }
+  .pro .pr-cta { background: linear-gradient(135deg, var(--purple), var(--violet)); color: white; box-shadow: 0 4px 28px rgba(102, 126, 234, .45); }
+  .pro .pr-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(102, 126, 234, .6); }
+
+  .pr-autopay-note { text-align: center; font-size: 11px; color: rgba(255, 255, 255, .25); margin-top: 0; margin-bottom: 20px; line-height: 1.6; }
+  .pr-div { height: 1px; background: rgba(255, 255, 255, .07); margin-bottom: 22px; }
+  .pr-feat-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, .22); margin-bottom: 13px; }
+  .pr-feat-list { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+  .pr-feat-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(240, 238, 255, .72); line-height: 1.45; }
+
+  .pr-check { width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 900; margin-top: 2px; }
+  .free .pr-check { background: rgba(255, 255, 255, .09); color: rgba(255, 255, 255, .45); }
+  .pro .pr-check { background: linear-gradient(135deg, var(--purple), var(--violet)); color: white; box-shadow: 0 2px 8px rgba(102, 126, 234, .3); }
+  .pr-feat-item strong { color: var(--text); font-weight: 700; }
+
+  .pr-locked { background: rgba(255, 255, 255, .03); border: 1px solid rgba(255, 255, 255, .08); border-radius: 11px; padding: 13px 15px; }
+  .pr-locked-lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255, 255, 255, .2); margin-bottom: 9px; }
+  .pr-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .pr-tag { font-size: 10px; padding: 3px 9px; border-radius: 20px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .08); color: rgba(255, 255, 255, .28); }
+  .pr-tag.pr-tag-flagship { background: rgba(139, 92, 246, .1); border: 1px solid rgba(139, 92, 246, .28); color: rgba(196, 181, 253, .6); }
+
+  .pr-trust { position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, .06); padding: 32px 24px; }
+  .pr-trust-inner { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; max-width: 760px; margin: 0 auto; }
+  .pr-trust-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: rgba(255, 255, 255, .3); }
+  .pr-trust-item span:first-child { font-size: 16px; opacity: .6; }
+
+  .pr-why { max-width: 620px; margin: 0 auto; padding: 0 24px 48px; position: relative; z-index: 2; }
+  .pr-why-head { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; text-align: center; }
+  .pr-why-sub { font-size: 13px; color: var(--muted); text-align: center; margin-bottom: 24px; line-height: 1.6; }
+  .pr-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  @media(max-width:500px) { .pr-why-grid { grid-template-columns: 1fr; } }
+  .pr-why-card { background: rgba(255, 255, 255, .03); border: 1px solid rgba(255, 255, 255, .07); border-radius: 12px; padding: 16px 18px; }
+  .pr-why-card-icon { font-size: 20px; margin-bottom: 8px; }
+  .pr-why-card-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .pr-why-card-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .pr-why-quote { background: rgba(102, 126, 234, .07); border: 1px solid rgba(102, 126, 234, .18); border-radius: 12px; padding: 18px 22px; font-size: 14px; font-weight: 600; color: rgba(196, 181, 253, .8); line-height: 1.6; text-align: center; font-style: italic; }
+
+  .pr-faq { max-width: 620px; margin: 0 auto; padding: 0 24px 72px; position: relative; z-index: 2; }
+  .pr-faq-head { font-size: 24px; font-weight: 800; text-align: center; color: var(--text); margin-bottom: 28px; }
+  .pr-faq-item { border-bottom: 1px solid rgba(255, 255, 255, .07); }
+  .pr-faq-q { padding: 18px 0; font-size: 14px; font-weight: 600; color: rgba(240, 238, 255, .8); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+  .pr-faq-arr { font-size: 11px; color: var(--muted); transition: transform .22s; flex-shrink: 0; }
+  .pr-faq-item.open .pr-faq-arr { transform: rotate(180deg); }
+  .pr-faq-a { font-size: 13px; color: var(--muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; }
+  .pr-faq-item.open .pr-faq-a { max-height: 300px; padding-bottom: 18px; }
+
+  .pr-student { text-align: center; padding: 0 24px 48px; font-size: 12px; color: rgba(255, 255, 255, .25); position: relative; z-index: 2; }
+  .pr-student a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+
+<div id="pr-root">
+  <canvas id="pr-canvas"></canvas>
+
+  <div class="pr-head">
+    <div class="pr-eyebrow pr-f1">
+      <div class="pr-dot"></div>Transparent pricing. No surprises.
+    </div>
+    <h1 class="pr-f2">Professional-grade PMS.<br><span class="pr-shimmer">On your terms.</span></h1>
+    <p class="pr-head-sub pr-f3">The only platform where HR professionals <strong>actually do</strong> performance
+      management, not just read about it. Cancel any month. No questions asked.</p>
+
+    <div class="pr-philosophy pr-f4">
+      <div class="pr-philosophy-icon">🤝</div>
+      <div class="pr-philosophy-text">
+        <strong>No annual contracts. Ever.</strong>
+        We don't offer annual plans, not because we can't, but because we believe we should earn your subscription every
+        single month. If we're not delivering value, you should be free to leave. That's the only kind of relationship
+        worth having.
+      </div>
+    </div>
+
+    <div class="pr-toggles pr-f5">
+      <div class="pr-toggle">
+        <button class="pr-toggle-btn active" id="btn-inr" onclick="window.prCurrency&&window.prCurrency('inr')">🇮🇳 India (₹)</button>
+        <button class="pr-toggle-btn" id="btn-usd" onclick="window.prCurrency&&window.prCurrency('usd')">🌍 International ($)</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pr-cards">
+
+    <div class="pr-card free">
+      <div class="pr-tier">Free Forever</div>
+      <div class="pr-price-block">
+        <div class="pr-price">
+          <span class="pr-price-sym" id="free-sym">₹</span>
+          <span>0</span>
+        </div>
+        <div class="pr-price-note">No credit card · No time limit · No catch</div>
+      </div>
+      <div class="pr-no-lockin">✓ Free forever, no expiry</div>
+      <a href="/pages/scenarios.html" class="pr-cta">Start Exploring Free →</a>
+      <div class="pr-div"></div>
+      <div class="pr-feat-label">What you get</div>
+      <div class="pr-feat-list">
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>6 pre-built scenarios</strong>, Tech startup, Family business, Remote SaaS, Financial services, Professional services, Social enterprise</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>2 calculators</strong> on sample data, 9-Box Grid and Bell Curve</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div><span><strong>Spatial 9-Box</strong>, 3D interactive talent visualisation</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Forge Simulation, Stages 1 & 2</strong>, Meet your team + full diagnostic, free</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div><span><strong>5 expert guides</strong> from the Learning Hub</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div><span><strong>3 real-world case studies</strong> with lessons and outcomes</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div><span>750-employee sample dataset across all tools</span>
+        </div>
+      </div>
+      <div class="pr-locked">
+        <div class="pr-locked-lbl">🔒 Upgrade to unlock</div>
+        <div class="pr-tags">
+          <span class="pr-tag pr-tag-flagship">The Case Room</span>
+          <span class="pr-tag pr-tag-flagship">Forge Your Org</span>
+          <span class="pr-tag pr-tag-flagship">The Foundry</span>
+          <span class="pr-tag">Your real org data</span>
+          <span class="pr-tag">All 16 calculators</span>
+          <span class="pr-tag">All 15 scenarios</span>
+          <span class="pr-tag">OKR Tracker</span>
+          <span class="pr-tag">Manager Dashboard</span>
+          <span class="pr-tag">DEI Analytics</span>
+          <span class="pr-tag">What If Planner</span>
+          <span class="pr-tag">Conversation Simulator</span>
+          <span class="pr-tag">Forge Simulation Stages 3-6</span>
+          <span class="pr-tag">The Manager Challenge</span>
+          <span class="pr-tag">Review Cycle Planner</span>
+          <span class="pr-tag">Goal Diagnostic Lab</span>
+          <span class="pr-tag">Bias Audit</span>
+          <span class="pr-tag">Downloads Library</span>
+          <span class="pr-tag">OKR Flagship Planner (.xlsx)</span>
+          <span class="pr-tag">Increment Calculator (.xlsx)</span>
+          <span class="pr-tag">PIP Tracker (.xlsx)</span>
+          <span class="pr-tag">25 Templates</span>
+          <span class="pr-tag">All 14 guides</span>
+          <span class="pr-tag">Certifications</span>
+          <span class="pr-tag">LinkedIn badge</span>
+          <span class="pr-tag">AI Learning Path</span>
+          <span class="pr-tag">Manager Report Card</span>
+          <span class="pr-tag">Org Health AI Report</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card pro">
+      <div class="pr-tier">Virorah PMS Pro</div>
+      <div class="pr-price-block">
+        <div class="pr-price">
+          <span class="pr-price-sym" id="pro-sym">₹</span>
+          <span id="pro-num">999</span>
+          <span class="pr-price-period">/month</span>
+        </div>
+        <div class="pr-price-note" id="pro-note">Billed monthly via Razorpay · Cancel anytime</div>
+      </div>
+      <div class="pr-no-lockin">✓ No lock-in · Cancel any month</div>
+      <button class="pr-cta" id="pr-pro-cta" onclick="window.prHandleCta&&window.prHandleCta()">Get Virorah PMS Pro →</button>
+      <p class="pr-autopay-note">Auto-renews monthly. You'll receive a notification from Razorpay before each charge.
+        Cancel anytime through your UPI app or bank.</p>
+      <div class="pr-div"></div>
+      <div class="pr-feat-label">Everything in Free, plus</div>
+      <div class="pr-feat-list">
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>The Case Room</strong>, bring a real performance situation you are facing right now and get a complete action plan through PROBE, PROTOCOL, LEDGER, RESOLVE, with real Humacity financial exposure figures</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Forge Your Org</strong>, score your existing team against 5 diagnostic conditions and get a 90-day playbook to fix what is broken</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>The Foundry</strong>, build a genuinely extraordinary team from scratch, or intentionally redesign an existing one, across 6 research-backed conditions, download your complete Operating Kit</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Upload your real org data</strong>, run every calculator on your actual workforce in 60 seconds</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>All 15 scenarios</strong>, every industry, company size, and geography</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>All 16 calculators</strong>, Calibration Simulator, Increment, Succession, Compensation Equity, PIP Tracker, 360° Feedback, Balanced Scorecard + more</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Goal Diagnostic Lab</strong>, AI scores your goals across 5 dimensions, rewrites weak ones, and generates a team-level health report with calibration recommendations</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Bias Audit</strong>, detects Central Tendency, Leniency, Severity, Halo Effect and Recency bias in your ratings, with a calibration conversation script to fix them</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>OKR Flagship Planner (.xlsx)</strong>, 12 sheets, 765 live formulas, 4-level cascade, Google 0.0-1.0 + SMART % scoring, CHRO dashboard. The tool Lattice charges ₹50,000/month for.</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Pro Excel Toolkit</strong>, Increment Calculator and PIP Tracker (.xlsx), ready to use with your real data</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Conversation Simulator</strong>, AI plays your employee across 10 scenarios and 10 personalities. You handle PIPs, promotion denials, rating delivery. Scored on empathy, clarity and outcome.</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Forge Simulation, all 6 stages</strong>, inherit a broken team, make 18 real decisions, get an HPT score out of 100. AI generates consequences for every choice.</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>The Manager Challenge</strong>, 4 rounds, real data, a fixed budget, two difficult conversations. One score out of 100.</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Review Cycle Planner</strong>, plan, structure and run a complete performance review cycle end to end</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>25 ready-to-use Templates</strong>, PIP templates, rating calibration sheets, feedback forms, increment letters and more.</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Manager Report Card PDF</strong>, one-page shareable report for any manager: flight risks, OKR health, rating distribution, succession gaps</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>Org Health AI Report</strong>, McKinsey-style diagnostic generated on your real data in seconds</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>AI Learning Path</strong>, personalised 4-week curriculum built around your specific skill gaps</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>All 14 expert guides + 15 case studies</strong> from the full Learning Hub</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>All 4 certifications</strong>, Fundamentals, Advanced, Practitioner & Portfolio, PDF certificate + unique verifiable credential ID</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div>
+          <span><strong>One-click LinkedIn certification badge</strong>, adds directly to your Licenses & Certifications</span>
+        </div>
+        <div class="pr-feat-item">
+          <div class="pr-check">✓</div><span>Priority access to every new feature as it launches</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pr-trust">
+    <div class="pr-trust-inner">
+      <div class="pr-trust-item"><span>🔒</span><span>Secure via Razorpay / Dodo</span></div>
+      <div class="pr-trust-item"><span>📊</span><span>Your data never leaves your browser</span></div>
+      <div class="pr-trust-item"><span>⚡</span><span>Instant access after payment</span></div>
+      <div class="pr-trust-item"><span>🔄</span><span>Cancel any month, no questions</span></div>
+      <div class="pr-trust-item"><span>🌍</span><span>Available in 150+ countries</span></div>
+      <div class="pr-trust-item"><span>💻</span><span>Web only · No mobile app</span></div>
+    </div>
+  </div>
+
+  <div class="pr-why">
+    <div class="pr-why-head">Why no annual plan?</div>
+    <div class="pr-why-sub">Most SaaS companies push annual plans because it locks you in.<br>We chose differently.
+    </div>
+    <div class="pr-why-grid">
+      <div class="pr-why-card">
+        <div class="pr-why-card-icon">🎯</div>
+        <div class="pr-why-card-title">We earn it every month</div>
+        <div class="pr-why-card-text">No annual contract means we can't coast. We have to keep shipping features you
+          actually use, every single month. That accountability is by design.</div>
+      </div>
+      <div class="pr-why-card">
+        <div class="pr-why-card-icon">🔓</div>
+        <div class="pr-why-card-title">Zero lock-in risk for you</div>
+        <div class="pr-why-card-text">You're an HR professional spending your own money. You shouldn't have to think
+          twice before subscribing. Cancel any month, no forms, no friction.</div>
+      </div>
+      <div class="pr-why-card">
+        <div class="pr-why-card-icon">💰</div>
+        <div class="pr-why-card-title">No upfront commitment</div>
+        <div class="pr-why-card-text">Annual plans ask you to commit to 12 months of a product you've just discovered.
+          That's backwards. Try it monthly. Stay because it's worth it.</div>
+      </div>
+      <div class="pr-why-card">
+        <div class="pr-why-card-icon">📈</div>
+        <div class="pr-why-card-title">Price stays honest</div>
+        <div class="pr-why-card-text">When we improve the platform, you benefit immediately, no waiting for your annual
+          renewal. You always pay for what the platform is today, not what it was 11 months ago.</div>
+      </div>
+    </div>
+    <div class="pr-why-quote">
+      "We don't want your money for a year.<br>We want to be worth your money every month."
+    </div>
+  </div>
+
+  <div class="pr-faq">
+    <div class="pr-faq-head">Common questions</div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">How do I cancel? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">
+        To cancel your Virorah PMS subscription:<br><br>
+        <strong>UPI payments:</strong> Open your UPI app (GPay, PhonePe, Paytm, etc.), tap your profile, go to Autopay
+        or UPI Automatic Payments, find the Virorah mandate and cancel it.<br><br>
+        <strong>Card payments:</strong> Log into your bank's mobile app or netbanking, go to Mandates or Standing
+        Instructions, and cancel the Virorah recurring payment.<br><br>
+        <strong>Important:</strong> No refunds are applicable for the current billing period. Your access continues
+        until the end of your current billing month. Razorpay will send you a notification before each monthly charge so
+        you are never surprised. We recommend cancelling at least 2 days before your renewal date.
+      </div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">What happens to my data if I cancel? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Your uploaded org data is stored locally in your browser, it was never on our servers to
+        begin with. When you cancel, your Pro access ends at the billing cycle. Your data remains in your browser until
+        you clear it yourself.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">What happens to my data after I upload it? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Your data is processed entirely in your browser, nothing is ever sent to our servers. Your
+        org data stays on your device, always. We built it this way deliberately, because HR data is sensitive and you
+        deserve full control over it.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">Can I try everything before paying? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Yes. The Free tier has no time limit and no credit card required. You get 6 scenarios, 2
+        calculators (9-Box Grid and Bell Curve), the Spatial 9-Box, Forge Simulation Stages 1 & 2, 5 guides, and 3 case
+        studies, all on a 750-employee sample dataset. Upgrade only when you're ready to use your real org data, bring a
+        real situation to The Case Room, diagnose or build your team in FORGE, or earn your certification.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">How does international payment work? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">International users pay via Dodo Payments, which handles global tax compliance, accepts
+        cards across 150+ countries, and acts as the Merchant of Record so you never deal with currency conversion
+        headaches. Indian users pay via Razorpay with UPI, cards, and net banking.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">What exactly do the certifications include? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Four levels: Fundamentals (30 questions, 45 min), Advanced (30 questions, 45 min),
+        Practitioner (30 case-study judgment questions across 3 real HR scenarios, 90 min), and Portfolio (20 questions
+        using live tools on real scenario data, 60 min). All four generate a PDF certificate with a unique verifiable
+        credential ID.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">Is this useful if I'm not currently in HR? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Startup founders, people managers, MBA students, and business consultants all use Virorah
+        PMS to understand how performance management actually works, and to have more credible conversations with their
+        HR teams.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">Will the price increase? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Launch pricing is ₹999/month and $19/month globally. As the platform grows, pricing will
+        increase, but existing subscribers will always be grandfathered at their original price for as long as they
+        remain subscribed. Loyalty is rewarded, not penalised.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">Is there a mobile app? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Virorah PMS is a web-only platform, it works best on a desktop or laptop browser. There is
+        no mobile app currently. This is a deliberate choice: the calculators, 3D visualisations, and data tools are
+        designed for a full-screen experience that a phone screen simply cannot do justice to.</div>
+    </div>
+
+    <div class="pr-faq-item" onclick="window.prFaq&&window.prFaq(this)">
+      <div class="pr-faq-q">Is there a student or educator discount? <span class="pr-faq-arr">▼</span></div>
+      <div class="pr-faq-a">Yes: 50% off for verified students and educators. That's ₹499/month for India and
+        $9.50/month internationally. Fill in the form below with your institution details and we'll send your discount
+        code within 48 hours.</div>
+    </div>
+
+  </div>
+
+  <div class="pr-student">
+    Student or educator? <a href="https://forms.gle/AEBVomfpXH26Cxrr5" target="_blank">Apply for discounted access →</a>
+  </div>
+
+</div>
+
+<script>
+  (function(){
+  var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+  var prCurr = 'inr';
+
+  // Dodo is fully in Live Mode as of the flip earlier this session.
+  // This is the live checkout URL, not a test-mode link.
+  var DODO_PAYMENT_LINK = 'https://checkout.dodopayments.com/buy/pdt_0Nke0mk20a7SoXiuyOqly?quantity=1&redirect_url=https://www.virorah.com%2Fpricing';
+
+  var PRICES = {
+    inr: { num:'999', note:'Billed monthly via Razorpay · Cancel anytime', sym:'\u20B9', cta:'Get Virorah PMS Pro \u2192' },
+    usd: { num:'19',  note:'Billed monthly via Dodo Payments · Cancel anytime', sym:'$', cta:'Get Virorah PMS Pro \u2192' }
+  };
+
+  function q(id){ return document.getElementById(id); }
+
+  function prRefresh(){
+    var p = PRICES[prCurr];
+    if(q('pro-sym')) q('pro-sym').textContent  = p.sym;
+    if(q('pro-num')) q('pro-num').textContent  = p.num;
+    if(q('pro-note')) q('pro-note').textContent = p.note;
+    if(q('free-sym')) q('free-sym').textContent = p.sym;
+    if(q('pr-pro-cta')) q('pr-pro-cta').textContent = p.cta;
+    ['inr','usd'].forEach(function(c){
+      if(q('btn-'+c)) q('btn-'+c).classList.toggle('active', c===prCurr);
+    });
+  }
+
+  window.prCurrency = function(c){ prCurr = c; prRefresh(); };
+  window.prFaq = function(el){ el.classList.toggle('open'); };
+
+  var style = document.createElement('style');
+  style.textContent = [
+    '#rzp-overlay{position:fixed;inset:0;z-index:99999;background:rgba(8,6,18,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px;font-family:"Space Grotesk","DM Sans",sans-serif;}',
+    '#rzp-overlay.open{display:flex;}',
+    '#rzp-card{background:#0d0b1e;border:1.5px solid rgba(102,126,234,.4);border-radius:22px;padding:36px 32px;max-width:420px;width:100%;box-shadow:0 24px 72px rgba(0,0,0,.8),0 0 0 1px rgba(102,126,234,.1);animation:rzpSlide .3s cubic-bezier(.2,.8,.2,1);}',
+    '@keyframes rzpSlide{from{opacity:0;transform:translateY(16px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}',
+    '.rzp-eyebrow{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:20px;background:rgba(102,126,234,.1);border:1px solid rgba(102,126,234,.25);font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;margin-bottom:16px;}',
+    '#rzp-title{font-size:20px;font-weight:800;color:#f4f3ff;margin-bottom:6px;line-height:1.2;}',
+    '#rzp-sub{font-size:13px;color:rgba(244,243,255,.45);line-height:1.65;margin-bottom:20px;}',
+    '#rzp-price-pill{display:inline-flex;align-items:baseline;gap:3px;background:linear-gradient(135deg,rgba(102,126,234,.15),rgba(118,75,162,.15));border:1px solid rgba(102,126,234,.3);border-radius:12px;padding:10px 18px;margin-bottom:20px;}',
+    '#rzp-price-pill .num{font-size:26px;font-weight:800;color:#f4f3ff;letter-spacing:-1px;}',
+    '#rzp-price-pill .per{font-size:13px;color:rgba(244,243,255,.4);margin-left:2px;}',
+    '#rzp-email{width:100%;padding:13px 16px;border-radius:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(102,126,234,.25);color:#f4f3ff;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box;margin-bottom:6px;transition:border-color .2s;}',
+    '#rzp-email::placeholder{color:rgba(244,243,255,.2);}',
+    '#rzp-email:focus{border-color:rgba(102,126,234,.6);background:rgba(255,255,255,.08);}',
+    '#rzp-err{font-size:11px;color:#f87171;min-height:18px;margin-bottom:8px;padding-left:2px;}',
+    '#rzp-consent{display:flex;align-items:flex-start;gap:10px;margin:4px 0 14px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;}',
+    '#rzp-tos{margin-top:3px;accent-color:#667eea;cursor:pointer;flex-shrink:0;width:15px;height:15px;}',
+    '#rzp-consent-label{font-size:11px;color:rgba(244,243,255,.4);line-height:1.65;cursor:pointer;}',
+    '#rzp-consent-label a{color:#a5b4fc;text-decoration:underline;text-underline-offset:2px;}',
+    '#rzp-pay{width:100%;padding:15px;border-radius:11px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:inherit;box-shadow:0 4px 24px rgba(102,126,234,.45);transition:all .2s;margin-bottom:10px;}',
+    '#rzp-pay:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 36px rgba(102,126,234,.65);}',
+    '#rzp-pay:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}',
+    '#rzp-cancel{width:100%;padding:11px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,.08);color:rgba(244,243,255,.3);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s;}',
+    '#rzp-cancel:hover{border-color:rgba(255,255,255,.18);color:rgba(244,243,255,.55);}',
+    '#rzp-modal-note{font-size:10px;color:rgba(244,243,255,.18);text-align:center;margin-top:14px;line-height:1.7;}',
+    '#rzp-loading-state{display:none;text-align:center;padding:10px 0;font-size:13px;color:rgba(165,180,252,.6);}'
+  ].join('');
+  document.head.appendChild(style);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'rzp-overlay';
+  overlay.innerHTML =
+    '<div id="rzp-card">' +
+      '<div class="rzp-eyebrow">\uD83D\uDD12 Secure Checkout</div>' +
+      '<div id="rzp-title">One step to unlock everything</div>' +
+      '<div id="rzp-sub">Enter the email where you want your access key sent. Works on any device after payment.</div>' +
+      '<div id="rzp-price-pill"><span class="num">\u20B9999</span><span class="per">/month · Cancel anytime</span></div>' +
+      '<input type="email" id="rzp-email" placeholder="your@email.com" autocomplete="email">' +
+      '<div id="rzp-err"></div>' +
+      '<div id="rzp-consent"><input type="checkbox" id="rzp-tos"><label id="rzp-consent-label" for="rzp-tos">I agree to the <a href="/pages/terms.html" target="_blank">Terms of Service</a>. I understand this is a monthly auto-renewing subscription. Razorpay will notify me before each charge.</label></div>' +
+      '<div id="rzp-loading-state">Setting up your subscription...</div>' +
+      '<button id="rzp-pay" disabled>Pay \u20B9999/month \u2192 Get Pro Access</button>' +
+      '<button id="rzp-cancel">Cancel</button>' +
+      '<div id="rzp-modal-note">\uD83D\uDD12 Secure via Razorpay · UPI, cards, net banking · Cancel any month</div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ if(q('rzp-email')) q('rzp-email').focus(); }, 150);
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    if(q('rzp-err')) q('rzp-err').textContent = '';
+    if(q('rzp-email')) q('rzp-email').value = '';
+    if(q('rzp-tos')) q('rzp-tos').checked = false;
+    resetPayBtn();
+  }
+
+  function resetPayBtn(){
+    var btn = q('rzp-pay');
+    var loading = q('rzp-loading-state');
+    var tos = q('rzp-tos');
+    if(btn){ btn.disabled = !(tos && tos.checked); btn.style.display = 'block'; btn.textContent = 'Pay \u20B9999/month \u2192 Get Pro Access'; }
+    if(loading){ loading.style.display = 'none'; }
+  }
+
+  function setLoading(msg){
+    var btn = q('rzp-pay');
+    var loading = q('rzp-loading-state');
+    if(btn){ btn.disabled = true; btn.style.display = 'none'; }
+    if(loading){ loading.style.display = 'block'; loading.textContent = msg || 'Setting up...'; }
+  }
+
+  function loadRazorpay(cb){
+    if(window.Razorpay){ cb(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    s.onload = cb;
+    s.onerror = function(){
+      if(q('rzp-err')) q('rzp-err').textContent = 'Could not load payment SDK. Please refresh and try again.';
+      resetPayBtn();
+    };
+    document.head.appendChild(s);
+  }
+
+  function escHtml(s){
+    var d = document.createElement('div');
+    d.textContent = String(s || '');
+    return d.innerHTML;
+  }
+
+  function showSuccess(email){
+    var cta = q('pr-pro-cta');
+    if(cta){
+      cta.textContent = '\u2713 Check your email, key is on its way!';
+      cta.style.background = 'linear-gradient(135deg,#059669,#047857)';
+      cta.style.cursor = 'default';
+      cta.style.pointerEvents = 'none';
+      cta.style.boxShadow = '0 4px 24px rgba(5,150,105,.4)';
+    }
+    var toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#059669,#047857);color:white;padding:16px 28px;border-radius:14px;font-size:14px;font-weight:700;z-index:999999;box-shadow:0 4px 24px rgba(5,150,105,.5);font-family:"Space Grotesk","DM Sans",sans-serif;text-align:center;max-width:90vw;line-height:1.5;';
+    toast.innerHTML = '\uD83C\uDF89 Payment received!<br><span style="font-size:12px;font-weight:400;opacity:.85;">Access key sent to <strong>' + escHtml(email) + '</strong></span>';
+    document.body.appendChild(toast);
+    setTimeout(function(){ toast.remove(); }, 7000);
+  }
+
+  async function payHandler(){
+    var emailEl = q('rzp-email');
+    var errEl = q('rzp-err');
+    var tosEl = q('rzp-tos');
+    if(!emailEl || !errEl) return;
+
+    var email = emailEl.value.trim().toLowerCase();
+    errEl.textContent = '';
+
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      errEl.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    if(tosEl && !tosEl.checked){
+      errEl.textContent = 'Please agree to the Terms of Service to continue.';
+      return;
+    }
+
+    setLoading('Creating your subscription...');
+
+    try {
+      var res = await fetch(WORKER_URL + '/init-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      });
+      var data = await res.json();
+
+      if(!data.subscription_id || data.error){
+        errEl.textContent = 'Setup failed: ' + (data.error || 'Please try again or email info@virorah.com');
+        resetPayBtn();
+        return;
+      }
+
+      setLoading('Opening secure payment...');
+      loadRazorpay(function(){
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+
+        var rzp = new window.Razorpay({
+          key:             data.rzp_key_id,
+          subscription_id: data.subscription_id,
+          name:            'Virorah PMS',
+          description:     'Pro Monthly Subscription',
+          handler: function(){ showSuccess(email); },
+          prefill:  { email: email },
+          notes:    { customer_id: data.customer_id || '', email: email },
+          theme:    { color: '#667eea' },
+          modal: {
+            backdropclose: false,
+            escape: true,
+            ondismiss: function(){ resetPayBtn(); }
+          }
+        });
+
+        rzp.on('payment.failed', function(response){
+          var errMsg = (response.error && response.error.description) || 'Payment failed. Please try again.';
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          emailEl.value = email;
+          if(q('rzp-tos')) q('rzp-tos').checked = true;
+          if(q('rzp-err')) q('rzp-err').textContent = errMsg;
+          resetPayBtn();
+        });
+
+        rzp.open();
+      });
+
+    } catch(e) {
+      console.error('Checkout error:', e);
+      if(q('rzp-err')) q('rzp-err').textContent = 'Connection error. Please check your internet and try again.';
+      resetPayBtn();
+    }
+  }
+
+  q('rzp-pay').addEventListener('click', payHandler);
+  q('rzp-cancel').addEventListener('click', closeModal);
+  q('rzp-email').addEventListener('keydown', function(e){ if(e.key === 'Enter') payHandler(); });
+  q('rzp-tos').addEventListener('change', function(){ q('rzp-pay').disabled = !this.checked; });
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  window.prHandleCta = function(){
+    if(prCurr === 'usd'){
+      window.location.href = DODO_PAYMENT_LINK;
+      return;
+    }
+    openModal();
+  };
+
+  prRefresh();
+
+  (function(){
+    var c = q('pr-canvas'); if(!c) return;
+    var ctx = c.getContext('2d'), pts = [], W, H;
+    function resize(){ W = c.width = c.parentElement.offsetWidth; H = c.height = c.parentElement.offsetHeight; }
+    function initPts(){ pts = []; for(var i = 0; i < 50; i++){ pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.3+.3,o:Math.random()*.4+.08}); } }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<pts.length;i++){ for(var j=i+1;j<pts.length;j++){ var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<120){ ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.strokeStyle='rgba(102,126,234,'+(0.1*(1-d/120))+')'; ctx.lineWidth=.6; ctx.stroke(); } } }
+      pts.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(165,180,252,'+p.o+')'; ctx.fill(); });
+      requestAnimationFrame(draw);
+    }
+    resize(); initPts(); draw();
+    setTimeout(function(){ resize(); initPts(); }, 600);
+    window.addEventListener('resize', function(){ resize(); initPts(); });
+  })();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>

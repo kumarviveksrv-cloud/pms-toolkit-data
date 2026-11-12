@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every HR tool you actually needed. In one place.</title>
+  <meta name="description" content="16 calculators. Real org data. AI simulations. FORGE diagnostic. The Case Room. 4 certifications. The platform HR professionals actually use.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/home.html">
+  <meta property="og:title" content="Every HR tool you actually needed. In one place.">
+  <meta property="og:description" content="16 calculators. Real org data. AI simulations. FORGE diagnostic. The Case Room. 4 certifications. The platform HR professionals actually use.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Home</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     HOME PAGE v4 - COMPLETE
+     Changes from v3:
+     - Hero repositioned around "Performance Intelligence. High
+       performing teams, by design." Chips and CTAs now lead with
+       The Case Room and FORGE instead of calculator/scenario counts.
+     - FIXED: broken link, old Forge Team card pointed to /forge-team
+       (404). Replaced entirely with a FORGE family showcase linking
+       to all three real pages: Forge Simulation (/forge), Forge Your
+       Org (/forge-your-org), The Foundry (/the-foundry).
+     - Module card 3 (Conversation Simulator) replaced with The Case
+       Room, now the flagship entry point, not a fourth-tier feature.
+     - Manager Challenge card, AI Learning Guide card, OKR Flagship
+       callout, and the particle background script are unchanged,
+       still accurate, and were already free of the Softr entity-in-
+       script risk pattern (all emoji here sit in plain HTML, never
+       inside <script> as JS string literals).
+     ============================================================ -->
+<style>
+  #hp-hero {
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    background: linear-gradient(160deg, #080612 0%, #0f0a1e 60%, #080612 100%);
+    overflow: hidden;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+  #hp-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hph-body {
+    position: relative;
+    z-index: 2;
+    padding: 44px 52px 36px;
+  }
+  @media(max-width:768px) {
+    .hph-body { padding: 28px 24px 24px; }
+  }
+  .hph-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .hph-left { flex: 1; min-width: 280px; }
+  .hph-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .hph-bc {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(102,126,234,.5);
+    margin-bottom: 16px;
+  }
+  .hph-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    background: rgba(102,126,234,.1);
+    border: 1px solid rgba(102,126,234,.2);
+    margin-bottom: 16px;
+  }
+  .hph-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #667eea;
+    box-shadow: 0 0 10px rgba(102,126,234,.9);
+  }
+  .hph-live-txt {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(102,126,234,.7);
+  }
+  .hph-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 3.2vw, 44px);
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .hph-name-inner { display: inline; }
+  .hph-sub {
+    font-size: 13px;
+    color: rgba(165,180,252,.55);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 500px;
+  }
+  .hph-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hph-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.55);
+    transition: all .3s;
+  }
+  .hph-chip:hover {
+    background: rgba(102,126,234,.15);
+    border-color: rgba(102,126,234,.35);
+    color: rgba(165,180,252,.9);
+    transform: translateY(-1px);
+  }
+  .hph-stats {
+    display: flex;
+    gap: 1px;
+    background: rgba(102,126,234,.12);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(102,126,234,.15);
+  }
+  .hph-stat {
+    padding: 18px 24px;
+    text-align: center;
+    background: #0a0818;
+    min-width: 90px;
+    transition: background .3s;
+  }
+  .hph-stat:hover { background: rgba(102,126,234,.1); }
+  .hph-stat:not(:last-child) { border-right: 1px solid rgba(102,126,234,.12); }
+  .hph-stat-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+    background: linear-gradient(135deg,#ffffff,#a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+  }
+  .hph-stat-lbl {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(165,180,252,.3);
+  }
+  .hph-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hph-btn-p {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(102,126,234,.4);
+    transition: all .25s;
+  }
+  .hph-btn-p:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(102,126,234,.6); }
+  .hph-btn-g {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    background: transparent;
+    border: 1px solid rgba(102,126,234,.3);
+    color: #a5b4fc;
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .hph-btn-g:hover { background: rgba(102,126,234,.12); border-color: rgba(102,126,234,.5); transform: translateY(-1px); }
+  .hph-strip {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(102,126,234,.12);
+    padding: 12px 52px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(0,0,0,.2);
+  }
+  @media(max-width:768px) { .hph-strip { padding: 10px 24px; } }
+  .hph-meta {
+    font-size: 11px;
+    color: rgba(165,180,252,.35);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hph-meta strong { color: rgba(165,180,252,.65); font-weight: 600; }
+  .hph-meta-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(102,126,234,.3);
+    margin: 0 6px;
+  }
+  .hp-mq-wrap {
+    overflow: hidden;
+    border-top: 1px solid rgba(102,126,234,.1);
+    border-bottom: 1px solid rgba(102,126,234,.1);
+    background: rgba(0,0,0,.2);
+    padding: 13px 0;
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .hp-mq-wrap::before, .hp-mq-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 60px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hp-mq-wrap::before { left: 0; background: linear-gradient(to right,#080612,transparent); }
+  .hp-mq-wrap::after { right: 0; background: linear-gradient(to left,#080612,transparent); }
+  .hp-mq-track { display: flex; white-space: nowrap; }
+  .hp-mq-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(165,180,252,.4);
+    flex-shrink: 0;
+    font-family: 'Inter', sans-serif;
+  }
+  .hp-mq-dot { color: rgba(102,126,234,.45); }
+  .hp-modules-wrap { padding: 0 0 24px; }
+  .hp-modules-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(102,126,234,.45);
+    margin-bottom: 14px;
+    padding: 0 0 0 2px;
+    font-family: 'Inter', sans-serif;
+  }
+  .hp-modules { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media(max-width:660px) { .hp-modules { grid-template-columns: 1fr; } }
+  .hp-mod {
+    position: relative;
+    border-radius: 14px;
+    padding: 26px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    border: 1px solid rgba(102,126,234,.12);
+    background: rgba(255,255,255,.025);
+    font-family: 'Inter', sans-serif;
+  }
+  .hp-mod:hover { transform: translateY(-3px); }
+  .hp-mod-p:hover { box-shadow: 0 14px 40px rgba(102,126,234,.18); border-color: rgba(102,126,234,.28); }
+  .hp-mod-t:hover { box-shadow: 0 14px 40px rgba(20,184,166,.12); border-color: rgba(20,184,166,.25); }
+  .hp-mod-g:hover { box-shadow: 0 14px 40px rgba(52,211,153,.1); border-color: rgba(52,211,153,.22); }
+  .hp-mod-v:hover { box-shadow: 0 14px 40px rgba(139,92,246,.14); border-color: rgba(139,92,246,.28); }
+  .hp-glow {
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: .15;
+    filter: blur(32px);
+  }
+  .gp { background: #667eea; }
+  .gt { background: #14b8a6; }
+  .gg { background: #34d399; }
+  .gv { background: #8b5cf6; }
+  .hp-mod-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .hp-mod-icon { font-size: 24px; }
+  .hp-mod-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .tp { background: rgba(102,126,234,.12); color: #a5b4fc; border: 1px solid rgba(102,126,234,.2); }
+  .tt { background: rgba(20,184,166,.1); color: #2dd4bf; border: 1px solid rgba(20,184,166,.18); }
+  .tg { background: rgba(52,211,153,.1); color: #34d399; border: 1px solid rgba(52,211,153,.18); }
+  .tv { background: rgba(139,92,246,.12); color: #c4b5fd; border: 1px solid rgba(139,92,246,.2); }
+  .hp-mod-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #f4f3ff;
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -.3px;
+  }
+  .hp-mod-desc {
+    font-size: 12px;
+    color: rgba(165,180,252,.5);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .hp-mod-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .hp-mod-pill {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(165,180,252,.4);
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 100px;
+    padding: 3px 9px;
+  }
+  .hp-mod-cta { font-size: 12px; font-weight: 700; transition: gap .2s; position: relative; z-index: 1; }
+  .hp-mod-p .hp-mod-cta { color: #a5b4fc; }
+  .hp-mod-t .hp-mod-cta { color: #2dd4bf; }
+  .hp-mod-g .hp-mod-cta { color: #34d399; }
+  .hp-mod-v .hp-mod-cta { color: #c4b5fd; }
+
+  /* FORGE FAMILY - standalone showcase, replaces old single Forge Team card */
+  .hp-fg-row {
+    padding: 30px 40px 34px;
+    position: relative;
+    z-index: 1;
+  }
+  .hp-fg-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(139,92,246,.65);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .hp-fg-badge {
+    background: rgba(139,92,246,.15);
+    border: 1px solid rgba(139,92,246,.3);
+    border-radius: 100px;
+    padding: 2px 8px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #a78bfa;
+  }
+  .hp-fg-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(18px,2.2vw,26px);
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: #f4f3ff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .hp-fg-sub {
+    font-size: 13px;
+    color: rgba(165,180,252,.5);
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 24px;
+  }
+  .hp-fg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media(max-width:760px) { .hp-fg-grid { grid-template-columns: 1fr; } }
+  .hp-fg-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(139,92,246,.18);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all .25s;
+  }
+  .hp-fg-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(139,92,246,.4);
+    box-shadow: 0 12px 32px rgba(139,92,246,.15);
+  }
+  .hp-fg-card-icon { font-size: 20px; margin-bottom: 10px; }
+  .hp-fg-card-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(196,181,253,.5);
+    margin-bottom: 6px;
+  }
+  .hp-fg-card-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f4f3ff;
+    margin-bottom: 8px;
+    letter-spacing: -.2px;
+  }
+  .hp-fg-card-desc {
+    font-size: 11.5px;
+    color: rgba(165,180,252,.5);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+  .hp-fg-card-cta {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #a78bfa;
+  }
+
+  /* AI card */
+  .hp-ai-card {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 14px;
+    padding: 28px 32px;
+    background: linear-gradient(135deg,rgba(139,92,246,.1),rgba(102,126,234,.06));
+    border: 1px solid rgba(139,92,246,.25);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+    transition: border-color .25s, box-shadow .25s;
+  }
+  .hp-ai-card:hover { border-color: rgba(139,92,246,.45); box-shadow: 0 12px 40px rgba(139,92,246,.12); }
+  .hp-ai-icon-wrap {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: rgba(139,92,246,.15);
+    border: 1px solid rgba(139,92,246,.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .hp-ai-body { flex: 1; min-width: 200px; }
+  .hp-ai-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c4b5fd;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hp-ai-tag-dot { width: 5px; height: 5px; border-radius: 50%; background: #8b5cf6; }
+  .hp-ai-title { font-size: 17px; font-weight: 700; color: #f4f3ff; margin-bottom: 6px; letter-spacing: -.3px; }
+  .hp-ai-desc { font-size: 12px; color: rgba(165,180,252,.55); line-height: 1.7; max-width: 560px; }
+  .hp-ai-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
+  .hp-ai-pills { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+  .hp-ai-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(139,92,246,.12);
+    border: 1px solid rgba(139,92,246,.2);
+    color: rgba(196,181,253,.7);
+  }
+  .hp-ai-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #c4b5fd; transition: gap .2s; }
+  .hp-ai-card:hover .hp-ai-cta { gap: 9px; }
+</style>
+
+<!-- HERO -->
+<div id="hp-hero">
+  <canvas id="hp-hero-canvas"></canvas>
+  <div class="hph-body">
+    <div class="hph-top">
+      <div class="hph-left">
+        <div class="hph-bc">🏠 VIRORAH PMS · PERFORMANCE INTELLIGENCE. HIGH PERFORMING TEAMS, BY DESIGN.</div>
+        <div class="hph-live">
+          <div class="hph-live-dot"></div>
+          <span class="hph-live-txt">Platform Live · 2026</span>
+        </div>
+        <div class="hph-name">
+          <span class="hph-name-inner">Bring a real situation.
+Build a real team.
+Both, right here.</span>
+        </div>
+        <div class="hph-sub">Describe a real performance situation to The Case Room and get a complete action plan. Or head into FORGE to learn how high performance actually works, diagnose your existing team, or build one from scratch. Real calculators, real scenarios, real org data, still here whenever you need the supporting layer.</div>
+        <div class="hph-chips">
+          <span class="hph-chip">💬 The Case Room</span>
+          <span class="hph-chip">🔥 FORGE</span>
+          <span class="hph-chip">⚡ 16 Calculators</span>
+          <span class="hph-chip">🎓 4 Certifications</span>
+        </div>
+      </div>
+      <div class="hph-right">
+        <div class="hph-stats">
+          <div class="hph-stat">
+            <div class="hph-stat-val" id="hps1">0</div>
+            <div class="hph-stat-lbl">Calculators</div>
+          </div>
+          <div class="hph-stat">
+            <div class="hph-stat-val" id="hps2">0</div>
+            <div class="hph-stat-lbl">Scenarios</div>
+          </div>
+          <div class="hph-stat">
+            <div class="hph-stat-val" id="hps3">0</div>
+            <div class="hph-stat-lbl">Employees</div>
+          </div>
+        </div>
+        <div class="hph-ctas">
+          <a href="/pages/case-room.html" class="hph-btn-p">💬 Bring Your Situation</a>
+          <a href="/pages/forge.html" class="hph-btn-g">🔥 Enter FORGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hph-strip">
+    <div class="hph-meta">Free: <strong>2 calculators · 6 scenarios · Forge Simulation Stages 1-2</strong></div>
+    <span class="hph-meta-sep"></span>
+    <div class="hph-meta">Pro: <strong>The Case Room · FORGE · all 16 calculators · real org data · certifications</strong></div>
+    <span class="hph-meta-sep"></span>
+    <div class="hph-meta">Click any module to begin →</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="hp-mq-wrap">
+  <div class="hp-mq-track" id="hp-marquee">
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>OKR Tracker</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>9-Box Grid</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Bell Curve</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Increment Calculator</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Manager Dashboard</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Calibration Simulator</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>DEI Analytics</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Succession Planning</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Compensation Equity</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>PIP Tracker</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>360° Feedback</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Balanced Scorecard</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Spatial 9-Box</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>What If Planner</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Org Health Report</span>
+    <span class="hp-mq-item"><span class="hp-mq-dot">⚡</span>Manager Report Card</span>
+  </div>
+</div>
+
+<!-- MODULE CARDS -->
+<div class="hp-modules-wrap">
+  <div class="hp-modules-label">CHOOSE YOUR MODULE</div>
+  <div class="hp-modules">
+    <a href="/pages/scenarios.html" class="hp-mod hp-mod-p">
+      <div class="hp-glow gp"></div>
+      <div class="hp-mod-top">
+        <div class="hp-mod-icon">🏢</div>
+        <div class="hp-mod-tag tp">Core Engine</div>
+      </div>
+      <div class="hp-mod-name">Scenario Library</div>
+      <div class="hp-mod-desc">15 pre-built companies. 750 employees. Run all 16 calculators instantly on any scenario: from a tech startup to a government agency.</div>
+      <div class="hp-mod-pills">
+        <span class="hp-mod-pill">16 live calculators</span>
+        <span class="hp-mod-pill">8 industries</span>
+        <span class="hp-mod-pill">Instant insights</span>
+      </div>
+      <div class="hp-mod-cta">Enter module →</div>
+    </a>
+    <a href="/pages/analyse-your-org.html" class="hp-mod hp-mod-t">
+      <div class="hp-glow gt"></div>
+      <div class="hp-mod-top">
+        <div class="hp-mod-icon">📂</div>
+        <div class="hp-mod-tag tt">Live Analysis</div>
+      </div>
+      <div class="hp-mod-name">Analyse Your Org</div>
+      <div class="hp-mod-desc">Upload your employee CSV. Every calculator runs on your actual team: real salaries, real ratings, real insights. Under 60 seconds to launch.</div>
+      <div class="hp-mod-pills">
+        <span class="hp-mod-pill">CSV upload</span>
+        <span class="hp-mod-pill">AI Org Health</span>
+        <span class="hp-mod-pill">Pay equity audit</span>
+      </div>
+      <div class="hp-mod-cta">Upload data →</div>
+    </a>
+    <a href="/pages/case-room.html" class="hp-mod hp-mod-g">
+      <div class="hp-glow gg"></div>
+      <div class="hp-mod-top">
+        <div class="hp-mod-icon">📝</div>
+        <div class="hp-mod-tag tg">Flagship</div>
+      </div>
+      <div class="hp-mod-name">The Case Room</div>
+      <div class="hp-mod-desc">Bring a real performance situation you are facing right now. Get a complete action plan: root cause, the right process, documentation, and how to have the conversation.</div>
+      <div class="hp-mod-pills">
+        <span class="hp-mod-pill">PROBE · PROTOCOL · LEDGER · RESOLVE</span>
+        <span class="hp-mod-pill">Real situations</span>
+        <span class="hp-mod-pill">Instant action plan</span>
+      </div>
+      <div class="hp-mod-cta">Enter The Case Room →</div>
+    </a>
+    <a href="/pages/certifications.html" class="hp-mod hp-mod-v">
+      <div class="hp-glow gv"></div>
+      <div class="hp-mod-top">
+        <div class="hp-mod-icon">🏆</div>
+        <div class="hp-mod-tag tv">Certifications</div>
+      </div>
+      <div class="hp-mod-name">Get Certified</div>
+      <div class="hp-mod-desc">Four industry certifications: PMS Fundamentals, PMS Advanced, PMS Practitioner and PMS Portfolio. 30 questions (20 for
+      Portfolio), 80% pass threshold, unique credential ID, LinkedIn-ready badge.</div>
+      <div class="hp-mod-pills">
+        <span class="hp-mod-pill">30 questions each</span>
+        <span class="hp-mod-pill">Unique credential ID</span>
+        <span class="hp-mod-pill">LinkedIn export</span>
+      </div>
+      <div class="hp-mod-cta">Start certification →</div>
+    </a>
+  </div>
+</div>
+
+<!-- AI LEARNING GUIDE CARD -->
+<div class="hp-ai-card">
+  <div class="hp-ai-icon-wrap">🤖</div>
+  <div class="hp-ai-body">
+    <div class="hp-ai-tag">
+      <div class="hp-ai-tag-dot"></div>Built-in · Every Page
+    </div>
+    <div class="hp-ai-title">AI Learning Guide - ask anything, anytime</div>
+    <div class="hp-ai-desc">Every page has an AI guide that knows the entire Virorah PMS platform. Ask it to explain a calculator, walk you through a concept, or help interpret your results. No googling, no switching tabs - answers in seconds.</div>
+  </div>
+  <div class="hp-ai-right">
+    <div class="hp-ai-pills">
+      <span class="hp-ai-pill">PMS concepts</span>
+      <span class="hp-ai-pill">Calculator help</span>
+      <span class="hp-ai-pill">Result interpretation</span>
+      <span class="hp-ai-pill">HR frameworks</span>
+    </div>
+    <div class="hp-ai-cta">Look for the purple button on any page →</div>
+  </div>
+</div>
+
+<!-- MANAGER CHALLENGE - STANDALONE CARD -->
+<div style="background:linear-gradient(135deg,#1a0e00,#0f0a00,#1a1000);border:1px solid rgba(245,158,11,.2);border-radius:16px;margin-top:24px;margin-bottom:16px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;">
+  <div style="position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.07),transparent 70%);top:-100px;right:-60px;pointer-events:none;"></div>
+  <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.04),transparent 70%);bottom:-60px;left:-40px;pointer-events:none;"></div>
+  <div style="padding:36px 40px;position:relative;z-index:1;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,158,11,.65);margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+      🏆 THE MANAGER CHALLENGE
+      <span style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);border-radius:100px;padding:2px 10px;font-size:9px;font-weight:800;letter-spacing:1px;color:#f59e0b;">FREE · SCORED OUT OF 100</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:24px;">
+      <div style="flex:1;min-width:260px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.8vw,32px);font-weight:800;letter-spacing:-0.8px;color:#f4f3ff;margin-bottom:8px;line-height:1.15;">How good a manager<br>are you, <span style="color:#f59e0b;">really?</span></h2>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:440px;margin:0;">12 employees. Real performance data. A fixed budget. Three ratings to defend in calibration. Two legally complex conversations. Scored out of 100. Most managers don't like what they find out.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0;">
+        <div style="text-align:center;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:12px;padding:14px 24px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#f59e0b;line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums;">100</div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,158,11,.5);margin-top:2px;">pts to win</div>
+        </div>
+        <a href="/pages/game.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;font-size:13px;font-weight:700;background:linear-gradient(135deg,#f59e0b,#d97706);color:#1a0e00;text-decoration:none;font-family:'Space Grotesk',sans-serif;box-shadow:0 4px 20px rgba(245,158,11,.3);transition:all .25s;white-space:nowrap;">🎮 Take the Challenge →</a>
+        <div style="font-size:10px;color:rgba(255,255,255,.25);text-align:right;">~15 min · Free · Leaderboard</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="padding:14px;border-radius:10px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);">
+        <div style="font-size:18px;margin-bottom:6px;">⭐</div>
+        <div style="font-size:11px;font-weight:700;color:#f4f3ff;margin-bottom:3px;">Rate 12 Employees</div>
+        <div style="font-size:10px;color:rgba(245,158,11,.6);font-weight:700;">Up to 40 pts</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);">
+        <div style="font-size:18px;margin-bottom:6px;">💰</div>
+        <div style="font-size:11px;font-weight:700;color:#f4f3ff;margin-bottom:3px;">Allocate Budget</div>
+        <div style="font-size:10px;color:rgba(245,158,11,.6);font-weight:700;">Up to 20 pts</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);">
+        <div style="font-size:18px;margin-bottom:6px;">⚖️</div>
+        <div style="font-size:11px;font-weight:700;color:#f4f3ff;margin-bottom:3px;">Defend Calibration</div>
+        <div style="font-size:10px;color:rgba(245,158,11,.6);font-weight:700;">Up to 20 pts</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);">
+        <div style="font-size:18px;margin-bottom:6px;">💬</div>
+        <div style="font-size:11px;font-weight:700;color:#f4f3ff;margin-bottom:3px;">Two Conversations</div>
+        <div style="font-size:10px;color:rgba(245,158,11,.6);font-weight:700;">Up to 20 pts</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORGE FAMILY - STANDALONE SHOWCASE (replaces old single Forge Team card) -->
+<div style="background:linear-gradient(135deg,#0d0b22,#13102e,#0d0b22);border:1px solid rgba(139,92,246,.2);border-radius:16px;margin-top:16px;margin-bottom:24px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;">
+  <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.08),transparent 70%);top:-80px;right:-40px;pointer-events:none;"></div>
+  <div class="hp-fg-row">
+    <div class="hp-fg-eyebrow">
+      🔥 FORGE
+      <span class="hp-fg-badge">3 WAYS IN</span>
+    </div>
+    <h3 class="hp-fg-title">Learn it. Diagnose it. Build it.</h3>
+    <p class="hp-fg-sub">Six research-backed conditions, grounded in Skunk Works, Pixar, SpaceX, ISRO and more, not generic AI advice. Pick the entry point that matches where you are actually starting from.</p>
+    <div class="hp-fg-grid">
+      <a href="/pages/forge.html" class="hp-fg-card">
+        <div class="hp-fg-card-icon">⚡</div>
+        <div class="hp-fg-card-tag">Free · Stages 1-2</div>
+        <div class="hp-fg-card-name">Forge Simulation</div>
+        <div class="hp-fg-card-desc">8 characters, 6 stages, real AI consequences. Learn how high performance actually works before you try to build it.</div>
+        <div class="hp-fg-card-cta">Start simulating →</div>
+      </a>
+      <a href="/pages/forge-your-org.html" class="hp-fg-card">
+        <div class="hp-fg-card-icon">🔧</div>
+        <div class="hp-fg-card-tag">Diagnostic</div>
+        <div class="hp-fg-card-name">Forge Your Org</div>
+        <div class="hp-fg-card-desc">Score your actual team against 5 conditions and get a 90-day playbook, with real Humacity financial exposure figures.</div>
+        <div class="hp-fg-card-cta">Diagnose your org →</div>
+      </a>
+      <a href="/pages/the-foundry.html" class="hp-fg-card">
+        <div class="hp-fg-card-icon">🔨</div>
+        <div class="hp-fg-card-tag">Build journey</div>
+        <div class="hp-fg-card-name">The Foundry</div>
+        <div class="hp-fg-card-desc">Build a genuinely extraordinary team from scratch, or redesign an existing one. Ends in a downloadable Operating Kit.</div>
+        <div class="hp-fg-card-cta">Enter The Foundry →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     OKR FLAGSHIP CALLOUT - Home Page (logged-in users)
+     Unchanged from v3, still accurate.
+     ═══════════════════════════════════════════════════════════ -->
+<div style="font-family:'DM Sans',sans-serif;margin-bottom:24px;">
+  <div style="background:linear-gradient(135deg,rgba(16,185,129,.08) 0%,rgba(99,102,241,.08) 100%);border:1px solid rgba(16,185,129,.22);border-radius:20px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;position:relative;overflow:hidden;box-sizing:border-box;">
+
+    <!-- glow -->
+    <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(16,185,129,.12) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <!-- left -->
+    <div style="flex:1;min-width:280px;">
+      <div style="display:inline-flex;align-items:center;gap:7px;padding:4px 14px;border-radius:20px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6ee7b7;margin-bottom:14px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:#10b981;"></div>
+        NEW &middot; Pro Download
+      </div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#f4f3ff;line-height:1.2;margin-bottom:10px;">
+        OKR Flagship Planner is live. <span style="background:linear-gradient(135deg,#6ee7b7,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Download it now.</span>
+      </div>
+      <div style="font-size:14px;color:rgba(165,180,252,.6);line-height:1.7;max-width:520px;margin-bottom:20px;">
+        12 sheets · 765 live formulas · 4-level cascade · Google 0.0–1.0 + SMART % scoring · CHRO dashboard · Stretch vs Committed tracker · Cross-functional dependency map. The tool Lattice charges ₹50,000/month for. Yours as a Pro member.
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="/pages/downloads.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;text-decoration:none;box-shadow:0 4px 20px rgba(16,185,129,.3);transition:opacity .2s;">
+          &#x2B07; Download OKR Flagship (.xlsx)
+        </a>
+        <a href="/pages/downloads.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(165,180,252,.7);font-size:13px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;transition:all .2s;">
+          View All Downloads &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- right: mini sheet preview -->
+    <div style="flex:0 0 auto;background:#030210;border:1px solid rgba(16,185,129,.15);border-radius:12px;overflow:hidden;width:300px;min-width:0;flex-shrink:0;">
+      <div style="background:#080614;padding:8px 12px;display:flex;gap:8px;border-bottom:1px solid rgba(99,102,241,.1);align-items:center;">
+        <div style="width:8px;height:8px;border-radius:50%;background:#10b981;"></div>
+        <span style="font-size:10px;color:rgba(165,180,252,.5);font-family:'Space Grotesk',sans-serif;">Virorah_OKR_Flagship.xlsx</span>
+        <span style="margin-left:auto;font-size:9px;color:rgba(16,185,129,.5);">12 sheets</span>
+      </div>
+      <!-- mini tab bar -->
+      <div style="display:flex;background:#050410;border-bottom:1px solid rgba(99,102,241,.08);padding:0 6px;overflow:hidden;">
+        <div style="padding:6px 10px;font-size:9px;font-weight:600;color:#a5b4fc;border-bottom:2px solid #6366f1;">&#x1F3E2; Company</div>
+        <div style="padding:6px 8px;font-size:9px;color:rgba(165,180,252,.35);">&#x1F321; Dashboard</div>
+        <div style="padding:6px 8px;font-size:9px;color:rgba(165,180,252,.35);">&#x26A1; Stretch</div>
+        <div style="padding:6px 6px;font-size:9px;color:rgba(165,180,252,.2);">+9</div>
+      </div>
+      <!-- mini rows -->
+      <div style="padding:6px 0;">
+        <div style="display:flex;gap:6px;padding:5px 10px;align-items:center;">
+          <div style="flex:1;font-size:9px;color:#93c5fd;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Reach 10k Pro subscribers</div>
+          <div style="font-size:9px;color:#f87171;font-weight:700;font-family:'Space Grotesk',sans-serif;">0.03</div>
+          <div style="font-size:8px;color:#f87171;">🔴</div>
+        </div>
+        <div style="display:flex;gap:6px;padding:5px 10px;background:rgba(255,255,255,.015);align-items:center;">
+          <div style="flex:1;font-size:9px;color:#93c5fd;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Ship Goal Diagnostic Lab</div>
+          <div style="font-size:9px;color:#fde68a;font-weight:700;font-family:'Space Grotesk',sans-serif;">1.00</div>
+          <div style="font-size:8px;color:#fde68a;">🏆</div>
+        </div>
+        <div style="display:flex;gap:6px;padding:5px 10px;align-items:center;">
+          <div style="flex:1;font-size:9px;color:#93c5fd;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Keep burn below ₹8L/month</div>
+          <div style="font-size:9px;color:#4ade80;font-weight:700;font-family:'Space Grotesk',sans-serif;">0.78</div>
+          <div style="font-size:8px;color:#4ade80;">🟢</div>
+        </div>
+        <div style="display:flex;gap:6px;padding:5px 10px;background:rgba(255,255,255,.015);align-items:center;">
+          <div style="flex:1;font-size:9px;color:#93c5fd;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Hit ₹50L ARR by FY2026</div>
+          <div style="font-size:9px;color:#f87171;font-weight:700;font-family:'Space Grotesk',sans-serif;">0.00</div>
+          <div style="font-size:8px;color:#f87171;">🔴</div>
+        </div>
+      </div>
+      <div style="padding:6px 10px;background:#030208;border-top:1px solid rgba(99,102,241,.08);font-size:9px;color:rgba(16,185,129,.5);font-family:'Space Grotesk',sans-serif;">765 formulas · Zero errors · Free with Pro</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var s=document.createElement('style');
+  s.textContent=
+    '@keyframes hphFU{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}'+
+    '@keyframes hphPulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(102,126,234,.9);}50%{opacity:.3;box-shadow:none;}}'+
+    '@keyframes hphSH{0%{background-position:-700px 0;}70%,100%{background-position:900px 0;}}'+
+    '@keyframes hpMQ{from{transform:translateX(0);}to{transform:translateX(-50%);}}'+
+    '.hph-bc{opacity:0;animation:hphFU .5s .05s ease forwards;}'+
+    '.hph-live{opacity:0;animation:hphFU .5s .12s ease forwards;}'+
+    '.hph-name{opacity:0;animation:hphFU .5s .2s ease forwards;}'+
+    '.hph-sub{opacity:0;animation:hphFU .5s .28s ease forwards;}'+
+    '.hph-chips{opacity:0;animation:hphFU .5s .35s ease forwards;}'+
+    '.hph-right{opacity:0;animation:hphFU .5s .38s ease forwards;}'+
+    '.hph-strip{opacity:0;animation:hphFU .4s .48s ease forwards;}'+
+    '.hph-live-dot{animation:hphPulse 2s ease-in-out infinite;}'+
+    '.hph-name-inner{background:linear-gradient(90deg,#f4f3ff 20%,#c4b5fd 40%,#ffffff 50%,#a5b4fc 60%,#f4f3ff 80%);background-size:900px 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:hphSH 4s ease .8s infinite;}'+
+    '.hp-mq-track{animation:hpMQ 30s linear infinite;}';
+  document.head.appendChild(s);
+
+  var canvas=document.getElementById('hp-hero-canvas');
+  var root=document.getElementById('hp-hero');
+  var ctx=canvas.getContext('2d');
+  var pts=[];var W,H;
+  function resize(){W=canvas.width=root.offsetWidth||800;H=canvas.height=root.offsetHeight||260;}
+  function initPts(){pts=[];for(var i=0;i<55;i++){pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,o:Math.random()*.5+.15});}}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(102,126,234,'+(0.15*(1-d/120))+')';ctx.lineWidth=.7;ctx.stroke();}}}
+    pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.fill();});
+    requestAnimationFrame(draw);
+  }
+  resize();initPts();draw();
+  setTimeout(function(){resize();initPts();},600);
+  window.addEventListener('resize',function(){resize();initPts();});
+
+  var track=document.getElementById('hp-marquee');
+  if(track){track.innerHTML+=track.innerHTML;}
+
+  function countUp(el,t,d){if(!el)return;var s=0,st=t/(d/16);var iv=setInterval(function(){s+=st;if(s>=t){el.textContent=t;clearInterval(iv);}else{el.textContent=Math.floor(s);}},16);}
+  setTimeout(function(){
+    countUp(document.getElementById('hps1'),16,900);
+    countUp(document.getElementById('hps2'),15,900);
+    countUp(document.getElementById('hps3'),750,1200);
+  },350);
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>

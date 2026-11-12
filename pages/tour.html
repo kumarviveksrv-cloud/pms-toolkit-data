@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not sure where to start? Start here.</title>
+  <meta name="description" content="Full walkthrough, situation-to-tool lookup, and a suggested path through the platform. The fastest way to understand what Virorah PMS actually does.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/tour.html">
+  <meta property="og:title" content="Not sure where to start? Start here.">
+  <meta property="og:description" content="Full walkthrough, situation-to-tool lookup, and a suggested path through the platform. The fastest way to understand what Virorah PMS actually does.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Platform Tour</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH PMS - PLATFORM TOUR PAGE
+     URL: /tour
+     Sections: Hero picker, Full Roadmap, Situation Lookup, FAQ
+     v6: Humacity Suite added - one grouped roadmap card after
+         Analyse Your Org (icon: bolt, links to /humacity-ledger).
+         New Lookup group "What is my team actually costing and
+         delivering?" with all 5 Humacity tools. FAQ Free vs Pro
+         count unchanged at 16 calculators.
+     v5: Roadmap and Lookup updated for FORGE family (Forge Simulation,
+         Forge Your Org, The Foundry) and The Case Room, all added and
+         reordered to lead the tour per the pivot. All emoji converted
+         from raw Unicode characters to String.fromCodePoint() calls,
+         since raw non-ASCII inside <script> is exactly what broke
+         FORGE Team and The Foundry under Softr's parser earlier today.
+     v4: PDF Guide made discoverable two ways: third hero button
+         (ghost tier, same weight as "I know what I need"), and the
+         Artifacts box pulled out of its buried spot inside Lookup
+         into its own section right after the Roadmap.
+     ============================================================ -->
+<style>
+  #pt-root {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: transparent;
+    color: #f4f3ff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+  }
+  #pt-root * { box-sizing: border-box; }
+
+  /* ── HERO ── */
+  .pt-hero { text-align: center; padding: 48px 20px 40px; }
+  .pt-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;
+    background: rgba(102,126,234,.1); border: 1px solid rgba(102,126,234,.28);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #a5b4fc;
+  }
+  .pt-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #667eea; }
+  .pt-h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -1px;
+    margin-bottom: 14px; line-height: 1.15;
+  }
+  .pt-h1 span { background: linear-gradient(135deg,#c4b5fd,#667eea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .pt-sub { font-size: 14px; color: rgba(165,180,252,.6); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+
+  .pt-picker { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .pt-picker-btn {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+    padding: 20px 24px; border-radius: 14px; text-align: left; cursor: pointer;
+    min-width: 240px; max-width: 300px; font-family: inherit; border: none;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .pt-picker-btn:hover { transform: translateY(-3px); }
+  .pt-picker-primary { background: linear-gradient(135deg,#667eea,#764ba2); color: white; box-shadow: 0 4px 24px rgba(102,126,234,.35); }
+  .pt-picker-primary:hover { box-shadow: 0 10px 36px rgba(102,126,234,.5); }
+  .pt-picker-ghost { background: rgba(255,255,255,.04); border: 1px solid rgba(102,126,234,.2) !important; color: #f4f3ff; }
+  .pt-picker-ghost:hover { background: rgba(102,126,234,.1); }
+  .pt-picker-icon { font-size: 22px; }
+  .pt-picker-title { font-size: 15px; font-weight: 700; }
+  .pt-picker-desc { font-size: 12px; opacity: .8; line-height: 1.5; }
+
+  /* ── SECTION LABELS ── */
+  .pt-section { margin-top: 64px; scroll-margin-top: 90px; }
+  .pt-section-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+    color: #667eea; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+  }
+  .pt-section-label::before { content: ''; width: 24px; height: 1.5px; background: #667eea; }
+  .pt-section-title {
+    font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px,2.6vw,30px); font-weight: 700;
+    margin-bottom: 28px; letter-spacing: -.5px;
+  }
+
+  /* -- ROADMAP -- */
+  .pt-roadmap-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 14px; }
+  .pt-road-card {
+    background: rgba(255,255,255,.025); border: 1px solid rgba(102,126,234,.14);
+    border-radius: 14px; padding: 18px 20px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 8px; position: relative;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+  }
+  .pt-road-card:hover { transform: translateY(-3px); border-color: rgba(102,126,234,.4); box-shadow: 0 10px 30px rgba(102,126,234,.15); }
+  .pt-road-card.pt-flagship { border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.04); }
+  .pt-road-card.pt-flagship:hover { border-color: rgba(251,191,36,.55); box-shadow: 0 10px 30px rgba(251,191,36,.15); }
+  .pt-road-num {
+    position: absolute; top: 14px; right: 16px; font-family: 'Space Grotesk',sans-serif;
+    font-size: 11px; font-weight: 700; color: rgba(102,126,234,.4);
+  }
+  .pt-road-icon { font-size: 22px; }
+  .pt-road-name { font-size: 14px; font-weight: 700; color: #f4f3ff; }
+  .pt-road-desc { font-size: 11.5px; color: rgba(165,180,252,.5); line-height: 1.6; }
+
+  /* -- LOOKUP -- */
+  .pt-lookup-group { margin-bottom: 26px; }
+  .pt-lookup-group-title {
+    font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #a5b4fc; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(102,126,234,.15);
+  }
+  .pt-lookup-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 13px 4px; border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .pt-lookup-situation { font-size: 13.5px; color: rgba(240,238,255,.85); flex: 1; }
+  .pt-lookup-tool {
+    display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+    font-size: 12px; font-weight: 700; color: #a5b4fc; text-decoration: none;
+    padding: 7px 14px; border-radius: 8px; background: rgba(102,126,234,.1);
+    border: 1px solid rgba(102,126,234,.22); transition: all .2s; white-space: nowrap;
+  }
+  .pt-lookup-tool:hover { background: rgba(102,126,234,.2); border-color: rgba(102,126,234,.4); }
+
+  /* Artifacts callout, visually distinct */
+  .pt-artifacts {
+    margin: 8px 0 32px; padding: 22px 24px; border-radius: 16px;
+    background: linear-gradient(135deg,rgba(16,185,129,.08),rgba(99,102,241,.08));
+    border: 1px solid rgba(16,185,129,.25);
+  }
+  .pt-artifacts-title { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 14px; }
+  .pt-artifacts-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; }
+  .pt-artifacts-situation { font-size: 13.5px; color: rgba(240,238,255,.85); flex: 1; }
+  .pt-artifacts-tool {
+    display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+    font-size: 12px; font-weight: 700; color: #6ee7b7; text-decoration: none;
+    padding: 8px 16px; border-radius: 8px; background: rgba(16,185,129,.12);
+    border: 1px solid rgba(16,185,129,.3); transition: all .2s; white-space: nowrap;
+  }
+  .pt-artifacts-tool:hover { background: rgba(16,185,129,.22); }
+
+  /* ── FAQ ── */
+  .pt-faq-item { border-bottom: 1px solid rgba(255,255,255,.07); }
+  .pt-faq-q {
+    padding: 16px 4px; font-size: 13.5px; font-weight: 600; color: rgba(240,238,255,.85);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .pt-faq-arr { font-size: 11px; color: #a5b4fc; transition: transform .2s; flex-shrink: 0; }
+  .pt-faq-item.pt-open .pt-faq-arr { transform: rotate(180deg); }
+  .pt-faq-a {
+    font-size: 13px; color: rgba(165,180,252,.6); line-height: 1.75;
+    max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; padding: 0 4px;
+  }
+  .pt-faq-item.pt-open .pt-faq-a { max-height: 220px; padding-bottom: 16px; }
+
+  @media(max-width:640px){
+    .pt-lookup-row, .pt-artifacts-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .pt-lookup-tool, .pt-artifacts-tool { align-self: flex-start; }
+  }
+</style>
+
+<div id="pt-root">
+
+  <!-- HERO -->
+  <div class="pt-hero">
+    <div class="pt-eyebrow"><div class="pt-eyebrow-dot"></div>Platform Tour</div>
+    <h1 class="pt-h1">Lost? <span>Start here.</span></h1>
+    <p class="pt-sub">Whether this is your first minute on Virorah PMS or your fiftieth visit, this page gets you to the right place, fast.</p>
+    <div class="pt-picker">
+      <button class="pt-picker-btn pt-picker-primary" onclick="document.getElementById('pt-roadmap').scrollIntoView({behavior:'smooth'})">
+        <div class="pt-picker-icon" id="pt-icon-map"></div>
+        <div class="pt-picker-title">Show me the full tour</div>
+        <div class="pt-picker-desc">Walk through every module, in the order most people find useful.</div>
+      </button>
+      <button class="pt-picker-btn pt-picker-ghost" onclick="document.getElementById('pt-lookup').scrollIntoView({behavior:'smooth'})">
+        <div class="pt-picker-icon" id="pt-icon-target"></div>
+        <div class="pt-picker-title">I know what I need</div>
+        <div class="pt-picker-desc">Jump straight to the tool that matches your actual situation.</div>
+      </button>
+      <a href="https://kumarviveksrv-cloud.github.io/pms-toolkit-data/virorah-pms-platform-guide.pdf" target="_blank" rel="noopener" class="pt-picker-btn pt-picker-ghost">
+        <div class="pt-picker-icon" id="pt-icon-doc"></div>
+        <div class="pt-picker-title">Download the guide</div>
+        <div class="pt-picker-desc">Take the whole tour as a PDF, read it offline or share with your team.</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="pt-section" id="pt-roadmap">
+    <div class="pt-section-label">The Full Journey</div>
+    <div class="pt-section-title">Every module, in order</div>
+    <div class="pt-roadmap-grid" id="pt-roadmap-grid"></div>
+  </div>
+
+  <!-- ARTIFACTS -->
+  <div class="pt-section" id="pt-artifacts-section">
+    <div class="pt-section-label">Take Something With You</div>
+    <div class="pt-section-title">Grab these before you go further</div>
+    <div class="pt-artifacts">
+      <div class="pt-artifacts-title" id="pt-artifacts-title"></div>
+      <div class="pt-artifacts-row">
+        <div class="pt-artifacts-situation">A complete Case Room action plan, or a FORGE Operating Kit for your team</div>
+        <a href="/pages/case-room.html" class="pt-artifacts-tool">The Case Room &#8594;</a>
+      </div>
+      <div class="pt-artifacts-row">
+        <div class="pt-artifacts-situation">A ready-to-use PIP letter, feedback form, or calibration sheet</div>
+        <a href="/pages/templates.html" class="pt-artifacts-tool">Templates &#8594;</a>
+      </div>
+      <div class="pt-artifacts-row">
+        <div class="pt-artifacts-situation">The OKR Flagship Planner, 12 sheets, 765 live formulas</div>
+        <a href="/pages/downloads.html" class="pt-artifacts-tool">Downloads &#8594;</a>
+      </div>
+      <div class="pt-artifacts-row">
+        <div class="pt-artifacts-situation">This entire tour as one PDF, read offline or share with your team</div>
+        <a href="https://kumarviveksrv-cloud.github.io/pms-toolkit-data/virorah-pms-platform-guide.pdf" class="pt-artifacts-tool" target="_blank" rel="noopener">Download Guide &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOKUP -->
+  <div class="pt-section" id="pt-lookup">
+    <div class="pt-section-label">Situation &#8594; Tool</div>
+    <div class="pt-section-title">Tell me your problem, I'll tell you the tool</div>
+    <div id="pt-lookup-groups"></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="pt-section" id="pt-faq">
+    <div class="pt-section-label">Common Questions</div>
+    <div class="pt-section-title">Still stuck?</div>
+    <div id="pt-faq-list"></div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+
+// Icon codepoints, rendered via String.fromCodePoint so nothing
+// non-ASCII ever sits as a raw character inside this script block.
+var ICON = {
+  map: 128506,
+  target: 127919,
+  doc: 128196,
+  book: 128218,
+  clipboard: 128203,
+  building: 127970,
+  chart: 128202,
+  cycle: 128260,
+  report: 128195,
+  search: 128269,
+  bolt: 9889,
+  masks: 127917,
+  gamepad: 127918,
+  inbox: 128229,
+  trophy: 127942,
+  pin: 128206,
+  arrowDown: 9660,
+  compass: 129517,
+  hammer: 128296,
+  speech: 128172
+};
+function ic(name){ return String.fromCodePoint(ICON[name]); }
+
+document.getElementById('pt-icon-map').textContent = ic('map');
+document.getElementById('pt-icon-target').textContent = ic('target');
+document.getElementById('pt-icon-doc').textContent = ic('doc');
+document.getElementById('pt-artifacts-title').textContent = ic('pin') + ' Real tools, ready to use';
+
+// -- ROADMAP ---------------------------------------------------
+// FORGE family and The Case Room lead the tour, per the pivot to
+// Performance Intelligence. Humacity Suite sits after Analyse Your
+// Org since both read from the same uploaded CSV dataset.
+var ROADMAP = [
+  { icon:'speech',    name:'The Case Room',        desc:'Bring a real situation, get a full action plan.', path:'/pages/case-room.html' },
+  { icon:'compass',   name:'Forge Simulation',      desc:'Learn how high performance actually works, free.', path:'/pages/forge.html' },
+  { icon:'search',    name:'Forge Your Org',        desc:'Diagnose your existing team against 5 conditions.', path:'/pages/forge-your-org.html' },
+  { icon:'hammer',    name:'The Foundry',           desc:'Build a genuinely extraordinary team from scratch.', path:'/pages/the-foundry.html' },
+  { icon:'masks',     name:'Simulate Conversations',desc:'Practise the hardest conversation before you have it.', path:'/pages/simulate.html' },
+  { icon:'gamepad',   name:'Manager Game',          desc:'Test yourself under real management pressure.', path:'/pages/game.html' },
+  { icon:'building',  name:'Scenarios',             desc:'Practice on 15 pre-built companies.', path:'/pages/scenarios.html' },
+  { icon:'cycle',     name:'Review Cycle',          desc:'Walk the full 7-stage process.', path:'/pages/review-cycle.html' },
+  { icon:'chart',     name:'Analyse Your Org',      desc:'Bring your real data. Stays in your browser.', path:'/pages/analyse-your-org.html' },
+  { icon:'bolt',      name:'Humacity Suite',        desc:'What your team actually costs and delivers, in numbers.', path:'/pages/humacity-ledger.html' },
+  { icon:'target',    name:'Goal Lab',              desc:'Diagnose goals before cascading.', path:'/pages/goal-lab.html' },
+  { icon:'search',    name:'Bias Audit',            desc:'Check if your ratings are fair.', path:'/pages/bias-audit.html' },
+  { icon:'report',    name:'Manager Report Card',   desc:'Assess any manager with data.', path:'/pages/manager-report-card.html' },
+  { icon:'book',      name:'Learning Hub',          desc:'Understand the frameworks in depth.', path:'/pages/learning-hub.html' },
+  { icon:'clipboard', name:'Case Studies',          desc:'Real stories, good and bad outcomes.', path:'/pages/case-studies.html' },
+  { icon:'doc',       name:'Templates',             desc:'Take ready-made tools to work.', path:'/pages/templates.html' },
+  { icon:'inbox',     name:'Downloads',             desc:'Grab the OKR Flagship and more.', path:'/pages/downloads.html' },
+  { icon:'trophy',    name:'Certifications',        desc:'Prove what you have learned.', path:'/pages/certifications.html' }
+];
+
+var FLAGSHIP_PATHS = ['/case-room','/forge','/forge-your-org','/the-foundry'];
+
+// -- LOOKUP ----------------------------------------------------
+var LOOKUP = [
+  { group:'A real situation, right now', items:[
+    ['A specific performance situation is on my desk today', 'The Case Room', '/case-room'],
+    ['I need to build a genuinely high-performing team from scratch', 'The Foundry', '/the-foundry'],
+    ['I want to diagnose what is broken in my existing team', 'Forge Your Org', '/forge-your-org'],
+    ['I want to understand how high performance actually works first', 'Forge Simulation', '/forge']
+  ]},
+  { group:'Performance decisions', items:[
+    ['Deciding ratings before calibration','9-Box Grid, Bell Curve','/scenarios'],
+    ['Worried ratings might be biased','Bias Audit','/scenarios'],
+    ['Checking for gaps by gender or demographic','DEI Analytics','/scenarios'],
+    ['Defending ratings in a calibration meeting','Calibration Engine','/scenarios']
+  ]},
+  { group:'Compensation', items:[
+    ['Planning increments on a fixed budget','Increment Engine','/scenarios'],
+    ['Checking if pay is fair across the team','Comp Equity Analyser','/scenarios']
+  ]},
+  { group:'People decisions', items:[
+    ['Flagging flight risk or succession readiness','Manager Dashboard, Succession Planner','/scenarios'],
+    ['Starting a Performance Improvement Plan','PIP Tracker','/scenarios'],
+    ['Running a 360 feedback cycle','360 Feedback','/scenarios'],
+    ['One multi-metric view for a team or manager','Balanced Scorecard','/scenarios']
+  ]},
+  { group:'What is my team actually costing and delivering?', items:[
+    ['Full financial ledger of your team\u2019s human capital value','Value Ledger','/humacity-ledger'],
+    ['Compute the Talent Quality Premium score across 5 verdict areas','Talent Premium','/humacity-talent-premium'],
+    ['20-signal diagnostic of your org\u2019s human capital DNA type','Org Vitals','/humacity-org-vitals'],
+    ['Income statement view of your entire workforce investment','Human P&L','/humacity-human-pl'],
+    ['Assets vs liabilities: Net Human Capital and Humacity Score','Balance Sheet','/humacity-balance-sheet']
+  ]},
+  { group:'Goals', items:[
+    ['Writing or reviewing OKRs','OKR Tracker, OKR Simulator, OKR Calculator','/scenarios'],
+    ['Bird\u2019s-eye view of team OKR health','OKR Galaxy','/scenarios'],
+    ['Checking if a goal is actually measurable','Goal Lab','/goal-lab']
+  ]},
+  { group:'Before you commit', items:[
+    ['Want to model a few \u201cwhat if\u201d paths first','What If Planner','/scenarios']
+  ]},
+  { group:'Conversations', items:[
+    ['A hard conversation coming up','Conversation Simulator','/simulate'],
+    ['Testing yourself under real management pressure','Manager Game','/game']
+  ]},
+  { group:'Learn the theory first', items:[
+    ['Want the framework before touching a calculator','Learning Hub','/learning-hub'],
+    ['Want real company stories, what worked and failed','Case Studies','/case-studies']
+  ]},
+  { group:'Bigger picture', items:[
+    ['Walking a full review cycle start to finish','Review Cycle','/review-cycle'],
+    ['Testing this on your own team\u2019s real data','Analyse Your Org','/analyse-your-org'],
+    ['Just exploring, no real data yet','Scenarios','/scenarios'],
+    ['One-page health check on a specific manager','Manager Report Card','/manager-report-card'],
+    ['Proving you know this','Certifications','/certifications']
+  ]}
+];
+
+var FAQ = [
+  ['What is the difference between The Case Room, Forge Your Org, and The Foundry?','The Case Room takes one real situation you describe right now and gives you a full action plan. Forge Your Org scores your existing team against 5 diagnostic conditions and gives you a 90-day fix-it playbook. The Foundry helps you build a genuinely extraordinary team from scratch, or intentionally redesign an existing one, across 6 research-backed conditions. Different jobs, same underlying frameworks.'],
+  ['Is this my real data or a demo scenario?','If you\u2019ve uploaded your own employee data through Analyse Your Org, every calculator runs on that. Otherwise, you\u2019re looking at one of 15 pre-built practice scenarios. Most calculator pages show a banner at the top telling you which one you\u2019re on.'],
+  ['Am I supposed to fill something in, or is this just a report?','Most calculators (9-Box Grid, Bell Curve, DEI Analytics, and similar) are read-only reports, the numbers are already calculated for you. A few, like PIP Tracker and 360 Feedback, genuinely need input. Look for the orientation banner at the top of the page, it tells you which kind you\u2019re on.'],
+  ['Does my uploaded data ever leave my browser?','No. Everything runs client-side. Your employee data is never sent to our servers, never stored, never shared.'],
+  ['I don\u2019t know where to start.','Use the full tour above, or scroll to the situation lookup and tell us your actual problem, we\u2019ll point you at the right tool directly.'],
+  ['I can\u2019t find a specific tool in the sidebar.','Press Cmd+K (Ctrl+K on Windows) anywhere on the platform. It searches every page and every individual calculator by name, type a few letters, hit Enter, done. Or scroll to the situation lookup on this page and describe your actual problem instead of a tool name.'],
+  ['What\u2019s the difference between Free and Pro?','Free gives you 2 calculators and 6 scenarios to explore, plus Stages 1-2 of Forge Simulation. Pro unlocks all 16 calculators, your own real org data, all 15 scenarios, The Case Room, Forge Your Org, The Foundry, and every certification.']
+];
+
+function buildRoadmap(){
+  var grid = document.getElementById('pt-roadmap-grid');
+  grid.innerHTML = ROADMAP.map(function(s,i){
+    var flagship = FLAGSHIP_PATHS.indexOf(s.path) !== -1;
+    var cls = 'pt-road-card' + (flagship ? ' pt-flagship' : '');
+    return '<a href="'+s.path+'" class="'+cls+'">'+
+      '<div class="pt-road-num">0'+(i+1<10?'0'+(i+1):(i+1))+'</div>'+
+      '<div class="pt-road-icon">'+ic(s.icon)+'</div>'+
+      '<div class="pt-road-name">'+s.name+'</div>'+
+      '<div class="pt-road-desc">'+s.desc+'</div>'+
+    '</a>';
+  }).join('');
+}
+
+function buildLookup(){
+  var wrap = document.getElementById('pt-lookup-groups');
+  wrap.innerHTML = LOOKUP.map(function(g){
+    var rows = g.items.map(function(item){
+      return '<div class="pt-lookup-row">'+
+        '<div class="pt-lookup-situation">'+item[0]+'</div>'+
+        '<a href="'+item[2]+'" class="pt-lookup-tool">'+item[1]+' &#8594;</a>'+
+      '</div>';
+    }).join('');
+    return '<div class="pt-lookup-group">'+
+      '<div class="pt-lookup-group-title">'+g.group+'</div>'+
+      rows+
+    '</div>';
+  }).join('');
+}
+
+function buildFAQ(){
+  var wrap = document.getElementById('pt-faq-list');
+  wrap.innerHTML = FAQ.map(function(f,i){
+    return '<div class="pt-faq-item" data-idx="'+i+'">'+
+      '<div class="pt-faq-q">'+f[0]+'<span class="pt-faq-arr">'+ic('arrowDown')+'</span></div>'+
+      '<div class="pt-faq-a">'+f[1]+'</div>'+
+    '</div>';
+  }).join('');
+  wrap.querySelectorAll('.pt-faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      q.parentElement.classList.toggle('pt-open');
+    });
+  });
+}
+
+buildRoadmap();
+buildLookup();
+buildFAQ();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virorah PMS Privacy Policy</title>
+  <meta name="description" content="How Virorah PMS handles your data. What we store. What we don't. Your rights as a user.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/legal.html">
+  <meta property="og:title" content="Virorah PMS Privacy Policy">
+  <meta property="og:description" content="How Virorah PMS handles your data. What we store. What we don't. Your rights as a user.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Privacy Policy</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     VIRORAH PMS - PRIVACY POLICY + TERMS OF SERVICE
+     v1.3 - Aug 27, 2026 - Removed the "pre-launch draft, lawyer review
+     pending" banner: real charging is already live, the caveat was
+     stale and undermined credibility. Earlier v1.2 fixes carried
+     forward: refund policy corrected to no-refunds (was contradicting
+     the standalone Terms page), liability cap aligned to 3 months
+     (was 12), payment processor corrected Gumroad → Dodo Payments.
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<style>
+  .vlegal-root {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a14;
+    color: rgba(240, 238, 255, 0.85);
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+  .vlegal-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 900px) {
+    .vlegal-container { grid-template-columns: 1fr; gap: 24px; }
+    .vlegal-toc { position: relative !important; top: auto !important; }
+  }
+  .vlegal-toc {
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 14px;
+    padding: 20px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  .vlegal-toc::-webkit-scrollbar { width: 4px; }
+  .vlegal-toc::-webkit-scrollbar-thumb { background: rgba(167,139,250,0.25); border-radius: 2px; }
+  .vlegal-toc-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a78bfa;
+    margin-bottom: 14px;
+  }
+  .vlegal-toc ol { list-style: none; padding: 0; margin: 0; counter-reset: tocnum; }
+  .vlegal-toc li { counter-increment: tocnum; margin-bottom: 8px; }
+  .vlegal-toc a {
+    color: rgba(240, 238, 255, 0.65);
+    text-decoration: none;
+    font-size: 12.5px;
+    line-height: 1.45;
+    display: block;
+    padding: 6px 8px 6px 28px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .vlegal-toc a::before {
+    content: counter(tocnum);
+    position: absolute;
+    left: 8px; top: 6px;
+    font-size: 10px;
+    color: rgba(167, 139, 250, 0.5);
+    font-weight: 700;
+    width: 16px;
+    text-align: center;
+  }
+  .vlegal-toc a:hover { background: rgba(167, 139, 250, 0.1); color: #f0eeff; }
+  .vlegal-main { min-width: 0; }
+  .vlegal-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a78bfa;
+    margin-bottom: 12px;
+  }
+  .vlegal-h1 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #f5f3ff;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+  }
+  @media (max-width: 600px) { .vlegal-h1 { font-size: 28px; } }
+  .vlegal-meta {
+    font-size: 12px;
+    color: rgba(240, 238, 255, 0.45);
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+  }
+  .vlegal-meta strong { color: rgba(240, 238, 255, 0.7); font-weight: 600; }
+  .vlegal-h2 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f5f3ff;
+    margin: 40px 0 16px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(167, 139, 250, 0.15);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    scroll-margin-top: 30px;
+  }
+  .vlegal-h2:first-of-type { border-top: none; padding-top: 0; }
+  .vlegal-h3 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #c7bfff;
+    margin: 24px 0 10px;
+  }
+  .vlegal-main p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 14px;
+    color: rgba(240, 238, 255, 0.82);
+  }
+  .vlegal-main strong { color: #f0eeff; font-weight: 600; }
+  .vlegal-main a { color: #a78bfa; text-decoration: underline; text-decoration-color: rgba(167,139,250,0.4); }
+  .vlegal-main a:hover { text-decoration-color: #a78bfa; }
+  .vlegal-main ul { margin: 0 0 16px; padding: 0; list-style: none; }
+  .vlegal-main ul li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(240, 238, 255, 0.82);
+  }
+  .vlegal-main ul li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 14px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #8b5cf6;
+  }
+  .vlegal-summary {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(99, 102, 241, 0.08));
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 32px 0 40px;
+  }
+  .vlegal-summary h3 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #f5f3ff;
+    margin: 0 0 12px;
+    letter-spacing: -0.2px;
+  }
+  .vlegal-summary ul li::before { background: #10b981; }
+  .vlegal-draft-notice {
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 0 0 32px;
+    font-size: 12.5px;
+    color: #fde68a;
+    line-height: 1.55;
+  }
+  .vlegal-draft-notice strong { color: #fcd34d; }
+  .vlegal-contact {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 40px;
+  }
+  .vlegal-contact h3 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #f5f3ff;
+    margin: 0 0 10px;
+    letter-spacing: -0.2px;
+  }
+</style>
+
+<div class="vlegal-root">
+  <div class="vlegal-container">
+    <aside class="vlegal-toc">
+      <div class="vlegal-toc-title">Contents</div>
+      <ol>
+        <li><a href="#summary">Quick Summary</a></li>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#collect">What data we collect</a></li>
+        <li><a href="#dontcollect">What we don't collect</a></li>
+        <li><a href="#csv">Your CSV data</a></li>
+        <li><a href="#ai">AI features</a></li>
+        <li><a href="#use">How we use data</a></li>
+        <li><a href="#share">Who we share with</a></li>
+        <li><a href="#transfers">International transfers</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#retention">Data retention</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </aside>
+    <main class="vlegal-main">
+      <div class="vlegal-eyebrow">Legal</div>
+      <h1 class="vlegal-h1">Privacy Policy &amp; Terms of Service</h1>
+      <div class="vlegal-meta">
+        <strong>Last updated:</strong> August 2026 &nbsp;&middot;&nbsp;
+<strong>Effective:</strong> 1 June 2026
+      </div>
+      <div class="vlegal-summary" id="summary">
+        <h3>Quick Summary - the bits most people care about</h3>
+        <ul>
+          <li>We&rsquo;re a learning platform for HR professionals - our job is to help you learn performance management.</li>
+          <li>The 16 calculators run <strong>inside your browser</strong>. Your uploaded data never reaches our servers.</li>
+          <li>The AI assistant + AI conversation simulator send your messages to <strong>Anthropic&rsquo;s Claude API</strong> (deleted by them within 30 days, never used for training).</li>
+          <li>We collect minimal data about you - basic account info if you sign up, plus what&rsquo;s needed to make payments work.</li>
+          <li>We don&rsquo;t sell your data to anyone, ever.</li>
+        </ul>
+      </div>
+      <h2 class="vlegal-h2" id="who">1. Who we are</h2>
+      <p>Virorah (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a performance management learning platform operated by <strong>Virorah Private Limited</strong>, registered in India.</p>
+      <p>For privacy questions, contact: <strong><a href="mailto:info@virorah.com">info@virorah.com</a></strong></p>
+      <h2 class="vlegal-h2" id="collect">2. What data we collect</h2>
+      <h3 class="vlegal-h3">Account data</h3>
+      <p>If you sign up: your name, email, password (encrypted), and any profile info you choose to add.</p>
+      <h3 class="vlegal-h3">Payment data</h3>
+      <p>If you pay us: processed by our payment providers (Razorpay for India, Dodo Payments for international). We do not store your card details. Your payment provider&rsquo;s privacy policy applies to that data.</p>
+      <h3 class="vlegal-h3">Usage data (anonymous)</h3>
+      <p>We collect basic anonymous usage stats (page views, feature usage) to understand how the platform is used. This is aggregated and does not identify individuals.</p>
+      <h3 class="vlegal-h3">Browser-stored data (stays on your device)</h3>
+      <p>If you upload a CSV to &ldquo;Analyse Your Org&rdquo;, that data lives in your browser&rsquo;s local storage. <strong>We never receive it.</strong></p>
+      <h3 class="vlegal-h3">AI conversation data</h3>
+      <p>If you use the AI Guide chat or AI conversation simulator, your messages are sent to Anthropic&rsquo;s Claude API. See <a href="#ai">Section 5</a> for details.</p>
+      <h2 class="vlegal-h2" id="dontcollect">3. What we don&rsquo;t collect</h2>
+      <ul>
+        <li>We don&rsquo;t track you across websites</li>
+        <li>We don&rsquo;t sell your data</li>
+        <li>We don&rsquo;t use third-party advertising trackers</li>
+        <li>We don&rsquo;t fingerprint your device for marketing</li>
+      </ul>
+      <h2 class="vlegal-h2" id="csv">4. Your CSV data (&ldquo;Analyse Your Org&rdquo; feature)</h2>
+      <p>If you upload an employee CSV file to the &ldquo;Analyse Your Org&rdquo; feature:</p>
+      <ul>
+        <li>The file is parsed and processed <strong>entirely in your browser</strong></li>
+        <li>The data is stored in your browser&rsquo;s local storage under the key <code style="background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:12px;">pms_custom_org_v1</code></li>
+        <li>We do not have access to this data - it never leaves your browser</li>
+        <li>You can delete this data anytime via the &ldquo;Clear Data&rdquo; button or by clearing your browser data</li>
+        <li>This data is per-device and per-browser; switching devices means re-uploading</li>
+      </ul>
+      <p>When you upload a CSV, you confirm via a one-time consent dialog that you are authorised to upload that data and have any required consent from the individuals it concerns.</p>
+      <h2 class="vlegal-h2" id="ai">5. AI features (AI Guide + AI Simulator + Debrief)</h2>
+      <p>Virorah uses <strong>Anthropic&rsquo;s Claude API</strong> to power our AI features. When you use these features:</p>
+      <ul>
+        <li>Your messages (along with minimal context about which page you&rsquo;re on) are sent to Anthropic&rsquo;s API</li>
+        <li>Anthropic generates a response and sends it back</li>
+        <li>The response is shown to you in the browser</li>
+        <li>We do not log or store your conversation on Virorah&rsquo;s servers</li>
+      </ul>
+      <h3 class="vlegal-h3">Anthropic&rsquo;s data handling commitments to us (paid API customer):</h3>
+      <ul>
+        <li>Your messages are deleted by Anthropic within 30 days</li>
+        <li>Your messages are NOT used to train Anthropic&rsquo;s AI models</li>
+        <li>Anthropic does not sell or share your data with third parties</li>
+        <li>Anthropic operates under a Data Processing Addendum aligned with GDPR</li>
+      </ul>
+      <p>You can read Anthropic&rsquo;s policies at <a href="https://www.anthropic.com/legal/privacy" target="_blank">anthropic.com/legal/privacy</a> and <a href="https://www.anthropic.com/legal/data-processing-addendum" target="_blank">anthropic.com/legal/data-processing-addendum</a>.</p>
+      <p><strong>Important:</strong> Please do not paste confidential information, real employee names, salary figures, or other personal data into the AI chat. The AI is a learning aid, not a confidential vault.</p>
+      <h2 class="vlegal-h2" id="use">6. How we use the data we do collect</h2>
+      <h3 class="vlegal-h3">We use your account data to:</h3>
+      <ul>
+        <li>Provide you access to the platform</li>
+        <li>Send you account-related emails (login, password reset, important changes)</li>
+        <li>Process your payment if you subscribe</li>
+        <li>Respond to your support requests</li>
+      </ul>
+      <h3 class="vlegal-h3">We use anonymous usage data to:</h3>
+      <ul>
+        <li>Understand which features are used (so we build more of what works)</li>
+        <li>Identify and fix bugs</li>
+        <li>Plan our product roadmap</li>
+      </ul>
+      <h2 class="vlegal-h2" id="share">7. Who we share data with</h2>
+      <p>We share minimal data with the following service providers, only as needed for the platform to work:</p>
+      <ul>
+        <li><strong>Anthropic</strong> - for AI processing (see Section 5)</li>
+        <li><strong>Razorpay / Dodo Payments</strong> - for payment processing (only if you pay us)</li>
+        <li><strong>Resend / our email provider</strong> - for transactional emails (only if you sign up)</li>
+        <li><strong>Softr / Airtable</strong> - our platform infrastructure (account info only; no CSV data)</li>
+        <li><strong>Cloudflare</strong> - hosting and security</li>
+        <li><strong>Google Analytics or similar</strong> - anonymous usage stats (if applicable)</li>
+      </ul>
+      <p>We do not share your data with advertisers, brokers, or any third party not listed above.</p>
+      <h2 class="vlegal-h2" id="transfers">8. International data transfers</h2>
+      <p>Your data may be processed in countries outside India, including the United States and the European Union, where some of our service providers (such as Anthropic) operate.</p>
+      <p>For international transfers, we rely on:</p>
+      <ul>
+        <li>Anthropic&rsquo;s Standard Contractual Clauses (SCCs) for EU-to-US transfers</li>
+        <li>Service providers&rsquo; published security and privacy commitments</li>
+        <li>Adequate safeguards as required by India&rsquo;s DPDP Act 2023 and applicable laws</li>
+      </ul>
+      <h2 class="vlegal-h2" id="rights">9. Your rights</h2>
+      <p>Depending on where you live, you may have rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access</strong> - request a copy of the data we hold about you</li>
+        <li><strong>Correction</strong> - ask us to fix inaccurate data</li>
+        <li><strong>Deletion</strong> - ask us to delete your account and associated data</li>
+        <li><strong>Opt-out</strong> - unsubscribe from non-essential communications</li>
+        <li><strong>Portability</strong> - request your data in a machine-readable format</li>
+      </ul>
+      <p>To exercise any of these rights, email us at <strong><a href="mailto:info@virorah.com">info@virorah.com</a></strong>. We aim to respond within 30 days.</p>
+      <h2 class="vlegal-h2" id="retention">10. Data retention</h2>
+      <ul>
+        <li><strong>Account data:</strong> retained as long as your account is active. Deleted within 30 days of account closure.</li>
+        <li><strong>Payment records:</strong> retained as long as required by Indian tax/financial law (typically 7 years).</li>
+        <li><strong>Anonymous usage data:</strong> retained indefinitely in aggregated form.</li>
+        <li><strong>AI conversations:</strong> not retained by us; retained by Anthropic for max 30 days per their policy.</li>
+        <li><strong>CSV uploads:</strong> never reach us; stored only in your browser.</li>
+      </ul>
+      <h2 class="vlegal-h2" id="security">11. Security</h2>
+      <p>We use industry-standard security practices:</p>
+      <ul>
+        <li>Encrypted connections (HTTPS) for all data in transit</li>
+        <li>Secure password storage (hashed, never stored in plain text)</li>
+        <li>Limited access to systems on a need-to-know basis</li>
+        <li>Service providers with strong security postures (Anthropic, Cloudflare, Softr)</li>
+      </ul>
+      <p>No system is 100% secure. If we become aware of a breach affecting your data, we will notify you and the relevant authorities as required by law.</p>
+      <h2 class="vlegal-h2" id="children">12. Children</h2>
+      <p>Virorah is intended for HR professionals and managers. We do not knowingly collect data from anyone under 18. If you believe a child has provided us data, contact us and we will delete it.</p>
+      <h2 class="vlegal-h2" id="terms">13. Terms of Service</h2>
+      <p>By using Virorah, you agree to the following:</p>
+      <h3 class="vlegal-h3">13.1 Acceptable use</h3>
+      <p>You&rsquo;ll use Virorah for lawful purposes only. You won&rsquo;t:</p>
+      <ul>
+        <li>Upload data you&rsquo;re not authorised to use</li>
+        <li>Try to break, hack, or reverse-engineer the platform</li>
+        <li>Use the platform to harm, harass, or discriminate against others</li>
+        <li>Resell access to the platform without our written permission</li>
+      </ul>
+      <h3 class="vlegal-h3">13.2 No professional advice</h3>
+      <p>Virorah is a learning platform. Nothing in Virorah is legal, financial, HR, medical, or professional advice. You&rsquo;re responsible for your own decisions and any consequences thereof.</p>
+      <h3 class="vlegal-h3">13.3 Service availability</h3>
+      <p>We aim for high uptime but don&rsquo;t guarantee 100% availability. Planned maintenance and unplanned outages happen.</p>
+      <h3 class="vlegal-h3">13.4 Pricing and refunds</h3>
+      <p>Subscription pricing is shown at checkout. <strong>Refund policy:</strong> All payments are final and non-refundable, including your first billing cycle. Subscriptions are billed monthly and can be cancelled at any time; cancellation stops future billing but does not entitle you to a refund for the current or any prior billing period.</p>
+      <h3 class="vlegal-h3">13.5 Limitation of liability</h3>
+      <p>To the maximum extent permitted by law, Virorah&rsquo;s total liability to you for any claim arising from your use of the platform is limited to the amount you paid us in the 3 months preceding the claim.</p>
+      <h3 class="vlegal-h3">13.6 Indemnification</h3>
+      <p>You agree to indemnify Virorah against any third-party claims arising from your misuse of the platform, including unauthorised data uploads or violations of these terms.</p>
+      <h3 class="vlegal-h3">13.7 Governing law</h3>
+      <p>These terms are governed by the laws of India. Any disputes will be resolved in the courts of <strong>Gurugram</strong>.</p>
+      <h3 class="vlegal-h3">13.8 Changes to these terms</h3>
+      <p>We may update these terms. We&rsquo;ll notify you of material changes. Continued use after changes means you accept them.</p>
+      <h2 class="vlegal-h2" id="changes">14. Changes to this policy</h2>
+      <p>We may update this Privacy Policy + Terms of Service from time to time. We&rsquo;ll update the &ldquo;Last updated&rdquo; date at the top. For material changes, we&rsquo;ll notify you via email or in-app notice.</p>
+      <h2 class="vlegal-h2" id="contact">15. Contact</h2>
+      <div class="vlegal-contact">
+        <h3>Get in touch</h3>
+        <p><strong>For privacy questions, data requests, or any concerns:</strong><br>
+        <a href="mailto:info@virorah.com">info@virorah.com</a></p>
+        <p><strong>For general support:</strong><br>
+        <a href="mailto:info@virorah.com">info@virorah.com</a></p>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>

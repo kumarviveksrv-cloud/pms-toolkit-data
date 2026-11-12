@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tell us what you actually think.</title>
+  <meta name="description" content="Your feedback goes directly to the founder. No filtering. No support tickets. The platform gets built on what you actually say here.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/pulse.html">
+  <meta property="og:title" content="Tell us what you actually think.">
+  <meta property="og:description" content="Your feedback goes directly to the founder. No filtering. No support tickets. The platform gets built on what you actually say here.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: true ,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Pulse</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH PMS - USER PULSE
+     Feedback collection page
+     Airtable Base: appske9dqtgzRHbYe
+     Table: User_Pulse
+     ============================================================ -->
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #060B18; --card: #0D1526;
+  --purple: #667eea; --violet: #764ba2;
+  --green: #10b981; --amber: #f59e0b;
+  --red: #ef4444; --text: #f4f3ff;
+  --muted: rgba(165,180,252,.6);
+  --border: rgba(102,126,234,.15);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.up-wrap {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 48px 40px 80px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.up-header { margin-bottom: 48px; }
+.up-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--purple);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px;
+}
+.up-eyebrow::before { content:''; width:24px; height:1.5px; background:var(--purple); }
+.up-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700; letter-spacing: -1px;
+  line-height: 1.1; margin-bottom: 14px;
+}
+.up-title span {
+  background: linear-gradient(135deg, #667eea, #e879f9);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.up-sub {
+  font-size: 15px; line-height: 1.7;
+  color: var(--muted); max-width: 580px;
+}
+.up-anon {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 18px; padding: 10px 16px;
+  background: rgba(16,185,129,.08);
+  border: 1px solid rgba(16,185,129,.22);
+  border-radius: 10px;
+  font-size: 13px; line-height: 1.6;
+  color: rgba(110,231,183,.85); max-width: 560px;
+}
+.up-anon strong { color: #6ee7b7; font-weight: 600; }
+.up-anon-icon { font-size: 15px; flex-shrink: 0; }
+
+/* ── FORM ── */
+.up-form { display: flex; flex-direction: column; gap: 32px; }
+
+.up-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.up-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+  opacity: 0.4;
+}
+.up-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 22px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ── FIELD ── */
+.up-field { margin-bottom: 20px; }
+.up-field:last-child { margin-bottom: 0; }
+.up-label {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  margin-bottom: 10px; display: block;
+}
+.up-label span { color: var(--purple); margin-left: 2px; }
+.up-hint {
+  font-size: 11px; color: var(--muted);
+  margin-bottom: 10px; display: block; line-height: 1.5;
+}
+
+/* ── MCQ PILLS ── */
+.up-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.up-pill {
+  padding: 8px 16px; border-radius: 100px;
+  border: 1px solid rgba(102,126,234,.2);
+  background: rgba(102,126,234,.06);
+  color: var(--muted); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all .2s; user-select: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.up-pill:hover { border-color: rgba(102,126,234,.4); color: #a5b4fc; }
+.up-pill.selected {
+  background: rgba(102,126,234,.2);
+  border-color: rgba(102,126,234,.5);
+  color: #c4b5fd;
+}
+.up-pill.multi.selected {
+  background: rgba(16,185,129,.15);
+  border-color: rgba(16,185,129,.4);
+  color: #6ee7b7;
+}
+
+/* ── STAR RATING ── */
+.up-stars { display: flex; gap: 8px; }
+.up-star {
+  font-size: 28px; cursor: pointer;
+  filter: grayscale(1) opacity(.3);
+  transition: all .15s; user-select: none;
+}
+.up-star.lit { filter: grayscale(0) opacity(1); }
+.up-star:hover { transform: scale(1.15); }
+
+/* ── TEXTAREA ── */
+.up-textarea {
+  width: 100%; min-height: 100px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(102,126,234,.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px; line-height: 1.7;
+  color: var(--text); font-family: 'DM Sans', sans-serif;
+  resize: vertical; outline: none;
+  transition: border-color .2s;
+}
+.up-textarea::placeholder { color: rgba(165,180,252,.3); }
+.up-textarea:focus { border-color: rgba(102,126,234,.45); }
+
+/* ── NPS SCALE ── */
+.up-nps { display: flex; gap: 4px; flex-wrap: wrap; }
+.up-nps-btn {
+  width: 38px; height: 38px; border-radius: 8px;
+  border: 1px solid rgba(102,126,234,.2);
+  background: rgba(102,126,234,.04);
+  color: var(--muted); font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.up-nps-btn:hover { border-color: rgba(102,126,234,.4); }
+.up-nps-btn.selected {
+  background: rgba(102,126,234,.25);
+  border-color: rgba(102,126,234,.6);
+  color: #c4b5fd;
+}
+.up-nps-labels {
+  display: flex; justify-content: space-between;
+  margin-top: 6px;
+  font-size: 10px; color: rgba(165,180,252,.35);
+}
+
+/* ── SUBMIT ── */
+.up-submit-wrap { text-align: center; padding-top: 8px; }
+.up-submit {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 48px; border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white; font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 4px 24px rgba(102,126,234,.4);
+  transition: all .25s;
+}
+.up-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(102,126,234,.55); }
+.up-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+/* ── SUCCESS STATE ── */
+.up-success {
+  display: none; text-align: center;
+  padding: 60px 40px;
+  background: var(--card);
+  border: 1px solid rgba(16,185,129,.25);
+  border-radius: 16px;
+}
+.up-success.show { display: block; }
+.up-success-icon { font-size: 56px; margin-bottom: 20px; }
+.up-success h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px; font-weight: 700; margin-bottom: 12px;
+}
+.up-success p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+/* ── ERROR ── */
+.up-error {
+  display: none; padding: 12px 16px;
+  background: rgba(239,68,68,.1);
+  border: 1px solid rgba(239,68,68,.25);
+  border-radius: 8px; color: #f87171;
+  font-size: 13px; margin-top: 12px;
+  text-align: center;
+}
+.up-error.show { display: block; }
+
+/* ── PUBLIC FEED ── */
+.up-feed-section {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.up-feed-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px; font-weight: 700;
+  margin-bottom: 8px;
+}
+.up-feed-sub {
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 28px; line-height: 1.6;
+}
+.up-feed-grid { display: flex; flex-direction: column; gap: 14px; }
+.up-feed-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 24px;
+  position: relative;
+}
+.up-feed-card::before {
+  content: '"';
+  position: absolute; top: 12px; right: 16px;
+  font-size: 48px; color: rgba(102,126,234,.12);
+  font-family: Georgia, serif; line-height: 1;
+}
+.up-feed-stars { display: flex; gap: 3px; margin-bottom: 10px; font-size: 14px; }
+.up-feed-text {
+  font-size: 14px; line-height: 1.75;
+  color: rgba(255,255,255,.8); margin-bottom: 12px;
+}
+.up-feed-meta {
+  font-size: 11px; color: var(--muted);
+  display: flex; align-items: center; gap: 8px;
+}
+.up-feed-role {
+  background: rgba(102,126,234,.1);
+  border: 1px solid rgba(102,126,234,.2);
+  border-radius: 100px; padding: 2px 10px;
+  font-size: 10px; font-weight: 700;
+  color: #a5b4fc; letter-spacing: .5px;
+}
+.up-feed-empty {
+  text-align: center; padding: 40px;
+  color: var(--muted); font-size: 14px;
+  background: rgba(102,126,234,.04);
+  border: 1px dashed rgba(102,126,234,.15);
+  border-radius: 12px;
+}
+
+@media(max-width:600px){
+  .up-wrap { padding: 28px 20px 60px; }
+  .up-section { padding: 20px 18px; }
+}
+</style>
+
+<div class="up-wrap">
+
+  <!-- HEADER -->
+  <div class="up-header">
+    <div class="up-eyebrow">User Pulse</div>
+    <h1 class="up-title">Your experience.<br><span>Our north star.</span></h1>
+    <p class="up-sub">Virorah PMS is built for HR professionals, consultants and business school students like you. Every piece of feedback directly shapes what we build next. This takes 3 minutes. It matters more than you think.</p>
+    <div class="up-anon">
+      <span class="up-anon-icon">&#x1F512;</span>
+      <span>This feedback is <strong>completely anonymous</strong>. We never ask for your name or email. Be as honest as you want.</span>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="up-form" id="up-form">
+
+    <!-- SECTION 1: About You -->
+    <div class="up-section">
+      <div class="up-section-title">01 About You</div>
+
+      <div class="up-field">
+        <label class="up-label">Your role <span>*</span></label>
+        <div class="up-pills" id="field-role">
+          <div class="up-pill" data-value="HR Executive / HR Associate">HR Executive / Associate</div>
+          <div class="up-pill" data-value="HR Manager">HR Manager</div>
+          <div class="up-pill" data-value="Senior HR Manager">Senior HR Manager</div>
+          <div class="up-pill" data-value="HR Business Partner (HRBP)">HR Business Partner</div>
+          <div class="up-pill" data-value="HR Consultant">HR Consultant</div>
+          <div class="up-pill" data-value="Head of HR">Head of HR</div>
+          <div class="up-pill" data-value="Director HR">Director HR</div>
+          <div class="up-pill" data-value="VP HR / CHRO">VP HR / CHRO</div>
+          <div class="up-pill" data-value="PMS / L&D Specialist">PMS / L&D Specialist</div>
+          <div class="up-pill" data-value="COE - Performance Management">COE - Performance Mgmt</div>
+          <div class="up-pill" data-value="B-School Student">B-School Student</div>
+          <div class="up-pill" data-value="Other">Other</div>
+        </div>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">Years in HR</label>
+        <div class="up-pills" id="field-experience">
+          <div class="up-pill" data-value="0-2 years">0 to 2 years</div>
+          <div class="up-pill" data-value="2-5 years">2 to 5 years</div>
+          <div class="up-pill" data-value="5-10 years">5 to 10 years</div>
+          <div class="up-pill" data-value="10-15 years">10 to 15 years</div>
+          <div class="up-pill" data-value="15-20 years">15 to 20 years</div>
+          <div class="up-pill" data-value="20+ years">20+ years</div>
+          <div class="up-pill" data-value="Not in HR yet">Not in HR yet</div>
+        </div>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">How did you find Virorah PMS?</label>
+        <div class="up-pills" id="field-source">
+          <div class="up-pill" data-value="LinkedIn">LinkedIn</div>
+          <div class="up-pill" data-value="Google Search">Google Search</div>
+          <div class="up-pill" data-value="Word of Mouth">Word of mouth</div>
+          <div class="up-pill" data-value="HR Community">HR community / forum</div>
+          <div class="up-pill" data-value="Other">Other</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Platform Experience -->
+    <div class="up-section">
+      <div class="up-section-title">02 Your Experience</div>
+
+      <div class="up-field">
+        <label class="up-label">Which modules have you used? <span>*</span></label>
+        <span class="up-hint">Select all that apply</span>
+        <div class="up-pills" id="field-modules">
+          <div class="up-pill multi" data-value="Scenarios">Scenarios</div>
+          <div class="up-pill multi" data-value="Analyse Your Org">Analyse Your Org</div>
+          <div class="up-pill multi" data-value="Learning Hub">Learning Hub</div>
+          <div class="up-pill multi" data-value="Case Studies">Case Studies</div>
+          <div class="up-pill multi" data-value="Review Cycle">Review Cycle</div>
+          <div class="up-pill multi" data-value="Manager Report Card">Manager Report Card</div>
+          <div class="up-pill multi" data-value="Bias Audit">Bias Audit</div>
+          <div class="up-pill multi" data-value="Goal Lab">Goal Lab</div>
+          <div class="up-pill multi" data-value="Simulate">Simulate</div>
+          <div class="up-pill multi" data-value="Game">Manager Game</div>
+          <div class="up-pill multi" data-value="Forge Team">Forge Team</div>
+          <div class="up-pill multi" data-value="Certifications">Certifications</div>
+          <div class="up-pill multi" data-value="Templates">Templates</div>
+          <div class="up-pill multi" data-value="Downloads">Downloads</div>
+          <div class="up-pill multi" data-value="My Progress">My Progress</div>
+        </div>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">Overall experience rating <span>*</span></label>
+        <div class="up-stars" id="field-rating">
+          <span class="up-star" data-val="1">&#x2B50;</span>
+          <span class="up-star" data-val="2">&#x2B50;</span>
+          <span class="up-star" data-val="3">&#x2B50;</span>
+          <span class="up-star" data-val="4">&#x2B50;</span>
+          <span class="up-star" data-val="5">&#x2B50;</span>
+        </div>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">Did Virorah PMS meet your expectations?</label>
+        <div class="up-pills" id="field-expectations">
+          <div class="up-pill" data-value="Exceeded">Exceeded them</div>
+          <div class="up-pill" data-value="Met">Met them</div>
+          <div class="up-pill" data-value="Partially">Partially</div>
+          <div class="up-pill" data-value="No">Not really</div>
+        </div>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">Are you a Pro user?</label>
+        <div class="up-pills" id="field-pro">
+          <div class="up-pill" data-value="Yes">Yes, I have a Pro key</div>
+          <div class="up-pill" data-value="No">No, using the free version</div>
+          <div class="up-pill" data-value="Considering">Considering upgrading</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Your Voice -->
+    <div class="up-section">
+      <div class="up-section-title">03 Your Voice</div>
+
+      <div class="up-field">
+        <label class="up-label">What is the one thing you wish Virorah PMS did differently?</label>
+        <span class="up-hint">Be brutally honest. This goes straight to the founder.</span>
+        <textarea class="up-textarea" id="field-change" placeholder="Don't hold back..." rows="3"></textarea>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">What would make you recommend Virorah PMS to a colleague?</label>
+        <textarea class="up-textarea" id="field-recommend" placeholder="What would push you from 'maybe' to 'definitely'..." rows="3"></textarea>
+      </div>
+
+      <div class="up-field">
+        <label class="up-label">Anything else you want to say?</label>
+        <textarea class="up-textarea" id="field-other" placeholder="Appreciation, rants, suggestions, ideas - all welcome." rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 4: NPS -->
+    <div class="up-section">
+      <div class="up-section-title">04 One Last Thing</div>
+      <div class="up-field">
+        <label class="up-label">How likely are you to recommend Virorah PMS to someone in HR?</label>
+        <span class="up-hint">0 = Not at all likely, 10 = Absolutely, already doing it</span>
+        <div class="up-nps" id="field-nps">
+          <div class="up-nps-btn" data-val="0">0</div>
+          <div class="up-nps-btn" data-val="1">1</div>
+          <div class="up-nps-btn" data-val="2">2</div>
+          <div class="up-nps-btn" data-val="3">3</div>
+          <div class="up-nps-btn" data-val="4">4</div>
+          <div class="up-nps-btn" data-val="5">5</div>
+          <div class="up-nps-btn" data-val="6">6</div>
+          <div class="up-nps-btn" data-val="7">7</div>
+          <div class="up-nps-btn" data-val="8">8</div>
+          <div class="up-nps-btn" data-val="9">9</div>
+          <div class="up-nps-btn" data-val="10">10</div>
+        </div>
+        <div class="up-nps-labels">
+          <span>Not likely</span>
+          <span>Absolutely</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="up-submit-wrap">
+      <button class="up-submit" id="up-submit-btn">
+        <span>&#x1F4AC;</span> Send My Feedback
+      </button>
+      <div class="up-error" id="up-error">Please fill in the required fields (role, modules used, and rating) before submitting.</div>
+    </div>
+
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="up-success" id="up-success">
+    <div class="up-success-icon">&#x1F64F;</div>
+    <h2>Thank you. Really.</h2>
+    <p>Your feedback has been received and will be read personally by Vivek, the founder.<br>It directly shapes what Virorah builds next.</p>
+  </div>
+
+  <!-- PUBLIC FEED -->
+  <div class="up-feed-section">
+    <h2 class="up-feed-title">What the community is saying</h2>
+    <p class="up-feed-sub">Selected anonymous feedback from real Virorah PMS users.</p>
+    <div class="up-feed-grid" id="up-feed-grid">
+      <div class="up-feed-empty" id="up-feed-empty">
+        Be the first to share your experience. Your feedback could appear here.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+
+var AIRTABLE_BASE = 'appske9dqtgzRHbYe';
+var AIRTABLE_TABLE = 'User_Pulse';
+var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+
+// ── FORM STATE ──
+var state = {
+  role: '', experience: '', source: '',
+  modules: [], rating: 0, expectations: '',
+  isPro: '', change: '', recommend: '', other: '',
+  nps: null
+};
+
+// ── SINGLE SELECT PILLS ──
+function initSingleSelect(containerId, stateKey){
+  var container = document.getElementById(containerId);
+  if(!container) return;
+  container.addEventListener('click', function(e){
+    var pill = e.target.closest('.up-pill');
+    if(!pill || pill.classList.contains('multi')) return;
+    container.querySelectorAll('.up-pill').forEach(function(p){ p.classList.remove('selected'); });
+    pill.classList.add('selected');
+    state[stateKey] = pill.dataset.value;
+  });
+}
+
+// ── MULTI SELECT PILLS ──
+function initMultiSelect(containerId, stateKey){
+  var container = document.getElementById(containerId);
+  if(!container) return;
+  container.addEventListener('click', function(e){
+    var pill = e.target.closest('.up-pill.multi');
+    if(!pill) return;
+    pill.classList.toggle('selected');
+    var vals = [];
+    container.querySelectorAll('.up-pill.selected').forEach(function(p){ vals.push(p.dataset.value); });
+    state[stateKey] = vals;
+  });
+}
+
+// ── STAR RATING ──
+function initStars(){
+  var stars = document.querySelectorAll('.up-star');
+  stars.forEach(function(star){
+    star.addEventListener('mouseenter', function(){
+      var val = parseInt(star.dataset.val);
+      stars.forEach(function(s){ s.classList.toggle('lit', parseInt(s.dataset.val) <= val); });
+    });
+    star.addEventListener('click', function(){
+      state.rating = parseInt(star.dataset.val);
+      stars.forEach(function(s){ s.classList.toggle('lit', parseInt(s.dataset.val) <= state.rating); });
+    });
+  });
+  var starsWrap = document.getElementById('field-rating');
+  if(starsWrap){
+    starsWrap.addEventListener('mouseleave', function(){
+      stars.forEach(function(s){ s.classList.toggle('lit', parseInt(s.dataset.val) <= state.rating); });
+    });
+  }
+}
+
+// ── NPS ──
+function initNPS(){
+  var btns = document.querySelectorAll('.up-nps-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      state.nps = parseInt(btn.dataset.val);
+    });
+  });
+}
+
+// ── INIT ALL ──
+initSingleSelect('field-role', 'role');
+initSingleSelect('field-experience', 'experience');
+initSingleSelect('field-source', 'source');
+initMultiSelect('field-modules', 'modules');
+initSingleSelect('field-expectations', 'expectations');
+initSingleSelect('field-pro', 'isPro');
+initStars();
+initNPS();
+
+// ── SUBMIT ──
+document.getElementById('up-submit-btn').addEventListener('click', function(){
+  // Read text fields
+  state.change    = (document.getElementById('field-change').value    || '').trim();
+  state.recommend = (document.getElementById('field-recommend').value || '').trim();
+  state.other     = (document.getElementById('field-other').value     || '').trim();
+
+  // Validate required
+  var errorEl = document.getElementById('up-error');
+  if(!state.role || state.modules.length === 0 || state.rating === 0){
+    errorEl.classList.add('show');
+    errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  errorEl.classList.remove('show');
+
+  var btn = document.getElementById('up-submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>&#x23F3;</span> Sending...';
+
+  // Submit to Airtable via proxy
+  var payload = {
+    action: 'airtable-feedback',
+    baseId: AIRTABLE_BASE,
+    table: AIRTABLE_TABLE,
+    fields: {
+      'Role':           state.role,
+      'HR_Experience':  state.experience,
+      'How_Found':      state.source,
+      'Modules_Used':   state.modules.join(', '),
+      'Overall_Rating': state.rating,
+      'Expectations':   state.expectations,
+      'Is_Pro_User':    state.isPro,
+      'What_To_Change': state.change,
+      'Would_Recommend':state.recommend,
+      'Other_Feedback': state.other,
+      'NPS_Score':      state.nps !== null ? state.nps : '',
+      'Published':      false,
+      'Submitted_At':   new Date().toISOString()
+    }
+  };
+
+  fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Action': 'airtable-feedback' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(data.error){
+      btn.disabled = false;
+      btn.innerHTML = '<span>&#x1F4AC;</span> Send My Feedback';
+      errorEl.textContent = 'Something went wrong. Please try again in a moment.';
+      errorEl.classList.add('show');
+    } else {
+      document.getElementById('up-form').style.display = 'none';
+      document.getElementById('up-success').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  })
+  .catch(function(){
+    btn.disabled = false;
+    btn.innerHTML = '<span>&#x1F4AC;</span> Send My Feedback';
+    errorEl.textContent = 'Connection issue. Please try again.';
+    errorEl.classList.add('show');
+  });
+});
+
+// ── ESCAPE ──
+function escHtml(s){
+  var d = document.createElement('div');
+  d.textContent = String(s || '');
+  return d.innerHTML;
+}
+
+// ── LOAD PUBLIC FEED ──
+function loadFeed(){
+  fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Action': 'airtable-feedback-feed' },
+    body: JSON.stringify({ action: 'airtable-feedback-feed', baseId: AIRTABLE_BASE, table: AIRTABLE_TABLE })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if(!data.records || data.records.length === 0) return;
+    var published = data.records.filter(function(r){ return r.fields && r.fields.Published; });
+    if(published.length === 0) return;
+    var grid = document.getElementById('up-feed-grid');
+    var empty = document.getElementById('up-feed-empty');
+    if(empty) empty.style.display = 'none';
+    published.forEach(function(r){
+      var f = r.fields;
+      var stars = '';
+      var rating = parseInt(f.Overall_Rating) || 0;
+      for(var i=1;i<=5;i++) stars += i<=rating ? '&#x2B50;' : '&#x2606;';
+      var card = document.createElement('div');
+      card.className = 'up-feed-card';
+      card.innerHTML =
+        '<div class="up-feed-stars">' + stars + '</div>' +
+        '<div class="up-feed-text">' + escHtml(f.Other_Feedback || f.Would_Recommend || '') + '</div>' +
+        '<div class="up-feed-meta">' +
+          '<span class="up-feed-role">' + escHtml(f.Role || 'HR Professional') + '</span>' +
+          '<span>' + escHtml(f.HR_Experience || '') + '</span>' +
+        '</div>';
+      grid.appendChild(card);
+    });
+  })
+  .catch(function(){ /* silent fail on feed */ });
+}
+
+loadFeed();
+
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>

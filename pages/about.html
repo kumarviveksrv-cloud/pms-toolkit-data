@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why we built Virorah PMS?</title>
+  <meta name="description" content="Enterprise PMS tools exist. Most HR professionals just don't have access. We fixed that.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/about.html">
+  <meta property="og:title" content="Why we built Virorah PMS?">
+  <meta property="og:description" content="Enterprise PMS tools exist. Most HR professionals just don't have access. We fixed that.">
+  <meta property="og:type" content="website">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">About</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<!-- ============================================================
+     VIRORAH PMS - ABOUT PAGE
+     v2: Hero repositioned around Performance Intelligence, Case
+     Room and FORGE mentioned in the opening pitch. Added two build
+     cards for The Case Room and FORGE to "What We Built." Primary
+     CTA now points to The Case Room instead of the scenario library.
+     No Softr entity-in-script risk here, all emoji in this file
+     sit in plain HTML markup, never inside <script> as JS strings,
+     confirmed by direct check before this edit.
+     ============================================================ -->
+<style>
+  .vla-root {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: transparent;
+    color: #f4f3ff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+    line-height: 1.6;
+  }
+
+  .vla-root * { box-sizing: border-box; }
+
+  @keyframes vlaFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes vlaGlowPulse {
+    0%, 100% { opacity: .35; }
+    50% { opacity: .55; }
+  }
+  @keyframes vlaShimmer {
+    0% { background-position: -300px 0; }
+    100% { background-position: 300px 0; }
+  }
+
+  .vla-f1 { animation: vlaFadeUp .8s .1s ease both; }
+  .vla-f2 { animation: vlaFadeUp .8s .3s ease both; }
+  .vla-f3 { animation: vlaFadeUp .8s .5s ease both; }
+  .vla-f4 { animation: vlaFadeUp .8s .7s ease both; }
+
+  /* HERO */
+  .vla-hero { text-align: center; padding: 64px 20px 48px; position: relative; }
+
+  .vla-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 18px; border-radius: 24px; margin-bottom: 22px;
+    background: rgba(102,126,234,.08); border: 1px solid rgba(102,126,234,.22);
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: #a5b4fc;
+  }
+  .vla-eyebrow-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #667eea; animation: vlaGlowPulse 2s ease-in-out infinite;
+  }
+
+  .vla-hero-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', 'Space Grotesk', serif;
+    font-size: clamp(38px, 6vw, 68px); font-weight: 500;
+    line-height: 1.08; letter-spacing: -1.5px;
+    margin-bottom: 24px; color: #f4f3ff;
+  }
+  .vla-hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, #c4b5fd, #a78bfa, #667eea);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .vla-hero-sub {
+    font-size: 15px; color: rgba(196,181,253,.75);
+    max-width: 640px; margin: 0 auto 36px;
+    line-height: 1.75;
+  }
+
+  .vla-hero-meta {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  }
+  .vla-hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 20px;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(102,126,234,.18);
+    font-size: 12px; font-weight: 600; color: rgba(196,181,253,.75);
+  }
+
+  /* SECTION HEADER */
+  .vla-section { margin-top: 80px; }
+  .vla-section-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+    color: #667eea; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .vla-section-label::before {
+    content: ''; width: 28px; height: 1.5px;
+    background: linear-gradient(90deg, #667eea, transparent);
+  }
+  .vla-section-title {
+    font-family: 'Cormorant Garamond', 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 42px); font-weight: 500;
+    margin-bottom: 32px; letter-spacing: -.5px; line-height: 1.15;
+  }
+  .vla-section-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, #c4b5fd, #667eea);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  /* WHAT WE BUILT */
+  .vla-what {
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(102,126,234,.12);
+    border-radius: 20px; padding: 40px;
+  }
+  .vla-what-lead {
+    font-size: 17px; color: rgba(240,238,255,.9);
+    line-height: 1.75; margin-bottom: 20px;
+  }
+  .vla-what-body {
+    font-size: 14.5px; color: rgba(196,181,253,.7);
+    line-height: 1.85; margin-bottom: 16px;
+  }
+  .vla-what-body strong { color: #c4b5fd; font-weight: 600; }
+
+  /* THE BUILD */
+  .vla-build-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .vla-build-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(102,126,234,.14);
+    border-radius: 16px; padding: 24px 22px;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .vla-build-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(102,126,234,.35);
+    box-shadow: 0 12px 40px rgba(102,126,234,.15);
+  }
+  .vla-build-card.vla-flagship {
+    border-color: rgba(139,92,246,.3);
+    background: rgba(139,92,246,.04);
+  }
+  .vla-build-card.vla-flagship:hover {
+    border-color: rgba(139,92,246,.5);
+    box-shadow: 0 12px 40px rgba(139,92,246,.18);
+  }
+  .vla-build-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px; font-weight: 700; letter-spacing: -1px;
+    background: linear-gradient(135deg, #a78bfa, #667eea);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 8px; line-height: 1;
+  }
+  .vla-build-label {
+    font-size: 13px; font-weight: 600; color: #f4f3ff;
+    margin-bottom: 6px;
+  }
+  .vla-build-desc {
+    font-size: 12px; color: rgba(165,180,252,.55);
+    line-height: 1.6;
+  }
+
+  /* PRINCIPLES */
+  .vla-principles {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .vla-principle {
+    padding: 26px 24px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(102,126,234,.15);
+    position: relative;
+  }
+  .vla-principle-icon {
+    font-size: 20px; margin-bottom: 12px;
+    display: inline-block;
+    padding: 8px 10px; border-radius: 10px;
+    background: rgba(102,126,234,.12);
+  }
+  .vla-principle-title {
+    font-size: 15px; font-weight: 700;
+    color: #f4f3ff; margin-bottom: 8px;
+    letter-spacing: -.2px;
+  }
+  .vla-principle-body {
+    font-size: 13px; color: rgba(196,181,253,.65);
+    line-height: 1.7;
+  }
+
+  /* CTA STRIP */
+  .vla-cta {
+    margin-top: 72px;
+    padding: 40px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(102,126,234,.08), rgba(118,75,162,.08));
+    border: 1px solid rgba(102,126,234,.22);
+    text-align: center;
+  }
+  .vla-cta-title {
+    font-family: 'Cormorant Garamond', 'Space Grotesk', sans-serif;
+    font-size: clamp(22px, 3vw, 30px); font-weight: 500;
+    margin-bottom: 12px; letter-spacing: -.3px;
+  }
+  .vla-cta-sub {
+    font-size: 14px; color: rgba(196,181,253,.7);
+    margin-bottom: 24px;
+  }
+  .vla-cta-btns {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
+  .vla-cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 12px;
+    font-size: 13px; font-weight: 700; text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .vla-cta-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; box-shadow: 0 4px 20px rgba(102,126,234,.35);
+  }
+  .vla-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(102,126,234,.5);
+  }
+  .vla-cta-ghost {
+    background: transparent; color: #a5b4fc;
+    border: 1px solid rgba(102,126,234,.35);
+  }
+  .vla-cta-ghost:hover { background: rgba(102,126,234,.1); }
+
+  /* FOOTER STRIP */
+  .vla-foot {
+    margin-top: 56px;
+    text-align: center;
+    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(102,126,234,.4);
+  }
+</style>
+
+<div class="vla-root">
+
+  <!-- HERO -->
+  <div class="vla-hero">
+    <div class="vla-eyebrow vla-f1">
+      <div class="vla-eyebrow-dot"></div>About Virorah
+    </div>
+    <h1 class="vla-hero-title vla-f2">
+      We're building the practice environment <em>HR professionals</em> were never given.
+    </h1>
+    <p class="vla-hero-sub vla-f3">
+      Virorah Private Limited builds Virorah PMS, a Performance Intelligence platform. Bring a real situation to The Case Room and get a complete action plan. Head into FORGE to learn, diagnose, or build a genuinely extraordinary team. Or run real calculators on real employee data, instead of reading about performance management theory.
+    </p>
+    <div class="vla-hero-meta vla-f4">
+      <span class="vla-hero-chip">📜 MCA-registered Pvt Ltd</span>
+      <span class="vla-hero-chip">📍 Gurgaon, India</span>
+      <span class="vla-hero-chip">🚀 Platform live since 2026</span>
+    </div>
+  </div>
+
+  <!-- WHY WE EXIST -->
+  <div class="vla-section">
+    <div class="vla-section-label">Why We Exist</div>
+    <h2 class="vla-section-title">Every HR framework in the world <em>tells you what to do.</em><br>Almost none <em>show you how it feels to do it.</em></h2>
+    <div class="vla-what">
+      <p class="vla-what-lead">
+        You know the theory. You've read the books, sat through the webinars, memorised the frameworks. But when you actually walk into a calibration room, or hand someone a PIP, or defend a rating in front of your CHRO, the theory doesn't help.
+      </p>
+      <p class="vla-what-body">
+        Enterprise HR platforms like Workday, SAP and Darwinbox are built for HR operations at scale, and are excellent at what they do. But they sit behind a login you can only access when your employer buys them. You can't practice on them. You can't experiment. You can't fail safely. And none of them help you when a real situation lands on your desk today, or when your CEO asks how to build a genuinely high performing team and nobody ever gave you the playbook.
+      </p>
+      <p class="vla-what-body">
+        <strong>Virorah PMS is the missing layer</strong>, a Performance Intelligence platform where you can bring a real performance situation and get a complete action plan, build or diagnose a high performing team through FORGE, or run every performance decision on real data, in a real UI, without risking a real employee's career.
+      </p>
+      <p class="vla-what-body">
+        This is where HR practitioners go to get better, before it matters.
+      </p>
+    </div>
+  </div>
+
+  <!-- FORGE -->
+  <div class="vla-section">
+    <div class="vla-section-label">Inside FORGE</div>
+    <h2 class="vla-section-title">Diagnose what's broken. <em>Or build it right from day one.</em></h2>
+    <div class="vla-what">
+      <p class="vla-what-lead">
+        FORGE is where you work on team design directly, not a calculator applied to one decision, but the whole shape of how a team performs.
+      </p>
+      <p class="vla-what-body">
+        <strong>Forge Simulation</strong> puts you in charge of a team that's already broken. You inherit it exactly as it stands and make real decisions across six stages, eighteen calls in total, and an AI generates the consequences of each one. At the end you get an HPT score out of 100, a number that tells you exactly how close you came to building something extraordinary, and how far off.
+      </p>
+      <p class="vla-what-body">
+        <strong>Forge Your Org</strong> runs the same rigour on your actual team. Score your organisation against five diagnostic conditions grounded in real, documented cases, and walk away with a 90-day playbook for what to fix first.
+      </p>
+      <p class="vla-what-body">
+        <strong>The Foundry</strong> helps you build a genuinely extraordinary team, either from scratch or by intentionally redesigning one that already exists, across six conditions grounded in real cases from Skunk Works to SpaceX. Work through each stage and walk away with a tangible artifact for your team, six in total, combined into a single Operating Kit.
+      </p>
+    </div>
+  </div>
+
+  <!-- WHAT WE BUILT -->
+  <div class="vla-section">
+    <div class="vla-section-label">What We Built</div>
+    <h2 class="vla-section-title">A full Performance Intelligence platform. <em>Not a course.</em></h2>
+    <div class="vla-build-grid">
+      <div class="vla-build-card vla-flagship">
+        <div class="vla-build-num">1</div>
+        <div class="vla-build-label">The Case Room</div>
+        <div class="vla-build-desc">Bring one real situation, get a full action plan through PROBE, PROTOCOL, LEDGER, RESOLVE.</div>
+      </div>
+      <div class="vla-build-card vla-flagship">
+        <div class="vla-build-num">6</div>
+        <div class="vla-build-label">FORGE Conditions</div>
+        <div class="vla-build-desc">Learn, diagnose, or build a genuinely extraordinary team, grounded in real cases from Skunk Works to SpaceX.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">16</div>
+        <div class="vla-build-label">Live Calculators</div>
+        <div class="vla-build-desc">9-Box, Bell Curve, Bias Audit, Calibration Engine, Increment Engine, DEI Analytics, more.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">15</div>
+        <div class="vla-build-label">Company Scenarios</div>
+        <div class="vla-build-desc">Real orgs across industries, sizes and geographies. Practice on any of them.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">750</div>
+        <div class="vla-build-label">Employees Modelled</div>
+        <div class="vla-build-desc">Full workforce data. Ratings, salaries, tenure, potential, flight risk, everything.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">4</div>
+        <div class="vla-build-label">Pro Certifications</div>
+        <div class="vla-build-desc">Fundamentals, Advanced, Practitioner and Portfolio. LinkedIn badges included.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">14</div>
+        <div class="vla-build-label">Expert Guides</div>
+        <div class="vla-build-desc">Every framework explained in plain language. Read once, apply forever.</div>
+      </div>
+      <div class="vla-build-card">
+        <div class="vla-build-num">25</div>
+        <div class="vla-build-label">Ready-to-Use Templates</div>
+        <div class="vla-build-desc">PIP letters, feedback forms, calibration sheets, increment letters. Downloadable.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW WE BUILD -->
+  <div class="vla-section">
+    <div class="vla-section-label">How We Build</div>
+    <h2 class="vla-section-title">Four rules. <em>No exceptions.</em></h2>
+    <div class="vla-principles">
+      <div class="vla-principle">
+        <div class="vla-principle-icon">🔒</div>
+        <div class="vla-principle-title">Your data never leaves your browser</div>
+        <div class="vla-principle-body">Every calculator runs client-side. Your workforce data is processed locally, never uploaded, never stored on our servers. Zero exceptions.</div>
+      </div>
+      <div class="vla-principle">
+        <div class="vla-principle-icon">✋</div>
+        <div class="vla-principle-title">Hands-on before hands-off</div>
+        <div class="vla-principle-body">Nothing goes into the platform unless you can practise it yourself. No frameworks without a calculator. No theory without a scenario.</div>
+      </div>
+      <div class="vla-principle">
+        <div class="vla-principle-icon">💸</div>
+        <div class="vla-principle-title">Individual pricing, not enterprise</div>
+        <div class="vla-principle-body">You shouldn't need a purchase order to get better at your craft. One HR professional. One subscription. That's the model.</div>
+      </div>
+      <div class="vla-principle">
+        <div class="vla-principle-icon">🎯</div>
+        <div class="vla-principle-title">Built by HR, for HR</div>
+        <div class="vla-principle-body">Every calculator, scenario and framework on the platform came out of a real problem faced by a real HR practitioner. Not invented, encountered.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="vla-cta">
+    <div class="vla-cta-title">Try it before you trust it.</div>
+    <div class="vla-cta-sub">2 calculators and 6 scenarios are free forever. No card, no email required. Just start.</div>
+    <div class="vla-cta-btns">
+      <a href="/pages/case-room.html" class="vla-cta-btn vla-cta-primary">💬 Bring your situation to The Case Room →</a>
+      <a href="/pages/tour.html" class="vla-cta-btn vla-cta-ghost">🗺️ Take the tour</a>
+    </div>
+  </div>
+
+  <div class="vla-foot">
+    Virorah Private Limited · Gurgaon, India · Est. 2026
+  </div>
+
+</div>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+
+</body>
+</html>
