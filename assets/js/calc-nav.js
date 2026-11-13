@@ -124,7 +124,7 @@
   (function () {
     var BLOCKS = ['sch3','viorah-pro-banner','okr-wrap','okrsim-wrap','okrcalc-wrap','nb-container','bellcurve-container','bsc-root','f360-container','increment-container','ceq-container','mgr-container','dei-container','suc-container','pip-container','cal-container','phi-root','wi-root','okrgalaxy-wrap','sbc-root','ceq-3d-root','dei-3d-root','suc-3d-root','cal-3d-root','cg-root'];
     /* measured leftovers vs live: empty Softr blocks / 3D block chrome that sit above these sections */
-    var EXTRA = { 'sch3': 8, 'ceq-container': 48, 'dei-container': 48, 'phi-root': 43, 'mgr-container': 22, 'pip-container': 22 };
+    var EXTRA = { 'sch3': 8, 'ceq-container': 48, 'dei-container': 48, 'phi-root': 43, 'bsc-root': 48, 'mgr-container': 22, 'pip-container': 22 };
     function spaceBlocks() {
       BLOCKS.forEach(function (id) {
         var el = document.getElementById(id);
