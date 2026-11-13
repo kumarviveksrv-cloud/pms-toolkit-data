@@ -36,7 +36,7 @@
         'body.pms-calcnav-closed #pms-leftnav-toggle{left:var(--nav-width,242px);} body.pms-calcnav-closed.pms-collapsed #pms-leftnav-toggle{left:0;}',
     'body.pms-has-calcnav:not(.pms-calcnav-closed) .pms-sidebar{visibility:hidden;}',
     /* live PMS parity: Softr wraps every calculator in a 1140px centred column with 64px side padding */
-    'body.pms-has-calcnav .pms-content{max-width:none;padding-top:64px;padding-left:64px;padding-right:64px;color:#e2d9f3;display:flex;flex-direction:column;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}',
+    'body.pms-has-calcnav .pms-content{max-width:none;padding-top:72px;padding-left:64px;padding-right:64px;color:#e2d9f3;display:flex;flex-direction:column;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}',
     'body.pms-has-calcnav #sch3,body.pms-has-calcnav #viorah-pro-banner,body.pms-has-calcnav #okr-wrap,body.pms-has-calcnav #okrsim-wrap,body.pms-has-calcnav #okrcalc-wrap,body.pms-has-calcnav #nb-container,body.pms-has-calcnav #bellcurve-container,body.pms-has-calcnav #bsc-root,body.pms-has-calcnav #f360-container,body.pms-has-calcnav #increment-container,body.pms-has-calcnav #ceq-container,body.pms-has-calcnav #mgr-container,body.pms-has-calcnav #dei-container,body.pms-has-calcnav #suc-container,body.pms-has-calcnav #pip-container,body.pms-has-calcnav #cal-container,body.pms-has-calcnav #phi-root,body.pms-has-calcnav #wi-root{width:100%;max-width:1140px;margin-left:auto;margin-right:auto;box-sizing:border-box;}',
     ':where(body.pms-has-calcnav .pms-content) :where(h1,h2,h3,h4,h5,h6){line-height:1.2;}',
     'body.pms-has-calcnav .pms-main{margin-left:calc(var(--nav-width,242px) + 0px);transition:margin-left .2s ease;}',
@@ -119,4 +119,21 @@
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+
+  /* live PMS parity: every Softr custom-code block carries 24px of section spacing above and below */
+  (function () {
+    var BLOCKS = ['sch3','viorah-pro-banner','okr-wrap','okrsim-wrap','okrcalc-wrap','nb-container','bellcurve-container','bsc-root','f360-container','increment-container','ceq-container','mgr-container','dei-container','suc-container','pip-container','cal-container','phi-root','wi-root'];
+    function spaceBlocks() {
+      BLOCKS.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el || el.getAttribute('data-pms-sp')) return;
+        var cs = getComputedStyle(el);
+        var mt = parseFloat(cs.marginTop) || 0, mb = parseFloat(cs.marginBottom) || 0;
+        el.style.marginTop = (mt + 24) + 'px';
+        el.style.marginBottom = (mb + 24) + 'px';
+        el.setAttribute('data-pms-sp', '1');
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', spaceBlocks); else spaceBlocks();
+  })();
 })();
