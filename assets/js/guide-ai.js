@@ -146,9 +146,19 @@ var DEFAULT_CONTEXT = { label:'Virorah PMS', context:'User is on the Virorah PMS
     });
     wrap.appendChild(h); messages.appendChild(wrap); messages.scrollTop = messages.scrollHeight;
   }
+  /* The concierge waits for the Guide card to be closed so the two never cover the page together. */
+  var conciergePending = false;
+  function openConcierge() {
+    if (hasSeenConcierge()) return;
+    state.open = true; panel.classList.remove('hidden'); showConciergeGreeting();
+  }
   function maybeTriggerConcierge() {
     if (hasSeenConcierge()) return;
-    setTimeout(function () { if (hasSeenConcierge()) return; state.open = true; panel.classList.remove('hidden'); showConciergeGreeting(); }, 2500);
+    setTimeout(function () {
+      if (hasSeenConcierge()) return;
+      if (cardOpen) { conciergePending = true; return; }
+      openConcierge();
+    }, 2500);
   }
   function buildSystemPrompt() {
     var ctx = state.pageCtx || DEFAULT_CONTEXT;
@@ -335,7 +345,10 @@ var DEFAULT_CONTEXT = { label:'Virorah PMS', context:'User is on the Virorah PMS
     inner.innerHTML = html; cardOpen = true; card.classList.add('vg-open');
     if (SPOTLIGHTS[path] && isFirstVisit(path)) setTimeout(function () { positionSpotlight(SPOTLIGHTS[path]); }, 100);
   }
-  function closeCard() { cardOpen = false; var card = document.getElementById('vg-card'); if (card) card.classList.remove('vg-open'); removeSpotlight(); }
+  function closeCard() {
+    cardOpen = false; var card = document.getElementById('vg-card'); if (card) card.classList.remove('vg-open'); removeSpotlight();
+    if (conciergePending) { conciergePending = false; setTimeout(openConcierge, 900); }
+  }
   function toggleCard() { if (cardOpen) closeCard(); else openCard(); }
   window.addEventListener('resize', function () { if (cardOpen) { var p = currentPath(); if (SPOTLIGHTS[p]) positionSpotlight(SPOTLIGHTS[p]); } });
 
