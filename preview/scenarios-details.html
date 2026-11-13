@@ -724,7 +724,7 @@ if(!tryRender()){
   },250);
   if(!window.PMS_MASTER_DATA){
     /* FIX: use fetch+eval on github.io - raw.githubusercontent.com is blocked by browsers */
-    fetch('/scenario_data_all.js')
+    fetch('/pms-toolkit-data/scenario_data_all.js')
       .then(function(r){return r.text();})
       .then(function(code){eval(code);})
       .catch(function(){});
@@ -2064,7 +2064,7 @@ setTimeout(function(){if(!window._sch3done)tryRender();},5000);
 <!-- Shared Scenario Context Loader - runs once for all 3 tools -->
 <script>
   (function(){
-  var GITHUB_URL='/scenario_data_all.js';
+  var GITHUB_URL='/pms-toolkit-data/scenario_data_all.js';
   var SCENARIO_META={
     'High-Growth Tech Startup':{size:'mid',stage:'growth'},
     'Professional Services Firm':{size:'mid',stage:'mature'},
@@ -6562,7 +6562,7 @@ function updateStats(data,scenarioName){
     '<strong>'+scenarioName+'</strong> - '+(profile.insight||'OKR health data loaded.');
 }
 
-var GITHUB_URL='/scenario_data_all.js';
+var GITHUB_URL='/pms-toolkit-data/scenario_data_all.js';
 
 function buildGalaxy(sc){
   var data=generateOKRData(sc.employees,sc.name);
@@ -7172,7 +7172,7 @@ var container=document.getElementById('nb-container');
 container.innerHTML='<div class="nb-loading">Loading 9-Box Grid...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -8071,7 +8071,7 @@ function loadData(){
     try{var stored=localStorage.getItem('pms_custom_org_v1');if(stored){var co=JSON.parse(stored);if(co&&co.employees){initScene(co,co.scenarioName||'Your Organisation');return;}}}catch(e){}
     showError('No uploaded org data found - please upload your CSV first');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showError('Scenario not found');return;}initScene(sc,sc.scenarioName||sc.name||'Scenario');})
     .catch(function(){showError('Failed to load data - please refresh');});
@@ -8848,7 +8848,7 @@ function barRow(label,grad,p,count){
 
 function getRecordId(){ return new URLSearchParams(window.location.search).get('recordId'); }
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -9898,7 +9898,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){initWith(co.employees,co.scenarioName||'Your Org');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}initWith(sc.employees||[],sc.name||'Scenario');})
     .catch(function(){showErr('Failed to load data');});
@@ -11980,7 +11980,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -12850,7 +12850,7 @@ function render(scenario){
         renderIncrementCalculator(scenario);
     }
 
-    fetch('/scenario_data_all.js')
+    fetch('/pms-toolkit-data/scenario_data_all.js')
         .then(function(r) { return r.text(); })
         .then(function(code) { eval(code); loadScenarioData(); })
         .catch(function() { container.innerHTML = '<div class="increment-loading">&#10060; Failed to load data. Please refresh.</div>'; });
@@ -13255,7 +13255,7 @@ function buildOrientBanner(){
 var methodNote='<div class="ceq-method-note"><strong>Methodology note:</strong> All compa-ratio calculations on this page compare each employee\'s salary to the internal midpoint of their level\'s pay range (min + max salary within the same level, divided by 2) -- derived entirely from your own organisation\'s data. This measures <strong>internal pay consistency</strong>, not external market competitiveness. If your whole org underpays a level, employees will still show near 100% compa-ratio. For external benchmarking, you need market salary survey data.</div>';
 
 Promise.all([
-  fetch('/scenario_data_all.js').then(function(r){return r.text();}),
+  fetch('/pms-toolkit-data/scenario_data_all.js').then(function(r){return r.text();}),
   fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js').then(function(r){return r.text();})
 ]).then(function(codes){
   eval(codes[0]);eval(codes[1]);
@@ -14005,7 +14005,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -14863,7 +14863,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){ return r.text(); })
   .then(function(code){
     eval(code);
@@ -15784,7 +15784,7 @@ var container=document.getElementById('dei-container');
 container.innerHTML='<div class="dei-loading">Loading DEI Analytics...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-var MASTER_URL='/scenario_data_all.js';
+var MASTER_URL='/pms-toolkit-data/scenario_data_all.js';
 var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
 
 function buildOrientBanner(){
@@ -16569,7 +16569,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -17490,7 +17490,7 @@ var container=document.getElementById('suc-container');
 container.innerHTML='<div class="suc-loading">Loading Succession Planning...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
-var MASTER_URL='/scenario_data_all.js';
+var MASTER_URL='/pms-toolkit-data/scenario_data_all.js';
 var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
 
 function buildOrientBanner(){
@@ -18257,7 +18257,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org');return;}}}catch(e){}
     showErr('No org data found');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -19241,7 +19241,7 @@ function wireOrientClose(){
   }
 }
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -20168,7 +20168,7 @@ function buildOrientBanner(){
   '</div>';
 }
 
-fetch('/scenario_data_all.js')
+fetch('/pms-toolkit-data/scenario_data_all.js')
   .then(function(r){return r.text();})
   .then(function(code){
     eval(code);
@@ -20913,7 +20913,7 @@ function loadData(){
     try{var st=localStorage.getItem('pms_custom_org_v1');if(st){var co=JSON.parse(st);if(co&&co.employees){init(co.employees,co.scenarioName||'Your Org',co.currencySymbol||'₹');return;}}}catch(e){}
     showErr('No uploaded org data found');return;
   }
-  fetch('/scenario_data_all.js')
+  fetch('/pms-toolkit-data/scenario_data_all.js')
     .then(function(r){return r.text();})
     .then(function(code){eval(code);var sc=window.getScenarioByRecordId?window.getScenarioByRecordId(recordId):null;if(!sc){showErr('Scenario not found');return;}init(sc.employees||[],sc.name||'Scenario',sc.currencySymbol||'₹');})
     .catch(function(){showErr('Failed to load data - please refresh');});
@@ -23527,7 +23527,7 @@ window.wiScrollTo=function(id){
 /* MAIN PLANNER */
 (function(){
 
-  var GITHUB_URL='/scenario_data_all.js';
+  var GITHUB_URL='/pms-toolkit-data/scenario_data_all.js';
 
   /* Mutable defaults - updated when scenario budget is known */
   var DEFAULTS={budget:8,topMult:1.5,lowInc:0,topPct:15,lowPct:10,pipThresh:2};
