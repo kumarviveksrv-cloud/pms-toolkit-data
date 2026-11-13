@@ -47,11 +47,15 @@
   const script = document.createElement('script');
   script.async = true;
   script.crossOrigin = 'anonymous';
-  script.src = 'https://unpkg.com/@clerk/clerk-js@5/dist/clerk.browser.js';
+  script.src = 'https://unpkg.com/@clerk/clerk-js@5.128.2/dist/clerk.browser.js';
+  /* Current Clerk builds read the key from this attribute and expose a ready instance. */
+  script.setAttribute('data-clerk-publishable-key', CLERK_PK);
 
   script.onload = async function () {
     try {
-      const Clerk = new window.Clerk(CLERK_PK);
+      const ClerkCtor = window.Clerk;
+      /* Older builds expose a constructor, current builds expose an instance. */
+      const Clerk = (typeof ClerkCtor === 'function') ? new ClerkCtor(CLERK_PK) : ClerkCtor;
       await Clerk.load();
 
       /* Expose globally so page scripts can use it */
@@ -234,6 +238,14 @@
       if (nameEl)   nameEl.textContent  = 'Guest';
       if (planEl)   planEl.textContent  = 'Free';
       if (avatarEl) avatarEl.textContent = 'G';
+      /* Signed out: swap the dead Sign out button for a Sign in link. */
+      var so = document.querySelector('[data-action="sign-out"]');
+      if (so && so.parentNode) {
+        var a = document.createElement('a');
+        a.className = so.className; a.href = '/login.html'; a.style.cssText = so.getAttribute('style') || '';
+        a.textContent = 'Sign in';
+        so.parentNode.replaceChild(a, so);
+      }
       return;
     }
 
