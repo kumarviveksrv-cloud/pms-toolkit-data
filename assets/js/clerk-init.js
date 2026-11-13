@@ -258,7 +258,7 @@
 
     if (nameEl)   nameEl.textContent  = name;
     if (planEl) {
-      planEl.textContent = _isPaid(plan) ? 'Virorah Pro' : 'Free';
+      planEl.textContent = plan === 'admin' ? 'Admin' : (_isPaid(plan) ? 'Virorah Pro' : 'Free');
       if (_isPaid(plan)) planEl.classList.add('pro');
     }
     if (avatarEl) {

@@ -67,7 +67,7 @@
      VIRORAH - MANAGER REPORT CARD v5
      Changes from v4:
      ✅ Scenario fallback mode - no org data? pick any of 15 scenarios
-     ✅ Loads master_scenario_data.js from GitHub Pages dynamically
+     ✅ Loads scenario_data_all.js from this site dynamically
      ✅ Manager dropdown auto-populates from selected scenario
      ✅ Team built from same department as manager
      ✅ Mode indicator shows "Scenario Mode" vs "Your Org Mode"
@@ -613,8 +613,8 @@ select#mrc-mgr-select option{background:#1a1040;color:#f0eeff;}
     var loadingEl=document.getElementById('mrc-scenario-loading');
     loadingEl.style.display='block';
     loadingEl.textContent='⏳ Loading scenario data…';
-    // Use jsDelivr CDN - serves raw GitHub files with correct MIME type, CORS-friendly
-    var url='https://cdn.jsdelivr.net/gh/kumarviveksrv-cloud/pms-toolkit-data@main/master_scenario_data.js';
+    // Same-origin file with all 15 scenarios (free and Pro)
+    var url='/scenario_data_all.js';
     fetch(url)
       .then(function(r){
         if(!r.ok) throw new Error('HTTP '+r.status);
@@ -633,6 +633,12 @@ select#mrc-mgr-select option{background:#1a1040;color:#f0eeff;}
         }
         scenarioLoaded=true;
         scenarioData=window.PMS_MASTER_DATA||null;
+        /* The data file is keyed by record id; this page looks scenarios up by name. */
+        if(scenarioData && !scenarioData.scenarios){
+          var byName={};
+          Object.keys(scenarioData).forEach(function(k){var v=scenarioData[k]; if(v && typeof v==='object' && v.name && Array.isArray(v.employees)) byName[v.name]=v;});
+          scenarioData={scenarios:byName};
+        }
         loadingEl.style.display='none';
         // If user already picked a scenario, populate managers now
         var sel=document.getElementById('mrc-scenario-select');

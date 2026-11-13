@@ -3,10 +3,848 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virorah PMS — Data Repository</title>
+  <title>Build high-performing teams by design.</title>
+  <meta name="description" content="FORGE diagnoses your org. The Case Room handles your hardest situations. The Foundry builds extraordinary teams. All the intelligence HR needed. Finally built.">
+  <link rel="canonical" href="https://pms.virorah.com/pages/landing.html">
+  <meta property="og:title" content="Build high-performing teams by design.">
+  <meta property="og:description" content="FORGE diagnoses your org. The Case Room handles your hardest situations. The Foundry builds extraordinary teams. All the intelligence HR needed. Finally built.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-  <!-- Virorah PMS static assets repository -->
-  <!-- Platform: virorah.com -->
+<!-- Standalone public page: no app shell (sidebar/topbar), no auth redirect. Used for the landing and persona pages. -->
+
+<!-- ============================================================
+     VIRORAH PMS LANDING PAGE - CLEAN BUILD
+     ============================================================ -->
+
+<style>
+html, body { background: #050410 !important; }
+.hiw-section { padding: 130px 48px; position: relative; border-top: 1px solid rgba(99,102,241,.12); overflow: hidden; }
+.hiw-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(99,102,241,.06) 0%, transparent 70%); pointer-events: none; }
+.hiw-inner { max-width: 1160px; margin: 0 auto; }
+.hiw-header { text-align: center; margin-bottom: 80px; }
+.hiw-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.hiw-eyebrow::before, .hiw-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--purple); }
+.hiw-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1; color: var(--text); }
+.hiw-title em { font-style: italic; background: linear-gradient(135deg, #6366f1, #e879f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hiw-sub { font-size: 16px; font-weight: 300; color: rgba(165,180,252,.55); margin-top: 18px; line-height: 1.8; }
+.hiw-steps { display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; align-items: start; gap: 0; margin-bottom: 80px; }
+.hiw-step { background: rgba(17,16,42,.6); border: 1px solid rgba(99,102,241,.15); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; transition: border-color .35s, transform .35s, box-shadow .35s; }
+.hiw-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--purple), transparent); opacity: 0; transition: opacity .35s; }
+.hiw-step:hover { border-color: rgba(99,102,241,.4); transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(99,102,241,.1); }
+.hiw-step:hover::before { opacity: 1; }
+.hiw-step-num { font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; line-height: 1; color: rgba(99,102,241,.15); position: absolute; top: 20px; right: 24px; transition: color .35s; letter-spacing: -2px; }
+.hiw-step:hover .hiw-step-num { color: rgba(99,102,241,.25); }
+.hiw-step-icon { font-size: 40px; margin-bottom: 20px; display: block; transition: transform .4s; }
+.hiw-step:hover .hiw-step-icon { transform: scale(1.12) rotate(-5deg); }
+.hiw-step-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 12px; }
+.hiw-step-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 14px; }
+.hiw-step-body { font-size: 13px; color: rgba(165,180,252,.55); line-height: 1.8; }
+.hiw-step-bullets { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.hiw-step-bullets li { font-size: 12px; color: rgba(165,180,252,.5); display: flex; align-items: center; gap: 8px; }
+.hiw-step-bullets li::before { content: "\2192"; color: var(--purple); font-size: 11px; flex-shrink: 0; }
+.hiw-connector { display: flex; align-items: center; justify-content: center; padding-top: 80px; }
+.hiw-connector-inner { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.hiw-connector-line { width: 2px; height: 40px; background: linear-gradient(to bottom, rgba(99,102,241,.0), rgba(99,102,241,.4), rgba(99,102,241,.0)); }
+.hiw-connector-arrow { font-size: 20px; color: rgba(99,102,241,.5); animation: connectorBounce 2s ease-in-out infinite; }
+@keyframes connectorBounce { 0%,100%{transform:translateY(0);opacity:.5;} 50%{transform:translateY(4px);opacity:1;} }
+.hiw-proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.12); border-radius: 16px; overflow: hidden; }
+.hiw-proof-item { background: rgba(13,11,30,.8); padding: 32px 28px; text-align: center; transition: background .3s; }
+.hiw-proof-item:hover { background: rgba(99,102,241,.06); }
+.hiw-proof-num { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; letter-spacing: -1px; }
+.hiw-proof-num em { color: var(--purple); font-style: normal; }
+.hiw-proof-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(165,180,252,.4); }
+@media(max-width: 900px) { .hiw-steps { grid-template-columns: 1fr; } .hiw-connector { display: none; } .hiw-proof { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<script>
+(function(){
+  function applyDark(){
+    document.body.style.setProperty('background','#050410','important');
+    document.body.style.setProperty('background-color','#050410','important');
+    document.documentElement.style.setProperty('background','#050410','important');
+    var divs = document.querySelectorAll('div, section, main, article');
+    divs.forEach(function(el){
+      if(el.closest('#hero')||el.closest('.marquee-section')||el.closest('.pain-section')||el.closest('.shift-section')||el.closest('.features-section')||el.closest('.galaxy-section')||el.closest('.okr-flagship-section')||el.closest('.simulate-lp-section')||el.closest('.cta-section')||el.closest('footer')||el.id==='neural-core'||el.id==='neural-readout'||el.id==='neural-canvas'){return;}
+      var bg=window.getComputedStyle(el).backgroundColor;
+      if(bg==='rgb(255, 255, 255)'||bg==='rgb(248, 247, 255)'||bg==='rgb(250, 250, 250)'||bg==='rgb(245, 245, 245)'||bg==='rgb(238, 238, 238)'){el.style.setProperty('background','transparent','important');el.style.setProperty('background-color','transparent','important');}
+    });
+  }
+  document.addEventListener('DOMContentLoaded',applyDark);
+  setTimeout(applyDark,100);setTimeout(applyDark,400);setTimeout(applyDark,900);
+  var obs=new MutationObserver(function(){applyDark();});
+  document.addEventListener('DOMContentLoaded',function(){
+    obs.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
+    setTimeout(function(){obs.disconnect();},5000);
+  });
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#050410;--deep:#080614;--ink:#0d0b1e;--card:#11102a;
+  --purple:#6366f1;--violet:#7c3aed;--indigo:#4f46e5;
+  --rose:#e879f9;--gold:#f59e0b;--green:#22c55e;
+  --text:#f4f3ff;--muted:#a5b4fc;
+  --faint:rgba(99,102,241,.12);--border:rgba(99,102,241,.20);--glow:rgba(99,102,241,.35);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden;cursor:none;}
+#bg-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
+nav,#hero,.marquee-section,.pain-section,.shift-section,.features-section,.galaxy-section,.simulate-lp-section,.okr-flagship-section,.cta-section,footer{position:relative;z-index:2;}
+#neural-core{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#a5b4fc;box-shadow:0 0 12px 3px rgba(165,180,252,.7);pointer-events:none;z-index:9999;}
+#neural-readout{position:fixed;top:0;left:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#a5b4fc;pointer-events:none;z-index:9999;opacity:0;transition:opacity .25s;white-space:nowrap;letter-spacing:.4px;}
+#neural-canvas{position:fixed;inset:0;z-index:9997;pointer-events:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(5,4,16,.0);backdrop-filter:blur(0px);transition:background .4s,backdrop-filter .4s,padding .4s;}
+nav.scrolled{background:rgba(5,4,16,.85);backdrop-filter:blur(20px);padding:14px 48px;border-bottom:1px solid rgba(99,102,241,.12);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1;background:transparent!important;}
+.nav-logo-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--rose));animation:dotPulse 2s ease-in-out infinite;}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.5);}50%{box-shadow:0 0 0 6px rgba(99,102,241,0);}}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(244,243,255,.5);text-decoration:none;letter-spacing:.3px;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{padding:9px 22px;border-radius:8px;font-size:13px;font-weight:700;background:var(--faint);border:1px solid var(--border);color:var(--muted);text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--purple);border-color:var(--purple);color:white;}
+.nav-cta.primary{background:linear-gradient(135deg,var(--purple),var(--violet));border-color:transparent;color:white;box-shadow:0 2px 16px rgba(99,102,241,.4);}
+.nav-cta.primary:hover{box-shadow:0 4px 24px rgba(99,102,241,.6);}
+@media(max-width:768px){nav{padding:16px 24px;}.nav-links{display:none;}}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:120px 24px 80px;}
+.hero-grid{position:absolute;inset:0;z-index:1;opacity:.3;background-image:linear-gradient(rgba(99,102,241,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.08) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 80%);}
+.hero-glow-l{position:absolute;top:-20%;left:-10%;z-index:1;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.18) 0%,transparent 65%);animation:glowDrift 8s ease-in-out infinite alternate;}
+.hero-glow-r{position:absolute;bottom:-20%;right:-10%;z-index:1;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.14) 0%,transparent 65%);animation:glowDrift 10s ease-in-out infinite alternate-reverse;}
+@keyframes glowDrift{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,30px) scale(1.08);}}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:900px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:20px;margin-bottom:28px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.30);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);animation:fadeUp .8s ease both;}
+.hero-badge-live{width:6px;height:6px;border-radius:50%;background:var(--green);animation:livePulse 1.5s ease-in-out infinite;}
+@keyframes livePulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.15;letter-spacing:-0.5px;margin-bottom:24px;animation:fadeUp .8s .1s ease both;}
+.hero-title strong{font-weight:700;display:block;background:linear-gradient(135deg,#c4b5fd 0%,var(--purple) 40%,var(--rose) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-bottom:6px;margin-top:8px;}
+.hero-title em{font-style:italic;font-weight:300;color:rgba(244,243,255,.82);text-shadow:0 2px 40px rgba(5,4,16,.9),0 0 80px rgba(5,4,16,.7);}
+.hero-sub{font-size:clamp(16px,2vw,20px);line-height:1.7;color:rgba(244,243,255,.55);max-width:640px;margin:0 auto 40px;animation:fadeUp .8s .2s ease both;}
+.hero-sub strong{color:var(--text);font-weight:600;}
+.hero-ctas{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:56px;animation:fadeUp .8s .3s ease both;}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:12px;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--violet));color:white;text-decoration:none;box-shadow:0 4px 32px rgba(99,102,241,.5);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.btn-hero-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .2s;}
+.btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 48px rgba(99,102,241,.65);}
+.btn-hero-primary:hover::after{opacity:1;}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:12px;font-size:15px;font-weight:600;background:transparent;border:1px solid rgba(244,243,255,.15);color:rgba(244,243,255,.7);text-decoration:none;transition:all .2s;}
+.btn-hero-ghost:hover{border-color:rgba(99,102,241,.5);color:var(--muted);background:var(--faint);}
+.hero-stats{display:flex;align-items:flex-start;justify-content:center;flex-wrap:nowrap;animation:fadeUp .8s .4s ease both;}
+.hero-stat{padding:16px 18px;text-align:center;border-right:1px solid rgba(99,102,241,.15);flex:1;min-width:0;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--text),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;letter-spacing:-1px;}
+.hero-stat-lbl{font-size:11px;font-weight:600;color:rgba(244,243,255,.3);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.marquee-section{border-top:1px solid rgba(99,102,241,.12);border-bottom:1px solid rgba(99,102,241,.12);padding:16px 0;overflow:hidden;background:rgba(99,102,241,.04);}
+.marquee-track{display:flex;gap:0;animation:marquee 28s linear infinite;width:max-content;}
+.marquee-item{display:flex;align-items:center;gap:12px;padding:0 40px;font-size:12px;font-weight:600;color:rgba(244,243,255,.3);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--purple);opacity:.5;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.pain-section{padding:72px 5% 72px;max-width:1300px;margin:0 auto;}
+.section-label{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--purple);opacity:0;transition:opacity .3s;}
+.section-label.visible::before{opacity:1;}
+.pain-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,48px);font-weight:400;line-height:1.2;color:var(--text);max-width:700px;margin-bottom:48px;}
+.pain-title em{font-style:italic;color:var(--muted);}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.12);border-radius:16px;overflow:hidden;}
+@media(max-width:768px){.pain-grid{grid-template-columns:1fr;}}
+.pain-card{padding:36px 32px;background:var(--black);position:relative;overflow:hidden;transition:background .3s;}
+.pain-card:hover{background:rgba(99,102,241,.05);}
+.pain-icon{font-size:28px;margin-bottom:16px;}
+.pain-card h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.pain-card p{font-size:13px;color:rgba(244,243,255,.45);line-height:1.7;}
+.shift-section{padding:72px 48px;text-align:center;position:relative;overflow:hidden;}
+.shift-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(99,102,241,.12) 0%,transparent 65%);}
+.shift-section-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.shift-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 16px;border-radius:20px;margin-bottom:24px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.25);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.shift-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:300;line-height:1.1;color:var(--text);margin-bottom:24px;}
+.shift-title span{font-weight:700;font-style:italic;background:linear-gradient(135deg,#c4b5fd,var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.shift-body{font-size:18px;color:rgba(244,243,255,.55);line-height:1.8;max-width:580px;margin:0 auto 40px;}
+.shift-body strong{color:var(--text);}
+.typewriter-wrap{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:10px;margin-bottom:48px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);}
+.typewriter-prefix{color:rgba(244,243,255,.3);}
+#typewriter{color:var(--purple);min-width:200px;text-align:left;}
+.typewriter-cursor{width:2px;height:16px;background:var(--purple);border-radius:1px;animation:blink .8s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.features-section{padding:60px 5% 80px;max-width:1300px;margin:0 auto;}
+.features-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;text-align:center;margin-bottom:48px;color:var(--text);}
+.features-title em{font-style:italic;color:var(--muted);}
+.bento{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.bento{grid-template-columns:1fr;}}
+.bento-card{border-radius:18px;padding:32px;background:var(--card);border:1px solid rgba(99,102,241,.14);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.bento-card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.35);box-shadow:0 8px 40px rgba(99,102,241,.15);}
+.bento-card.span2{grid-column:span 2;}
+.bento-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.5),transparent);opacity:0;transition:opacity .3s;}
+.bento-card:hover::before{opacity:1;}
+.bento-icon{font-size:32px;margin-bottom:16px;display:block;filter:drop-shadow(0 4px 12px rgba(99,102,241,.3));}
+.bento-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:12px;background:var(--faint);border:1px solid var(--border);color:var(--purple);}
+.bento-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.2;}
+.bento-body{font-size:13px;color:rgba(244,243,255,.45);line-height:1.7;}
+.bento-stat-num{font-family:'Space Grotesk',sans-serif;font-size:72px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--text),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-2px;}
+.bento-stat-lbl{font-size:13px;color:rgba(244,243,255,.35);margin-top:4px;}
+.bento-card.accent-purple{background:linear-gradient(135deg,rgba(99,102,241,.15) 0%,rgba(124,58,237,.10) 100%);border-color:rgba(99,102,241,.3);}
+.bento-card.accent-rose{background:linear-gradient(135deg,rgba(232,121,249,.10) 0%,rgba(99,102,241,.08) 100%);border-color:rgba(232,121,249,.25);}
+.bento-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;}
+.cta-section{padding:100px 48px;text-align:center;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(99,102,241,.20) 0%,transparent 65%);pointer-events:none;}
+.cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:300;line-height:1.18;color:var(--text);margin-bottom:20px;padding-bottom:4px;overflow:visible;}
+.cta-title strong{font-weight:700;display:block;background:linear-gradient(135deg,#c4b5fd,var(--purple),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cta-sub{font-size:17px;color:rgba(244,243,255,.45);margin-bottom:40px;line-height:1.7;}
+.cta-note{font-size:12px;color:rgba(244,243,255,.2);margin-top:20px;}
+footer{border-top:1px solid rgba(99,102,241,.12);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:rgba(244,243,255,.4);}
+.footer-links{display:flex;gap:24px;list-style:none;}
+.footer-links a{font-size:12px;color:rgba(244,243,255,.25);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--muted);}
+.footer-copy{font-size:12px;color:rgba(244,243,255,.2);}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}.reveal-delay-4{transition-delay:.4s;}
+@media(max-width:768px){.pain-section,.features-section{padding:48px 24px;}.shift-section,.cta-section{padding:48px 24px;}}
+.simulate-lp-section{padding:120px 48px;position:relative;border-top:1px solid rgba(99,102,241,.12);background:linear-gradient(180deg,rgba(12,10,26,.0) 0%,rgba(99,102,241,.04) 50%,rgba(12,10,26,.0) 100%);}
+.simulate-lp-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;}
+.simulate-lp-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,60px);font-weight:700;line-height:1.1;color:var(--text);margin-bottom:24px;}
+.simulate-lp-title span{background:linear-gradient(135deg,#6366f1,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.simulate-lp-body{font-size:16px;font-weight:300;color:rgba(165,180,252,.65);line-height:1.85;margin-bottom:32px;max-width:440px;}
+.simulate-lp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+.sim-tag{font-size:11px;font-weight:600;padding:6px 14px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:20px;color:#a5b4fc;transition:all .2s;}
+.simulate-lp-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:white;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-radius:8px;transition:transform .2s,box-shadow .2s;}
+.simulate-lp-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(99,102,241,.4);}
+.simulate-lp-right{position:relative;}
+.sim-personality-badge{position:absolute;top:-20px;right:-10px;background:rgba(17,16,42,.95);backdrop-filter:blur(12px);border:1px solid rgba(99,102,241,.25);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:2;min-width:280px;}
+.sim-pers-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;}
+.sim-pers-name{font-size:12px;font-weight:700;color:var(--text);}
+.sim-pers-sub{font-size:10px;color:rgba(165,180,252,.5);margin-top:2px;}
+.sim-pers-emoji{font-size:20px;margin-left:auto;}
+.sim-chat-mock{background:#0d0b1e;border:1px solid rgba(99,102,241,.2);border-radius:18px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(99,102,241,.08);margin-top:32px;}
+.sim-mock-topbar{background:rgba(8,6,20,.9);padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(99,102,241,.1);}
+.sim-mock-dots{display:flex;gap:6px;}
+.sim-mock-dots span{width:11px;height:11px;border-radius:50%;display:block;}
+.sim-mock-chip{margin-left:auto;font-size:10px;font-weight:600;color:rgba(165,180,252,.5);background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:4px;padding:4px 10px;letter-spacing:.5px;}
+.sim-mock-status{font-size:10px;color:#22c55e;font-weight:600;display:flex;align-items:center;gap:4px;animation:statusBlink 2s ease-in-out infinite;}
+@keyframes statusBlink{0%,100%{opacity:1}50%{opacity:.5}}
+.sim-mock-msgs{padding:20px 18px;display:flex;flex-direction:column;gap:12px;min-height:280px;background:#080614;}
+.sim-mock-sys{text-align:center;font-size:11px;color:#444466;padding:5px 14px;background:rgba(99,102,241,.06);border-radius:20px;margin:0 auto;max-width:340px;}
+.sim-mock-mgr{display:flex;justify-content:flex-end;}
+.sim-mock-bubble-mgr{background:linear-gradient(135deg,#6366f1,#7c3aed);color:white;border-radius:16px 16px 4px 16px;padding:11px 15px;font-size:13px;line-height:1.6;max-width:78%;font-family:'DM Sans',sans-serif;}
+.sim-mock-emp{display:flex;align-items:flex-end;gap:8px;}
+.sim-mock-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;}
+.sim-mock-bubble-emp{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#ddddef;border-radius:16px 16px 16px 4px;padding:11px 15px;font-size:13px;line-height:1.6;max-width:78%;font-family:'DM Sans',sans-serif;}
+.lp-typing{display:flex;gap:4px;align-items:center;}
+.lp-typing span{width:6px;height:6px;background:rgba(165,180,252,.4);border-radius:50%;animation:lpTypeDot 1.2s infinite;}
+.lp-typing span:nth-child(2){animation-delay:.2s;}
+.lp-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes lpTypeDot{0%,60%,100%{transform:scale(.7);opacity:.3}30%{transform:scale(1);opacity:1}}
+.sim-mock-input-area{border-top:1px solid rgba(99,102,241,.1);padding:12px 16px;display:flex;gap:10px;align-items:center;background:rgba(8,6,20,.8);}
+.sim-mock-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(99,102,241,.15);border-radius:8px;padding:9px 14px;font-size:12px;color:rgba(165,180,252,.3);font-family:'DM Sans',sans-serif;}
+.sim-mock-send{width:34px;height:34px;background:linear-gradient(135deg,#6366f1,#7c3aed);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;}
+.sim-score-badge{position:absolute;bottom:-20px;left:-10px;background:rgba(17,16,42,.95);backdrop-filter:blur(12px);border:1px solid rgba(34,197,94,.25);border-radius:14px;padding:16px 22px;box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:2;}
+.sim-score-val{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;line-height:1;color:#4ade80;}
+.sim-score-lbl{font-size:11px;color:rgba(165,180,252,.5);margin-top:4px;}
+.sim-score-sub{font-size:9px;color:rgba(165,180,252,.3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+@media(max-width:900px){.simulate-lp-inner{grid-template-columns:1fr;gap:80px;}.simulate-lp-right{margin-top:60px;}}
+.galaxy-section{padding:100px 5%;border-top:1px solid rgba(99,102,241,.12);position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(12,10,26,0) 0%,rgba(99,102,241,.04) 50%,rgba(12,10,26,0) 100%);}
+.galaxy-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.07) 0%,transparent 65%);pointer-events:none;}
+.galaxy-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;position:relative;z-index:2;}
+.galaxy-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.1;color:var(--text);margin-bottom:20px;}
+.galaxy-title em{font-style:italic;background:linear-gradient(135deg,#c4b5fd,var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.galaxy-body{font-size:15px;font-weight:300;color:rgba(165,180,252,.65);line-height:1.85;margin-bottom:28px;}
+.galaxy-legend{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+.galaxy-legend-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(165,180,252,.6);}
+.galaxy-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.galaxy-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:white;font-size:14px;font-weight:700;text-decoration:none;border-radius:8px;transition:transform .2s,box-shadow .2s;letter-spacing:.3px;}
+.galaxy-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(99,102,241,.4);}
+.galaxy-right{position:relative;}
+.galaxy-fs-btn{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:9px;background:rgba(5,4,16,.7);backdrop-filter:blur(8px);border:1px solid rgba(99,102,241,.3);color:rgba(165,180,252,.85);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.galaxy-fs-btn:hover{background:rgba(99,102,241,.25);border-color:rgba(99,102,241,.6);color:#fff;transform:scale(1.06);}
+#talent-galaxy-canvas{width:100%;height:480px;border-radius:20px;border:1px solid rgba(99,102,241,.2);background:#030212;display:block;cursor:grab;}
+#talent-galaxy-canvas:active{cursor:grabbing;}
+.galaxy-right.is-fullscreen{position:fixed;inset:0;z-index:9000;background:#030212;display:flex;align-items:center;justify-content:center;padding:0;}
+.galaxy-right.is-fullscreen #talent-galaxy-canvas{width:100vw;height:100vh;border-radius:0;border:none;}
+.galaxy-right.is-fullscreen .galaxy-fs-btn{top:24px;right:24px;width:44px;height:44px;}
+.galaxy-right.is-fullscreen .galaxy-hud{bottom:32px;}
+.galaxy-hud{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;background:rgba(5,4,16,.85);backdrop-filter:blur(12px);border:1px solid rgba(99,102,241,.2);border-radius:40px;padding:10px 24px;}
+.galaxy-hud-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 20px;min-width:72px;}
+.galaxy-hud-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#fff;line-height:1;display:block;text-align:center;}
+.galaxy-hud-lbl{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(165,180,252,.4);margin-top:2px;white-space:nowrap;}
+.galaxy-hud-sep{width:1px;height:30px;background:rgba(99,102,241,.2);}
+@media(max-width:900px){.galaxy-inner{grid-template-columns:1fr;gap:48px;}#talent-galaxy-canvas{height:340px;}}
+.persona-section{padding:72px 5%;max-width:1300px;margin:0 auto;border-top:1px solid rgba(99,102,241,.12);}
+.persona-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;text-align:center;color:var(--text);margin-bottom:48px;}
+.persona-title em{font-style:italic;color:var(--muted);}
+.persona-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.persona-card{background:var(--card);border:1px solid rgba(99,102,241,.14);border-radius:16px;padding:28px 24px;text-decoration:none;display:block;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.persona-card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.4);box-shadow:0 12px 32px rgba(99,102,241,.15);}
+.persona-icon{font-size:26px;margin-bottom:14px;}
+.persona-eyebrow{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);margin-bottom:10px;}
+.persona-card h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:16px;}
+.persona-link{font-size:12px;font-weight:700;color:var(--muted);transition:color .2s;}
+.persona-card:hover .persona-link{color:var(--text);}
+@media(max-width:900px){.persona-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.persona-grid{grid-template-columns:1fr;}.persona-section{padding:48px 24px;}}
+.pain-section{padding:48px 5%!important;}
+.shift-section{padding:48px 48px!important;}
+.features-section{padding:40px 5% 52px!important;}
+.simulate-lp-section{padding:68px 48px!important;}
+.galaxy-section{padding:60px 5%!important;}
+.okr-flagship-section{padding:60px 5%!important;}
+.hiw-section{padding:72px 48px!important;}
+.cta-section{padding:60px 48px!important;}
+.galaxy-inner{gap:48px!important;}
+.simulate-lp-inner{gap:56px!important;}
+.hiw-header{margin-bottom:52px!important;}
+.hiw-steps{margin-bottom:48px!important;}
+@media(max-width:768px){.pain-section,.shift-section,.features-section,.simulate-lp-section,.galaxy-section,.hiw-section,.cta-section{padding-left:24px!important;padding-right:24px!important;}}
+/* Touch devices: cursor tracking is pointless + wastes CPU */ @media (hover: none) and (pointer: coarse) { body {
+cursor: auto !important; } #neural-core, #neural-readout, #neural-canvas { display: none !important; } } @media
+(max-width: 768px) { /* HERO - fix content width so long CTA buttons don't push it wider than viewport, causing
+overflow:hidden to clip the title */ .hero-content { width: 100%; max-width: 100%; } /* HERO TITLE - prevent right-edge
+clipping */ .hero-title { word-break: break-word; overflow-wrap: break-word; } /* HERO BADGE - allow text to wrap on
+narrow screens */ .hero-badge { white-space: normal; text-align: center; line-height: 1.6; font-size: 10px; padding: 6px
+12px; max-width: calc(100vw - 48px); } /* HERO CTAs - stack vertically, full-width */ .hero-ctas { flex-direction:
+column; align-items: stretch; } .btn-hero-primary, .btn-hero-ghost { justify-content: center; text-align: center;
+font-size: 14px; padding: 14px 20px; } /* HERO STATS - 2x2 grid instead of one overflowing row */ .hero-stats {
+flex-wrap: wrap; } .hero-stat { flex: 0 0 50%; border-right: none; border-bottom: 1px solid rgba(99,102,241,.15); }
+.hero-stat:nth-child(odd) { border-right: 1px solid rgba(99,102,241,.15); } .hero-stat:nth-child(3),
+.hero-stat:nth-child(4) { border-bottom: none; } .hero-stat-num { font-size: 28px; } /* BENTO GRID - single column, kill
+span2 */ .bento { grid-template-columns: 1fr !important; } .bento-card.span2 { grid-column: span 1 !important; }
+.bento-mini-grid { grid-template-columns: 1fr 1fr; } /* SIMULATE - un-stick absolute badges that overflow on mobile */
+.sim-personality-badge { position: relative; top: auto; right: auto; min-width: unset; width: 100%; margin-bottom: 12px;
+} .sim-score-badge { position: relative; bottom: auto; left: auto; display: inline-block; margin-top: 12px; } /* GALAXY
+CANVAS - smaller height on mobile */ #talent-galaxy-canvas { height: 260px !important; } /* FOOTER - stack on mobile */
+footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; } .footer-links { flex-wrap: wrap; gap:
+16px; } }
+</style>
+
+<canvas id="bg-canvas"></canvas>
+<canvas id="neural-canvas"></canvas>
+<div id="neural-core"></div>
+<div id="neural-readout"></div>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo" style="padding:0;">
+    <img src="/virorah_logo_navmatch.png" alt="Virorah PMS" style="height:47px;width:auto;display:block;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.1);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <span style="display:none;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);"><div class="nav-logo-dot"></div>Virorah PMS</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/pages/scenarios.html">Calculators</a></li>
+    <li><a href="/pages/learning-hub.html">Guides</a></li>
+    <li><a href="/pages/certifications.html">Certify</a></li>
+    <li><a href="/pages/pricing.html">Pricing</a></li>
+  </ul>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="/login.html" class="nav-cta">Sign in</a>
+    <a href="/pages/home.html" class="nav-cta primary">Start Free &#x2192;</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <canvas id="vr-globe" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:auto;opacity:0;transition:opacity 2s ease;"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-glow-l"></div>
+  <div class="hero-glow-r"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="hero-badge-live"></div>Performance Intelligence &middot; High performing teams, by design</div>
+    <h1 class="hero-title">
+      <em>How do you build a high performing team?</em>
+      <strong>Nobody ever gave you the playbook for building one. Virorah PMS did, starting with FORGE.</strong>
+    </h1>
+    <p class="hero-sub"><strong>Virorah PMS runs on FORGE</strong>, its AI-powered diagnostic engine, not generic advice. It scores your organisation across 5 named conditions, then hands you a sequenced 90-day playbook with real financial exposure figures, not a chatbot guessing at your situation.</p>
+    <div class="hero-ctas">
+  <a href="/pages/spatial-9box.html" class="btn-hero-primary">&#x1F30C; See Your Workforce in 3D</a>
+  <a href="/pages/forge-your-org.html" class="btn-hero-ghost">&#x1F3AF; Diagnose Your Org with FORGE &#x2192;</a>
+  <a href="/pages/pricing.html" class="btn-hero-ghost">View Pro Plan &#x2192;</a>
+</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" data-count="16">0</div><div class="hero-stat-lbl">Support Calculators</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="750">0</div><div class="hero-stat-lbl">Employees Modelled</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="14">0</div><div class="hero-stat-lbl">Expert Guides</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="4">0</div><div class="hero-stat-lbl">Certifications</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><div class="marquee-dot"></div>9-Box Grid</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Bell Curve Analysis</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>OKR Architecture Designer</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>OKR Execution Simulator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Calibration Simulator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>DEI Analytics</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Succession Planning</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Compensation Equity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PIP Tracker</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>360&#xB0; Feedback</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Increment Calculator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Balanced Scorecard</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Spatial 3D Talent Map</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>What If Planner</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Manager Report Card</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Review Cycle Planner</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Org Health Report</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Forge Team Simulation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>9-Box Grid</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Bell Curve Analysis</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>OKR Architecture Designer</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>OKR Execution Simulator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Calibration Simulator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>DEI Analytics</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Succession Planning</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Compensation Equity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PIP Tracker</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>360&#xB0; Feedback</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Increment Calculator</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Balanced Scorecard</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Spatial 3D Talent Map</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>What If Planner</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Manager Report Card</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Review Cycle Planner</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Org Health Report</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Forge Team Simulation</div>
+  </div>
+</div>
+
+<!-- PAIN SECTION - single instance, new copy -->
+<section class="pain-section">
+  <div class="section-label reveal">The Intelligence Gap</div>
+  <h2 class="pain-title reveal reveal-delay-1">Your org has performance data.<br><em>It doesn't have performance intelligence.</em></h2>
+  <div class="pain-grid">
+    <div class="pain-card" id="vpc-0">
+      <div class="pain-icon">&#x1F9E0;</div>
+      <h3>You are accountable for performance culture. Nobody gave you the diagnostic layer.</h3>
+      <p>Your org has ratings, attrition numbers, manager feedback sitting somewhere. What it doesn't have is a connected intelligence layer that tells you what is actually driving underperformance and what it is costing in real money.</p>
+    </div>
+    <div class="pain-card" id="vpc-1">
+      <div class="pain-icon">&#x26A1;&#xFE0F;</div>
+      <h3>You walk into every high-stakes performance room on instinct, not intelligence.</h3>
+      <p>You know a manager is a bottleneck. You know flight risk is rising in one team. But without computed exposure figures and a documented diagnostic framework, you are making the call on feel, not signal.</p>
+    </div>
+    <div class="pain-card" id="vpc-2">
+      <div class="pain-icon">&#x1F4C2;</div>
+      <h3>Your HRMS processes your data. It doesn't diagnose it.</h3>
+      <p>Lattice. Darwinbox. Klaar. They store performance records. Not one of them tells you what conditions are producing your high performers, or what to do about the teams that are not.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var SEEN_KEY = 'virorah_pain_seen_v1';
+  var seen = false;
+  try { seen = localStorage.getItem(SEEN_KEY) === '1'; } catch(e){}
+  var ids = ['vpc-0','vpc-1','vpc-2'];
+  var cards = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if(cards.length === 0) return;
+  if(seen){
+    cards.forEach(function(c){ c.style.opacity='1'; c.style.transform='translateY(0) scale(1)'; });
+    return;
+  }
+  cards.forEach(function(c){ c.style.opacity='0'; c.style.transform='translateY(52px) scale(0.96)'; c.style.willChange='opacity, transform'; });
+  var triggered = false;
+  var obs = new IntersectionObserver(function(entries){
+    if(!entries[0].isIntersecting || triggered) return;
+    triggered = true; obs.disconnect();
+    cards.forEach(function(c, i){
+      setTimeout(function(){
+        c.style.transition = 'opacity 0.62s cubic-bezier(0.16,1,0.3,1), transform 0.62s cubic-bezier(0.16,1,0.3,1)';
+        c.style.opacity = '1'; c.style.transform = 'translateY(0) scale(1)';
+        if(i === cards.length - 1){ setTimeout(function(){ try { localStorage.setItem(SEEN_KEY,'1'); } catch(e){} }, 700); }
+      }, i * 320);
+    });
+  }, { threshold: 0.22 });
+  var section = document.querySelector('.pain-section');
+  if(section) obs.observe(section);
+})();
+</script>
+
+<!-- SHIFT SECTION - single instance, new copy -->
+<section class="shift-section">
+  <div class="shift-bg"></div>
+  <div class="shift-section-inner">
+    <div class="shift-eyebrow reveal">&#x2726; The Operating System</div>
+    <h2 class="shift-title reveal reveal-delay-1">Not a dashboard. Not a course.<br><span>A Performance Intelligence Operating System.</span></h2>
+    <p class="shift-body reveal reveal-delay-2"><strong>AI-native. Real-time. Built for the HR professional sitting inside an actual org.</strong><br>FORGE diagnoses your organisation across 5 named conditions and hands you a sequenced 90-day playbook with real financial exposure figures. The Case Room converts live performance situations into documented action plans. The Foundry walks you through architecting high-performance culture from the ground up.</p>
+    <div class="typewriter-wrap reveal reveal-delay-3"><span class="typewriter-prefix">Currently running &#x2192;</span><span id="typewriter">FORGE Diagnostic</span><div class="typewriter-cursor"></div></div>
+    <div class="reveal reveal-delay-4"><a href="/pages/forge-your-org.html" class="btn-hero-primary" style="display:inline-flex;">Diagnose Your Org with FORGE &#x2192;</a></div>
+  </div>
+</section>
+
+<section class="hiw-section">
+  <div class="hiw-inner">
+    <div class="hiw-header">
+      <div class="hiw-eyebrow reveal">Not Another PMS Tool</div>
+      <h2 class="hiw-title reveal reveal-delay-1">Keka. Zoho. Klaar. Lattice.<br><em>We're not trying to compete with them.</em></h2>
+      <p class="hiw-sub reveal reveal-delay-2">Those are enterprise systems of record, sophisticated, and built for organisations that already know how to run performance management and just need somewhere to store it. Nobody ever taught HR professionals the actual mechanics first. Virorah PMS is built specifically for that gap: a personal practice environment where you learn performance management by running it, not a course you finish once, a tool you keep coming back to for every real cycle after.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step reveal">
+        <div class="hiw-step-num">01</div>
+        <div class="hiw-step-icon">&#x1F50D;</div>
+        <div class="hiw-step-label">Week One</div>
+        <div class="hiw-step-title">You explore, no stakes yet</div>
+        <div class="hiw-step-body">Run a 9-Box on a sample org. Try a Fundamentals certification. See what the calculators actually do before anything real is on the line.</div>
+      </div>
+      <div class="hiw-connector reveal reveal-delay-1">
+        <div class="hiw-connector-inner">
+          <div class="hiw-connector-line"></div>
+          <div class="hiw-connector-arrow">&#x2192;</div>
+        </div>
+      </div>
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="hiw-step-num">02</div>
+        <div class="hiw-step-icon">&#x26A1;&#xFE0F;</div>
+        <div class="hiw-step-label">The First Real Moment</div>
+        <div class="hiw-step-title">A real cycle catches up to you</div>
+        <div class="hiw-step-body">Calibration is next week. A PIP conversation is overdue. This time you don't wing it, you run it here first, on your actual team, before the room does it to you.</div>
+      </div>
+      <div class="hiw-connector reveal reveal-delay-2">
+        <div class="hiw-connector-inner">
+          <div class="hiw-connector-line"></div>
+          <div class="hiw-connector-arrow">&#x2192;</div>
+        </div>
+      </div>
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="hiw-step-num">03</div>
+        <div class="hiw-step-icon">&#x1F504;</div>
+        <div class="hiw-step-label">Every Cycle After</div>
+        <div class="hiw-step-title">It becomes the thing you open first</div>
+        <div class="hiw-step-body">Not a course you finished once. The tool you reach for every time performance management gets hard, because it keeps being hard, on a schedule nobody warned you about.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <h2 class="features-title reveal">Everything inside a <em>real</em> PMS environment.</h2>
+  <div class="bento">
+    <div class="bento-card span2 accent-purple reveal">
+      <div class="bento-tag">Core Platform</div>
+      <div class="bento-title"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;">16</span> Live Calculators. One Platform.</div>
+      <div class="bento-body" style="margin-bottom:20px;">Every calculator you would find in enterprise HRIS software: OKR Architecture Designer, OKR Execution Simulator, 9-Box talent maps, bell curve distribution, calibration simulator, DEI analytics, succession planning, compensation equity, PIP management, 360&#xB0; feedback, and more. All interactive. All live.</div>
+      <div class="bento-mini-grid">
+        <div style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2);padding:12px;border-radius:8px;min-height:90px;"><div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a5b4fc;margin-bottom:6px;">OKR Health</div><div style="display:flex;flex-direction:column;gap:3px;margin-bottom:6px;"><div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;"><div style="width:78%;height:100%;background:linear-gradient(90deg,#6366f1,#a78bfa);border-radius:3px;"></div></div><div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;"><div style="width:55%;height:100%;background:linear-gradient(90deg,#f59e0b,#fcd34d);border-radius:3px;"></div></div><div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;"><div style="width:92%;height:100%;background:linear-gradient(90deg,#22c55e,#86efac);border-radius:3px;"></div></div></div><div style="font-size:18px;font-weight:800;color:#f4f3ff;">75%</div></div>
+        <div style="background:rgba(124,58,237,.10);border:1px solid rgba(124,58,237,.2);padding:12px;border-radius:8px;min-height:90px;"><div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c4b5fd;margin-bottom:6px;">9-Box Grid</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:6px;"><div style="height:14px;border-radius:2px;background:rgba(34,197,94,.5);"></div><div style="height:14px;border-radius:2px;background:rgba(34,197,94,.8);"></div><div style="height:14px;border-radius:2px;background:#22c55e;"></div><div style="height:14px;border-radius:2px;background:rgba(99,102,241,.4);"></div><div style="height:14px;border-radius:2px;background:rgba(99,102,241,.7);"></div><div style="height:14px;border-radius:2px;background:rgba(34,197,94,.4);"></div><div style="height:14px;border-radius:2px;background:rgba(239,68,68,.6);"></div><div style="height:14px;border-radius:2px;background:rgba(245,158,11,.5);"></div><div style="height:14px;border-radius:2px;background:rgba(99,102,241,.3);"></div></div><div style="font-size:18px;font-weight:800;color:#f4f3ff;">Stars: 12%</div></div>
+        <div style="background:rgba(232,121,249,.07);border:1px solid rgba(232,121,249,.18);padding:12px;border-radius:8px;min-height:90px;"><div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#f0abfc;margin-bottom:6px;">Bell Curve</div><svg viewBox="0 0 80 32" style="width:100%;height:28px;margin-bottom:4px;"><polyline points="0,32 8,30 16,24 24,12 32,4 40,2 48,4 56,12 64,24 72,30 80,32" fill="none" stroke="rgba(232,121,249,0.6)" stroke-width="1.5" stroke-linejoin="round"/><polyline points="0,32 8,30 16,24 24,12 32,4 40,2 48,4 56,12 64,24 72,30 80,32 80,32 0,32" fill="rgba(232,121,249,0.08)"/></svg><div style="font-size:18px;font-weight:800;color:#f4f3ff;">Forced: off</div></div>
+        <div style="background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);padding:12px;border-radius:8px;min-height:90px;"><div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#f87171;margin-bottom:6px;">Flight Risk</div><div style="display:flex;gap:3px;align-items:flex-end;height:28px;margin-bottom:4px;"><div style="width:10px;height:8px;background:rgba(34,197,94,.7);border-radius:2px 2px 0 0;"></div><div style="width:10px;height:16px;background:rgba(245,158,11,.7);border-radius:2px 2px 0 0;"></div><div style="width:10px;height:22px;background:rgba(245,158,11,.7);border-radius:2px 2px 0 0;"></div><div style="width:10px;height:28px;background:rgba(34,197,94,.7);border-radius:2px 2px 0 0;"></div><div style="width:10px;height:12px;background:rgba(239,68,68,.8);border-radius:2px 2px 0 0;"></div><div style="width:10px;height:6px;background:rgba(239,68,68,.8);border-radius:2px 2px 0 0;"></div></div><div style="font-size:18px;font-weight:800;color:#f87171;">8 at risk</div></div>
+        <div style="background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.18);padding:12px;border-radius:8px;min-height:90px;"><div style="font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#fcd34d;margin-bottom:6px;">Succession</div><div style="display:flex;flex-direction:column;gap:4px;"><div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;"></div><div style="font-size:10px;color:#86efac;font-weight:600;">Ready Now: 3</div></div><div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div><div style="font-size:10px;color:#fcd34d;font-weight:600;">1 Year: 7</div></div><div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#6366f1;flex-shrink:0;"></div><div style="font-size:10px;color:#a5b4fc;font-weight:600;">2 Years: 12</div></div></div></div>
+      </div>
+    </div>
+    <div class="bento-card accent-rose reveal reveal-delay-1" style="position:relative;overflow:hidden;">
+      <div class="bento-tag">World First</div>
+      <div class="bento-title" style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:22px;">Spatial <span style="font-family:'Space Grotesk',sans-serif;">3D</span><br>Talent Map</div>
+      <div class="bento-body" style="margin-bottom:16px;">Your entire workforce floating in 3D space. Orbit, zoom, click-to-inspect. Flight risk rings pulse. Nothing like it exists anywhere.</div>
+      <div style="position:relative;height:100px;perspective:300px;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+          <div style="position:absolute;width:90px;height:30px;border:1px solid rgba(232,121,249,.3);border-radius:50%;transform:rotateX(70deg);animation:orbitSpin1 4s linear infinite;"></div>
+          <div style="position:absolute;width:70px;height:22px;border:1px solid rgba(99,102,241,.4);border-radius:50%;transform:rotateX(70deg) rotateZ(60deg);animation:orbitSpin2 6s linear infinite;"></div>
+          <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:floatDot1 3s ease-in-out infinite;top:15px;left:30px;"></div>
+          <div style="position:absolute;width:10px;height:10px;border-radius:50%;background:#6366f1;box-shadow:0 0 10px #6366f1;animation:floatDot2 4s ease-in-out infinite;top:40px;right:20px;"></div>
+          <div style="position:absolute;width:7px;height:7px;border-radius:50%;background:#e879f9;box-shadow:0 0 8px #e879f9;animation:floatDot3 3.5s ease-in-out infinite;bottom:20px;left:40px;"></div>
+          <div style="position:absolute;width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 8px #f59e0b;animation:floatDot2 5s ease-in-out infinite reverse;top:25px;right:35px;"></div>
+          <div style="position:absolute;width:6px;height:6px;border-radius:50%;background:#ef4444;box-shadow:0 0 6px #ef4444;animation:floatDot1 2.5s ease-in-out infinite reverse;bottom:15px;right:30px;"></div>
+          <div style="position:absolute;width:11px;height:11px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;animation:floatDot3 4.5s ease-in-out infinite;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+          <div style="position:absolute;width:20px;height:20px;border-radius:50%;border:2px solid rgba(239,68,68,.7);animation:riskPulse 1.5s ease-in-out infinite;bottom:20px;right:30px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bento-card reveal"><span class="bento-icon">&#x1F4C2;</span><div class="bento-tag">Pro Feature</div><div class="bento-title">Your Real<br>Org Data</div><div class="bento-body">Upload your employee CSV. Every calculator runs on your actual workforce in under 60 seconds. <strong style="color:rgba(34,197,94,.8);">Your data never leaves your browser</strong>, no backend storage, no sharing, no retention. You stay in full control.</div></div>
+    <div class="bento-card reveal reveal-delay-1"><span class="bento-icon">&#x1F3AD;</span><div class="bento-tag">AI Powered &middot; Pro</div><div class="bento-title">Conversation<br>Simulator</div><div class="bento-body">An AI plays your employee. You practise delivering a low rating, initiating a PIP, or denying a promotion. Get scored on empathy, clarity, and outcome. 10 scenarios. 10 personalities.</div></div>
+    <div class="bento-card reveal reveal-delay-2"><div class="bento-stat-num" data-count="15">0</div><div class="bento-stat-lbl">Real company scenarios across Tech, Finance, Healthcare, Manufacturing, Government &amp; more</div></div>
+    <div class="bento-card reveal"><span class="bento-icon">&#x1F393;</span><div class="bento-tag">Certifications &middot; Pro</div><div class="bento-title">4 Credentials<br>That Count</div><div class="bento-body">PMS Fundamentals, Advanced, Practitioner &amp; Portfolio. 4 Pro certifications. Unique credential IDs. One-click LinkedIn badge. The credential you earn for having done real work on a real org.</div></div>
+    <div class="bento-card reveal reveal-delay-1"><span class="bento-icon">&#x1F4CB;</span><div class="bento-tag">Pro Feature</div><div class="bento-title">Manager<br>Report Card</div><div class="bento-body">Generate a one-page PDF report card for any manager: team distribution, flight risks, OKR health, and succession gaps. Built for HRBP reviews and leadership conversations.</div></div>
+    <div class="bento-card span2 reveal"><span class="bento-icon">&#x1F9E0;</span><div class="bento-tag">AI-Powered &middot; Every Page</div><div class="bento-title">Virorah PMS AI: Built Into Every Page</div><div class="bento-body">Ask any PMS question &#x2192; get a practitioner-level answer from an AI that knows the entire platform. Built-in on every page. Always contextual. Always free to ask.</div></div>
+  </div>
+</section>
+
+<style>
+@keyframes orbitSpin1{from{transform:rotateX(70deg) rotateZ(0deg);}to{transform:rotateX(70deg) rotateZ(360deg);}}
+@keyframes orbitSpin2{from{transform:rotateX(70deg) rotateZ(60deg);}to{transform:rotateX(70deg) rotateZ(420deg);}}
+@keyframes floatDot1{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes floatDot2{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+@keyframes floatDot3{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes riskPulse{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.5);opacity:0;}}
+</style>
+
+<section class="simulate-lp-section">
+  <div class="simulate-lp-inner">
+    <div class="simulate-lp-left">
+      <div class="section-label reveal">&#x1F3AD; The Core Differentiator</div>
+      <h2 class="simulate-lp-title reveal reveal-delay-1">The only platform where<br><span>an AI plays your employee</span><br>so you can practise first.</h2>
+      <p class="simulate-lp-body reveal reveal-delay-2">An aggressive Marcus. A tearful Sarah. A silent Sofia. 10 real scenarios. 10 AI personalities. Every session scored on empathy, clarity, legal safety, and outcome. No other HR platform does this.</p>
+      <div class="simulate-lp-tags reveal reveal-delay-3">
+        <span class="sim-tag">&#x1F4C9; Low Performance Rating</span>
+        <span class="sim-tag">&#x1F4CB; PIP Conversation</span>
+        <span class="sim-tag">&#x1F6AB; Promotion Denial</span>
+        <span class="sim-tag">&#x1F4E6; Redundancy Notification</span>
+        <span class="sim-tag">&#x2708;&#xFE0F; Flight Risk Retention</span>
+        <span class="sim-tag">&#x26A0;&#xFE0F; Behavioural Feedback</span>
+      </div>
+      <a href="/pages/simulate.html" class="simulate-lp-btn reveal reveal-delay-4">Try a Free Scenario &#x2192;</a>
+    </div>
+    <div class="simulate-lp-right reveal reveal-delay-2">
+      <div class="sim-personality-badge">
+        <div class="sim-pers-av" style="background:#dc2626">MW</div>
+        <div><div class="sim-pers-name">Marcus the Aggressor</div><div class="sim-pers-sub">Business Analyst &middot; 6 years &middot; Very High Stakes</div></div>
+        <div class="sim-pers-emoji">&#x1F621;</div>
+      </div>
+      <div class="sim-chat-mock">
+        <div class="sim-mock-topbar">
+          <div class="sim-mock-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
+          <div class="sim-mock-chip">&#x1F6AB; Denying a Promotion Request</div>
+          <div class="sim-mock-status">&#x25CF; Live</div>
+        </div>
+        <div class="sim-mock-msgs" id="lp-mock-msgs" style="min-height:280px;background:#080614;padding:20px 18px;display:flex;flex-direction:column;gap:12px;"></div>
+        <div class="sim-mock-input-area"><div class="sim-mock-input">Type your response as the manager...</div><div class="sim-mock-send">&#x2191;</div></div>
+      </div>
+      <div class="sim-score-badge"><div class="sim-score-val" id="lp-score">0</div><div class="sim-score-lbl">/ 100 Manager Score</div><div class="sim-score-sub">Empathy &middot; Clarity &middot; Legal &middot; Outcome</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="galaxy-section">
+  <div class="galaxy-inner">
+    <div class="galaxy-left reveal">
+      <div class="section-label">&#x2736; Live Visualization</div>
+      <h2 class="galaxy-title reveal reveal-delay-1">Your entire workforce.<br><em>In three dimensions.</em></h2>
+      <p class="galaxy-body reveal reveal-delay-2">Each dot is an employee, color-coded by performance tier and suspended in 3D space. Drag to rotate. Stars glow gold, flight risks pulse red. This is what your org actually looks like when you stop staring at spreadsheets.</p>
+      <div class="galaxy-legend reveal reveal-delay-3">
+        <div class="galaxy-legend-item"><div class="galaxy-dot" style="background:#4ade80;box-shadow:0 0 8px #4ade80;"></div><span>High Performers (Rating 4-5)</span></div>
+        <div class="galaxy-legend-item"><div class="galaxy-dot" style="background:#a78bfa;box-shadow:0 0 8px #a78bfa;"></div><span>Solid Contributors (Rating 3)</span></div>
+        <div class="galaxy-legend-item"><div class="galaxy-dot" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b;"></div><span>Needs Development (Rating 2)</span></div>
+        <div class="galaxy-legend-item"><div class="galaxy-dot" style="background:#ef4444;box-shadow:0 0 8px #ef4444;"></div><span>Flight Risk (pulsing)</span></div>
+      </div>
+      <a href="/pages/spatial-9box.html" class="galaxy-btn reveal reveal-delay-4">Explore Your Org in 3D &#x2192;</a>
+    </div>
+    <div class="galaxy-right reveal reveal-delay-1">
+      <button id="galaxy-fs-btn" class="galaxy-fs-btn" title="Fullscreen" aria-label="View fullscreen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <canvas id="talent-galaxy-canvas"></canvas>
+      <div class="galaxy-hud">
+        <div class="galaxy-hud-item"><span class="galaxy-hud-num" id="ghud-total">0</span><span class="galaxy-hud-lbl">Employees</span></div>
+        <div class="galaxy-hud-sep"></div>
+        <div class="galaxy-hud-item"><span class="galaxy-hud-num" id="ghud-stars">0</span><span class="galaxy-hud-lbl">Stars</span></div>
+        <div class="galaxy-hud-sep"></div>
+        <div class="galaxy-hud-item"><span class="galaxy-hud-num" id="ghud-risk">0</span><span class="galaxy-hud-lbl">At Risk</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="persona-section">
+  <h2 class="persona-title reveal">Four ways in. <em>Pick yours.</em></h2>
+  <div class="persona-grid">
+    <a href="/pages/for-hr-professionals.html" class="persona-card reveal">
+      <div class="persona-icon">&#x1F3AF;</div>
+      <div class="persona-eyebrow">HR Business Partners &amp; Senior HR Managers</div>
+      <h3>Practice the calibration argument before the room does.</h3>
+      <span class="persona-link">Explore &#x2192;</span>
+    </a>
+    <a href="/pages/for-people-managers.html" class="persona-card reveal reveal-delay-1">
+      <div class="persona-icon">&#x1F5E3;&#xFE0F;</div>
+      <div class="persona-eyebrow">First-Time &amp; Growing People Managers</div>
+      <h3>The conversation you're dreading, practiced first.</h3>
+      <span class="persona-link">Explore &#x2192;</span>
+    </a>
+    <a href="/pages/for-senior-hr-leaders.html" class="persona-card reveal reveal-delay-2">
+      <div class="persona-icon">&#x1F3D7;&#xFE0F;</div>
+      <div class="persona-eyebrow">VP HR &amp; HR Directors</div>
+      <h3>Model your performance philosophy before you mandate it.</h3>
+      <span class="persona-link">Explore &#x2192;</span>
+    </a>
+    <a href="/pages/for-hr-students.html" class="persona-card reveal reveal-delay-3">
+      <div class="persona-icon">&#x1F393;</div>
+      <div class="persona-eyebrow">MBA HR Students, Placement Season</div>
+      <h3>Walk into the interview having actually built one.</h3>
+      <span class="persona-link">Explore &#x2192;</span>
+    </a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <h2 class="cta-title reveal"><em>Stop waiting.</em><strong>Start building.</strong></h2>
+    <h2 class="cta-title reveal"><em>Stop diagnosing by feel.</em><strong>Start diagnosing by intelligence.</strong></h2>
+    <p class="cta-sub reveal">FORGE your organisation's performance culture. Run the Case Room on your live situations. Use the Foundry to design high performance from the ground up. All the intelligence infrastructure you needed. Already built.</p>
+    <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="/pages/forge-your-org.html" class="btn-hero-primary">&#x1F3AF; Diagnose Your Org with FORGE</a>
+      <a href="/pages/pricing.html" class="btn-hero-ghost">View Pricing &#x2192;</a>
+    </div>
+    <div class="cta-note reveal">&#x20B9;999/month India &middot; $19/month Global &middot; Cancel anytime &middot; Your data stays private &middot; No annual lock-in</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Virorah PMS</div>
+  <ul class="footer-links">
+    <li><a href="/pages/scenarios.html">Calculators</a></li>
+    <li><a href="/pages/learning-hub.html">Guides</a></li>
+    <li><a href="/pages/certifications.html">Certify</a></li>
+    <li><a href="/pages/pricing.html">Pricing</a></li>
+    <li><a href="mailto:info@virorah.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&#x00A9; 2026 Virorah Private Limited &middot; Performance Intelligence. High performing teams, by design.</div>
+</footer>
+
+<script>
+(function(){
+  var canvas=document.getElementById('neural-canvas');
+  var ctx=canvas.getContext('2d');
+  function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  var core=document.getElementById('neural-core');
+  var readout=document.getElementById('neural-readout');
+  var targets=Array.prototype.slice.call(document.querySelectorAll('a,button'));
+  var mouseX=innerWidth/2,mouseY=innerHeight/2,curX=mouseX,curY=mouseY;
+  document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
+  var packets={};var pid=0;
+  targets.forEach(function(el){el.__neuralId=pid++;});
+  function loop(){
+    curX+=(mouseX-curX)*0.22;curY+=(mouseY-curY)*0.22;
+    core.style.transform='translate3d('+curX+'px,'+curY+'px,0) translate(-50%,-50%)';
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var nearest=null,nearestDist=Infinity;
+    targets.forEach(function(el){
+      var r=el.getBoundingClientRect();if(r.width===0&&r.height===0)return;
+      var cx=r.left+r.width/2,cy=r.top+r.height/2;var dist=Math.hypot(curX-cx,curY-cy);
+      if(dist<nearestDist){nearestDist=dist;nearest={el:el,cx:cx,cy:cy,dist:dist};}
+      if(dist<260){
+        var alpha=Math.max(0,1-dist/260)*0.5;
+        ctx.beginPath();ctx.moveTo(curX,curY);ctx.lineTo(cx,cy);ctx.strokeStyle='rgba(165,180,252,'+alpha+')';ctx.lineWidth=1;ctx.stroke();
+        var key=el.__neuralId;if(packets[key]===undefined)packets[key]=Math.random();
+        packets[key]+=0.012;if(packets[key]>1)packets[key]=0;
+        var p=packets[key];var px=curX+(cx-curX)*p,py=curY+(cy-curY)*p;
+        ctx.beginPath();ctx.arc(px,py,2,0,Math.PI*2);ctx.fillStyle='rgba(196,181,253,'+(alpha+0.3)+')';ctx.fill();
+      }
+    });
+    if(nearest&&nearest.dist<260){readout.style.opacity=1;readout.style.left=(nearest.cx-60)+'px';readout.style.top=(nearest.el.getBoundingClientRect().top-22)+'px';var ms=Math.max(4,Math.round(nearest.dist/3));readout.textContent='analyzing \u00B7 '+ms+'ms';}
+    else{readout.style.opacity=0;}
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+
+(function(){
+  var c=document.getElementById('bg-canvas');var ctx=c.getContext('2d');var pts=[];
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+  function init(){pts=[];for(var i=0;i<90;i++)pts.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.8+.4,o:Math.random()*.8+.2});}
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;var d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(99,102,241,'+(0.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}
+    pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>c.width)p.vx*=-1;if(p.y<0||p.y>c.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.fill();});
+    requestAnimationFrame(draw);
+  }
+  resize();init();draw();window.addEventListener('resize',function(){resize();init();});
+})();
+
+function animateCount(el,target,duration){var start=0,step=target/60;var interval=setInterval(function(){start+=step;if(start>=target){el.textContent=target;clearInterval(interval);return;}el.textContent=Math.floor(start);},duration/60);}
+setTimeout(function(){document.querySelectorAll('[data-count]').forEach(function(el){animateCount(el,parseInt(el.dataset.count),1200);});},600);
+
+var phrases=['FORGE Diagnostic','Case Room Analysis','OKR Architecture Design','Bell Curve Distribution','Calibration Session','OKR Execution Simulation','Succession Pipeline','DEI Audit','Increment Planning','Org Health Report','Manager Report Card','Forge Team Simulation','9-Box Grid Analysis'];
+var twEl=document.getElementById('typewriter');
+var twIdx=0,twChar=0,twDeleting=false;
+function typeNext(){var word=phrases[twIdx];if(!twDeleting){twChar++;twEl.textContent=word.slice(0,twChar);if(twChar===word.length){twDeleting=true;setTimeout(typeNext,1800);return;}setTimeout(typeNext,55);}else{twChar--;twEl.textContent=word.slice(0,twChar);if(twChar===0){twDeleting=false;twIdx=(twIdx+1)%phrases.length;setTimeout(typeNext,300);return;}setTimeout(typeNext,28);}}
+setTimeout(typeNext,1000);
+
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+var bentoIO=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateCount(e.target,parseInt(e.target.dataset.count),1000);bentoIO.unobserve(e.target);}});},{threshold:.5});
+document.querySelectorAll('.bento-stat-num[data-count]').forEach(function(el){bentoIO.observe(el);});
+
+(function(){
+  var msgs=document.getElementById('lp-mock-msgs');if(!msgs)return;
+  var SCRIPT=[
+    {role:'sys',text:'Simulation started. You are the manager. Marcus Webb is waiting.'},
+    {role:'mgr',text:'Marcus, I appreciate your commitment. I wanted to walk you through the promotion decision today.'},
+    {role:'emp',text:'Six years. SIX YEARS. And you are telling me no promotion this cycle?'},
+    {role:'mgr',text:'Your delivery numbers are strong. But leadership readiness goes beyond hitting targets.'},
+    {role:'emp',text:'What SPECIFIC gaps? I exceeded every single metric this quarter!'},
+    {role:'mgr',text:'I hear you. Let us build a concrete 90-day plan so you are the obvious choice next cycle.'},
+    {role:'emp',text:'A plan. Fine. But I want it in writing, with your sign-off.'},
+    {role:'mgr',text:'Absolutely. I will send a draft by Friday. I am invested in your growth here, Marcus.'},
+    {role:'emp',text:'Okay. Friday. Do not make me follow up on this.'}
+  ];
+  var idx=0;
+  function clearChat(){msgs.innerHTML='';idx=0;}
+  function typingBubble(role){var row=document.createElement('div');row.id='lp-chat-typing';if(role==='mgr'){row.className='sim-mock-mgr';row.innerHTML='<div class="sim-mock-bubble-mgr" style="padding:10px 14px;"><div class="lp-typing"><span></span><span></span><span></span></div></div>';}else{row.className='sim-mock-emp';row.innerHTML='<div class="sim-mock-av" style="background:#dc2626">MW</div><div class="sim-mock-bubble-emp" style="padding:10px 14px;"><div class="lp-typing"><span></span><span></span><span></span></div></div>';}msgs.appendChild(row);msgs.scrollTop=msgs.scrollHeight;}
+  function removeTyping(){var t=document.getElementById('lp-chat-typing');if(t)t.remove();}
+  function addMsg(item){var el=document.createElement('div');if(item.role==='sys'){el.className='sim-mock-sys';el.textContent=item.text;}else if(item.role==='mgr'){el.className='sim-mock-mgr';el.innerHTML='<div class="sim-mock-bubble-mgr">'+item.text+'</div>';}else{el.className='sim-mock-emp';el.innerHTML='<div class="sim-mock-av" style="background:#dc2626">MW</div><div class="sim-mock-bubble-emp">'+item.text+'</div>';}el.style.cssText='opacity:0;transform:translateY(4px);transition:opacity .25s,transform .25s';msgs.appendChild(el);msgs.scrollTop=msgs.scrollHeight;requestAnimationFrame(function(){el.style.opacity='1';el.style.transform='translateY(0)';});}
+  function playNext(){if(idx>=SCRIPT.length){setTimeout(function(){clearChat();playNext();},5000);return;}var item=SCRIPT[idx++];if(item.role==='sys'){addMsg(item);setTimeout(playNext,600);return;}var dur=Math.min(900+item.text.length*18,2000);setTimeout(function(){typingBubble(item.role);setTimeout(function(){removeTyping();addMsg(item);setTimeout(playNext,1100);},dur);},400);}
+  var started=false;var obs=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;playNext();}},{threshold:0.3});
+  var sec=document.querySelector('.simulate-lp-section');if(sec)obs.observe(sec);else playNext();
+  var scored=false;var scoreObs=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!scored){scored=true;var el=document.getElementById('lp-score');if(!el)return;var n=0,target=78;var t=setInterval(function(){n=Math.min(n+2,target);el.textContent=n;if(n>=65)el.style.color='#4ade80';if(n>=target)clearInterval(t);},30);}},{threshold:0.4});
+  var badge=document.querySelector('.sim-score-badge');if(badge)scoreObs.observe(badge);
+})();
+
+(function(){
+  var canvas=document.getElementById('talent-galaxy-canvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var wrap=document.querySelector('.galaxy-right');var fsBtn=document.getElementById('galaxy-fs-btn');
+  var W,H,CX,CY;
+  var TIERS=[{color:'#4ade80',glow:'rgba(74,222,128,',count:18,isRisk:false,isStar:true},{color:'#a78bfa',glow:'rgba(167,139,250,',count:70,isRisk:false,isStar:false},{color:'#f59e0b',glow:'rgba(245,158,11,',count:38,isRisk:false,isStar:false},{color:'#ef4444',glow:'rgba(239,68,68,',count:14,isRisk:true,isStar:false}];
+  var dots=[];var rotY=0,rotX=0.35,targetRotX=0.35,autoSpin=0.0042;
+  var dragging=false,lastX=0,lastY=0,dragVX=0;var sphereR=1;
+  function resize(){var rect=canvas.getBoundingClientRect();var dpr=window.devicePixelRatio||1;canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);W=rect.width;H=rect.height;CX=W/2;CY=H/2;sphereR=Math.min(W,H)*0.33;}
+  function createDots(){dots=[];TIERS.forEach(function(tier){for(var i=0;i<tier.count;i++){var u=Math.random(),v=Math.random();var theta=2*Math.PI*u;var phi=Math.acos(2*v-1);var r=0.65+Math.random()*0.35;dots.push({x:r*Math.sin(phi)*Math.cos(theta),y:r*Math.sin(phi)*Math.sin(theta),z:r*Math.cos(phi),baseSize:tier.isStar?3.2:(tier.isRisk?2.8:2.2),color:tier.color,glow:tier.glow,isRisk:tier.isRisk,isStar:tier.isStar,pulsePhase:Math.random()*Math.PI*2});}});}
+  function project(d){var cosY=Math.cos(rotY),sinY=Math.sin(rotY);var x1=d.x*cosY-d.z*sinY;var z1=d.x*sinY+d.z*cosY;var cosX=Math.cos(rotX),sinX=Math.sin(rotX);var y1=d.y*cosX-z1*sinX;var z2=d.y*sinX+z1*cosX;var persp=2.6/(2.6-z2);return{sx:CX+x1*sphereR*persp,sy:CY+y1*sphereR*persp,depth:z2,scale:persp};}
+  function draw(){ctx.clearRect(0,0,W,H);if(!dragging){rotY+=autoSpin+dragVX;dragVX*=0.92;}rotX+=(targetRotX-rotX)*0.05;var projected=dots.map(function(d){var p=project(d);p.d=d;return p;});projected.sort(function(a,b){return a.depth-b.depth;});projected.forEach(function(p){var d=p.d;d.pulsePhase+=0.045;var pulse=(Math.sin(d.pulsePhase)+1)*0.5;var depthN=(p.depth+1)/2;var alpha=0.35+depthN*0.65;var sz=d.baseSize*p.scale*(0.7+depthN*0.5);if(d.isRisk){var ringR=sz*2.2+pulse*sz*2.5;ctx.beginPath();ctx.arc(p.sx,p.sy,ringR,0,Math.PI*2);ctx.strokeStyle=d.glow+(0.5*(1-pulse)*alpha)+')';ctx.lineWidth=1;ctx.stroke();}if(d.isStar){var g2=ctx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,sz*4);g2.addColorStop(0,d.glow+(0.3*alpha)+')');g2.addColorStop(1,d.glow+'0)');ctx.beginPath();ctx.arc(p.sx,p.sy,sz*4,0,Math.PI*2);ctx.fillStyle=g2;ctx.fill();}var dg=ctx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,sz*2.2);dg.addColorStop(0,d.glow+alpha+')');dg.addColorStop(0.5,d.glow+(alpha*0.4)+')');dg.addColorStop(1,d.glow+'0)');ctx.beginPath();ctx.arc(p.sx,p.sy,sz*2.2,0,Math.PI*2);ctx.fillStyle=dg;ctx.fill();ctx.beginPath();ctx.arc(p.sx,p.sy,sz*0.75,0,Math.PI*2);ctx.fillStyle=d.color;ctx.globalAlpha=alpha;ctx.fill();ctx.globalAlpha=1;});requestAnimationFrame(draw);}
+  function pointerDown(e){dragging=true;lastX=(e.touches?e.touches[0].clientX:e.clientX);lastY=(e.touches?e.touches[0].clientY:e.clientY);}
+  function pointerMove(e){if(!dragging)return;var cx=(e.touches?e.touches[0].clientX:e.clientX),cy=(e.touches?e.touches[0].clientY:e.clientY);var dx=cx-lastX,dy=cy-lastY;rotY+=dx*0.008;dragVX=dx*0.0006;targetRotX=Math.max(-1.2,Math.min(1.2,targetRotX+dy*0.006));lastX=cx;lastY=cy;if(e.cancelable)e.preventDefault();}
+  function pointerUp(){dragging=false;}
+  canvas.addEventListener('mousedown',pointerDown);window.addEventListener('mousemove',pointerMove);window.addEventListener('mouseup',pointerUp);
+  canvas.addEventListener('touchstart',pointerDown,{passive:true});canvas.addEventListener('touchmove',pointerMove,{passive:false});canvas.addEventListener('touchend',pointerUp);
+  if(fsBtn&&wrap){
+    var exitBtn=document.createElement('button');exitBtn.id='galaxy-exit-btn';exitBtn.innerHTML='\u2190 Back';exitBtn.style.cssText='display:none;position:fixed;top:24px;left:24px;z-index:9001;padding:10px 20px;background:rgba(5,4,16,.85);backdrop-filter:blur(12px);border:1px solid rgba(99,102,241,.4);border-radius:8px;color:rgba(165,180,252,.9);font-size:13px;font-weight:700;font-family:DM Sans,sans-serif;cursor:pointer;transition:all .2s;letter-spacing:.3px;';
+    exitBtn.onmouseover=function(){this.style.background='rgba(99,102,241,.25)';this.style.color='#fff';};exitBtn.onmouseout=function(){this.style.background='rgba(5,4,16,.85)';this.style.color='rgba(165,180,252,.9)';};document.body.appendChild(exitBtn);
+    function enterFS(){wrap.classList.add('is-fullscreen');fsBtn.style.display='none';exitBtn.style.display='block';setTimeout(resize,60);}
+    function exitFS(){wrap.classList.remove('is-fullscreen');fsBtn.style.display='';exitBtn.style.display='none';setTimeout(resize,60);}
+    fsBtn.addEventListener('click',function(){wrap.classList.contains('is-fullscreen')?exitFS():enterFS();});exitBtn.addEventListener('click',exitFS);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('is-fullscreen'))exitFS();});
+  }
+  function animHUD(){var total=750,stars=90,risk=58,t=0,s=0,r=0;var hT=document.getElementById('ghud-total'),hS=document.getElementById('ghud-stars'),hR=document.getElementById('ghud-risk');var iv=setInterval(function(){t=Math.min(t+13,total);s=Math.min(s+2,stars);r=Math.min(r+1,risk);if(hT)hT.textContent=t;if(hS)hS.textContent=s;if(hR)hR.textContent=r;if(t>=total)clearInterval(iv);},20);}
+  var galaxyInit=false;
+  function tryGalaxyInit(){var rect=canvas.getBoundingClientRect();if(rect.width<50||rect.height<50){setTimeout(tryGalaxyInit,150);return;}resize();createDots();draw();galaxyInit=true;}
+  setTimeout(tryGalaxyInit,200);
+  window.addEventListener('resize',function(){if(galaxyInit)resize();});
+  var gobs=new IntersectionObserver(function(e){if(e[0].isIntersecting){if(!galaxyInit)tryGalaxyInit();animHUD();gobs.disconnect();}},{threshold:0.1});
+  gobs.observe(canvas);
+})();
+
+(function(){
+  var cv=document.getElementById('vr-globe');if(!cv)return;
+  var cx=cv.getContext('2d');var W,H,CX,CY,SR;
+  var LABELS=['OKR','Bell Curve','9-Box','Calibration','DEI Analytics','Succession','360','Increment','Performance','Flight Risk','PIP','Compensation','Goal Lab','Bias Audit','Review Cycle','Talent','Manager Score','Attrition','Headcount','HRBP'];
+  var N=220;var PHI=Math.PI*(1+Math.sqrt(5));var nodes=[];var labelIdx=0;
+  for(var i=0;i<N;i++){var y=1-(i/(N-1))*2;var r=Math.sqrt(Math.max(0,1-y*y));var theta=PHI*i;var x=Math.cos(theta)*r;var z=Math.sin(theta)*r;var isHot=(i%38===0);var hasLbl=(i%10===0)&&labelIdx<LABELS.length;nodes.push({ox:x,oy:y,oz:z,x:x,y:y,z:z,r:isHot?3.5:(1.2+Math.random()*1.2),isHot:isHot,label:hasLbl?LABELS[labelIdx++]:null,pulse:Math.random()*Math.PI*2});}
+  var CONN_THRESH=0.42;var edges=[];
+  for(var i=0;i<nodes.length;i++){for(var j=i+1;j<nodes.length;j++){var dx=nodes[i].ox-nodes[j].ox;var dy=nodes[i].oy-nodes[j].oy;var dz=nodes[i].oz-nodes[j].oz;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<CONN_THRESH){edges.push([i,j]);}}}
+  var rotY=0,rotX=0.18,targetRotX=0.18,autoSpinY=0.0035;var dragging=false,lastMX=0,lastMY=0,velX=0;
+  function rotateNode(n){var cosY=Math.cos(rotY),sinY=Math.sin(rotY);var x1=n.ox*cosY+n.oz*sinY;var z1=-n.ox*sinY+n.oz*cosY;var cosX=Math.cos(rotX),sinX=Math.sin(rotX);var y1=n.oy*cosX-z1*sinX;var z2=n.oy*sinX+z1*cosX;n.x=x1;n.y=y1;n.z=z2;}
+  function project(x,y,z){var d=2.8/(2.8-z*0.7);return{sx:CX+x*SR*d,sy:CY+y*SR*d,d:d,depth:z};}
+  function draw(){cx.clearRect(0,0,W,H);if(!dragging){rotY+=autoSpinY+velX;velX*=0.90;}rotX+=(targetRotX-rotX)*0.06;nodes.forEach(rotateNode);edges.forEach(function(e){var a=nodes[e[0]],b=nodes[e[1]];var avgZ=(a.z+b.z)*0.5;var alpha=Math.max(0,0.04+(avgZ+1)*0.10);var pa=project(a.x,a.y,a.z);var pb=project(b.x,b.y,b.z);cx.beginPath();cx.moveTo(pa.sx,pa.sy);cx.lineTo(pb.sx,pb.sy);cx.strokeStyle='rgba(102,126,234,'+alpha+')';cx.lineWidth=0.7;cx.stroke();});var sorted=nodes.slice().sort(function(a,b){return a.z-b.z;});sorted.forEach(function(n){var p=project(n.x,n.y,n.z);var depthN=(n.z+1)*0.5;var baseA=0.15+depthN*0.85;if(n.isHot){n.pulse+=0.04;var pulse=Math.sin(n.pulse)*0.3+0.7;var glowR=p.d*SR*0.06*pulse+14;var grd=cx.createRadialGradient(p.sx,p.sy,0,p.sx,p.sy,glowR);grd.addColorStop(0,'rgba(190,160,255,'+(0.55*pulse*baseA)+')');grd.addColorStop(0.4,'rgba(102,126,234,'+(0.30*pulse*baseA)+')');grd.addColorStop(1,'rgba(102,126,234,0)');cx.fillStyle=grd;cx.beginPath();cx.arc(p.sx,p.sy,glowR,0,Math.PI*2);cx.fill();cx.fillStyle='rgba(220,200,255,'+Math.min(1,baseA*1.2)+')';cx.beginPath();cx.arc(p.sx,p.sy,n.r*p.d*1.2,0,Math.PI*2);cx.fill();}else{cx.fillStyle='rgba(147,112,219,'+(baseA*0.75)+')';cx.beginPath();cx.arc(p.sx,p.sy,Math.max(0.5,n.r*p.d*0.55),0,Math.PI*2);cx.fill();}if(n.label&&depthN>0.52){var lAlpha=Math.min(0.8,(depthN-0.52)*2.5*baseA);var fs=Math.max(9,Math.round(11*p.d*depthN));cx.font='bold '+fs+'px "Space Grotesk","DM Sans",sans-serif';cx.textAlign='left';cx.textBaseline='middle';cx.fillStyle='rgba(165,180,252,'+lAlpha+')';cx.shadowColor='rgba(102,126,234,'+(lAlpha*0.5)+')';cx.shadowBlur=4;cx.fillText(n.label,p.sx+n.r*p.d*1.5+3,p.sy);cx.shadowBlur=0;}});requestAnimationFrame(draw);}
+  cv.addEventListener('mousedown',function(e){dragging=true;lastMX=e.clientX;lastMY=e.clientY;velX=0;});window.addEventListener('mousemove',function(e){if(!dragging)return;var dx=e.clientX-lastMX,dy=e.clientY-lastMY;rotY+=dx*0.006;velX=dx*0.0004;targetRotX=Math.max(-0.9,Math.min(0.9,targetRotX+dy*0.005));lastMX=e.clientX;lastMY=e.clientY;});window.addEventListener('mouseup',function(){dragging=false;});
+  cv.addEventListener('touchstart',function(e){dragging=true;lastMX=e.touches[0].clientX;lastMY=e.touches[0].clientY;},{passive:true});cv.addEventListener('touchmove',function(e){if(!dragging)return;var dx=e.touches[0].clientX-lastMX,dy=e.touches[0].clientY-lastMY;rotY+=dx*0.006;velX=dx*0.0004;targetRotX=Math.max(-0.9,Math.min(0.9,targetRotX+dy*0.005));lastMX=e.touches[0].clientX;lastMY=e.touches[0].clientY;if(e.cancelable)e.preventDefault();},{passive:false});cv.addEventListener('touchend',function(){dragging=false;});
+  function resize(){var hero=document.getElementById('hero');W=cv.width=hero?hero.offsetWidth:window.innerWidth;H=cv.height=hero?hero.offsetHeight:window.innerHeight;CX=W*0.5;CY=H*0.5;SR=Math.min(W,H)*0.36;}
+  window.addEventListener('resize',resize);
+  function start(){resize();draw();setTimeout(function(){cv.style.opacity='1';},400);}
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(start,300);});}else{setTimeout(start,300);}
+})();
+</script>
+
+<!-- Global scripts ported from the Softr header/footer (no Cmd+K or sidebar on standalone pages) -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
 </body>
 </html>

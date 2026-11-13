@@ -180,7 +180,7 @@
     $('acct-root').hidden = false;
     var email = (user.primaryEmailAddress && user.primaryEmailAddress.emailAddress) || '';
     paintPlan(d.plan || window._pmsPlan, email);
-    try { window._clerk.mountUserProfile($('acct-profile'), { appearance: { variables: { colorPrimary: '#667eea', colorBackground: '#13131f', colorText: '#f4f3ff', colorInputBackground: '#080612', colorInputText: '#f4f3ff' } } }); }
+    try { window._clerk.mountUserProfile($('acct-profile'), { appearance: { elements: { navbarButton__billing: { display: 'none' }, navbarMobileMenuRow__billing: { display: 'none' } }, variables: { colorPrimary: '#667eea', colorBackground: '#13131f', colorText: '#f4f3ff', colorInputBackground: '#080612', colorInputText: '#f4f3ff' } } }); }
     catch (err) { $('acct-profile').textContent = 'Profile editor could not load. Refresh the page to try again.'; }
   });
   document.addEventListener('pms:plan-changed', function (e) { paintPlan(e.detail && e.detail.plan); });
