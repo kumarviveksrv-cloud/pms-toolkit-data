@@ -233,8 +233,10 @@
     const nameEl = document.querySelector('.pms-user-name');
     const planEl = document.querySelector('.pms-user-plan');
     const avatarEl = document.querySelector('.pms-avatar');
+    const emailEl = document.querySelector('.pms-user-email');
 
     if (!user) {
+      if (emailEl) emailEl.textContent = '';
       if (nameEl)   nameEl.textContent  = 'Guest';
       if (planEl)   planEl.textContent  = 'Free';
       if (avatarEl) avatarEl.textContent = 'G';
@@ -257,6 +259,7 @@
     const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 
     if (nameEl)   nameEl.textContent  = name;
+    if (emailEl && user.primaryEmailAddress) emailEl.textContent = user.primaryEmailAddress.emailAddress;
     if (planEl) {
       planEl.textContent = plan === 'admin' ? 'Admin' : (_isPaid(plan) ? 'Virorah Pro' : 'Free');
       if (_isPaid(plan)) planEl.classList.add('pro');

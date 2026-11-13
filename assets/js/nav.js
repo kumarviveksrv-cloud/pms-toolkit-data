@@ -132,6 +132,7 @@
     'activity':        '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
     'credit-card':     '<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>',
     'settings':        '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>',
+    'panel':           '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/>',
     'folder':          '<path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>',
     'chev-down':       '<polyline points="6 9 12 15 18 9"/>',
     'chev-right':      '<polyline points="9 6 15 12 9 18"/>',
@@ -214,29 +215,59 @@
   }
 
   function buildUserChip () {
-    return '<div class="pms-user-chip">' +
+    return '<div class="pms-user-menu" hidden>' +
+      '<a href="/pages/account.html" class="pms-user-menu-item">' + icon('settings', 16) + 'Account</a>' +
+      '<button type="button" data-action="sign-out" class="pms-user-menu-item">' + icon('log-out', 16) + 'Sign out</button>' +
+    '</div>' +
+    '<button type="button" class="pms-user-chip" aria-haspopup="true" aria-expanded="false">' +
       '<div class="pms-avatar">?</div>' +
       '<div class="pms-user-info">' +
         '<div class="pms-user-name">Loading...</div>' +
+        '<div class="pms-user-email"></div>' +
         '<div class="pms-user-plan">Free</div>' +
       '</div>' +
-    '</div>' +
-    '<div style="display:flex;gap:6px;padding:4px 2px 0;">' +
-      '<a href="/pages/account.html" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">' +
-        icon('settings', 14) + 'Account' +
-      '</a>' +
-      '<button data-action="sign-out" class="btn btn-ghost btn-sm" style="flex:1;justify-content:center;">' +
-        icon('log-out', 14) + 'Sign out' +
-      '</button>' +
-    '</div>';
+      '<span class="pms-user-chev">' + icon('chev-down', 16) + '</span>' +
+    '</button>';
   }
 
   function buildSidebar (isPro) {
-    return '<a href="/pages/home.html" class="pms-sidebar-logo">' +
-      '<img src="/virorah_logo_navmatch.png" alt="Virorah PMS">' +
-    '</a>' +
+    return '<div class="pms-sidebar-logo">' +
+      '<a href="/pages/home.html" class="pms-sidebar-logo-link"><img src="/virorah_logo_navmatch.png" alt="Virorah PMS"></a>' +
+      '<button type="button" class="pms-collapse-btn" aria-label="Collapse sidebar" title="Collapse sidebar">' + icon('panel', 18) + '</button>' +
+    '</div>' +
     '<nav class="pms-nav">' + buildNav(isPro) + '</nav>' +
     '<div class="pms-sidebar-footer">' + buildUserChip() + '</div>';
+  }
+
+  /* Collapse / reopen the whole sidebar (state persisted). */
+  function setCollapsed (on) {
+    document.body.classList.toggle('pms-collapsed', on);
+    try { localStorage.setItem('pms_nav_collapsed', on ? '1' : '0'); } catch (e) {}
+  }
+  function ensureReopen () {
+    if (document.querySelector('.pms-reopen-btn')) return;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'pms-reopen-btn'; b.setAttribute('aria-label', 'Open sidebar');
+    b.innerHTML = icon('panel', 18);
+    b.addEventListener('click', function () { setCollapsed(false); });
+    document.body.appendChild(b);
+  }
+  function bindChrome (root) {
+    const cb = root.querySelector('.pms-collapse-btn');
+    if (cb) cb.addEventListener('click', function () { setCollapsed(true); });
+    const chip = root.querySelector('.pms-user-chip');
+    const menu = root.querySelector('.pms-user-menu');
+    if (chip && menu) {
+      chip.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const show = menu.hidden;
+        menu.hidden = !show;
+        chip.setAttribute('aria-expanded', show);
+      });
+      document.addEventListener('click', function (e) {
+        if (!menu.hidden && !menu.contains(e.target)) { menu.hidden = true; chip.setAttribute('aria-expanded', 'false'); }
+      });
+    }
   }
 
   /* ---- Mobile toggle ---- */
@@ -266,15 +297,17 @@
     const root = document.getElementById('pms-nav-root');
     if (!root) return;
 
+    ensureReopen();
+    try { if (localStorage.getItem('pms_nav_collapsed') === '1') document.body.classList.add('pms-collapsed'); } catch (e) {}
     /* Render immediately (plan unknown yet) */
     root.innerHTML = buildSidebar(false);
-    bindMobileToggle(); bindGroups(root);
+    bindMobileToggle(); bindGroups(root); bindChrome(root);
 
     /* Update once auth resolves and we know the plan */
     document.addEventListener('pms:auth-ready', function (e) {
       const isPro = !!(e.detail && (e.detail.plan === 'pro' || e.detail.plan === 'admin'));
       root.innerHTML = buildSidebar(isPro);
-      bindMobileToggle(); bindGroups(root);
+      bindMobileToggle(); bindGroups(root); bindChrome(root);
     });
   }
 
