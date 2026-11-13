@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&display=swap');
 /* ============================================================
    Virorah PMS - Core Design System
    Extracted from Softr Global Header/Footer (v16, Nov 2026)
@@ -59,7 +60,7 @@
   --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
 
   /* Spacing */
-  --nav-width:   256px;
+  --nav-width:   242px;
   --header-h:    64px;
   --radius:      10px;
   --radius-sm:   6px;
@@ -95,7 +96,8 @@ img, svg { display: block; max-width: 100%; }
 .pms-sidebar {
   width: var(--nav-width);
   background: var(--bg-sidebar);
-  border-right: 1px solid var(--border);
+  border-right: 0;
+  font-family: 'Commissioner', var(--font-sans);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -143,24 +145,29 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: 4px;
 }
 
-.pms-nav-section-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  padding: 10px 10px 4px;
+.pms-nav-group {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 6px 8px; margin: 2px 0; border: 0; background: transparent;
+  border-radius: var(--radius-sm); cursor: pointer;
+  font: 500 14px/1.3 'Commissioner', var(--font-sans); color: #e2d9f3; text-align: left;
 }
+.pms-nav-group:hover { background: var(--bg-hover); }
+.pms-nav-group .nav-icon { width: 20px; height: 20px; }
+.pms-nav-chev { margin-left: auto; display: flex; opacity: .8; }
+.pms-nav-children { display: none; padding-left: 14px; }
+.pms-nav-section.open .pms-nav-children { display: block; }
 
 .pms-nav-item {
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 8px 10px;
+  gap: 8px;
+  padding: 6px 8px;
+  margin: 2px 0;
   border-radius: var(--radius-sm);
-  font-size: 13.5px;
-  font-weight: 450;
-  color: var(--text-muted);
+  font-family: 'Commissioner', var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2d9f3;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
   text-decoration: none;
@@ -169,20 +176,20 @@ img, svg { display: block; max-width: 100%; }
 
 .pms-nav-item:hover {
   background: var(--bg-hover);
-  color: var(--text);
+  color: #e7defd;
   text-decoration: none;
 }
 
 .pms-nav-item.active {
   background: var(--accent-glow);
-  color: var(--accent);
+  color: #e7defd;
   font-weight: 500;
 }
 
 .pms-nav-item .nav-icon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.75;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
   flex-shrink: 0;
 }
 
@@ -266,11 +273,10 @@ img, svg { display: block; max-width: 100%; }
   height: var(--header-h);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 28px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(19, 17, 28, 0.85); /* matches --bg-sidebar */
-  backdrop-filter: blur(12px);
+  border-bottom: 0;
+  background: transparent;
   position: sticky;
   top: 0;
   z-index: 90;
@@ -278,6 +284,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .pms-topbar-title {
+  display: none;
   font-size: 16px;
   font-weight: 600;
   color: var(--text);

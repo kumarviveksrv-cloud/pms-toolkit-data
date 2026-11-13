@@ -295,7 +295,7 @@
           sessionStorage.removeItem('pms_plan_reloaded');
         } catch (err) { /* ignore */ }
         await Clerk.signOut();
-        window.location.replace(LOGIN_PATH);
+        window.location.replace('/');
       });
     });
   }

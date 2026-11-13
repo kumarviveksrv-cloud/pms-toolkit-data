@@ -132,6 +132,9 @@
     'activity':        '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
     'credit-card':     '<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>',
     'settings':        '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>',
+    'folder':          '<path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>',
+    'chev-down':       '<polyline points="6 9 12 15 18 9"/>',
+    'chev-right':      '<polyline points="9 6 15 12 9 18"/>',
     'log-out':         '<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>'
   };
 
@@ -151,28 +154,63 @@
     const here = window.location.pathname.replace(/\/index\.html$/, '');
     const isActive = item.href === here;
     return '<a class="pms-nav-item' + (isActive ? ' active' : '') + '"' + (isActive ? ' aria-current="page"' : '') + ' href="' + item.href + '">' +
-      icon(item.icon) +
+      icon(item.icon, 20) +
       '<span>' + item.label + '</span>' +
       startBadge +
       proBadge +
       '</a>';
   }
 
+  /* Collapsible groups, state persisted. Default open: Overview + Forge + the group holding the current page. */
+  const STORE = 'pms_nav_open';
+  function loadOpen () {
+    let o;
+    try { o = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) { o = null; }
+    if (!o) o = { Overview: true, Forge: true };
+    const here = window.location.pathname.replace(/\/index\.html$/, '');
+    NAV.forEach(function (g) {
+      if (g.section && g.items.some(function (i) { return i.href === here; })) o[g.section] = true;
+    });
+    return o;
+  }
+  function saveOpen (o) { try { localStorage.setItem(STORE, JSON.stringify(o)); } catch (e) {} }
+
   function buildNav (isPro) {
+    const open = loadOpen();
     let html = '';
     NAV.forEach(function (entry) {
       if (entry.section) {
-        html += '<div class="pms-nav-section">';
-        html += '<div class="pms-nav-section-label">' + entry.section + '</div>';
-        entry.items.forEach(function (item) {
-          html += navItem(item, isPro);
-        });
-        html += '</div>';
+        const isOpen = !!open[entry.section];
+        html += '<div class="pms-nav-section' + (isOpen ? ' open' : '') + '" data-section="' + entry.section + '">';
+        html += '<button type="button" class="pms-nav-group" aria-expanded="' + isOpen + '">' +
+          icon('folder', 20) + '<span>' + entry.section + '</span>' +
+          '<span class="pms-nav-chev">' + icon(isOpen ? 'chev-down' : 'chev-right', 16) + '</span></button>';
+        html += '<div class="pms-nav-children">';
+        entry.items.forEach(function (item) { html += navItem(item, isPro); });
+        html += '</div></div>';
       } else {
         html += navItem(entry, isPro);
       }
     });
     return html;
+  }
+
+  function bindGroups (root) {
+    root.querySelectorAll('.pms-nav-group').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const sec = btn.parentElement;
+        const nowOpen = !sec.classList.contains('open');
+        sec.classList.toggle('open', nowOpen);
+        btn.setAttribute('aria-expanded', nowOpen);
+        btn.querySelector('.pms-nav-chev').innerHTML = icon(nowOpen ? 'chev-down' : 'chev-right', 16);
+        const o = loadOpen(); o[sec.dataset.section] = nowOpen; saveOpen(o);
+      });
+    });
+    const act = root.querySelector('.pms-nav-item.active');
+    if (act) {
+      const nav = root.querySelector('.pms-nav');
+      if (nav) nav.scrollTop = Math.max(0, act.offsetTop - nav.clientHeight / 2);
+    }
   }
 
   function buildUserChip () {
@@ -230,13 +268,13 @@
 
     /* Render immediately (plan unknown yet) */
     root.innerHTML = buildSidebar(false);
-    bindMobileToggle();
+    bindMobileToggle(); bindGroups(root);
 
     /* Update once auth resolves and we know the plan */
     document.addEventListener('pms:auth-ready', function (e) {
       const isPro = !!(e.detail && (e.detail.plan === 'pro' || e.detail.plan === 'admin'));
       root.innerHTML = buildSidebar(isPro);
-      bindMobileToggle();
+      bindMobileToggle(); bindGroups(root);
     });
   }
 
