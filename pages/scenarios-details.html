@@ -13256,7 +13256,7 @@ var methodNote='<div class="ceq-method-note"><strong>Methodology note:</strong> 
 
 Promise.all([
   fetch('/scenario_data_all.js').then(function(r){return r.text();}),
-  fetch('https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js').then(function(r){return r.text();})
+  fetch('/master_dei_data.js').then(function(r){return r.text();})
 ]).then(function(codes){
   eval(codes[0]);eval(codes[1]);
   var recordId=getRecordId();
@@ -15785,7 +15785,7 @@ container.innerHTML='<div class="dei-loading">Loading DEI Analytics...</div>';
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
 var MASTER_URL='/scenario_data_all.js';
-var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
+var DEI_URL='/master_dei_data.js';
 
 function buildOrientBanner(){
   if(localStorage.getItem('virorah_orient_dei') === 'dismissed') return '';
@@ -17491,7 +17491,7 @@ container.innerHTML='<div class="suc-loading">Loading Succession Planning...</di
 function getRecordId(){return new URLSearchParams(window.location.search).get('recordId');}
 
 var MASTER_URL='/scenario_data_all.js';
-var DEI_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/master_dei_data.js';
+var DEI_URL='/master_dei_data.js';
 
 function buildOrientBanner(){
   if(localStorage.getItem('virorah_orient_succession') === 'dismissed') return '';
