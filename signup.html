@@ -12,7 +12,8 @@
     body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg); }
     .auth-shell { display: flex; width: 100%; max-width: 440px; flex-direction: column; align-items: center; gap: 32px; padding: 32px 20px; }
     .auth-logo { display: flex; align-items: center; gap: 10px; }
-    .auth-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .auth-logo { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .auth-logo img { width: 210px; max-width: 70vw; height: auto; }
     .auth-logo-text { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
     .auth-logo-sub { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
     #clerk-sign-up { width: 100%; }
@@ -40,7 +41,6 @@
     <div class="auth-logo">
       <img src="/virorah_logo_navmatch.png" alt="Virorah PMS">
       <div>
-        <div class="auth-logo-text">Virorah PMS</div>
         <div class="auth-logo-sub">Performance Intelligence</div>
       </div>
     </div>

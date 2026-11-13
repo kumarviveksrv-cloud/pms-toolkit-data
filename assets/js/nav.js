@@ -196,7 +196,6 @@
   function buildSidebar (isPro) {
     return '<a href="/pages/home.html" class="pms-sidebar-logo">' +
       '<img src="/virorah_logo_navmatch.png" alt="Virorah PMS">' +
-      '<span>Virorah PMS</span>' +
     '</a>' +
     '<nav class="pms-nav">' + buildNav(isPro) + '</nav>' +
     '<div class="pms-sidebar-footer">' + buildUserChip() + '</div>';

@@ -119,9 +119,11 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .pms-sidebar-logo img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  /* wide transparent wordmark logo (about 4.8:1), already contains the name and PMS badge */
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
 }
 
 .pms-sidebar-logo span {
