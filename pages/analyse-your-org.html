@@ -2769,6 +2769,7 @@ function clearStorage(){
   setTimeout(function(){toast.style.opacity='0';setTimeout(function(){toast.remove();},500);},2500);
   render();
 }
+function hasWord(hay,needle){var i=hay.indexOf(needle);while(i>=0){var a=i===0||!/[a-z0-9]/.test(hay.charAt(i-1));var b=i+needle.length>=hay.length||!/[a-z0-9]/.test(hay.charAt(i+needle.length));if(a&&b)return true;i=hay.indexOf(needle,i+1);}return false;}
 function autoMatch(headers){
   // One-directional match only: the header text must contain the alias
   // phrase. The original bidirectional check (alias.indexOf(header)>=0)
@@ -2781,7 +2782,7 @@ function autoMatch(headers){
   var mapping={};
   SYSTEM_FIELDS.forEach(function(sf){
     var best=null;
-    headers.forEach(function(h){var hl=h.toLowerCase().trim();sf.aliases.forEach(function(alias){if(hl===alias||hl.indexOf(alias)>=0){if(!best)best=h;}});});
+    headers.forEach(function(h){var hl=h.toLowerCase().trim();sf.aliases.forEach(function(alias){if(hl===alias||hasWord(hl,alias)){if(!best)best=h;}});});
     if(best)mapping[sf.key]=best;
   });
   return mapping;
