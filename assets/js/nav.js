@@ -252,7 +252,46 @@
     b.addEventListener('click', function () { setCollapsed(false); });
     document.body.appendChild(b);
   }
+
+  /* Drag-to-resize sidebar width (desktop). Width persists in localStorage and drives --nav-width everywhere. */
+  const WIDTH_KEY = 'pms_nav_width', MIN_W = 200, MAX_W = 420;
+  function applyWidth (w) {
+    w = Math.max(MIN_W, Math.min(MAX_W, Math.round(w)));
+    document.documentElement.style.setProperty('--nav-width', w + 'px');
+    return w;
+  }
+  function initResizer () {
+    try { const saved = parseInt(localStorage.getItem(WIDTH_KEY), 10); if (saved) applyWidth(saved); } catch (e) {}
+    if (document.getElementById('pms-resizer')) return;
+    const st = document.createElement('style');
+    st.textContent = '#pms-resizer{position:fixed;top:0;bottom:0;left:calc(var(--nav-width,242px) - 3px);width:7px;cursor:col-resize;z-index:121;background:transparent;transition:background .15s;}' +
+      '#pms-resizer:hover,#pms-resizer.dragging{background:linear-gradient(90deg,transparent 2px,rgba(124,108,220,.55) 2px,rgba(124,108,220,.55) 5px,transparent 5px);}' +
+      'body.pms-collapsed #pms-resizer,body.pms-has-calcnav:not(.pms-calcnav-closed) #pms-resizer{display:none;}' +
+      '@media(max-width:900px){#pms-resizer{display:none;}}body.pms-resizing{user-select:none;cursor:col-resize;}';
+    document.head.appendChild(st);
+    const h = document.createElement('div');
+    h.id = 'pms-resizer'; h.title = 'Drag to resize, double-click to reset';
+    document.body.appendChild(h);
+    h.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+      h.classList.add('dragging'); document.body.classList.add('pms-resizing');
+      function move (ev) { applyWidth(ev.clientX); }
+      function up () {
+        document.removeEventListener('mousemove', move); document.removeEventListener('mouseup', up);
+        h.classList.remove('dragging'); document.body.classList.remove('pms-resizing');
+        try { localStorage.setItem(WIDTH_KEY, parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-width'), 10)); } catch (e2) {}
+        window.dispatchEvent(new Event('resize'));
+      }
+      document.addEventListener('mousemove', move); document.addEventListener('mouseup', up);
+    });
+    h.addEventListener('dblclick', function () {
+      document.documentElement.style.removeProperty('--nav-width');
+      try { localStorage.removeItem(WIDTH_KEY); } catch (e) {}
+    });
+  }
+
   function bindChrome (root) {
+    initResizer();
     const cb = root.querySelector('.pms-collapse-btn');
     if (cb) cb.addEventListener('click', function () { setCollapsed(true); });
     const chip = root.querySelector('.pms-user-chip');
