@@ -363,6 +363,9 @@
       const data = await res.json();
 
       if (!res.ok) {
+        /* Never leave the page blank: bring the key box back so the error is visible. */
+        const ks = document.getElementById('ab-key-section');
+        if (ks) ks.style.display = '';
         abShowMsg('ab-key-msg', 'error', data.error || 'Could not retrieve billing info.');
         return;
       }
@@ -407,7 +410,12 @@
 
   /* Signed in with a Pro plan: skip the key box and load the billing status straight away. */
   document.addEventListener('pms:auth-ready', function (e) {
-    if (e.detail && (e.detail.plan === 'pro' || e.detail.plan === 'admin')) {
+    if (e.detail && e.detail.plan === 'admin') {
+      /* Admin access is permanent and has no subscription record, so there is nothing to load. */
+      abShowMsg('ab-key-msg', 'success', 'You are signed in as an admin. Admin access is permanent and has no subscription or billing to manage.');
+      return;
+    }
+    if (e.detail && e.detail.plan === 'pro') {
       const sec = document.getElementById('ab-key-section');
       if (sec) sec.style.display = 'none';
       abCheckStatus();
