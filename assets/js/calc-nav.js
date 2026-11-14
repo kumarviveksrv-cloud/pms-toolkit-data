@@ -29,6 +29,8 @@
     '#pms-leftnav{position:fixed;top:0;left:0;width:220px;height:100vh;background:#0d0f1e;border-right:.5px solid rgba(255,255,255,.07);overflow-y:auto;z-index:130;display:flex;flex-direction:column;padding:20px 12px 32px;box-sizing:border-box;transition:transform .2s ease;}',
         'body.pms-calcnav-closed #pms-leftnav{transform:translateX(-100%);} body.pms-calcnav-closed:not(.pms-collapsed) #pms-leftnav{transform:translateX(-462px);}',
     '#pms-leftnav::-webkit-scrollbar{width:3px;} #pms-leftnav::-webkit-scrollbar-thumb{background:rgba(167,139,250,.25);border-radius:4px;}',
+    '#pms-leftnav-back{display:flex;align-items:center;gap:6px;margin:0 0 14px;padding:8px 10px;border-radius:8px;background:rgba(102,126,234,.1);border:.5px solid rgba(102,126,234,.25);color:#c7d2fe;font-size:12.5px;font-weight:600;text-decoration:none;font-family:Commissioner,Inter,sans-serif;}',
+    '#pms-leftnav-back:hover{background:rgba(102,126,234,.2);color:#fff;}',
     '#pms-leftnav-header{margin-bottom:20px;padding-bottom:14px;border-bottom:.5px solid rgba(255,255,255,.07);}',
     '#pms-leftnav-title{font-size:11px;font-weight:500;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;font-family:sans-serif;}',
     '#pms-leftnav-toggle{position:fixed;top:50%;left:220px;transform:translateY(-50%);width:20px;height:56px;background:#1a1d2e;border:none;border-radius:0 8px 8px 0;color:#fff;font-size:18px;cursor:pointer;z-index:131;display:flex;align-items:center;justify-content:center;font-family:sans-serif;transition:background .15s,left .2s ease;}',
@@ -63,7 +65,7 @@
     if (!document.querySelector('.pms-main')) return;
     var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
     var nav = document.createElement('nav'); nav.id = 'pms-leftnav'; nav.setAttribute('aria-label', 'Calculator navigation');
-    var html = '<div id="pms-leftnav-header"><span id="pms-leftnav-title">Calculators</span></div>';
+    var html = '<a id="pms-leftnav-back" href="/pages/scenarios.html">&#8592; All scenarios</a><div id="pms-leftnav-header"><span id="pms-leftnav-title">Calculators</span></div>';
     GROUPS.forEach(function (g) {
       html += '<div class="pms-cn-section"><div class="pms-cn-label l-' + g.color + '">' + g.label + '</div>';
       g.items.forEach(function (it) {
