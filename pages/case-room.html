@@ -408,7 +408,7 @@ function runCompass(){
 
   var proKey = localStorage.getItem("viorah_key") || "";
 
-  fetch(WORKER + "/pages/case-room.html", {
+  fetch(WORKER + "/case-room", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
