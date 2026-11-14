@@ -152,7 +152,7 @@
     const startBadge = item.href === '/pages/tour.html'
       ? '<span class="nav-start-badge">Start</span>'
       : '';
-    const here = window.location.pathname.replace(/\/index\.html$/, '');
+    const here = (function (p) { return p === '/pages/scenarios-details.html' ? '/pages/scenarios.html' : p; })(window.location.pathname.replace(/\/index\.html$/, ''));
     const isActive = item.href === here;
     return '<a class="pms-nav-item' + (isActive ? ' active' : '') + '"' + (isActive ? ' aria-current="page"' : '') + ' href="' + item.href + '">' +
       icon(item.icon, 20) +
@@ -168,7 +168,7 @@
     let o;
     try { o = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) { o = null; }
     if (!o) o = { Overview: true, Forge: true };
-    const here = window.location.pathname.replace(/\/index\.html$/, '');
+    const here = (function (p) { return p === '/pages/scenarios-details.html' ? '/pages/scenarios.html' : p; })(window.location.pathname.replace(/\/index\.html$/, ''));
     NAV.forEach(function (g) {
       if (g.section && g.items.some(function (i) { return i.href === here; })) o[g.section] = true;
     });
