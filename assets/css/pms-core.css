@@ -106,8 +106,6 @@ img, svg { display: block; max-width: 100%; }
   bottom: 0;
   z-index: 100;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
   transition: transform 0.25s var(--ease);
 }
 
@@ -657,3 +655,16 @@ select { cursor: pointer; appearance: none; background-image: url("data:image/sv
   border-radius: 6px; color: #e2d9f3; font: 500 14px 'Commissioner', var(--font-sans); cursor: pointer; text-decoration: none;
 }
 .pms-user-menu-item:hover { background: var(--bg-hover); text-decoration: none; }
+
+
+/* Purple scrollbars everywhere (WebKit/Blink draw it by pseudo-elements; Firefox via scrollbar-color) */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(124, 108, 220, .45); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139, 124, 240, .75); }
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+::-webkit-scrollbar-corner { background: transparent; }
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: rgba(124, 108, 220, .55) transparent; }
+}
+.pms-sidebar ::-webkit-scrollbar, .pms-sidebar::-webkit-scrollbar { width: 5px; }
