@@ -398,6 +398,8 @@ body {
   @page { margin: 20mm; }
 }
 </style>
+<script>window.PMS_CONFIG = { requireAuth: false, requirePro: false };</script>
+<script src="/assets/js/pms-fetch.js"></script>
 </head>
 <body>
 
@@ -950,7 +952,11 @@ function showLocked(message) {
 
 function boot() {
   var id = getParam('id');
+  /* Access key: this browser's own copy (Clerk sign-in stores a placeholder the Worker swaps
+     for the real key). A legacy ?key= link still works once, then is removed from the address bar. */
   var key = getParam('key');
+  if (key) { try { history.replaceState(null, '', location.pathname + '?id=' + encodeURIComponent(id)); } catch (e) {} }
+  if (!key) { try { key = (localStorage.getItem('viorah_key') || '').trim(); } catch (e) {} }
   var tmpl = TEMPLATES[id];
   var badge = document.getElementById('tmpl-badge');
 
@@ -960,6 +966,15 @@ function boot() {
   }
 
   if (!key) {
+    /* Clerk may still be signing the visitor in: wait once for it, then try again. */
+    if (!boot._waited) {
+      boot._waited = true;
+      if(badge) badge.textContent = 'Checking sign-in…';
+      var again = function () { if (boot._again) return; boot._again = true; document.removeEventListener('pms:auth-ready', again); boot(); };
+      document.addEventListener('pms:auth-ready', again);
+      setTimeout(again, 6000);
+      return;
+    }
     if(badge) badge.textContent = 'Pro Template';
     showLocked();
     return;
@@ -990,5 +1005,6 @@ if(document.readyState === 'loading') {
   boot();
 }
 </script>
+<script src="/assets/js/clerk-init.js"></script>
 </body>
 </html>

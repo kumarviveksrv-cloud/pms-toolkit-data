@@ -321,8 +321,8 @@ function renderGrid(filter){
         delay+=0.04;
         if(proUser){
           /* Unlocked Pro card */
-          var realKey = (localStorage.getItem('viorah_key')||'').trim();
-          var url=BASE_URL+'?id='+tmpl.id+(realKey ? '&key='+encodeURIComponent(realKey) : '');
+          /* The viewer reads the access key from this browser itself; never put it in the URL. */
+          var url=BASE_URL+'?id='+tmpl.id;
           html+='<div class="tl-card" style="animation-delay:'+delay+'s">';
           html+='<div class="tl-card-icon">'+tmpl.icon+'</div>';
           html+='<div class="tl-card-title">'+tmpl.title+'</div>';
