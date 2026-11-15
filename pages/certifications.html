@@ -1216,7 +1216,7 @@ function isPro(){
 }
 function isAdmin(){
   try {
-    return isPro() && (localStorage.getItem('viorah_key')||'').trim().toUpperCase() === 'VIRORAH-ADMIN-2026';
+    return typeof window.viorahIsAdmin==='function' && window.viorahIsAdmin();
   } catch(e) { return false; }
 }
 
@@ -2731,7 +2731,7 @@ function isPro(){
 }
 function isAdmin(){
   try {
-    return isPro() && (localStorage.getItem('viorah_key')||'').trim().toUpperCase() === 'VIRORAH-ADMIN-2026';
+    return typeof window.viorahIsAdmin==='function' && window.viorahIsAdmin();
   } catch(e) { return false; }
 }
 
@@ -4332,7 +4332,7 @@ function isPro(){
 }
 function isAdmin(){
   try {
-    return isPro() && (localStorage.getItem('viorah_key')||'').trim().toUpperCase() === 'VIRORAH-ADMIN-2026';
+    return typeof window.viorahIsAdmin==='function' && window.viorahIsAdmin();
   } catch(e) { return false; }
 }
 

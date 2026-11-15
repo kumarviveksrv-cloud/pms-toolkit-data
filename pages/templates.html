@@ -226,7 +226,7 @@
 
 <script>
 (function(){
-var BASE_URL='https://kumarviveksrv-cloud.github.io/pms-toolkit-data/templates.html';
+var BASE_URL='/templates.html';
 
 var CATEGORIES=[
   {key:'forms',label:'📋 Performance Review Forms',templates:[
@@ -271,7 +271,6 @@ function isPro(){
   if(localStorage.getItem('viorah_plan')==='pro') return true;
   if(typeof window.viorahIsPro==='function') return window.viorahIsPro();
   var k=(localStorage.getItem('virorah_pro_key')||'').trim().toUpperCase();
-  if(k==='VIRORAH-ADMIN-2026') return true;
   return false;
 }
 

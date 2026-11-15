@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pms.virorah.com/sitemap.xml

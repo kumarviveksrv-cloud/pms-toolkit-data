@@ -642,7 +642,7 @@
     if(localStorage.getItem('viorah_plan')==='pro') return true;
     if(typeof window.viorahIsPro==='function') return window.viorahIsPro();
     var k=(localStorage.getItem('pms_pro_key')||'').trim().toUpperCase();
-    if(k==='VIORAH-PRO-2026'||k==='VIORAH-ADMIN-2026') return true;
+    if(k==='VIORAH-PRO-2026') return true;
     if(k.startsWith('VIORAH-BETA-')){
       var expMatch=k.match(/EXP(\d{8})$/);
       if(expMatch){
