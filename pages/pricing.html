@@ -678,8 +678,11 @@
     '#rzp-pay{width:100%;padding:15px;border-radius:11px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:inherit;box-shadow:0 4px 24px rgba(102,126,234,.45);transition:all .2s;margin-bottom:10px;}',
     '#rzp-pay:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 36px rgba(102,126,234,.65);}',
     '#rzp-pay:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}',
-    '#rzp-cancel{width:100%;padding:11px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,.08);color:rgba(244,243,255,.3);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s;}',
-    '#rzp-cancel:hover{border-color:rgba(255,255,255,.18);color:rgba(244,243,255,.55);}',
+    '#rzp-cancel{width:100%;padding:11px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,.22);color:rgba(244,243,255,.8);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s;}',
+    '#rzp-cancel:hover{border-color:rgba(255,255,255,.4);color:#fff;}',
+    '#rzp-card{position:relative;}',
+    '#rzp-x{position:absolute;top:12px;right:14px;width:32px;height:32px;border-radius:8px;background:transparent;border:none;color:rgba(244,243,255,.7);font-size:22px;line-height:1;cursor:pointer;font-family:inherit;}',
+    '#rzp-x:hover{background:rgba(255,255,255,.08);color:#fff;}',
     '#rzp-modal-note{font-size:10px;color:rgba(244,243,255,.18);text-align:center;margin-top:14px;line-height:1.7;}',
     '#rzp-loading-state{display:none;text-align:center;padding:10px 0;font-size:13px;color:rgba(165,180,252,.6);}'
   ].join('');
@@ -689,6 +692,7 @@
   overlay.id = 'rzp-overlay';
   overlay.innerHTML =
     '<div id="rzp-card">' +
+      '<button id="rzp-x" type="button" aria-label="Close">\u00D7</button>' +
       '<div class="rzp-eyebrow">\uD83D\uDD12 Secure Checkout</div>' +
       '<div id="rzp-title">One step to unlock everything</div>' +
       '<div id="rzp-sub">Enter the email where you want your access key sent. Works on any device after payment.</div>' +
@@ -845,6 +849,7 @@
 
   q('rzp-pay').addEventListener('click', payHandler);
   q('rzp-cancel').addEventListener('click', closeModal);
+  q('rzp-x').addEventListener('click', closeModal);
   q('rzp-email').addEventListener('keydown', function(e){ if(e.key === 'Enter') payHandler(); });
   q('rzp-tos').addEventListener('change', function(){ q('rzp-pay').disabled = !this.checked; });
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
