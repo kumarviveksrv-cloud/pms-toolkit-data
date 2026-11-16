@@ -489,11 +489,6 @@ select#mrc-mgr-select option{background:#1a1040;color:#f0eeff;}
     if(localStorage.getItem('virorah_plan')==='pro') return true;
     if(localStorage.getItem('viorah_plan')==='pro') return true;
     if(typeof window.virorahIsPro==='function') return window.virorahIsPro();
-    var k=(localStorage.getItem('virorah_pro_key')||'').trim().toUpperCase();
-    if(k.startsWith('VIRORAH-BETA-')){
-      var m=k.match(/EXP(\d{8})$/);
-      if(m){var now=new Date();var ymd=now.getFullYear().toString()+(now.getMonth()+1).toString().padStart(2,'0')+now.getDate().toString().padStart(2,'0');if(ymd<=m[1])return true;}
-    }
     return false;
   }
 

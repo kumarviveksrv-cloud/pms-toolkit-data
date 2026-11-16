@@ -643,15 +643,6 @@
   function isPro(){
     if(localStorage.getItem('viorah_plan')==='pro') return true;
     if(typeof window.viorahIsPro==='function') return window.viorahIsPro();
-    var k=(localStorage.getItem('pms_pro_key')||'').trim().toUpperCase();
-    if(k.startsWith('VIORAH-BETA-')){
-      var expMatch=k.match(/EXP(\d{8})$/);
-      if(expMatch){
-        var now=new Date();
-        var ymd=now.getFullYear().toString()+(now.getMonth()+1).toString().padStart(2,'0')+now.getDate().toString().padStart(2,'0');
-        if(ymd<=expMatch[1]) return true;
-      }
-    }
     return false;
   }
 
