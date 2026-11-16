@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PMS Toolkit Templates</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Virorah PMS Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --purple: #667eea;
@@ -36,11 +36,12 @@ body {
   position: sticky; top: 0; z-index: 100;
 }
 .print-bar-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 14px; font-weight: 900;
   color: white; letter-spacing: -0.3px;
 }
-.print-bar-logo span { color: var(--purple); }
+.print-bar-logo { display: flex; align-items: center; text-decoration: none; }
+.print-bar-logo img { height: 26px; width: auto; display: block; }
 .print-bar-actions { display: flex; gap: 10px; align-items: center; }
 .print-btn {
   padding: 8px 20px;
@@ -101,7 +102,7 @@ body {
   color: var(--purple); margin-bottom: 6px;
 }
 .tmpl-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 22px; font-weight: 900;
   color: var(--ink); line-height: 1.2;
   margin-bottom: 6px;
@@ -383,7 +384,7 @@ body {
 }
 .tmpl-notfound-icon { font-size: 48px; margin-bottom: 16px; }
 .tmpl-notfound-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 24px; font-weight: 700;
   margin-bottom: 8px;
 }
@@ -404,7 +405,7 @@ body {
 <body>
 
 <div class="print-bar">
-  <div class="print-bar-logo">PMS <span>Toolkit</span></div>
+  <a class="print-bar-logo" href="/pages/home.html" aria-label="Virorah PMS home"><img src="/virorah_logo_navmatch.png" alt="Virorah PMS"></a>
   <div class="print-bar-actions">
     <span class="print-bar-badge" id="tmpl-badge">Template</span>
     <button class="print-btn print-btn-secondary" onclick="window.history.back()">← Back</button>
@@ -914,7 +915,7 @@ function getParam(name) {
 var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
 
 function renderTemplateBody(tmpl, bodyHtml) {
-  document.title = tmpl.title + ' — PMS Toolkit Templates';
+  document.title = tmpl.title + ' — Virorah PMS';
   var badge = document.getElementById('tmpl-badge');
   if(badge) badge.textContent = tmpl.category;
   var root = document.getElementById('tmpl-root');
