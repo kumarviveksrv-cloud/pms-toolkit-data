@@ -79,6 +79,20 @@
     await Clerk.load();
     if (Clerk.user) { window.location.replace('/pages/home.html'); return; }
     Clerk.mountSignUp(document.getElementById('clerk-sign-up'), {
+      appearance: {
+        variables: {
+          colorBackground: '#13131f',
+          colorInputBackground: '#0d0b1e',
+          colorInputText: '#f4f3ff',
+          colorText: '#f4f3ff',
+          colorTextSecondary: '#a5b4fc',
+          colorTextOnPrimaryBackground: '#ffffff',
+          colorNeutral: '#f4f3ff',
+          colorPrimary: '#667eea',
+          colorDanger: '#fca5a5',
+          colorSuccess: '#86efac'
+        }
+      },
       afterSignUpUrl: '/pages/home.html',
       signInUrl: '/login.html'
     });

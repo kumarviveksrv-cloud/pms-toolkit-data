@@ -153,6 +153,20 @@
 
     // Mount Clerk's sign-in component
     Clerk.mountSignIn(document.getElementById('clerk-sign-in'), {
+      appearance: {
+        variables: {
+          colorBackground: '#13131f',
+          colorInputBackground: '#0d0b1e',
+          colorInputText: '#f4f3ff',
+          colorText: '#f4f3ff',
+          colorTextSecondary: '#a5b4fc',
+          colorTextOnPrimaryBackground: '#ffffff',
+          colorNeutral: '#f4f3ff',
+          colorPrimary: '#667eea',
+          colorDanger: '#fca5a5',
+          colorSuccess: '#86efac'
+        }
+      },
       afterSignInUrl: afterSignIn,
       afterSignUpUrl: afterSignIn,
       signUpUrl: '/signup.html'
