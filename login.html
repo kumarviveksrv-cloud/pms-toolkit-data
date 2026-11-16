@@ -138,9 +138,9 @@
   script.crossOrigin = 'anonymous';
   script.src = 'https://unpkg.com/@clerk/clerk-js@5.128.2/dist/clerk.browser.js';
   /* Current Clerk builds read the key from this attribute and expose a ready instance. */
-  script.setAttribute('data-clerk-publishable-key', ((location.hostname === 'staging.virorah.com') ? 'pk_test_aGFuZHktZmluY2gtNDA2Ny5jbGVyay5hY2NvdW50cy5kZXYk' : window.PMS_CLERK_PK));
+  script.setAttribute('data-clerk-publishable-key', window.PMS_CLERK_PK);
   script.onload = async function () {
-    const PK = ((location.hostname === 'staging.virorah.com') ? 'pk_test_aGFuZHktZmluY2gtNDA2Ny5jbGVyay5hY2NvdW50cy5kZXYk' : window.PMS_CLERK_PK);
+    const PK = window.PMS_CLERK_PK;
     const ClerkCtor = window.Clerk;
     const Clerk = (typeof ClerkCtor === 'function') ? new ClerkCtor(PK) : ClerkCtor;
     await Clerk.load();
