@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Run a 9-Box Calibration | Virorah PMS</title>
+  <meta name="description" content="Step-by-step guide to placing employees correctly in the 9-Box matrix">
+  <link rel="canonical" href="https://pms.virorah.com/pages/guide-how-to-run-9box.html">
+  <meta property="og:title" content="How to Run a 9-Box Calibration | Virorah PMS">
+  <meta property="og:description" content="Step-by-step guide to placing employees correctly in the 9-Box matrix">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pms.virorah.com/pages/guide-how-to-run-9box.html">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Run a 9-Box Calibration", "description": "Step-by-step guide to placing employees correctly in the 9-Box matrix", "articleSection": "Performance", "inLanguage": "en", "mainEntityOfPage": "https://pms.virorah.com/pages/guide-how-to-run-9box.html", "url": "https://pms.virorah.com/pages/guide-how-to-run-9box.html", "isAccessibleForFree": true, "author": {"@type": "Organization", "name": "Virorah", "url": "https://pms.virorah.com/"}, "publisher": {"@type": "Organization", "name": "Virorah Private Limited", "url": "https://pms.virorah.com/"}}</script>
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="/assets/css/pms-core.css">
+  <link rel="stylesheet" href="/assets/css/cmdk.css">
+
+  <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clerk publishable key (set before clerk-init.js runs) -->
+  <script>
+    window.PMS_CLERK_PK = 'pk_live_Y2xlcmsucG1zLnZpcm9yYWguY29tJA';
+    window.PMS_CONFIG = {
+      requireAuth: false,
+      requirePro:  false
+    };
+  </script>
+
+  <!-- Page-specific styles go here -->
+  <style>
+    /* page styles live in the migrated content block below */
+  </style>
+  <script src="/assets/js/pms-fetch.js"></script>
+</head>
+<body>
+
+<!-- Sidebar nav mount point -->
+<div id="pms-nav-root" class="pms-sidebar"></div>
+<!-- Mobile backdrop -->
+<div class="pms-sidebar-backdrop"></div>
+
+<!-- Main layout shell -->
+<div class="pms-shell">
+  <main class="pms-main">
+
+    <!-- Top bar -->
+    <header class="pms-topbar">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu toggle -->
+        <button class="pms-menu-toggle" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="pms-topbar-title">Learning Guide</span>
+      </div>
+      <div class="pms-topbar-actions">
+        <!-- Optional: breadcrumb, action buttons -->
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="pms-content">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #667eea;
+    --purple-dark: #764ba2;
+    --ink: #1a1a2e;
+    --paper: #f7f6f3;
+    --white: #ffffff;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --success: #059669;
+    --gold: #d97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { font-family: 'Space Grotesk', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
+
+  .breadcrumb { padding: 16px 40px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; background: white; border-bottom: 1px solid var(--border); }
+  .breadcrumb a { color: var(--purple); text-decoration: none; font-weight: 600; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .guide-hero { background: linear-gradient(135deg, var(--ink) 0%, #2d1b69 100%); padding: 48px 40px 40px; color: white; position: relative; overflow: hidden; }
+  .guide-hero::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(102,126,234,.2) 0%, transparent 70%); }
+
+  .guide-meta-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .guide-badge { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .badge-free { background: #d1fae5; color: #065f46; }
+  .badge-pro { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+  .badge-category { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); }
+  .badge-time { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); font-size: 11px; padding: 4px 10px; border-radius: 20px; }
+
+  .guide-title { font-size: clamp(24px, 4vw, 40px); font-weight: 800; line-height: 1.15; margin-bottom: 12px; letter-spacing: -.5px; }
+  .guide-description { font-size: 15px; color: rgba(255,255,255,.75); max-width: 600px; line-height: 1.7; margin-bottom: 24px; }
+
+  .progress-wrap { background: rgba(255,255,255,.1); border-radius: 20px; height: 6px; max-width: 400px; margin-bottom: 8px; overflow: hidden; }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, #43e97b, #38f9d7); border-radius: 20px; transition: width .4s ease; }
+  .progress-label { font-size: 11px; color: rgba(255,255,255,.6); }
+
+  .guide-layout { display: grid; grid-template-columns: 1fr 300px; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 40px; }
+  @media (max-width: 768px) { .guide-layout { grid-template-columns: 1fr; } .guide-hero, .breadcrumb { padding-left: 20px; padding-right: 20px; } }
+
+  .content-section { background: white; border-radius: 14px; padding: 32px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); animation: fadeUp .4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin-bottom: 10px; }
+  .section-heading { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: var(--ink); letter-spacing: -.3px; }
+
+  .guide-text { font-size: 14px; line-height: 1.85; color: #374151; }
+  .guide-text p { margin-bottom: 14px; }
+  .guide-text p:last-child { margin-bottom: 0; }
+  .guide-text strong { color: var(--ink); font-weight: 700; }
+  .guide-text ul, .guide-text ol { padding-left: 22px; margin: 12px 0; }
+  .guide-text li { margin-bottom: 8px; line-height: 1.7; }
+
+  .callout { background: #f0f4ff; border-left: 4px solid var(--purple); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 13px; line-height: 1.7; color: #374151; }
+  .callout strong { color: var(--purple-dark); }
+  .warning-box { background: #fffbeb; border-left: 4px solid var(--gold); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 13px; line-height: 1.7; color: #374151; }
+
+  .step-block { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+  .step-num { width: 36px; height: 36px; background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .step-content { flex: 1; }
+  .step-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .step-body { font-size: 13px; line-height: 1.75; color: #4b5563; }
+
+  .checklist-wrap { }
+  .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: background .15s; border-radius: 6px; padding-left: 4px; }
+  .checklist-item:last-child { border-bottom: none; }
+  .checklist-item:hover { background: #f9fafb; }
+  .check-box { width: 22px; height: 22px; border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: all .2s; background: white; }
+  .checklist-item.checked .check-box { background: var(--success); border-color: var(--success); }
+  .checklist-item.checked .check-box::after { content: '✓'; color: white; font-size: 13px; font-weight: 700; }
+  .check-text { font-size: 13px; line-height: 1.6; color: #374151; flex: 1; transition: color .2s; }
+  .checklist-item.checked .check-text { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+
+  .guide-sidebar { }
+  .sidebar-card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+  .sidebar-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+
+  .toc-item { display: flex; align-items: center; gap: 8px; padding: 8px 0; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--border); cursor: pointer; transition: color .2s; }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-item:hover { color: var(--purple); }
+  .toc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+
+  .cta-card { background: linear-gradient(135deg, var(--purple), var(--purple-dark)); border-radius: 14px; padding: 24px; color: white; text-align: center; margin-bottom: 16px; }
+  .cta-icon { font-size: 28px; margin-bottom: 10px; }
+  .cta-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .cta-sub { font-size: 12px; opacity: .8; line-height: 1.6; margin-bottom: 16px; }
+  .cta-btn { display: block; background: white; color: var(--purple-dark); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; transition: all .2s; font-family: 'Space Grotesk', sans-serif; }
+  .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+
+  .related-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--ink); font-size: 12px; font-weight: 600; transition: color .2s; }
+  .related-item:last-child { border-bottom: none; }
+  .related-item:hover { color: var(--purple); }
+  .related-icon { font-size: 16px; flex-shrink: 0; }
+
+  .not-found { text-align: center; padding: 80px 40px; }
+  .not-found-icon { font-size: 48px; margin-bottom: 16px; }
+  .not-found-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .not-found-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+
+  @media (max-width: 600px) { .guide-layout { padding: 20px; } .content-section { padding: 20px; } }
+</style>
+
+<script>
+(function(){
+  var WORKER_URL='https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
+  var SK='viorah_plan',SK_EXP='viorah_plan_exp';
+  window._guideIsPro=function(){try{if(localStorage.getItem(SK)!=='pro')return false;var e=localStorage.getItem(SK_EXP);if(!e)return true;var d=new Date(parseInt(e));if(new Date()>d){localStorage.removeItem(SK);localStorage.removeItem(SK_EXP);return false;}return true;}catch(e){return false;}};
+  window.guideUnlock=async function(){var inp=document.getElementById('guide-key-input'),err=document.getElementById('guide-key-error'),succ=document.getElementById('guide-key-success'),key=(inp.value||'').trim().toUpperCase();if(!key)return;err.style.display=succ.style.display='none';inp.disabled=true;try{const r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json','X-Action':'validate-key'},body:JSON.stringify({key})});const res=await r.json();if(res.valid){succ.textContent='✓ Unlocked! Reloading…';succ.style.display='block';localStorage.setItem(SK,'pro');localStorage.setItem('viorah_key',key);localStorage.removeItem(SK_EXP);setTimeout(()=>location.reload(),800);}else{err.style.display='block';inp.disabled=false;}}catch(e){err.textContent='Could not verify. Try again.';err.style.display='block';inp.disabled=false;}};
+})();
+</script>
+
+<div id="app"><div class="breadcrumb"><a href="/pages/learning-hub.html">Learning Hub</a><span>›</span><span>Performance</span><span>›</span><span>How to Run a 9-Box Calibration</span></div><div class="guide-hero"><div class="guide-meta-row"><span class="guide-badge badge-free">Free</span><span class="guide-badge badge-category">Performance</span><span class="badge-time">⏱ 8 min read</span></div><h1 class="guide-title">How to Run a 9-Box Calibration</h1><p class="guide-description">Step-by-step guide to placing employees correctly in the 9-Box matrix</p></div><div class="guide-layout"><div class="guide-body"><div class="content-section"><section id="what-is">
+        <div class="section-label">Overview</div>
+        <h2 class="section-heading">What is the 9-Box Grid?</h2>
+        <div class="guide-text">
+          <p>The 9-Box Grid is the most widely used talent management tool in the world. Used by GE, McKinsey, and virtually every Fortune 500 company, it plots employees on a 3×3 matrix - <strong>Performance</strong> on the X-axis and <strong>Potential</strong> on the Y-axis.</p>
+          <p>The result: nine distinct talent categories ranging from "Low Performer" to "Star", each requiring a different management response. Done well, it gives HR and senior leadership a single, shared view of your talent landscape - who to invest in, who to accelerate, who to manage out.</p>
+          <div class="callout"><strong>Why it works:</strong> The 9-Box forces managers to make a two-dimensional judgment about their people. Most annual reviews only capture performance. The 9-Box adds the crucial question: <em>can this person grow beyond their current role?</em></div>
+          <p>The challenge isn't understanding the grid - it's running the calibration process fairly, consistently, and without bias. That's what this guide covers.</p>
+        </div>
+      </section>
+      </div><div class="content-section"><section id="before">
+        <div class="section-label">Preparation</div>
+        <h2 class="section-heading">Before You Start</h2>
+        <div class="guide-text">
+          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Define your rating scale</div><div class="step-body">Performance ratings should be based on a consistent 1–5 scale anchored to observable behaviours - not gut feel. Every manager in the room must be using the same definition of a "4".</div></div></div>
+          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Gather potential evidence</div><div class="step-body">Potential is harder to rate than performance. Use three indicators: <strong>Learning agility</strong> (how quickly do they pick up new skills?), <strong>Leadership behaviour</strong> (do others follow them?), and <strong>Ambition + drive</strong> (do they seek stretch assignments?).</div></div></div>
+          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Pre-populate the grid before the meeting</div><div class="step-body">Don't fill in the 9-Box live in the room - that anchors everyone to the first opinion. Have each manager independently place their direct reports first, then compare placements in the calibration session.</div></div></div>
+          <div class="warning-box"><strong>⚠️ Watch out for:</strong> Recency bias (rating based on last 3 months, not the full year), halo effect (one strong project inflates the whole rating), and the "nice manager" trap (managers who rate everyone high to avoid conflict).</div>
+        </div>
+      </section>
+      </div><div class="content-section"><section id="process">
+        <div class="section-label">The Process</div>
+        <h2 class="section-heading">Step-by-Step: Running the Session</h2>
+        <div class="guide-text">
+          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Set the rules upfront (5 min)</div><div class="step-body">Open with the ground rules: this is a talent conversation, not a performance review. Ratings are not final until the full group agrees. All placements are confidential. No one defends - everyone challenges constructively.</div></div></div>
+          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Review pre-submitted placements (15 min)</div><div class="step-body">Display all managers' pre-submitted placements on a shared screen. Highlight discrepancies - where two managers placed the same person in very different boxes. These are your calibration flashpoints.</div></div></div>
+          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Calibrate box by box, not person by person (30–45 min)</div><div class="step-body">Work through the boxes systematically. Start with the <strong>Stars (top-right)</strong> - these are your easiest conversations and build momentum. Then tackle the <strong>Low Performers (bottom-left)</strong>. Leave the middle boxes for last.</div></div></div>
+          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Apply the distribution check (10 min)</div><div class="step-body">After placements, count the distribution. A healthy org typically has 10–15% Stars, 25–35% High Performers, 40–50% Core Performers, 10–20% in the lower boxes.</div></div></div>
+          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Define next steps per box (10 min)</div><div class="step-body">The 9-Box only has value if it drives action. Agree on the management response for each box before leaving the room.</div></div></div>
+        </div>
+      </section>
+      </div><div class="content-section"><section id="mistakes">
+        <div class="section-label">Common Pitfalls</div>
+        <h2 class="section-heading">Mistakes That Kill the 9-Box</h2>
+        <div class="guide-text">
+          <ul>
+            <li><strong>Treating it as a once-a-year exercise.</strong> The 9-Box should be a living document, updated at least twice a year.</li>
+            <li><strong>No action after the session.</strong> If the output stays in a slide deck and no manager has a different conversation as a result, the exercise was theatre.</li>
+            <li><strong>Using only manager input.</strong> The best organisations triangulate manager ratings with 360° feedback, OKR attainment, and skip-level conversations.</li>
+            <li><strong>Forgetting to look at box trajectories.</strong> Someone moving from box 5 to box 2 in 12 months is a different conversation than someone who's been in box 5 for three years.</li>
+          </ul>
+        </div>
+      </section></div><div class="content-section"><div class="section-label">Implementation Checklist</div><h2 class="section-heading">Calibration Checklist</h2><p style="font-size:13px;color:#6b7280;margin-bottom:20px;">Tick off each step as you complete it. Your progress is saved on this device.</p><div class="checklist-wrap" id="checklist-wrap"><div class="checklist-item" data-index="0" onclick="toggleCheck(0)"><div class="check-box"></div><div class="check-text">Defined consistent performance rating scale (1–5) with behavioural anchors</div></div><div class="checklist-item" data-index="1" onclick="toggleCheck(1)"><div class="check-box"></div><div class="check-text">Gathered performance data for the full review period (not just last 3 months)</div></div><div class="checklist-item" data-index="2" onclick="toggleCheck(2)"><div class="check-box"></div><div class="check-text">Collected potential evidence: learning agility, leadership behaviour, drive</div></div><div class="checklist-item" data-index="3" onclick="toggleCheck(3)"><div class="check-box"></div><div class="check-text">Asked each manager to independently pre-place their direct reports</div></div><div class="checklist-item" data-index="4" onclick="toggleCheck(4)"><div class="check-box"></div><div class="check-text">Identified calibration flashpoints (same person, different box from two managers)</div></div><div class="checklist-item" data-index="5" onclick="toggleCheck(5)"><div class="check-box"></div><div class="check-text">Booked a 90-minute calibration session with all relevant managers</div></div><div class="checklist-item" data-index="6" onclick="toggleCheck(6)"><div class="check-box"></div><div class="check-text">Set and shared ground rules before the session starts</div></div><div class="checklist-item" data-index="7" onclick="toggleCheck(7)"><div class="check-box"></div><div class="check-text">Worked through Stars and Low Performers first, then the middle boxes</div></div><div class="checklist-item" data-index="8" onclick="toggleCheck(8)"><div class="check-box"></div><div class="check-text">Ran the distribution check - no box has >50% of the population</div></div><div class="checklist-item" data-index="9" onclick="toggleCheck(9)"><div class="check-box"></div><div class="check-text">Defined specific next steps (development, conversations, opportunities) per box</div></div><div class="checklist-item" data-index="10" onclick="toggleCheck(10)"><div class="check-box"></div><div class="check-text">Scheduled a follow-up review in 6 months to track movement</div></div></div><div style="margin-top:16px;padding:14px;background:#f0f4ff;border-radius:8px;text-align:center;font-size:13px;color:#667eea;font-weight:600;display:none;" id="completion-msg"></div></div></div><div class="guide-sidebar"><div class="cta-card"><div class="cta-icon">📊</div><div class="cta-title">Try it on your data</div><div class="cta-sub">Run the 9-Box Grid Calculator on your own organisation's employee data.</div><a class="cta-btn" href="/pages/scenarios-details.html?recordId=custom_org&calc=ninebox">Open the calculator →</a></div><div class="sidebar-card"><div class="sidebar-title">In This Guide</div><div class="toc-item"><div class="toc-dot"></div>What is the 9-Box?</div><div class="toc-item"><div class="toc-dot"></div>Before You Start</div><div class="toc-item"><div class="toc-dot"></div>Step-by-Step Process</div><div class="toc-item"><div class="toc-dot"></div>Common Mistakes</div><div class="toc-item"><div class="toc-dot"></div>Calibration Checklist</div></div><div class="sidebar-card"><div class="sidebar-title">Related Guides</div><a class="related-item" href="/pages/guide-mastering-calibration.html"><span class="related-icon">⚖️</span>Mastering Calibration Sessions</a><a class="related-item" href="/pages/guide-manager-dashboard-review.html"><span class="related-icon">📋</span>Manager Dashboard Review</a><a class="related-item" href="/pages/guide-succession-pipeline.html"><span class="related-icon">🔮</span>Building a Succession Pipeline</a></div><div class="sidebar-card" style="text-align:center;"><div style="font-size:24px;margin-bottom:8px;">💡</div><div style="font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">All guides are included in your plan</div><div style="font-size:11px;color:#6b7280;line-height:1.6;">Free guides are available to all users. Pro guides require a Pro subscription.</div></div></div></div></div>
+<script>
+(function(){
+  var SLUG="how-to-run-9box", KEY='pms_guide_progress_v1';
+  function load(){try{var d=localStorage.getItem(KEY);var a=d?JSON.parse(d):{};return a[SLUG]||{};}catch(e){return {};}}
+  function save(p){try{var d=localStorage.getItem(KEY);var a=d?JSON.parse(d):{};a[SLUG]=p;localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}}
+  function paint(){
+    var p=load(), items=document.querySelectorAll('.checklist-item'), done=0;
+    items.forEach(function(el){var i=+el.getAttribute('data-index'); var on=!!p[i]; el.classList.toggle('checked',on); if(on)done++;});
+    var msg=document.getElementById('completion-msg'); if(!msg)return;
+    if(done===items.length&&items.length){msg.style.display='block';msg.textContent='All done! You are fully prepared.';}
+    else if(done>0){var left=items.length-done;msg.style.display='block';msg.textContent=left+' item'+(left>1?'s':'')+' left to complete.';}
+    else{msg.style.display='none';}
+  }
+  window.toggleCheck=function(i){var p=load();p[i]=!p[i];save(p);paint();};
+  paint();
+})();
+</script>
+
+
+    </div><!-- /pms-content -->
+  </main><!-- /pms-main -->
+</div><!-- /pms-shell -->
+
+<!-- Auth + Nav (order matters: nav.js first so the DOM is ready when clerk-init fires events) -->
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/clerk-init.js"></script>
+
+<!-- Global scripts ported from the Softr header/footer -->
+<script src="/assets/js/ga.js"></script>
+<script src="/assets/js/newsletter.js"></script>
+<script src="/assets/js/lead-capture.js"></script>
+<script src="/assets/js/cmdk.js"></script>
+<script src="/assets/js/footer-links.js"></script>
+<script src="/assets/js/guide-ai.js"></script>
+
+
+</body>
+</html>
