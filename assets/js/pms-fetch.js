@@ -18,7 +18,7 @@
 
   /* Must mirror CLERK_AUTH_PATHS / CLERK_AUTH_ACTIONS in the Worker. */
   var PATHS = {
-    '/transcribe': 1, '/download-file': 1, '/template-content': 1, '/scenario-content': 1,
+    '/transcribe': 1, '/download-file': 1, '/template-content': 1, '/scenario-content': 1, '/guide-content': 1,
     '/cert-questions': 1, '/cert-submit': 1, '/cert-verify': 1,
     '/forge-playbook': 1, '/case-room': 1, '/design-track': 1,
     '/me': 1, '/claim-key': 1

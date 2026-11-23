@@ -180,980 +180,508 @@
 
 <script>
 const GUIDES = {
-
-  'how-to-run-9box': {
-    title: 'How to Run a 9-Box Calibration',
-    description: 'Step-by-step guide to placing employees correctly in the 9-Box matrix',
-    category: 'Performance',
-    tier: 'Free',
-    readTime: '8 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=ninebox',
-    calculatorName: '9-Box Grid Calculator',
-    toc: ['What is the 9-Box?','Before You Start','Step-by-Step Process','Common Mistakes','Calibration Checklist'],
-    related: [
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-      { slug: 'succession-pipeline', title: 'Building a Succession Pipeline', icon: '🔮' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What is the 9-Box Grid?</h2>
-        <div class="guide-text">
-          <p>The 9-Box Grid is the most widely used talent management tool in the world. Used by GE, McKinsey, and virtually every Fortune 500 company, it plots employees on a 3×3 matrix - <strong>Performance</strong> on the X-axis and <strong>Potential</strong> on the Y-axis.</p>
-          <p>The result: nine distinct talent categories ranging from "Low Performer" to "Star", each requiring a different management response. Done well, it gives HR and senior leadership a single, shared view of your talent landscape - who to invest in, who to accelerate, who to manage out.</p>
-          <div class="callout"><strong>Why it works:</strong> The 9-Box forces managers to make a two-dimensional judgment about their people. Most annual reviews only capture performance. The 9-Box adds the crucial question: <em>can this person grow beyond their current role?</em></div>
-          <p>The challenge isn't understanding the grid - it's running the calibration process fairly, consistently, and without bias. That's what this guide covers.</p>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Preparation</div>
-        <h2 class="section-heading">Before You Start</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Define your rating scale</div><div class="step-body">Performance ratings should be based on a consistent 1–5 scale anchored to observable behaviours - not gut feel. Every manager in the room must be using the same definition of a "4".</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Gather potential evidence</div><div class="step-body">Potential is harder to rate than performance. Use three indicators: <strong>Learning agility</strong> (how quickly do they pick up new skills?), <strong>Leadership behaviour</strong> (do others follow them?), and <strong>Ambition + drive</strong> (do they seek stretch assignments?).</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Pre-populate the grid before the meeting</div><div class="step-body">Don't fill in the 9-Box live in the room - that anchors everyone to the first opinion. Have each manager independently place their direct reports first, then compare placements in the calibration session.</div></div></div>
-          <div class="warning-box"><strong>⚠️ Watch out for:</strong> Recency bias (rating based on last 3 months, not the full year), halo effect (one strong project inflates the whole rating), and the "nice manager" trap (managers who rate everyone high to avoid conflict).</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">The Process</div>
-        <h2 class="section-heading">Step-by-Step: Running the Session</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Set the rules upfront (5 min)</div><div class="step-body">Open with the ground rules: this is a talent conversation, not a performance review. Ratings are not final until the full group agrees. All placements are confidential. No one defends - everyone challenges constructively.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Review pre-submitted placements (15 min)</div><div class="step-body">Display all managers' pre-submitted placements on a shared screen. Highlight discrepancies - where two managers placed the same person in very different boxes. These are your calibration flashpoints.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Calibrate box by box, not person by person (30–45 min)</div><div class="step-body">Work through the boxes systematically. Start with the <strong>Stars (top-right)</strong> - these are your easiest conversations and build momentum. Then tackle the <strong>Low Performers (bottom-left)</strong>. Leave the middle boxes for last.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Apply the distribution check (10 min)</div><div class="step-body">After placements, count the distribution. A healthy org typically has 10–15% Stars, 25–35% High Performers, 40–50% Core Performers, 10–20% in the lower boxes.</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Define next steps per box (10 min)</div><div class="step-body">The 9-Box only has value if it drives action. Agree on the management response for each box before leaving the room.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Common Pitfalls</div>
-        <h2 class="section-heading">Mistakes That Kill the 9-Box</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Treating it as a once-a-year exercise.</strong> The 9-Box should be a living document, updated at least twice a year.</li>
-            <li><strong>No action after the session.</strong> If the output stays in a slide deck and no manager has a different conversation as a result, the exercise was theatre.</li>
-            <li><strong>Using only manager input.</strong> The best organisations triangulate manager ratings with 360° feedback, OKR attainment, and skip-level conversations.</li>
-            <li><strong>Forgetting to look at box trajectories.</strong> Someone moving from box 5 to box 2 in 12 months is a different conversation than someone who's been in box 5 for three years.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Defined consistent performance rating scale (1–5) with behavioural anchors',
-      'Gathered performance data for the full review period (not just last 3 months)',
-      'Collected potential evidence: learning agility, leadership behaviour, drive',
-      'Asked each manager to independently pre-place their direct reports',
-      'Identified calibration flashpoints (same person, different box from two managers)',
-      'Booked a 90-minute calibration session with all relevant managers',
-      'Set and shared ground rules before the session starts',
-      'Worked through Stars and Low Performers first, then the middle boxes',
-      'Ran the distribution check - no box has >50% of the population',
-      'Defined specific next steps (development, conversations, opportunities) per box',
-      'Scheduled a follow-up review in 6 months to track movement',
-    ]
-  },
-
-  'bell-curve-vs-forced-ranking': {
-    title: 'Bell Curve vs Forced Ranking',
-    description: 'When to use each approach and how to avoid the pitfalls of both',
-    category: 'Performance',
-    tier: 'Free',
-    readTime: '6 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=bellcurve',
-    calculatorName: 'Bell Curve Calculator',
-    toc: ["What's the Difference?",'The Case For Each','When They Go Wrong','The Hybrid Approach','Implementation Checklist'],
-    related: [
-      { slug: 'how-to-run-9box', title: 'How to Run a 9-Box Calibration', icon: '📊' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'salary-increment-planning', title: 'Salary Increment Planning', icon: '💰' },
-    ],
-    content: `
-      <section id="difference">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What's the Difference?</h2>
-        <div class="guide-text">
-          <p><strong>Bell Curve (Normal Distribution):</strong> Employees are expected to fall naturally across a distribution - typically 10% exceptional, 25% above average, 45% average, 15% below average, and 5% poor performers. The curve is a target shape, not a hard quota.</p>
-          <p><strong>Forced Ranking (Stack Ranking):</strong> Employees are explicitly ranked 1 to N within their group, and a fixed percentage must land in each category regardless of actual performance. The bottom X% face consequences every single cycle.</p>
-          <div class="callout"><strong>The key distinction:</strong> Bell Curve is a <em>guideline</em> that shapes calibration conversations. Forced Ranking is a <em>mandate</em> that determines outcomes. One informs - the other dictates.</div>
-        </div>
-      </section>
-      <section id="case-for">
-        <div class="section-label">The Arguments</div>
-        <h2 class="section-heading">The Case For Each</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">🔔</div><div class="step-content"><div class="step-title">Why Bell Curve works</div><div class="step-body">It combats grade inflation - the single biggest calibration disease in most organisations. When every manager rates 80% of their team as "exceeds expectations," the rating loses all meaning.</div></div></div>
-          <div class="step-block"><div class="step-num">📋</div><div class="step-content"><div class="step-title">Why Forced Ranking was invented</div><div class="step-body">GE's logic in the 1980s: continuously improving the talent pool by removing the bottom 10% annually raises the average quality of the organisation over time.</div></div></div>
-          <div class="step-block"><div class="step-num">🏢</div><div class="step-content"><div class="step-title">Context where each fits</div><div class="step-body">Bell Curve fits most organisations. Forced Ranking has narrow applications: large sales organisations with clear individual metrics, or organisations where role performance is genuinely zero-sum.</div></div></div>
-        </div>
-      </section>
-      <section id="wrong">
-        <div class="section-label">The Pitfalls</div>
-        <h2 class="section-heading">When They Go Wrong</h2>
-        <div class="guide-text">
-          <div class="warning-box"><strong>Bell Curve failures:</strong> Applying the curve rigidly to small teams. Treating the target distribution as a hard quota. Using the curve as a substitute for actual manager judgment.</div>
-          <div class="warning-box"><strong>Forced Ranking failures:</strong> Microsoft abandoned stack ranking in 2013 after it was cited as a primary cause of talent loss and internal political behaviour. It also destroys high-performing teams: a team of 10 stars still has a bottom 10%.</div>
-          <div class="callout"><strong>The research verdict:</strong> A 2012 study of 14,000 employees found forced ranking reduced collaboration scores by 28% and increased voluntary turnover among high performers by 19%.</div>
-        </div>
-      </section>
-      <section id="hybrid">
-        <div class="section-label">Best Practice</div>
-        <h2 class="section-heading">The Hybrid Approach That Actually Works</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Set a target distribution, not a quota</div><div class="step-body">Publish the expected distribution as a target. Allow deviations of up to 10 percentage points without justification. Deviations beyond that require written rationale reviewed by HR.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Calibrate at the business unit level, not team level</div><div class="step-body">Bell curves applied to teams of fewer than 15 people are statistically meaningless. Aggregate ratings across the business unit (50+ people) before checking distribution health.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Use distribution as a diagnostic, not a sentence</div><div class="step-body">The distribution flags the conversation - it doesn't decide the outcome.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Never tie distribution directly to headcount decisions</div><div class="step-body">The moment "bottom 10%" automatically means "managed out," you have forced ranking - regardless of what you call it.</div></div></div>
-        </div>
-      </section>`,
-    checklist: [
-      'Decided which approach fits your organisation - bell curve guideline or forced ranking mandate',
-      'Checked team sizes - bell curve only applied to groups of 15+ people',
-      'Published target distribution to all managers before calibration season',
-      'Clarified that distribution is a guideline, not a hard quota',
-      'Set the deviation threshold that triggers HR review (e.g. >10% variance)',
-      'Confirmed consequences are NOT automatically tied to distribution position',
-      'Trained managers on the difference between grade inflation and genuine high performance',
-      'Built an appeals or review process for employees who dispute their placement',
-      "Reviewed last year's distribution for signs of gaming",
-      'Planned a post-cycle review to assess whether the distribution produced fair outcomes',
-    ]
-  },
-
-  'setting-okrs-that-work': {
-    title: 'Setting OKRs That Actually Work',
-    description: 'A practical framework for goals that drive real outcomes',
-    category: 'OKR',
-    tier: 'Free',
-    readTime: '10 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=okr',
-    calculatorName: 'OKR Tracker',
-    toc: ['What Makes a Good OKR?','Before You Write a Single Goal','Writing OKRs Step-by-Step','The Most Common OKR Mistakes','OKR Health Checklist'],
-    related: [
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'how-to-run-9box', title: 'Running a 9-Box Grid', icon: '📊' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What Makes a Good OKR?</h2>
-        <div class="guide-text">
-          <p>OKRs - Objectives and Key Results - were invented at Intel by Andy Grove and made famous by Google. Set a clear, inspiring <strong>Objective</strong> (what you want to achieve) and pair it with 2–4 measurable <strong>Key Results</strong> (how you'll know you got there).</p>
-          <div class="callout"><strong>The OKR test:</strong> Read your Objective out loud. Does it make someone lean forward? Now read your Key Results. Can you unambiguously answer "did we hit this?" at the end of the quarter? If no to either - you have a to-do list with aspirational language, not an OKR.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Preparation</div>
-        <h2 class="section-heading">Before You Write a Single Goal</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">What are the 3–5 things that must be true for this year to be a success?</div><div class="step-body">Not everything - the 3–5 things. If your CEO cannot answer this in one sentence per theme, your organisation isn't ready for OKRs.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Are you using OKRs for alignment or accountability?</div><div class="step-body">Alignment OKRs are shared across teams. Accountability OKRs are individually owned. Mixing both without clarity creates the worst of both worlds.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">What is the grading convention?</div><div class="step-body">Google uses a 0–1 scale where 0.7 is considered a success. Decide this before launch and don't change it mid-cycle.</div></div></div>
-          <div class="warning-box"><strong>⚠️ The cascade trap:</strong> Don't cascade OKRs top-down like a waterfall. Best practice: "top-down context, bottom-up goals."</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">The Process</div>
-        <h2 class="section-heading">Writing OKRs Step-by-Step</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Write the Objective - make it a rallying cry, not a task</div><div class="step-body">Bad: "Improve customer satisfaction." Good: "Become the most trusted onboarding experience in our category by Q4."</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Write 2–4 Key Results - outcomes, not activities</div><div class="step-body">Bad: "Launch new onboarding flow." Good: "Increase Day-30 retention from 61% to 78%." The launch is an activity. The retention improvement is a Key Result.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Apply the "so what" test to each Key Result</div><div class="step-body">If we hit this number and nothing else changed, would the Objective be meaningfully advanced? If no - it's a proxy metric.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Set the baseline before setting the target</div><div class="step-body">"Increase NPS from 32 to 55" is valid. "Increase NPS to 55" is not - no baseline means no way to assess ambition or fairness.</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Run a weekly or bi-weekly check-in, not a quarterly one</div><div class="step-body">OKRs without cadenced check-ins are just goal documents. 15 minutes. Three questions: status, confidence score, one blocker.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Common Pitfalls</div>
-        <h2 class="section-heading">The Most Common OKR Mistakes</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Too many OKRs.</strong> More than 3 Objectives and 9 Key Results means you have priorities, not OKRs.</li>
-            <li><strong>Tying OKRs directly to bonuses.</strong> The moment OKRs are financially consequential, people start sandbagging.</li>
-            <li><strong>Set-and-forget culture.</strong> OKRs that aren't reviewed regularly become irrelevant within six weeks.</li>
-            <li><strong>Writing KRs for tasks you'd do anyway.</strong> "Complete Q3 product roadmap" is not a Key Result - it's your job.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Company-level Objectives are set by leadership and communicated before team OKR-writing begins',
-      'Each Objective is qualitative, inspiring, and achievable within the OKR period',
-      'Each team has no more than 3 Objectives and 4 Key Results per Objective',
-      'Every Key Result is an outcome metric, not an activity or deliverable',
-      'Every Key Result has a clear baseline number and a stretch target',
-      'Grading convention (0–1 scale, RAG, % completion) is agreed and communicated',
-      'OKRs are not directly tied to bonus or compensation decisions',
-      'Weekly or bi-weekly check-in cadence is scheduled for the full OKR period',
-      'At least one Key Result per Objective would be uncomfortable to miss',
-      'OKRs are visible across the team - not siloed in individual documents',
-    ]
-  },
-
-  'pay-equity-audit': {
-    title: 'Pay Equity Audit Playbook',
-    description: 'How to identify and fix pay gaps in your organisation',
-    category: 'Compensation',
-    tier: 'Pro',
-    readTime: '9 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=compensation',
-    calculatorName: 'Compensation Equity Calculator',
-    toc: ['What Is Pay Equity (and What It Is Not)','Before You Run the Numbers','Running the Audit Step-by-Step','What to Do With the Findings','Pay Equity Checklist'],
-    related: [
-      { slug: 'salary-increment-planning', title: 'Salary Increment Planning', icon: '💰' },
-      { slug: 'dei-analytics-guide', title: 'DEI Analytics Guide', icon: '🌍' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What Is Pay Equity (and What It Is Not)</h2>
-        <div class="guide-text">
-          <p><strong>Equal pay</strong> is a legal standard: employees doing the same job must receive the same pay regardless of gender or ethnicity. <strong>Equitable pay</strong> is a business and fairness standard: when you control for role, level, experience, and performance, do systematic pay gaps still exist between demographic groups?</p>
-          <div class="callout"><strong>The compa-ratio framework:</strong> Compa-ratio = actual salary ÷ market midpoint for their role and level. Below 0.85 = underpaid. Above 1.15 = overpaid. Analysing compa-ratios by gender and ethnicity reveals structural gaps invisible in raw salary comparisons.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Preparation</div>
-        <h2 class="section-heading">Before You Run the Numbers</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Build a clean, consistent job architecture</div><div class="step-body">Map every role to a level band (e.g. L1–L6). This is the hardest part of a pay audit - and the most important.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Gather market benchmarks by role and level</div><div class="step-body">Use salary surveys (Radford, Mercer, Korn Ferry) or local market data to establish market midpoints for each role-level combination.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Decide on your control variables</div><div class="step-body">Role, level, function, geography, years of experience, and performance rating. Be cautious about tenure - it can perpetuate historical inequity.</div></div></div>
-          <div class="warning-box"><strong>⚠️ Statistical significance matters:</strong> Fewer than 30 people in a demographic group means findings are likely to mislead more than inform.</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">The Audit</div>
-        <h2 class="section-heading">Running the Audit Step-by-Step</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Calculate compa-ratios for every employee</div><div class="step-body">Compa-ratio = Actual Salary ÷ Market Midpoint. A compa-ratio of 0.92 means the employee is paid 8% below market.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Segment compa-ratios by demographic group</div><div class="step-body">A gap of more than 5 percentage points in average compa-ratio between groups within the same level warrants investigation.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Run a regression analysis</div><div class="step-body">An unadjusted gender pay gap of 18% might reduce to 4% after controlling for level and role - but that remaining 4% is the systemic gap you need to fix.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Identify outliers in both directions</div><div class="step-body">Flag every employee with compa-ratio below 0.85 (underpaid) or above 1.20 (significantly overpaid).</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Build a remediation cost estimate</div><div class="step-body">In most organisations, 3–5% of total payroll is sufficient to close identified gaps. Present with a phased timeline.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Taking Action</div>
-        <h2 class="section-heading">What to Do With the Findings</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>The communication question.</strong> Acknowledge publicly that an audit was conducted and gaps are being corrected - without disclosing individual data.</li>
-            <li><strong>The "we can't afford it" response.</strong> Pay equity corrections are legal and ethical obligations, not optional expenses.</li>
-            <li><strong>The recurring gap problem.</strong> Fix the process that created the gaps - starting salary practices, promotion rates, calibration quality.</li>
-          </ul>
-          <div class="warning-box"><strong>Don't reduce anyone's salary.</strong> Pay equity corrections should only move salaries upward.</div>
-        </div>
-      </section>`,
-    checklist: [
-      'Job architecture is defined - every role mapped to a consistent level band',
-      'Market salary data obtained for each role/level combination',
-      'Compa-ratios calculated for every employee against market midpoints',
-      'Compa-ratios segmented by gender and ethnicity within each level',
-      'Demographic groups with fewer than 30 people flagged for cautious interpretation',
-      'Employees with compa-ratio below 0.85 identified as underpaid priority cases',
-      'Root cause explored for each outlier (documented rationale or unexplained gap)',
-      'Remediation cost estimated and phased correction timeline proposed',
-      'Leadership briefed on findings before any broader communication',
-      'Process changes identified to prevent the same gaps recurring',
-    ]
-  },
-
-  'succession-pipeline': {
-    title: 'Building a Succession Pipeline',
-    description: 'A 4-step approach to building real bench strength',
-    category: 'Succession',
-    tier: 'Pro',
-    readTime: '7 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=succession',
-    calculatorName: 'Succession Planning Calculator',
-    toc: ['Why Most Succession Plans Fail','The 4-Horizon Pipeline Model','Building Your Bench Step-by-Step','Accelerating Successor Readiness','Succession Planning Checklist'],
-    related: [
-      { slug: 'how-to-run-9box', title: 'Running a 9-Box Grid', icon: '📊' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">Why Most Succession Plans Fail</h2>
-        <div class="guide-text">
-          <p>A succession plan is a document. A succession <em>pipeline</em> is a living system that continuously identifies talent, accelerates development, and tracks readiness.</p>
-          <div class="callout"><strong>The hard truth:</strong> According to PwC's annual CEO survey, 69% of organisations have no identified internal successor for their CEO. The reason is almost never a lack of talent - it's a lack of intentional development.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">The Framework</div>
-        <h2 class="section-heading">The 4-Horizon Pipeline Model</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">🟢</div><div class="step-content"><div class="step-title">Ready Now</div><div class="step-body">Could step into the role within 3 months. In most organisations, 5–10% of high potentials genuinely qualify as Ready Now for the next level.</div></div></div>
-          <div class="step-block"><div class="step-num">🔵</div><div class="step-content"><div class="step-title">Ready in 1 Year</div><div class="step-body">Has the raw capability but needs one or two more experiences: a stretch assignment, a cross-functional rotation, or significant exposure to a weaker business dimension.</div></div></div>
-          <div class="step-block"><div class="step-num">🟡</div><div class="step-content"><div class="step-title">Ready in 2 Years</div><div class="step-body">Strong long-term potential but earlier in the development journey. These are your investment candidates.</div></div></div>
-          <div class="step-block"><div class="step-num">⚪</div><div class="step-content"><div class="step-title">Not Yet Identified</div><div class="step-body">Roles with no viable internal candidate. The most important category to be honest about - it drives external sourcing decisions.</div></div></div>
-          <div class="warning-box"><strong>⚠️ The depth check:</strong> Every critical role should have at least one Ready Now and one Ready in 1 Year candidate. One name across all horizons = a single point of failure.</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Building the Pipeline</div>
-        <h2 class="section-heading">Building Your Bench Step-by-Step</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Identify critical roles (not just senior roles)</div><div class="step-body">Ask: "If this person left tomorrow with no notice, how bad would it be?" High impact = critical role.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Map the competency profile for each critical role</div><div class="step-body">Define what "ready" looks like - 4–6 competencies reflecting where the business is going, not just where it is.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Assess candidates against the future competency profile</div><div class="step-body">Rate each candidate: Demonstrated, Developing, or Gap. Three or more gaps = Ready in 2+ Years regardless of 9-Box placement.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Build individual development plans for each successor</div><div class="step-body">Document the two or three experiences they need to be ready, who owns making those experiences happen, and a timeline.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Accelerating Readiness</div>
-        <h2 class="section-heading">Accelerating Successor Readiness</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Delegation with consequence.</strong> Give them a real project with real stakes and real authority - not a shadow project.</li>
-            <li><strong>Cross-functional exposure.</strong> Six-month rotations build the business breadth that internal development alone cannot provide.</li>
-            <li><strong>External perspective.</strong> External advisory boards, industry programmes, or external forums build market awareness.</li>
-          </ul>
-          <div class="callout"><strong>The retention risk:</strong> High potentials in the pipeline for 18+ months without visible progress will leave - often for a competitor who will give them the role immediately.</div>
-        </div>
-      </section>`,
-    checklist: [
-      'Critical roles identified using impact-of-vacancy test (not just seniority)',
-      'At least 2 succession candidates mapped for each critical role',
-      'Each candidate assessed against the 4-Horizon model (Ready Now / 1 Year / 2 Years / Not Ready)',
-      'Future-facing competency profile defined for each critical role',
-      'Each candidate assessed against competency profile (Demonstrated / Developing / Gap)',
-      'Individual development plan in place for every Ready Now and 1-Year candidate',
-      'Roles with zero internal candidates flagged as talent risk',
-      'Succession data reviewed at least twice a year (not just annually)',
-      'High potentials in pipeline are aware of their status and development plan',
-      'Pipeline gender and ethnicity diversity reviewed',
-    ]
-  },
-
-  'manager-dashboard-review': {
-    title: 'How to Run a Manager Dashboard Review',
-    description: 'Turn your team analytics into actionable conversations that drive results',
-    category: 'Performance',
-    tier: 'Pro',
-    readTime: '9 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=dashboard',
-    calculatorName: 'Manager Dashboard',
-    toc: ['What Is a Dashboard Review?','The Six Metrics That Matter','Running the Review Conversation','From Data to Action','Dashboard Review Checklist'],
-    related: [
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'how-to-run-9box', title: 'Running a 9-Box Grid', icon: '📊' },
-      { slug: 'succession-pipeline', title: 'Building a Succession Pipeline', icon: '🔮' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What Is a Manager Dashboard Review?</h2>
-        <div class="guide-text">
-          <p>A structured conversation between an HR Business Partner and a line manager - using team analytics data as the anchor - to identify talent risks, performance patterns, and development priorities before they become problems.</p>
-          <div class="callout"><strong>The manager's perspective matters:</strong> The HRBP's role is not auditor - it's thought partner. The conversation should feel like two people solving a puzzle together.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">The Metrics</div>
-        <h2 class="section-heading">The Six Metrics That Matter</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Performance distribution</div><div class="step-body">Compare to the organisation benchmark. 70% at top two ratings = either exceptional team or grade inflation problem.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Flight risk concentration</div><div class="step-body">Each departure of a top performer costs 1.5–2x their annual salary. If 40%+ of high performers are medium or high risk, something structural needs to change.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Succession coverage ratio</div><div class="step-body">Below 60% means the team is one or two departures away from a continuity crisis.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">OKR health score</div><div class="step-body">Below 50% - don't ask "why is this low?" Ask "what's getting in the way?"</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">9-Box movement</div><div class="step-body">A team where nobody has moved boxes in 12 months is either perfectly calibrated (rare) or stagnant (common).</div></div></div>
-          <div class="step-block"><div class="step-num">6</div><div class="step-content"><div class="step-title">Compa-ratio spread</div><div class="step-body">Wide dispersion is often the root cause of pay equity issues that only surface in formal audits.</div></div></div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">The Conversation</div>
-        <h2 class="section-heading">Running the Review Conversation</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Pre-read: send the dashboard 48 hours ahead</div><div class="step-body">The best reviews happen when both parties have already formed hypotheses. Walking into data cold wastes the first 15 minutes.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Open with the manager's read (10 min)</div><div class="step-body">"Looking at your dashboard, what stands out to you?" - reveals whether the manager understands their data.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Surface the 2–3 most important conversations (20 min)</div><div class="step-body">High performer flight risk and succession gaps first. Then performance distribution anomalies. Then OKR health.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Close with 3 specific actions and owners (10 min)</div><div class="step-body">Not "we'll look into the flight risk situation" - but: "Manager will have a stay conversation with [Name] before end of month."</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Taking Action</div>
-        <h2 class="section-heading">From Data to Action</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Reporting without recommending.</strong> Bring a perspective. HRBPs who present data without a point of view are information brokers, not business partners.</li>
-            <li><strong>Action items with no accountability.</strong> Every output needs a name, a deliverable, and a date.</li>
-            <li><strong>Reviewing the same data every quarter without improvement.</strong> Name the stagnation explicitly and escalate if needed.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Dashboard sent to manager at least 48 hours before the review meeting',
-      'HRBP has independently reviewed data and noted 2–3 priority areas before the meeting',
-      "Meeting opened with manager's perspective before HRBP shares observations",
-      'Performance distribution compared to organisation benchmark, not just reviewed in isolation',
-      'Flight risk status checked specifically for high performers (not just overall team)',
-      'Succession coverage ratio reviewed and any role with zero successors flagged',
-      '"What\'s blocking" framing used for OKR health - not just "why is this low"',
-      'Meeting closed with exactly 3 written actions: who, what, by when',
-      'Actions from previous review checked before any new agenda items',
-      'Escalation path agreed for any items that have stalled across multiple quarters',
-    ]
-  },
-
-  'mastering-calibration': {
-    title: 'Mastering Calibration Sessions',
-    description: 'How to run fair, bias-free calibration sessions that stick',
-    category: 'Performance',
-    tier: 'Pro',
-    readTime: '11 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=calibration',
-    calculatorName: 'Calibration Simulator',
-    toc: ['Why Calibration Breaks Down','Before the Session','Facilitation Techniques That Work','Handling the Hard Conversations','Calibration Facilitator Checklist'],
-    related: [
-      { slug: 'how-to-run-9box', title: 'Running a 9-Box Grid', icon: '📊' },
-      { slug: 'bell-curve-vs-forced-ranking', title: 'Bell Curve vs Forced Ranking', icon: '📈' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">Why Calibration Breaks Down</h2>
-        <div class="guide-text">
-          <p>Calibration sessions are the single most important event in the performance management calendar. They're also the one most likely to be done badly - an hour of rushed conversation with the most senior person's opinions dominating.</p>
-          <div class="callout"><strong>What calibration is actually for:</strong> Ensuring that a "4" given by one manager means the same thing as a "4" given by another. Without calibration, you don't have a performance system - you have individual manager opinions using the same numerical scale.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Preparation</div>
-        <h2 class="section-heading">Before the Session: The Setup That Determines Everything</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Anchor each rating to behavioural definitions</div><div class="step-body">Bad: "5 = Exceptional." Good: "5 = Consistently delivers results that exceed their role scope; regularly cited by peers and stakeholders as a critical contributor."</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Require managers to submit ratings with written evidence</div><div class="step-body">Ratings submitted without evidence are opinions. Require 2–3 specific examples per employee - not summaries, but concrete instances.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Pre-analyse the submissions for anomalies</div><div class="step-body">Flag: outlier distributions by manager, employees rated very differently by managers who've both worked with them, and anyone at rating 1–2 who has received no prior feedback.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Share the "state of play" before the meeting</div><div class="step-body">Send the aggregate distribution summary (no names) so managers arrive with awareness of where their ratings sit relative to the group.</div></div></div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Facilitation</div>
-        <h2 class="section-heading">Facilitation Techniques That Work</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Open with a calibration anchor case</div><div class="step-body">Start with a fictional employee profile. Each manager rates independently. Then reveal the spread. Makes divergence visible before anyone is defending a real person.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Work the outliers first, not the middle</div><div class="step-body">Start with 5s - highest evidentiary bar, most susceptible to inflation. Then 1s and 2s. The 3s and 4s can be reviewed more efficiently once anchors are established.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Use "what's the evidence?" as your primary facilitation tool</div><div class="step-body">Whenever a manager makes a claim, immediately ask: "What's the specific evidence?" Not confrontational - it's the mechanism for keeping calibration grounded in data.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Name the biases that are operating in the room</div><div class="step-body">This takes courage but shifts the room. Call out HiPPO effect, recency bias, and halo effect when you see them operating.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">The Hard Conversations</div>
-        <h2 class="section-heading">Handling the Hard Conversations</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>The HiPPO problem.</strong> Use silent written ratings before any verbal discussion on contested cases.</li>
-            <li><strong>The "I know this person better" defence.</strong> Response: "Can you share the evidence that supports this rating?"</li>
-            <li><strong>The rating 1 employee with no prior feedback.</strong> Flag immediately: action plans must exist before the rating is communicated.</li>
-          </ul>
-          <div class="warning-box"><strong>On confidentiality:</strong> The outcome (the rating) is communicated to the employee. The calibration conversation that led to it is not. Sharing calibration room discussions with employees is a serious breach.</div>
-        </div>
-      </section>`,
-    checklist: [
-      'Behavioural rating definitions published and shared with all managers before the cycle',
-      'Managers required to submit ratings with 2–3 specific evidence examples per employee',
-      'Pre-analysis completed: flagged outlier distributions and manager anomalies',
-      'Aggregate distribution summary (no names) shared with managers 48 hours before session',
-      'Calibration anchor case prepared to open the session',
-      'Facilitation approach starts with 5s and 1s before moving to the middle distribution',
-      '"What\'s the evidence?" used consistently as the primary facilitation challenge',
-      'Known biases (HiPPO effect, recency, halo) called out during the session if observed',
-      'Any rating 1–2 employee without prior documented feedback flagged immediately',
-      'Confidentiality expectations communicated to all managers before the session starts',
-    ]
-  },
-
-  'dei-analytics-guide': {
-    title: 'DEI Analytics - Reading the Data Right',
-    description: 'How to interpret DEI metrics and take meaningful action',
-    category: 'DEI',
-    tier: 'Pro',
-    readTime: '10 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=dei',
-    calculatorName: 'DEI Analytics Calculator',
-    toc: ['What DEI Data Actually Tells You','The Five Metrics Worth Tracking','Interpreting Your DEI Dashboard','Moving from Data to Action','DEI Analytics Checklist'],
-    related: [
-      { slug: 'pay-equity-audit', title: 'Pay Equity Audit Playbook', icon: '💰' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'succession-pipeline', title: 'Building a Succession Pipeline', icon: '🔮' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What DEI Data Actually Tells You</h2>
-        <div class="guide-text">
-          <p>Good DEI analytics identifies where in the talent lifecycle disadvantage is occurring, how large the gaps are, and what is driving them.</p>
-          <div class="callout"><strong>The representation vs. equity distinction:</strong> Representation metrics tell you about outcomes. Equity metrics (promotion rates, performance ratings, compa-ratios by demographic) tell you about processes. Most organisations track representation and wonder why it doesn't improve - because representation is the output of dozens of process decisions.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">The Metrics</div>
-        <h2 class="section-heading">The Five Metrics Worth Tracking</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Promotion rate by demographic group (within level)</div><div class="step-body">If women at Senior level are promoted at 12% per year and men at 19% - controlling for performance rating - you have a structural promotion gap.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Performance rating distribution by demographic group</div><div class="step-body">Systematically lower ratings for equivalent employees points to calibration bias - not a performance problem.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Pay compa-ratio gap by gender and ethnicity</div><div class="step-body">Report the adjusted pay gap - the gap remaining after controlling for role, level, and performance. That's the actual inequity.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">High potential identification rate by demographic group</div><div class="step-body">Underrepresentation in the HiPo pool signals systematic bias in how potential is assessed or who has access to visibility.</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Attrition rate by demographic group and level</div><div class="step-body">Selective attrition - women or minority employees leaving at higher rates at mid-senior levels - is the primary driver of underrepresentation in leadership.</div></div></div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Interpretation</div>
-        <h2 class="section-heading">Interpreting Your DEI Dashboard</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Look for patterns, not single data points</div><div class="step-body">Lower promotion rates AND lower performance ratings AND lower HiPo identification rates for the same group is harder to explain by any single confounding factor.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Control before you conclude</div><div class="step-body">When gaps remain after controlling for legitimate factors, you've found something that needs explaining.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Be honest about statistical significance</div><div class="step-body">For organisations under 200 employees, focus on gender analysis only. Treat ethnic minority analysis as directional rather than conclusive.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Track trends, not just snapshots</div><div class="step-body">Three years of data tells you whether you're moving in the right direction. Single-year data just tells you where you are.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Taking Action</div>
-        <h2 class="section-heading">Moving from Data to Action</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Targeting outputs rather than inputs.</strong> Set targets on process metrics - promotion rate parity, HiPo identification parity - not just representation headcounts.</li>
-            <li><strong>One-size interventions.</strong> If the gap is at the Senior to Director transition, the fix is targeted calibration reform - not company-wide unconscious bias training.</li>
-            <li><strong>No manager accountability.</strong> Link manager performance assessments to DEI outcomes within their team.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Five core process metrics tracked: promotion rate, performance rating distribution, compa-ratio gap, HiPo identification rate, and attrition rate',
-      'All metrics analysed within level and role, not just across the whole organisation',
-      'Adjusted (controlled) metrics reported alongside raw metrics',
-      'Statistical significance checked - small group findings flagged as directional only',
-      'At least 3 years of historical data available for trend analysis',
-      'DEI findings presented at leadership level with specific process recommendations',
-      'Interventions targeted to the specific lifecycle stage where gaps are largest',
-      'Manager-level DEI data included in manager performance discussions',
-      'Employee demographic data collection rates above 70% before drawing conclusions',
-      'DEI metrics reviewed at least annually, with interim check at 6 months',
-    ]
-  },
-
-  'effective-pip-process': {
-    title: 'Running an Effective PIP Process',
-    description: 'A humane, structured approach to performance improvement',
-    category: 'Performance',
-    tier: 'Pro',
-    readTime: '12 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=pip',
-    calculatorName: 'PIP Tracker',
-    toc: ["What a PIP Is (and Isn't)",'Before You Start a PIP','Designing the PIP','Running the PIP Period','PIP Process Checklist'],
-    related: [
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: '360-feedback-guide', title: '360° Feedback Guide', icon: '🔄' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What a PIP Is (and Isn't)</h2>
-        <div class="guide-text">
-          <p>A PIP used only as exit documentation creates a process that is expensive, legally risky, demoralising for the employee, and exhausting for the manager - while almost never producing improved performance.</p>
-          <div class="callout"><strong>The honest conversation you need to have first:</strong> "Do I believe this person can succeed in this role with the right support, or am I initiating this because I've already decided the relationship is over?" If the latter - a PIP is the wrong tool.</div>
-          <p>When designed and run well, PIPs succeed roughly 30–40% of the time - meaning the employee genuinely improves and continues in the role.</p>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Preparation</div>
-        <h2 class="section-heading">Before You Start a PIP</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Document that informal feedback has already been given</div><div class="step-body">A PIP should never be the first time an employee hears that their performance is a concern. No paper trail of prior feedback = legally fragile and humanly unfair.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Diagnose the root cause of underperformance</div><div class="step-body">Five causes: skills gap, motivation gap, role clarity gap, resourcing gap, or personal circumstances. Each requires a different response. A PIP is not the right tool for a resourcing gap.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Consult HR and legal before initiating</div><div class="step-body">In most jurisdictions, a formal PIP constitutes the beginning of a disciplinary process. HRBP involvement from the start is non-negotiable.</div></div></div>
-          <div class="warning-box"><strong>⚠️ Protected characteristics:</strong> Verify that performance concerns are independent of any protected characteristic before initiating. PIPs disproportionately against protected groups create discrimination claims.</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Design</div>
-        <h2 class="section-heading">Designing the PIP</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Write specific, measurable performance expectations</div><div class="step-body">Bad: "Needs to improve communication." Good: "Must send project status updates to stakeholders every Friday by 3pm, with no more than one missed update in the 8-week period."</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Define the support that will be provided</div><div class="step-body">A PIP without support commitments from the organisation is a disciplinary document, not an improvement plan.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Set a clear timeline with a midpoint review</div><div class="step-body">30–90 days typically. Build in a formal midpoint review - it gives clarity on progress and creates a documented checkpoint.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">State the consequences clearly - but not harshly</div><div class="step-body">Every PIP must state what happens if expectations are met (continuation in role) and what happens if they're not (typically termination). This must be stated explicitly, not implied.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Execution</div>
-        <h2 class="section-heading">Running the PIP Period</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Weekly check-ins - not less frequent.</strong> Check-ins that slip to bi-weekly signal the manager isn't serious.</li>
-            <li><strong>Document everything in writing within 24 hours.</strong> A written summary the employee acknowledged receiving is documentation. A memory of a Tuesday meeting is not.</li>
-            <li><strong>Don't change the goalposts.</strong> Adding new requirements mid-PIP is both unfair and legally indefensible.</li>
-            <li><strong>If they're improving, say so clearly.</strong> Employees on PIPs are anxious. If they're on track, tell them explicitly and in writing at the midpoint review.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Prior informal feedback documented before PIP initiation',
-      'Root cause of underperformance diagnosed (skills / motivation / clarity / resources / personal)',
-      'HRBP consulted before any PIP conversation with the employee',
-      'Bias check completed - protected characteristic involvement ruled out',
-      'All performance expectations written as specific, observable, time-bound standards',
-      'Support commitments documented: training, coaching, resources, manager check-in frequency',
-      'PIP duration set with explicit midpoint review date',
-      'Consequences of meeting and not meeting expectations stated clearly in writing',
-      'Weekly check-in schedule established and calendar invites sent',
-      'All check-in conversations documented in writing within 24 hours',
-    ]
-  },
-
-  '360-feedback-guide': {
-    title: '360° Feedback That Actually Changes Behaviour',
-    description: 'How to design, run and debrief 360 feedback that creates real change',
-    category: 'Feedback',
-    tier: 'Pro',
-    readTime: '10 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=feedback360',
-    calculatorName: '360° Feedback Tool',
-    toc: ['Why Most 360 Programmes Fail','Designing the Right Questions','Running the Process Fairly','Debriefing for Maximum Impact','360° Feedback Checklist'],
-    related: [
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'effective-pip-process', title: 'Running an Effective PIP Process', icon: '📌' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">Why Most 360 Programmes Fail</h2>
-        <div class="guide-text">
-          <p>The most common failure is using 360 feedback as a performance rating tool rather than a development tool. When scores feed directly into compensation decisions, raters start gaming the system - friends inflate, rivals deflate, everyone rates at the safe middle.</p>
-          <div class="callout"><strong>The cardinal rule:</strong> Decide upfront whether the 360 is for development or evaluation - and keep these uses completely separate. Mixing the two poisons both.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Design</div>
-        <h2 class="section-heading">Designing the Right Questions</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Focus on 6–8 competencies maximum</div><div class="step-body">40 questions across 12 competencies generates survey fatigue. Select competencies most relevant to the individual's role and development stage.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Use frequency-scaled questions, not agreement scales</div><div class="step-body">"1 = Rarely, 5 = Almost Always" forces raters to anchor on actual observed behaviour. "1 = Strongly Disagree" produces socially desirable responses.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Include 2–3 open-ended questions, not 10</div><div class="step-body">Three questions: "Greatest strength as a leader?", "One behaviour change that would most increase effectiveness?", "What should they keep doing they might not realise is impactful?"</div></div></div>
-          <div class="warning-box"><strong>⚠️ Rater anonymity is not optional.</strong> If raters believe responses can be attributed to them, they will not be honest - especially when rating upward.</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Process</div>
-        <h2 class="section-heading">Running the Process Fairly</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Involve the recipient in rater selection, but don't let them control it</div><div class="step-body">Recipient proposes list. Manager/HRBP reviews and adds 2–3 names the recipient didn't suggest - including people they may find challenging.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Set a two-week completion window, no more</div><div class="step-body">Send reminders at Day 7 and Day 12. Close on time - chasing beyond the deadline teaches raters that deadlines are flexible.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Require a minimum response rate</div><div class="step-body">Minimum 5 rater responses before generating the report, with at least 2 in each rater category.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">The Debrief</div>
-        <h2 class="section-heading">Debriefing for Maximum Impact</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Give the recipient the report 48 hours before the debrief.</strong> Reading a 360 report in front of a coach is overwhelming - the recipient needs time to process privately.</li>
-            <li><strong>Start the debrief with strengths, not gaps.</strong> People who understand their genuine strengths create more improvement than those focused exclusively on weakness remediation.</li>
-            <li><strong>Focus on 1–2 development areas, not all of them.</strong> People can only work on one or two things at a time with real traction.</li>
-            <li><strong>Build in a follow-up conversation 60–90 days later.</strong> The debrief without a follow-up is a one-time event. The debrief with a 90-day check-in is the beginning of a development cycle.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      '360 purpose established as development OR evaluation - not both',
-      "Questionnaire limited to 6–8 competencies most relevant to the individual's role",
-      'Frequency-scale rating format used ("Rarely" to "Almost Always")',
-      'Open-ended questions limited to 3 carefully chosen prompts',
-      'Rater selection reviewed by manager/HRBP - not controlled solely by recipient',
-      'Rater anonymity guaranteed in reporting design',
-      'Survey window set to maximum 2 weeks with reminder schedule',
-      'Minimum 5 rater responses required before report generation',
-      'Report sent to recipient 48 hours before debrief conversation',
-      'Debrief facilitated by coach or HRBP (not direct manager)',
-    ]
-  },
-
-  'salary-increment-planning': {
-    title: 'Salary Increment Planning Under Budget Constraints',
-    description: 'How to allocate increments fairly when the budget is tight',
-    category: 'Compensation',
-    tier: 'Pro',
-    readTime: '8 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=increment',
-    calculatorName: 'Increment Calculator',
-    toc: ['The Budget Constraint Reality','Building Your Increment Framework','Allocating the Budget Step-by-Step','Communicating Increment Decisions','Increment Planning Checklist'],
-    related: [
-      { slug: 'pay-equity-audit', title: 'Pay Equity Audit Playbook', icon: '💰' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'dei-analytics-guide', title: 'DEI Analytics Guide', icon: '🌍' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">The Budget Constraint Reality</h2>
-        <div class="guide-text">
-          <p>A 6% budget spread across a population with widely varying performance ratings, market pay positions, and retention risks cannot simultaneously do everything. The organisations that navigate this well make explicit choices about increment philosophy before distribution begins.</p>
-          <div class="callout"><strong>The three philosophies:</strong> <strong>Performance-led:</strong> high performers get disproportionately large increments. <strong>Market-led:</strong> increments sized to bring everyone to market. <strong>Blended:</strong> base increment tied to market position, performance modifier applied on top. Whichever you adopt - articulate it explicitly.</div>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">Framework</div>
-        <h2 class="section-heading">Building Your Increment Framework</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Define the increment range by performance rating</div><div class="step-body">A typical performance-led structure: Rating 5 = 12–15%, Rating 4 = 8–12%, Rating 3 = 4–6%, Rating 2 = 0–3%, Rating 1 = 0%. Publishing these ranges prevents gaming.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Build market position into the increment formula</div><div class="step-body">An employee at 0.82 compa-ratio needs a larger increment than one at 1.05 compa-ratio - even with the same rating.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Set aside a retention pool</div><div class="step-body">Reserve 10–15% of the budget before distributing the rest. Used for targeted retention awards to high-risk, high-value employees identified during the talent review.</div></div></div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Allocation</div>
-        <h2 class="section-heading">Allocating the Budget Step-by-Step</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Calculate the budget envelope by team</div><div class="step-body">Distribute as % of their payroll - not flat headcount allocation. Prevents high-salary teams from having proportionally less to distribute per person.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Have managers propose specific increment amounts</div><div class="step-body">Not just a rating - a specific percentage, resulting new salary, and rationale for any deviation.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Run the equity check before finalising</div><div class="step-body">Are average increment percentages materially different between gender or ethnic groups within the same rating band? Far easier to correct before communication than after.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Review the outliers before sign-off</div><div class="step-body">Flag any increment >50% above or below the band midpoint for that rating. Both ends need senior sign-off and a recorded rationale.</div></div></div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Communication</div>
-        <h2 class="section-heading">Communicating Increment Decisions</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Lead with the "why" before the number.</strong> Anchoring the employee on X% before context is set makes every number feel insufficient.</li>
-            <li><strong>Be specific about what drove the decision.</strong> Explain the rating, the band, and any market adjustment.</li>
-            <li><strong>Don't apologise for the budget.</strong> Transferring discomfort to the employee makes them worry about the organisation rather than feeling recognised.</li>
-          </ul>
-        </div>
-      </section>`,
-    checklist: [
-      'Increment philosophy (performance-led / market-led / blended) documented and communicated before the cycle',
-      'Increment ranges by performance rating band published to all managers before proposals begin',
-      'Market position (compa-ratio) incorporated into the increment formula',
-      'Retention pool (10–15% of budget) set aside before main distribution',
-      'Budget envelope distributed to teams as % of payroll, not flat per-head allocation',
-      'Managers required to submit specific increment amounts with written rationale',
-      'Demographic equity check run on proposed increments before finalisation',
-      'Outlier increments (>50% from band midpoint) flagged for senior review',
-      'All managers briefed on communication approach before increment conversations',
-      'Separate retention conversation planned for any high performer with flight risk flag',
-    ]
-  },
-
-  'performance-theatre': {
-    title: 'Performance Theatre - And How to Stop It',
-    description: 'Why most PMS processes are performative, how to diagnose it in your org, and how to fix it',
-    category: 'Performance',
-    tier: 'Pro',
-    readTime: '11 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=calibration',
-    calculatorName: 'Calibration Simulator',
-    toc: ['What Is Performance Theatre?','The Seven Signs Your PMS Is Theatre','Why It Happens','The Fix','Performance Theatre Diagnostic Checklist'],
-    related: [
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'annual-reviews-fail', title: 'Why Annual Reviews Fail', icon: '📅' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What Is Performance Theatre?</h2>
-        <div class="guide-text">
-          <p>Performance Theatre is what happens when an organisation goes through all the motions of performance management - goal-setting, mid-year reviews, calibration sessions, rating submissions, increment decisions - without any of it actually influencing how people are managed, developed, or rewarded.</p>
-          <div class="callout"><strong>The uncomfortable truth:</strong> Performance Theatre is the default state of most large organisations - not the exception. Research by McKinsey found that only 23% of HR leaders believe their performance management system actually improves performance.</div>
-        </div>
-      </section>
-      <section id="signs">
-        <div class="section-label">The Diagnosis</div>
-        <h2 class="section-heading">The Seven Signs Your PMS Is Theatre</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Rating distributions are suspiciously uniform - and high</div><div class="step-body">If the average rating is consistently 3.8–4.2 on a 5-point scale across most managers and teams, you have grade inflation.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Calibration outcomes don't change ratings</div><div class="step-body">In most theatre organisations, fewer than 5% of ratings change as a result of calibration. Healthy calibration typically results in 15–25% of ratings being adjusted.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Employees are surprised by their ratings</div><div class="step-body">In a real performance culture, the formal rating should be the least surprising event of the year.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">High performers and average performers receive similar increments</div><div class="step-body">If the spread between Rating 5 and Rating 3 increment is less than 4 percentage points, the compensation system is not differentiating.</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Low performers remain in role without active management</div><div class="step-body">Rating someone a 2 and then managing them exactly as you manage a 4 signals to everyone that ratings have no consequences.</div></div></div>
-          <div class="step-block"><div class="step-num">6</div><div class="step-content"><div class="step-title">The PMS is owned by HR, not by the business</div><div class="step-body">Real performance culture is owned by the senior leadership team.</div></div></div>
-          <div class="step-block"><div class="step-num">7</div><div class="step-content"><div class="step-title">Employees describe the review process as a waste of time</div><div class="step-body">If more than 40% answer "no" to "Does the performance review process help you understand what you need to do to progress?" - you have a theatre problem.</div></div></div>
-        </div>
-      </section>
-      <section id="why">
-        <div class="section-label">Root Causes</div>
-        <h2 class="section-heading">Why Performance Theatre Happens</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">🔥</div><div class="step-content"><div class="step-title">Feedback is emotionally costly and rarely rewarded</div><div class="step-body">Managers who avoid difficult feedback suffer no visible consequences. Managers who lean into it get no obvious reward. The incentive structure consistently favours conflict avoidance.</div></div></div>
-          <div class="step-block"><div class="step-num">📊</div><div class="step-content"><div class="step-title">The rating is designed for multiple conflicting purposes</div><div class="step-body">Increment, bonus, promotion, PIP initiation, development feedback, board reporting - all from a single 1–5 number. When the rating has too many uses, managers optimise for one and compromise the rest.</div></div></div>
-          <div class="step-block"><div class="step-num">⚖️</div><div class="step-content"><div class="step-title">Low performance has no real consequences, so ratings drift upward</div><div class="step-body">If a Rating 2 triggers months of PIP administration and a Rating 3 triggers nothing - the rational calculation is always the 3.</div></div></div>
-        </div>
-      </section>
-      <section id="fix">
-        <div class="section-label">The Fix</div>
-        <h2 class="section-heading">Building a Real Performance Culture</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Separate the rating from the conversation</div><div class="step-body">Decouple the development conversation from the compensation decision. Hold development conversations in Q2 and compensation conversations in Q4. The conversations are better because the stakes of each are lower.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Make manager feedback quality a metric, not an assumption</div><div class="step-body">Quarterly pulse: "Has your manager given you specific, actionable feedback in the last 30 days?" Manager scores should feed into manager performance assessments.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Make low ratings consequential - but make them supported</div><div class="step-body">HRBP assigned to every low-performance case, standardised PIP template, clear legal guardrails, manager coaching toolkit.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Start calibration with data, not manager self-reports</div><div class="step-body">The HRBP opens with: "Here's what I'm seeing in the data before you've said a word." Distribution by manager, year-on-year trends, outliers, demographic patterns.</div></div></div>
-        </div>
-      </section>`,
-    checklist: [
-      'Rating distribution analysed for last 3 years - identified any systematic grade inflation',
-      'Calibration outcome audit done - measured % of ratings that change as a result of calibration',
-      'Employee pulse survey run - asked directly whether reviews feel useful and feedback is ongoing',
-      'Low performer audit done - checked how many Rating 1–2 employees have active development plans',
-      'Rating purpose audit - listed every decision the rating currently drives and identified conflicts',
-      'Manager feedback quality measured - not just assumed - via direct report pulse',
-      'Development conversation decoupled from compensation conversation (separate cadence)',
-      'Low-performance support infrastructure in place: HRBP assignment, PIP template, legal guardrails',
-      'Calibration sessions now open with HRBP-presented data, not manager self-reports',
-      'Senior leadership team subject to the same calibration standards as the rest of the organisation',
-      'Timeline set for culture change - 2–3 cycles minimum, with milestones and measures',
-    ]
-  },
-
-  'annual-reviews-fail': {
-    title: 'Why Annual Reviews Fail - And What to Do Instead',
-    description: 'The structural reasons annual performance reviews consistently underdeliver, and the evidence-based alternatives',
-    category: 'Performance',
-    tier: 'Pro',
-    readTime: '10 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=ninebox',
-    calculatorName: '9-Box Grid Calculator',
-    toc: ['The Case Against Annual Reviews','Why Organisations Keep Doing Them','The Evidence on What Actually Works','Designing a Better Performance Rhythm','Performance Rhythm Checklist'],
-    related: [
-      { slug: 'performance-theatre', title: 'Performance Theatre - And How to Stop It', icon: '🎭' },
-      { slug: 'mastering-calibration', title: 'Mastering Calibration Sessions', icon: '⚖️' },
-      { slug: 'setting-okrs-that-work', title: 'Setting OKRs That Actually Work', icon: '🎯' },
-    ],
-    content: `
-      <section id="case-against">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">The Case Against Annual Reviews</h2>
-        <div class="guide-text">
-          <p>General Electric, the company that popularised forced annual ranking, abandoned the practice in 2012. Adobe, Accenture, Deloitte, Microsoft, and hundreds of others followed. The consensus is now clear: the traditional annual review, as commonly practised, does more harm than good.</p>
-          <div class="callout"><strong>The numbers:</strong> A 2019 Gallup study of 10,000 managers and employees found that only 14% strongly agree their performance reviews inspire them to improve. CEB (now Gartner) found the average annual review costs 210 hours of manager time per employee per year.</div>
-        </div>
-      </section>
-      <section id="why-continue">
-        <div class="section-label">The Paradox</div>
-        <h2 class="section-heading">Why Organisations Keep Doing Them Anyway</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">📋</div><div class="step-content"><div class="step-title">Legal documentation requirements</div><div class="step-body">Documented reviews are essential for defending employment decisions. A well-documented quarterly check-in provides better legal cover than a poorly documented annual review.</div></div></div>
-          <div class="step-block"><div class="step-num">💰</div><div class="step-content"><div class="step-title">Compensation cycle anchoring</div><div class="step-body">Conflating the review with the pay decision is one of the primary reasons reviews fail. The moment a review is connected to a pay decision, it stops being a development conversation and becomes a negotiation.</div></div></div>
-          <div class="step-block"><div class="step-num">🔄</div><div class="step-content"><div class="step-title">Inertia and change anxiety</div><div class="step-body">Many HR leaders who know annual reviews aren't working keep running them because the politics of change are more daunting than the costs of the status quo.</div></div></div>
-        </div>
-      </section>
-      <section id="evidence">
-        <div class="section-label">The Research</div>
-        <h2 class="section-heading">The Evidence on What Actually Works</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Frequent, short conversations beat infrequent, long ones</div><div class="step-body">The mechanism is feedback latency - correction within 48 hours can change future behaviour. Correction 6 months later in an annual review can't.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Strengths-based feedback produces more improvement</div><div class="step-body">Gallup's research across 1.8 million work units: employees who receive primarily strengths-focused feedback show significantly higher performance improvement.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Manager-set goals underperform employee-influenced goals</div><div class="step-body">Goals employees have meaningfully contributed to produce 15–20% higher performance outcomes.</div></div></div>
-          <div class="callout"><strong>The Adobe case study:</strong> In 2012, Adobe replaced its annual review with ongoing "Check-In" conversations. Within two years, voluntary attrition dropped by 30% and manager satisfaction with the performance system rose from 40% to 78%.</div>
-        </div>
-      </section>
-      <section id="better">
-        <div class="section-label">The Alternative</div>
-        <h2 class="section-heading">Designing a Better Performance Rhythm</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">📅</div><div class="step-content"><div class="step-title">Weekly: 15-minute 1:1 with a standard structure</div><div class="step-body">Three questions, same every week: What did you accomplish? What's your top priority next week? What's in your way?</div></div></div>
-          <div class="step-block"><div class="step-num">📆</div><div class="step-content"><div class="step-title">Monthly: 45-minute development conversation</div><div class="step-body">Career trajectory, learning goals, stretch opportunities. Explicitly not about performance ratings or compensation.</div></div></div>
-          <div class="step-block"><div class="step-num">🗓️</div><div class="step-content"><div class="step-title">Quarterly: Formal checkpoint with documentation</div><div class="step-body">Four checkpoints annually = better legal documentation than one annual review, with a more accurate picture.</div></div></div>
-          <div class="step-block"><div class="step-num">📊</div><div class="step-content"><div class="step-title">Annual: Calibration + Compensation (separated by 8+ weeks)</div><div class="step-body">The annual rating is now an output of four quarterly checkpoints, not a freestanding judgment made under time pressure.</div></div></div>
-        </div>
-      </section>`,
-    checklist: [
-      'Identified the primary reasons annual reviews are retained in your organisation (legal, comp, inertia)',
-      'Decoupled the rating conversation from the compensation conversation - minimum 8 weeks apart',
-      'Weekly 1:1 cadence established for all managers - not optional, not skippable',
-      'Monthly development conversation introduced - separate from weekly 1:1, no ratings discussed',
-      'Quarterly checkpoint documentation introduced - 4 formal checkpoints replacing 1 annual review',
-      'Manager feedback quality measured through direct report pulse survey',
-      'Manager training delivered on feedback quality before system change is announced',
-      'Transition plan set: Year 1 parallel running, Year 2 compilation model, Year 3 annual retirement',
-      'Legal team confirmed quarterly checkpoints provide adequate documentation for employment decisions',
-      '"Better feedback more often" used as employee communication framing - not "no more annual reviews"',
-    ]
-  },
-
-  'balanced-scorecard': {
-    title: 'The Balanced Scorecard for HR',
-    description: 'How to translate organisational strategy into measurable HR objectives across four perspectives',
-    category: 'Strategy',
-    tier: 'Pro',
-    readTime: '9 min',
-    calculatorLink: '/pages/scenarios-details.html?recordId=custom_org&calc=bsc',
-    calculatorName: 'Balanced Scorecard Calculator',
-    toc: ['What Is the Balanced Scorecard?','The Four Perspectives Explained','Building Your HR Scorecard','Common Pitfalls','Balanced Scorecard Checklist'],
-    related: [
-      { slug: 'setting-okrs-that-work', title: 'Setting OKRs That Actually Work', icon: '🎯' },
-      { slug: 'manager-dashboard-review', title: 'Manager Dashboard Review', icon: '📋' },
-      { slug: 'performance-theatre', title: 'Performance Theatre', icon: '🎭' },
-    ],
-    content: `
-      <section id="what-is">
-        <div class="section-label">Overview</div>
-        <h2 class="section-heading">What Is the Balanced Scorecard?</h2>
-        <div class="guide-text">
-          <p>The Balanced Scorecard (BSC) was developed by Kaplan and Norton at Harvard Business School in the early 1990s. It addresses a fundamental problem with traditional performance measurement: organisations that manage by financial metrics alone are driving by looking in the rear-view mirror.</p>
-          <p>The BSC adds three forward-looking perspectives - Customer, Internal Process, and Learning & Growth - to the traditional Financial perspective. The result is a measurement framework that captures both what has been achieved and what capabilities are being built for the future.</p>
-          <div class="callout"><strong>Why HR leaders need the BSC:</strong> HR is often asked to justify its existence in financial terms - cost per hire, turnover cost, training ROI. The BSC gives HR a legitimate framework for demonstrating strategic value across dimensions that matter to the business, not just the finance team.</div>
-          <p>Applied to HR, the Balanced Scorecard answers one critical question: how does HR's work translate into organisational performance - not just operationally, but strategically?</p>
-        </div>
-      </section>
-      <section id="before">
-        <div class="section-label">The Framework</div>
-        <h2 class="section-heading">The Four Perspectives Explained</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">💰</div><div class="step-content"><div class="step-title">Financial Perspective - What does HR cost, and what does it return?</div><div class="step-body">This is not just HR's budget. It includes the financial impact of HR's decisions: cost of turnover, revenue per employee, productivity of new hires, ROI of learning programmes. HR metrics here should connect to P&L outcomes - not just HR department costs.</div></div></div>
-          <div class="step-block"><div class="step-num">👥</div><div class="step-content"><div class="step-title">Customer Perspective - Who are HR's customers, and are they satisfied?</div><div class="step-body">HR has two customer groups: employees (whose experience drives engagement and retention) and business leaders (whose talent needs HR exists to serve). Metrics here include manager satisfaction with HR partnership, employee experience scores, and time-to-fill for critical roles.</div></div></div>
-          <div class="step-block"><div class="step-num">⚙️</div><div class="step-content"><div class="step-title">Internal Process Perspective - Are HR's core processes reliable and efficient?</div><div class="step-body">This covers the quality and consistency of HR's operational execution: recruitment cycle time, performance review completion rates, calibration consistency, payroll accuracy, and policy compliance. Broken processes here undermine everything else.</div></div></div>
-          <div class="step-block"><div class="step-num">🌱</div><div class="step-content"><div class="step-title">Learning & Growth Perspective - Is the organisation building future capability?</div><div class="step-body">This is where HR's strategic contribution lives: succession pipeline depth, leadership capability scores, learning hours per employee, internal promotion rate, and diversity of the talent pipeline. These are leading indicators - they predict financial outcomes 2–3 years in advance.</div></div></div>
-          <div class="callout"><strong>The causality chain:</strong> Learning & Growth → Internal Process quality → Customer satisfaction → Financial outcomes. The BSC is most powerful when organisations can draw an explicit line from capability investments today to financial performance tomorrow.</div>
-        </div>
-      </section>
-      <section id="process">
-        <div class="section-label">Building Your Scorecard</div>
-        <h2 class="section-heading">Building Your HR Scorecard Step-by-Step</h2>
-        <div class="guide-text">
-          <div class="step-block"><div class="step-num">1</div><div class="step-content"><div class="step-title">Start with the organisational strategy, not the HR function</div><div class="step-body">The first question is not "what does HR do?" It is "what is the business trying to achieve in the next 3 years, and what talent and capability gaps stand between the organisation and that goal?" The HR scorecard flows from the answer.</div></div></div>
-          <div class="step-block"><div class="step-num">2</div><div class="step-content"><div class="step-title">Select 3–5 metrics per perspective maximum</div><div class="step-body">A Balanced Scorecard with 40 metrics is not balanced - it's a data dump. The discipline of selection is where strategy is operationalised. Choose metrics that are genuinely leading indicators, not just data that's easy to collect.</div></div></div>
-          <div class="step-block"><div class="step-num">3</div><div class="step-content"><div class="step-title">Establish baselines before setting targets</div><div class="step-body">You cannot set a meaningful target without a baseline. For every metric on the scorecard, spend time understanding current performance before agreeing on what "good" looks like. Arbitrary targets produce gaming, not improvement.</div></div></div>
-          <div class="step-block"><div class="step-num">4</div><div class="step-content"><div class="step-title">Build the strategy map - show the causality</div><div class="step-body">A strategy map is a one-page visual that shows how each perspective's objectives connect to the others. Drawing these arrows explicitly forces the HR leadership team to articulate and test its theory of how HR creates value. Arrows that can't be defended shouldn't be on the map.</div></div></div>
-          <div class="step-block"><div class="step-num">5</div><div class="step-content"><div class="step-title">Review quarterly - but measure continuously</div><div class="step-body">The BSC review cadence is quarterly - strategic enough to be meaningful, frequent enough to enable course correction. But data collection should be continuous. Quarterly reviews that rely on data gathered in the week before the meeting are reviews of memory, not performance.</div></div></div>
-          <div class="warning-box"><strong>⚠️ The compliance trap:</strong> The most common BSC failure is selecting metrics that HR controls rather than metrics that matter to the business. "Training hours delivered" is a metric HR controls. "Manager capability score (rated by direct reports)" is a metric that matters to the business. Always prefer the latter.</div>
-        </div>
-      </section>
-      <section id="mistakes">
-        <div class="section-label">Common Pitfalls</div>
-        <h2 class="section-heading">Where BSC Implementations Go Wrong</h2>
-        <div class="guide-text">
-          <ul>
-            <li><strong>Treating BSC as a reporting tool, not a management tool.</strong> The scorecard should drive quarterly conversations, resource allocation decisions, and strategic trade-offs. If it only goes to the board once a year, it's a slide deck - not a management system.</li>
-            <li><strong>Selecting metrics that favour HR over the business.</strong> A scorecard full of metrics HR is already performing well on will not drive improvement. The uncomfortable metrics - the ones where HR doesn't currently know the answer - are usually the most important ones.</li>
-            <li><strong>Neglecting the Learning & Growth perspective.</strong> This is the hardest perspective to measure and the most commonly under-resourced. It is also the perspective most directly under HR's control and most predictive of future performance. It deserves the most attention, not the least.</li>
-            <li><strong>Building a scorecard in isolation from the business.</strong> An HR scorecard built without input from business leaders will measure what HR thinks matters. It will not measure what the business actually needs from HR. Co-create with your key stakeholders or expect low engagement with the output.</li>
-          </ul>
-          <div class="callout"><strong>The strategic test:</strong> For each metric on your scorecard, ask: "If this number improved by 20%, would a senior business leader notice and care?" If the answer is no - it shouldn't be on the scorecard.</div>
-        </div>
-      </section>`,
-    checklist: [
-      'Organisational strategy reviewed and documented before building the HR scorecard',
-      'No more than 5 metrics selected per BSC perspective (Financial, Customer, Process, Learning)',
-      'Each metric has a baseline measurement before any target is set',
-      'Metrics selected for business relevance, not HR convenience',
-      'Strategy map created showing causal links between all four perspectives',
-      'At least one Learning & Growth metric is a leading indicator of future financial performance',
-      'Business leaders (not just HR leadership) have validated the metric selection',
-      'Data collection process defined for each metric - not reliant on ad hoc gathering before review',
-      'Quarterly review cadence scheduled with relevant business stakeholders',
-      'At least one metric per perspective is currently performing below target (a scorecard with all green lights is measuring the wrong things)',
-    ]
-  },
-
+ "how-to-run-9box": {
+  "title": "How to Run a 9-Box Calibration",
+  "description": "Step-by-step guide to placing employees correctly in the 9-Box matrix",
+  "category": "Performance",
+  "tier": "Free",
+  "readTime": "8 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=ninebox",
+  "calculatorName": "9-Box Grid Calculator",
+  "toc": [
+   "What is the 9-Box?",
+   "Before You Start",
+   "Step-by-Step Process",
+   "Common Mistakes",
+   "Calibration Checklist"
+  ],
+  "related": [
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   },
+   {
+    "slug": "succession-pipeline",
+    "title": "Building a Succession Pipeline",
+    "icon": "🔮"
+   }
+  ],
+  "content": "\n      <section id=\"what-is\">\n        <div class=\"section-label\">Overview</div>\n        <h2 class=\"section-heading\">What is the 9-Box Grid?</h2>\n        <div class=\"guide-text\">\n          <p>The 9-Box Grid is the most widely used talent management tool in the world. Used by GE, McKinsey, and virtually every Fortune 500 company, it plots employees on a 3×3 matrix - <strong>Performance</strong> on the X-axis and <strong>Potential</strong> on the Y-axis.</p>\n          <p>The result: nine distinct talent categories ranging from \"Low Performer\" to \"Star\", each requiring a different management response. Done well, it gives HR and senior leadership a single, shared view of your talent landscape - who to invest in, who to accelerate, who to manage out.</p>\n          <div class=\"callout\"><strong>Why it works:</strong> The 9-Box forces managers to make a two-dimensional judgment about their people. Most annual reviews only capture performance. The 9-Box adds the crucial question: <em>can this person grow beyond their current role?</em></div>\n          <p>The challenge isn't understanding the grid - it's running the calibration process fairly, consistently, and without bias. That's what this guide covers.</p>\n        </div>\n      </section>\n      <section id=\"before\">\n        <div class=\"section-label\">Preparation</div>\n        <h2 class=\"section-heading\">Before You Start</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">1</div><div class=\"step-content\"><div class=\"step-title\">Define your rating scale</div><div class=\"step-body\">Performance ratings should be based on a consistent 1–5 scale anchored to observable behaviours - not gut feel. Every manager in the room must be using the same definition of a \"4\".</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">2</div><div class=\"step-content\"><div class=\"step-title\">Gather potential evidence</div><div class=\"step-body\">Potential is harder to rate than performance. Use three indicators: <strong>Learning agility</strong> (how quickly do they pick up new skills?), <strong>Leadership behaviour</strong> (do others follow them?), and <strong>Ambition + drive</strong> (do they seek stretch assignments?).</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">3</div><div class=\"step-content\"><div class=\"step-title\">Pre-populate the grid before the meeting</div><div class=\"step-body\">Don't fill in the 9-Box live in the room - that anchors everyone to the first opinion. Have each manager independently place their direct reports first, then compare placements in the calibration session.</div></div></div>\n          <div class=\"warning-box\"><strong>⚠️ Watch out for:</strong> Recency bias (rating based on last 3 months, not the full year), halo effect (one strong project inflates the whole rating), and the \"nice manager\" trap (managers who rate everyone high to avoid conflict).</div>\n        </div>\n      </section>\n      <section id=\"process\">\n        <div class=\"section-label\">The Process</div>\n        <h2 class=\"section-heading\">Step-by-Step: Running the Session</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">1</div><div class=\"step-content\"><div class=\"step-title\">Set the rules upfront (5 min)</div><div class=\"step-body\">Open with the ground rules: this is a talent conversation, not a performance review. Ratings are not final until the full group agrees. All placements are confidential. No one defends - everyone challenges constructively.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">2</div><div class=\"step-content\"><div class=\"step-title\">Review pre-submitted placements (15 min)</div><div class=\"step-body\">Display all managers' pre-submitted placements on a shared screen. Highlight discrepancies - where two managers placed the same person in very different boxes. These are your calibration flashpoints.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">3</div><div class=\"step-content\"><div class=\"step-title\">Calibrate box by box, not person by person (30–45 min)</div><div class=\"step-body\">Work through the boxes systematically. Start with the <strong>Stars (top-right)</strong> - these are your easiest conversations and build momentum. Then tackle the <strong>Low Performers (bottom-left)</strong>. Leave the middle boxes for last.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">4</div><div class=\"step-content\"><div class=\"step-title\">Apply the distribution check (10 min)</div><div class=\"step-body\">After placements, count the distribution. A healthy org typically has 10–15% Stars, 25–35% High Performers, 40–50% Core Performers, 10–20% in the lower boxes.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">5</div><div class=\"step-content\"><div class=\"step-title\">Define next steps per box (10 min)</div><div class=\"step-body\">The 9-Box only has value if it drives action. Agree on the management response for each box before leaving the room.</div></div></div>\n        </div>\n      </section>\n      <section id=\"mistakes\">\n        <div class=\"section-label\">Common Pitfalls</div>\n        <h2 class=\"section-heading\">Mistakes That Kill the 9-Box</h2>\n        <div class=\"guide-text\">\n          <ul>\n            <li><strong>Treating it as a once-a-year exercise.</strong> The 9-Box should be a living document, updated at least twice a year.</li>\n            <li><strong>No action after the session.</strong> If the output stays in a slide deck and no manager has a different conversation as a result, the exercise was theatre.</li>\n            <li><strong>Using only manager input.</strong> The best organisations triangulate manager ratings with 360° feedback, OKR attainment, and skip-level conversations.</li>\n            <li><strong>Forgetting to look at box trajectories.</strong> Someone moving from box 5 to box 2 in 12 months is a different conversation than someone who's been in box 5 for three years.</li>\n          </ul>\n        </div>\n      </section>",
+  "checklist": [
+   "Defined consistent performance rating scale (1–5) with behavioural anchors",
+   "Gathered performance data for the full review period (not just last 3 months)",
+   "Collected potential evidence: learning agility, leadership behaviour, drive",
+   "Asked each manager to independently pre-place their direct reports",
+   "Identified calibration flashpoints (same person, different box from two managers)",
+   "Booked a 90-minute calibration session with all relevant managers",
+   "Set and shared ground rules before the session starts",
+   "Worked through Stars and Low Performers first, then the middle boxes",
+   "Ran the distribution check - no box has >50% of the population",
+   "Defined specific next steps (development, conversations, opportunities) per box",
+   "Scheduled a follow-up review in 6 months to track movement"
+  ]
+ },
+ "bell-curve-vs-forced-ranking": {
+  "title": "Bell Curve vs Forced Ranking",
+  "description": "When to use each approach and how to avoid the pitfalls of both",
+  "category": "Performance",
+  "tier": "Free",
+  "readTime": "6 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=bellcurve",
+  "calculatorName": "Bell Curve Calculator",
+  "toc": [
+   "What's the Difference?",
+   "The Case For Each",
+   "When They Go Wrong",
+   "The Hybrid Approach",
+   "Implementation Checklist"
+  ],
+  "related": [
+   {
+    "slug": "how-to-run-9box",
+    "title": "How to Run a 9-Box Calibration",
+    "icon": "📊"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "salary-increment-planning",
+    "title": "Salary Increment Planning",
+    "icon": "💰"
+   }
+  ],
+  "content": "\n      <section id=\"difference\">\n        <div class=\"section-label\">Overview</div>\n        <h2 class=\"section-heading\">What's the Difference?</h2>\n        <div class=\"guide-text\">\n          <p><strong>Bell Curve (Normal Distribution):</strong> Employees are expected to fall naturally across a distribution - typically 10% exceptional, 25% above average, 45% average, 15% below average, and 5% poor performers. The curve is a target shape, not a hard quota.</p>\n          <p><strong>Forced Ranking (Stack Ranking):</strong> Employees are explicitly ranked 1 to N within their group, and a fixed percentage must land in each category regardless of actual performance. The bottom X% face consequences every single cycle.</p>\n          <div class=\"callout\"><strong>The key distinction:</strong> Bell Curve is a <em>guideline</em> that shapes calibration conversations. Forced Ranking is a <em>mandate</em> that determines outcomes. One informs - the other dictates.</div>\n        </div>\n      </section>\n      <section id=\"case-for\">\n        <div class=\"section-label\">The Arguments</div>\n        <h2 class=\"section-heading\">The Case For Each</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">🔔</div><div class=\"step-content\"><div class=\"step-title\">Why Bell Curve works</div><div class=\"step-body\">It combats grade inflation - the single biggest calibration disease in most organisations. When every manager rates 80% of their team as \"exceeds expectations,\" the rating loses all meaning.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">📋</div><div class=\"step-content\"><div class=\"step-title\">Why Forced Ranking was invented</div><div class=\"step-body\">GE's logic in the 1980s: continuously improving the talent pool by removing the bottom 10% annually raises the average quality of the organisation over time.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">🏢</div><div class=\"step-content\"><div class=\"step-title\">Context where each fits</div><div class=\"step-body\">Bell Curve fits most organisations. Forced Ranking has narrow applications: large sales organisations with clear individual metrics, or organisations where role performance is genuinely zero-sum.</div></div></div>\n        </div>\n      </section>\n      <section id=\"wrong\">\n        <div class=\"section-label\">The Pitfalls</div>\n        <h2 class=\"section-heading\">When They Go Wrong</h2>\n        <div class=\"guide-text\">\n          <div class=\"warning-box\"><strong>Bell Curve failures:</strong> Applying the curve rigidly to small teams. Treating the target distribution as a hard quota. Using the curve as a substitute for actual manager judgment.</div>\n          <div class=\"warning-box\"><strong>Forced Ranking failures:</strong> Microsoft abandoned stack ranking in 2013 after it was cited as a primary cause of talent loss and internal political behaviour. It also destroys high-performing teams: a team of 10 stars still has a bottom 10%.</div>\n          <div class=\"callout\"><strong>The research verdict:</strong> A 2012 study of 14,000 employees found forced ranking reduced collaboration scores by 28% and increased voluntary turnover among high performers by 19%.</div>\n        </div>\n      </section>\n      <section id=\"hybrid\">\n        <div class=\"section-label\">Best Practice</div>\n        <h2 class=\"section-heading\">The Hybrid Approach That Actually Works</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">1</div><div class=\"step-content\"><div class=\"step-title\">Set a target distribution, not a quota</div><div class=\"step-body\">Publish the expected distribution as a target. Allow deviations of up to 10 percentage points without justification. Deviations beyond that require written rationale reviewed by HR.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">2</div><div class=\"step-content\"><div class=\"step-title\">Calibrate at the business unit level, not team level</div><div class=\"step-body\">Bell curves applied to teams of fewer than 15 people are statistically meaningless. Aggregate ratings across the business unit (50+ people) before checking distribution health.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">3</div><div class=\"step-content\"><div class=\"step-title\">Use distribution as a diagnostic, not a sentence</div><div class=\"step-body\">The distribution flags the conversation - it doesn't decide the outcome.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">4</div><div class=\"step-content\"><div class=\"step-title\">Never tie distribution directly to headcount decisions</div><div class=\"step-body\">The moment \"bottom 10%\" automatically means \"managed out,\" you have forced ranking - regardless of what you call it.</div></div></div>\n        </div>\n      </section>",
+  "checklist": [
+   "Decided which approach fits your organisation - bell curve guideline or forced ranking mandate",
+   "Checked team sizes - bell curve only applied to groups of 15+ people",
+   "Published target distribution to all managers before calibration season",
+   "Clarified that distribution is a guideline, not a hard quota",
+   "Set the deviation threshold that triggers HR review (e.g. >10% variance)",
+   "Confirmed consequences are NOT automatically tied to distribution position",
+   "Trained managers on the difference between grade inflation and genuine high performance",
+   "Built an appeals or review process for employees who dispute their placement",
+   "Reviewed last year's distribution for signs of gaming",
+   "Planned a post-cycle review to assess whether the distribution produced fair outcomes"
+  ]
+ },
+ "setting-okrs-that-work": {
+  "title": "Setting OKRs That Actually Work",
+  "description": "A practical framework for goals that drive real outcomes",
+  "category": "OKR",
+  "tier": "Free",
+  "readTime": "10 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=okr",
+  "calculatorName": "OKR Tracker",
+  "toc": [
+   "What Makes a Good OKR?",
+   "Before You Write a Single Goal",
+   "Writing OKRs Step-by-Step",
+   "The Most Common OKR Mistakes",
+   "OKR Health Checklist"
+  ],
+  "related": [
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "how-to-run-9box",
+    "title": "Running a 9-Box Grid",
+    "icon": "📊"
+   }
+  ],
+  "content": "\n      <section id=\"what-is\">\n        <div class=\"section-label\">Overview</div>\n        <h2 class=\"section-heading\">What Makes a Good OKR?</h2>\n        <div class=\"guide-text\">\n          <p>OKRs - Objectives and Key Results - were invented at Intel by Andy Grove and made famous by Google. Set a clear, inspiring <strong>Objective</strong> (what you want to achieve) and pair it with 2–4 measurable <strong>Key Results</strong> (how you'll know you got there).</p>\n          <div class=\"callout\"><strong>The OKR test:</strong> Read your Objective out loud. Does it make someone lean forward? Now read your Key Results. Can you unambiguously answer \"did we hit this?\" at the end of the quarter? If no to either - you have a to-do list with aspirational language, not an OKR.</div>\n        </div>\n      </section>\n      <section id=\"before\">\n        <div class=\"section-label\">Preparation</div>\n        <h2 class=\"section-heading\">Before You Write a Single Goal</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">1</div><div class=\"step-content\"><div class=\"step-title\">What are the 3–5 things that must be true for this year to be a success?</div><div class=\"step-body\">Not everything - the 3–5 things. If your CEO cannot answer this in one sentence per theme, your organisation isn't ready for OKRs.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">2</div><div class=\"step-content\"><div class=\"step-title\">Are you using OKRs for alignment or accountability?</div><div class=\"step-body\">Alignment OKRs are shared across teams. Accountability OKRs are individually owned. Mixing both without clarity creates the worst of both worlds.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">3</div><div class=\"step-content\"><div class=\"step-title\">What is the grading convention?</div><div class=\"step-body\">Google uses a 0–1 scale where 0.7 is considered a success. Decide this before launch and don't change it mid-cycle.</div></div></div>\n          <div class=\"warning-box\"><strong>⚠️ The cascade trap:</strong> Don't cascade OKRs top-down like a waterfall. Best practice: \"top-down context, bottom-up goals.\"</div>\n        </div>\n      </section>\n      <section id=\"process\">\n        <div class=\"section-label\">The Process</div>\n        <h2 class=\"section-heading\">Writing OKRs Step-by-Step</h2>\n        <div class=\"guide-text\">\n          <div class=\"step-block\"><div class=\"step-num\">1</div><div class=\"step-content\"><div class=\"step-title\">Write the Objective - make it a rallying cry, not a task</div><div class=\"step-body\">Bad: \"Improve customer satisfaction.\" Good: \"Become the most trusted onboarding experience in our category by Q4.\"</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">2</div><div class=\"step-content\"><div class=\"step-title\">Write 2–4 Key Results - outcomes, not activities</div><div class=\"step-body\">Bad: \"Launch new onboarding flow.\" Good: \"Increase Day-30 retention from 61% to 78%.\" The launch is an activity. The retention improvement is a Key Result.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">3</div><div class=\"step-content\"><div class=\"step-title\">Apply the \"so what\" test to each Key Result</div><div class=\"step-body\">If we hit this number and nothing else changed, would the Objective be meaningfully advanced? If no - it's a proxy metric.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">4</div><div class=\"step-content\"><div class=\"step-title\">Set the baseline before setting the target</div><div class=\"step-body\">\"Increase NPS from 32 to 55\" is valid. \"Increase NPS to 55\" is not - no baseline means no way to assess ambition or fairness.</div></div></div>\n          <div class=\"step-block\"><div class=\"step-num\">5</div><div class=\"step-content\"><div class=\"step-title\">Run a weekly or bi-weekly check-in, not a quarterly one</div><div class=\"step-body\">OKRs without cadenced check-ins are just goal documents. 15 minutes. Three questions: status, confidence score, one blocker.</div></div></div>\n        </div>\n      </section>\n      <section id=\"mistakes\">\n        <div class=\"section-label\">Common Pitfalls</div>\n        <h2 class=\"section-heading\">The Most Common OKR Mistakes</h2>\n        <div class=\"guide-text\">\n          <ul>\n            <li><strong>Too many OKRs.</strong> More than 3 Objectives and 9 Key Results means you have priorities, not OKRs.</li>\n            <li><strong>Tying OKRs directly to bonuses.</strong> The moment OKRs are financially consequential, people start sandbagging.</li>\n            <li><strong>Set-and-forget culture.</strong> OKRs that aren't reviewed regularly become irrelevant within six weeks.</li>\n            <li><strong>Writing KRs for tasks you'd do anyway.</strong> \"Complete Q3 product roadmap\" is not a Key Result - it's your job.</li>\n          </ul>\n        </div>\n      </section>",
+  "checklist": [
+   "Company-level Objectives are set by leadership and communicated before team OKR-writing begins",
+   "Each Objective is qualitative, inspiring, and achievable within the OKR period",
+   "Each team has no more than 3 Objectives and 4 Key Results per Objective",
+   "Every Key Result is an outcome metric, not an activity or deliverable",
+   "Every Key Result has a clear baseline number and a stretch target",
+   "Grading convention (0–1 scale, RAG, % completion) is agreed and communicated",
+   "OKRs are not directly tied to bonus or compensation decisions",
+   "Weekly or bi-weekly check-in cadence is scheduled for the full OKR period",
+   "At least one Key Result per Objective would be uncomfortable to miss",
+   "OKRs are visible across the team - not siloed in individual documents"
+  ]
+ },
+ "pay-equity-audit": {
+  "title": "Pay Equity Audit Playbook",
+  "description": "How to identify and fix pay gaps in your organisation",
+  "category": "Compensation",
+  "tier": "Pro",
+  "readTime": "9 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=compensation",
+  "calculatorName": "Compensation Equity Calculator",
+  "toc": [
+   "What Is Pay Equity (and What It Is Not)",
+   "Before You Run the Numbers",
+   "Running the Audit Step-by-Step",
+   "What to Do With the Findings",
+   "Pay Equity Checklist"
+  ],
+  "related": [
+   {
+    "slug": "salary-increment-planning",
+    "title": "Salary Increment Planning",
+    "icon": "💰"
+   },
+   {
+    "slug": "dei-analytics-guide",
+    "title": "DEI Analytics Guide",
+    "icon": "🌍"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   }
+  ]
+ },
+ "succession-pipeline": {
+  "title": "Building a Succession Pipeline",
+  "description": "A 4-step approach to building real bench strength",
+  "category": "Succession",
+  "tier": "Pro",
+  "readTime": "7 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=succession",
+  "calculatorName": "Succession Planning Calculator",
+  "toc": [
+   "Why Most Succession Plans Fail",
+   "The 4-Horizon Pipeline Model",
+   "Building Your Bench Step-by-Step",
+   "Accelerating Successor Readiness",
+   "Succession Planning Checklist"
+  ],
+  "related": [
+   {
+    "slug": "how-to-run-9box",
+    "title": "Running a 9-Box Grid",
+    "icon": "📊"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   }
+  ]
+ },
+ "manager-dashboard-review": {
+  "title": "How to Run a Manager Dashboard Review",
+  "description": "Turn your team analytics into actionable conversations that drive results",
+  "category": "Performance",
+  "tier": "Pro",
+  "readTime": "9 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=dashboard",
+  "calculatorName": "Manager Dashboard",
+  "toc": [
+   "What Is a Dashboard Review?",
+   "The Six Metrics That Matter",
+   "Running the Review Conversation",
+   "From Data to Action",
+   "Dashboard Review Checklist"
+  ],
+  "related": [
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "how-to-run-9box",
+    "title": "Running a 9-Box Grid",
+    "icon": "📊"
+   },
+   {
+    "slug": "succession-pipeline",
+    "title": "Building a Succession Pipeline",
+    "icon": "🔮"
+   }
+  ]
+ },
+ "mastering-calibration": {
+  "title": "Mastering Calibration Sessions",
+  "description": "How to run fair, bias-free calibration sessions that stick",
+  "category": "Performance",
+  "tier": "Pro",
+  "readTime": "11 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=calibration",
+  "calculatorName": "Calibration Simulator",
+  "toc": [
+   "Why Calibration Breaks Down",
+   "Before the Session",
+   "Facilitation Techniques That Work",
+   "Handling the Hard Conversations",
+   "Calibration Facilitator Checklist"
+  ],
+  "related": [
+   {
+    "slug": "how-to-run-9box",
+    "title": "Running a 9-Box Grid",
+    "icon": "📊"
+   },
+   {
+    "slug": "bell-curve-vs-forced-ranking",
+    "title": "Bell Curve vs Forced Ranking",
+    "icon": "📈"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   }
+  ]
+ },
+ "dei-analytics-guide": {
+  "title": "DEI Analytics - Reading the Data Right",
+  "description": "How to interpret DEI metrics and take meaningful action",
+  "category": "DEI",
+  "tier": "Pro",
+  "readTime": "10 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=dei",
+  "calculatorName": "DEI Analytics Calculator",
+  "toc": [
+   "What DEI Data Actually Tells You",
+   "The Five Metrics Worth Tracking",
+   "Interpreting Your DEI Dashboard",
+   "Moving from Data to Action",
+   "DEI Analytics Checklist"
+  ],
+  "related": [
+   {
+    "slug": "pay-equity-audit",
+    "title": "Pay Equity Audit Playbook",
+    "icon": "💰"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "succession-pipeline",
+    "title": "Building a Succession Pipeline",
+    "icon": "🔮"
+   }
+  ]
+ },
+ "effective-pip-process": {
+  "title": "Running an Effective PIP Process",
+  "description": "A humane, structured approach to performance improvement",
+  "category": "Performance",
+  "tier": "Pro",
+  "readTime": "12 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=pip",
+  "calculatorName": "PIP Tracker",
+  "toc": [
+   "What a PIP Is (and Isn't)",
+   "Before You Start a PIP",
+   "Designing the PIP",
+   "Running the PIP Period",
+   "PIP Process Checklist"
+  ],
+  "related": [
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "360-feedback-guide",
+    "title": "360° Feedback Guide",
+    "icon": "🔄"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   }
+  ]
+ },
+ "360-feedback-guide": {
+  "title": "360° Feedback That Actually Changes Behaviour",
+  "description": "How to design, run and debrief 360 feedback that creates real change",
+  "category": "Feedback",
+  "tier": "Pro",
+  "readTime": "10 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=feedback360",
+  "calculatorName": "360° Feedback Tool",
+  "toc": [
+   "Why Most 360 Programmes Fail",
+   "Designing the Right Questions",
+   "Running the Process Fairly",
+   "Debriefing for Maximum Impact",
+   "360° Feedback Checklist"
+  ],
+  "related": [
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "effective-pip-process",
+    "title": "Running an Effective PIP Process",
+    "icon": "📌"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   }
+  ]
+ },
+ "salary-increment-planning": {
+  "title": "Salary Increment Planning Under Budget Constraints",
+  "description": "How to allocate increments fairly when the budget is tight",
+  "category": "Compensation",
+  "tier": "Pro",
+  "readTime": "8 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=increment",
+  "calculatorName": "Increment Calculator",
+  "toc": [
+   "The Budget Constraint Reality",
+   "Building Your Increment Framework",
+   "Allocating the Budget Step-by-Step",
+   "Communicating Increment Decisions",
+   "Increment Planning Checklist"
+  ],
+  "related": [
+   {
+    "slug": "pay-equity-audit",
+    "title": "Pay Equity Audit Playbook",
+    "icon": "💰"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "dei-analytics-guide",
+    "title": "DEI Analytics Guide",
+    "icon": "🌍"
+   }
+  ]
+ },
+ "performance-theatre": {
+  "title": "Performance Theatre - And How to Stop It",
+  "description": "Why most PMS processes are performative, how to diagnose it in your org, and how to fix it",
+  "category": "Performance",
+  "tier": "Pro",
+  "readTime": "11 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=calibration",
+  "calculatorName": "Calibration Simulator",
+  "toc": [
+   "What Is Performance Theatre?",
+   "The Seven Signs Your PMS Is Theatre",
+   "Why It Happens",
+   "The Fix",
+   "Performance Theatre Diagnostic Checklist"
+  ],
+  "related": [
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "annual-reviews-fail",
+    "title": "Why Annual Reviews Fail",
+    "icon": "📅"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   }
+  ]
+ },
+ "annual-reviews-fail": {
+  "title": "Why Annual Reviews Fail - And What to Do Instead",
+  "description": "The structural reasons annual performance reviews consistently underdeliver, and the evidence-based alternatives",
+  "category": "Performance",
+  "tier": "Pro",
+  "readTime": "10 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=ninebox",
+  "calculatorName": "9-Box Grid Calculator",
+  "toc": [
+   "The Case Against Annual Reviews",
+   "Why Organisations Keep Doing Them",
+   "The Evidence on What Actually Works",
+   "Designing a Better Performance Rhythm",
+   "Performance Rhythm Checklist"
+  ],
+  "related": [
+   {
+    "slug": "performance-theatre",
+    "title": "Performance Theatre - And How to Stop It",
+    "icon": "🎭"
+   },
+   {
+    "slug": "mastering-calibration",
+    "title": "Mastering Calibration Sessions",
+    "icon": "⚖️"
+   },
+   {
+    "slug": "setting-okrs-that-work",
+    "title": "Setting OKRs That Actually Work",
+    "icon": "🎯"
+   }
+  ]
+ },
+ "balanced-scorecard": {
+  "title": "The Balanced Scorecard for HR",
+  "description": "How to translate organisational strategy into measurable HR objectives across four perspectives",
+  "category": "Strategy",
+  "tier": "Pro",
+  "readTime": "9 min",
+  "calculatorLink": "/pages/scenarios-details.html?recordId=custom_org&calc=bsc",
+  "calculatorName": "Balanced Scorecard Calculator",
+  "toc": [
+   "What Is the Balanced Scorecard?",
+   "The Four Perspectives Explained",
+   "Building Your HR Scorecard",
+   "Common Pitfalls",
+   "Balanced Scorecard Checklist"
+  ],
+  "related": [
+   {
+    "slug": "setting-okrs-that-work",
+    "title": "Setting OKRs That Actually Work",
+    "icon": "🎯"
+   },
+   {
+    "slug": "manager-dashboard-review",
+    "title": "Manager Dashboard Review",
+    "icon": "📋"
+   },
+   {
+    "slug": "performance-theatre",
+    "title": "Performance Theatre",
+    "icon": "🎭"
+   }
+  ]
+ }
 };
 
 // ── STORAGE ──
@@ -1176,6 +704,34 @@ function proGateHTML(guide) {
   return `<div class="breadcrumb"><a href="/pages/learning-hub.html">Learning Hub</a><span>›</span><span>${guide.category}</span><span>›</span><span>${guide.title}</span></div><div style="min-height:60vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#080614 0%,#0d0b1e 60%,#080614 100%);padding:48px 24px;"><div style="background:rgba(255,255,255,.03);border:1.5px solid rgba(99,102,241,.25);border-radius:24px;padding:48px 40px;max-width:520px;width:100%;text-align:center;box-shadow:0 8px 48px rgba(0,0,0,.4);font-family:'Space Grotesk',sans-serif;"><div style="width:72px;height:72px;border-radius:50%;background:rgba(99,102,241,.10);border:1.5px solid rgba(99,102,241,.25);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 24px;">📖</div><div style="display:inline-flex;padding:4px 14px;border-radius:20px;margin-bottom:18px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.25);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;">✦ Pro Guide</div><h2 style="font-size:clamp(20px,3vw,28px);font-weight:700;color:#f4f3ff;line-height:1.2;margin-bottom:12px;">${guide.title}</h2><p style="font-size:14px;color:rgba(244,243,255,.5);line-height:1.7;margin-bottom:24px;">${guide.description}<br><br>This guide is included in the <strong style="color:rgba(244,243,255,.75);">Pro plan</strong> - along with all 12 calculators, certifications, and the AI Learning Path.</p><a href="/pages/pricing.html" style="display:block;width:100%;padding:15px 24px;border-radius:11px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#6366f1,#7c3aed);color:white;text-decoration:none;text-align:center;box-shadow:0 4px 24px rgba(99,102,241,.45);margin-bottom:10px;">🚀 Upgrade to Pro - ₹999/month</a><a href="/pages/learning-hub.html" style="display:block;width:100%;padding:12px 24px;border-radius:11px;font-size:13px;font-weight:600;background:transparent;border:1px solid rgba(255,255,255,.08);color:rgba(244,243,255,.4);text-decoration:none;text-align:center;margin-bottom:16px;">← Back to Learning Hub</a><div style="display:flex;gap:8px;margin-bottom:8px;"><input type="text" id="guide-key-input" placeholder="Already paid? Enter your access key…" style="flex:1;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(99,102,241,.2);color:#f4f3ff;font-size:12px;font-family:monospace;outline:none;"><button onclick="guideUnlock()" style="padding:10px 16px;border-radius:8px;font-size:12px;font-weight:700;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;cursor:pointer;">Unlock →</button></div><div style="font-size:11px;color:rgba(244,243,255,.2);">Your access key is emailed after payment</div><div id="guide-key-error" style="font-size:11px;color:#f87171;margin-top:6px;display:none;">Invalid key. Please check and try again.</div><div id="guide-key-success" style="font-size:11px;color:#34d399;margin-top:6px;display:none;"></div></div></div>`;
 }
 
+function loadingHTML(guide) {
+  return `<div class="breadcrumb"><a href="/pages/learning-hub.html">Learning Hub</a><span>›</span><span>${guide.category}</span><span>›</span><span>${guide.title}</span></div><div class="not-found"><div class="not-found-sub">Loading your guide…</div></div>`;
+}
+
+function loadErrorHTML(guide) {
+  return `<div class="breadcrumb"><a href="/pages/learning-hub.html">Learning Hub</a><span>›</span><span>${guide.category}</span><span>›</span><span>${guide.title}</span></div><div class="not-found"><div class="not-found-title">Could not load this guide</div><div class="not-found-sub">Check your connection and try again.</div><a href="" onclick="location.reload();return false;" style="color:#667eea;font-weight:700;">Reload</a></div>`;
+}
+
+// Returns 'ok', 'denied' (no valid Pro key) or 'error' (network / server problem).
+async function loadProContent(slug) {
+  var key = '';
+  try { key = (localStorage.getItem('viorah_key') || '').trim(); } catch (e) {}
+  try {
+    var res = await fetch('https://pms-toolkit-ai.kumarvivek-srv.workers.dev/guide-content', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug: slug, key: key })
+    });
+    if (res.status === 401) return 'denied';
+    if (!res.ok) return 'error';
+    var data = await res.json();
+    if (!data || !data.content) return 'error';
+    GUIDES[slug].content = data.content;
+    GUIDES[slug].checklist = data.checklist || [];
+    return 'ok';
+  } catch (e) { return 'error'; }
+}
+
 function render() {
   const slug = getSlug();
   const guide = GUIDES[slug];
@@ -1191,6 +747,17 @@ function render() {
   // ── PRO GATE ──
   if (guide.tier === 'Pro' && !window._guideIsPro()) {
     app.innerHTML = proGateHTML(guide);
+    return;
+  }
+  // Pro guide text is not shipped in this page. It is fetched from the Worker,
+  // which only returns it for a valid Pro key (or a signed-in Pro account).
+  if (guide.tier === 'Pro' && !guide.content) {
+    app.innerHTML = loadingHTML(guide);
+    loadProContent(slug).then(function (state) {
+      if (state === 'ok') render();
+      else if (state === 'denied') app.innerHTML = proGateHTML(guide);
+      else app.innerHTML = loadErrorHTML(guide);
+    });
     return;
   }
   // ── END PRO GATE ──
