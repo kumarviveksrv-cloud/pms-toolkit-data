@@ -799,7 +799,7 @@
       <div class="pgv2-key-success" id="pgv2-key-success">Key accepted! Unlocking Pro...</div>
       <div class="pgv2-trust">
         <span class="pgv2-trust-item">&#x1F512; Secure via Razorpay / Dodo</span>
-        <span class="pgv2-trust-item">&#x1F4CA; Data stays in your browser</span>
+        <span class="pgv2-trust-item">&#x1F4CA; Uploaded data stays in your browser</span>
         <span class="pgv2-trust-item">&#x26A1; Instant access</span>
       </div>
     </div>
@@ -2866,7 +2866,6 @@ function render(){
   var ohHref=ohHasData&&canGenerateReport()?'/pages/org-health.html':'#';
   var ohSubText=!ohHasData?'Upload your data first to unlock this feature':ohLimitHit?'Report limit reached (3/3)':'Your data is ready \u00B7 '+reportLeft+' report'+(reportLeft===1?'':'s')+' remaining';
   var ohBtnLabel=ohLimitHit?'Limit reached (3/3)':'Generate AI Report \u2192';
-  html+='<div class="cu-oh-nudge"><div class="cu-oh-nudge-left"><div class="cu-oh-nudge-icon">'+ICONS.hosp+'</div><div><div class="cu-oh-nudge-text">'+ICONS.sparkle+' NEW - Org Health Report</div><div class="cu-oh-nudge-sub">'+ohSubText+'</div></div></div><a href="'+ohHref+'" class="'+ohBtnClass+'" '+(ohHasData&&canGenerateReport()?'onclick="incrementReportCount()"':'')+'>'+ohBtnLabel+'</a></div>';
   if(state.savedData){html+='<div class="cu-status-banner"><div class="cu-status-left"><div class="cu-status-dot"></div><div><div class="cu-status-text">'+ICONS.check+' '+state.savedData.employees.length+' employees loaded - '+state.savedData.companyName+'</div><div class="cu-status-sub">Last uploaded: '+state.savedData.uploadDate+' \u00B7 All 16 calculators ready</div></div></div><button class="cu-status-clear" onclick="window._csvClear()">'+ICONS.trash+' Clear &amp; Re-upload</button></div>';}
   else{html+='<div class="cu-status-banner empty"><div class="cu-status-left"><div class="cu-status-dot"></div><div><div class="cu-status-text">No data uploaded yet</div><div class="cu-status-sub">Complete the steps below to analyse your organisation</div></div></div></div>';}
   var stepLabels=['Download Template','Upload File','Map Columns','Preview & Validate','Launch Analysis'];
@@ -2940,7 +2939,6 @@ function render(){
     html+='<div style="font-size:15px;font-weight:700;color:#f4f3ff;margin-bottom:14px;">Launch any calculator:</div><div class="cu-calc-grid">';
     CALCULATORS.forEach(function(c){var href=calcLinks[c.name]||detailsBase;html+='<a class="cu-calc-card" href="'+href+'"><div class="cu-calc-icon">'+c.icon+'</div><div><div class="cu-calc-name">'+c.name+'</div><div class="cu-calc-sub">'+c.desc+'</div></div></a>';});
     html+='</div><div class="cu-alert cu-alert-info">'+ICONS.bulb+' Navigate to <strong>Your Organisation</strong> in Scenarios to see all calculators on your data.</div>';
-    html+='<div class="cu-oh-card"><div class="cu-oh-card-icon">'+ICONS.hosp+'</div><div class="cu-oh-card-body"><div class="cu-oh-card-eyebrow">'+ICONS.sparkle+' AI-Powered</div><div class="cu-oh-card-title">Get Your Org Health Report</div><div class="cu-oh-card-sub">AI analyses your '+sd.employees.length+' employees and delivers performance health, flight risk, pay equity, succession gaps and 5 priority recommendations.</div><div class="cu-oh-card-pillrow"><span class="cu-oh-card-pill">'+ICONS.bar+' Performance Health</span><span class="cu-oh-card-pill">'+ICONS.plane+ICONS.ok+' Flight Risk</span><span class="cu-oh-card-pill">'+ICONS.money+' Pay Equity</span><span class="cu-oh-card-pill">'+ICONS.crystal+' Succession Gaps</span></div>'+(canGenerateReport()?'<a href="/pages/org-health.html" class="cu-oh-card-btn" onclick="incrementReportCount()">'+ICONS.hosp+' Generate Org Health Report ('+reportsRemaining()+' remaining)</a>':'<div style="opacity:.5;cursor:not-allowed;padding:12px 24px;background:white;border-radius:10px;font-weight:700;color:#0f766e;display:inline-block;">Limit reached - clear &amp; re-upload</div>')+'</div></div>';
     // HUMACITY SUITE CARD - links to all 4 CSV-driven tools (L1, L2, L4, L5).
     // L3 Org Vitals deliberately excluded: it's a standalone 20-signal
     // questionnaire, not driven by uploaded CSV data, so it doesn't belong

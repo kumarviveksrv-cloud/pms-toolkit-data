@@ -6,6 +6,7 @@
   <title>One report. Every people risk in your org.</title>
   <meta name="description" content="Upload your CSV. AI diagnoses your org: performance health, flight risk, pay equity, succession gaps. 5 priority recommendations delivered as a PDF.">
   <link rel="canonical" href="https://pms.virorah.com/pages/org-health.html">
+  <meta name="robots" content="noindex">
   <meta property="og:title" content="One report. Every people risk in your org.">
   <meta property="og:description" content="Upload your CSV. AI diagnoses your org: performance health, flight risk, pay equity, succession gaps. 5 priority recommendations delivered as a PDF.">
   <meta property="og:type" content="website">
@@ -213,7 +214,7 @@
       <div class="pgv2-key-success" id="pgv2-key-success">✓ Key accepted! Unlocking Pro…</div>
       <div class="pgv2-trust">
         <span class="pgv2-trust-item">🔒 Secure via Razorpay</span>
-        <span class="pgv2-trust-item">📊 Data stays in your browser</span>
+        <span class="pgv2-trust-item">📊 Uploaded data stays in your browser</span>
         <span class="pgv2-trust-item">⚡ Instant access</span>
       </div>
     </div>
@@ -226,6 +227,9 @@
   var WORKER_URL = 'https://pms-toolkit-ai.kumarvivek-srv.workers.dev';
   var SK     = 'viorah_plan';
   var SK_EXP = 'viorah_plan_exp';
+  // Org Health AI report is switched off (it sent per-employee data to the AI provider).
+  // Set to true only after the privacy copy and the payload are fixed, and the Worker flag is on.
+  var OH_AI_ENABLED = false;
 
   function isPro(){
     try{
@@ -1094,7 +1098,7 @@
   <div class="ohh">
     <div class="ohh-eyebrow">AI-Powered Intelligence</div>
     <h1 class="ohh-title">Org Health<br><span class="ohh-title-accent">Diagnostics</span></h1>
-    <p class="ohh-sub">Upload your employee data once. Get a McKinsey-grade organisational health report in 60-80
+    <p class="ohh-sub" id="oh-hero-sub">Upload your employee data once. Get a McKinsey-grade organisational health report in 60-80
       seconds.</p>
   </div>
 
@@ -1105,6 +1109,13 @@
         style="font-size:12px;color:rgba(165,180,252,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .2s;"
         onmouseover="this.style.color='rgba(165,180,252,0.85)'"
         onmouseout="this.style.color='rgba(165,180,252,0.5)'">&#x2190; Back to Analyse Your Org</a>
+    </div>
+
+    <div id="oh-paused" class="oh-no-data" style="display:block;">
+      <div style="font-size:36px;margin-bottom:12px;">&#x23F8;</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;">The Org Health AI report is paused</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.7;">We have switched this report off while we redesign how it handles employee data. Nothing from your upload is sent anywhere. Every calculator in Analyse Your Org still runs entirely in your browser.</div>
+      <a href="/pages/analyse-your-org.html" class="oh-upload-link">Back to Analyse Your Org &#x2192;</a>
     </div>
 
     <div id="oh-launch">
@@ -1198,6 +1209,14 @@
   }
 
   function init(){
+    var pausedEl = document.getElementById("oh-paused");
+    if(pausedEl) pausedEl.style.display = OH_AI_ENABLED ? "none" : "block";
+    if(!OH_AI_ENABLED){
+      var heroSub = document.getElementById("oh-hero-sub");
+      if(heroSub) heroSub.textContent = "This report is paused while we redesign how it handles employee data.";
+      ["oh-launch","oh-loading","oh-error","oh-report"].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display="none"; });
+      return;
+    }
     var data = loadData();
     var launch = document.getElementById("oh-launch");
     var noData = document.getElementById("oh-no-data");
@@ -1232,6 +1251,7 @@
   }
 
   window.ohGenerate = async function(){
+    if(!OH_AI_ENABLED) return;
     var data = loadData();
     if(!data) return;
     document.getElementById("oh-launch").style.display   = "none";

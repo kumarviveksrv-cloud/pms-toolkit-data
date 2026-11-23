@@ -47,7 +47,6 @@
     {label:'Simulate', cat:'Page', path:'/pages/simulate.html'},
     {label:'Manager Game', cat:'Page', path:'/pages/game.html'},
     {label:'Build Your 9-Box', cat:'Page', path:'/pages/build-9box.html'},
-    {label:'Org Health Report', cat:'Page', path:'/pages/org-health.html'},
     {label:'Spatial 3D', cat:'Page', path:'/pages/spatial-3d.html'},
     {label:'Spatial 9-Box', cat:'Page', path:'/pages/spatial-9box.html'},
     {label:'Templates', cat:'Page', path:'/pages/templates.html'},

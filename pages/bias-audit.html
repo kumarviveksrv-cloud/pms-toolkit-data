@@ -345,7 +345,7 @@
           <label class="ba-label">&#x1F4C4; Paste ratings data</label>
           <textarea class="ba-csv-textarea" id="ba-csv-input"
             placeholder="Name, Rating&#10;Priya Sharma, 4&#10;Rahul Mehta, 3&#10;Ananya Kumar, 3&#10;Vikram Singh, 3&#10;Deepika Nair, 3&#10;Arjun Patel, 4&#10;Sneha Iyer, 2&#10;Rohan Das, 3&#10;Kavya Reddy, 3&#10;Amit Joshi, 3"></textarea>
-          <div class="ba-csv-hint">Paste two columns: Name and Rating. Header row optional. Comma or tab separated.</div>
+          <div class="ba-csv-hint">Paste two columns: Name and Rating. Header row optional. Comma or tab separated. Names stay in your browser: only the numbered ratings go to the AI.</div>
           <div class="ba-csv-preview" id="ba-csv-preview"></div>
           <div class="ba-ctx" style="margin-top:14px;">
             <select class="ba-select" id="ba-csv-scale">
@@ -684,8 +684,9 @@ function baFinishLocal(targetId, success){
 async function runAudit(employees, scale, dept, manager){
   if(employees.length<5){ alert('Please enter at least 5 employees for a meaningful audit.'); return false; }
   var stats=buildStats(employees, scale);
-  var employeeBlock=employees.map(function(e,i){ return (i+1)+'. '+e.name+' - Rating: '+e.rating; }).join('\n');
-  var managerStr=manager?'Manager: '+manager:'Manager: unnamed';
+  // Privacy: names are never sent to the AI. Employees are numbered, the manager is not named.
+  var employeeBlock=employees.map(function(e,i){ return (i+1)+'. Employee '+(i+1)+' - Rating: '+e.rating; }).join('\n');
+  var managerStr='Manager: (name withheld)';
   var deptStr=dept?'Department: '+dept:'Department: unspecified';
   var prompt='You are an expert HR analytics consultant running a bias audit on a manager performance rating distribution.\n\n'+
     managerStr+'\n'+deptStr+'\n'+

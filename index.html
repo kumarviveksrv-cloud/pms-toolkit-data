@@ -390,7 +390,6 @@ footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; } 
     <div class="marquee-item"><div class="marquee-dot"></div>What If Planner</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Manager Report Card</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Review Cycle Planner</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Org Health Report</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Forge Team Simulation</div>
     <div class="marquee-item"><div class="marquee-dot"></div>9-Box Grid</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Bell Curve Analysis</div>
@@ -408,7 +407,6 @@ footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; } 
     <div class="marquee-item"><div class="marquee-dot"></div>What If Planner</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Manager Report Card</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Review Cycle Planner</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Org Health Report</div>
     <div class="marquee-item"><div class="marquee-dot"></div>Forge Team Simulation</div>
   </div>
 </div>
@@ -556,7 +554,7 @@ footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; } 
         </div>
       </div>
     </div>
-    <div class="bento-card reveal"><span class="bento-icon">&#x1F4C2;</span><div class="bento-tag">Pro Feature</div><div class="bento-title">Your Real<br>Org Data</div><div class="bento-body">Upload your employee CSV. Every calculator runs on your actual workforce in under 60 seconds. <strong style="color:rgba(34,197,94,.8);">Your data never leaves your browser</strong>, no backend storage, no sharing, no retention. You stay in full control.</div></div>
+    <div class="bento-card reveal"><span class="bento-icon">&#x1F4C2;</span><div class="bento-tag">Pro Feature</div><div class="bento-title">Your Real<br>Org Data</div><div class="bento-body">Upload your employee CSV. Every calculator runs on your actual workforce in under 60 seconds. <strong style="color:rgba(34,197,94,.8);">Your uploaded data never leaves your browser</strong>, no backend storage, no sharing, no retention. You stay in full control.</div></div>
     <div class="bento-card reveal reveal-delay-1"><span class="bento-icon">&#x1F3AD;</span><div class="bento-tag">AI Powered &middot; Pro</div><div class="bento-title">Conversation<br>Simulator</div><div class="bento-body">An AI plays your employee. You practise delivering a low rating, initiating a PIP, or denying a promotion. Get scored on empathy, clarity, and outcome. 10 scenarios. 10 personalities.</div></div>
     <div class="bento-card reveal reveal-delay-2"><div class="bento-stat-num" data-count="15">0</div><div class="bento-stat-lbl">Real company scenarios across Tech, Finance, Healthcare, Manufacturing, Government &amp; more</div></div>
     <div class="bento-card reveal"><span class="bento-icon">&#x1F393;</span><div class="bento-tag">Certifications &middot; Pro</div><div class="bento-title">4 Credentials<br>That Count</div><div class="bento-body">PMS Fundamentals, Advanced, Practitioner &amp; Portfolio. 4 Pro certifications. Unique credential IDs. One-click LinkedIn badge. The credential you earn for having done real work on a real org.</div></div>
@@ -752,7 +750,7 @@ window.addEventListener('scroll',function(){document.getElementById('navbar').cl
 function animateCount(el,target,duration){var start=0,step=target/60;var interval=setInterval(function(){start+=step;if(start>=target){el.textContent=target;clearInterval(interval);return;}el.textContent=Math.floor(start);},duration/60);}
 setTimeout(function(){document.querySelectorAll('[data-count]').forEach(function(el){animateCount(el,parseInt(el.dataset.count),1200);});},600);
 
-var phrases=['FORGE Diagnostic','Case Room Analysis','OKR Architecture Design','Bell Curve Distribution','Calibration Session','OKR Execution Simulation','Succession Pipeline','DEI Audit','Increment Planning','Org Health Report','Manager Report Card','Forge Team Simulation','9-Box Grid Analysis'];
+var phrases=['FORGE Diagnostic','Case Room Analysis','OKR Architecture Design','Bell Curve Distribution','Calibration Session','OKR Execution Simulation','Succession Pipeline','DEI Audit','Increment Planning','Manager Report Card','Forge Team Simulation','9-Box Grid Analysis'];
 var twEl=document.getElementById('typewriter');
 var twIdx=0,twChar=0,twDeleting=false;
 function typeNext(){var word=phrases[twIdx];if(!twDeleting){twChar++;twEl.textContent=word.slice(0,twChar);if(twChar===word.length){twDeleting=true;setTimeout(typeNext,1800);return;}setTimeout(typeNext,55);}else{twChar--;twEl.textContent=word.slice(0,twChar);if(twChar===0){twDeleting=false;twIdx=(twIdx+1)%phrases.length;setTimeout(typeNext,300);return;}setTimeout(typeNext,28);}}
