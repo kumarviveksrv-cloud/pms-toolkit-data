@@ -6,7 +6,8 @@
       ['About', '/pages/about.html'],
       ['info@virorah.com', 'mailto:info@virorah.com'],
       ['Privacy Policy', '/pages/legal.html'],
-      ['Terms of Service', '/pages/terms.html']
+      ['Terms of Service', '/pages/terms.html'],
+      ['Cookie choices', '/pages/legal.html#cookies']
     ];
     var bar = document.createElement('div');
     bar.id = 'viorah-legal-link';
@@ -25,6 +26,7 @@
       var a = document.createElement('a');
       a.href = l[1];
       a.textContent = l[0];
+      if (l[0] === 'Cookie choices') a.addEventListener('click', function (e) { if (window.pmsConsent) { e.preventDefault(); window.pmsConsent.open(); } });
       a.style.cssText = 'font-size:11px;color:rgba(165,180,252,.35);text-decoration:none;transition:color .2s;white-space:nowrap;';
       a.onmouseover = function () { a.style.color = 'rgba(165,180,252,.7)'; };
       a.onmouseout = function () { a.style.color = 'rgba(165,180,252,.35)'; };
