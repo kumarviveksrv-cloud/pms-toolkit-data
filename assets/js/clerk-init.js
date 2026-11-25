@@ -43,7 +43,7 @@
   const script = document.createElement('script');
   script.async = true;
   script.crossOrigin = 'anonymous';
-  script.src = 'https://unpkg.com/@clerk/clerk-js@5.128.2/dist/clerk.browser.js';
+  script.src = 'https://clerk.pms.virorah.com/npm/@clerk/clerk-js@5.128.2/dist/clerk.browser.js';
   /* Current Clerk builds read the key from this attribute and expose a ready instance. */
   script.setAttribute('data-clerk-publishable-key', CLERK_PK);
 
