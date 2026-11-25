@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="/assets/css/cmdk.css">
 
   <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
 
   <!-- Clerk publishable key (set before clerk-init.js runs) -->
   <script>
@@ -67,7 +66,7 @@
      VIRORAH PMS - BIAS AUDIT (/bias-audit)
      Pro-gated · Detect + Fix + Coach
      ============================================================ -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 
 <style>
 :root {
@@ -664,7 +663,7 @@ function baExportPDF(){
   var w=window.open('','_blank','width=860,height=700');
   var tag_o='<ht'+'ml>',tag_c='</ht'+'ml>',hd_o='<he'+'ad>',hd_c='</he'+'ad>',bd_o='<bo'+'dy>',bd_c='</bo'+'dy>';
   w.document.write('<!DOCTYPE html>'+tag_o+hd_o+'<meta charset="UTF-8"><title>Bias Audit Report - Virorah PMS</title>'+
-    '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">'+
+    '<link rel="stylesheet" href="/assets/fonts/fonts.css">'+
     '<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;background:#fff;color:#1a1a2e;padding:48px;max-width:800px;margin:0 auto;}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;font-size:11px;color:#aaa;display:flex;justify-content:space-between;}@media print{body{padding:24px;}}</style>'+
     hd_c+bd_o+body+'<div class="footer"><span>Virorah PMS - virorah.com</span><span>Pro Report - Confidential</span></div>'+bd_c+tag_c);
   w.document.close();

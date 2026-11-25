@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="/assets/css/cmdk.css">
 
   <!-- Google Fonts: DM Sans + Space Grotesk + Inter (matches Softr Global Header) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
 
   <!-- Clerk publishable key (set before clerk-init.js runs) -->
   <script>
@@ -67,7 +66,7 @@
      VIRORAH PMS - GOAL DIAGNOSTIC LAB (/goal-lab)
      Pro-gated · Single Goal Analyzer + Batch Health Report
      ============================================================ -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 
 <style>
 :root {
@@ -779,7 +778,7 @@ function vrOpenPDF(title, bodyHtml){
   var head_open='<he'+'ad>',head_close='</he'+'ad>';
   var body_open='<bo'+'dy>',body_close='</bo'+'dy>';
   var doctype='<!DOCTYPE html>';
-  w.document.write(doctype+tag_open+head_open+'<meta charset="UTF-8"><title>'+title+'</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;background:#fff;color:#1a1a2e;padding:48px;max-width:800px;margin:0 auto;}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;font-size:11px;color:#aaa;display:flex;justify-content:space-between;}@media print{body{padding:24px;}}</style>'+head_close+body_open+bodyHtml+'<div class="footer"><span>Virorah PMS - virorah.com</span><span>Pro Report - Confidential</span></div>'+body_close+tag_close);
+  w.document.write(doctype+tag_open+head_open+'<meta charset="UTF-8"><title>'+title+'</title><link rel="stylesheet" href="/assets/fonts/fonts.css"><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;background:#fff;color:#1a1a2e;padding:48px;max-width:800px;margin:0 auto;}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;font-size:11px;color:#aaa;display:flex;justify-content:space-between;}@media print{body{padding:24px;}}</style>'+head_close+body_open+bodyHtml+'<div class="footer"><span>Virorah PMS - virorah.com</span><span>Pro Report - Confidential</span></div>'+body_close+tag_close);
   w.document.close();
   setTimeout(function(){ w.print(); },700);
 }
