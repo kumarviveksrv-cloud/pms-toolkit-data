@@ -11,7 +11,7 @@
     ];
     var bar = document.createElement('div');
     bar.id = 'viorah-legal-link';
-    bar.style.cssText = "position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:88000;font-family:'DM Sans',-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 16px;max-width:calc(100vw - 24px);padding:6px 16px;border-radius:999px;background:rgba(8,6,18,.88);border:1px solid rgba(102,126,234,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);";
+    bar.style.cssText = "position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:88000;font-family:'DM Sans',-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 16px;width:max-content;max-width:calc(100vw - 24px);padding:6px 16px;border-radius:999px;background:rgba(8,6,18,.88);border:1px solid rgba(102,126,234,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);";
     /* centre on the content area, not the whole window (sidebar is 256px on desktop) */
     var place = function () { bar.style.left = (window.innerWidth > 900 && !document.body.classList.contains('pms-collapsed')) ? 'calc(50% + var(--nav-width, 242px) / 2)' : '50%'; };
     new MutationObserver(place).observe(document.body, { attributes: true, attributeFilter: ['class'] });
