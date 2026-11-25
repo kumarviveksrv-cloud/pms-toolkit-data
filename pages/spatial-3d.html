@@ -260,7 +260,7 @@ function getBoxDef(k){return BOX_DEF.find(function(b){return b.key===k;})||BOX_D
 var COL_X=[-4.5,0,4.5],ROW_Y=[-4.5,0,4.5],ZONE_SZ=4.5;
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showError('Failed to load 3D engine');};
 document.head.appendChild(s);

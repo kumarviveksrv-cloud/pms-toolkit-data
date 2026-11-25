@@ -2682,7 +2682,7 @@
 </style>
 <div id="csv-root"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="/assets/vendor/papaparse.5.4.1.min.js"></script>
 <script>
   (function(){
 var ICONS = {
@@ -3088,7 +3088,7 @@ render();
   function ensureJsPDF(cb) {
     if(window.jspdf && window.jspdf.jsPDF) { cb(); return; }
     var s = document.createElement('script');
-    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s.src = '/assets/vendor/jspdf.2.5.1.umd.min.js';
     s.onload = function() { cb(); };
     s.onerror = function() { alert('Could not load PDF library. Please check your connection.'); };
     document.head.appendChild(s);

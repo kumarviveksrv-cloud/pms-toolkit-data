@@ -6615,11 +6615,11 @@ if(window.__OKR_SCENARIO__&&window.__OKR_SCENARIO__.loaded&&window.getScenarioBy
   function loadThreeAndInit(){
     if(window.THREE){ doInit(); return; }
     var s=document.createElement('script');
-    s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.src='/assets/vendor/three.r128.min.js';
     s.onload=function(){ setTimeout(doInit,100); };
     s.onerror=function(){
       var s2=document.createElement('script');
-      s2.src='https://unpkg.com/three@0.128.0/build/three.min.js';
+      s2.src='/assets/vendor/three.r128.min.js';
       s2.onload=function(){ setTimeout(doInit,100); };
       document.head.appendChild(s2);
     };
@@ -8052,7 +8052,7 @@ function getBoxDef(k){return BOX_DEF.find(function(b){return b.key===k;})||BOX_D
 var COL_X=[-4.5,0,4.5],ROW_Y=[-4.5,0,4.5],ZONE_SZ=4.5;
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showError('Failed to load 3D engine');};
 document.head.appendChild(s);
@@ -9880,7 +9880,7 @@ var hoveredMesh=null;
 var initialized=false;
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showErr('Failed to load 3D engine');};
 document.head.appendChild(s);
@@ -13983,7 +13983,7 @@ var H;
 var ceqFlattened=true;
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showErr('Failed to load 3D engine');};
 document.head.appendChild(s);
@@ -16551,7 +16551,7 @@ var mouse,tooltipX=0,tooltipY=0,hoveredMesh=null;
 var H; /* captured at init - exact 9-box pattern */
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showErr('Failed to load 3D engine');};
 document.head.appendChild(s);
@@ -18239,7 +18239,7 @@ var H;
 var sucFlattened=true;
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showErr('Failed to load 3D engine');};
 document.head.appendChild(s);
@@ -20895,7 +20895,7 @@ var mouse,tooltipX=0,tooltipY=0,hoveredMesh=null;
 var H; /* captured at init - used by resize listener exactly like 9-box */
 
 var s=document.createElement('script');
-s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+s.src='/assets/vendor/three.r128.min.js';
 s.onload=loadData;
 s.onerror=function(){showErr('Failed to load 3D engine');};
 document.head.appendChild(s);
