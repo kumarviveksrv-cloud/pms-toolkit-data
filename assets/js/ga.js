@@ -126,7 +126,7 @@
     css.textContent =
       '#pms-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:680px;margin:0 auto;' +
       'background:#13111f;color:#fff;border:1px solid rgba(102,126,234,.4);border-radius:12px;padding:18px 20px;' +
-      'box-shadow:0 12px 40px rgba(0,0,0,.6);font:14px/1.55 "DM Sans",-apple-system,system-ui,sans-serif}' +
+      'cursor:default;box-shadow:0 12px 40px rgba(0,0,0,.6);font:14px/1.55 "DM Sans",-apple-system,system-ui,sans-serif}' +
       '#pms-consent p{margin:0 0 14px;color:rgba(255,255,255,.82)}' +
       '#pms-consent a{color:#a5b4fc}' +
       '#pms-consent .pms-row{display:flex;gap:10px;flex-wrap:wrap}' +
